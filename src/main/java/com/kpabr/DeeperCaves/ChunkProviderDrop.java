@@ -235,7 +235,7 @@ public class ChunkProviderDrop implements IChunkProvider
         this.func_147424_a(par1, par2, ablock);
         this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
         this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
-        this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+        //this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
         this.ravineGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
 
         if (this.mapFeaturesEnabled)

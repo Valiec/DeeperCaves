@@ -50,10 +50,11 @@ public class MapGenDeeperRavine extends MapGenBase
 
         for (; p_151540_15_ < p_151540_16_; ++p_151540_15_)
         {
-            double d12 = 1.5D + (double)(MathHelper.sin((float)p_151540_15_ * (float)Math.PI / (float)p_151540_16_) * p_151540_12_ * 1.0F);
+            double d12 = 7.5D + (double)(MathHelper.sin((float)p_151540_15_ * (float)Math.PI / (float)p_151540_16_) * p_151540_12_ * 1.0F);
             double d6 = d12 * p_151540_17_;
             d12 *= (double)random.nextFloat() * 0.25D + 0.75D;
-            d6 *= (double)random.nextFloat() * 1D + 0.75D;
+            d6 *= (double)random.nextFloat() * 0.25D + 0.75D;
+            d6 *= 10;
             float f6 = MathHelper.cos(p_151540_14_);
             float f7 = MathHelper.sin(p_151540_14_);
             p_151540_6_ += (double)(MathHelper.cos(p_151540_13_) * f6);
@@ -196,7 +197,7 @@ public class MapGenDeeperRavine extends MapGenBase
 
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
-        if (this.rand.nextInt(50) == 0)
+        if (this.rand.nextInt(7) == 0)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
             double d1 = (double)(this.rand.nextInt(this.rand.nextInt(40) + 8) + 20);

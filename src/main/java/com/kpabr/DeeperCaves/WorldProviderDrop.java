@@ -147,7 +147,7 @@ public class WorldProviderDrop extends WorldProvider
      */
     public boolean doesXZShowFog(int par1, int par2)
     {
-        return true;
+        return false;
     }
 
     /**
@@ -155,6 +155,6 @@ public class WorldProviderDrop extends WorldProvider
      */
     public String getDimensionName()
     {
-        return "Deeper Caves";
+        return "Drop";
     }
 }
