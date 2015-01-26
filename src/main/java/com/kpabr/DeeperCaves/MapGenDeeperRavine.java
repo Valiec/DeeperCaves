@@ -197,7 +197,7 @@ public class MapGenDeeperRavine extends MapGenBase
 
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
-        if (this.rand.nextInt(7) == 0)
+        if (this.rand.nextInt(9) == 0)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
             double d1 = (double)(this.rand.nextInt(this.rand.nextInt(40) + 8) + 20);
@@ -262,7 +262,7 @@ public class MapGenDeeperRavine extends MapGenBase
         {
             if (y < 10)
             {
-                data[index] = Blocks.flowing_lava;
+                data[index] = null;//Blocks.flowing_lava;
             }
             else
             {

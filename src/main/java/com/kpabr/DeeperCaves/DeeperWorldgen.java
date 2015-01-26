@@ -28,7 +28,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DeeperWorldgen {
     /*World Generator Declaration*/
-    DeeperOregen enderblock = new DeeperOregen();
+    DeeperOregen deeperblock = new DeeperOregen();
     public int dropDimID = 7;
     public int mazeDimID = 8;
     public void setupWorldgen()
@@ -41,7 +41,7 @@ public class DeeperWorldgen {
         DimensionManager.registerDimension(dropDimID, dropDimID);
         //DimensionManager.registerProviderType(mazeDimID, WorldProviderEnder.class, true);
         //DimensionManager.registerDimension(mazeDimID, mazeDimID);
-        GameRegistry.registerWorldGenerator(enderblock, 1);
+        GameRegistry.registerWorldGenerator(deeperblock, 1);
     }
     
     @SubscribeEvent
@@ -77,7 +77,7 @@ public class DeeperWorldgen {
     {
         if (event.world.provider.dimensionId == -1)
         {
-            //ChunkProviderNether end = (ChunkProviderNether)(new ChunkProviderNether(DimensionManager.getWorld(-1), DimensionManager.getWorld(-1).getSeed(), event.rand));
+            ChunkProviderDrop end = (ChunkProviderDrop)(new ChunkProviderDrop(DimensionManager.getWorld(event.world.provider.dimensionId), DimensionManager.getWorld(event.world.provider.dimensionId).getSeed(), true));
 
             event.setResult(Result.DENY);
             end.populate(event.chunkProvider, event.chunkX, event.chunkZ);

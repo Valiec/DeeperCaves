@@ -25,7 +25,7 @@ public class WorldProviderDrop extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.sky, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.forest, 0.5F);
         this.dimensionId = 7;
         this.hasNoSky = true;
     }
@@ -62,7 +62,7 @@ public class WorldProviderDrop extends WorldProvider
     /**
      * Return Vec3D with biome specific fog color
      */
-    public Vec3 getFogColor(float p_76562_1_, float p_76562_2_)
+    /*public Vec3 getFogColor(float p_76562_1_, float p_76562_2_)
     {
         int i = 10518688;
         float f2 = MathHelper.cos(p_76562_1_ * (float)Math.PI * 2.0F) * 2.0F + 0.5F;
@@ -84,7 +84,7 @@ public class WorldProviderDrop extends WorldProvider
         f4 *= f2 * 0.0F + 0.15F;
         f5 *= f2 * 0.0F + 0.15F;
         return Vec3.createVectorHelper((double)f3, (double)f4, (double)f5);
-    }
+    }*/
 
     @SideOnly(Side.CLIENT)
     public boolean isSkyColored()
@@ -130,10 +130,10 @@ public class WorldProviderDrop extends WorldProvider
     /**
      * Gets the hard-coded portal location to use when entering this dimension.
      */
-    public ChunkCoordinates getEntrancePortalLocation()
+    /*public ChunkCoordinates getEntrancePortalLocation()
     {
         return new ChunkCoordinates(100, 50, 0);
-    }
+    }*/
 
     public int getAverageGroundLevel()
     {

@@ -34,7 +34,7 @@ public class DeeperOregen implements IWorldGenerator
              switch(world.provider.dimensionId)
              {
                     case -1: generateNether(world, random, chunkX * 16, chunkZ * 16);
-                    case 0: generateSurface(world, random, chunkX * 16, chunkZ * 16);
+                    case 7: generateSurface(world, random, chunkX * 16, chunkZ * 16);
                     case 1: generateEnd(world, random, chunkX * 16, chunkZ * 16);
                     default: generateNether(world, random, chunkX * 16, chunkZ * 16); //testing
              }
@@ -87,19 +87,19 @@ public class DeeperOregen implements IWorldGenerator
 
        private void generateSurface(World world, Random random, int x, int z)
        {
-    	   /*
-    	   this.addOre(DeeperCaves.blocks.graniteRough, world, random, x, z, 16, 16, 64, 10, 14, 256, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.luciteOre, world, random, x, z, 16, 16, 8, 15, 0, 32, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.cavernStone, world, random, x, z, 16, 16, 40, 12, 14, 64, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
-           if (random.nextInt(17) == 0)
+    	   
+    	   this.addOre(Blocks.gold_ore, world, random, x, z, 16, 16, 16, 8, 0, 256, Blocks.stone);
+    	   this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
+    	   this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
+    	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
+           /*if (random.nextInt(17) == 0)
            {
                int i = x + random.nextInt(16) + 8;
                int j = z + random.nextInt(16) + 8;
                int k = world.getTopSolidOrLiquidBlock(i, j);
                (new WorldGenEnderSpikes(DeeperCaves.blocks.endGrass)).generate(world, random, i, k, j);
-           }
-           */
+           }*/
+           
        }
 
        private void generateNether(World world, Random random, int x, int z)
