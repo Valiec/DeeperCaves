@@ -33,14 +33,20 @@ public class DeeperOregen implements IWorldGenerator
        {
              switch(world.provider.dimensionId)
              {
-                    case -1: generateNether(world, random, chunkX * 16, chunkZ * 16);
-                    case 7: generateDeeper(world, random, chunkX * 16, chunkZ * 16);
-                    case 0: generateSurface(world, random, chunkX * 16, chunkZ * 16);
+                    case -1:
+                    		generateNether(world, random, chunkX * 16, chunkZ * 16);
+                    		break;
+                    case 7: 
+                    		generateDeeper(world, random, chunkX * 16, chunkZ * 16);
+                    		break;
+                    case 0:
+                    		generateOverworld(world, random, chunkX * 16, chunkZ * 16);
+                    		break;
                     default: generateNether(world, random, chunkX * 16, chunkZ * 16); //testing
              }
        }
       
-       private void generateSurface(World world, Random random, int x, int z)
+       private void generateOverworld(World world, Random random, int x, int z)
        {
     	   this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
     	   /*
