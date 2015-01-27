@@ -14,7 +14,7 @@ public class MapGenDeeperRavine extends MapGenBase
     private float[] field_75046_d = new float[1024];
     private static final String __OBFID = "CL_00000390";
 
-    protected void func_151540_a(long p_151540_1_, int p_151540_3_, int p_151540_4_, Block[] p_151540_5_, double p_151540_6_, double p_151540_8_, double p_151540_10_, float p_151540_12_, float p_151540_13_, float p_151540_14_, int p_151540_15_, int p_151540_16_, double p_151540_17_)
+    protected void func_151540_a(long p_151540_1_, int p_151540_3_, int p_151540_4_, Block[] p_151540_5_, double p_151540_6_, double p_151540_8_, double p_151540_10_, float p_151540_12_, float p_151540_13_, float p_151540_14_, int p_151540_15_, int p_151540_16_, double p_151540_17_, int minHeight)
     {
         Random random = new Random(p_151540_1_);
         double d4 = (double)(p_151540_3_ * 16 + 8);
@@ -54,7 +54,7 @@ public class MapGenDeeperRavine extends MapGenBase
             double d6 = d12 * p_151540_17_;
             d12 *= (double)random.nextFloat() * 0.25D + 0.75D;
             d6 *= (double)random.nextFloat() * 0.25D + 0.75D;
-            d6 *= 10;
+            d6 *= 5.5;
             float f6 = MathHelper.cos(p_151540_14_);
             float f7 = MathHelper.sin(p_151540_14_);
             p_151540_6_ += (double)(MathHelper.cos(p_151540_13_) * f6);
@@ -176,7 +176,7 @@ public class MapGenDeeperRavine extends MapGenBase
                                                 flag = true;
                                             }
 
-                                            digBlock(p_151540_5_, k3, k2, l3, j3, p_151540_3_, p_151540_4_, flag);
+                                            digBlock(p_151540_5_, k3, k2, l3, j3, p_151540_3_, p_151540_4_, flag, minHeight);
                                         }
 
                                         --k3;
@@ -197,7 +197,7 @@ public class MapGenDeeperRavine extends MapGenBase
 
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
-        if (this.rand.nextInt(9) == 0)
+        if (this.rand.nextInt(13) == 0)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
             double d1 = (double)(this.rand.nextInt(this.rand.nextInt(40) + 8) + 20);
@@ -209,7 +209,7 @@ public class MapGenDeeperRavine extends MapGenBase
                 float f = this.rand.nextFloat() * (float)Math.PI * 2.0F;
                 float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
                 float f2 = (this.rand.nextFloat() * 2.0F + this.rand.nextFloat()) * 2.0F;
-                this.func_151540_a(this.rand.nextLong(), p_151538_4_, p_151538_5_, p_151538_6_, d0, d1, d2, f2, f, f1, 0, 0, 3.0D);
+                this.func_151540_a(this.rand.nextLong(), p_151538_4_, p_151538_5_, p_151538_6_, d0, d1, d2, f2, f, f1, 0, 0, 3.0D, this.rand.nextInt(11)+5);
             }
         }
     }
@@ -251,7 +251,7 @@ public class MapGenDeeperRavine extends MapGenBase
      * @param chunkZ Chunk Y position
      * @param foundTop True if we've encountered the biome's top block. Ideally if we've broken the surface.
      */
-    protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop)
+    protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop, int minHeight)
     {
         BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
         Block top    = (isExceptionBiome(biome) ? Blocks.grass : biome.topBlock);
@@ -260,9 +260,9 @@ public class MapGenDeeperRavine extends MapGenBase
 
         if (block == Blocks.stone || block == filler || block == top)
         {
-            if (y < 10)
+            if (y < minHeight)
             {
-                data[index] = null;//Blocks.flowing_lava;
+                data[index] = Blocks.stone;
             }
             else
             {
