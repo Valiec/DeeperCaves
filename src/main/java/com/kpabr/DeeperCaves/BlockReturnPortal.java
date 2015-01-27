@@ -52,7 +52,7 @@ public class BlockReturnPortal extends Block
         	try
         	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
-        	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
+        	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
         	}
         	catch(ClassCastException e)
         	{
