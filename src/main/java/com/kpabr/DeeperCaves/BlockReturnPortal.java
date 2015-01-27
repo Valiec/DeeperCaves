@@ -49,8 +49,15 @@ public class BlockReturnPortal extends Block
         
         	System.out.println("DIM0");
         	//p_149670_5_.timeUntilPortal = 100;
+        	try
+        	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
+        	}
+        	catch(ClassCastException e)
+        	{
+        		return; //not a player
+        	}
         	//p_149670_5_.travelToDimension(7);
             //p_149670_5_.timeUntilPortal = 100;
             //p_149670_5_.setPosition(100, 257, 100);

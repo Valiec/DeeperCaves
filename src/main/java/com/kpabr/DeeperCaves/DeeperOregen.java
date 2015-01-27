@@ -34,14 +34,15 @@ public class DeeperOregen implements IWorldGenerator
              switch(world.provider.dimensionId)
              {
                     case -1: generateNether(world, random, chunkX * 16, chunkZ * 16);
-                    case 7: generateSurface(world, random, chunkX * 16, chunkZ * 16);
-                    case 1: generateEnd(world, random, chunkX * 16, chunkZ * 16);
+                    case 7: generateDeeper(world, random, chunkX * 16, chunkZ * 16);
+                    case 0: generateSurface(world, random, chunkX * 16, chunkZ * 16);
                     default: generateNether(world, random, chunkX * 16, chunkZ * 16); //testing
              }
        }
       
-       private void generateEnd(World world, Random random, int x, int z)
+       private void generateSurface(World world, Random random, int x, int z)
        {
+    	   this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
     	   /*
            if (world.provider.dimensionId == 1)
            {
@@ -85,12 +86,13 @@ public class DeeperOregen implements IWorldGenerator
 
        }
 
-       private void generateSurface(World world, Random random, int x, int z)
+       private void generateDeeper(World world, Random random, int x, int z)
        {
     	   
     	   this.addOre(Blocks.gold_ore, world, random, x, z, 16, 16, 16, 8, 0, 256, Blocks.stone);
     	   this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
     	   this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
     	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
            /*if (random.nextInt(17) == 0)
            {

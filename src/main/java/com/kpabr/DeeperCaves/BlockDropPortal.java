@@ -29,6 +29,7 @@ public class BlockDropPortal extends Block
     {
         super(p_i45404_1_);
         this.setLightLevel(1.0F);
+        
     }
 
     /**
@@ -49,8 +50,15 @@ public class BlockDropPortal extends Block
         
         	System.out.println("DIM7");
         	//p_149670_5_.timeUntilPortal = 100;
+        	try
+        	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 7, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
+        	}
+        	catch(ClassCastException e)
+        	{
+        		return; //not a player
+        	}
         	//p_149670_5_.travelToDimension(7);
             //p_149670_5_.timeUntilPortal = 100;
             //p_149670_5_.setPosition(100, 257, 100);
