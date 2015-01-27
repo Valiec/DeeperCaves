@@ -17,6 +17,7 @@ public class DeeperBlocks {
     public static Block example;
     public static Block dropPortal;
     public static Block returnPortal;
+    public static Block mazePortal;
     
     
     
@@ -25,6 +26,7 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.example, "example_block");
         GameRegistry.registerBlock(this.dropPortal, "drop_portal");
         GameRegistry.registerBlock(this.returnPortal, "return_portal");
+        GameRegistry.registerBlock(this.mazePortal, "maze_portal");
         
     }
     public void setupBlocks()
@@ -33,6 +35,7 @@ public class DeeperBlocks {
         this.example = new BlockExample(Material.rock).setBlockTextureName("deepercaves:example").setBlockName("example").setHardness(1.5F).setResistance(15.0F);
         this.dropPortal = new BlockDropPortal(Material.rock).setBlockName("dropPortal");
         this.returnPortal = new BlockReturnPortal(Material.rock).setBlockName("returnPortal");
+        this.mazePortal = new BlockMazePortal(Material.rock).setBlockName("mazePortal");
         
     }
     public void setupHarvestLevels()

@@ -33,7 +33,11 @@ public class DeeperTeleporter extends Teleporter
     {
        
             int i = MathHelper.floor_double(p_77185_1_.posX);
-            int j = MathHelper.floor_double(p_77185_1_.posY) - 1;
+            int j = 214;
+            if(this.worldServerInstance.provider.dimensionId == 0)
+            {
+            j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
+            }
             int k = MathHelper.floor_double(p_77185_1_.posZ);
             byte b0 = 1;
             byte b1 = 0;

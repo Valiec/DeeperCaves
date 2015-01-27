@@ -39,8 +39,8 @@ public class DeeperWorldgen {
         //WorldServer world = DimensionManager.getWorld(1);
         DimensionManager.registerProviderType(dropDimID, WorldProviderDrop.class, true);
         DimensionManager.registerDimension(dropDimID, dropDimID);
-        //DimensionManager.registerProviderType(mazeDimID, WorldProviderEnder.class, true);
-        //DimensionManager.registerDimension(mazeDimID, mazeDimID);
+        DimensionManager.registerProviderType(mazeDimID, WorldProviderMaze.class, true);
+        DimensionManager.registerDimension(mazeDimID, mazeDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
     }
     
