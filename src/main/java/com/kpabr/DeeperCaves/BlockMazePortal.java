@@ -48,7 +48,7 @@ public class BlockMazePortal extends Block
         if (p_149670_5_.ridingEntity == null && p_149670_5_.riddenByEntity == null && !p_149670_1_.isRemote)
         {
         
-        	System.out.println("DIM7");
+        	System.out.println("DIM8");
         	//p_149670_5_.timeUntilPortal = 100;
         	try
         	{
