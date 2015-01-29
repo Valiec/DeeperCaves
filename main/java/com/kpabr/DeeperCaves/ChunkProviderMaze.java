@@ -55,7 +55,7 @@ public class ChunkProviderMaze implements IChunkProvider
     private double[] field_147434_q = {};
     private float[] parabolicField = {};
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenCaves();
+    private MapGenBase caveGenerator = new MapGenDeeperCaves();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
