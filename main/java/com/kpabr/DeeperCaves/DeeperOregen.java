@@ -33,11 +33,11 @@ public class DeeperOregen implements IWorldGenerator
        {
              switch(world.provider.dimensionId)
              {
-                    case -1:
-                    		generateNether(world, random, chunkX * 16, chunkZ * 16);
+                    case 8:
+                    		generateMaze(world, random, chunkX * 16, chunkZ * 16);
                     		break;
                     case 7: 
-                    		generateDeeper(world, random, chunkX * 16, chunkZ * 16);
+                    		generateDrop(world, random, chunkX * 16, chunkZ * 16);
                     		break;
                     case 0:
                     		generateOverworld(world, random, chunkX * 16, chunkZ * 16);
@@ -92,12 +92,29 @@ public class DeeperOregen implements IWorldGenerator
 
        }
 
-       private void generateDeeper(World world, Random random, int x, int z)
+       private void generateDrop(World world, Random random, int x, int z)
        {
     	   
     	   this.addOre(Blocks.gold_ore, world, random, x, z, 16, 16, 16, 8, 0, 256, Blocks.stone);
     	   this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
     	   this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.mazePortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
+    	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
+           /*if (random.nextInt(17) == 0)
+           {
+               int i = x + random.nextInt(16) + 8;
+               int j = z + random.nextInt(16) + 8;
+               int k = world.getTopSolidOrLiquidBlock(i, j);
+               (new WorldGenEnderSpikes(DeeperCaves.blocks.endGrass)).generate(world, random, i, k, j);
+           }*/
+           
+       }
+       private void generateMaze(World world, Random random, int x, int z)
+       {
+    	   
+    	   //this.addOre(Blocks.gold_ore, world, random, x, z, 16, 16, 16, 8, 0, 256, Blocks.stone);
+    	   //this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
+    	   //this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
     	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
            /*if (random.nextInt(17) == 0)
