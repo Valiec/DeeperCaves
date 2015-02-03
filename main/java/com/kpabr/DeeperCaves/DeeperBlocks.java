@@ -32,7 +32,7 @@ public class DeeperBlocks {
     public void setupBlocks()
     {
         
-        this.example = new BlockExample(Material.rock).setBlockTextureName("deepercaves:example").setBlockName("example").setHardness(1.5F).setResistance(15.0F);
+        this.example = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:silverOre").setBlockName("silverOre").setHardness(1.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         this.dropPortal = new BlockDropPortal(Material.rock).setBlockName("dropPortal");
         this.returnPortal = new BlockReturnPortal(Material.rock).setBlockName("returnPortal");
         this.mazePortal = new BlockMazePortal(Material.rock).setBlockName("mazePortal");
@@ -41,7 +41,7 @@ public class DeeperBlocks {
     public void setupHarvestLevels()
     {
         /*Setting up block harvest levels*/
-        this.example.setHarvestLevel("pickaxe", 3);
+        this.example.setHarvestLevel("pickaxe", 2);
        
     }
     

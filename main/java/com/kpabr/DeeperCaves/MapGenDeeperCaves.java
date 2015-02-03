@@ -286,19 +286,19 @@ public class MapGenDeeperCaves extends MapGenBase
 
         if (block == Blocks.stone || block == filler || block == top)
         {
-            if (y < 10)
-            {
-                data[index] = Blocks.lava;
-            }
-            else
-            {
+            //if (y < 10)
+            //{
+                //data[index] = Blocks.lava;
+            //}
+            //else
+            //{
                 data[index] = null;
 
                 if (foundTop && data[index - 1] == filler)
                 {
                     data[index - 1] = top;
                 }
-            }
+            //}
         }
     }
 }
