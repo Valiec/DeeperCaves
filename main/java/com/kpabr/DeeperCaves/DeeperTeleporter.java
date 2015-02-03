@@ -53,7 +53,10 @@ public class DeeperTeleporter extends Teleporter
                         int l1 = j + j1;
                         int i2 = k + i1 * b1 - l * b0;
                         boolean flag = j1 < 0;
+                        if(this.worldServerInstance.provider.dimensionId != 0)
+                        {
                         this.worldServerInstance.setBlock(k1, l1, i2, flag ? Blocks.obsidian : Blocks.air);
+                        }
                     }
                 }
             }
