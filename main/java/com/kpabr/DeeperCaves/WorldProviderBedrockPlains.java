@@ -36,7 +36,7 @@ public class WorldProviderBedrockPlains extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderBedrockPlanes(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderBedrockPlains(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**

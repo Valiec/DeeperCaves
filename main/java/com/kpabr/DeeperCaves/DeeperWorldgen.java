@@ -31,6 +31,9 @@ public class DeeperWorldgen {
     DeeperOregen deeperblock = new DeeperOregen();
     public int dropDimID = 7;
     public int mazeDimID = 8;
+    public int crystalDimID = 9;
+    public int compressedDimID = 10;
+    public int bedrockPlainsDimID = 11;
     public void setupWorldgen()
     {
         
@@ -41,6 +44,12 @@ public class DeeperWorldgen {
         DimensionManager.registerDimension(dropDimID, dropDimID);
         DimensionManager.registerProviderType(mazeDimID, WorldProviderMaze.class, true);
         DimensionManager.registerDimension(mazeDimID, mazeDimID);
+        DimensionManager.registerProviderType(crystalDimID, WorldProviderCrystal.class, true);
+        DimensionManager.registerDimension(crystalDimID, crystalDimID);
+        DimensionManager.registerProviderType(compressedDimID, WorldProviderCompressed.class, true);
+        DimensionManager.registerDimension(compressedDimID, compressedDimID);
+        DimensionManager.registerProviderType(bedrockPlainsDimID, WorldProviderBedrockPlains.class, true);
+        DimensionManager.registerDimension(bedrockPlainsDimID, bedrockPlainsDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
     }
     
