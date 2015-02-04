@@ -5,6 +5,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
@@ -170,7 +171,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                             {
                                 if ((d15 += d16) > 0.0D)
                                 {
-                                    p_147424_3_[j3 += short1] = Blocks.stone;
+                                    p_147424_3_[j3 += short1] = Blocks.air;//bedrock;
                                 }
                                 else if (k2 * 8 + l2 < b0)
                                 {
@@ -178,7 +179,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                                 }
                                 else
                                 {
-                                    p_147424_3_[j3 += short1] =Blocks.stone;
+                                    p_147424_3_[j3 += short1] =Blocks.air;//stone;
                                 }
                             }
 
@@ -210,10 +211,37 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
             for (int l = 0; l < 16; ++l)
             {
                 BiomeGenBase biomegenbase = p_147422_5_[l + k * 16];
-                biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
+                //biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
+                boolean flag = true;
+                Block block = Blocks.grass;
+                //byte b0 = (byte)(this.field_150604_aj & 255);
+                Block block1 = Blocks.dirt;
+                //int l = (int)(this.stoneNoise[l + k * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
+                int i1 = p_147422_1_ * 16 + k & 15;
+                int j1 = p_147422_2_ * 16 + l & 15;
+                int k1 = p_147422_3_.length / 256;
+                for (int l1 = 255; l1 >= 0; --l1)
+                {
+                    int i2 = (j1 * 16 + i1) * k1 + l1;
+
+                    if (l1 <= 0 + this.rand.nextInt(5))
+                    {
+                    	p_147422_3_[i2] = Blocks.bedrock;
+                    }
+                    if (l1 >= 255 - this.rand.nextInt(5))
+                    {
+                    	p_147422_3_[i2] = Blocks.bedrock;
+                    }
+                    if (l1 <= 155)
+                    {
+                    	p_147422_3_[i2] = Blocks.bedrock;
+                    }
+                    
+                }
+            }
+
             }
         }
-    }
 
     /**
      * loads or generates the chunk at the chunk location specified
