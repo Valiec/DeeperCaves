@@ -111,7 +111,7 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
     	   this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.mazePortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 8, 4, 255, 239, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
     	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
            /*if (random.nextInt(17) == 0)
            {
@@ -129,7 +129,7 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
     	   //this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.crystalPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 255, 239, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
     	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
            /*if (random.nextInt(17) == 0)
            {
@@ -147,7 +147,10 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
     	   //this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.mazePortal, world, random, x, z, 16, 16, 8, 4, 255, 239, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.mazePortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.sapphireOre, world, random, x, z, 16, 16, 32, 4, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.aquamarineOre, world, random, x, z, 16, 16, 40, 8, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.ametrineOre, world, random, x, z, 16, 16, 12, 4, 0, 255, Blocks.stone);
     	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
            /*if (random.nextInt(17) == 0)
            {
@@ -165,7 +168,14 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
     	   //this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.bedrockPlainsPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.crystalPortal, world, random, x, z, 16, 16, 8, 4, 255, 239, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.crystalPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.ccoalOre, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.cironOre, world, random, x, z, 16, 16, 10, 150, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.cgoldOre, world, random, x, z, 16, 16, 8, 30, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.clapisOre, world, random, x, z, 16, 16, 7, 35, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.credstoneOre, world, random, x, z, 16, 16, 8, 128, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.cdiamondOre, world, random, x, z, 16, 16, 8, 16, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.cemeraldOre, world, random, x, z, 16, 16, 3, 8, 0, 255, Blocks.stone);
     	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
            /*if (random.nextInt(17) == 0)
            {
@@ -183,7 +193,7 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
     	   //this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.bedrock);
-    	   this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 255, 239, Blocks.bedrock);
+    	   this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
     	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
            /*if (random.nextInt(17) == 0)
            {
