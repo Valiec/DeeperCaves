@@ -195,7 +195,7 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 8, 4, 150, 160, Blocks.bedrock);
     	   this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
-    	   this.addOre(DeeperCaves.blocks.fragmentedBedrock, world, random, x, z, 16, 16, 2, 2, 150, 160, Blocks.bedrock);
+    	   this.addOre(DeeperCaves.blocks.fragmentedBedrock, world, random, x, z, 16, 16, 8, 4, 150, 160, Blocks.bedrock);
     	   //this.addOre(Blocks.overworldEssence, world, random, x, z, 16, 16, 13, 10, 0, 256, Blocks.stone);
            /*if (random.nextInt(17) == 0)
            {

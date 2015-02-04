@@ -87,7 +87,7 @@ public class DeeperBlocks {
         this.cdiamondOre = new BlockCompressedOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:cdiamond_ore").setBlockName("cdiamondOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         this.cemeraldOre = new BlockCompressedOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:cemerald_ore").setBlockName("cemeraldOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         
-        this.fragmentedBedrock = new BlockFragmentedBedrock(Material.rock).setBlockTextureName("deepercaves:fragmentedBedrock").setBlockName("fragmentedBedrock").setHardness(35.5F).setResistance(1500000.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.fragmentedBedrock = new BlockFragmentedBedrock(Material.rock).setBlockTextureName("deepercaves:fragmented_bedrock").setBlockName("fragmentedBedrock").setHardness(35.5F).setResistance(1500000.0F).setCreativeTab(CreativeTabs.tabBlock);
         
         
     }
