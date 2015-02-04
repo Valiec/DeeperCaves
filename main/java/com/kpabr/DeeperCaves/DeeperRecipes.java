@@ -65,8 +65,8 @@ public class DeeperRecipes {
     public void setupSmelting()
     {
         /*Registering smelting recipes in GameRegistry*/
-        /*GameRegistry.addSmelting(DeeperCaves.blocks.flameriteOre, new ItemStack(DeeperCaves.items.flameriteIngot, 1) , 0.6F);
-        GameRegistry.addSmelting(DeeperCaves.blocks.enderiteOre, new ItemStack(DeeperCaves.items.enderiteGem, 1) , 0.6F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.silverOre, new ItemStack(DeeperCaves.items.silverIngot, 1) , 0.6F);
+        /*GameRegistry.addSmelting(DeeperCaves.blocks.enderiteOre, new ItemStack(DeeperCaves.items.enderiteGem, 1) , 0.6F);
         GameRegistry.addSmelting(DeeperCaves.blocks.umbriteOre, new ItemStack(DeeperCaves.items.umbriteCrystal, 1) , 0.6F);
         GameRegistry.addSmelting(DeeperCaves.blocks.luciteOre, new ItemStack(DeeperCaves.items.luciteCrystal, 1) , 0.6F);
         GameRegistry.addSmelting(DeeperCaves.blocks.golderaldOre, new ItemStack(DeeperCaves.items.golderaldGem, 1) , 0.6F);
