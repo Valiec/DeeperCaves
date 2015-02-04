@@ -39,7 +39,6 @@ public class DeeperWorldgen {
         
        
         /*Setting up worldgen*/
-        //WorldServer world = DimensionManager.getWorld(1);
         DimensionManager.registerProviderType(dropDimID, WorldProviderDrop.class, true);
         DimensionManager.registerDimension(dropDimID, dropDimID);
         DimensionManager.registerProviderType(mazeDimID, WorldProviderMaze.class, true);
@@ -53,68 +52,4 @@ public class DeeperWorldgen {
         GameRegistry.registerWorldGenerator(deeperblock, 1);
     }
     
-    @SubscribeEvent
-    public void onEndGen(ChunkProviderEvent.InitNoiseField event)
-    {
-        
-        if (event.chunkProvider.getClass() == ChunkProviderEnd.class)
-        {
-
-            ChunkProviderEnder end = (ChunkProviderEnder)(new ChunkProviderEnder(DimensionManager.getWorld(1), DimensionManager.getWorld(1).getSeed()));
-            event.setResult(Result.DENY);
-
-            event.noisefield = end.initializeNoiseField(null, event.posX, event.posY, event.posZ, event.sizeX, event.sizeY, event.sizeZ);
-    
-        }  
-    }
-    /*@SubscribeEvent
-    public void onNetherBiomes(ReplaceBiomeBlocks event)
-    {
-        if (event.chunkProvider.getClass() == ChunkProviderHell.class)
-        {
-            
-        
-            //ChunkProviderNether end = (ChunkProviderNether)(new ChunkProviderNether(DimensionManager.getWorld(-1), DimensionManager.getWorld(-1).getSeed()));
-
-            event.setResult(Result.DENY);
-            //end.func_147418_b(event.chunkX, event.chunkZ, event.blockArray);
-        }
-
-    }*/
-    /*@SubscribeEvent
-    public void onNetherDecorate(PopulateChunkEvent event)
-    {
-        if (event.world.provider.dimensionId == -1)
-        {
-            ChunkProviderDrop end = (ChunkProviderDrop)(new ChunkProviderDrop(DimensionManager.getWorld(event.world.provider.dimensionId), DimensionManager.getWorld(event.world.provider.dimensionId).getSeed(), true));
-
-            event.setResult(Result.DENY);
-            end.populate(event.chunkProvider, event.chunkX, event.chunkZ);
-        }
-    }*/
-    /*@SubscribeEvent
-    public void onEndBiomes(ReplaceBiomeBlocks event)
-    {
-        if (event.chunkProvider.getClass() == ChunkProviderEnd.class)
-        {
-            
-        
-            ChunkProviderEnder end = (ChunkProviderEnder)(new ChunkProviderEnder(DimensionManager.getWorld(1), DimensionManager.getWorld(1).getSeed()));
-
-            event.setResult(Result.DENY);
-            end.func_147421_b(event.chunkX, event.chunkZ, event.blockArray);
-        }
-
-    }*/
-    /*@SubscribeEvent
-    public void onEndDecorate(PopulateChunkEvent event)
-    {
-        if (event.chunkProvider.getClass() != ChunkProviderServer.class && event.world.provider.dimensionId == 1)
-        {
-            ChunkProviderEnder end = (ChunkProviderEnder)(new ChunkProviderEnder(DimensionManager.getWorld(1), DimensionManager.getWorld(1).getSeed()));
-
-            event.setResult(Result.DENY);
-            end.populate(event.chunkProvider, event.chunkX, event.chunkZ);
-        }
-    }*/
 }

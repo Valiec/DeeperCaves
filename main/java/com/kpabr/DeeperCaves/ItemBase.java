@@ -10,12 +10,7 @@ import net.minecraft.item.Item;
 public class ItemBase extends Item {
 
 	public ItemBase() {
-		//super();
-	    //this.setUnlocalizedName("Creeperite");
 		
 	}
-	/*public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon("EndPlus:gemEnderite");
-    }*/
 
 }
