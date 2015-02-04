@@ -7,6 +7,7 @@ import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemSlab;
 
 public class DeeperBlocks {
@@ -34,6 +35,8 @@ public class DeeperBlocks {
     public static Block cdiamondOre;
     public static Block cemeraldOre;
     
+    public static Block fragmentedBedrock;
+    
     
     
     public void registerBlocks()
@@ -58,6 +61,8 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.cdiamondOre, "compressed_diamond_ore");
         GameRegistry.registerBlock(this.cemeraldOre, "compressed_emerald_ore");
         
+        GameRegistry.registerBlock(this.fragmentedBedrock, "fragmented_bedrock");
+        
     }
     public void setupBlocks()
     {
@@ -70,9 +75,9 @@ public class DeeperBlocks {
         this.compressedPortal = new BlockCompressedPortal(Material.rock).setBlockName("compressedPortal");
         this.bedrockPlainsPortal = new BlockBedrockPlainsPortal(Material.rock).setBlockName("bedrockPlainsPortal");
         
-        this.sapphireOre = new BlockSapphireOre(Material.rock).setBlockTextureName("deepercaves:sapphire_ore").setBlockName("sapphireOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.aquamarineOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:aquamarine_ore").setBlockName("aquamarineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);     
-        this.ametrineOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:ametrine_ore").setBlockName("ametrineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.sapphireOre = new BlockSapphireOre(Material.rock).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.aquamarineOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);     
+        this.ametrineOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         
         this.ccoalOre = new BlockCompressedOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:ccoal_ore").setBlockName("ccoalOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         this.cironOre = new BlockCompressedOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:ciron_ore").setBlockName("cironOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
@@ -81,6 +86,8 @@ public class DeeperBlocks {
         this.credstoneOre = new BlockCompressedOre(Material.rock, Blocks.redstone_ore).setBlockTextureName("deepercaves:credstone_ore").setBlockName("credstoneOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         this.cdiamondOre = new BlockCompressedOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:cdiamond_ore").setBlockName("cdiamondOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         this.cemeraldOre = new BlockCompressedOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:cemerald_ore").setBlockName("cemeraldOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        
+        this.fragmentedBedrock = new BlockFragmentedBedrock(Material.rock).setBlockTextureName("deepercaves:fragmentedBedrock").setBlockName("fragmentedBedrock").setHardness(35.5F).setResistance(1500000.0F).setCreativeTab(CreativeTabs.tabBlock);
         
         
     }
@@ -100,6 +107,8 @@ public class DeeperBlocks {
         this.credstoneOre.setHarvestLevel("pickaxe", 3);
         this.cdiamondOre.setHarvestLevel("pickaxe", 3);
         this.cemeraldOre.setHarvestLevel("pickaxe", 3);
+        
+        this.fragmentedBedrock.setHarvestLevel("pickaxe", 3);
        
     }
     

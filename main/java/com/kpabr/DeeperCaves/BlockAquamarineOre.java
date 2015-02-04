@@ -27,7 +27,7 @@ public class BlockAquamarineOre extends Block {
 	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return DeeperCaves.items.silverIngot;
+        return DeeperCaves.items.sapphireGem;
     }
 	@Override
     public int quantityDropped(Random par1Random)
