@@ -197,10 +197,10 @@ public class MapGenDeeperRavine2 extends MapGenBase
 
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
-        if (this.rand.nextInt(11) == 0)
+        if (this.rand.nextInt(7) == 0)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
-            double d1 = (double)(this.rand.nextInt(this.rand.nextInt(40) + 8) + 20);
+            double d1 = (double)(this.rand.nextInt(this.rand.nextInt(228) + 8) + 20);
             double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
             byte b0 = 1;
 

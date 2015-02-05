@@ -64,7 +64,7 @@ public class ChunkProviderCrystal implements IChunkProvider
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
-    private MapGenBase ravineGenerator = new MapGenRavine();
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine2();
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
     double[] field_147427_d;

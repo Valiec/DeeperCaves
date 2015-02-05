@@ -206,7 +206,7 @@ public class MapGenDeeperCaves extends MapGenBase
     {
         int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(47) + 1) + 1);
 
-        if (this.rand.nextInt(7) != 0)
+        if (this.rand.nextInt(3) != 0)
         {
             i1 = 0;
         }

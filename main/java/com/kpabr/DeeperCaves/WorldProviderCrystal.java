@@ -137,7 +137,7 @@ public class WorldProviderCrystal extends WorldProvider
 
     public int getAverageGroundLevel()
     {
-        return 50;
+        return 200;
     }
 
     @SideOnly(Side.CLIENT)
