@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -29,6 +30,7 @@ public class BlockReturnPortal extends Block
     {
         super(p_i45404_1_);
         this.setLightLevel(1.0F);
+        
     }
 
     /**
@@ -47,6 +49,11 @@ public class BlockReturnPortal extends Block
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
         return null;
+    }
+    @Override
+    public boolean canSilkHarvest(World world, EntityPlayer player, int x, int y, int z, int metadata)
+    {
+    	return false;
     }
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
