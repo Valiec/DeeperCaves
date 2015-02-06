@@ -68,7 +68,10 @@ public class BlockMazePortal extends Block
         	try
         	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
+        	if(player.dimension != 8)
+        	{
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 8, new DeeperTeleporter(player.mcServer.worldServerForDimension(8)));
+        	}
         	}
         	catch(ClassCastException e)
         	{

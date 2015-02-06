@@ -68,7 +68,10 @@ public class BlockCrystalPortal extends Block
         	try
         	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
+        	if(player.dimension != 9)
+        	{
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 9, new DeeperTeleporter(player.mcServer.worldServerForDimension(9)));
+        	}
         	}
         	catch(ClassCastException e)
         	{

@@ -33,10 +33,7 @@ public class DeeperTeleporter extends Teleporter
      */
     public void placeInPortal(Entity p_77185_1_, double p_77185_2_, double p_77185_4_, double p_77185_6_, float p_77185_8_)
     {
-    		if(this.worldServerInstance.provider.dimensionId == p_77185_1_.dimension)
-    		{
-    			return;
-    		}
+    		
        
             int i = MathHelper.floor_double(p_77185_1_.posX);
             int j = 185;

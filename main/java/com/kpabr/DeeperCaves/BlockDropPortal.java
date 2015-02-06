@@ -68,7 +68,10 @@ public class BlockDropPortal extends Block
         	try
         	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
+        	if(player.dimension != 7)
+        	{
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 7, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
+        	}
         	}
         	catch(ClassCastException e)
         	{

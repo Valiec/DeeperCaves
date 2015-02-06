@@ -69,7 +69,10 @@ public class BlockBedrockPlainsPortal extends Block
         	try
         	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
+        	if(player.dimension != 11)
+        	{
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 11, new DeeperTeleporter(player.mcServer.worldServerForDimension(11)));
+        	}
         	}
         	catch(ClassCastException e)
         	{

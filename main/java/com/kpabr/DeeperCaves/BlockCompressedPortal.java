@@ -68,7 +68,10 @@ public class BlockCompressedPortal extends Block
         	try
         	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
+        	if(player.dimension != 10)
+        	{
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 10, new DeeperTeleporter(player.mcServer.worldServerForDimension(10)));
+        	}
         	}
         	catch(ClassCastException e)
         	{
