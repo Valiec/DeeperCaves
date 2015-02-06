@@ -33,6 +33,12 @@ public class BlockCompressedOre extends Block {
         return ore.getItemDropped(par1, par2Random, par3);
     }
 	@Override
+	public int damageDropped(int par1)
+	{
+		return ore.damageDropped(par1);
+		
+	}
+	@Override
     public int quantityDropped(Random par1Random)
     {
         return ore.quantityDropped(par1Random) * (2 + par1Random.nextInt(2));
