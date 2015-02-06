@@ -38,7 +38,16 @@ public class BlockReturnPortal extends Block
     public void addCollisionBoxesToList(World p_149743_1_, int p_149743_2_, int p_149743_3_, int p_149743_4_, AxisAlignedBB p_149743_5_, List p_149743_6_, Entity p_149743_7_) {}
 
 
-
+    @Override
+    public boolean isNormalCube()
+    {
+    	return false;
+    }
+    @Override
+	public Item getItemDropped(int par1, Random par2Random, int par3)
+    {
+        return null;
+    }
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
