@@ -51,14 +51,11 @@ public class BlockBedrockPlainsPortal extends Block
     {
         return null;
     }
-<<<<<<< HEAD
     @Override
     public boolean canSilkHarvest(World world, EntityPlayer player, int x, int y, int z, int metadata)
     {
     	return false;
     }
-=======
->>>>>>> e9512177cfa1bba600af6be1a3f6d1f51822a139
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
