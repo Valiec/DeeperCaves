@@ -204,7 +204,11 @@ public class MapGenDeeperCaves extends MapGenBase
 
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
+<<<<<<< HEAD
         int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(36) + 1) + 1);
+=======
+        int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(43) + 1) + 1);
+>>>>>>> e9512177cfa1bba600af6be1a3f6d1f51822a139
 
         if (this.rand.nextInt(7) != 0)
         {
