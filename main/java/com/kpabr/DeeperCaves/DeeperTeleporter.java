@@ -51,7 +51,7 @@ public class DeeperTeleporter extends Teleporter
             byte b1 = 0;
             boolean blockIsAir = false;
             System.out.println(this.worldServerInstance.getActualHeight());
-            //makePortal(p_77185_1_);
+            makePortal(p_77185_1_);
             /*for(int a = -10; a<10; a++)
             {
                 for(int b = -32; a<32; b++)
@@ -71,7 +71,7 @@ public class DeeperTeleporter extends Teleporter
                 }
             }*/
 
-            for (int l = -2; l <= 2; ++l)
+            /*for (int l = -2; l <= 2; ++l)
             {
                 for (int i1 = -2; i1 <= 2; ++i1)
                 {
@@ -87,7 +87,7 @@ public class DeeperTeleporter extends Teleporter
                         }
                     }
                 }
-            }
+            }*/
     }
     public boolean makePortal(Entity p_85188_1_)
     {
@@ -278,7 +278,7 @@ public class DeeperTeleporter extends Teleporter
                         j4 = k2 + (j3 - 1) * l2 - i3 * l5;
                         flag = k3 < 0;
                         //p_85188_1_.setPosition(l3, i4, j4);
-                        this.worldServerInstance.setBlock(l3, i4, j4, flag ? Blocks.obsidian : Blocks.air);
+                        this.worldServerInstance.setBlock(l3, i4, j4, flag ? Blocks.air : Blocks.air);
                     }
                 }
             }
@@ -294,8 +294,11 @@ public class DeeperTeleporter extends Teleporter
                     i4 = j2 + k3;
                     j4 = k2 + (j3 - 1) * l2;
                     flag = j3 == 0 || j3 == 3 || k3 == -1 || k3 == 3;
+                    if(j3 == 1 && k3 == 0)
+                    {
                     p_85188_1_.setPosition(l3, i4, j4);
-                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(flag ? Blocks.obsidian : Blocks.anvil), 0, 2);
+                    }
+                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(flag ? Blocks.air : Blocks.air), 0, 2);
                 }
             }
 

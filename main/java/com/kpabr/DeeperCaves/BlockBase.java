@@ -18,21 +18,11 @@ import net.minecraft.world.World;
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class BlockAquamarineOre extends Block {
+public class BlockBase extends Block {
 
-	public BlockAquamarineOre(Material par2Material) {
+	public BlockBase(Material par2Material) {
 		super(par2Material);
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public Item getItemDropped(int par1, Random par2Random, int par3)
-    {
-        return DeeperCaves.items.aquamarine;
-    }
-	@Override
-    public int quantityDropped(Random par1Random)
-    {
-        return 3 + par1Random.nextInt(3);
-    }
 
 }

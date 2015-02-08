@@ -24,6 +24,7 @@ import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenLakes;
+import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraft.world.gen.structure.MapGenStronghold;
@@ -472,6 +473,13 @@ public class ChunkProviderDrop implements IChunkProvider
                     this.worldObj.setBlock(k1 + k, i2, l1 + l, Blocks.snow_layer, 0, 2);
                 }
             }
+        }
+        for (int var3 = 0; var3 < 20; ++var3)
+        {
+            int var4 = k + this.rand.nextInt(16) + 8;
+            int var5 = this.rand.nextInt(255);
+            int var6 = l + this.rand.nextInt(16) + 8;
+            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
         }
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, flag));

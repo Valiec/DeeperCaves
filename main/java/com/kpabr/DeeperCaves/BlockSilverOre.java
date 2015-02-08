@@ -24,15 +24,5 @@ public class BlockSilverOre extends Block {
 		super(par2Material);
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public Item getItemDropped(int par1, Random par2Random, int par3)
-    {
-        return DeeperCaves.items.silverIngot;
-    }
-	@Override
-    public int quantityDropped(Random par1Random)
-    {
-        return 1 + par1Random.nextInt(1);
-    }
 
 }
