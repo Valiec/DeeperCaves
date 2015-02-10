@@ -71,6 +71,12 @@ public class DeeperBlocks {
         
         GameRegistry.registerBlock(this.fragmentedBedrock, "fragmented_bedrock");
         
+        GameRegistry.registerBlock(this.silverBlock, "silver_block");
+        
+        GameRegistry.registerBlock(this.sapphireBlock, "sapphire_block");
+        GameRegistry.registerBlock(this.aquamarineBlock, "aquamarine_block");
+        GameRegistry.registerBlock(this.ametrineBlock, "ametrine_block");
+        
     }
     public void setupBlocks()
     {
@@ -97,7 +103,7 @@ public class DeeperBlocks {
         
         this.fragmentedBedrock = new BlockFragmentedBedrock(Material.rock).setBlockTextureName("deepercaves:fragmented_bedrock").setBlockName("fragmentedBedrock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(CreativeTabs.tabBlock);
         
-        this.silverBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:silver_block").setBlockName("silverBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.silverBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:silverBlock").setBlockName("silverBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         
         this.sapphireBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:sapphireBlock").setBlockName("sapphireBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         this.aquamarineBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:aquamarineBlock").setBlockName("aquamarineBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
