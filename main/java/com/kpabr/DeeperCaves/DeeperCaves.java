@@ -39,9 +39,9 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "deepercaves";
-    public static final String VERSION = "0.0.3";
+    public static final String VERSION = "0.1.0";
     public static final String NAME = "deepercaves";
-    static int versionID = 0; //Used by version checker (not implemented)!
+    static int versionID = 1; //Used by version checker (not implemented)!
     
     static DeeperBlocks blocks = new DeeperBlocks();
     static DeeperItems items = new DeeperItems();
@@ -49,9 +49,13 @@ public class DeeperCaves
     static DeeperWorldgen worldgen = new DeeperWorldgen();
     static DeeperRendering rendering = new DeeperRendering();
     static DeeperMobs mobs = new DeeperMobs();
-    //static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
+    static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
     public static DeeperCaves instance;
     public static Configuration config;
+    
+    static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperCaves.blocks.fragmentedBedrock);
+    static CreativeTabs tabDeeperCavesItems = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Items", 0);
+    static CreativeTabs tabDeeperCavesTools = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Tools", 1);
     
     
     //static CreativeTabs tabEndplus = new TabEndplusBlocks(CreativeTabs.getNextID(), "EndPlus Blocks", DeeperCaves.blocks.endGrass);
@@ -72,8 +76,8 @@ public class DeeperCaves
         FMLCommonHandler.instance().bus().register(worldgen);
         MinecraftForge.EVENT_BUS.register(worldgen);
         
-        //FMLCommonHandler.instance().bus().register(versionChecker);
-        //MinecraftForge.EVENT_BUS.register(versionChecker);
+        FMLCommonHandler.instance().bus().register(versionChecker);
+        MinecraftForge.EVENT_BUS.register(versionChecker);
         
         FMLCommonHandler.instance().bus().register(this);
         MinecraftForge.EVENT_BUS.register(this);
@@ -81,7 +85,7 @@ public class DeeperCaves
         
         
         //ClientCommandHandler.instance.registerCommand(new TestCommand());
-        //ClientCommandHandler.instance.registerCommand(new EndPlusCommand());
+        ClientCommandHandler.instance.registerCommand(new VersionCommand());
    	    /*DeeperCaves.config.load();
         if(!config.hasKey(Configuration.CATEGORY_GENERAL, "OverrideDimensionID"))
         {

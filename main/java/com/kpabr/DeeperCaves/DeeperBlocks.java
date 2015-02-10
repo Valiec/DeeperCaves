@@ -81,7 +81,7 @@ public class DeeperBlocks {
     public void setupBlocks()
     {
         
-        this.silverOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:silver_ore").setBlockName("silverOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.silverOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:silver_ore").setBlockName("silverOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.dropPortal = new BlockDropPortal(Material.rock).setBlockName("dropPortal").setHardness(3.5F).setResistance(15.0F);
         this.returnPortal = new BlockReturnPortal(Material.rock).setBlockName("returnPortal").setHardness(3.5F).setResistance(15.0F);
         this.mazePortal = new BlockMazePortal(Material.rock).setBlockName("mazePortal").setHardness(3.5F).setResistance(15.0F);
@@ -89,25 +89,25 @@ public class DeeperBlocks {
         this.compressedPortal = new BlockCompressedPortal(Material.rock).setBlockName("compressedPortal").setHardness(3.5F).setResistance(15.0F);
         this.bedrockPlainsPortal = new BlockBedrockPlainsPortal(Material.rock).setBlockName("bedrockPlainsPortal").setHardness(3.5F).setResistance(15.0F);
         
-        this.sapphireOre = new BlockSapphireOre(Material.rock).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.aquamarineOre = new BlockAquamarineOre(Material.rock).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);     
-        this.ametrineOre = new BlockAmetrineOre(Material.rock).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.sapphireOre = new BlockSapphireOre(Material.rock).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.aquamarineOre = new BlockAquamarineOre(Material.rock).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);     
+        this.ametrineOre = new BlockAmetrineOre(Material.rock).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.ccoalOre = new BlockCompressedOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:ccoal_ore").setBlockName("ccoalOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.cironOre = new BlockCompressedOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:ciron_ore").setBlockName("cironOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.cgoldOre = new BlockCompressedOre(Material.rock, Blocks.gold_ore).setBlockTextureName("deepercaves:cgold_ore").setBlockName("cgoldOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.clapisOre = new BlockCompressedOre(Material.rock, Blocks.lapis_ore).setBlockTextureName("deepercaves:clapis_ore").setBlockName("clapisOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.credstoneOre = new BlockCompressedOre(Material.rock, Blocks.redstone_ore).setBlockTextureName("deepercaves:credstone_ore").setBlockName("credstoneOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.cdiamondOre = new BlockCompressedOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:cdiamond_ore").setBlockName("cdiamondOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.cemeraldOre = new BlockCompressedOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:cemerald_ore").setBlockName("cemeraldOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.ccoalOre = new BlockCompressedOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:ccoal_ore").setBlockName("ccoalOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.cironOre = new BlockCompressedOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:ciron_ore").setBlockName("cironOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.cgoldOre = new BlockCompressedOre(Material.rock, Blocks.gold_ore).setBlockTextureName("deepercaves:cgold_ore").setBlockName("cgoldOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.clapisOre = new BlockCompressedOre(Material.rock, Blocks.lapis_ore).setBlockTextureName("deepercaves:clapis_ore").setBlockName("clapisOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.credstoneOre = new BlockCompressedOre(Material.rock, Blocks.redstone_ore).setBlockTextureName("deepercaves:credstone_ore").setBlockName("credstoneOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.cdiamondOre = new BlockCompressedOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:cdiamond_ore").setBlockName("cdiamondOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.cemeraldOre = new BlockCompressedOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:cemerald_ore").setBlockName("cemeraldOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.fragmentedBedrock = new BlockFragmentedBedrock(Material.rock).setBlockTextureName("deepercaves:fragmented_bedrock").setBlockName("fragmentedBedrock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.fragmentedBedrock = new BlockFragmentedBedrock(Material.rock).setBlockTextureName("deepercaves:fragmented_bedrock").setBlockName("fragmentedBedrock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.silverBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:silverBlock").setBlockName("silverBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.silverBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:silverBlock").setBlockName("silverBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.sapphireBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:sapphireBlock").setBlockName("sapphireBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.aquamarineBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:aquamarineBlock").setBlockName("aquamarineBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.ametrineBlock = new BlockAmetrine(Material.rock).setBlockName("ametrineBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.sapphireBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:sapphireBlock").setBlockName("sapphireBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.aquamarineBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:aquamarineBlock").setBlockName("aquamarineBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.ametrineBlock = new BlockAmetrine(Material.rock).setBlockName("ametrineBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         
     }
