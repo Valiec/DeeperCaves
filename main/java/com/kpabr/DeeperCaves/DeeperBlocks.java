@@ -128,7 +128,7 @@ public class DeeperBlocks {
         this.cdiamondOre.setHarvestLevel("pickaxe", 3);
         this.cemeraldOre.setHarvestLevel("pickaxe", 3);
         
-        this.fragmentedBedrock.setHarvestLevel("pickaxe", 3);
+        this.fragmentedBedrock.setHarvestLevel("pickaxe", 4);
        
     }
     

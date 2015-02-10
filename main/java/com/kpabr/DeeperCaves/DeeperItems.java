@@ -19,9 +19,11 @@ public class DeeperItems {
     public static Item ametrineGem;
     
     public static Item aquamarine;
+    
+    public static Item ametrineTippedDiamondPickaxe;
 
     /*Tool and Armor Material declarations*/
-    static ToolMaterial Test = EnumHelper.addToolMaterial("TEST", 4, 2544, 16.0F, 6, 28);
+    static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 13.0F, 3.0F, 10);
     
     public void registerItems()
     {
@@ -31,6 +33,8 @@ public class DeeperItems {
         GameRegistry.registerItem(this.ametrineGem, "ametrine_gem");
         
         GameRegistry.registerItem(this.aquamarine, "aquamarine");
+        
+        GameRegistry.registerItem(this.ametrineTippedDiamondPickaxe, "ametrine_tipped_diamond_pickaxe");
     }
     
     public void setupItems()
@@ -41,5 +45,7 @@ public class DeeperItems {
         this.ametrineGem = new ItemBase().setTextureName("deepercaves:ametrineGem").setUnlocalizedName("ametrineGem").setCreativeTab(CreativeTabs.tabMaterials);
         
         this.aquamarine = new ItemBase().setTextureName("deepercaves:aquamarine").setUnlocalizedName("aquamarine").setCreativeTab(CreativeTabs.tabMaterials);
+        
+        this.ametrineTippedDiamondPickaxe = new ItemPickaxeBase(this.AmetrineD).setTextureName("deepercaves:ametrineTippedDiamondPickaxe").setUnlocalizedName("ametrineTippedDiamondPickaxe").setCreativeTab(CreativeTabs.tabTools);
     }
 }
