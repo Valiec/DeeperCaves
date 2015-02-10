@@ -51,13 +51,19 @@ public class DeeperOregen implements IWorldGenerator
                     case 0:
                     		generateOverworld(world, random, chunkX * 16, chunkZ * 16);
                     		break;
-                    default: generateOverworld(world, random, chunkX * 16, chunkZ * 16); //testing
+                    default: generateDefault(world, random, chunkX * 16, chunkZ * 16);
              }
        }
       
        private void generateOverworld(World world, Random random, int x, int z)
        {
     	   this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
+
+       }
+       
+       private void generateDefault(World world, Random random, int x, int z)
+       {
+    	   //this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
 
        }
 

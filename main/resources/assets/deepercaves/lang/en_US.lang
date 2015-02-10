@@ -13,3 +13,17 @@ tile.credstoneOre.name=Compressed Redstone Ore
 tile.cdiamondOre.name=Compressed Diamond Ore
 tile.cemeraldOre.name=Compressed Emerald Ore
 tile.fragmentedBedrock.name=Fragmented Bedrock
+
+item.aquamarine.name=Aquamarine
+
+tile.silverBlock.name=Block of Silver
+tile.sapphireBlock.name=Block of Sapphire
+tile.aquamarineBlock.name=Block of Aquamarine
+tile.ametrineBlock.name=Block of Ametrine
+
+item.ametrineTippedDiamondPickaxe.name=Ametrine Tipped Diamond Pickaxe
+
+item.ametrineTippedGoldenPickaxe.name=Ametrine Tipped Golden Pickaxe
+item.ametrineTippedIronPickaxe.name=Ametrine Tipped Iron Pickaxe
+item.ametrineTippedStonePickaxe.name=Ametrine Tipped Stone Pickaxe
+item.ametrineTippedWoodenPickaxe.name=Ametrine Tipped Wooden Pickaxe

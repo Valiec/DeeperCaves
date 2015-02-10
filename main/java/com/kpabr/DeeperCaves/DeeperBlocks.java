@@ -90,8 +90,8 @@ public class DeeperBlocks {
         this.bedrockPlainsPortal = new BlockBedrockPlainsPortal(Material.rock).setBlockName("bedrockPlainsPortal").setHardness(3.5F).setResistance(15.0F);
         
         this.sapphireOre = new BlockSapphireOre(Material.rock).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.aquamarineOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);     
-        this.ametrineOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.aquamarineOre = new BlockAquamarineOre(Material.rock).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);     
+        this.ametrineOre = new BlockAmetrineOre(Material.rock).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         
         this.ccoalOre = new BlockCompressedOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:ccoal_ore").setBlockName("ccoalOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         this.cironOre = new BlockCompressedOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:ciron_ore").setBlockName("cironOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
@@ -107,7 +107,7 @@ public class DeeperBlocks {
         
         this.sapphireBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:sapphireBlock").setBlockName("sapphireBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         this.aquamarineBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:aquamarineBlock").setBlockName("aquamarineBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
-        this.ametrineBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:ametrineBlock").setBlockName("ametrineBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
+        this.ametrineBlock = new BlockAmetrine(Material.rock).setBlockName("ametrineBlock").setHardness(0.9F).setResistance(15.0F).setCreativeTab(CreativeTabs.tabBlock);
         
         
     }
