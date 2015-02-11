@@ -105,7 +105,7 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperCaves.blocks.cgoldOre, world, random, x, z, 16, 16, 8, 30, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.clapisOre, world, random, x, z, 16, 16, 7, 35, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.credstoneOre, world, random, x, z, 16, 16, 8, 108, 0, 255, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.cdiamondOre, world, random, x, z, 16, 16, 8, 16, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.cdiamondOre, world, random, x, z, 16, 16, 8, 13, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.cemeraldOre, world, random, x, z, 16, 16, 3, 8, 0, 255, Blocks.stone);
            
        }

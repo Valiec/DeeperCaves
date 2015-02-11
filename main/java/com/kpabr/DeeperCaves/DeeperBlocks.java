@@ -82,12 +82,12 @@ public class DeeperBlocks {
     {
         
         this.silverOre = new BlockSilverOre(Material.rock).setBlockTextureName("deepercaves:silver_ore").setBlockName("silverOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        this.dropPortal = new BlockDropPortal(Material.rock).setBlockName("dropPortal").setHardness(3.5F).setResistance(15.0F);
+        this.dropPortal = new BlockDeeperPortal(Material.rock, 7).setBlockName("dropPortal").setHardness(3.5F).setResistance(15.0F);
         this.returnPortal = new BlockReturnPortal(Material.rock).setBlockName("returnPortal").setHardness(3.5F).setResistance(15.0F);
-        this.mazePortal = new BlockMazePortal(Material.rock).setBlockName("mazePortal").setHardness(3.5F).setResistance(15.0F);
-        this.crystalPortal = new BlockCrystalPortal(Material.rock).setBlockName("crystalPortal").setHardness(3.5F).setResistance(15.0F);
-        this.compressedPortal = new BlockCompressedPortal(Material.rock).setBlockName("compressedPortal").setHardness(3.5F).setResistance(15.0F);
-        this.bedrockPlainsPortal = new BlockBedrockPlainsPortal(Material.rock).setBlockName("bedrockPlainsPortal").setHardness(3.5F).setResistance(15.0F);
+        this.mazePortal = new BlockDeeperPortal(Material.rock, 8).setBlockName("mazePortal").setHardness(3.5F).setResistance(15.0F);
+        this.crystalPortal = new BlockDeeperPortal(Material.rock, 9).setBlockName("crystalPortal").setHardness(3.5F).setResistance(15.0F);
+        this.compressedPortal = new BlockDeeperPortal(Material.rock, 10).setBlockName("compressedPortal").setHardness(3.5F).setResistance(15.0F);
+        this.bedrockPlainsPortal = new BlockDeeperPortal(Material.rock, 11).setBlockName("bedrockPlainsPortal").setHardness(3.5F).setResistance(15.0F);
         
         this.sapphireOre = new BlockSapphireOre(Material.rock).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.aquamarineOre = new BlockAquamarineOre(Material.rock).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);     
