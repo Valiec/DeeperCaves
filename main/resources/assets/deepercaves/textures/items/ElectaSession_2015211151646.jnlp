@@ -1,0 +1,46 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp codebase="http://www.e-lectazone.com/SetupFiles/v802/jnlp/" spec="1.0+">
+    <information>
+        <title>Electa Live</title>
+        <vendor>ELECTA COMMUNICATIONS LTD</vendor>
+        <homepage href="http://www.e-lecta.com"/>
+        <description>Virtual Classroom and Online Collaboration Environment for Online Teaching, Web Conferencing and Web Collaboration</description>
+        <description kind="short">Electa Live</description>
+    </information>
+    <!--${JNLP.UPDATE}-->
+	<security>
+		<all-permissions/>
+	</security>
+    
+    <resources>
+		<j2se version="1.6+"/>
+		<jar eager="true" href="JLectaLive8.jar" main="true"/>
+		<jar href="lib/appframework-1.0.3.jar"/>
+		<jar href="lib/swing-worker-1.1.jar"/>
+		<jar href="lib/AbsoluteLayout.jar"/>
+		<jar href="lib/PDFRenderer.jar"/>
+		<jar href="lib/eLectaClipart.jar"/>
+		<jar href="lib/electaosxcam.jar"/>
+		<jar href="lib/electaosxvideo.jar"/>
+		<jar href="lib/poi-3.9-20121203.jar"/>
+		<jar href="lib/poi-scratchpad-3.9-20121203.jar"/>
+		<jar href="lib/poi-ooxml-3.9-20121203.jar"/>
+		<jar href="lib/poi-ooxml-schemas-3.9-20121203.jar"/>
+		<jar href="lib/xmlbeans-2.3.0.jar"/>
+		<jar href="lib/dom4j-1.6.1.jar"/>
+    </resources>
+
+    
+	<application-desc main-class="jlectalive8.JLectaLive8App">
+		<argument>el11rs.e-lecta.com</argument>
+		<argument>9910</argument>
+		<argument>ckumar878</argument>
+		<argument>91ntinL$</argument>
+		<argument>4970</argument>
+		<argument>0140B141-25F8-48A2-9776-C87FD0B2CD2D</argument>
+	</application-desc>
+    
+</jnlp>
+
