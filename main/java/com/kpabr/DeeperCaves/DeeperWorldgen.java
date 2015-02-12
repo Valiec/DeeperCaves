@@ -34,6 +34,11 @@ public class DeeperWorldgen {
     public int crystalDimID = 9;
     public int compressedDimID = 10;
     public int bedrockPlainsDimID = 11;
+    public BiomeGenDeeper biomeDrop;
+    public BiomeGenDeeper biomeMaze;
+    public BiomeGenDeeper biomeCrystal;
+    public BiomeGenDeeper biomeCompressed;
+    public BiomeGenDeeper biomeBedrockPlains;
     public void setupWorldgen()
     {
         
@@ -50,6 +55,26 @@ public class DeeperWorldgen {
         DimensionManager.registerProviderType(bedrockPlainsDimID, WorldProviderBedrockPlains.class, true);
         DimensionManager.registerDimension(bedrockPlainsDimID, bedrockPlainsDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
+        this.biomeDrop = new BiomeGenDeeper(80, 0);
+        BiomeEntry dropEntry = new BiomeEntry(this.biomeDrop, 50);
+        BiomeDictionary.registerBiomeType(this.biomeDrop, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeDrop);
+        this.biomeMaze = new BiomeGenDeeper(81, 0);
+        BiomeEntry mazeEntry = new BiomeEntry(this.biomeMaze, 50);
+        BiomeDictionary.registerBiomeType(this.biomeMaze, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeMaze);
+        this.biomeCrystal = new BiomeGenDeeper(82, 0);
+        BiomeEntry crystalEntry = new BiomeEntry(this.biomeCrystal, 50);
+        BiomeDictionary.registerBiomeType(this.biomeCrystal, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeCrystal);
+        this.biomeCompressed = new BiomeGenDeeper(83, 0);
+        BiomeEntry compressedEntry = new BiomeEntry(this.biomeCompressed, 50);
+        BiomeDictionary.registerBiomeType(this.biomeCompressed, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeCompressed);
+        this.biomeBedrockPlains = new BiomeGenDeeper(84, 0);
+        BiomeEntry bedrockPlainsEntry = new BiomeEntry(this.biomeBedrockPlains, 50);
+        BiomeDictionary.registerBiomeType(this.biomeBedrockPlains, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeBedrockPlains);
     }
     
 }

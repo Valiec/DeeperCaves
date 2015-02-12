@@ -25,7 +25,7 @@ public class WorldProviderDrop extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.plains, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeDrop, 0.5F);
         this.dimensionId = 7;
         this.hasNoSky = true;
     }

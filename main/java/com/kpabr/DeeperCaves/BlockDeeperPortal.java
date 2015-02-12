@@ -27,11 +27,11 @@ public class BlockDeeperPortal extends Block
     private static final String __OBFID = "CL_00000236";
     private static int dim;
 
-    protected BlockDeeperPortal(Material p_i45404_1_, int dim)
+    protected BlockDeeperPortal(Material p_i45404_1_, int dimension)
     {
         super(p_i45404_1_);
         this.setLightLevel(1.0F);
-        this.dim = dim;
+        this.dim = dimension;
         
     }
 
@@ -70,7 +70,7 @@ public class BlockDeeperPortal extends Block
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
         	if(player.dimension != this.dim)
         	{
-        	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, this.dim, new DeeperTeleporter(player.mcServer.worldServerForDimension(10)));
+        	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, this.dim, new DeeperTeleporter(player.mcServer.worldServerForDimension(this.dim)));
         	}
         	}
         	catch(ClassCastException e)

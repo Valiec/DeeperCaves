@@ -25,7 +25,7 @@ public class WorldProviderBedrockPlains extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.plains, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeBedrockPlains, 0.5F);
         this.dimensionId = 11;
         this.hasNoSky = true;
     }
