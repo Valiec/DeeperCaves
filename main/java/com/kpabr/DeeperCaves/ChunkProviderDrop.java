@@ -212,6 +212,30 @@ public class ChunkProviderDrop implements IChunkProvider
             {
                 BiomeGenBase biomegenbase = p_147422_5_[l + k * 16];
                 biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
+                int i1 = p_147422_1_ * 16 + k & 15;
+                int j1 = p_147422_2_ * 16 + l & 15;
+                int k1 = p_147422_3_.length / 256;
+                for (int l1 = 255; l1 >= 0; --l1)
+                {
+                    int i2 = (j1 * 16 + i1) * k1 + l1;
+
+                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
+                    {
+                    	p_147422_3_[i2] = Blocks.stone;
+                    }
+                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
+                    {
+                    	p_147422_3_[i2] = Blocks.stone;
+                    }
+                    if (l1 == 2)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
+                    }
+                    if (l1 == 254)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
+                    }
+                }
             }
         }
     }

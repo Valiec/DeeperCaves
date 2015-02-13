@@ -88,7 +88,7 @@ public class BlockCompressedPortal extends Block
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister p_149651_1_)
     {
-        this.blockIcon = p_149651_1_.registerIcon("portal");
+        this.blockIcon = p_149651_1_.registerIcon("deepercaves:portal_2");
     }
 
     public MapColor getMapColor(int p_149728_1_)

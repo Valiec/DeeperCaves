@@ -223,6 +223,15 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                 for (int l1 = 255; l1 >= 0; --l1)
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
+                    int i3;
+                    if(l1<255)
+                    {
+                    i3 = (j1 * 16 + i1) * k1 + (l1+1);
+                    }
+                    else
+                    {
+                    i3 = i2;
+                    }
 
                     if (l1 <= 0 + this.rand.nextInt(5))
                     {
@@ -235,6 +244,14 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                     if (l1 <= 155)
                     {
                     	p_147422_3_[i2] = Blocks.bedrock;
+                    }
+                    if (l1 == 154)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
+                    }
+                    if (l1 == 254)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
                     }
                     
                 }

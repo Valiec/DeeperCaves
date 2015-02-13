@@ -73,23 +73,23 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(Blocks.gold_ore, world, random, x, z, 16, 16, 16, 8, 0, 256, Blocks.stone);
     	   this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
     	   this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.mazePortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.mazePortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
            
        }
        private void generateMaze(World world, Random random, int x, int z)
        {
     	   
-    	   this.addOre(DeeperCaves.blocks.crystalPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.crystalPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.silverOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
            
        }
        private void generateCrystal(World world, Random random, int x, int z)
        {
     	   
-    	   this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.mazePortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.mazePortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.sapphireOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.aquamarineOre, world, random, x, z, 16, 16, 9, 40, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.ametrineOre, world, random, x, z, 16, 16, 12, 4, 0, 255, Blocks.stone);
@@ -98,8 +98,8 @@ public class DeeperOregen implements IWorldGenerator
        private void generateCompressed(World world, Random random, int x, int z)
        {
     	   
-    	   this.addOre(DeeperCaves.blocks.bedrockPlainsPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
-    	   this.addOre(DeeperCaves.blocks.crystalPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.bedrockPlainsPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.crystalPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.ccoalOre, world, random, x, z, 16, 16, 15, 160, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.cironOre, world, random, x, z, 16, 16, 10, 130, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.cgoldOre, world, random, x, z, 16, 16, 8, 30, 0, 255, Blocks.stone);
@@ -112,9 +112,9 @@ public class DeeperOregen implements IWorldGenerator
        private void generateBedrockPlains(World world, Random random, int x, int z)
        {
     	   
-    	   this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
-    	   this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
-    	   this.addOre(DeeperCaves.blocks.fragmentedBedrock, world, random, x, z, 16, 16, 8, 4, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
+    	   this.addOre(DeeperCaves.blocks.fragmentedBedrock, world, random, x, z, 16, 16, 8, 4, 150, 255, Blocks.bedrock);
            
        }
        
