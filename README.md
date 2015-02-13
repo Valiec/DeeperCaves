@@ -1,4 +1,4 @@
-#DeeperCaves 0.0.1 for Minecraft 1.7.10
+#DeeperCaves 0.1.0 for Minecraft 1.7.10
 
 
 ##How to Install:
