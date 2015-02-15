@@ -10,6 +10,7 @@ import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemRedstone;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DeeperItems {
@@ -53,6 +54,15 @@ public class DeeperItems {
         GameRegistry.registerItem(this.ametrineTippedStonePickaxe, "ametrine_tipped_stone_pickaxe");
         
         GameRegistry.registerItem(this.ametrineTippedWoodenPickaxe, "ametrine_tipped_wooden_pickaxe");
+    }
+    
+    public void registerItemsOreDict()
+    {
+    	OreDictionary.registerOre("ingotSilver", this.silverIngot);  
+    	OreDictionary.registerOre("gemSapphire", this.sapphireGem);  
+    	OreDictionary.registerOre("gemAmetrine", this.ametrineGem);  
+        
+    	OreDictionary.registerOre("gemAquamarine", this.aquamarine);  
     }
     
     public void setupItems()

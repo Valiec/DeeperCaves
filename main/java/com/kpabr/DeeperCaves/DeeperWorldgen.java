@@ -10,6 +10,7 @@ import net.minecraft.world.WorldType;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.ChunkProviderEnd;
+import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.ChunkProviderHell;
 import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraft.world.gen.layer.GenLayer;
@@ -75,6 +76,20 @@ public class DeeperWorldgen {
         BiomeEntry bedrockPlainsEntry = new BiomeEntry(this.biomeBedrockPlains, 50);
         BiomeDictionary.registerBiomeType(this.biomeBedrockPlains, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeBedrockPlains);
+    }
+    @SubscribeEvent
+    public void onOverworldBiomes(ReplaceBiomeBlocks event)
+    {
+        if (event.chunkProvider.getClass() == ChunkProviderGenerate.class)
+        {
+            
+        
+            ChunkProviderGenerate2 gen = (ChunkProviderGenerate2)(new ChunkProviderGenerate2(DimensionManager.getWorld(0), DimensionManager.getWorld(0).getSeed(), true));
+
+            event.setResult(Result.DENY);
+            gen.replaceBlocksForBiome(event.chunkX, event.chunkZ, event.blockArray, event.metaArray, event.biomeArray);
+        }
+
     }
     
 }

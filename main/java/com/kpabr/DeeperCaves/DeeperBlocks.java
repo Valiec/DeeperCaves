@@ -9,6 +9,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSlab;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class DeeperBlocks {
 
@@ -76,6 +77,31 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.sapphireBlock, "sapphire_block");
         GameRegistry.registerBlock(this.aquamarineBlock, "aquamarine_block");
         GameRegistry.registerBlock(this.ametrineBlock, "ametrine_block");
+        
+    }
+    public void registerBlocksOreDict()
+    {
+    	OreDictionary.registerOre("oreSilver", this.silverOre);
+    	
+    	OreDictionary.registerOre("oreSapphire", this.sapphireOre);
+    	OreDictionary.registerOre("oreAquamarine", this.aquamarineBlock);
+    	OreDictionary.registerOre("oreAmetrine", this.ametrineOre);
+    	
+    	OreDictionary.registerOre("oreCompressedCoal", this.ccoalOre);
+    	OreDictionary.registerOre("oreCompressedIron", this.cironOre);
+    	OreDictionary.registerOre("oreCompressedGold", this.cgoldOre);
+    	OreDictionary.registerOre("oreCompressedLapis", this.clapisOre);
+    	OreDictionary.registerOre("oreCompressedRedstone", this.credstoneOre);
+    	OreDictionary.registerOre("oreCompressedDiamond", this.cdiamondOre);
+    	OreDictionary.registerOre("oreCompressedEmerald", this.cemeraldOre);
+        
+    	OreDictionary.registerOre("blockFragmentedBedrock", this.fragmentedBedrock);
+    	
+    	OreDictionary.registerOre("blockSilver", this.silverBlock);
+    	
+    	OreDictionary.registerOre("blockSapphire", this.sapphireBlock);
+    	OreDictionary.registerOre("blockSapphire", this.aquamarineBlock);
+    	OreDictionary.registerOre("blockAquamarine", this.ametrineBlock);  
         
     }
     public void setupBlocks()

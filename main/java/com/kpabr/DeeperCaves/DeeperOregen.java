@@ -57,7 +57,8 @@ public class DeeperOregen implements IWorldGenerator
       
        private void generateOverworld(World world, Random random, int x, int z)
        {
-    	   this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
+    	   //this.addOre(Blocks.air, world, random, x, z, 16, 16, 8, 4, 0, 6, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.dropPortal, world, random, x, z, 16, 16, 8, 16, 0, 6, Blocks.air);
 
        }
        
