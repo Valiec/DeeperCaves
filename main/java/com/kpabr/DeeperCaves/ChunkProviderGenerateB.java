@@ -34,7 +34,7 @@ import net.minecraftforge.common.*;
 import cpw.mods.fml.common.eventhandler.Event.*;
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderBedrockPlanes implements IChunkProvider
+public class ChunkProviderGenerateB implements IChunkProvider
 {
     /** RNG. */
     private Random rand;
@@ -50,12 +50,12 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
     /** Reference to the World object. */
     private World worldObj;
     /** are map structures going to be generated (e.g. strongholds) */
-    private boolean mapFeaturesEnabled = false;
-    private WorldType field_147435_p = null;
-    private double[] field_147434_q = {};
-    private float[] parabolicField = {};
+    private final boolean mapFeaturesEnabled;
+    private WorldType field_147435_p;
+    private final double[] field_147434_q;
+    private final float[] parabolicField;
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenDeeperCaves();
+    private MapGenBase caveGenerator = new MapGenCaves();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
@@ -64,7 +64,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine();
+    private MapGenBase ravineGenerator = new MapGenRavine();
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
     double[] field_147427_d;
@@ -81,14 +81,14 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
         mineshaftGenerator = (MapGenMineshaft) TerrainGen.getModdedMapGen(mineshaftGenerator, MINESHAFT);
         scatteredFeatureGenerator = (MapGenScatteredFeature) TerrainGen.getModdedMapGen(scatteredFeatureGenerator, SCATTERED_FEATURE);
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
-    }    
+    }
 
-    public ChunkProviderBedrockPlanes(World par1World, long par2, boolean par4)
+    public ChunkProviderGenerateB(World p_i2006_1_, long p_i2006_2_, boolean p_i2006_4_)
     {
-        this.worldObj = par1World;
-        this.mapFeaturesEnabled = par4;
-        this.field_147435_p = par1World.getWorldInfo().getTerrainType();
-        this.rand = new Random(par2);
+        this.worldObj = p_i2006_1_;
+        this.mapFeaturesEnabled = p_i2006_4_;
+        this.field_147435_p = p_i2006_1_.getWorldInfo().getTerrainType();
+        this.rand = new Random(p_i2006_2_);
         this.field_147431_j = new NoiseGeneratorOctaves(this.rand, 16);
         this.field_147432_k = new NoiseGeneratorOctaves(this.rand, 16);
         this.field_147429_l = new NoiseGeneratorOctaves(this.rand, 8);
@@ -109,7 +109,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
         }
 
         NoiseGenerator[] noiseGens = {field_147431_j, field_147432_k, field_147429_l, field_147430_m, noiseGen5, noiseGen6, mobSpawnerNoise};
-        noiseGens = TerrainGen.getModdedNoiseGenerators(par1World, this.rand, noiseGens);
+        noiseGens = TerrainGen.getModdedNoiseGenerators(p_i2006_1_, this.rand, noiseGens);
         this.field_147431_j = (NoiseGeneratorOctaves)noiseGens[0];
         this.field_147432_k = (NoiseGeneratorOctaves)noiseGens[1];
         this.field_147429_l = (NoiseGeneratorOctaves)noiseGens[2];
@@ -174,11 +174,11 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
                                 }
                                 else if (k2 * 8 + l2 < b0)
                                 {
-                                    p_147424_3_[j3 += short1] = Blocks.stone;
+                                    p_147424_3_[j3 += short1] = Blocks.water;
                                 }
                                 else
                                 {
-                                    p_147424_3_[j3 += short1] =Blocks.stone;
+                                    p_147424_3_[j3 += short1] = null;
                                 }
                             }
 
@@ -198,7 +198,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
 
     public void replaceBlocksForBiome(int p_147422_1_, int p_147422_2_, Block[] p_147422_3_, byte[] p_147422_4_, BiomeGenBase[] p_147422_5_)
     {
-        ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, p_147422_1_, p_147422_2_, p_147422_3_, p_147422_5_);
+        ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, p_147422_1_, p_147422_2_, p_147422_3_, p_147422_4_, p_147422_5_, this.worldObj);
         MinecraftForge.EVENT_BUS.post(event);
         if (event.getResult() == Result.DENY) return;
 
@@ -218,35 +218,35 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
     /**
      * loads or generates the chunk at the chunk location specified
      */
-    public Chunk loadChunk(int par1, int par2)
+    public Chunk loadChunk(int p_73158_1_, int p_73158_2_)
     {
-        return this.provideChunk(par1, par2);
+        return this.provideChunk(p_73158_1_, p_73158_2_);
     }
 
     /**
      * Will return back a chunk, if it doesn't exist and its not a MP client it will generates all the blocks for the
      * specified chunk from the map seed and chunk seed
      */
-    public Chunk provideChunk(int par1, int par2)
+    public Chunk provideChunk(int p_73154_1_, int p_73154_2_)
     {
-        this.rand.setSeed((long)par1 * 341873128712L + (long)par2 * 132897987541L);
+        this.rand.setSeed((long)p_73154_1_ * 341873128712L + (long)p_73154_2_ * 132897987541L);
         Block[] ablock = new Block[65536];
         byte[] abyte = new byte[65536];
-        this.func_147424_a(par1, par2, ablock);
-        this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
-        this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
-        this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-        //this.ravineGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+        this.func_147424_a(p_73154_1_, p_73154_2_, ablock);
+        this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, p_73154_1_ * 16, p_73154_2_ * 16, 16, 16);
+        this.replaceBlocksForBiome(p_73154_1_, p_73154_2_, ablock, abyte, this.biomesForGeneration);
+        this.caveGenerator.func_151539_a(this, this.worldObj, p_73154_1_, p_73154_2_, ablock);
+        this.ravineGenerator.func_151539_a(this, this.worldObj, p_73154_1_, p_73154_2_, ablock);
 
         if (this.mapFeaturesEnabled)
         {
-            this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            this.mineshaftGenerator.func_151539_a(this, this.worldObj, p_73154_1_, p_73154_2_, ablock);
+            this.villageGenerator.func_151539_a(this, this.worldObj, p_73154_1_, p_73154_2_, ablock);
+            this.strongholdGenerator.func_151539_a(this, this.worldObj, p_73154_1_, p_73154_2_, ablock);
+            this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, p_73154_1_, p_73154_2_, ablock);
         }
 
-        Chunk chunk = new Chunk(this.worldObj, ablock, abyte, par1, par2);
+        Chunk chunk = new Chunk(this.worldObj, ablock, abyte, p_73154_1_, p_73154_2_);
         byte[] abyte1 = chunk.getBiomeArray();
 
         for (int k = 0; k < abyte1.length; ++k)
@@ -383,7 +383,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
     /**
      * Checks to see if a chunk exists at x, y
      */
-    public boolean chunkExists(int par1, int par2)
+    public boolean chunkExists(int p_73149_1_, int p_73149_2_)
     {
         return true;
     }
@@ -391,26 +391,26 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
     /**
      * Populates chunk with ores etc etc
      */
-    public void populate(IChunkProvider par1IChunkProvider, int par2, int par3)
+    public void populate(IChunkProvider p_73153_1_, int p_73153_2_, int p_73153_3_)
     {
         BlockFalling.fallInstantly = true;
-        int k = par2 * 16;
-        int l = par3 * 16;
+        int k = p_73153_2_ * 16;
+        int l = p_73153_3_ * 16;
         BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(k + 16, l + 16);
         this.rand.setSeed(this.worldObj.getSeed());
         long i1 = this.rand.nextLong() / 2L * 2L + 1L;
         long j1 = this.rand.nextLong() / 2L * 2L + 1L;
-        this.rand.setSeed((long)par2 * i1 + (long)par3 * j1 ^ this.worldObj.getSeed());
+        this.rand.setSeed((long)p_73153_2_ * i1 + (long)p_73153_3_ * j1 ^ this.worldObj.getSeed());
         boolean flag = false;
 
-        MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(par1IChunkProvider, worldObj, rand, par2, par3, flag));
+        MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag));
 
         if (this.mapFeaturesEnabled)
         {
-            this.mineshaftGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-            flag = this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-            this.strongholdGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-            this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
+            this.mineshaftGenerator.generateStructuresInChunk(this.worldObj, this.rand, p_73153_2_, p_73153_3_);
+            flag = this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, p_73153_2_, p_73153_3_);
+            this.strongholdGenerator.generateStructuresInChunk(this.worldObj, this.rand, p_73153_2_, p_73153_3_);
+            this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj, this.rand, p_73153_2_, p_73153_3_);
         }
 
         int k1;
@@ -418,7 +418,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
         int i2;
 
         if (biomegenbase != BiomeGenBase.desert && biomegenbase != BiomeGenBase.desertHills && !flag && this.rand.nextInt(4) == 0
-            && TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAKE))
+            && TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, LAKE))
         {
             k1 = k + this.rand.nextInt(16) + 8;
             l1 = this.rand.nextInt(256);
@@ -426,7 +426,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
             (new WorldGenLakes(Blocks.water)).generate(this.worldObj, this.rand, k1, l1, i2);
         }
 
-        if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
+        if (TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
         {
             k1 = k + this.rand.nextInt(16) + 8;
             l1 = this.rand.nextInt(this.rand.nextInt(248) + 8);
@@ -438,7 +438,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
             }
         }
 
-        boolean doGen = TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, DUNGEON);
+        boolean doGen = TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, DUNGEON);
         for (k1 = 0; doGen && k1 < 8; ++k1)
         {
             l1 = k + this.rand.nextInt(16) + 8;
@@ -448,14 +448,14 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
         }
 
         biomegenbase.decorate(this.worldObj, this.rand, k, l);
-        if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, ANIMALS))
+        if (TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, ANIMALS))
         {
         SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.rand);
         }
         k += 8;
         l += 8;
 
-        doGen = TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, ICE);
+        doGen = TerrainGen.populate(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag, ICE);
         for (k1 = 0; doGen && k1 < 16; ++k1)
         {
             for (l1 = 0; l1 < 16; ++l1)
@@ -474,7 +474,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
             }
         }
 
-        MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, flag));
+        MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(p_73153_1_, worldObj, rand, p_73153_2_, p_73153_3_, flag));
 
         BlockFalling.fallInstantly = false;
     }
@@ -483,7 +483,7 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
      * Two modes of operation: if passed true, save all Chunks in one go.  If passed false, save up to two chunks.
      * Return true if all chunks have been saved.
      */
-    public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate)
+    public boolean saveChunks(boolean p_73151_1_, IProgressUpdate p_73151_2_)
     {
         return true;
     }
@@ -521,10 +521,10 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
     /**
      * Returns a list of creatures of the specified type that can spawn at the given location.
      */
-    public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int par2, int par3, int par4)
+    public List getPossibleCreatures(EnumCreatureType p_73155_1_, int p_73155_2_, int p_73155_3_, int p_73155_4_)
     {
-        BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(par2, par4);
-        return par1EnumCreatureType == EnumCreatureType.monster && this.scatteredFeatureGenerator.func_143030_a(par2, par3, par4) ? this.scatteredFeatureGenerator.getScatteredFeatureSpawnList() : biomegenbase.getSpawnableList(par1EnumCreatureType);
+        BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p_73155_2_, p_73155_4_);
+        return p_73155_1_ == EnumCreatureType.monster && this.scatteredFeatureGenerator.func_143030_a(p_73155_2_, p_73155_3_, p_73155_4_) ? this.scatteredFeatureGenerator.getScatteredFeatureSpawnList() : biomegenbase.getSpawnableList(p_73155_1_);
     }
 
     public ChunkPosition func_147416_a(World p_147416_1_, String p_147416_2_, int p_147416_3_, int p_147416_4_, int p_147416_5_)
@@ -537,14 +537,14 @@ public class ChunkProviderBedrockPlanes implements IChunkProvider
         return 0;
     }
 
-    public void recreateStructures(int par1, int par2)
+    public void recreateStructures(int p_82695_1_, int p_82695_2_)
     {
         if (this.mapFeaturesEnabled)
         {
-            this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
-            this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
-            this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
-            this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
+            this.mineshaftGenerator.func_151539_a(this, this.worldObj, p_82695_1_, p_82695_2_, (Block[])null);
+            this.villageGenerator.func_151539_a(this, this.worldObj, p_82695_1_, p_82695_2_, (Block[])null);
+            this.strongholdGenerator.func_151539_a(this, this.worldObj, p_82695_1_, p_82695_2_, (Block[])null);
+            this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, p_82695_1_, p_82695_2_, (Block[])null);
         }
     }
 }

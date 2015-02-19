@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.WorldServer;
@@ -84,12 +85,39 @@ public class DeeperWorldgen {
         {
             
         
-            ChunkProviderGenerate2 gen = (ChunkProviderGenerate2)(new ChunkProviderGenerate2(DimensionManager.getWorld(0), DimensionManager.getWorld(0).getSeed(), true));
+            
+        	//ChunkProviderGenerate gen = new ChunkProviderGenerate(DimensionManager.getWorld(0), DimensionManager.getWorld(0).getSeed(), true);
 
+
+            ChunkProviderGenerateB gen = (ChunkProviderGenerateB)(new ChunkProviderGenerateB(event.world, event.world.getSeed(), true));
             event.setResult(Result.DENY);
             gen.replaceBlocksForBiome(event.chunkX, event.chunkZ, event.blockArray, event.metaArray, event.biomeArray);
+        	for (int k = 0; k < 16; ++k)
+            {
+                for (int l = 0; l < 16; ++l)
+                {
+                    //BiomeGenBase biomegenbase = p_147422_5_[l + k * 16];
+                    //biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
+                    int i1 = event.chunkX * 16 + k & 15;
+                    int j1 = event.chunkZ * 16 + l & 15;
+                    int k1 = event.blockArray.length / 256;
+                    for (int l1 = 255; l1 >= 0; --l1)
+                    {
+                        int i2 = (j1 * 16 + i1) * k1 + l1;
+
+                        if (l1 <= 5 && l1 > 1 && event.blockArray[i2] == Blocks.bedrock)
+                        {
+                        	event.blockArray[i2] = Blocks.stone;
+                        }
+                        if (l1 == 2)
+                        {
+                        	event.blockArray[i2] = DeeperCaves.blocks.dropPortal;
+                        }
+                    }
+                }
         }
 
     }
     
+}
 }
