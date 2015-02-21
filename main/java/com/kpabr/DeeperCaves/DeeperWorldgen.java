@@ -36,11 +36,19 @@ public class DeeperWorldgen {
     public int crystalDimID = 9;
     public int compressedDimID = 10;
     public int bedrockPlainsDimID = 11;
+    
+    public int nearNetherDimID = 12;
+    public int lavaDimID = 13;
+    public int nearVoidDimID = 14;
     public BiomeGenDrop biomeDrop;
     public BiomeGenMaze biomeMaze;
     public BiomeGenCrystal biomeCrystal;
     public BiomeGenCompressed biomeCompressed;
     public BiomeGenBedrockPlains biomeBedrockPlains;
+    
+    public BiomeGenNearNether biomeNearNether;
+    public BiomeGenLava biomeLava;
+    public BiomeGenNearVoid biomeNearVoid;
     public void setupWorldgen()
     {
         
@@ -56,6 +64,13 @@ public class DeeperWorldgen {
         DimensionManager.registerDimension(compressedDimID, compressedDimID);
         DimensionManager.registerProviderType(bedrockPlainsDimID, WorldProviderBedrockPlains.class, true);
         DimensionManager.registerDimension(bedrockPlainsDimID, bedrockPlainsDimID);
+        
+        DimensionManager.registerProviderType(nearNetherDimID, WorldProviderBedrockPlains.class, true);
+        DimensionManager.registerDimension(nearNetherDimID, nearNetherDimID);
+        DimensionManager.registerProviderType(lavaDimID, WorldProviderBedrockPlains.class, true);
+        DimensionManager.registerDimension(lavaDimID, lavaDimID);
+        DimensionManager.registerProviderType(nearVoidDimID, WorldProviderBedrockPlains.class, true);
+        DimensionManager.registerDimension(nearVoidDimID, nearVoidDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
         this.biomeDrop = new BiomeGenDrop(80, 0);
         BiomeEntry dropEntry = new BiomeEntry(this.biomeDrop, 50);
@@ -77,6 +92,19 @@ public class DeeperWorldgen {
         BiomeEntry bedrockPlainsEntry = new BiomeEntry(this.biomeBedrockPlains, 50);
         BiomeDictionary.registerBiomeType(this.biomeBedrockPlains, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeBedrockPlains);
+        this.biomeNearNether = new BiomeGenNearNether(85, 0);
+        
+        BiomeEntry nearNetherEntry = new BiomeEntry(this.biomeNearNether, 50);
+        BiomeDictionary.registerBiomeType(this.biomeNearNether, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeNearNether);
+        this.biomeLava = new BiomeGenLava(86, 0);
+        BiomeEntry lavaEntry = new BiomeEntry(this.biomeLava, 50);
+        BiomeDictionary.registerBiomeType(this.biomeLava, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeLava);
+        this.biomeNearVoid = new BiomeGenNearVoid(87, 0);
+        BiomeEntry nearVoidEntry = new BiomeEntry(this.biomeNearVoid, 50);
+        BiomeDictionary.registerBiomeType(this.biomeNearVoid, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeNearVoid);
     }
     @SubscribeEvent
     public void onOverworldBiomes(ReplaceBiomeBlocks event)

@@ -278,7 +278,10 @@ public class DeeperTeleporter extends Teleporter
                         j4 = k2 + (j3 - 1) * l2 - i3 * l5;
                         flag = k3 < 0;
                         //p_85188_1_.setPosition(l3, i4, j4);
-                        this.worldServerInstance.setBlock(l3, i4, j4, flag ? Blocks.air : Blocks.air);
+                        if(!flag)
+                        {
+                        this.worldServerInstance.setBlock(l3, i4, j4, Blocks.air);
+                        }
                     }
                 }
             }
@@ -298,7 +301,10 @@ public class DeeperTeleporter extends Teleporter
                     {
                     p_85188_1_.setPosition(l3, i4, j4);
                     }
-                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(flag ? Blocks.air : Blocks.air), 0, 2);
+                    if(!flag)
+                    {
+                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(Blocks.air), 0, 2);
+                    }
                 }
             }
 

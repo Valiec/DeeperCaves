@@ -24,6 +24,10 @@ public class DeeperBlocks {
     public static Block compressedPortal;
     public static Block bedrockPlainsPortal;
     
+    public static Block nearNetherPortal;
+    public static Block lavaPortal;
+    public static Block nearVoidPortal;
+    
     public static Block sapphireOre;
     public static Block aquamarineOre;
     public static Block ametrineOre;
@@ -57,6 +61,10 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.crystalPortal, "crystal_portal");
         GameRegistry.registerBlock(this.compressedPortal, "compressed_portal");
         GameRegistry.registerBlock(this.bedrockPlainsPortal, "bedrock_plains_portal");
+        
+        GameRegistry.registerBlock(this.nearNetherPortal, "near_nether_portal");
+        GameRegistry.registerBlock(this.lavaPortal, "lava_portal");
+        GameRegistry.registerBlock(this.nearVoidPortal, "near_void_portal");
         
         GameRegistry.registerBlock(this.sapphireOre, "sapphire_ore");
         GameRegistry.registerBlock(this.aquamarineOre, "aquamarine_ore");
@@ -114,6 +122,10 @@ public class DeeperBlocks {
         this.crystalPortal = new BlockCrystalPortal(Material.rock).setBlockName("crystalPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.compressedPortal = new BlockCompressedPortal(Material.rock).setBlockName("compressedPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.bedrockPlainsPortal = new BlockBedrockPlainsPortal(Material.rock).setBlockName("bedrockPlainsPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        
+        this.nearNetherPortal = new BlockNearNetherPortal(Material.rock).setBlockName("nearNetherPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        this.lavaPortal = new BlockLavaPortal(Material.rock).setBlockName("lavaPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        this.nearVoidPortal = new BlockNearVoidPortal(Material.rock).setBlockName("nearVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         
         this.sapphireOre = new BlockSapphireOre(Material.rock).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.aquamarineOre = new BlockAquamarineOre(Material.rock).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);     
