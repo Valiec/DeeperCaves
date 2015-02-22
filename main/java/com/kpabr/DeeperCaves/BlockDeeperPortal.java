@@ -25,7 +25,7 @@ public class BlockDeeperPortal extends Block
 {
     public static boolean field_149948_a;
     private static final String __OBFID = "CL_00000236";
-    private static int dim;
+    private int dim;
 
     protected BlockDeeperPortal(Material p_i45404_1_, int dimension)
     {
