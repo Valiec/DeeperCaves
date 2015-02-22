@@ -117,7 +117,7 @@ public class DeeperWorldgen {
         	//ChunkProviderGenerate gen = new ChunkProviderGenerate(DimensionManager.getWorld(0), DimensionManager.getWorld(0).getSeed(), true);
 
 
-            ChunkProviderGenerateB gen = (ChunkProviderGenerateB)(new ChunkProviderGenerateB(event.world, event.world.getSeed(), true));
+            ChunkProviderGenerateDuplicate gen = (ChunkProviderGenerateDuplicate)(new ChunkProviderGenerateDuplicate(event.world, event.world.getSeed(), true));
             event.setResult(Result.DENY);
             gen.replaceBlocksForBiome(event.chunkX, event.chunkZ, event.blockArray, event.metaArray, event.biomeArray);
         	for (int k = 0; k < 16; ++k)

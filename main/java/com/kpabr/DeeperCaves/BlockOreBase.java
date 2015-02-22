@@ -18,21 +18,28 @@ import net.minecraft.world.World;
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class BlockAmetrineOre extends Block {
+public class BlockOreBase extends Block {
+	
+	private Item drop;
+	private int quantity;
+	private int randval;
 
-	public BlockAmetrineOre(Material par2Material) {
+	public BlockOreBase(Material par2Material, Item drop, int quantity, int randval) {
 		super(par2Material);
+		this.drop = drop;
+		this.quantity = quantity;
+		this.randval = randval;
 		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return DeeperCaves.items.ametrineGem;
+        return drop;
     }
 	@Override
     public int quantityDropped(Random par1Random)
     {
-        return 1 + par1Random.nextInt(1);
+        return quantity + par1Random.nextInt(randval);
     }
 
 }

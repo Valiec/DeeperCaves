@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
 
-public class MapGenDeeperCaves extends MapGenBase
+public class MapGenDeeperCavesDrop extends MapGenBase
 {
     private static final String __OBFID = "CL_00000393";
 
@@ -46,7 +46,7 @@ public class MapGenDeeperCaves extends MapGenBase
         {
             double d6 = 4.0D + (double)(MathHelper.sin((float)p_151541_15_ * (float)Math.PI / (float)p_151541_16_) * p_151541_12_ * 1.0F);
             double d7 = d6 * p_151541_17_;
-            //d7 *= 5.5;
+            //d7 *= 5.5; 
             float f5 = MathHelper.cos(p_151541_14_);
             float f6 = MathHelper.sin(p_151541_14_);
             p_151541_6_ += (double)(MathHelper.cos(p_151541_13_) * f5);
@@ -204,9 +204,9 @@ public class MapGenDeeperCaves extends MapGenBase
 
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
-        int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(36) + 1) + 1);
+        int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(30) + 1) + 1);
 
-        if (this.rand.nextInt(7) != 0)
+        if (this.rand.nextInt(3) != 0)
         {
             i1 = 0;
         }
@@ -214,7 +214,7 @@ public class MapGenDeeperCaves extends MapGenBase
         for (int j1 = 0; j1 < i1; ++j1)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
-            double d1 = (double)this.rand.nextInt(254);
+            double d1 = (double)this.rand.nextInt(114)+140;
             double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
             int k1 = 1;
 

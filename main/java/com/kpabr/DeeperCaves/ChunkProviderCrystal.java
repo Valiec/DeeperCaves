@@ -55,7 +55,7 @@ public class ChunkProviderCrystal implements IChunkProvider
     private double[] field_147434_q = {};
     private float[] parabolicField = {};
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenDeeperCaves3();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
@@ -64,7 +64,7 @@ public class ChunkProviderCrystal implements IChunkProvider
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine2();
+    private MapGenBase ravineGenerator = new MapGenDeeperRavineCompressed();
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
     double[] field_147427_d;

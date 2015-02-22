@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
 
-public class MapGenDeeperRavine2 extends MapGenBase
+public class MapGenDeeperRavineCompressed extends MapGenBase
 {
     private float[] field_75046_d = new float[1024];
     private static final String __OBFID = "CL_00000390";

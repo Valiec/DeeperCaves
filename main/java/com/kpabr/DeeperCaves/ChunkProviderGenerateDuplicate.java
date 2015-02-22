@@ -34,8 +34,9 @@ import net.minecraftforge.common.*;
 import cpw.mods.fml.common.eventhandler.Event.*;
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderGenerateB implements IChunkProvider
+public class ChunkProviderGenerateDuplicate implements IChunkProvider
 {
+	//Duplicate of ChunkProviderGenerate (for now). Used to change class name to prevent recursion loop in Overworld gen
     /** RNG. */
     private Random rand;
     private NoiseGeneratorOctaves field_147431_j;
@@ -83,7 +84,7 @@ public class ChunkProviderGenerateB implements IChunkProvider
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }
 
-    public ChunkProviderGenerateB(World p_i2006_1_, long p_i2006_2_, boolean p_i2006_4_)
+    public ChunkProviderGenerateDuplicate(World p_i2006_1_, long p_i2006_2_, boolean p_i2006_4_)
     {
         this.worldObj = p_i2006_1_;
         this.mapFeaturesEnabled = p_i2006_4_;
