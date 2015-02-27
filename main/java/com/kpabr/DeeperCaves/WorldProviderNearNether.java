@@ -36,7 +36,7 @@ public class WorldProviderNearNether extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderBedrockPlains(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderNearNether(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**
@@ -155,6 +155,6 @@ public class WorldProviderNearNether extends WorldProvider
      */
     public String getDimensionName()
     {
-        return "Bedrock Plains";
+        return "Near Nether";
     }
 }

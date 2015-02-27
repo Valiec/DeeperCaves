@@ -5,7 +5,6 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
@@ -35,7 +34,7 @@ import net.minecraftforge.common.*;
 import cpw.mods.fml.common.eventhandler.Event.*;
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderBedrockPlains implements IChunkProvider
+public class ChunkProviderNearNether implements IChunkProvider
 {
     /** RNG. */
     private Random rand;
@@ -56,7 +55,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
     private double[] field_147434_q = {};
     private float[] parabolicField = {};
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenDeeperCavesMaze();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefaultDenser();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
@@ -65,7 +64,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine();
+    private MapGenBase ravineGenerator = new MapGenDeeperRavineCompressed();
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
     double[] field_147427_d;
@@ -84,7 +83,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }    
 
-    public ChunkProviderBedrockPlains(World par1World, long par2, boolean par4)
+    public ChunkProviderNearNether(World par1World, long par2, boolean par4)
     {
         this.worldObj = par1World;
         this.mapFeaturesEnabled = par4;
@@ -171,7 +170,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                             {
                                 if ((d15 += d16) > 0.0D)
                                 {
-                                    p_147424_3_[j3 += short1] = Blocks.air;//bedrock;
+                                    p_147424_3_[j3 += short1] = Blocks.stone;
                                 }
                                 else if (k2 * 8 + l2 < b0)
                                 {
@@ -179,7 +178,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                                 }
                                 else
                                 {
-                                    p_147424_3_[j3 += short1] =Blocks.air;//stone;
+                                    p_147424_3_[j3 += short1] =Blocks.stone;
                                 }
                             }
 
@@ -211,54 +210,34 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
             for (int l = 0; l < 16; ++l)
             {
                 BiomeGenBase biomegenbase = p_147422_5_[l + k * 16];
-                //biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
-                boolean flag = true;
-                Block block = Blocks.grass;
-                //byte b0 = (byte)(this.field_150604_aj & 255);
-                Block block1 = Blocks.dirt;
-                //int l = (int)(this.stoneNoise[l + k * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
+                biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
                 int i1 = p_147422_1_ * 16 + k & 15;
                 int j1 = p_147422_2_ * 16 + l & 15;
                 int k1 = p_147422_3_.length / 256;
                 for (int l1 = 255; l1 >= 0; --l1)
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
-                    int i3;
-                    if(l1<255)
-                    {
-                    i3 = (j1 * 16 + i1) * k1 + (l1+1);
-                    }
-                    else
-                    {
-                    i3 = i2;
-                    }
 
-                    if (l1 <= 0 + this.rand.nextInt(5))
+                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
                     {
-                    	p_147422_3_[i2] = Blocks.bedrock;
+                    	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 >= 255 - this.rand.nextInt(5))
+                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
                     {
-                    	p_147422_3_[i2] = Blocks.bedrock;
+                    	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 <= 155)
+                    if (l1 == 2)
                     {
-                    	p_147422_3_[i2] = Blocks.bedrock;
-                    }
-                    if (l1 == 154)
-                    {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.nearNetherPortal;
+                    	p_147422_3_[i2] = DeeperCaves.blocks.bedrockPlainsPortal;
                     }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
+                    	p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
                     }
-                    
                 }
             }
-
-            }
         }
+    }
 
     /**
      * loads or generates the chunk at the chunk location specified
@@ -468,7 +447,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
             k1 = k + this.rand.nextInt(16) + 8;
             l1 = this.rand.nextInt(256);
             i2 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLakes(Blocks.lava)).generate(this.worldObj, this.rand, k1, l1, i2);
+            (new WorldGenLakes(Blocks.water)).generate(this.worldObj, this.rand, k1, l1, i2);
         }
 
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)

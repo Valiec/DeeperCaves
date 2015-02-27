@@ -65,11 +65,11 @@ public class DeeperWorldgen {
         DimensionManager.registerProviderType(bedrockPlainsDimID, WorldProviderBedrockPlains.class, true);
         DimensionManager.registerDimension(bedrockPlainsDimID, bedrockPlainsDimID);
         
-        DimensionManager.registerProviderType(nearNetherDimID, WorldProviderBedrockPlains.class, true);
+        DimensionManager.registerProviderType(nearNetherDimID, WorldProviderNearNether.class, true);
         DimensionManager.registerDimension(nearNetherDimID, nearNetherDimID);
-        DimensionManager.registerProviderType(lavaDimID, WorldProviderBedrockPlains.class, true);
+        DimensionManager.registerProviderType(lavaDimID, WorldProviderLava.class, true);
         DimensionManager.registerDimension(lavaDimID, lavaDimID);
-        DimensionManager.registerProviderType(nearVoidDimID, WorldProviderBedrockPlains.class, true);
+        DimensionManager.registerProviderType(nearVoidDimID, WorldProviderNearVoid.class, true);
         DimensionManager.registerDimension(nearVoidDimID, nearVoidDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
         this.biomeDrop = new BiomeGenDrop(80, 0);

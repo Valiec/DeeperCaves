@@ -33,6 +33,9 @@ public class DeeperOregen implements IWorldGenerator
        {
              switch(world.provider.dimensionId)
              {
+             		case 12:
+             				generateNearNether(world, random, chunkX * 16, chunkZ * 16);
+             				break;
 		            case 11:
 		             		generateBedrockPlains(world, random, chunkX * 16, chunkZ * 16);
 		             		break;
@@ -116,6 +119,15 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
     	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
     	   this.addOre(DeeperCaves.blocks.fragmentedBedrock, world, random, x, z, 16, 16, 8, 4, 150, 255, Blocks.bedrock);
+           
+       }
+       private void generateNearNether(World world, Random random, int x, int z)
+       {
+    	   
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
+    	   this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.quartz_ore, world, random, x, z, 16, 16, 8, 55, 0, 255, Blocks.stone);
            
        }
        
