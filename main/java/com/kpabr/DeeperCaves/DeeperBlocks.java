@@ -37,6 +37,7 @@ public class DeeperBlocks {
     public static Block cgoldOre;
     public static Block clapisOre;
     public static Block credstoneOre;
+    public static Block credstoneOre_glowing;
     public static Block cdiamondOre;
     public static Block cemeraldOre;
     
@@ -75,6 +76,7 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.cgoldOre, "compressed_gold_ore");
         GameRegistry.registerBlock(this.clapisOre, "compressed_lapis_ore");
         GameRegistry.registerBlock(this.credstoneOre, "compressed_redstone_ore");
+        GameRegistry.registerBlock(this.credstoneOre_glowing, "compressed_redstone_ore_glowing");
         GameRegistry.registerBlock(this.cdiamondOre, "compressed_diamond_ore");
         GameRegistry.registerBlock(this.cemeraldOre, "compressed_emerald_ore");
         
@@ -100,6 +102,7 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("oreCompressedGold", this.cgoldOre);
     	OreDictionary.registerOre("oreCompressedLapis", this.clapisOre);
     	OreDictionary.registerOre("oreCompressedRedstone", this.credstoneOre);
+    	OreDictionary.registerOre("oreCompressedRedstone_glowing", this.credstoneOre_glowing);
     	OreDictionary.registerOre("oreCompressedDiamond", this.cdiamondOre);
     	OreDictionary.registerOre("oreCompressedEmerald", this.cemeraldOre);
         
@@ -135,7 +138,8 @@ public class DeeperBlocks {
         this.cironOre = new BlockCompressedOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:ciron_ore").setBlockName("cironOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.cgoldOre = new BlockCompressedOre(Material.rock, Blocks.gold_ore).setBlockTextureName("deepercaves:cgold_ore").setBlockName("cgoldOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.clapisOre = new BlockCompressedOre(Material.rock, Blocks.lapis_ore).setBlockTextureName("deepercaves:clapis_ore").setBlockName("clapisOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        this.credstoneOre = new BlockCompressedOre(Material.rock, Blocks.redstone_ore).setBlockTextureName("deepercaves:credstone_ore").setBlockName("credstoneOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.credstoneOre = new BlockCompressedRedstoneOre(false).setBlockTextureName("deepercaves:credstone_ore").setBlockName("credstoneOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.credstoneOre_glowing = new BlockCompressedRedstoneOre(true).setBlockTextureName("deepercaves:credstone_ore").setBlockName("credstoneOre").setHardness(0.5F).setResistance(15.0F).setLightLevel(0.625F);
         this.cdiamondOre = new BlockCompressedOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:cdiamond_ore").setBlockName("cdiamondOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.cemeraldOre = new BlockCompressedOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:cemerald_ore").setBlockName("cemeraldOre").setHardness(0.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
@@ -163,6 +167,7 @@ public class DeeperBlocks {
         this.cgoldOre.setHarvestLevel("pickaxe", 3);
         this.clapisOre.setHarvestLevel("pickaxe", 2);
         this.credstoneOre.setHarvestLevel("pickaxe", 3);
+        this.credstoneOre_glowing.setHarvestLevel("pickaxe", 3);
         this.cdiamondOre.setHarvestLevel("pickaxe", 3);
         this.cemeraldOre.setHarvestLevel("pickaxe", 3);
         
