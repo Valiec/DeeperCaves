@@ -36,7 +36,7 @@ public class WorldProviderLava extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderBedrockPlains(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderLava(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**

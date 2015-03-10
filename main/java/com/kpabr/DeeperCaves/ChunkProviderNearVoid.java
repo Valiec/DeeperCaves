@@ -24,7 +24,6 @@ import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraft.world.gen.structure.MapGenStronghold;
@@ -35,7 +34,7 @@ import net.minecraftforge.common.*;
 import cpw.mods.fml.common.eventhandler.Event.*;
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderLava implements IChunkProvider
+public class ChunkProviderNearVoid implements IChunkProvider
 {
     /** RNG. */
     private Random rand;
@@ -56,7 +55,7 @@ public class ChunkProviderLava implements IChunkProvider
     private double[] field_147434_q = {};
     private float[] parabolicField = {};
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDrop();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesMaze();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
@@ -65,7 +64,7 @@ public class ChunkProviderLava implements IChunkProvider
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
-    private MapGenBase ravineGenerator = new MapGenDeeperRavineLava();
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine();
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
     double[] field_147427_d;
@@ -84,7 +83,7 @@ public class ChunkProviderLava implements IChunkProvider
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }    
 
-    public ChunkProviderLava(World par1World, long par2, boolean par4)
+    public ChunkProviderNearVoid(World par1World, long par2, boolean par4)
     {
         this.worldObj = par1World;
         this.mapFeaturesEnabled = par4;
@@ -227,13 +226,17 @@ public class ChunkProviderLava implements IChunkProvider
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 == 2)
-                    {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.nearVoidPortal;
-                    }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.nearNetherPortal;
+                    	p_147422_3_[i2] = DeeperCaves.blocks.lavaPortal;
+                    }
+                    if (l1 <= 220 && l1 > 1)
+                    {
+                    	p_147422_3_[i2] = Blocks.air;
+                    }
+                    if (l1 == 2)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
                     }
                 }
             }
@@ -261,7 +264,7 @@ public class ChunkProviderLava implements IChunkProvider
         this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
         this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
         this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-        this.ravineGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+        //this.ravineGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
 
         if (this.mapFeaturesEnabled)
         {
@@ -446,9 +449,9 @@ public class ChunkProviderLava implements IChunkProvider
             && TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAKE))
         {
             k1 = k + this.rand.nextInt(16) + 8;
-            l1 = this.rand.nextInt(255);
+            l1 = this.rand.nextInt(256);
             i2 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, k1, l1, i2);
+            (new WorldGenLakes(Blocks.water)).generate(this.worldObj, this.rand, k1, l1, i2);
         }
 
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
@@ -497,13 +500,6 @@ public class ChunkProviderLava implements IChunkProvider
                     this.worldObj.setBlock(k1 + k, i2, l1 + l, Blocks.snow_layer, 0, 2);
                 }
             }
-        }
-        for (int var3 = 0; var3 < 20; ++var3)
-        {
-            int var4 = k + this.rand.nextInt(16) + 8;
-            int var5 = this.rand.nextInt(255);
-            int var6 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
         }
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, flag));

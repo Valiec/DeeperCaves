@@ -226,11 +226,11 @@ public class ChunkProviderNearNether implements IChunkProvider
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 == 2)
+                    if (l1 == 254)
                     {
                     	p_147422_3_[i2] = DeeperCaves.blocks.bedrockPlainsPortal;
                     }
-                    if (l1 == 254)
+                    if (l1 == 2)
                     {
                     	p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
                     }

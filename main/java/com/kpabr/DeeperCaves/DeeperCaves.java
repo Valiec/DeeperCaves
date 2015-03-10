@@ -38,17 +38,17 @@ public class DeeperCaves
     public static CommonProxy proxy;
  
     /*Mod ID and Version declarations*/
-    public static final String MODID = "deepercaves";
-    public static final String VERSION = "0.1.2";
-    public static final String NAME = "deepercaves";
+    public static final String MODID = "DeeperCaves";
+    public static final String VERSION = "0.2.0";
+    public static final String NAME = "DeeperCaves";
     static int versionID = 3; //Used by version checker!
     
     static DeeperBlocks blocks = new DeeperBlocks();
     static DeeperItems items = new DeeperItems();
     static DeeperRecipes recipes = new DeeperRecipes();
     static DeeperWorldgen worldgen = new DeeperWorldgen();
-    static DeeperRendering rendering = new DeeperRendering();
-    static DeeperMobs mobs = new DeeperMobs();
+    //static DeeperRendering rendering = new DeeperRendering();
+    //static DeeperMobs mobs = new DeeperMobs();
     static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
     public static DeeperCaves instance;
     public static Configuration config;
@@ -110,10 +110,10 @@ public class DeeperCaves
      	recipes.setupShapedCrafting();
      	recipes.setupSmelting();
      	worldgen.setupWorldgen();
-     	rendering.setupArmorRenderers();
-     	mobs.setupMobs();
-     	proxy.registerRenderers();
-     	VillagerRegistry.instance().getRegisteredVillagers(); //Does nothing at this time, to be used for quest villager   
+     	//rendering.setupArmorRenderers();
+     	//mobs.setupMobs();
+     	//proxy.registerRenderers();
+     	//VillagerRegistry.instance().getRegisteredVillagers(); //Does nothing at this time, to be used for quest villager   
     }
     @EventHandler
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event)
