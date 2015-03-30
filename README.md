@@ -1,4 +1,4 @@
-#DeeperCaves 0.1.2 for Minecraft 1.7.10
+#DeeperCaves 0.2.0dev for Minecraft 1.7.10
 
 
 ##How to Install:
@@ -11,6 +11,8 @@
 3. Copy the src folder in place of the src folder created by Forge
 
 ###For Users:
+
+0.1.2 is the newest release version.
 
 1. Install Minecraft Forge
 2. Run minecraft to create a mods folder 
