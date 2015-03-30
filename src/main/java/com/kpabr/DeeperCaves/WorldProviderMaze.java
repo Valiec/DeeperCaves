@@ -25,7 +25,7 @@ public class WorldProviderMaze extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.forest, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeMaze, 0.5F);
         this.dimensionId = 8;
         this.hasNoSky = true;
     }
@@ -137,7 +137,7 @@ public class WorldProviderMaze extends WorldProvider
 
     public int getAverageGroundLevel()
     {
-        return 50;
+        return 200;
     }
 
     @SideOnly(Side.CLIENT)

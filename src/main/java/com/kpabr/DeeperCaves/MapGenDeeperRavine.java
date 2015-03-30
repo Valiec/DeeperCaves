@@ -200,7 +200,7 @@ public class MapGenDeeperRavine extends MapGenBase
         if (this.rand.nextInt(13) == 0)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
-            double d1 = (double)(this.rand.nextInt(this.rand.nextInt(40) + 8) + 20);
+            double d1 = (double)(this.rand.nextInt(234) + 20);
             double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
             byte b0 = 1;
 

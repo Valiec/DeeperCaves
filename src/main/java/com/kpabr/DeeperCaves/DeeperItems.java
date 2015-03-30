@@ -10,34 +10,76 @@ import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemRedstone;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DeeperItems {
     /*Item declarations*/
-    public static Item example;
+    public static Item silverIngot;
+    public static Item sapphireGem;
+    public static Item ametrineGem;
+    
+    public static Item aquamarine;
+    
+    public static Item ametrineTippedDiamondPickaxe;
+    
+    public static Item ametrineTippedGoldenPickaxe;
+    public static Item ametrineTippedIronPickaxe;
+    public static Item ametrineTippedStonePickaxe;
+    
+    public static Item ametrineTippedWoodenPickaxe;
 
     /*Tool and Armor Material declarations*/
-    static ToolMaterial Enderite = EnumHelper.addToolMaterial("ENDERITE", 4, 2544, 16.0F, 6, 28);
-    static ToolMaterial Flamerite = EnumHelper.addToolMaterial("FLAMERITE", 3, 865, 14.0F, 4, 26);
-    static ToolMaterial gFlamerite = EnumHelper.addToolMaterial("GFLAMERITE", 3, 782, 14.0F, 4, 26);
-    static ToolMaterial Endstone = EnumHelper.addToolMaterial("ENDSTONE", 1, 181, 4.0F, 1.0F, 14);
-    static ToolMaterial Netherstone = EnumHelper.addToolMaterial("NETHERSTONE", 1, 151, 4.0F, 1.0F, 10);
-    static ToolMaterial InfusedQuartz = EnumHelper.addToolMaterial("INFUSEDQUARTZ", 2, 250, 12.0F, 2.0F, 14);
+    static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
     
-    static ArmorMaterial EnderiteArmor = EnumHelper.addArmorMaterial("ENDERITE", 57, new int[]{4, 8, 6, 4}, 30);
-    static ArmorMaterial FlameriteArmor = EnumHelper.addArmorMaterial("FLAMERITE", 55, new int[]{4, 6, 5, 3}, 25);
-    static ArmorMaterial gFlameriteArmor = EnumHelper.addArmorMaterial("GFLAMERITE", 53, new int[]{4, 6, 5, 3}, 25);
-    static ArmorMaterial InfusedQuartzArmor = EnumHelper.addArmorMaterial("INFUSEDQUARTZ", 15, new int[]{3, 8, 5, 2}, 25);
-
+    static ToolMaterial AmetrineG = EnumHelper.addToolMaterial("AMETRINE_G", 1, 32, 18.0F, 0.0F, 22);
+    static ToolMaterial AmetrineI = EnumHelper.addToolMaterial("AMETRINE_I", 3, 250, 11.0F, 2.0F, 14);
+    static ToolMaterial AmetrineS = EnumHelper.addToolMaterial("AMETRINE_S", 2, 131, 9.0F, 1.0F, 5);
+    
+    static ToolMaterial AmetrineW = EnumHelper.addToolMaterial("AMETRINE_W", 1, 50, 7.0F, 0.0F, 15);
+    
     public void registerItems()
     {
        
-        GameRegistry.registerItem(this.example, "example_item");
+        GameRegistry.registerItem(this.silverIngot, "silver_ingot");
+        GameRegistry.registerItem(this.sapphireGem, "sapphire_gem");
+        GameRegistry.registerItem(this.ametrineGem, "ametrine_gem");
+        
+        GameRegistry.registerItem(this.aquamarine, "aquamarine");
+        
+        GameRegistry.registerItem(this.ametrineTippedDiamondPickaxe, "ametrine_tipped_diamond_pickaxe");
+        
+        GameRegistry.registerItem(this.ametrineTippedGoldenPickaxe, "ametrine_tipped_golden_pickaxe");
+        GameRegistry.registerItem(this.ametrineTippedIronPickaxe, "ametrine_tipped_iron_pickaxe");
+        GameRegistry.registerItem(this.ametrineTippedStonePickaxe, "ametrine_tipped_stone_pickaxe");
+        
+        GameRegistry.registerItem(this.ametrineTippedWoodenPickaxe, "ametrine_tipped_wooden_pickaxe");
+    }
+    
+    public void registerItemsOreDict()
+    {
+    	OreDictionary.registerOre("ingotSilver", this.silverIngot);  
+    	OreDictionary.registerOre("gemSapphire", this.sapphireGem);  
+    	OreDictionary.registerOre("gemAmetrine", this.ametrineGem);  
+        
+    	OreDictionary.registerOre("gemAquamarine", this.aquamarine);  
     }
     
     public void setupItems()
     {
     
-        this.example = new ItemExample().setTextureName("deepercaves:example").setUnlocalizedName("example");
+        this.silverIngot = new ItemBase().setTextureName("deepercaves:silver_ingot").setUnlocalizedName("silverIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        this.sapphireGem = new ItemBase().setTextureName("deepercaves:sapphireGem").setUnlocalizedName("sapphireGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        this.ametrineGem = new ItemBase().setTextureName("deepercaves:ametrineGem").setUnlocalizedName("ametrineGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.aquamarine = new ItemBase().setTextureName("deepercaves:aquamarine").setUnlocalizedName("aquamarine").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.ametrineTippedDiamondPickaxe = new ItemPickaxeBase(this.AmetrineD).setTextureName("deepercaves:ametrineTippedDiamondPickaxe").setUnlocalizedName("ametrineTippedDiamondPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        
+        this.ametrineTippedGoldenPickaxe = new ItemPickaxeBase(this.AmetrineG).setTextureName("deepercaves:ametrineTippedGoldenPickaxe").setUnlocalizedName("ametrineTippedGoldenPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        this.ametrineTippedIronPickaxe = new ItemPickaxeBase(this.AmetrineI).setTextureName("deepercaves:ametrineTippedIronPickaxe").setUnlocalizedName("ametrineTippedIronPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        this.ametrineTippedStonePickaxe = new ItemPickaxeBase(this.AmetrineS).setTextureName("deepercaves:ametrineTippedStonePickaxe").setUnlocalizedName("ametrineTippedStonePickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        
+        this.ametrineTippedWoodenPickaxe = new ItemPickaxeBase(this.AmetrineW).setTextureName("deepercaves:ametrineTippedWoodenPickaxe").setUnlocalizedName("ametrineTippedWoodenPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
     }
 }

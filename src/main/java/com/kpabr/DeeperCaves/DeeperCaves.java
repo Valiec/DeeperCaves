@@ -15,6 +15,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.ServerCommandManager;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.DamageSource;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -28,9 +31,12 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
+import net.minecraftforge.event.*;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
 @Mod(modid = DeeperCaves.MODID, version = DeeperCaves.VERSION, name = DeeperCaves.NAME)//, guiFactory = "com.kpabr.DeeperCaves.EndPlusConfigGUIFactory")
 public class DeeperCaves
 {
@@ -38,20 +44,25 @@ public class DeeperCaves
     public static CommonProxy proxy;
  
     /*Mod ID and Version declarations*/
-    public static final String MODID = "deepercaves";
-    public static final String VERSION = "1.0.0";
-    public static final String NAME = "deepercaves";
-    static int versionID = 1; //Used by version checker!
+    public static final String MODID = "DeeperCaves";
+    public static final String VERSION = "0.2.0";
+    public static final String NAME = "DeeperCaves";
+    static int versionID = 3; //Used by version checker!
     
     static DeeperBlocks blocks = new DeeperBlocks();
     static DeeperItems items = new DeeperItems();
     static DeeperRecipes recipes = new DeeperRecipes();
     static DeeperWorldgen worldgen = new DeeperWorldgen();
-    static DeeperRendering rendering = new DeeperRendering();
-    static DeeperMobs mobs = new DeeperMobs();
-    //static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
+    //static DeeperRendering rendering = new DeeperRendering();
+    //static DeeperMobs mobs = new DeeperMobs();
+    static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
     public static DeeperCaves instance;
     public static Configuration config;
+    public int nearvoid_counter = 0;
+    
+    static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperCaves.blocks.fragmentedBedrock);
+    static CreativeTabs tabDeeperCavesItems = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Items", 0);
+    static CreativeTabs tabDeeperCavesTools = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Tools", 1);
     
     
     //static CreativeTabs tabEndplus = new TabEndplusBlocks(CreativeTabs.getNextID(), "EndPlus Blocks", DeeperCaves.blocks.endGrass);
@@ -72,8 +83,8 @@ public class DeeperCaves
         FMLCommonHandler.instance().bus().register(worldgen);
         MinecraftForge.EVENT_BUS.register(worldgen);
         
-        //FMLCommonHandler.instance().bus().register(versionChecker);
-        //MinecraftForge.EVENT_BUS.register(versionChecker);
+        FMLCommonHandler.instance().bus().register(versionChecker);
+        MinecraftForge.EVENT_BUS.register(versionChecker);
         
         FMLCommonHandler.instance().bus().register(this);
         MinecraftForge.EVENT_BUS.register(this);
@@ -81,7 +92,7 @@ public class DeeperCaves
         
         
         //ClientCommandHandler.instance.registerCommand(new TestCommand());
-        //ClientCommandHandler.instance.registerCommand(new EndPlusCommand());
+        ClientCommandHandler.instance.registerCommand(new VersionCommand());
    	    /*DeeperCaves.config.load();
         if(!config.hasKey(Configuration.CATEGORY_GENERAL, "OverrideDimensionID"))
         {
@@ -98,17 +109,18 @@ public class DeeperCaves
      	blocks.setupBlocks();
      	items.setupItems();
      	blocks.registerBlocks();
+     	blocks.registerBlocksOreDict();
      	items.registerItems();
+     	items.registerItemsOreDict();
         blocks.setupHarvestLevels();
      	recipes.setupShapelessCrafting();
      	recipes.setupShapedCrafting();
      	recipes.setupSmelting();
-     	recipes.setupEggs();
      	worldgen.setupWorldgen();
-     	rendering.setupArmorRenderers();
-     	mobs.setupMobs();
-     	proxy.registerRenderers();
-     	VillagerRegistry.instance().getRegisteredVillagers(); //Does nothing at this time, to be used for quest villager   
+     	//rendering.setupArmorRenderers();
+     	//mobs.setupMobs();
+     	//proxy.registerRenderers();
+     	//VillagerRegistry.instance().getRegisteredVillagers(); //Does nothing at this time, to be used for quest villager   
     }
     @EventHandler
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event)
@@ -129,6 +141,72 @@ public class DeeperCaves
          {
              config.save();
          }*/
+    }
+    @SubscribeEvent
+    public void onPlayerTick(TickEvent.PlayerTickEvent event) {
+    	//System.out.println("Hello!");
+        	if(event.player.posY <= 1.0D)
+        	{
+        		try
+            	{
+            	EntityPlayerMP player = (EntityPlayerMP)event.player;
+            	if(player.dimension == 14)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
+            	}
+            	else if(player.dimension == 0)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 7, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
+            	}
+            	else if(player.dimension>=7 && player.dimension<14)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension+1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension+1)));
+            	}
+            	else{}
+            	}
+            	catch(ClassCastException e)
+            	{
+            		return; //not a player
+            	}
+        	}
+        	else if(event.player.posY >= 253.0D)
+        	{
+        		try
+            	{
+            	EntityPlayerMP player = (EntityPlayerMP)event.player;
+            	if(player.dimension == 7)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
+            	}
+            	else if(player.dimension>7 && player.dimension<=14)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension-1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension-1)));
+            	}
+            	else{}
+            	}
+            	catch(ClassCastException e)
+            	{
+            		return; //not a player
+            	}
+        	}
+        	else{}
+    		try
+            {
+            EntityPlayerMP player = (EntityPlayerMP)event.player;
+    		if(event.player.posY <= 220.0D && player.dimension == 14 && this.nearvoid_counter == 200)
+    		{
+            	player.attackEntityFrom(DamageSource.outOfWorld, 0.5F);
+            	this.nearvoid_counter = 0;
+    		}
+    		else
+    		{
+    			this.nearvoid_counter = this.nearvoid_counter+1;
+    		}
+            }
+            catch(ClassCastException e)
+            {
+            	return; //not a player
+            }
     }
 }
 

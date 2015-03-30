@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -29,6 +30,7 @@ public class BlockReturnPortal extends Block
     {
         super(p_i45404_1_);
         this.setLightLevel(1.0F);
+        
     }
 
     /**
@@ -38,7 +40,21 @@ public class BlockReturnPortal extends Block
     public void addCollisionBoxesToList(World p_149743_1_, int p_149743_2_, int p_149743_3_, int p_149743_4_, AxisAlignedBB p_149743_5_, List p_149743_6_, Entity p_149743_7_) {}
 
 
-
+    @Override
+    public boolean isNormalCube()
+    {
+    	return false;
+    }
+    @Override
+	public Item getItemDropped(int par1, Random par2Random, int par3)
+    {
+        return null;
+    }
+    @Override
+    public boolean canSilkHarvest(World world, EntityPlayer player, int x, int y, int z, int metadata)
+    {
+    	return false;
+    }
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
@@ -52,7 +68,10 @@ public class BlockReturnPortal extends Block
         	try
         	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
+        	if(player.dimension != 0)
+        	{
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
+        	}
         	}
         	catch(ClassCastException e)
         	{
@@ -69,7 +88,7 @@ public class BlockReturnPortal extends Block
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister p_149651_1_)
     {
-        this.blockIcon = p_149651_1_.registerIcon("portal");
+    	this.blockIcon = p_149651_1_.registerIcon("deepercaves:portal_2");
     }
 
     public MapColor getMapColor(int p_149728_1_)
