@@ -1,4 +1,4 @@
-#DeeperCaves 0.0.1 for Minecraft 1.7.10
+#DeeperCaves 0.1.2 for Minecraft 1.7.10
 
 
 ##How to Install:
@@ -12,12 +12,17 @@
 
 ###For Users:
 
-There is no release available at this time.
+1. Install Minecraft Forge
+2. Run minecraft to create a mods folder 
+3. Place the DeeperCaves-0.1.2-mc1.7.10.jar file into your mods folder inside your minecraft folder
+
+If Forge is not loading the mod, check that you installed the DeeperCaves-0.1.2-mc1.7.10.jar file, not the DeeperCaves-0.1.2-mc1.7.10.zip file.
+
 
 ##Mod Info:
 
 Mod Info:
 
-This mod adds many levels of caves below the default Overworld. See http://www.minecraftforum.net/forums/minecraft-discussion/suggestions/2311624-deeper-caves-caves-going-more-than-2-kilometers for more info.
+This mod adds many levels of caves below the default Overworld. See http://www.minecraftforum.net/forums/minecraft-discussion/suggestions/2311624-deeper-caves-caves-going-more-than-2-kilometers and http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2350259-deeper-caves-go-beyond-the-void-alpha for more info.
 
-Developed with Forge 10.13.0.1160
+Developed with Forge 10.13.2.1291
