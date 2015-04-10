@@ -1,0 +1,29 @@
+tile.silverOre.name=Silver Ore
+item.silverIngot.name=Silver Ingot
+item.ametrineGem.name=Ametrine Gem
+item.sapphireGem.name=Sapphire
+tile.sapphireOre.name=Sapphire Ore
+tile.aquamarineOre.name=Aquamarine Ore
+tile.ametrineOre.name=Ametrine Ore
+tile.ccoalOre.name=Compressed Coal Ore
+tile.cironOre.name=Compressed Iron Ore
+tile.cgoldOre.name=Compressed Gold Ore
+tile.clapisOre.name=Compressed Lapis Lazuli Ore
+tile.credstoneOre.name=Compressed Redstone Ore
+tile.cdiamondOre.name=Compressed Diamond Ore
+tile.cemeraldOre.name=Compressed Emerald Ore
+tile.fragmentedBedrock.name=Fragmented Bedrock
+
+item.aquamarine.name=Aquamarine
+
+tile.silverBlock.name=Block of Silver
+tile.sapphireBlock.name=Block of Sapphire
+tile.aquamarineBlock.name=Block of Aquamarine
+tile.ametrineBlock.name=Block of Ametrine
+
+item.ametrineTippedDiamondPickaxe.name=Ametrine Tipped Diamond Pickaxe
+
+item.ametrineTippedGoldenPickaxe.name=Ametrine Tipped Golden Pickaxe
+item.ametrineTippedIronPickaxe.name=Ametrine Tipped Iron Pickaxe
+item.ametrineTippedStonePickaxe.name=Ametrine Tipped Stone Pickaxe
+item.ametrineTippedWoodenPickaxe.name=Ametrine Tipped Wooden Pickaxe

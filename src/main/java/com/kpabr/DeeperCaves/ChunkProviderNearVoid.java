@@ -24,7 +24,6 @@ import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraft.world.gen.structure.MapGenStronghold;
@@ -35,7 +34,7 @@ import net.minecraftforge.common.*;
 import cpw.mods.fml.common.eventhandler.Event.*;
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderCrystal implements IChunkProvider
+public class ChunkProviderNearVoid implements IChunkProvider
 {
     /** RNG. */
     private Random rand;
@@ -56,7 +55,7 @@ public class ChunkProviderCrystal implements IChunkProvider
     private double[] field_147434_q = {};
     private float[] parabolicField = {};
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesNearVoid();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
@@ -65,7 +64,7 @@ public class ChunkProviderCrystal implements IChunkProvider
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
-    private MapGenBase ravineGenerator = new MapGenDeeperRavineCompressed();
+    private MapGenBase ravineGenerator = new MapGenDeeperRavineNearVoid();
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
     double[] field_147427_d;
@@ -84,7 +83,7 @@ public class ChunkProviderCrystal implements IChunkProvider
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }    
 
-    public ChunkProviderCrystal(World par1World, long par2, boolean par4)
+    public ChunkProviderNearVoid(World par1World, long par2, boolean par4)
     {
         this.worldObj = par1World;
         this.mapFeaturesEnabled = par4;
@@ -122,7 +121,7 @@ public class ChunkProviderCrystal implements IChunkProvider
 
     public void func_147424_a(int p_147424_1_, int p_147424_2_, Block[] p_147424_3_)
     {
-        byte b0 = 63;
+        int b0 = 220;
         this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, p_147424_1_ * 4 - 2, p_147424_2_ * 4 - 2, 10, 10);
         this.func_147423_a(p_147424_1_ * 4, 0, p_147424_2_ * 4);
 
@@ -169,17 +168,17 @@ public class ChunkProviderCrystal implements IChunkProvider
 
                             for (int k3 = 0; k3 < 4; ++k3)
                             {
-                                if ((d15 += d16) > 0.0D)
+                                if (k2 * 8 + l2 >= b0)
                                 {
                                     p_147424_3_[j3 += short1] = Blocks.stone;
                                 }
                                 else if (k2 * 8 + l2 < b0)
                                 {
-                                    p_147424_3_[j3 += short1] = Blocks.stone;
+                                    p_147424_3_[j3 += short1] = Blocks.air;
                                 }
                                 else
                                 {
-                                    p_147424_3_[j3 += short1] =Blocks.stone;
+                                    p_147424_3_[j3 += short1] = Blocks.stone;
                                 }
                             }
 
@@ -221,26 +220,36 @@ public class ChunkProviderCrystal implements IChunkProvider
 
                     if (l1 <= 5 && l1 >= 0 && p_147422_3_[i2] == Blocks.bedrock)
                     {
-                    	p_147422_3_[i2] = Blocks.stone;
+                    	p_147422_3_[i2] = Blocks.air;
                     }
                     if (l1 >= 250 && l1 <= 255 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
-                    {
-                    	p_147422_3_[i2] = Blocks.stone;
-                    }
-                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
-                    	
-                    if (l1 == 2)
-                    {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
-                    }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.lavaPortal;
                     }
+                    /*if (l1 <= 220 && l1 > 1)
+                    {
+                    	p_147422_3_[i2] = Blocks.air;
+                    }*/
+                    if (l1 == 1)
+                    {
+                    	//p_147422_3_[i2] = Blocks.glass;
+                    }
+                    if (l1 == 0)
+                    {
+                    	//p_147422_3_[i2] = Blocks.air;
+                    }
+                    if (l1 == 2)
+                    {
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
+                    }
+                    /*if (l1 == 220 && p_147422_3_[i2] != Blocks.air)
+                    {
+                    	p_147422_3_[i2] = Blocks.stone;
+                    }*/
                 }
             }
         }
@@ -267,13 +276,13 @@ public class ChunkProviderCrystal implements IChunkProvider
         this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
         this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
         this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-        this.ravineGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+        //this.ravineGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
 
         if (this.mapFeaturesEnabled)
         {
-            this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            //this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            //this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            //this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
             this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
         }
 
@@ -503,13 +512,6 @@ public class ChunkProviderCrystal implements IChunkProvider
                     this.worldObj.setBlock(k1 + k, i2, l1 + l, Blocks.snow_layer, 0, 2);
                 }
             }
-        }
-        for (int var3 = 0; var3 < 20; ++var3)
-        {
-            int var4 = k + this.rand.nextInt(16) + 8;
-            int var5 = this.rand.nextInt(255);
-            int var6 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
         }
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, flag));

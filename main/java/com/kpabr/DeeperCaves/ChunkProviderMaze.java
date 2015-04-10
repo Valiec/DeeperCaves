@@ -226,14 +226,6 @@ public class ChunkProviderMaze implements IChunkProvider
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 == 2)
-                    {
-                    	//p_147422_3_[i2] = DeeperCaves.blocks.crystalPortal;
-                    }
-                    if (l1 == 254)
-                    {
-                    	//p_147422_3_[i2] = DeeperCaves.blocks.dropPortal;
-                    }
                 }
             }
         }

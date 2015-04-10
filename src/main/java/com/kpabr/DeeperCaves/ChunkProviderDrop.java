@@ -35,7 +35,7 @@ import net.minecraftforge.common.*;
 import cpw.mods.fml.common.eventhandler.Event.*;
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderCrystal implements IChunkProvider
+public class ChunkProviderDrop implements IChunkProvider
 {
     /** RNG. */
     private Random rand;
@@ -56,7 +56,7 @@ public class ChunkProviderCrystal implements IChunkProvider
     private double[] field_147434_q = {};
     private float[] parabolicField = {};
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDrop();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
@@ -65,7 +65,7 @@ public class ChunkProviderCrystal implements IChunkProvider
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
-    private MapGenBase ravineGenerator = new MapGenDeeperRavineCompressed();
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine();
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
     double[] field_147427_d;
@@ -84,7 +84,7 @@ public class ChunkProviderCrystal implements IChunkProvider
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }    
 
-    public ChunkProviderCrystal(World par1World, long par2, boolean par4)
+    public ChunkProviderDrop(World par1World, long par2, boolean par4)
     {
         this.worldObj = par1World;
         this.mapFeaturesEnabled = par4;
@@ -227,19 +227,13 @@ public class ChunkProviderCrystal implements IChunkProvider
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
-                    {
-                    	p_147422_3_[i2] = Blocks.stone;
-                    }
-                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
-                    	
                     if (l1 == 2)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
                     }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
                     }
                 }
             }
