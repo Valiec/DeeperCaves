@@ -133,13 +133,17 @@ public class DeeperWorldgen {
                     {
                         int i2 = (j1 * 16 + i1) * k1 + l1;
 
-                        if (l1 <= 5 && l1 > 1 && event.blockArray[i2] == Blocks.bedrock)
+                        if (l1 <= 5 && l1 >= 0 && event.blockArray[i2] == Blocks.bedrock)
                         {
                         	event.blockArray[i2] = Blocks.stone;
                         }
                         if (l1 == 2)
                         {
-                        	event.blockArray[i2] = DeeperCaves.blocks.dropPortal;
+                        	//event.blockArray[i2] = DeeperCaves.blocks.dropPortal;
+                        }
+                        if (l1 == 1)
+                        {
+                        	//event.blockArray[i2] = Blocks.stone;
                         }
                     }
                 }

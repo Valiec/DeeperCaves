@@ -218,21 +218,21 @@ public class ChunkProviderCrystal implements IChunkProvider
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
 
-                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
+                    if (l1 <= 5 && l1 >= 0 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
+                    if (l1 >= 250 && l1 <= 255 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
                     if (l1 == 2)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
                     }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
                     }
                 }
             }

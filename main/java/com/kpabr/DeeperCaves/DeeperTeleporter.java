@@ -37,6 +37,7 @@ public class DeeperTeleporter extends Teleporter
        
             int i = MathHelper.floor_double(p_77185_1_.posX);
             int j = 185;
+            int cap = 253;
             if(this.worldServerInstance.provider.dimensionId == 0)
             {
             j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
@@ -45,13 +46,17 @@ public class DeeperTeleporter extends Teleporter
             {
             j = 157;
             }
+            if(this.worldServerInstance.provider.dimensionId == 14)
+            {
+            j = 235;
+            }
             int k = MathHelper.floor_double(p_77185_1_.posZ);
             p_77185_1_.setPosition((double)i, (double)j+1, (double)k);
             byte b0 = 1;
             byte b1 = 0;
             boolean blockIsAir = false;
             System.out.println(this.worldServerInstance.getActualHeight());
-            makePortal(p_77185_1_);
+            makePortal(p_77185_1_, cap);
             /*for(int a = -10; a<10; a++)
             {
                 for(int b = -32; a<32; b++)
@@ -89,7 +94,7 @@ public class DeeperTeleporter extends Teleporter
                 }
             }*/
     }
-    public boolean makePortal(Entity p_85188_1_)
+    public boolean makePortal(Entity p_85188_1_, int cap)
     {
         byte b0 = 16;
         double d0 = -1.0D;
@@ -260,9 +265,9 @@ public class DeeperTeleporter extends Teleporter
                 i1 = 70;
             }
 
-            if (i1 > 195 - 10)
+            if (i1 > cap)
             {
-                i1 = 195 - 10;
+                i1 = cap;
             }
 
             j2 = i1;

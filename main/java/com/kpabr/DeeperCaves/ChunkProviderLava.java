@@ -219,21 +219,21 @@ public class ChunkProviderLava implements IChunkProvider
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
 
-                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
+                    if (l1 <= 5 && l1 >= 0 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
+                    if (l1 >= 250 && l1 <= 255 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
                     if (l1 == 2)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.nearVoidPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.nearVoidPortal;
                     }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.nearNetherPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.nearNetherPortal;
                     }
                 }
             }
@@ -448,7 +448,7 @@ public class ChunkProviderLava implements IChunkProvider
             k1 = k + this.rand.nextInt(16) + 8;
             l1 = this.rand.nextInt(255);
             i2 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, k1, l1, i2);
+            //(new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, k1, l1, i2);
         }
 
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
@@ -503,7 +503,7 @@ public class ChunkProviderLava implements IChunkProvider
             int var4 = k + this.rand.nextInt(16) + 8;
             int var5 = this.rand.nextInt(255);
             int var6 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
+            //(new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
         }
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, flag));

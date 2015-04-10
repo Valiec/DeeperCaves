@@ -218,21 +218,21 @@ public class ChunkProviderMaze implements IChunkProvider
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
 
-                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
+                    if (l1 <= 5 && l1 >= 0 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
+                    if (l1 >= 250 && l1 <= 255 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
                     if (l1 == 2)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.crystalPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.crystalPortal;
                     }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.dropPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.dropPortal;
                     }
                 }
             }
@@ -260,7 +260,6 @@ public class ChunkProviderMaze implements IChunkProvider
         this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
         this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
         this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-        //this.ravineGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
 
         if (this.mapFeaturesEnabled)
         {

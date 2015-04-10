@@ -55,7 +55,7 @@ public class ChunkProviderNearVoid implements IChunkProvider
     private double[] field_147434_q = {};
     private float[] parabolicField = {};
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenDeeperCavesMaze();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesNearVoid();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
@@ -64,7 +64,7 @@ public class ChunkProviderNearVoid implements IChunkProvider
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine();
+    private MapGenBase ravineGenerator = new MapGenDeeperRavineNearVoid();
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
     double[] field_147427_d;
@@ -121,7 +121,7 @@ public class ChunkProviderNearVoid implements IChunkProvider
 
     public void func_147424_a(int p_147424_1_, int p_147424_2_, Block[] p_147424_3_)
     {
-        byte b0 = 63;
+        int b0 = 220;
         this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, p_147424_1_ * 4 - 2, p_147424_2_ * 4 - 2, 10, 10);
         this.func_147423_a(p_147424_1_ * 4, 0, p_147424_2_ * 4);
 
@@ -168,17 +168,17 @@ public class ChunkProviderNearVoid implements IChunkProvider
 
                             for (int k3 = 0; k3 < 4; ++k3)
                             {
-                                if ((d15 += d16) > 0.0D)
+                                if (k2 * 8 + l2 >= b0)
                                 {
                                     p_147424_3_[j3 += short1] = Blocks.stone;
                                 }
                                 else if (k2 * 8 + l2 < b0)
                                 {
-                                    p_147424_3_[j3 += short1] = Blocks.stone;
+                                    p_147424_3_[j3 += short1] = Blocks.air;
                                 }
                                 else
                                 {
-                                    p_147424_3_[j3 += short1] =Blocks.stone;
+                                    p_147424_3_[j3 += short1] = Blocks.stone;
                                 }
                             }
 
@@ -218,26 +218,38 @@ public class ChunkProviderNearVoid implements IChunkProvider
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
 
-                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
+                    if (l1 <= 5 && l1 >= 0 && p_147422_3_[i2] == Blocks.bedrock)
                     {
-                    	p_147422_3_[i2] = Blocks.stone;
+                    	p_147422_3_[i2] = Blocks.air;
                     }
-                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
+                    if (l1 >= 250 && l1 <= 255 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.lavaPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.lavaPortal;
                     }
-                    if (l1 <= 220 && l1 > 1)
+                    /*if (l1 <= 220 && l1 > 1)
                     {
                     	p_147422_3_[i2] = Blocks.air;
+                    }*/
+                    if (l1 == 1)
+                    {
+                    	//p_147422_3_[i2] = Blocks.glass;
+                    }
+                    if (l1 == 0)
+                    {
+                    	//p_147422_3_[i2] = Blocks.air;
                     }
                     if (l1 == 2)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
                     }
+                    /*if (l1 == 220 && p_147422_3_[i2] != Blocks.air)
+                    {
+                    	p_147422_3_[i2] = Blocks.stone;
+                    }*/
                 }
             }
         }
@@ -268,9 +280,9 @@ public class ChunkProviderNearVoid implements IChunkProvider
 
         if (this.mapFeaturesEnabled)
         {
-            this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            //this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            //this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            //this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
             this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
         }
 
