@@ -14,22 +14,22 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 
 public class DeeperVersionChecker {
-    public int getNewestVersionID(boolean debug) throws UnknownHostException, IOException
+    public String getNewestVersionID(boolean debug) throws UnknownHostException, IOException
     {
         int newestVersion = -1;
         URL check;
         if(!debug)
         {
-            check = new URL("http://www.kpabr.com/mcmods/deepercaves/versioncheck");
+            check = new URL("http://www.kpabr.com/mcmods/deepercaves/versionchecknew");
         }
         else
         {
-            check = new URL("http://www.kpabr.com/debug/mcmods/deepercaves/versioncheck");
+            check = new URL("http://www.kpabr.com/debug/mcmods/deepercaves/versionchecknew");
         }
         URLConnection read = check.openConnection();
         BufferedReader reader = new BufferedReader(new InputStreamReader(read.getInputStream()));
         String newestVersionStr = reader.readLine();
-        newestVersion = Integer.parseInt(newestVersionStr);
+        newestVersion = Integer.parseInt(newestVersionStr.split("-")[1]);
         
         if (newestVersion < 0)
         {
@@ -37,37 +37,27 @@ public class DeeperVersionChecker {
         }
         else
         {
-            return newestVersion; 
+            return newestVersionStr; 
         }
     }
     public String getNewestVersionNumber() throws UnknownHostException, IOException
     {
-        return toVersionNumber(getNewestVersionID(true));
-    }
-    public String toVersionNumber(int id)
-    {
-        Object[][] versions = {{1, "1.0.0"}};
-        for (int i = 0; i<versions.length; i++)
-        {
-            if((Integer)(versions[i][0]) == id)
-            {
-                return (String)(versions[i][1]);
-            }
-        }
-        return "0.0.0";
+        return (getNewestVersionID(true).split("-"))[0];
     }
     @SubscribeEvent
     public void onUpdateMessage(PlayerEvent.PlayerLoggedInEvent event) throws UnknownHostException, IOException
     {
         try
         {
-            int version = getNewestVersionID(false);
+        	String version = getNewestVersionID(false);
+            int versionID = Integer.parseInt((version.split("-"))[1]);
+            String versionStr = (version.split("-"))[0];
             
-            if(version>DeeperCaves.versionID)
+            if(versionID>DeeperCaves.versionID)
             {
-                event.player.addChatMessage(new ChatComponentText("Deeper Caves is out of date. Go to the Minecraft Forums thread for updates."));
+                event.player.addChatMessage(new ChatComponentText("Deeper Caves is out of date. The newest version is "+versionStr+". Go to the Minecraft Forums thread for updates."));
             }
-                else if(version<DeeperCaves.versionID)
+                else if(versionID<DeeperCaves.versionID)
             {
                 event.player.addChatMessage(new ChatComponentText("You are running a development version of Deeper Caves. Bugs may be present."));
             }
