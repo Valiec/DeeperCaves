@@ -27,6 +27,8 @@ public class DeeperRecipes {
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.ametrineTippedWoodenPickaxe, 1), new Object[]{"XYX", 'X', DeeperCaves.items.ametrineGem, 'Y', Items.wooden_pickaxe});
         
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.tenebriumBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.tenebriumIngot});
+        
         
     }
     public void setupShapelessCrafting()
@@ -38,11 +40,15 @@ public class DeeperRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.aquamarine, 9), new Object[]{DeeperCaves.blocks.aquamarineBlock});
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.ametrineGem, 9), new Object[]{DeeperCaves.blocks.ametrineBlock});
         
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.tenebriumIngot, 9), new Object[]{DeeperCaves.blocks.tenebriumBlock});
+        
     }
     public void setupSmelting()
     {
         /*Registering smelting recipes in GameRegistry*/
         GameRegistry.addSmelting(DeeperCaves.blocks.silverOre, new ItemStack(DeeperCaves.items.silverIngot, 1) , 0.6F);
+        
+        GameRegistry.addSmelting(DeeperCaves.blocks.tenebriumOre, new ItemStack(DeeperCaves.items.tenebriumIngot, 1) , 1.0F);
         
         
     }

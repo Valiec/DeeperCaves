@@ -113,6 +113,10 @@ public class DeeperCaves
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 7, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
             	}
+            	else if(player.dimension == 12)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 14, new DeeperTeleporter(player.mcServer.worldServerForDimension(14)));
+            	}
             	else if(player.dimension>=7 && player.dimension<14)
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension+1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension+1)));
@@ -133,7 +137,11 @@ public class DeeperCaves
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
             	}
-            	else if(player.dimension>7 && player.dimension<=14)
+            	else if(player.dimension == 14)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension-2, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension-2)));
+            	}
+            	else if(player.dimension>7 && player.dimension<14)
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension-1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension-1)));
             	}
@@ -148,14 +156,17 @@ public class DeeperCaves
     		try
             {
             EntityPlayerMP player = (EntityPlayerMP)event.player;
-    		if(event.player.posY <= 220.0D && player.dimension == 14 && this.nearvoid_counter == 200)
+    		if(event.player.posY <= 240.0D && player.dimension == 14)
     		{
-            	player.attackEntityFrom(DamageSource.outOfWorld, 0.5F);
-            	this.nearvoid_counter = 0;
-    		}
-    		else
-    		{
-    			this.nearvoid_counter = this.nearvoid_counter+1;
+    			if(this.nearvoid_counter == 200)
+    			{
+    				player.attackEntityFrom(DamageSource.outOfWorld, 0.5F);
+    				this.nearvoid_counter = 0;
+    			}
+    			else
+    			{
+    				this.nearvoid_counter = this.nearvoid_counter+1;
+    			}
     		}
             }
             catch(ClassCastException e)

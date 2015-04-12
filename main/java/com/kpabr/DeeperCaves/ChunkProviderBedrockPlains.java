@@ -247,7 +247,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                     }
                     if (l1 == 154)
                     {
-                    	//p_147422_3_[i2] = DeeperCaves.blocks.nearNetherPortal;
+                    	p_147422_3_[i2] = DeeperCaves.blocks.nearNetherPortal;
                     }
                     if (l1 == 254)
                     {

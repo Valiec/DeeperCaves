@@ -14,6 +14,7 @@ import net.minecraft.world.gen.ChunkProviderEnd;
 import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.ChunkProviderHell;
 import net.minecraft.world.gen.ChunkProviderServer;
+import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.GenLayerBiome;
 import net.minecraftforge.common.BiomeDictionary;
@@ -38,7 +39,7 @@ public class DeeperWorldgen {
     public int bedrockPlainsDimID = 11;
     
     public int nearNetherDimID = 12;
-    public int lavaDimID = 13;
+    //public int lavaDimID = 13;
     public int nearVoidDimID = 14;
     public BiomeGenDrop biomeDrop;
     public BiomeGenMaze biomeMaze;
@@ -47,7 +48,7 @@ public class DeeperWorldgen {
     public BiomeGenBedrockPlains biomeBedrockPlains;
     
     public BiomeGenNearNether biomeNearNether;
-    public BiomeGenLava biomeLava;
+    //public BiomeGenLava biomeLava;
     public BiomeGenNearVoid biomeNearVoid;
     public void setupWorldgen()
     {
@@ -67,8 +68,8 @@ public class DeeperWorldgen {
         
         DimensionManager.registerProviderType(nearNetherDimID, WorldProviderNearNether.class, true);
         DimensionManager.registerDimension(nearNetherDimID, nearNetherDimID);
-        DimensionManager.registerProviderType(lavaDimID, WorldProviderLava.class, true);
-        DimensionManager.registerDimension(lavaDimID, lavaDimID);
+        //DimensionManager.registerProviderType(lavaDimID, WorldProviderLava.class, true);
+        //DimensionManager.registerDimension(lavaDimID, lavaDimID);
         DimensionManager.registerProviderType(nearVoidDimID, WorldProviderNearVoid.class, true);
         DimensionManager.registerDimension(nearVoidDimID, nearVoidDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
@@ -97,10 +98,10 @@ public class DeeperWorldgen {
         BiomeEntry nearNetherEntry = new BiomeEntry(this.biomeNearNether, 50);
         BiomeDictionary.registerBiomeType(this.biomeNearNether, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeNearNether);
-        this.biomeLava = new BiomeGenLava(86, 0);
-        BiomeEntry lavaEntry = new BiomeEntry(this.biomeLava, 50);
-        BiomeDictionary.registerBiomeType(this.biomeLava, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeLava);
+        //this.biomeLava = new BiomeGenLava(86, 0);
+        //BiomeEntry lavaEntry = new BiomeEntry(this.biomeLava, 50);
+        //BiomeDictionary.registerBiomeType(this.biomeLava, Type.PLAINS);
+        //BiomeManager.addSpawnBiome(this.biomeLava);
         this.biomeNearVoid = new BiomeGenNearVoid(87, 0);
         BiomeEntry nearVoidEntry = new BiomeEntry(this.biomeNearVoid, 50);
         BiomeDictionary.registerBiomeType(this.biomeNearVoid, Type.PLAINS);

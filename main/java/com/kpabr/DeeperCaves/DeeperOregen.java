@@ -18,6 +18,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
 import net.minecraft.world.gen.feature.WorldGenFlowers;
 import net.minecraft.world.gen.feature.WorldGenForest;
+import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenSpikes;
 import net.minecraft.world.gen.structure.MapGenVillage;
@@ -33,6 +34,12 @@ public class DeeperOregen implements IWorldGenerator
        {
              switch(world.provider.dimensionId)
              {
+      				case 14:
+      						generateNearVoid(world, random, chunkX * 16, chunkZ * 16);
+      						break;
+      				/*case 13:
+ 							generateLava(world, random, chunkX * 16, chunkZ * 16);
+ 							break;*/
              		case 12:
              				generateNearNether(world, random, chunkX * 16, chunkZ * 16);
              				break;
@@ -128,6 +135,31 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
     	   this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
     	   this.addOre(Blocks.quartz_ore, world, random, x, z, 16, 16, 8, 55, 0, 255, Blocks.stone);
+           
+       }
+       /*private void generateLava(World world, Random random, int x, int z)
+       {
+    	   for (int var3 = 0; var3 < 40; ++var3)
+   			{
+   		    int var4 = x + random.nextInt(16) + 8;
+   		    int var5 = random.nextInt(240) + 16;
+   		    int var6 = z + random.nextInt(16) + 8;
+   		    System.out.println("GEN-ER-ATE!");
+   		    (new WorldGenLiquids(Blocks.flowing_lava)).generate(world, random, var4, var5, var6);
+   			}
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
+    	   this.addOre(Blocks.cobblestone, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.bedrock, world, random, x, z, 16, 16, 8, 55, 0, 255, Blocks.stone);
+           
+       }*/
+       private void generateNearVoid(World world, Random random, int x, int z)
+       {
+    	   
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
+    	   //this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.tenebriumOre, world, random, x, z, 16, 16, 8, 8, 0, 255, Blocks.stone);
            
        }
        
