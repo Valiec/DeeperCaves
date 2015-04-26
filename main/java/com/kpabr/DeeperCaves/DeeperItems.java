@@ -40,6 +40,8 @@ public class DeeperItems {
     
     static ToolMaterial AmetrineW = EnumHelper.addToolMaterial("AMETRINE_W", 1, 50, 7.0F, 0.0F, 15);
     
+    public static Item forgottenGemstone;
+    
     public void registerItems()
     {
        
@@ -58,6 +60,8 @@ public class DeeperItems {
         GameRegistry.registerItem(this.ametrineTippedWoodenPickaxe, "ametrine_tipped_wooden_pickaxe");
         
         GameRegistry.registerItem(this.tenebriumIngot, "tenebriumIngot");
+        
+        GameRegistry.registerItem(this.forgottenGemstone, "forgottenGemstone");
     }
     
     public void registerItemsOreDict()
@@ -69,6 +73,8 @@ public class DeeperItems {
     	OreDictionary.registerOre("gemAquamarine", this.aquamarine);  
     	
     	OreDictionary.registerOre("ingotTenebrium", this.tenebriumIngot);  
+    	
+    	OreDictionary.registerOre("gemForgotten", this.forgottenGemstone);  
     }
     
     public void setupItems()
@@ -89,5 +95,7 @@ public class DeeperItems {
         this.ametrineTippedWoodenPickaxe = new ItemPickaxeBase(this.AmetrineW).setTextureName("deepercaves:ametrineTippedWoodenPickaxe").setUnlocalizedName("ametrineTippedWoodenPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
         
         this.tenebriumIngot = new ItemBase().setTextureName("deepercaves:tenebriumIngot").setUnlocalizedName("tenebriumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.forgottenGemstone = new ItemBase().setTextureName("deepercaves:forgottenGemstone").setUnlocalizedName("forgottenGemstone").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
     }
 }

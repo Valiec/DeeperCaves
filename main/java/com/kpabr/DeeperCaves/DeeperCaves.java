@@ -100,14 +100,18 @@ public class DeeperCaves
     }
     @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        	if(event.player.posY <= 1.0D)
+        	if(event.player.posY <= 0.0D)
         	{
         		try
             	{
             	EntityPlayerMP player = (EntityPlayerMP)event.player;
-            	if(player.dimension == 14)
+            	if(player.dimension == 22)
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
+            	}
+            	if(player.dimension == 14)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 22, new DeeperTeleporter(player.mcServer.worldServerForDimension(22)));
             	}
             	else if(player.dimension == 0)
             	{
@@ -128,7 +132,7 @@ public class DeeperCaves
             		return; //not a player
             	}
         	}
-        	else if(event.player.posY >= 253.0D)
+        	else if(event.player.posY >= 255.0D)
         	{
         		try
             	{
@@ -144,6 +148,10 @@ public class DeeperCaves
             	else if(player.dimension>7 && player.dimension<14)
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension-1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension-1)));
+            	}
+            	if(player.dimension == 22)
+            	{
+            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 14, new DeeperTeleporter(player.mcServer.worldServerForDimension(14)));
             	}
             	else{}
             	}

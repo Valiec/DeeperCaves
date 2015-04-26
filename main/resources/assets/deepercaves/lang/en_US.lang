@@ -1,3 +1,7 @@
+item.forgottenGemstone.name=Forgotten Gemstone
+
+tile.forgottenGemstoneOre.name=Forgotten Gemstone Ore
+
 tile.tenebriumOre.name=Tenebrium Ore
 tile.tenebriumBlock.name=Block of Tenebrium
 item.tenebriumIngot.name=Tenebrium Ingot

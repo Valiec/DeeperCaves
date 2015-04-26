@@ -54,6 +54,8 @@ public class DeeperBlocks {
     public static Block tenebriumOre;
     public static Block tenebriumBlock;
     
+    public static Block forgottenGemstoneOre;
+    
     
     
     public void registerBlocks()
@@ -94,6 +96,8 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.tenebriumOre, "tenebrium_ore"); 
         GameRegistry.registerBlock(this.tenebriumBlock, "tenebrium_block");
         
+        GameRegistry.registerBlock(this.forgottenGemstoneOre, "forgotten_gemstone_ore");
+        
     }
     public void registerBlocksOreDict()
     {
@@ -122,6 +126,8 @@ public class DeeperBlocks {
  
     	OreDictionary.registerOre("oreTenebrium", this.tenebriumOre);
     	OreDictionary.registerOre("blockTenebrium", this.tenebriumBlock);
+    	
+    	OreDictionary.registerOre("oreForgottenGemstone", this.forgottenGemstoneOre);
         
     }
     public void setupBlocks()
@@ -138,8 +144,6 @@ public class DeeperBlocks {
         this.nearNetherPortal = new BlockDeeperPortal(Material.rock, 12).setBlockName("nearNetherPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         //this.lavaPortal = new BlockDeeperPortal(Material.rock, 13).setBlockName("lavaPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.nearVoidPortal = new BlockDeeperPortal(Material.rock, 14).setBlockName("nearVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        System.out.println("ASDFGHJKL");
-        System.out.println(DeeperCaves.items.sapphireGem);
         this.sapphireOre = new BlockOreBase(Material.rock, DeeperCaves.items.sapphireGem, 1, 1).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.aquamarineOre = new BlockOreBase(Material.rock, DeeperCaves.items.aquamarine, 3, 3).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);     
         this.ametrineOre = new BlockOreBase(Material.rock, DeeperCaves.items.ametrineGem, 1, 1).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
@@ -163,6 +167,8 @@ public class DeeperBlocks {
         
         this.tenebriumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:tenebrium").setBlockName("tenebriumOre").setHardness(8.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.tenebriumBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:tenebriumBlock").setBlockName("tenebriumBlock").setHardness(10.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.forgottenGemstoneOre = new BlockFragmentedBedrockOre(Material.rock, DeeperCaves.items.forgottenGemstone, 1, 1).setBlockTextureName("deepercaves:forgotten_gemstone_ore").setBlockName("forgottenGemstoneOre").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         
     }
@@ -194,6 +200,7 @@ public class DeeperBlocks {
         this.tenebriumOre.setHarvestLevel("pickaxe", 4);
         this.tenebriumBlock.setHarvestLevel("pickaxe", 4);
       
+        this.forgottenGemstoneOre.setHarvestLevel("pickaxe", 4);
        
     }
     

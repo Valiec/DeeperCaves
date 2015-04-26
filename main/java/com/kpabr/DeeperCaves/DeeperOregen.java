@@ -34,6 +34,9 @@ public class DeeperOregen implements IWorldGenerator
        {
              switch(world.provider.dimensionId)
              {
+					case 22:
+							generateFinalLabyrinth(world, random, chunkX * 16, chunkZ * 16);
+							break;
       				case 14:
       						generateNearVoid(world, random, chunkX * 16, chunkZ * 16);
       						break;
@@ -160,6 +163,15 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
     	   //this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.tenebriumOre, world, random, x, z, 16, 16, 8, 8, 0, 255, Blocks.stone);
+           
+       }
+       private void generateFinalLabyrinth(World world, Random random, int x, int z)
+       {
+    	   
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
+    	   //this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.forgottenGemstoneOre, world, random, x, z, 16, 16, 4, 50, 0, 255, DeeperCaves.blocks.fragmentedBedrock);
            
        }
        

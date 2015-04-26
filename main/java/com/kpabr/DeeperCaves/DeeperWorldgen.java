@@ -39,13 +39,24 @@ public class DeeperWorldgen {
     public int bedrockPlainsDimID = 11;
     
     public int nearNetherDimID = 12;
-    //public int lavaDimID = 13;
+    public int lavaDimID = 13;
     public int nearVoidDimID = 14;
+    
+    public int deepWorldDimID = 15;
+    public int darknessDimID = 16;
+    public int abandonedCavesDimID = 17;
+    public int mutationDimID = 18;
+    public int farVoidDimID = 19;
+    
+    public int forgottenDimID = 10;
+    public int evilDimID = 21;
+    public int finalLabyrinthDimID = 22;    
     public BiomeGenDrop biomeDrop;
     public BiomeGenMaze biomeMaze;
     public BiomeGenCrystal biomeCrystal;
     public BiomeGenCompressed biomeCompressed;
     public BiomeGenBedrockPlains biomeBedrockPlains;
+    public BiomeGenFinalLabyrinth biomeFinalLabyrinth;
     
     public BiomeGenNearNether biomeNearNether;
     //public BiomeGenLava biomeLava;
@@ -72,6 +83,9 @@ public class DeeperWorldgen {
         //DimensionManager.registerDimension(lavaDimID, lavaDimID);
         DimensionManager.registerProviderType(nearVoidDimID, WorldProviderNearVoid.class, true);
         DimensionManager.registerDimension(nearVoidDimID, nearVoidDimID);
+        
+        DimensionManager.registerProviderType(finalLabyrinthDimID, WorldProviderFinalLabyrinth.class, true);
+        DimensionManager.registerDimension(finalLabyrinthDimID, finalLabyrinthDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
         this.biomeDrop = new BiomeGenDrop(80, 0);
         BiomeEntry dropEntry = new BiomeEntry(this.biomeDrop, 50);
@@ -106,6 +120,11 @@ public class DeeperWorldgen {
         BiomeEntry nearVoidEntry = new BiomeEntry(this.biomeNearVoid, 50);
         BiomeDictionary.registerBiomeType(this.biomeNearVoid, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeNearVoid);
+        
+        this.biomeFinalLabyrinth = new BiomeGenFinalLabyrinth(95, 0);
+        BiomeEntry finalLabyrinthEntry = new BiomeEntry(this.biomeFinalLabyrinth, 50);
+        BiomeDictionary.registerBiomeType(this.biomeFinalLabyrinth, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeFinalLabyrinth);
     }
     @SubscribeEvent
     public void onOverworldBiomes(ReplaceBiomeBlocks event)
