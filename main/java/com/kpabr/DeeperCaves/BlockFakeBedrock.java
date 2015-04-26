@@ -21,9 +21,9 @@ import net.minecraft.world.World;
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class BlockFragmentedBedrock extends Block {
+public class BlockFakeBedrock extends Block {
 
-	public BlockFragmentedBedrock(Material par2Material) {
+	public BlockFakeBedrock(Material par2Material) {
 		super(par2Material);
 		// TODO Auto-generated constructor stub
 	}
@@ -39,7 +39,7 @@ public class BlockFragmentedBedrock extends Block {
         }
 
         return true;
-    } 
+    }
 	@Override
 	public boolean onBlockActivated(World p_149727_1_, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer p_149727_5_, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
 	{

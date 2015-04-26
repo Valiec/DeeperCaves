@@ -56,6 +56,8 @@ public class DeeperBlocks {
     
     public static Block forgottenGemstoneOre;
     
+    public static Block fakeBedrock;
+    
     
     
     public void registerBlocks()
@@ -97,6 +99,8 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.tenebriumBlock, "tenebrium_block");
         
         GameRegistry.registerBlock(this.forgottenGemstoneOre, "forgotten_gemstone_ore");
+        
+        GameRegistry.registerBlock(this.fakeBedrock, "fake_bedrock");
         
     }
     public void registerBlocksOreDict()
@@ -169,6 +173,8 @@ public class DeeperBlocks {
         this.tenebriumBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:tenebriumBlock").setBlockName("tenebriumBlock").setHardness(10.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         this.forgottenGemstoneOre = new BlockFragmentedBedrockOre(Material.rock, DeeperCaves.items.forgottenGemstone, 1, 1).setBlockTextureName("deepercaves:forgotten_gemstone_ore").setBlockName("forgottenGemstoneOre").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.fakeBedrock = new BlockFakeBedrock(Material.rock).setBlockTextureName("minecraft:bedrock").setBlockName("fakeBedrock").setHardness(45.5F).setResistance(1500000.0F).setBlockUnbreakable().setCreativeTab(null);
         
         
     }

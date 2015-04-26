@@ -284,7 +284,7 @@ public class MapGenDeeperCavesFinalLabyrinth extends MapGenBase
         Block filler = (isExceptionBiome(biome) ? Blocks.dirt  : biome.fillerBlock);
         Block block  = data[index];
 
-        if (block == Blocks.stone || block == filler || block == top || block == Blocks.bedrock)
+        if (block == Blocks.stone || block == filler || block == top || block == DeeperCaves.blocks.fakeBedrock)
         {
             //if (y < 10)
             //{
@@ -296,8 +296,8 @@ public class MapGenDeeperCavesFinalLabyrinth extends MapGenBase
 
                 //if (foundTop && data[index - 1] != null && data[index - 1] != Blocks.air && data[index - 1] != Blocks.gold_block)
                 //{
-                    data[index - 1] = Blocks.bedrock;
-                    if(data[index+1] == Blocks.bedrock)
+                    data[index - 1] = DeeperCaves.blocks.fakeBedrock;
+                    if(data[index+1] == DeeperCaves.blocks.fakeBedrock)
                     {
                     	data[index+1] = null;
                     }
