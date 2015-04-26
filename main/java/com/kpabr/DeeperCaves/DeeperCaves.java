@@ -50,6 +50,7 @@ public class DeeperCaves
     static int versionID = 4; //Used by version checker!
     
     static DeeperBlocks blocks = new DeeperBlocks();
+    static DeeperFluids fluids = new DeeperFluids();
     static DeeperItems items = new DeeperItems();
     static DeeperRecipes recipes = new DeeperRecipes();
     static DeeperWorldgen worldgen = new DeeperWorldgen();
@@ -91,6 +92,8 @@ public class DeeperCaves
      	items.registerItemsOreDict();
      	blocks.setupBlocks();
      	blocks.registerBlocks();
+     	fluids.setupFluids();
+     	fluids.setupFluidBlocks();
      	blocks.registerBlocksOreDict();
         blocks.setupHarvestLevels();
      	recipes.setupShapelessCrafting();
