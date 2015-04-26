@@ -32,14 +32,21 @@ public class BlockOreBase extends Block {
 		// TODO Auto-generated constructor stub
 	}
 	@Override
+	public boolean canSilkHarvest()
+    {
+        return true;
+    }
+	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return drop;
+		System.out.println(this.drop);
+		System.out.println(DeeperCaves.items.sapphireGem);
+        return this.drop;
     }
 	@Override
     public int quantityDropped(Random par1Random)
     {
-        return quantity + par1Random.nextInt(randval);
+        return this.quantity + par1Random.nextInt(randval);
     }
 
 }

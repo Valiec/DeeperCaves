@@ -45,9 +45,9 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "0.2.0";
+    public static final String VERSION = "0.2.1";
     public static final String NAME = "DeeperCaves";
-    static int versionID = 3; //Used by version checker!
+    static int versionID = 4; //Used by version checker!
     
     static DeeperBlocks blocks = new DeeperBlocks();
     static DeeperItems items = new DeeperItems();
@@ -86,12 +86,12 @@ public class DeeperCaves
 
         
         
-     	blocks.setupBlocks();
      	items.setupItems();
-     	blocks.registerBlocks();
-     	blocks.registerBlocksOreDict();
      	items.registerItems();
      	items.registerItemsOreDict();
+     	blocks.setupBlocks();
+     	blocks.registerBlocks();
+     	blocks.registerBlocksOreDict();
         blocks.setupHarvestLevels();
      	recipes.setupShapelessCrafting();
      	recipes.setupShapedCrafting();

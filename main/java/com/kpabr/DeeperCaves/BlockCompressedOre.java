@@ -28,6 +28,11 @@ public class BlockCompressedOre extends Block {
 		// TODO Auto-generated constructor stub
 	}
 	@Override
+	public boolean canSilkHarvest()
+    {
+        return true;
+    }
+	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
         return ore.getItemDropped(par1, par2Random, par3);
