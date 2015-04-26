@@ -1,4 +1,4 @@
-#DeeperCaves 0.2.0dev for Minecraft 1.7.10
+#DeeperCaves 0.2.1 for Minecraft 1.7.10
 
 
 ##How to Install:
@@ -12,13 +12,11 @@
 
 ###For Users:
 
-0.1.2 is the newest release version.
-
 1. Install Minecraft Forge
 2. Run minecraft to create a mods folder 
-3. Place the DeeperCaves-0.1.2-mc1.7.10.jar file into your mods folder inside your minecraft folder
+3. Place the DeeperCaves-0.2.1-mc1.7.10.jar file into your mods folder inside your minecraft folder
 
-If Forge is not loading the mod, check that you installed the DeeperCaves-0.1.2-mc1.7.10.jar file, not the DeeperCaves-0.1.2-mc1.7.10.zip file.
+If Forge is not loading the mod, check that you installed the DeeperCaves-0.2.1-mc1.7.10.jar file, not the DeeperCaves-0.2.1-mc1.7.10.zip file.
 
 
 ##Mod Info:
