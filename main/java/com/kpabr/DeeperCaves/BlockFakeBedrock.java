@@ -21,7 +21,7 @@ import net.minecraft.world.World;
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class BlockFakeBedrock extends Block {
+public class BlockFakeBedrock extends BlockBase {
 
 	public BlockFakeBedrock(Material par2Material) {
 		super(par2Material);

@@ -21,7 +21,7 @@ import net.minecraft.world.World;
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class BlockFragmentedBedrock extends Block {
+public class BlockFragmentedBedrock extends BlockBase {
 
 	public BlockFragmentedBedrock(Material par2Material) {
 		super(par2Material);

@@ -19,36 +19,16 @@ import net.minecraft.world.World;
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class BlockFragmentedBedrockOre extends Block {
+public class BlockFragmentedBedrockOre extends BlockOreBase {
 	
-	private Item drop;
-	private int quantity;
-	private int randval;
 
-	public BlockFragmentedBedrockOre(Material par2Material, Item drop, int quantity, int randval) {
-		super(par2Material);
+	public BlockFragmentedBedrockOre(Material par2Material, Item drop, int quantity, int randval, boolean doXPdrop, int xpmin, int xpmax) {
+		super(par2Material, drop, quantity, randval, doXPdrop, xpmin, xpmax);
 		this.drop = drop;
 		this.quantity = quantity;
 		this.randval = randval;
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public boolean canSilkHarvest()
-    {
-        return true;
-    }
-	@Override
-	public Item getItemDropped(int par1, Random par2Random, int par3)
-    {
-		System.out.println(this.drop);
-		System.out.println(DeeperCaves.items.sapphireGem);
-        return this.drop;
-    }
-	@Override
-    public int quantityDropped(Random par1Random)
-    {
-        return this.quantity + par1Random.nextInt(randval);
-    }
 
 	public boolean canEntityDestroy(IBlockAccess world, int x, int y, int z, Entity entity)
     {

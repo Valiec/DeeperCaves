@@ -1,3 +1,10 @@
+item.fragmentedBedrockBucket.name=Fragmented Bedrock Bucket of Molten Iron
+item.fragmentedBedrockBucketl.name=Fragmented Bedrock Bucket of Lava
+item.fragmentedBedrockBucketw.name=Fragmented Bedrock Bucket of Water
+item.fragmentedBedrockBucket.name=Fragmented Bedrock Bucket
+
+tile.forgottenGemstoneBlock.name=Block of Forgotten Gemstone
+
 tile.fakeBedrock.name=Final Labyrinth Bedrock
 
 item.forgottenGemstone.name=Forgotten Gemstone

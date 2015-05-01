@@ -31,7 +31,7 @@ public class DeeperFluids {
     }
     public void setupFluidBlocks()
     {
-    	this.moltenIronBlock = new BlockFluidMoltenIron(this.moltenIron, Material.lava).setBlockName("moltenIron").setBlockTextureName("deepercaves:molten_iron").setCreativeTab(DeeperCaves.tabDeeperCaves);
+    	this.moltenIronBlock = new BlockFluidMoltenIron(this.moltenIron, DeeperCaves.materials.moltenIron).setBlockName("moltenIron").setBlockTextureName("deepercaves:molten_iron").setCreativeTab(DeeperCaves.tabDeeperCaves);
         GameRegistry.registerBlock(this.moltenIronBlock, "molten_iron");
     }
 

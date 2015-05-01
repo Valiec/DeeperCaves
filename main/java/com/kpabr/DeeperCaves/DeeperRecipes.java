@@ -29,6 +29,10 @@ public class DeeperRecipes {
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.tenebriumBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.tenebriumIngot});
         
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.fragmentedBedrockBucket, 1), new Object[]{"Z Z", "Z", 'Z', DeeperCaves.blocks.fragmentedBedrock});
+        
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.forgottenGemstoneBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.forgottenGemstone});
+        
         
     }
     public void setupShapelessCrafting()
@@ -42,6 +46,8 @@ public class DeeperRecipes {
         
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.tenebriumIngot, 9), new Object[]{DeeperCaves.blocks.tenebriumBlock});
         
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.forgottenGemstone, 9), new Object[]{DeeperCaves.blocks.forgottenGemstoneBlock});
+        
     }
     public void setupSmelting()
     {
@@ -49,6 +55,20 @@ public class DeeperRecipes {
         GameRegistry.addSmelting(DeeperCaves.blocks.silverOre, new ItemStack(DeeperCaves.items.silverIngot, 1) , 0.6F);
         
         GameRegistry.addSmelting(DeeperCaves.blocks.tenebriumOre, new ItemStack(DeeperCaves.items.tenebriumIngot, 1) , 1.0F);
+        
+        GameRegistry.addSmelting(DeeperCaves.blocks.sapphireOre, new ItemStack(DeeperCaves.items.sapphireGem, 1) , 0.5F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.aquamarineOre, new ItemStack(DeeperCaves.items.aquamarine, 1) , 0.5F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.ametrineOre, new ItemStack(DeeperCaves.items.ametrineGem, 1) , 0.5F);
+        
+        GameRegistry.addSmelting(DeeperCaves.blocks.ccoalOre, new ItemStack(Items.coal, 2) , 0.5F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.cironOre, new ItemStack(Items.iron_ingot, 2) , 0.5F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.cgoldOre, new ItemStack(Items.gold_ingot, 2) , 0.5F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.clapisOre, new ItemStack(Items.dye, 2, 4) , 0.5F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.credstoneOre, new ItemStack(Items.redstone, 2) , 0.5F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.cdiamondOre, new ItemStack(Items.diamond, 2) , 0.5F);
+        GameRegistry.addSmelting(DeeperCaves.blocks.cemeraldOre, new ItemStack(Items.emerald, 2) , 0.5F);
+        
+        GameRegistry.addSmelting(DeeperCaves.blocks.forgottenGemstoneOre, new ItemStack(DeeperCaves.items.forgottenGemstone, 1) , 2.0F);
         
         
     }

@@ -12,6 +12,7 @@ import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 /*
  * Created by Valiec2019
@@ -19,6 +20,7 @@ import net.minecraft.world.World;
  * using Minecraft Forge 10.12.0.1022
  */
 public class BlockBase extends Block {
+	
 
 	public BlockBase(Material par2Material) {
 		super(par2Material);
