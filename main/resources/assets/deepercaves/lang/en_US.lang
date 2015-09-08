@@ -1,3 +1,20 @@
+item.fragmentedBedrockBucket.name=Fragmented Bedrock Bucket of Molten Iron
+item.fragmentedBedrockBucketl.name=Fragmented Bedrock Bucket of Lava
+item.fragmentedBedrockBucketw.name=Fragmented Bedrock Bucket of Water
+item.fragmentedBedrockBucket.name=Fragmented Bedrock Bucket
+
+tile.forgottenGemstoneBlock.name=Block of Forgotten Gemstone
+
+tile.fakeBedrock.name=Final Labyrinth Bedrock
+
+item.forgottenGemstone.name=Forgotten Gemstone
+
+tile.forgottenGemstoneOre.name=Forgotten Gemstone Ore
+
+tile.tenebriumOre.name=Tenebrium Ore
+tile.tenebriumBlock.name=Block of Tenebrium
+item.tenebriumIngot.name=Tenebrium Ingot
+
 tile.silverOre.name=Silver Ore
 item.silverIngot.name=Silver Ingot
 item.ametrineGem.name=Ametrine Gem

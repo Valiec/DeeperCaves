@@ -25,7 +25,7 @@ public class WorldProviderLava extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeLava, 0.5F);
+        //this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeLava, 0.5F);
         this.dimensionId = 13;
         this.hasNoSky = true;
     }
@@ -36,7 +36,7 @@ public class WorldProviderLava extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderLava(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderDrop(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**

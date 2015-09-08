@@ -251,7 +251,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                     }
                     if (l1 == 254)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
+                    	//p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
                     }
                     
                 }
@@ -468,7 +468,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
             k1 = k + this.rand.nextInt(16) + 8;
             l1 = this.rand.nextInt(256);
             i2 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLakes(Blocks.lava)).generate(this.worldObj, this.rand, k1, l1, i2);
+            (new WorldGenLakes(DeeperCaves.fluids.moltenIronBlock)).generate(this.worldObj, this.rand, k1, l1, i2);
         }
 
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
@@ -479,7 +479,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
 
             if (l1 < 63 || this.rand.nextInt(10) == 0)
             {
-                (new WorldGenLakes(Blocks.lava)).generate(this.worldObj, this.rand, k1, l1, i2);
+                (new WorldGenLakes(DeeperCaves.fluids.moltenIronBlock)).generate(this.worldObj, this.rand, k1, l1, i2);
             }
         }
 

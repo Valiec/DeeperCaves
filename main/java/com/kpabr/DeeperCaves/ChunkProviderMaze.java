@@ -218,37 +218,13 @@ public class ChunkProviderMaze implements IChunkProvider
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
 
-<<<<<<< HEAD:src/main/java/com/kpabr/DeeperCaves/ChunkProviderMaze.java
                     if (l1 <= 5 && l1 >= 0 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
                     if (l1 >= 250 && l1 <= 255 && p_147422_3_[i2] == Blocks.bedrock)
-=======
-                    if (l1 <= 5 && l1 > 1 && p_147422_3_[i2] == Blocks.bedrock)
                     {
                     	p_147422_3_[i2] = Blocks.stone;
-                    }
-                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
->>>>>>> e4e4ba2ece9d189de1a7f89137a271ca1a7c2b87:main/java/com/kpabr/DeeperCaves/ChunkProviderMaze.java
-                    {
-                    	p_147422_3_[i2] = Blocks.stone;
-                    }
-                    if (l1 == 2)
-                    {
-<<<<<<< HEAD:src/main/java/com/kpabr/DeeperCaves/ChunkProviderMaze.java
-                    	//p_147422_3_[i2] = DeeperCaves.blocks.crystalPortal;
-                    }
-                    if (l1 == 254)
-                    {
-                    	//p_147422_3_[i2] = DeeperCaves.blocks.dropPortal;
-=======
-                    	p_147422_3_[i2] = DeeperCaves.blocks.crystalPortal;
-                    }
-                    if (l1 == 254)
-                    {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.dropPortal;
->>>>>>> e4e4ba2ece9d189de1a7f89137a271ca1a7c2b87:main/java/com/kpabr/DeeperCaves/ChunkProviderMaze.java
                     }
                 }
             }
@@ -276,7 +252,6 @@ public class ChunkProviderMaze implements IChunkProvider
         this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
         this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
         this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-        //this.ravineGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
 
         if (this.mapFeaturesEnabled)
         {

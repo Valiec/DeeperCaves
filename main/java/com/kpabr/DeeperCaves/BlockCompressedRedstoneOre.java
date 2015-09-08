@@ -16,12 +16,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockCompressedRedstoneOre extends Block {
+public class BlockCompressedRedstoneOre extends BlockCompressedOre {
 	
 	private boolean glow;
 	
 	public BlockCompressedRedstoneOre(boolean glow){
-		super(Material.rock);
+		super(Material.rock, Blocks.redstone_ore);
         if (glow)
         {
             this.setTickRandomly(true);

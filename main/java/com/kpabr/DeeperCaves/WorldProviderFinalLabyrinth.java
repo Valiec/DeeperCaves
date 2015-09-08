@@ -18,15 +18,15 @@ import net.minecraft.world.gen.ChunkProviderEnd;
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class WorldProviderMaze extends WorldProvider
+public class WorldProviderFinalLabyrinth extends WorldProvider
 {
     /**
      * creates a new world chunk manager for WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeMaze, 0.5F);
-        this.dimensionId = 8;
+        this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeFinalLabyrinth, 0.5F);
+        this.dimensionId = 22;
         this.hasNoSky = true;
     }
 
@@ -36,7 +36,7 @@ public class WorldProviderMaze extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderMaze(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderFinalLabyrinth(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**
@@ -118,6 +118,6 @@ public class WorldProviderMaze extends WorldProvider
      */
     public String getDimensionName()
     {
-        return "Maze";
+        return "Final Labyrinth";
     }
 }
