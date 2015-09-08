@@ -12,25 +12,30 @@ import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 /*
  * Created by Valiec2019
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class BlockCompressedOre extends Block {
+public class BlockCompressedOre extends BlockBase {
 
-	Item drop;
-	Block ore;
+	public Block ore;
 	public BlockCompressedOre(Material par2Material, Block ore) {
 		super(par2Material);
 		this.ore = ore;
-		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public boolean canSilkHarvest()
+    {
+        return true;
+    }
 	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
         return ore.getItemDropped(par1, par2Random, par3);
+        
     }
 	@Override
 	public int quantityDroppedWithBonus(int fortuneLevel, Random rand)
@@ -62,5 +67,16 @@ public class BlockCompressedOre extends Block {
     {
         return ore.quantityDropped(par1Random) * (2 + par1Random.nextInt(2));
     }
+	@Override
+	public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7){
+        
+        super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, par7);
+        
+        int var6 = this.ore.getExpDrop(par1World, 0, 0);
+           
+        this.dropXpOnBlockBreak(par1World, par2, par3, par4, var6);
+        
+           
+	}
 
 }

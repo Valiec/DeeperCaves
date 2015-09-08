@@ -21,7 +21,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockReturnPortal extends Block
+public class BlockReturnPortal extends BlockBase
 {
     public static boolean field_149948_a;
     private static final String __OBFID = "CL_00000236";

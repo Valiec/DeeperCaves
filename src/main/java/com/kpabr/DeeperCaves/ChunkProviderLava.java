@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves;
 
+
 import java.util.List;
 import java.util.Random;
 
@@ -418,7 +419,7 @@ public class ChunkProviderLava implements IChunkProvider
      */
     public void populate(IChunkProvider par1IChunkProvider, int par2, int par3)
     {
-        BlockFalling.fallInstantly = true;
+    	BlockFalling.fallInstantly = true;
         int k = par2 * 16;
         int l = par3 * 16;
         BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(k + 16, l + 16);
@@ -446,9 +447,9 @@ public class ChunkProviderLava implements IChunkProvider
             && TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAKE))
         {
             k1 = k + this.rand.nextInt(16) + 8;
-            l1 = this.rand.nextInt(255);
+            l1 = this.rand.nextInt(256);
             i2 = l + this.rand.nextInt(16) + 8;
-            //(new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, k1, l1, i2);
+            (new WorldGenLakes(Blocks.water)).generate(this.worldObj, this.rand, k1, l1, i2);
         }
 
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
@@ -503,7 +504,7 @@ public class ChunkProviderLava implements IChunkProvider
             int var4 = k + this.rand.nextInt(16) + 8;
             int var5 = this.rand.nextInt(255);
             int var6 = l + this.rand.nextInt(16) + 8;
-            //(new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
+            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
         }
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, flag));
@@ -575,7 +576,7 @@ public class ChunkProviderLava implements IChunkProvider
         {
             this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
             this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
-            this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
+            //this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
             this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
         }
     }

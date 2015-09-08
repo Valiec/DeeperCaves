@@ -28,6 +28,14 @@ public class DeeperItems {
     public static Item ametrineTippedStonePickaxe;
     
     public static Item ametrineTippedWoodenPickaxe;
+    
+    public static Item tenebriumIngot;
+    
+    public static Item fragmentedBedrockBucket;
+    
+    public static Item fragmentedBedrockBucketMI;
+    public static Item fragmentedBedrockBucketW;
+    public static Item fragmentedBedrockBucketL;
 
     /*Tool and Armor Material declarations*/
     static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
@@ -37,6 +45,8 @@ public class DeeperItems {
     static ToolMaterial AmetrineS = EnumHelper.addToolMaterial("AMETRINE_S", 2, 131, 9.0F, 1.0F, 5);
     
     static ToolMaterial AmetrineW = EnumHelper.addToolMaterial("AMETRINE_W", 1, 50, 7.0F, 0.0F, 15);
+    
+    public static Item forgottenGemstone;
     
     public void registerItems()
     {
@@ -54,6 +64,16 @@ public class DeeperItems {
         GameRegistry.registerItem(this.ametrineTippedStonePickaxe, "ametrine_tipped_stone_pickaxe");
         
         GameRegistry.registerItem(this.ametrineTippedWoodenPickaxe, "ametrine_tipped_wooden_pickaxe");
+        
+        GameRegistry.registerItem(this.tenebriumIngot, "tenebriumIngot");
+        
+        GameRegistry.registerItem(this.forgottenGemstone, "forgottenGemstone");
+        
+        GameRegistry.registerItem(this.fragmentedBedrockBucket, "fragmented_bedrock_bucket");
+        
+        GameRegistry.registerItem(this.fragmentedBedrockBucketMI, "fragmented_bedrock_bucket_molten_iron");
+        GameRegistry.registerItem(this.fragmentedBedrockBucketW, "fragmented_bedrock_bucket_water");
+        GameRegistry.registerItem(this.fragmentedBedrockBucketL, "fragmented_bedrock_bucket_lava");
     }
     
     public void registerItemsOreDict()
@@ -63,6 +83,10 @@ public class DeeperItems {
     	OreDictionary.registerOre("gemAmetrine", this.ametrineGem);  
         
     	OreDictionary.registerOre("gemAquamarine", this.aquamarine);  
+    	
+    	OreDictionary.registerOre("ingotTenebrium", this.tenebriumIngot);  
+    	
+    	OreDictionary.registerOre("gemForgotten", this.forgottenGemstone);  
     }
     
     public void setupItems()
@@ -81,5 +105,17 @@ public class DeeperItems {
         this.ametrineTippedStonePickaxe = new ItemPickaxeBase(this.AmetrineS).setTextureName("deepercaves:ametrineTippedStonePickaxe").setUnlocalizedName("ametrineTippedStonePickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
         
         this.ametrineTippedWoodenPickaxe = new ItemPickaxeBase(this.AmetrineW).setTextureName("deepercaves:ametrineTippedWoodenPickaxe").setUnlocalizedName("ametrineTippedWoodenPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        
+        this.tenebriumIngot = new ItemBase().setTextureName("deepercaves:tenebriumIngot").setUnlocalizedName("tenebriumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.forgottenGemstone = new ItemBase().setTextureName("deepercaves:forgottenGemstone").setUnlocalizedName("forgottenGemstone").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.fragmentedBedrockBucket = new ItemFragmentedBedrockBucket(Blocks.air).setTextureName("deepercaves:fragmented_bedrock_bucket").setUnlocalizedName("fragmentedBedrockBucket").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.fragmentedBedrockBucketMI = new ItemFragmentedBedrockBucket(DeeperCaves.fluids.moltenIronBlock).setTextureName("deepercaves:fragmented_bedrock_bucket_mi").setUnlocalizedName("fragmentedBedrockBucketMoltenIron").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.fragmentedBedrockBucketW = new ItemFragmentedBedrockBucket(Blocks.flowing_water).setTextureName("deepercaves:fragmented_bedrock_bucket_w").setUnlocalizedName("fragmentedBedrockBucketWater").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.fragmentedBedrockBucketL = new ItemFragmentedBedrockBucket(Blocks.flowing_lava).setTextureName("deepercaves:fragmented_bedrock_bucket_l").setUnlocalizedName("fragmentedBedrockBucketLava").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
     }
 }
