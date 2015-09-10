@@ -33,6 +33,8 @@ public class DeeperRecipes {
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.forgottenGemstoneBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.forgottenGemstone});
         
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.dropPortal, 1), new Object[]{"ZZZ", "Z Z", "ZZZ", 'Z', Blocks.obsidian});
+        
         
     }
     public void setupShapelessCrafting()
