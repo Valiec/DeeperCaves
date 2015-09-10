@@ -24,6 +24,7 @@ public class BiomeGenDeepWorld extends BiomeGenBase
     public BiomeGenDeepWorld(int p_i45377_1_, int p_i45377_2_)
     {
         super(p_i45377_1_);
+        this.spawnableMonsterList.clear();
     	this.biomeName = "Deep World";
         this.temperature = 0.80F;
         this.setHeight(BiomeGenBase.height_LowHills);
@@ -36,4 +37,5 @@ public class BiomeGenDeepWorld extends BiomeGenBase
         this.rainfall = 0.68F;
 
     }
+    
 }

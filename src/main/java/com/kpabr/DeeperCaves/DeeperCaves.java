@@ -45,9 +45,9 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "0.2.2";
+    public static final String VERSION = "0.3.0";
     public static final String NAME = "DeeperCaves";
-    static int versionID = 5; //Used by version checker!
+    static int versionID = 6; //Used by version checker!
     
     static DeeperMaterials materials = new DeeperMaterials();
     static DeeperBlocks blocks = new DeeperBlocks();
@@ -55,6 +55,7 @@ public class DeeperCaves
     static DeeperItems items = new DeeperItems();
     static DeeperRecipes recipes = new DeeperRecipes();
     static DeeperWorldgen worldgen = new DeeperWorldgen();
+    static DeeperMobs mobs = new DeeperMobs();
     static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
     public static DeeperCaves instance;
     public static Configuration config;
@@ -101,6 +102,8 @@ public class DeeperCaves
      	recipes.setupShapedCrafting();
      	recipes.setupSmelting();
      	worldgen.setupWorldgen();
+     	mobs.setupMobs();
+     	proxy.registerRenderers();
     }
     @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
