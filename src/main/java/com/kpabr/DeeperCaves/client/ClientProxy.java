@@ -15,14 +15,6 @@ import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy {
-        //EndRenderHandler erh = new EndRenderHandler();
-/*        @Override
-        public void registerRenderers() 
-        {
-            
-                //RenderingRegistry.registerEntityRenderingHandler(EntityDragonfire.class, new RenderDragonfire(new ModelBiped(), 0.5F));
-//the 0.5F is the shadowsize
-                //RenderingRegistry.registerBlockHandler(500, erh);
-        }*/
+
         
 }

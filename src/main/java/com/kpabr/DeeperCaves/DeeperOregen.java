@@ -37,6 +37,9 @@ public class DeeperOregen implements IWorldGenerator
 					case 22:
 							generateFinalLabyrinth(world, random, chunkX * 16, chunkZ * 16);
 							break;
+					case 15:
+  							generateDeepWorld(world, random, chunkX * 16, chunkZ * 16);
+  							break;
       				case 14:
       						generateNearVoid(world, random, chunkX * 16, chunkZ * 16);
       						break;
@@ -163,6 +166,21 @@ public class DeeperOregen implements IWorldGenerator
     	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
     	   //this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.tenebriumOre, world, random, x, z, 16, 16, 8, 8, 0, 255, Blocks.stone);
+           
+       }
+       private void generateDeepWorld(World world, Random random, int x, int z)
+       {
+    	   
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
+    	   //this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.coal_ore, world, random, x, z, 16, 16, 15, 160, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.iron_ore, world, random, x, z, 16, 16, 10, 130, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.gold_ore, world, random, x, z, 16, 16, 8, 30, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.lapis_ore, world, random, x, z, 16, 16, 7, 35, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.redstone_ore, world, random, x, z, 16, 16, 8, 108, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 8, 13, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 3, 8, 0, 255, Blocks.stone);
            
        }
        private void generateFinalLabyrinth(World world, Random random, int x, int z)

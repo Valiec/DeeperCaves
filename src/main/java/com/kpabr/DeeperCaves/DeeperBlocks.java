@@ -27,6 +27,7 @@ public class DeeperBlocks {
     public static Block nearNetherPortal;
     //public static Block lavaPortal;
     public static Block nearVoidPortal;
+    public static Block deepWorldPortal;
     
     public static Block sapphireOre;
     public static Block aquamarineOre;
@@ -75,6 +76,7 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.nearNetherPortal, "near_nether_portal");
         //GameRegistry.registerBlock(this.lavaPortal, "lava_portal");
         GameRegistry.registerBlock(this.nearVoidPortal, "near_void_portal");
+        GameRegistry.registerBlock(this.deepWorldPortal, "deep_world_portal");
         
         GameRegistry.registerBlock(this.sapphireOre, "sapphire_ore");
         GameRegistry.registerBlock(this.aquamarineOre, "aquamarine_ore");
@@ -154,6 +156,7 @@ public class DeeperBlocks {
         this.nearNetherPortal = new BlockDeeperPortal(Material.rock, 12).setBlockName("nearNetherPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         //this.lavaPortal = new BlockDeeperPortal(Material.rock, 13).setBlockName("lavaPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.nearVoidPortal = new BlockDeeperPortal(Material.rock, 14).setBlockName("nearVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        this.deepWorldPortal = new BlockDeeperPortal(Material.rock, 15).setBlockName("deepWorldPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.sapphireOre = new BlockOreBase(Material.rock, DeeperCaves.items.sapphireGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.aquamarineOre = new BlockOreBase(Material.rock, DeeperCaves.items.aquamarine, 3, 3, true, 3, 6).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);     
         this.ametrineOre = new BlockOreBase(Material.rock, DeeperCaves.items.ametrineGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
