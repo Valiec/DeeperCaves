@@ -1,3 +1,10 @@
+entity.deepCreeper.name=Deep World Creeper
+entity.deepCaveSpider.name=Deep World Cave Spider
+entity.deepSkeleton.name=Deep World Skeleton
+entity.deepZombie.name=Deep World Zombie
+
+tile.dropPortal.name=Drop Portal
+
 item.fragmentedBedrockBucketMoltenIron.name=Fragmented Bedrock Bucket of Molten Iron
 item.fragmentedBedrockBucketLava.name=Fragmented Bedrock Bucket of Lava
 item.fragmentedBedrockBucketWater.name=Fragmented Bedrock Bucket of Water

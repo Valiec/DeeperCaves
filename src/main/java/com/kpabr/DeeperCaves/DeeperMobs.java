@@ -10,13 +10,13 @@ public class DeeperMobs {
     public void setupMobs()
     {
         /*Registering mobs*/
-        EntityRegistry.registerGlobalEntityID(EntityDeepZombie.class, "Deep World Zombie", 102, 0x000000, 0x5555FF);
+        EntityRegistry.registerGlobalEntityID(EntityDeepZombie.class, "deepZombie", 102, 0x007A7A, 0x365226); //*
         EntityRegistry.addSpawn(EntityDeepZombie.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeDeepWorld);
-        EntityRegistry.registerGlobalEntityID(EntityDeepSkeleton.class, "Deep World Skeleton", 103, 0x000000, 0x5555FF);
+        EntityRegistry.registerGlobalEntityID(EntityDeepSkeleton.class, "deepSkeleton", 103, 0x7A7A7A, 0x000000);
         EntityRegistry.addSpawn(EntityDeepSkeleton.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeDeepWorld);
-        EntityRegistry.registerGlobalEntityID(EntityDeepCaveSpider.class, "Deep World Cave Spider", 104, 0x000000, 0x5555FF);
+        EntityRegistry.registerGlobalEntityID(EntityDeepCaveSpider.class, "deepCaveSpider", 104, 0x00040F, 0x4B0000);
         EntityRegistry.addSpawn(EntityDeepCaveSpider.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeDeepWorld);
-        EntityRegistry.registerGlobalEntityID(EntityDeepCreeper.class, "Deep World Creeper", 105, 0x000000, 0x5555FF);
+        EntityRegistry.registerGlobalEntityID(EntityDeepCreeper.class, "deepCreeper", 105, 0x006200, 0x000000);
         EntityRegistry.addSpawn(EntityDeepCreeper.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeDeepWorld);
         
     }

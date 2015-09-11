@@ -146,7 +146,7 @@ public class DeeperBlocks {
     {
         
         this.silverOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:silver_ore").setBlockName("silverOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        this.dropPortal = new BlockDeeperPortal(Material.rock, 7).setBlockName("dropPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        this.dropPortal = new BlockDeeperPortal(Material.rock, 7).setBlockName("dropPortal").setHardness(3.5F).setResistance(10000000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.returnPortal = new BlockReturnPortal(Material.rock).setBlockName("returnPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.mazePortal = new BlockDeeperPortal(Material.rock, 8).setBlockName("mazePortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.crystalPortal = new BlockDeeperPortal(Material.rock, 9).setBlockName("crystalPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
