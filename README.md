@@ -6,7 +6,7 @@
 ###For Developers:
 
 1. Install Minecraft Forge as source and unzip the downloaded zip file
-2. Run ./gradlew eclipse inside the unzipped folder
+2. Run ./gradlew SetupDecompWorkspace eclipse inside the unzipped folder
 2. Clone this repository
 3. Copy the src folder in place of the src folder created by Forge
 
