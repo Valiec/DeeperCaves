@@ -49,14 +49,14 @@ public class DeeperCaves
     public static final String NAME = "DeeperCaves";
     static int versionID = 6; //Used by version checker!
     
-    static DeeperMaterials materials = new DeeperMaterials();
-    static DeeperBlocks blocks = new DeeperBlocks();
-    static DeeperFluids fluids = new DeeperFluids();
-    static DeeperItems items = new DeeperItems();
-    static DeeperRecipes recipes = new DeeperRecipes();
-    static DeeperWorldgen worldgen = new DeeperWorldgen();
-    static DeeperMobs mobs = new DeeperMobs();
-    static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
+    public static DeeperMaterials materials = new DeeperMaterials();
+    public static DeeperBlocks blocks = new DeeperBlocks();
+    public static DeeperFluids fluids = new DeeperFluids();
+    public static DeeperItems items = new DeeperItems();
+    public static DeeperRecipes recipes = new DeeperRecipes();
+    public static DeeperWorldgen worldgen = new DeeperWorldgen();
+    public static DeeperMobs mobs = new DeeperMobs();
+    public static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
     public static DeeperCaves instance;
     public static Configuration config;
     public int nearvoid_counter = 0;
