@@ -12,13 +12,13 @@ import com.kpabr.DeeperCaves.CommonProxy;
 
 
 import com.kpabr.DeeperCaves.EntityDeepCaveSpider;
+import com.kpabr.DeeperCaves.RenderDeepSpider;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelSpider;
 import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.client.renderer.entity.RenderCaveSpider;
-import net.minecraft.client.renderer.entity.RenderDeepSpider;
 import net.minecraft.client.renderer.entity.RenderSpider;
 import net.minecraftforge.client.MinecraftForgeClient;
 
