@@ -3,7 +3,7 @@
 
 ##How to Install:
 
-###For Developers:
+###For Developers using Eclipse:
 
 1. Install Minecraft Forge as source and unzip the downloaded zip file
 2. Run ./gradlew SetupDecompWorkspace eclipse inside the unzipped folder
