@@ -1,5 +1,10 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCaves.entity.EntityDeepCaveSpider;
+import com.kpabr.DeeperCaves.entity.EntityDeepCreeper;
+import com.kpabr.DeeperCaves.entity.EntityDeepSkeleton;
+import com.kpabr.DeeperCaves.entity.EntityDeepZombie;
+
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.BiomeGenBase;

@@ -1,5 +1,16 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCaves.block.BlockAmetrine;
+import com.kpabr.DeeperCaves.block.BlockBase;
+import com.kpabr.DeeperCaves.block.BlockCompressedOre;
+import com.kpabr.DeeperCaves.block.BlockCompressedRedstoneOre;
+import com.kpabr.DeeperCaves.block.BlockDeeperPortal;
+import com.kpabr.DeeperCaves.block.BlockFakeBedrock;
+import com.kpabr.DeeperCaves.block.BlockFragmentedBedrock;
+import com.kpabr.DeeperCaves.block.BlockFragmentedBedrockOre;
+import com.kpabr.DeeperCaves.block.BlockOreBase;
+import com.kpabr.DeeperCaves.block.BlockReturnPortal;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRedstoneWire;

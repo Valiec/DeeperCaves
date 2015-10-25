@@ -1,5 +1,9 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCaves.item.ItemBase;
+import com.kpabr.DeeperCaves.item.ItemFragmentedBedrockBucket;
+import com.kpabr.DeeperCaves.item.ItemPickaxeBase;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;

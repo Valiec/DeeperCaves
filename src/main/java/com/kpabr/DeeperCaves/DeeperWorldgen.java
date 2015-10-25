@@ -3,6 +3,26 @@ package com.kpabr.DeeperCaves;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
+import com.kpabr.DeeperCaves.world.biome.BiomeGenBedrockPlains;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenCompressed;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenCrystal;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenDeepWorld;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenDrop;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenFinalLabyrinth;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenMaze;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenNearNether;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenNearVoid;
+import com.kpabr.DeeperCaves.world.chunk.ChunkProviderGenerateDuplicate;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderBedrockPlains;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderCompressed;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderCrystal;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderDeepWorld;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderDrop;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderFinalLabyrinth;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderMaze;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderNearNether;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderNearVoid;
+
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraft.init.Blocks;
