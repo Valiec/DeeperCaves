@@ -9,6 +9,7 @@ import com.kpabr.DeeperCaves.world.biome.BiomeGenCrystal;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenDeepWorld;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenDrop;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenFinalLabyrinth;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenLava;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenMaze;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenNearNether;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenNearVoid;
@@ -19,6 +20,7 @@ import com.kpabr.DeeperCaves.world.provider.WorldProviderCrystal;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDeepWorld;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDrop;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderFinalLabyrinth;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderLava;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderMaze;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearNether;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearVoid;
@@ -82,6 +84,7 @@ public class DeeperWorldgen {
     //public BiomeGenLava biomeLava;
     public BiomeGenNearVoid biomeNearVoid;
     public BiomeGenDeepWorld biomeDeepWorld;
+	public BiomeGenLava biomeLava;
     public void setupWorldgen()
     {
         
@@ -100,8 +103,8 @@ public class DeeperWorldgen {
         
         DimensionManager.registerProviderType(nearNetherDimID, WorldProviderNearNether.class, true);
         DimensionManager.registerDimension(nearNetherDimID, nearNetherDimID);
-        //DimensionManager.registerProviderType(lavaDimID, WorldProviderLava.class, true);
-        //DimensionManager.registerDimension(lavaDimID, lavaDimID);
+        DimensionManager.registerProviderType(lavaDimID, WorldProviderLava.class, true);
+        DimensionManager.registerDimension(lavaDimID, lavaDimID);
         DimensionManager.registerProviderType(nearVoidDimID, WorldProviderNearVoid.class, true);
         DimensionManager.registerDimension(nearVoidDimID, nearVoidDimID);
         DimensionManager.registerProviderType(deepWorldDimID, WorldProviderDeepWorld.class, true);
@@ -135,10 +138,10 @@ public class DeeperWorldgen {
         BiomeEntry nearNetherEntry = new BiomeEntry(this.biomeNearNether, 50);
         BiomeDictionary.registerBiomeType(this.biomeNearNether, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeNearNether);
-        //this.biomeLava = new BiomeGenLava(86, 0);
-        //BiomeEntry lavaEntry = new BiomeEntry(this.biomeLava, 50);
-        //BiomeDictionary.registerBiomeType(this.biomeLava, Type.PLAINS);
-        //BiomeManager.addSpawnBiome(this.biomeLava);
+        this.biomeLava = new BiomeGenLava(86, 0);
+        BiomeEntry lavaEntry = new BiomeEntry(this.biomeLava, 50);
+        BiomeDictionary.registerBiomeType(this.biomeLava, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeLava);
         this.biomeNearVoid = new BiomeGenNearVoid(87, 0);
         BiomeEntry nearVoidEntry = new BiomeEntry(this.biomeNearVoid, 50);
         BiomeDictionary.registerBiomeType(this.biomeNearVoid, Type.PLAINS);
