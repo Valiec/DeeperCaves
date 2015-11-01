@@ -124,10 +124,6 @@ public class DeeperCaves
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 7, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
             	}
-            	else if(player.dimension == 12)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 14, new DeeperTeleporter(player.mcServer.worldServerForDimension(14)));
-            	}
             	else if(player.dimension>=7 && player.dimension<15)
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension+1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension+1)));
@@ -148,11 +144,7 @@ public class DeeperCaves
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
             	}
-            	else if(player.dimension == 15)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension-2, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension-2)));
-            	}
-            	else if(player.dimension>7 && player.dimension<15)
+            	else if(player.dimension>7 && player.dimension<=15)
             	{
             	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension-1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension-1)));
             	}

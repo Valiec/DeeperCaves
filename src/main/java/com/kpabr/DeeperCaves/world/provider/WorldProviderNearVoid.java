@@ -158,6 +158,6 @@ public class WorldProviderNearVoid extends WorldProvider
      */
     public String getDimensionName()
     {
-        return "Bedrock Plains";
+        return "Near Void";
     }
 }

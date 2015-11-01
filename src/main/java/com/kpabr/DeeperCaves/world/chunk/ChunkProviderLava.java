@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDrop;
+import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineCompressed;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineLava;
 
 import net.minecraft.block.Block;

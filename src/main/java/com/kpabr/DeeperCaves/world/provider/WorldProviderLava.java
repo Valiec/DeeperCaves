@@ -1,7 +1,9 @@
 package com.kpabr.DeeperCaves.world.provider;
 
 
+import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.world.chunk.ChunkProviderDrop;
+import com.kpabr.DeeperCaves.world.chunk.ChunkProviderLava;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -27,7 +29,7 @@ public class WorldProviderLava extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        //this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeLava, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeLava, 0.5F);
         this.dimensionId = 13;
         this.hasNoSky = true;
     }
@@ -38,7 +40,7 @@ public class WorldProviderLava extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderDrop(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderLava(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**
@@ -157,6 +159,6 @@ public class WorldProviderLava extends WorldProvider
      */
     public String getDimensionName()
     {
-        return "Bedrock Plains";
+        return "Lava";
     }
 }

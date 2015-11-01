@@ -36,7 +36,7 @@ public class DeeperBlocks {
     public static Block bedrockPlainsPortal;
     
     public static Block nearNetherPortal;
-    //public static Block lavaPortal;
+    public static Block lavaPortal;
     public static Block nearVoidPortal;
     public static Block deepWorldPortal;
     
@@ -85,7 +85,7 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.bedrockPlainsPortal, "bedrock_plains_portal");
         
         GameRegistry.registerBlock(this.nearNetherPortal, "near_nether_portal");
-        //GameRegistry.registerBlock(this.lavaPortal, "lava_portal");
+        GameRegistry.registerBlock(this.lavaPortal, "lava_portal");
         GameRegistry.registerBlock(this.nearVoidPortal, "near_void_portal");
         GameRegistry.registerBlock(this.deepWorldPortal, "deep_world_portal");
         
@@ -165,7 +165,7 @@ public class DeeperBlocks {
         this.bedrockPlainsPortal = new BlockDeeperPortal(Material.rock, 11).setBlockName("bedrockPlainsPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         
         this.nearNetherPortal = new BlockDeeperPortal(Material.rock, 12).setBlockName("nearNetherPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        //this.lavaPortal = new BlockDeeperPortal(Material.rock, 13).setBlockName("lavaPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        this.lavaPortal = new BlockDeeperPortal(Material.rock, 13).setBlockName("lavaPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.nearVoidPortal = new BlockDeeperPortal(Material.rock, 14).setBlockName("nearVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.deepWorldPortal = new BlockDeeperPortal(Material.rock, 15).setBlockName("deepWorldPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.sapphireOre = new BlockOreBase(Material.rock, DeeperCaves.items.sapphireGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
