@@ -70,7 +70,7 @@ public class BlockDeeperPortal extends BlockBase
         	try
         	{
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
-        	if(player.dimension != this.dim)
+        	if(player.dimension != this.dim && !(this.dim == 7 && player.dimension > 7))
         	{
         	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, this.dim, new DeeperTeleporter(player.mcServer.worldServerForDimension(this.dim)));
         	}

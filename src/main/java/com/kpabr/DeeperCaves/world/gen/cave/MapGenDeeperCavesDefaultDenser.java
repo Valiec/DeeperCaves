@@ -214,7 +214,7 @@ public class MapGenDeeperCavesDefaultDenser extends MapGenBase
         for (int j1 = 0; j1 < i1; ++j1)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
-            double d1 = (double)this.rand.nextInt(this.rand.nextInt(248) + 8);
+            double d1 = (double)this.rand.nextInt(255);
             double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
             int k1 = 1;
 

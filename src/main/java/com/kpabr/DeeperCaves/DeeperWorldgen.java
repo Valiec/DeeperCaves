@@ -3,22 +3,28 @@ package com.kpabr.DeeperCaves;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
+import com.kpabr.DeeperCaves.world.biome.BiomeGenAbandonedCaves;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenBedrockPlains;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenCompressed;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenCrystal;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenDarkness;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenDeepWorld;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenDrop;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenFarVoid;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenFinalLabyrinth;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenLava;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenMaze;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenNearNether;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenNearVoid;
 import com.kpabr.DeeperCaves.world.chunk.ChunkProviderGenerateDuplicate;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderAbandonedCaves;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderBedrockPlains;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderCompressed;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderCrystal;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderDarkness;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDeepWorld;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDrop;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderFarVoid;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderFinalLabyrinth;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderLava;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderMaze;
@@ -78,13 +84,18 @@ public class DeeperWorldgen {
     public BiomeGenCrystal biomeCrystal;
     public BiomeGenCompressed biomeCompressed;
     public BiomeGenBedrockPlains biomeBedrockPlains;
-    public BiomeGenFinalLabyrinth biomeFinalLabyrinth;
     
     public BiomeGenNearNether biomeNearNether;
-    //public BiomeGenLava biomeLava;
+    public BiomeGenLava biomeLava;
     public BiomeGenNearVoid biomeNearVoid;
+    
     public BiomeGenDeepWorld biomeDeepWorld;
-	public BiomeGenLava biomeLava;
+    public BiomeGenDarkness biomeDarkness;
+    public BiomeGenAbandonedCaves biomeAbandonedCaves;
+    
+    public BiomeGenFarVoid biomeFarVoid;
+    
+    public BiomeGenFinalLabyrinth biomeFinalLabyrinth;
     public void setupWorldgen()
     {
         
@@ -107,8 +118,16 @@ public class DeeperWorldgen {
         DimensionManager.registerDimension(lavaDimID, lavaDimID);
         DimensionManager.registerProviderType(nearVoidDimID, WorldProviderNearVoid.class, true);
         DimensionManager.registerDimension(nearVoidDimID, nearVoidDimID);
+        
         DimensionManager.registerProviderType(deepWorldDimID, WorldProviderDeepWorld.class, true);
         DimensionManager.registerDimension(deepWorldDimID, deepWorldDimID);
+        DimensionManager.registerProviderType(darknessDimID, WorldProviderDarkness.class, true);
+        DimensionManager.registerDimension(darknessDimID, darknessDimID);
+        DimensionManager.registerProviderType(abandonedCavesDimID, WorldProviderAbandonedCaves.class, true);
+        DimensionManager.registerDimension(abandonedCavesDimID, abandonedCavesDimID);
+        
+        DimensionManager.registerProviderType(farVoidDimID, WorldProviderFarVoid.class, true);
+        DimensionManager.registerDimension(farVoidDimID, farVoidDimID);
         
         DimensionManager.registerProviderType(finalLabyrinthDimID, WorldProviderFinalLabyrinth.class, true);
         DimensionManager.registerDimension(finalLabyrinthDimID, finalLabyrinthDimID);
@@ -146,10 +165,24 @@ public class DeeperWorldgen {
         BiomeEntry nearVoidEntry = new BiomeEntry(this.biomeNearVoid, 50);
         BiomeDictionary.registerBiomeType(this.biomeNearVoid, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeNearVoid);
+        
         this.biomeDeepWorld = new BiomeGenDeepWorld(88, 0);
         BiomeEntry deepWorldEntry = new BiomeEntry(this.biomeDeepWorld, 50);
         BiomeDictionary.registerBiomeType(this.biomeDeepWorld, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeDeepWorld);
+        BiomeManager.addSpawnBiome(this.biomeDeepWorld);   
+        this.biomeDarkness = new BiomeGenDarkness(89, 0);
+        BiomeEntry darknessEntry = new BiomeEntry(this.biomeDarkness, 50);
+        BiomeDictionary.registerBiomeType(this.biomeDarkness, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeDarkness);
+        this.biomeAbandonedCaves = new BiomeGenAbandonedCaves(90, 0);
+        BiomeEntry abandonedCavesEntry = new BiomeEntry(this.biomeAbandonedCaves, 50);
+        BiomeDictionary.registerBiomeType(this.biomeAbandonedCaves, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeAbandonedCaves);
+        
+        this.biomeFarVoid = new BiomeGenFarVoid(92, 0);
+        BiomeEntry farVoidEntry = new BiomeEntry(this.biomeFarVoid, 50);
+        BiomeDictionary.registerBiomeType(this.biomeFarVoid, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeFarVoid);
         
         this.biomeFinalLabyrinth = new BiomeGenFinalLabyrinth(95, 0);
         BiomeEntry finalLabyrinthEntry = new BiomeEntry(this.biomeFinalLabyrinth, 50);

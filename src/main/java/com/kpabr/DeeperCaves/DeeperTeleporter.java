@@ -20,12 +20,18 @@ public class DeeperTeleporter extends Teleporter
 
     private WorldServer worldServerInstance;
     private final Random random;
+    public int[] mins = {0, 0, 0, 0, 0, 0, 0, 185, 185, 135, 90, 90, 90, 40, 256, 65, 185, 90, 0, 256, 0 ,0, 185}; //the zeroes are placholders
+    public int[] caps = {0, 0, 0, 0, 0, 0, 0, 252, 252, 147, 97, 97, 97, 47, 235, 72, 252, 97, 0, 235, 0 ,0, 252};
+    public int min;
+    public int cap;
 
 	public DeeperTeleporter(WorldServer p_i1963_1_)
     {
         super(p_i1963_1_);
         this.worldServerInstance = p_i1963_1_;
         this.random = new Random(p_i1963_1_.getSeed());
+        this.min = mins[this.worldServerInstance.provider.dimensionId];
+        this.cap = caps[this.worldServerInstance.provider.dimensionId];
     }
 
     /**
@@ -36,8 +42,8 @@ public class DeeperTeleporter extends Teleporter
     		
        
             int i = MathHelper.floor_double(p_77185_1_.posX);
-            int j = 185;
-            int cap = 253;
+            int j = this.min;
+            int cap = this.cap;
             if(this.worldServerInstance.provider.dimensionId == 0)
             {
             j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
@@ -50,12 +56,16 @@ public class DeeperTeleporter extends Teleporter
             {
             j = 235;
             }
+            if(this.worldServerInstance.provider.dimensionId == 19)
+            {
+            j = 235;
+            }
             int k = MathHelper.floor_double(p_77185_1_.posZ);
             p_77185_1_.setPosition((double)i, (double)j+1, (double)k);
             byte b0 = 1;
             byte b1 = 0;
             boolean blockIsAir = false;
-            System.out.println(this.worldServerInstance.getActualHeight());
+            //System.out.println(this.worldServerInstance.getActualHeight());
             makePortal(p_77185_1_, cap);
             /*for(int a = -10; a<10; a++)
             {
@@ -272,9 +282,9 @@ public class DeeperTeleporter extends Teleporter
 
             j2 = i1;
 
-            for (i3 = -1; i3 <= 1; ++i3)
+            for (i3 = -1; i3 < 3; ++i3)
             {
-                for (j3 = 1; j3 < 3; ++j3)
+                for (j3 = -1; j3 < 3; ++j3)
                 {
                     for (k3 = -1; k3 < 3; ++k3)
                     {

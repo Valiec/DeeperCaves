@@ -230,6 +230,10 @@ public class ChunkProviderFinalLabyrinth implements IChunkProvider
                     {
                     	p_147422_3_[i2] = DeeperCaves.blocks.fragmentedBedrock;
                     }
+                    if (l1 >= 247)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
+                    }
                 }
             }
         }

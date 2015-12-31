@@ -4,12 +4,15 @@ import com.kpabr.DeeperCaves.block.BlockAmetrine;
 import com.kpabr.DeeperCaves.block.BlockBase;
 import com.kpabr.DeeperCaves.block.BlockCompressedOre;
 import com.kpabr.DeeperCaves.block.BlockCompressedRedstoneOre;
+import com.kpabr.DeeperCaves.block.BlockDeepStone;
 import com.kpabr.DeeperCaves.block.BlockDeeperPortal;
 import com.kpabr.DeeperCaves.block.BlockFakeBedrock;
 import com.kpabr.DeeperCaves.block.BlockFragmentedBedrock;
 import com.kpabr.DeeperCaves.block.BlockFragmentedBedrockOre;
 import com.kpabr.DeeperCaves.block.BlockOreBase;
 import com.kpabr.DeeperCaves.block.BlockReturnPortal;
+import com.kpabr.DeeperCaves.block.BlockVanillaOre;
+import com.kpabr.DeeperCaves.block.BlockVanillaRedstoneOre;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -38,7 +41,14 @@ public class DeeperBlocks {
     public static Block nearNetherPortal;
     public static Block lavaPortal;
     public static Block nearVoidPortal;
+    
     public static Block deepWorldPortal;
+    public static Block darknessPortal;
+    public static Block abandonedCavesPortal;
+    
+    public static Block farVoidPortal;
+    
+    public static Block finalLabyrinthPortal;
     
     public static Block sapphireOre;
     public static Block aquamarineOre;
@@ -52,6 +62,33 @@ public class DeeperBlocks {
     public static Block credstoneOre_glowing;
     public static Block cdiamondOre;
     public static Block cemeraldOre;
+    
+    public static Block dccoalOre;
+    public static Block dcironOre;
+    public static Block dcgoldOre;
+    public static Block dclapisOre;
+    public static Block dcredstoneOre;
+    public static Block dcredstoneOre_glowing;
+    public static Block dcdiamondOre;
+    public static Block dcemeraldOre;
+    
+    public static Block dcoalOre;
+    public static Block dironOre;
+    public static Block dgoldOre;
+    public static Block dlapisOre;
+    public static Block dredstoneOre;
+    public static Block dredstoneOre_glowing;
+    public static Block ddiamondOre;
+    public static Block demeraldOre;
+    
+    public static Block ddcoalOre;
+    public static Block ddironOre;
+    public static Block ddgoldOre;
+    public static Block ddlapisOre;
+    public static Block ddredstoneOre;
+    public static Block ddredstoneOre_glowing;
+    public static Block dddiamondOre;
+    public static Block ddemeraldOre;
     
     public static Block fragmentedBedrock;
     
@@ -72,6 +109,24 @@ public class DeeperBlocks {
     
     public static Block forgottenGemstoneBlock;
     
+    public static Block barrierLayer;
+    
+    public static Block darkStone;
+    
+    public static Block vesperiteOre;
+    
+    public static Block abandonedStone;
+    
+    public static Block deepStone;
+    
+    public static Block deepCobble;
+    
+    public static Block cooledObsidian;
+    
+    public static Block heatedObsidian;
+    
+    public static Block vesperiteBlock;
+    
     
     
     public void registerBlocks()
@@ -87,7 +142,14 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.nearNetherPortal, "near_nether_portal");
         GameRegistry.registerBlock(this.lavaPortal, "lava_portal");
         GameRegistry.registerBlock(this.nearVoidPortal, "near_void_portal");
+        
         GameRegistry.registerBlock(this.deepWorldPortal, "deep_world_portal");
+        GameRegistry.registerBlock(this.darknessPortal, "darkness_portal");
+        GameRegistry.registerBlock(this.abandonedCavesPortal, "abandoned_caves_portal");
+        
+        GameRegistry.registerBlock(this.farVoidPortal, "far_void_portal");
+        
+        GameRegistry.registerBlock(this.finalLabyrinthPortal, "final_labyrinth_portal");
         
         GameRegistry.registerBlock(this.sapphireOre, "sapphire_ore");
         GameRegistry.registerBlock(this.aquamarineOre, "aquamarine_ore");
@@ -101,6 +163,33 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.credstoneOre_glowing, "compressed_redstone_ore_glowing");
         GameRegistry.registerBlock(this.cdiamondOre, "compressed_diamond_ore");
         GameRegistry.registerBlock(this.cemeraldOre, "compressed_emerald_ore");
+        
+        GameRegistry.registerBlock(this.dccoalOre, "deep_compressed_coal_ore");
+        GameRegistry.registerBlock(this.dcironOre, "deep_compressed_iron_ore");
+        GameRegistry.registerBlock(this.dcgoldOre, "deep_compressed_gold_ore");
+        GameRegistry.registerBlock(this.dclapisOre, "deep_compressed_lapis_ore");
+        GameRegistry.registerBlock(this.dcredstoneOre, "deep_compressed_redstone_ore");
+        GameRegistry.registerBlock(this.dcredstoneOre_glowing, "deep_compressed_redstone_ore_glowing");
+        GameRegistry.registerBlock(this.dcdiamondOre, "deep_compressed_diamond_ore");
+        GameRegistry.registerBlock(this.dcemeraldOre, "deep_compressed_emerald_ore");
+        
+        GameRegistry.registerBlock(this.ddcoalOre, "dark_coal_ore");
+        GameRegistry.registerBlock(this.ddironOre, "dark_iron_ore");
+        GameRegistry.registerBlock(this.ddgoldOre, "dark_gold_ore");
+        GameRegistry.registerBlock(this.ddlapisOre, "dark_lapis_ore");
+        GameRegistry.registerBlock(this.ddredstoneOre, "dark_redstone_ore");
+        GameRegistry.registerBlock(this.ddredstoneOre_glowing, "dark_redstone_ore_glowing");
+        GameRegistry.registerBlock(this.dddiamondOre, "dark_diamond_ore");
+        GameRegistry.registerBlock(this.ddemeraldOre, "dark_emerald_ore");
+        
+        GameRegistry.registerBlock(this.dcoalOre, "abandoned_caves_coal_ore");
+        GameRegistry.registerBlock(this.dironOre, "abandoned_caves_iron_ore");
+        GameRegistry.registerBlock(this.dgoldOre, "abandoned_caves_gold_ore");
+        GameRegistry.registerBlock(this.dlapisOre, "abandoned_caves_lapis_ore");
+        GameRegistry.registerBlock(this.dredstoneOre, "abandoned_caves_redstone_ore");
+        GameRegistry.registerBlock(this.dredstoneOre_glowing, "abandoned_caves_redstone_ore_glowing");
+        GameRegistry.registerBlock(this.ddiamondOre, "abandoned_caves_diamond_ore");
+        GameRegistry.registerBlock(this.demeraldOre, "abandoned_caves_emerald_ore");
         
         GameRegistry.registerBlock(this.fragmentedBedrock, "fragmented_bedrock");
         
@@ -119,6 +208,23 @@ public class DeeperBlocks {
         
         GameRegistry.registerBlock(this.forgottenGemstoneBlock, "forgotten_gemstone_block");
         
+        GameRegistry.registerBlock(this.barrierLayer, "barrier_layer");
+        
+        GameRegistry.registerBlock(this.darkStone, "dark_stone");
+        
+        GameRegistry.registerBlock(this.vesperiteOre, "vesperite_ore");
+        
+        GameRegistry.registerBlock(this.abandonedStone, "abandoned_stone");
+        
+        GameRegistry.registerBlock(this.deepStone, "deep_stone");
+        
+        GameRegistry.registerBlock(this.cooledObsidian, "supercooled_obsidian");
+        GameRegistry.registerBlock(this.heatedObsidian, "heated_obsidian");
+        
+        GameRegistry.registerBlock(this.vesperiteBlock, "vesperite_block");
+        
+        GameRegistry.registerBlock(this.deepCobble, "deep_cobblestone");
+        
     }
     public void registerBlocksOreDict()
     {
@@ -136,6 +242,15 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("oreCompressedRedstone_glowing", this.credstoneOre_glowing);
     	OreDictionary.registerOre("oreCompressedDiamond", this.cdiamondOre);
     	OreDictionary.registerOre("oreCompressedEmerald", this.cemeraldOre);
+    	
+    	OreDictionary.registerOre("oreCompressedCoal", this.dccoalOre);
+    	OreDictionary.registerOre("oreCompressedIron", this.dcironOre);
+    	OreDictionary.registerOre("oreCompressedGold", this.dcgoldOre);
+    	OreDictionary.registerOre("oreCompressedLapis", this.dclapisOre);
+    	OreDictionary.registerOre("oreCompressedRedstone", this.dcredstoneOre);
+    	OreDictionary.registerOre("oreCompressedRedstone_glowing", this.dcredstoneOre_glowing);
+    	OreDictionary.registerOre("oreCompressedDiamond", this.dcdiamondOre);
+    	OreDictionary.registerOre("oreCompressedEmerald", this.dcemeraldOre);
         
     	OreDictionary.registerOre("blockFragmentedBedrock", this.fragmentedBedrock);
     	
@@ -151,6 +266,18 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("oreForgottenGemstone", this.forgottenGemstoneOre);
     	
     	OreDictionary.registerOre("blockForgottenGemstone", this.forgottenGemstoneBlock);
+    	
+    	OreDictionary.registerOre("stone", this.deepStone);
+    	
+    	OreDictionary.registerOre("cobblestone", this.deepCobble);
+    	
+    	OreDictionary.registerOre("stone", this.darkStone);
+    	
+    	OreDictionary.registerOre("cobblestone", this.darkStone);
+    	
+    	OreDictionary.registerOre("stone", this.abandonedStone);
+    	
+    	OreDictionary.registerOre("cobblestone", this.abandonedStone);
         
     }
     public void setupBlocks()
@@ -167,7 +294,15 @@ public class DeeperBlocks {
         this.nearNetherPortal = new BlockDeeperPortal(Material.rock, 12).setBlockName("nearNetherPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.lavaPortal = new BlockDeeperPortal(Material.rock, 13).setBlockName("lavaPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.nearVoidPortal = new BlockDeeperPortal(Material.rock, 14).setBlockName("nearVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        
         this.deepWorldPortal = new BlockDeeperPortal(Material.rock, 15).setBlockName("deepWorldPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        this.darknessPortal = new BlockDeeperPortal(Material.rock, 16).setBlockName("darknessPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        this.abandonedCavesPortal = new BlockDeeperPortal(Material.rock, 17).setBlockName("abandonedCavesPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        
+        this.farVoidPortal = new BlockDeeperPortal(Material.rock, 19).setBlockName("farVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        
+        this.finalLabyrinthPortal = new BlockDeeperPortal(Material.rock, 22).setBlockName("finalLabyrinthPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        
         this.sapphireOre = new BlockOreBase(Material.rock, DeeperCaves.items.sapphireGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.aquamarineOre = new BlockOreBase(Material.rock, DeeperCaves.items.aquamarine, 3, 3, true, 3, 6).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);     
         this.ametrineOre = new BlockOreBase(Material.rock, DeeperCaves.items.ametrineGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
@@ -180,6 +315,33 @@ public class DeeperBlocks {
         this.credstoneOre_glowing = new BlockCompressedRedstoneOre(true).setBlockTextureName("deepercaves:credstone_ore").setBlockName("credstoneOre").setHardness(3.0F).setResistance(15.0F).setLightLevel(0.625F);
         this.cdiamondOre = new BlockCompressedOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:cdiamond_ore").setBlockName("cdiamondOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         this.cemeraldOre = new BlockCompressedOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:cemerald_ore").setBlockName("cemeraldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.dccoalOre = new BlockCompressedOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:dccoal_ore").setBlockName("dccoalOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dcironOre = new BlockCompressedOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:dciron_ore").setBlockName("dcironOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dcgoldOre = new BlockCompressedOre(Material.rock, Blocks.gold_ore).setBlockTextureName("deepercaves:dcgold_ore").setBlockName("dcgoldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dclapisOre = new BlockCompressedOre(Material.rock, Blocks.lapis_ore).setBlockTextureName("deepercaves:dclapis_ore").setBlockName("dclapisOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dcredstoneOre = new BlockCompressedRedstoneOre(false).setBlockTextureName("deepercaves:dcredstone_ore").setBlockName("dcredstoneOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dcredstoneOre_glowing = new BlockCompressedRedstoneOre(true).setBlockTextureName("deepercaves:dcredstone_ore").setBlockName("dcredstoneOre").setHardness(3.0F).setResistance(15.0F).setLightLevel(0.625F);
+        this.dcdiamondOre = new BlockCompressedOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:dcdiamond_ore").setBlockName("dcdiamondOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dcemeraldOre = new BlockCompressedOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:dcemerald_ore").setBlockName("dcemeraldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.dcoalOre = new BlockVanillaOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:dcoal_ore").setBlockName("dcoalOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dironOre = new BlockVanillaOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:diron_ore").setBlockName("dironOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dgoldOre = new BlockVanillaOre(Material.rock, Blocks.gold_ore).setBlockTextureName("deepercaves:dgold_ore").setBlockName("dgoldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dlapisOre = new BlockVanillaOre(Material.rock, Blocks.lapis_ore).setBlockTextureName("deepercaves:dlapis_ore").setBlockName("dlapisOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dredstoneOre = new BlockVanillaRedstoneOre(false).setBlockTextureName("deepercaves:dredstone_ore").setBlockName("dredstoneOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dredstoneOre_glowing = new BlockVanillaRedstoneOre(true).setBlockTextureName("deepercaves:dredstone_ore").setBlockName("dredstoneOre").setHardness(3.0F).setResistance(15.0F).setLightLevel(0.625F);
+        this.ddiamondOre = new BlockVanillaOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:ddiamond_ore").setBlockName("ddiamondOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.demeraldOre = new BlockVanillaOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:demerald_ore").setBlockName("demeraldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.ddcoalOre = new BlockVanillaOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:ddcoal_ore").setBlockName("ddcoalOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.ddironOre = new BlockVanillaOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:ddiron_ore").setBlockName("ddironOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.ddgoldOre = new BlockVanillaOre(Material.rock, Blocks.gold_ore).setBlockTextureName("deepercaves:ddgold_ore").setBlockName("ddgoldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.ddlapisOre = new BlockVanillaOre(Material.rock, Blocks.lapis_ore).setBlockTextureName("deepercaves:ddlapis_ore").setBlockName("ddlapisOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.ddredstoneOre = new BlockVanillaRedstoneOre(false).setBlockTextureName("deepercaves:ddredstone_ore").setBlockName("ddredstoneOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.ddredstoneOre_glowing = new BlockVanillaRedstoneOre(true).setBlockTextureName("deepercaves:ddredstone_ore").setBlockName("ddredstoneOre").setHardness(3.0F).setResistance(15.0F).setLightLevel(0.625F);
+        this.dddiamondOre = new BlockVanillaOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:dddiamond_ore").setBlockName("dddiamondOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.ddemeraldOre = new BlockVanillaOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:ddemerald_ore").setBlockName("ddemeraldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         this.fragmentedBedrock = new BlockFragmentedBedrock(Material.rock).setBlockTextureName("deepercaves:fragmented_bedrock").setBlockName("fragmentedBedrock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
@@ -197,6 +359,24 @@ public class DeeperBlocks {
         this.fakeBedrock = new BlockFakeBedrock(Material.rock).setBlockTextureName("minecraft:bedrock").setBlockName("fakeBedrock").setHardness(45.5F).setResistance(1500000.0F).setBlockUnbreakable().setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         this.forgottenGemstoneBlock = new BlockFakeBedrock(Material.rock).setBlockTextureName("deepercaves:forgotten_gemstone_block").setBlockName("forgottenGemstoneBlock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.barrierLayer = new BlockBase(Material.rock).setBlockTextureName("deepercaves:barrier_layer").setBlockName("barrierLayer").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.darkStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dark_stone").setBlockName("darkStone").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.vesperiteOre = new BlockOreBase(Material.rock, DeeperCaves.items.vesperiteGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:vesperite_ore").setBlockName("vesperiteOre").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.abandonedStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone").setBlockName("abandonedCavesStone").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.deepStone = new BlockDeepStone().setBlockTextureName("deepercaves:deep_stone").setBlockName("deepStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.cooledObsidian = new BlockBase(Material.rock).setBlockTextureName("deepercaves:cooled_obsidian").setBlockName("cooledObsidian").setHardness(30.0F).setResistance(1500.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.heatedObsidian = new BlockBase(Material.rock).setBlockTextureName("deepercaves:heated_obsidian").setBlockName("heatedObsidian").setHardness(65.0F).setResistance(2500.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.vesperiteBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:vesperite_block").setBlockName("vesperiteBlock").setHardness(5.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.deepCobble = new BlockBase(Material.rock).setBlockTextureName("deepercaves:deep_cobblestone").setBlockName("deepCobble").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         
     }
@@ -223,6 +403,24 @@ public class DeeperBlocks {
         this.cdiamondOre.setHarvestLevel("pickaxe", 3);
         this.cemeraldOre.setHarvestLevel("pickaxe", 3);
         
+        this.dccoalOre.setHarvestLevel("pickaxe", 1);
+        this.dcironOre.setHarvestLevel("pickaxe", 2);
+        this.dcgoldOre.setHarvestLevel("pickaxe", 3);
+        this.dclapisOre.setHarvestLevel("pickaxe", 2);
+        this.dcredstoneOre.setHarvestLevel("pickaxe", 3);
+        this.dcredstoneOre_glowing.setHarvestLevel("pickaxe", 3);
+        this.dcdiamondOre.setHarvestLevel("pickaxe", 3);
+        this.dcemeraldOre.setHarvestLevel("pickaxe", 3);
+        
+        this.ddcoalOre.setHarvestLevel("pickaxe", 0);
+        this.ddironOre.setHarvestLevel("pickaxe", 1);
+        this.ddgoldOre.setHarvestLevel("pickaxe", 2);
+        this.ddlapisOre.setHarvestLevel("pickaxe", 1);
+        this.ddredstoneOre.setHarvestLevel("pickaxe", 2);
+        this.ddredstoneOre_glowing.setHarvestLevel("pickaxe", 2);
+        this.dddiamondOre.setHarvestLevel("pickaxe", 2);
+        this.ddemeraldOre.setHarvestLevel("pickaxe", 2);
+        
         this.fragmentedBedrock.setHarvestLevel("pickaxe", 4);
         
         this.tenebriumOre.setHarvestLevel("pickaxe", 4);
@@ -231,6 +429,12 @@ public class DeeperBlocks {
         this.forgottenGemstoneOre.setHarvestLevel("pickaxe", 4);
         
         this.forgottenGemstoneBlock.setHarvestLevel("pickaxe", 4);
+        
+        this.vesperiteOre.setHarvestLevel("pickaxe", 3);
+        this.vesperiteBlock.setHarvestLevel("pickaxe", 3);
+        
+        this.cooledObsidian.setHarvestLevel("pickaxe", 4);
+        this.heatedObsidian.setHarvestLevel("pickaxe", 2);
        
     }
     

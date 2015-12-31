@@ -1,3 +1,42 @@
+tile.barrierLayer.name=Level Barrier
+tile.darkStone.name=Dark Stone
+tile.abandonedCavesStone.name=Abandoned Caves Stone
+tile.vesperiteOre.name=Vesperite Ore
+tile.vesperiteBlock.name=Block of Vesperite
+tile.deepStone.name=Deep Stone
+tile.deepCobble.name=Deep Cobblestone
+
+tile.heatedObsidian.name=Heated Obsidian
+tile.cooledObsidian.name=Supercooled Obsidian
+
+item.vesperiteGem.name=Vesperite Gem
+
+item.voidCharm.name=Void Charm
+
+tile.dccoalOre.name=Deep Compressed Coal Ore
+tile.dcironOre.name=Deep Compressed Iron Ore
+tile.dcgoldOre.name=Deep Compressed Gold Ore
+tile.dclapisOre.name=Deep Compressed Lapis Lazuli Ore
+tile.dcredstoneOre.name=Deep Compressed Redstone Ore
+tile.dcdiamondOre.name=Deep Compressed Diamond Ore
+tile.dcemeraldOre.name=Deep Compressed Emerald Ore
+
+tile.dcoalOre.name=Abandoned Caves Coal Ore
+tile.dironOre.name=Abandoned Caves Iron Ore
+tile.dgoldOre.name=Abandoned Caves Gold Ore
+tile.dlapisOre.name=Abandoned Caves Lapis Lazuli Ore
+tile.dredstoneOre.name=Abandoned Caves Redstone Ore
+tile.ddiamondOre.name=Abandoned Caves Diamond Ore
+tile.demeraldOre.name=Abandoned Caves Emerald Ore
+
+tile.ddcoalOre.name=Dark Coal Ore
+tile.ddironOre.name=Dark Iron Ore
+tile.ddgoldOre.name=Dark Gold Ore
+tile.ddlapisOre.name=Dark Lapis Lazuli Ore
+tile.ddredstoneOre.name=Dark Redstone Ore
+tile.dddiamondOre.name=Dark Diamond Ore
+tile.ddemeraldOre.name=Dark Emerald Ore
+
 entity.deepCreeper.name=Deep World Creeper
 entity.deepCaveSpider.name=Deep World Cave Spider
 entity.deepSkeleton.name=Deep World Skeleton

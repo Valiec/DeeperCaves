@@ -89,7 +89,7 @@ public class BlockCompressedRedstoneOre extends BlockCompressedOre {
     }
     public int quantityDropped(Random random)
     {
-        return (4 + random.nextInt(2)) * (2 + random.nextInt(2));
+        return (4 + random.nextInt(2));
     }
     public void dropBlockAsItemWithChance(World p_149690_1_, int p_149690_2_, int p_149690_3_, int p_149690_4_, int p_149690_5_, float p_149690_6_, int p_149690_7_)
     {
@@ -100,7 +100,7 @@ public class BlockCompressedRedstoneOre extends BlockCompressedOre {
     {
         if (this.getItemDropped(p_149690_5_, rand, p_149690_7_) != Item.getItemFromBlock(this))
         {
-            return 1 + rand.nextInt(5);
+            return 1 + rand.nextInt(5) * (2 + rand.nextInt(2));
         }
         return 0;
     }

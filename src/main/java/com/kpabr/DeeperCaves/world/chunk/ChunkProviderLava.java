@@ -4,11 +4,14 @@ package com.kpabr.DeeperCaves.world.chunk;
 import java.util.List;
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperCaves;
+import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefaultDenser;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDrop;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineCompressed;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineLava;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
@@ -61,7 +64,7 @@ public class ChunkProviderLava implements IChunkProvider
     private double[] field_147434_q = {};
     private float[] parabolicField = {};
     private double[] stoneNoise = new double[256];
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDrop();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefaultDenser();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Village Generator */
@@ -232,6 +235,11 @@ public class ChunkProviderLava implements IChunkProvider
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
+                    if (l1 >= 52)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
+                    }
+
                     if (l1 == 2)
                     {
                     	//p_147422_3_[i2] = DeeperCaves.blocks.nearVoidPortal;
@@ -503,13 +511,17 @@ public class ChunkProviderLava implements IChunkProvider
                 }
             }
         }
-        for (int var3 = 0; var3 < 20; ++var3)
+        /*for (int var3 = 0; var3 < 50; ++var3)
         {
             int var4 = k + this.rand.nextInt(16) + 8;
-            int var5 = this.rand.nextInt(255);
+            int var5 = this.rand.nextInt(50);
             int var6 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
-        }
+            if(!(this.worldObj.getBlock(var4, var5, var6) instanceof BlockAir) && this.worldObj.getBlock(var4, var5, var6).)
+            {
+	            System.out.println("Lava: "+Integer.toString(var4)+", "+Integer.toString(var5)+", "+Integer.toString(var6));
+	            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
+            }
+        }*/
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, flag));
 

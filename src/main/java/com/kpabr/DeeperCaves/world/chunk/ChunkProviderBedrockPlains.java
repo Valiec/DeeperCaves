@@ -241,9 +241,13 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                     {
                     	p_147422_3_[i2] = Blocks.bedrock;
                     }
-                    if (l1 >= 255 - this.rand.nextInt(5))
+                    if (l1 >= 175 - this.rand.nextInt(5))
                     {
                     	p_147422_3_[i2] = Blocks.bedrock;
+                    }
+                    if (l1 >= 175)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
                     }
                     if (l1 <= 155)
                     {

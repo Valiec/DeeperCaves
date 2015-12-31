@@ -245,6 +245,11 @@ public class ChunkProviderDeepWorld implements IChunkProvider
                     {
                     	p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
                     }
+                    if (l1 >= 77)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
+                    }
+
                 }
             }
         }

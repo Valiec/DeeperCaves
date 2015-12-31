@@ -27,6 +27,9 @@ import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import java.util.Date;
+
+import com.kpabr.DeeperCaves.structure.StructureCaveVillage;
+import com.kpabr.DeeperCaves.structure.cavevillage.CaveVillage;
 public class DeeperOregen implements IWorldGenerator
 {   
 	   @Override
@@ -36,6 +39,15 @@ public class DeeperOregen implements IWorldGenerator
              {
 					case 22:
 							generateFinalLabyrinth(world, random, chunkX * 16, chunkZ * 16);
+							break;
+					case 19:
+							generateFarVoid(world, random, chunkX * 16, chunkZ * 16);
+							break;
+					case 17:
+							generateAbandonedCaves(world, random, chunkX * 16, chunkZ * 16);
+							break;
+					case 16:
+							generateDarkness(world, random, chunkX * 16, chunkZ * 16);
 							break;
 					case 15:
   							generateDeepWorld(world, random, chunkX * 16, chunkZ * 16);
@@ -184,6 +196,68 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 3, 8, 0, 255, Blocks.stone);
            
        }
+       private void generateDarkness(World world, Random random, int x, int z)
+       {
+    	   
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
+    	   this.addOre(DeeperCaves.blocks.ddcoalOre, world, random, x, z, 16, 16, 15, 80, 0, 255, DeeperCaves.blocks.darkStone); //FIX TO USE DARKSTONE!!!
+    	   this.addOre(DeeperCaves.blocks.ddironOre, world, random, x, z, 16, 16, 10, 65, 0, 255, DeeperCaves.blocks.darkStone);
+    	   this.addOre(DeeperCaves.blocks.ddgoldOre, world, random, x, z, 16, 16, 8, 15, 0, 255, DeeperCaves.blocks.darkStone);
+    	   this.addOre(DeeperCaves.blocks.ddlapisOre, world, random, x, z, 16, 16, 7, 18, 0, 255, DeeperCaves.blocks.darkStone);
+    	   this.addOre(DeeperCaves.blocks.ddredstoneOre, world, random, x, z, 16, 16, 8, 54, 0, 255, DeeperCaves.blocks.darkStone);
+    	   this.addOre(DeeperCaves.blocks.dddiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperCaves.blocks.darkStone);
+    	   this.addOre(DeeperCaves.blocks.ddemeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperCaves.blocks.darkStone);
+    	   
+    	   this.addOre(DeeperCaves.blocks.vesperiteOre, world, random, x, z, 16, 16, 6, 80, 0, 255, DeeperCaves.blocks.darkStone);
+    	   
+           
+       }
+       private void generateAbandonedCaves(World world, Random random, int x, int z)
+       {
+    	   
+    	   //this.addOre(DeeperCaves.blocks.returnPortal, world, random, x, z, 16, 16, 4, 1, 150, 160, Blocks.bedrock);
+    	   //this.addOre(DeeperCaves.blocks.compressedPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.bedrock);
+    	   //this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.dcoalOre, world, random, x, z, 16, 16, 15, 80, 0, 255, DeeperCaves.blocks.abandonedStone); //FIX TO USE DARKSTONE!!!
+    	   this.addOre(DeeperCaves.blocks.dironOre, world, random, x, z, 16, 16, 10, 65, 0, 255, DeeperCaves.blocks.abandonedStone);
+    	   this.addOre(DeeperCaves.blocks.dgoldOre, world, random, x, z, 16, 16, 8, 15, 0, 255, DeeperCaves.blocks.abandonedStone);
+    	   this.addOre(DeeperCaves.blocks.dlapisOre, world, random, x, z, 16, 16, 7, 18, 0, 255, DeeperCaves.blocks.abandonedStone);
+    	   this.addOre(DeeperCaves.blocks.dredstoneOre, world, random, x, z, 16, 16, 8, 54, 0, 255, DeeperCaves.blocks.abandonedStone);
+    	   this.addOre(DeeperCaves.blocks.ddiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperCaves.blocks.abandonedStone);
+    	   this.addOre(DeeperCaves.blocks.demeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperCaves.blocks.abandonedStone);
+    	   
+    	   //this.addOre(DeeperCaves.blocks.vesperiteOre, world, random, x, z, 16, 16, 6, 108, 0, 255, DeeperCaves.blocks.darkStone);
+    	   if (random.nextInt(20) == 0)
+           {
+               int i = x + random.nextInt(16) + 8;
+               int j = z + random.nextInt(16) + 8;
+               int k = random.nextInt(80);
+               System.out.println("i: "+Integer.toString(i)+", j: "+Integer.toString(j)+", k: "+Integer.toString(k));
+               (new CaveVillage()).generate(world, random, i, k, j);
+           }
+           
+       }
+       
+       private void generateFarVoid(World world, Random random, int x, int z)
+       {
+    	   
+    	   //this.addOre(DeeperCaves.blocks.bedrockPlainsPortal, world, random, x, z, 16, 16, 8, 4, 0, 16, Blocks.stone);
+    	   //this.addOre(DeeperCaves.blocks.crystalPortal, world, random, x, z, 16, 16, 8, 4, 239, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.dccoalOre, world, random, x, z, 16, 16, 15, 4, 220, 235, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcironOre, world, random, x, z, 16, 16, 10, 2, 220, 235, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcgoldOre, world, random, x, z, 16, 16, 8, 1, 220, 235, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dclapisOre, world, random, x, z, 16, 16, 7, 1, 220, 235, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcredstoneOre, world, random, x, z, 16, 16, 8, 1, 220, 235, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcdiamondOre, world, random, x, z, 16, 16, 8, 1, 220, 235, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcemeraldOre, world, random, x, z, 16, 16, 3, 1, 220, 235, DeeperCaves.blocks.deepStone);
+    	   this.addOre(Blocks.obsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.cooledObsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.heatedObsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(Blocks.end_stone, world, random, x, z, 16, 16, 15, 1, 128, 255, DeeperCaves.blocks.deepStone);
+           
+       }
+
        private void generateFinalLabyrinth(World world, Random random, int x, int z)
        {
     	   

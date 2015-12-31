@@ -35,6 +35,10 @@ public class DeeperRecipes {
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.dropPortal, 1), new Object[]{"ZZZ", "Z Z", "ZZZ", 'Z', Blocks.obsidian});
         
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.voidCharm, 1), new Object[]{" X ", "XYX", " X ", 'X', DeeperCaves.items.tenebriumIngot, 'Y', DeeperCaves.items.vesperiteGem});
+        
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.vesperiteBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.vesperiteGem});
+        
         
     }
     public void setupShapelessCrafting()
@@ -49,6 +53,10 @@ public class DeeperRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.tenebriumIngot, 9), new Object[]{DeeperCaves.blocks.tenebriumBlock});
         
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.forgottenGemstone, 9), new Object[]{DeeperCaves.blocks.forgottenGemstoneBlock});
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.vesperiteGem, 9), new Object[]{DeeperCaves.blocks.vesperiteBlock});
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.obsidian, 2), new Object[]{DeeperCaves.blocks.cooledObsidian, DeeperCaves.blocks.heatedObsidian});
         
     }
     public void setupSmelting()
@@ -71,6 +79,8 @@ public class DeeperRecipes {
         GameRegistry.addSmelting(DeeperCaves.blocks.cemeraldOre, new ItemStack(Items.emerald, 2) , 0.5F);
         
         GameRegistry.addSmelting(DeeperCaves.blocks.forgottenGemstoneOre, new ItemStack(DeeperCaves.items.forgottenGemstone, 1) , 2.0F);
+        
+        GameRegistry.addSmelting(DeeperCaves.blocks.deepCobble, new ItemStack(DeeperCaves.blocks.deepStone, 1) , 0.1F);
         
         
     }

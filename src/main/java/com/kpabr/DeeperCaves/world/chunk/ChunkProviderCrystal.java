@@ -235,16 +235,11 @@ public class ChunkProviderCrystal implements IChunkProvider
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
-                    if (l1 >= 250 && l1 < 255 && p_147422_3_[i2] == Blocks.bedrock)
-                    	
-                    if (l1 == 2)
+                    if (l1 >= 152)
                     {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
+                    	p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
                     }
-                    if (l1 == 254)
-                    {
-                    	p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
-                    }
+
                 }
             }
         }

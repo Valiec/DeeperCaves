@@ -37,6 +37,7 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import net.minecraftforge.event.*;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
+import scala.actors.threadpool.Arrays;
 @Mod(modid = DeeperCaves.MODID, version = DeeperCaves.VERSION, name = DeeperCaves.NAME)//, guiFactory = "com.kpabr.DeeperCaves.EndPlusConfigGUIFactory")
 public class DeeperCaves
 {
@@ -45,9 +46,9 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "0.3.0";
+    public static final String VERSION = "0.4.1";
     public static final String NAME = "DeeperCaves";
-    static int versionID = 6; //Used by version checker!
+    static int versionID = 8; //Used by version checker!
     
     public static DeeperMaterials materials = new DeeperMaterials();
     public static DeeperBlocks blocks = new DeeperBlocks();
@@ -60,6 +61,8 @@ public class DeeperCaves
     public static DeeperCaves instance;
     public static Configuration config;
     public int nearvoid_counter = 0;
+    public int farvoid_counter = 0;
+    public static boolean voidFlag = false;
     
     static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperCaves.blocks.fragmentedBedrock);
     static CreativeTabs tabDeeperCavesItems = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Items", 0);
@@ -107,74 +110,165 @@ public class DeeperCaves
     }
     @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        	if(event.player.posY <= 0.0D)
+    		try
         	{
-        		try
-            	{
-            	EntityPlayerMP player = (EntityPlayerMP)event.player;
-            	if(player.dimension == 22)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
-            	}
-            	if(player.dimension == 15)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 22, new DeeperTeleporter(player.mcServer.worldServerForDimension(22)));
-            	}
-            	else if(player.dimension == 0)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 7, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
-            	}
-            	else if(player.dimension>=7 && player.dimension<15)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension+1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension+1)));
-            	}
-            	else{}
-            	}
-            	catch(ClassCastException e)
-            	{
-            		return; //not a player
-            	}
+	        	EntityPlayerMP player = (EntityPlayerMP)event.player;
+	        	if(player.dimension == 15 && event.player.posY <= 0.0D)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 16, new DeeperTeleporter(player.mcServer.worldServerForDimension(16)));
+	        	}
+	        	else if(player.dimension == 14 && event.player.posY <= 120.0D)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 15, new DeeperTeleporter(player.mcServer.worldServerForDimension(15)));
+	        	}
+	        	else if(player.dimension == 19 && event.player.posY <= 120.0D && voidFlag)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 22, new DeeperTeleporter(player.mcServer.worldServerForDimension(22)));
+	        	}
+	        	else if(player.dimension == 16 && event.player.posY <= 0.0D)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 17, new DeeperTeleporter(player.mcServer.worldServerForDimension(17)));
+	        	}
+	        	else if(player.dimension == 17 && event.player.posY <= 0.0D)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 19, new DeeperTeleporter(player.mcServer.worldServerForDimension(19)));
+	        	}
+	        	else if(player.dimension == 0 && event.player.posY <= 0.0D)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 7, new DeeperTeleporter(player.mcServer.worldServerForDimension(7)));
+	        	}
+	        	else if(player.dimension>=7 && player.dimension<14 && event.player.posY <= 0.0D)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension+1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension+1)));
+	        	}
+	        	else{}
         	}
-        	else if(event.player.posY >= 255.0D)
+        	catch(ClassCastException e)
         	{
-        		try
-            	{
-            	EntityPlayerMP player = (EntityPlayerMP)event.player;
-            	if(player.dimension == 7)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
-            	}
-            	else if(player.dimension>7 && player.dimension<=15)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, player.dimension-1, new DeeperTeleporter(player.mcServer.worldServerForDimension(player.dimension-1)));
-            	}
-            	if(player.dimension == 22)
-            	{
-            	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 15, new DeeperTeleporter(player.mcServer.worldServerForDimension(14)));
-            	}
-            	else{}
-            	}
-            	catch(ClassCastException e)
-            	{
-            		return; //not a player
-            	}
+        		return; //not a player
         	}
-        	else{}
+    		try
+        	{
+	        	EntityPlayerMP player = (EntityPlayerMP)event.player;
+	        	if(player.dimension == 7 && event.player.posY >= 200.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(0)));
+	        	}
+	        	if(player.dimension == 8 && event.player.posY >= 200.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 7, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(7)));
+	        	}
+	        	if(player.dimension == 9 && event.player.posY >= 150.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 8, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(8)));
+	        	}
+	        	if(player.dimension == 10 && event.player.posY >= 100.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 9, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(9)));
+	        	}
+	         	if(player.dimension == 11 && event.player.posY >= 172.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 10, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(10)));
+	        	}
+	         	if(player.dimension == 12 && event.player.posY >= 100.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 11, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(11)));
+	        	}
+	         	if(player.dimension == 13 && event.player.posY >= 50.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 12, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(12)));
+	        	}
+	         	if(player.dimension == 14 && event.player.posY >= 245.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 13, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(13)));
+	        	}
+	         	if(player.dimension == 15 && event.player.posY >= 75.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 14, new DeeperTeleporter(player.mcServer.worldServerForDimension(14)));
+	        	}
+	         	if(player.dimension == 16 && event.player.posY >= 245.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 15, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(15)));
+	        	}
+	         	if(player.dimension == 17 && event.player.posY >= 100.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 16, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(16)));
+	        	}
+	         	if(player.dimension == 19 && event.player.posY >= 245.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 17, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(17)));
+	        	}
+	        	if(player.dimension == 22 && event.player.posY >= 245.0)
+	        	{
+	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 19, new DeeperTeleporter(player.mcServer.worldServerForDimension(19)));
+	        	}
+	        	else{}
+        	}
+        	catch(ClassCastException e)
+        	{
+        		//do nothing, not a player
+        	}
     		try
             {
             EntityPlayerMP player = (EntityPlayerMP)event.player;
-    		if(event.player.posY <= 240.0D && player.dimension == 14)
-    		{
-    			if(this.nearvoid_counter == 200)
-    			{
-    				player.attackEntityFrom(DamageSource.outOfWorld, 0.5F);
-    				this.nearvoid_counter = 0;
-    			}
-    			else
-    			{
-    				this.nearvoid_counter = this.nearvoid_counter+1;
-    			}
-    		}
+            if(event.player.posY <= 240.0D && player.dimension == 14)
+            {
+	    		if(!voidFlag)
+	    		{
+	    			if(this.nearvoid_counter == 200)
+	    			{
+	    				player.attackEntityFrom(DamageSource.outOfWorld, 0.5F);
+	    				this.nearvoid_counter = 0;
+	    			}
+	    			else
+	    			{
+	    				this.nearvoid_counter = this.nearvoid_counter+1;
+	    			}
+	
+	    		}
+				else if(this.nearvoid_counter == 0 && voidFlag) 
+				{
+					this.voidFlag = false;
+					this.nearvoid_counter = this.nearvoid_counter+1;
+				}
+				else if(this.nearvoid_counter == 200 && voidFlag) 
+				{
+					this.nearvoid_counter = 0;
+				}
+				else
+				{
+					this.nearvoid_counter = this.nearvoid_counter+1;
+				}
+            }
+            if(event.player.posY <= 240.0D && player.dimension == 19)
+            {
+	    		if(!voidFlag)
+	    		{
+	    			if(this.farvoid_counter == 9) //200
+	    			{
+	    				player.attackEntityFrom(DamageSource.outOfWorld, 4.0F);
+	    				this.farvoid_counter = 0;
+	    			}
+	    			else
+	    			{
+	    				this.farvoid_counter = this.farvoid_counter+1;
+	    			}
+	
+	    		}
+				else if(this.farvoid_counter == 0 && voidFlag) 
+				{
+					this.voidFlag = false;
+					this.farvoid_counter = this.farvoid_counter+1;
+				}
+				else if(this.farvoid_counter == 9 && voidFlag) 
+				{
+					this.farvoid_counter = 0;
+				}
+				else
+				{
+					this.farvoid_counter = this.farvoid_counter+1;
+				}
+            }
             }
             catch(ClassCastException e)
             {

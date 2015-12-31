@@ -3,6 +3,7 @@ package com.kpabr.DeeperCaves.world.chunk;
 import java.util.List;
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesMaze;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 
@@ -229,6 +230,11 @@ public class ChunkProviderMaze implements IChunkProvider
                     {
                     	p_147422_3_[i2] = Blocks.stone;
                     }
+                    if (l1 >= 202)
+                    {
+                    	p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
+                    }
+
                 }
             }
         }

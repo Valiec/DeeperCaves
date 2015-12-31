@@ -3,6 +3,7 @@ package com.kpabr.DeeperCaves;
 import com.kpabr.DeeperCaves.item.ItemBase;
 import com.kpabr.DeeperCaves.item.ItemFragmentedBedrockBucket;
 import com.kpabr.DeeperCaves.item.ItemPickaxeBase;
+import com.kpabr.DeeperCaves.item.ItemVoidCharm;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -40,6 +41,10 @@ public class DeeperItems {
     public static Item fragmentedBedrockBucketMI;
     public static Item fragmentedBedrockBucketW;
     public static Item fragmentedBedrockBucketL;
+    
+    public static Item vesperiteGem;
+    
+    public static Item voidCharm;
 
     /*Tool and Armor Material declarations*/
     static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
@@ -78,6 +83,10 @@ public class DeeperItems {
         GameRegistry.registerItem(this.fragmentedBedrockBucketMI, "fragmented_bedrock_bucket_molten_iron");
         GameRegistry.registerItem(this.fragmentedBedrockBucketW, "fragmented_bedrock_bucket_water");
         GameRegistry.registerItem(this.fragmentedBedrockBucketL, "fragmented_bedrock_bucket_lava");
+        
+        GameRegistry.registerItem(this.vesperiteGem, "vesperite_gem");
+        
+        GameRegistry.registerItem(this.voidCharm, "void_charm");
     }
     
     public void registerItemsOreDict()
@@ -121,5 +130,9 @@ public class DeeperItems {
         this.fragmentedBedrockBucketW = new ItemFragmentedBedrockBucket(Blocks.flowing_water).setTextureName("deepercaves:fragmented_bedrock_bucket_w").setUnlocalizedName("fragmentedBedrockBucketWater").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
         this.fragmentedBedrockBucketL = new ItemFragmentedBedrockBucket(Blocks.flowing_lava).setTextureName("deepercaves:fragmented_bedrock_bucket_l").setUnlocalizedName("fragmentedBedrockBucketLava").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.vesperiteGem = new ItemBase().setTextureName("deepercaves:vesperite_gem").setUnlocalizedName("vesperiteGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.voidCharm = new ItemVoidCharm().setTextureName("deepercaves:voidCharm").setUnlocalizedName("voidCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
     }
 }
