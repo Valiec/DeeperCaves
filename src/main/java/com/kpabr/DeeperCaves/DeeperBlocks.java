@@ -231,7 +231,7 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("oreSilver", this.silverOre);
     	
     	OreDictionary.registerOre("oreSapphire", this.sapphireOre);
-    	OreDictionary.registerOre("oreAquamarine", this.aquamarineBlock);
+    	OreDictionary.registerOre("oreAquamarine", this.aquamarineOre);
     	OreDictionary.registerOre("oreAmetrine", this.ametrineOre);
     	
     	OreDictionary.registerOre("oreCompressedCoal", this.ccoalOre);
@@ -251,14 +251,32 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("oreCompressedRedstone_glowing", this.dcredstoneOre_glowing);
     	OreDictionary.registerOre("oreCompressedDiamond", this.dcdiamondOre);
     	OreDictionary.registerOre("oreCompressedEmerald", this.dcemeraldOre);
+    	
+    	OreDictionary.registerOre("oreCoal", this.dcoalOre);
+    	OreDictionary.registerOre("oreIron", this.dironOre);
+    	OreDictionary.registerOre("oreGold", this.dgoldOre);
+    	OreDictionary.registerOre("oreLapis", this.dlapisOre);
+    	OreDictionary.registerOre("oreRedstone", this.dredstoneOre);
+    	OreDictionary.registerOre("oreRedstone_glowing", this.dredstoneOre_glowing);
+    	OreDictionary.registerOre("oreDiamond", this.ddiamondOre);
+    	OreDictionary.registerOre("oreEmerald", this.demeraldOre);
+    	
+    	OreDictionary.registerOre("oreCoal", this.ddcoalOre);
+    	OreDictionary.registerOre("oreIron", this.ddironOre);
+    	OreDictionary.registerOre("oreGold", this.ddgoldOre);
+    	OreDictionary.registerOre("oreLapis", this.ddlapisOre);
+    	OreDictionary.registerOre("oreRedstone", this.ddredstoneOre);
+    	OreDictionary.registerOre("oreRedstone_glowing", this.ddredstoneOre_glowing);
+    	OreDictionary.registerOre("oreDiamond", this.dddiamondOre);
+    	OreDictionary.registerOre("oreEmerald", this.ddemeraldOre);
         
     	OreDictionary.registerOre("blockFragmentedBedrock", this.fragmentedBedrock);
     	
     	OreDictionary.registerOre("blockSilver", this.silverBlock);
     	
     	OreDictionary.registerOre("blockSapphire", this.sapphireBlock);
-    	OreDictionary.registerOre("blockSapphire", this.aquamarineBlock);
-    	OreDictionary.registerOre("blockAquamarine", this.ametrineBlock);  
+    	OreDictionary.registerOre("blockAquamarine", this.aquamarineBlock);
+    	OreDictionary.registerOre("blockAmetrine", this.ametrineBlock);  
  
     	OreDictionary.registerOre("oreTenebrium", this.tenebriumOre);
     	OreDictionary.registerOre("blockTenebrium", this.tenebriumBlock);
