@@ -378,7 +378,7 @@ public class DeeperBlocks {
         
         this.forgottenGemstoneBlock = new BlockFakeBedrock(Material.rock).setBlockTextureName("deepercaves:forgotten_gemstone_block").setBlockName("forgottenGemstoneBlock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.barrierLayer = new BlockBase(Material.rock).setBlockTextureName("deepercaves:barrier_layer").setBlockName("barrierLayer").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.barrierLayer = new BlockBase(Material.rock).setBlockTextureName("deepercaves:barrier_layer").setBlockName("barrierLayer").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves).setBlockUnbreakable();
         
         this.darkStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dark_stone").setBlockName("darkStone").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
