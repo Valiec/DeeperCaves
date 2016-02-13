@@ -40,10 +40,6 @@ public class DeeperTeleporterLower extends Teleporter
             int i = MathHelper.floor_double(p_77185_1_.posX);
             int j = this.min;
             int cap = this.cap;
-            /*if(this.worldServerInstance.provider.dimensionId == 0)
-            {
-            //j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
-            }*/
             if(this.worldServerInstance.provider.dimensionId == 11)
             {
             j = 157;
@@ -59,44 +55,7 @@ public class DeeperTeleporterLower extends Teleporter
             byte b0 = 1;
             byte b1 = 0;
             boolean blockIsAir = false;
-            System.out.println(this.worldServerInstance.getActualHeight());
             makePortal(p_77185_1_, cap);
-            /*for(int a = -10; a<10; a++)
-            {
-                for(int b = -32; a<32; b++)
-                {
-                    for(int c = -32; a<32; c++)
-                    {
-                    	if(this.worldServerInstance.isAirBlock(i+b, j+a, k+c))
-                    	{
-                    		blockIsAir = true;
-                    		i = i+b;
-                    		j = j+a;
-                    		k = k+c;
-                    		p_77185_1_.setPosition(i, j, k);
-                    		break;
-                    	}
-                    }
-                }
-            }*/
-
-            /*for (int l = -2; l <= 2; ++l)
-            {
-                for (int i1 = -2; i1 <= 2; ++i1)
-                {
-                    for (int j1 = -1; j1 < 3; ++j1)
-                    {
-                        int k1 = i + i1 * b0 + l * b1;
-                        int l1 = j + j1;
-                        int i2 = k + i1 * b1 - l * b0;
-                        boolean flag = j1 < 0;
-                        if(this.worldServerInstance.provider.dimensionId != 0)
-                        {
-                        this.worldServerInstance.setBlock(k1, l1, i2, flag ? Blocks.air : Blocks.air);
-                        }
-                    }
-                }
-            }*/
     }
     public boolean makePortal(Entity p_85188_1_, int cap)
     {
@@ -286,7 +245,6 @@ public class DeeperTeleporterLower extends Teleporter
                         i4 = j2 + k3;
                         j4 = k2 + (j3 - 1) * l2 - i3 * l5;
                         flag = k3 < 0;
-                        //p_85188_1_.setPosition(l3, i4, j4);
                         if(!flag)
                         {
                         this.worldServerInstance.setBlock(l3, i4, j4, Blocks.air);

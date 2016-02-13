@@ -230,7 +230,6 @@ public class DeeperDecorator extends BiomeDecorator {
                 k = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
                 l = this.randomGenerator.nextInt(50);
                 i1 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-                System.out.println("Lava: "+Integer.toString(k)+", "+Integer.toString(l)+", "+Integer.toString(i1));
                 (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.currentWorld, this.randomGenerator, k, l, i1);
             }
         }

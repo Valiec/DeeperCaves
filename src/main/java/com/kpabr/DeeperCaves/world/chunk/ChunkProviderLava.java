@@ -511,17 +511,6 @@ public class ChunkProviderLava implements IChunkProvider
                 }
             }
         }
-        /*for (int var3 = 0; var3 < 50; ++var3)
-        {
-            int var4 = k + this.rand.nextInt(16) + 8;
-            int var5 = this.rand.nextInt(50);
-            int var6 = l + this.rand.nextInt(16) + 8;
-            if(!(this.worldObj.getBlock(var4, var5, var6) instanceof BlockAir) && this.worldObj.getBlock(var4, var5, var6).)
-            {
-	            System.out.println("Lava: "+Integer.toString(var4)+", "+Integer.toString(var5)+", "+Integer.toString(var6));
-	            (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.worldObj, this.rand, var4, var5, var6);
-            }
-        }*/
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, flag));
 

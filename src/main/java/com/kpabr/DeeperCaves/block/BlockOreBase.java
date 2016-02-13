@@ -38,7 +38,6 @@ public class BlockOreBase extends BlockBase {
 		this.doXPdrop = doXPdrop;
 		this.xpmin = xpmin;
 		this.xpmax = xpmax;
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public boolean canSilkHarvest()
@@ -61,8 +60,6 @@ public class BlockOreBase extends BlockBase {
 	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-		System.out.println(this.drop);
-		System.out.println(DeeperCaves.items.sapphireGem);
         return this.drop;
     }
 	@Override
