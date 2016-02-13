@@ -58,8 +58,9 @@ public class DeeperCaves
     public static DeeperWorldgen worldgen = new DeeperWorldgen();
     public static DeeperMobs mobs = new DeeperMobs();
     public static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
+    public static DeeperConfig config = new DeeperConfig();
     public static DeeperCaves instance;
-    public static Configuration config;
+    //public static Configuration config;
     public int nearvoid_counter = 0;
     public int farvoid_counter = 0;
     public static boolean voidFlag = false;
@@ -72,9 +73,11 @@ public class DeeperCaves
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        config = new Configuration(event.getSuggestedConfigurationFile()); //gets default config file
+        //config = new Configuration(event.getSuggestedConfigurationFile()); //gets default config file
         
         this.instance = this;
+        
+        //config.load();
         
         
         FMLCommonHandler.instance().bus().register(worldgen);
@@ -82,6 +85,9 @@ public class DeeperCaves
         
         FMLCommonHandler.instance().bus().register(versionChecker);
         MinecraftForge.EVENT_BUS.register(versionChecker);
+        
+        FMLCommonHandler.instance().bus().register(config);
+        MinecraftForge.EVENT_BUS.register(config);
         
         FMLCommonHandler.instance().bus().register(this);
         MinecraftForge.EVENT_BUS.register(this);
@@ -91,7 +97,7 @@ public class DeeperCaves
         ClientCommandHandler.instance.registerCommand(new VersionCommand());
 
         
-        
+        config.initConfig(event);
      	fluids.setupFluids();
      	fluids.setupFluidBlocks();
         items.setupItems();

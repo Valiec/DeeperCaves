@@ -60,25 +60,48 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class DeeperWorldgen {
     /*World Generator Declaration*/
     DeeperOregen deeperblock = new DeeperOregen();
-    public int dropDimID = 7;
-    public int mazeDimID = 8;
-    public int crystalDimID = 9;
-    public int compressedDimID = 10;
-    public int bedrockPlainsDimID = 11;
+    public int dropDimID;
+    public int mazeDimID;
+    public int crystalDimID;
+    public int compressedDimID;
+    public int bedrockPlainsDimID;
     
-    public int nearNetherDimID = 12;
-    public int lavaDimID = 13;
-    public int nearVoidDimID = 14;
+    public int nearNetherDimID;
+    public int lavaDimID;
+    public int nearVoidDimID;
     
-    public int deepWorldDimID = 15;
-    public int darknessDimID = 16;
-    public int abandonedCavesDimID = 17;
-    public int mutationDimID = 18;
-    public int farVoidDimID = 19;
+    public int deepWorldDimID;
+    public int darknessDimID;
+    public int abandonedCavesDimID;
+    public int mutationDimID;
+    public int farVoidDimID;
     
-    public int forgottenDimID = 10;
-    public int evilDimID = 21;
-    public int finalLabyrinthDimID = 22;    
+    public int forgottenDimID;
+    public int evilDimID;
+    public int finalLabyrinthDimID;    
+    
+    //-----------------
+
+    public int dropBiomeID;
+    public int mazeBiomeID;
+    public int crystalBiomeID;
+    public int compressedBiomeID;
+    public int bedrockPlainsBiomeID;
+    
+    public int nearNetherBiomeID;
+    public int lavaBiomeID;
+    public int nearVoidBiomeID;
+    
+    public int deepWorldBiomeID;
+    public int darknessBiomeID;
+    public int abandonedCavesBiomeID;
+    public int mutationBiomeID;
+    public int farVoidBiomeID;
+    
+    public int forgottenBiomeID;
+    public int evilBiomeID;
+    public int finalLabyrinthBiomeID;    
+
     public BiomeGenDrop biomeDrop;
     public BiomeGenMaze biomeMaze;
     public BiomeGenCrystal biomeCrystal;
@@ -132,59 +155,59 @@ public class DeeperWorldgen {
         DimensionManager.registerProviderType(finalLabyrinthDimID, WorldProviderFinalLabyrinth.class, true);
         DimensionManager.registerDimension(finalLabyrinthDimID, finalLabyrinthDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
-        this.biomeDrop = new BiomeGenDrop(80, 0);
+        this.biomeDrop = new BiomeGenDrop(dropBiomeID, 0);
         BiomeEntry dropEntry = new BiomeEntry(this.biomeDrop, 50);
         BiomeDictionary.registerBiomeType(this.biomeDrop, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeDrop);
-        this.biomeMaze = new BiomeGenMaze(81, 0);
+        this.biomeMaze = new BiomeGenMaze(mazeBiomeID, 0);
         BiomeEntry mazeEntry = new BiomeEntry(this.biomeMaze, 50);
         BiomeDictionary.registerBiomeType(this.biomeMaze, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeMaze);
-        this.biomeCrystal = new BiomeGenCrystal(82, 0);
+        this.biomeCrystal = new BiomeGenCrystal(crystalBiomeID, 0);
         BiomeEntry crystalEntry = new BiomeEntry(this.biomeCrystal, 50);
         BiomeDictionary.registerBiomeType(this.biomeCrystal, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeCrystal);
-        this.biomeCompressed = new BiomeGenCompressed(83, 0);
+        this.biomeCompressed = new BiomeGenCompressed(compressedBiomeID, 0);
         BiomeEntry compressedEntry = new BiomeEntry(this.biomeCompressed, 50);
         BiomeDictionary.registerBiomeType(this.biomeCompressed, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeCompressed);
-        this.biomeBedrockPlains = new BiomeGenBedrockPlains(84, 0);
+        this.biomeBedrockPlains = new BiomeGenBedrockPlains(bedrockPlainsBiomeID, 0);
         BiomeEntry bedrockPlainsEntry = new BiomeEntry(this.biomeBedrockPlains, 50);
         BiomeDictionary.registerBiomeType(this.biomeBedrockPlains, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeBedrockPlains);
-        this.biomeNearNether = new BiomeGenNearNether(85, 0);
+        this.biomeNearNether = new BiomeGenNearNether(nearNetherBiomeID, 0);
         
         BiomeEntry nearNetherEntry = new BiomeEntry(this.biomeNearNether, 50);
         BiomeDictionary.registerBiomeType(this.biomeNearNether, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeNearNether);
-        this.biomeLava = new BiomeGenLava(86, 0);
+        this.biomeLava = new BiomeGenLava(lavaBiomeID, 0);
         BiomeEntry lavaEntry = new BiomeEntry(this.biomeLava, 50);
         BiomeDictionary.registerBiomeType(this.biomeLava, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeLava);
-        this.biomeNearVoid = new BiomeGenNearVoid(87, 0);
+        this.biomeNearVoid = new BiomeGenNearVoid(nearVoidBiomeID, 0);
         BiomeEntry nearVoidEntry = new BiomeEntry(this.biomeNearVoid, 50);
         BiomeDictionary.registerBiomeType(this.biomeNearVoid, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeNearVoid);
         
-        this.biomeDeepWorld = new BiomeGenDeepWorld(88, 0);
+        this.biomeDeepWorld = new BiomeGenDeepWorld(deepWorldBiomeID, 0);
         BiomeEntry deepWorldEntry = new BiomeEntry(this.biomeDeepWorld, 50);
         BiomeDictionary.registerBiomeType(this.biomeDeepWorld, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeDeepWorld);   
-        this.biomeDarkness = new BiomeGenDarkness(89, 0);
+        this.biomeDarkness = new BiomeGenDarkness(darknessBiomeID, 0);
         BiomeEntry darknessEntry = new BiomeEntry(this.biomeDarkness, 50);
         BiomeDictionary.registerBiomeType(this.biomeDarkness, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeDarkness);
-        this.biomeAbandonedCaves = new BiomeGenAbandonedCaves(90, 0);
+        this.biomeAbandonedCaves = new BiomeGenAbandonedCaves(abandonedCavesBiomeID, 0);
         BiomeEntry abandonedCavesEntry = new BiomeEntry(this.biomeAbandonedCaves, 50);
         BiomeDictionary.registerBiomeType(this.biomeAbandonedCaves, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeAbandonedCaves);
         
-        this.biomeFarVoid = new BiomeGenFarVoid(92, 0);
+        this.biomeFarVoid = new BiomeGenFarVoid(farVoidBiomeID, 0);
         BiomeEntry farVoidEntry = new BiomeEntry(this.biomeFarVoid, 50);
         BiomeDictionary.registerBiomeType(this.biomeFarVoid, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeFarVoid);
         
-        this.biomeFinalLabyrinth = new BiomeGenFinalLabyrinth(95, 0);
+        this.biomeFinalLabyrinth = new BiomeGenFinalLabyrinth(finalLabyrinthBiomeID, 0);
         BiomeEntry finalLabyrinthEntry = new BiomeEntry(this.biomeFinalLabyrinth, 50);
         BiomeDictionary.registerBiomeType(this.biomeFinalLabyrinth, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeFinalLabyrinth);
