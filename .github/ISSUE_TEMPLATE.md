@@ -1,18 +1,18 @@
 ####What type of issue is this? (e.g. bug, feature request)
 
-####Issue Description
+####Issue Description:
 
-####Steps to Reproduce (if applicable)
+####Steps to Reproduce: (if applicable)
 
-####System info (only needed for bug reports)
+####System info: (only needed for bug reports)
 
-#####Java version
+Java version:
 
-#####Minecraft version
+Minecraft version:
 
-#####Deeper Caves version
+Deeper Caves version:
 
-#####Other mods
+Other mods (if any):
 
-#####Crash report
+Crash report:
 
