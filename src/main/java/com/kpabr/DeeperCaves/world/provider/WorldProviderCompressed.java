@@ -29,7 +29,7 @@ public class WorldProviderCompressed extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeCompressed, 0.5F);
-        this.dimensionId = 10;
+        this.dimensionId = DeeperCaves.worldgen.compressedDimID;
         this.hasNoSky = true;
     }
 

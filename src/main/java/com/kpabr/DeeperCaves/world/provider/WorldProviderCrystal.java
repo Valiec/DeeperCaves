@@ -29,7 +29,7 @@ public class WorldProviderCrystal extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeCrystal, 0.5F);
-        this.dimensionId = 9;
+        this.dimensionId = DeeperCaves.worldgen.crystalDimID;
         this.hasNoSky = true;
     }
 

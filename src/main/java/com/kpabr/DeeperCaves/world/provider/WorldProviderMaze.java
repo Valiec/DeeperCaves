@@ -29,7 +29,7 @@ public class WorldProviderMaze extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeMaze, 0.5F);
-        this.dimensionId = 8;
+        this.dimensionId = DeeperCaves.worldgen.mazeDimID;
         this.hasNoSky = true;
     }
 

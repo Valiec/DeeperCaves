@@ -29,7 +29,7 @@ public class WorldProviderDeepWorld extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeDeepWorld, 0.5F);
-        this.dimensionId = 15;
+        this.dimensionId = DeeperCaves.worldgen.deepWorldDimID;
         this.hasNoSky = true;
     }
 

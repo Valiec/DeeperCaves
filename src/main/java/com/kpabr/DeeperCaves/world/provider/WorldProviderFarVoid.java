@@ -30,7 +30,7 @@ public class WorldProviderFarVoid extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeFarVoid, 0.5F);
-        this.dimensionId = 19;
+        this.dimensionId = DeeperCaves.worldgen.farVoidDimID;
         this.hasNoSky = true;
     }
 

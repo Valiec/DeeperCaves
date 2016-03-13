@@ -20,8 +20,9 @@ public class DeeperTeleporter extends Teleporter
 
     private WorldServer worldServerInstance;
     private final Random random;
-    public int[] mins = {0, 0, 0, 0, 0, 0, 0, 185, 185, 135, 90, 90, 90, 40, 256, 65, 185, 90, 0, 256, 0 ,0, 185}; //the zeroes are placholders
-    public int[] caps = {0, 0, 0, 0, 0, 0, 0, 252, 252, 147, 97, 97, 97, 47, 235, 72, 252, 97, 0, 235, 0 ,0, 252};
+    public int[] ids = {DeeperCaves.worldgen.dropDimID, DeeperCaves.worldgen.mazeDimID, DeeperCaves.worldgen.crystalDimID, DeeperCaves.worldgen.compressedDimID, DeeperCaves.worldgen.bedrockPlainsDimID, DeeperCaves.worldgen.nearNetherDimID, DeeperCaves.worldgen.lavaDimID, DeeperCaves.worldgen.nearVoidDimID, DeeperCaves.worldgen.deepWorldDimID, DeeperCaves.worldgen.darknessDimID, DeeperCaves.worldgen.abandonedCavesDimID, DeeperCaves.worldgen.mutationDimID, DeeperCaves.worldgen.farVoidDimID, DeeperCaves.worldgen.forgottenDimID, DeeperCaves.worldgen.evilDimID, DeeperCaves.worldgen.finalLabyrinthDimID};
+    public int[] caps = {252, 252, 147, 97, 160, 97, 47, 235, 72, 252, 97, 0, 235, 0 ,147, 252};
+    public int[] mins = {185, 185, 135, 90, 156, 90, 40, 256, 65, 185, 90, 0, 256, 0 ,135, 185}; //the zeroes are placholders
     public int min;
     public int cap;
 
@@ -30,8 +31,15 @@ public class DeeperTeleporter extends Teleporter
         super(p_i1963_1_);
         this.worldServerInstance = p_i1963_1_;
         this.random = new Random(p_i1963_1_.getSeed());
-        this.min = mins[this.worldServerInstance.provider.dimensionId];
-        this.cap = caps[this.worldServerInstance.provider.dimensionId];
+        for(int i = 0; i<ids.length; i++)
+        {
+        	if(this.worldServerInstance.provider.dimensionId == ids[i])
+        	{
+                min = mins[i];
+                cap = caps[i];
+        		break;
+        	}
+        }
     }
 
     /**
@@ -48,15 +56,15 @@ public class DeeperTeleporter extends Teleporter
             {
             j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
             }
-            if(this.worldServerInstance.provider.dimensionId == 11)
+            if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
             {
             j = 157;
             }
-            if(this.worldServerInstance.provider.dimensionId == 14)
+            if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.nearVoidDimID)
             {
             j = 235;
             }
-            if(this.worldServerInstance.provider.dimensionId == 19)
+            if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.farVoidDimID)
             {
             j = 235;
             }

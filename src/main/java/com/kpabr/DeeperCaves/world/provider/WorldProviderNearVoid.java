@@ -29,7 +29,7 @@ public class WorldProviderNearVoid extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeNearVoid, 0.5F);
-        this.dimensionId = 14;
+        this.dimensionId = DeeperCaves.worldgen.nearVoidDimID;
         this.hasNoSky = true;
     }
 

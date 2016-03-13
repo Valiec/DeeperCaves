@@ -29,7 +29,7 @@ public class WorldProviderNearNether extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeNearNether, 0.5F);
-        this.dimensionId = 12;
+        this.dimensionId = DeeperCaves.worldgen.nearNetherDimID;
         this.hasNoSky = true;
     }
 

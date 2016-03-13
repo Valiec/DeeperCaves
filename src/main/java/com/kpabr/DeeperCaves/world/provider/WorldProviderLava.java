@@ -30,7 +30,7 @@ public class WorldProviderLava extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeLava, 0.5F);
-        this.dimensionId = 13;
+        this.dimensionId = DeeperCaves.worldgen.lavaDimID;
         this.hasNoSky = true;
     }
 

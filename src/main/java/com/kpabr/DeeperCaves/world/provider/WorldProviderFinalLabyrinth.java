@@ -29,7 +29,7 @@ public class WorldProviderFinalLabyrinth extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeFinalLabyrinth, 0.5F);
-        this.dimensionId = 22;
+        this.dimensionId = DeeperCaves.worldgen.finalLabyrinthDimID;
         this.hasNoSky = true;
     }
 

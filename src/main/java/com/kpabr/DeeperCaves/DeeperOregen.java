@@ -35,52 +35,66 @@ public class DeeperOregen implements IWorldGenerator
 	   @Override
        public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
        {
-             switch(world.provider.dimensionId)
-             {
-					case 22:
+					if (world.provider.dimensionId == DeeperCaves.worldgen.finalLabyrinthDimID)
+					{
 							generateFinalLabyrinth(world, random, chunkX * 16, chunkZ * 16);
-							break;
-					case 19:
+					}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.evilDimID)
+					{
+							generateEvil(world, random, chunkX * 16, chunkZ * 16);
+					}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.farVoidDimID)
+					{
 							generateFarVoid(world, random, chunkX * 16, chunkZ * 16);
-							break;
-					case 17:
+					}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.abandonedCavesDimID)
+					{
 							generateAbandonedCaves(world, random, chunkX * 16, chunkZ * 16);
-							break;
-					case 16:
+					}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.darknessDimID)
+					{
 							generateDarkness(world, random, chunkX * 16, chunkZ * 16);
-							break;
-					case 15:
+					}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.deepWorldDimID)
+					{
   							generateDeepWorld(world, random, chunkX * 16, chunkZ * 16);
-  							break;
-      				case 14:
+      				}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.nearVoidDimID)
+					{
       						generateNearVoid(world, random, chunkX * 16, chunkZ * 16);
-      						break;
-      				case 13:
+      				}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.lavaDimID)
+					{
  							generateLava(world, random, chunkX * 16, chunkZ * 16);
- 							break;
-             		case 12:
+             		}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.nearNetherDimID)
+					{
              				generateNearNether(world, random, chunkX * 16, chunkZ * 16);
-             				break;
-		            case 11:
+		            }
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
+					{
 		             		generateBedrockPlains(world, random, chunkX * 16, chunkZ * 16);
-		             		break;
-		            case 10:
-		             		generateCompressed(world, random, chunkX * 16, chunkZ * 16);
-		             		break;		
-		            case 9:
-		             		generateCrystal(world, random, chunkX * 16, chunkZ * 16);
-		             		break;		
-                    case 8:
+		            }
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.compressedDimID)
+					{
+		             		generateCompressed(world, random, chunkX * 16, chunkZ * 16);		
+		            }
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.crystalDimID)
+					{
+		             		generateCrystal(world, random, chunkX * 16, chunkZ * 16);	
+                    }
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.mazeDimID)
+					{
                     		generateMaze(world, random, chunkX * 16, chunkZ * 16);
-                    		break;
-                    case 7: 
+                    }
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.dropDimID)
+					{ 
                     		generateDrop(world, random, chunkX * 16, chunkZ * 16);
-                    		break;
-                    case 0:
+					}
+                    else if (world.provider.dimensionId == 0)
+                    {
                     		generateOverworld(world, random, chunkX * 16, chunkZ * 16);
-                    		break;
-                    default: generateDefault(world, random, chunkX * 16, chunkZ * 16);
-             }
+                    }
        }
       
        private void generateOverworld(World world, Random random, int x, int z)
@@ -217,12 +231,19 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(Blocks.end_stone, world, random, x, z, 16, 16, 15, 1, 128, 255, DeeperCaves.blocks.deepStone);
            
        }
-
-       private void generateFinalLabyrinth(World world, Random random, int x, int z)
+       
+       private void generateEvil(World world, Random random, int x, int z)
        {
-    	   
-    	   this.addOre(DeeperCaves.blocks.forgottenGemstoneOre, world, random, x, z, 16, 16, 4, 50, 0, 255, DeeperCaves.blocks.fragmentedBedrock);
-           
+    	   this.addOre(DeeperCaves.blocks.soulStone, world, random, x, z, 16, 16, 15, 120, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.corruptedSoulStone, world, random, x, z, 16, 16, 10, 80, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.cryingObsidian, world, random, x, z, 16, 16, 8, 48, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.profundiumOre, world, random, x, z, 16, 16, 6, 67, 0, 255, DeeperCaves.blocks.deepStone);
+       }
+       
+       
+       private void generateFinalLabyrinth(World world, Random random, int x, int z)
+       { 
+    	   this.addOre(DeeperCaves.blocks.forgottenGemstoneOre, world, random, x, z, 16, 16, 4, 50, 0, 255, DeeperCaves.blocks.fragmentedBedrock); 
        }
        
        public void addOre(Block block, World world, Random random, int x, int z, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY, Block generateIn)

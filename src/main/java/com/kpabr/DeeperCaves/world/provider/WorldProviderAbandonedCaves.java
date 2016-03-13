@@ -31,7 +31,7 @@ public class WorldProviderAbandonedCaves extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeAbandonedCaves, 0.5F);
-        this.dimensionId = 17;
+        this.dimensionId = DeeperCaves.worldgen.abandonedCavesDimID;
         this.hasNoSky = true;
     }
 

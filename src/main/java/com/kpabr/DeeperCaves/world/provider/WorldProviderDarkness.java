@@ -30,7 +30,7 @@ public class WorldProviderDarkness extends WorldProvider
     public void registerWorldChunkManager()
     {
         this.worldChunkMgr = new WorldChunkManagerHell(DeeperCaves.worldgen.biomeDarkness, 0.5F);
-        this.dimensionId = 16;
+        this.dimensionId = DeeperCaves.worldgen.darknessDimID;
         this.hasNoSky = true;
     }
 

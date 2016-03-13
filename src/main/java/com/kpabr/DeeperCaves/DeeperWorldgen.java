@@ -10,6 +10,7 @@ import com.kpabr.DeeperCaves.world.biome.BiomeGenCrystal;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenDarkness;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenDeepWorld;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenDrop;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenEvil;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenFarVoid;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenFinalLabyrinth;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenLava;
@@ -24,6 +25,7 @@ import com.kpabr.DeeperCaves.world.provider.WorldProviderCrystal;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDarkness;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDeepWorld;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDrop;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderEvil;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderFarVoid;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderFinalLabyrinth;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderLava;
@@ -118,6 +120,7 @@ public class DeeperWorldgen {
     
     public BiomeGenFarVoid biomeFarVoid;
     
+    public BiomeGenEvil biomeEvil;
     public BiomeGenFinalLabyrinth biomeFinalLabyrinth;
     public void setupWorldgen()
     {
@@ -151,6 +154,9 @@ public class DeeperWorldgen {
         
         DimensionManager.registerProviderType(farVoidDimID, WorldProviderFarVoid.class, true);
         DimensionManager.registerDimension(farVoidDimID, farVoidDimID);
+        
+        DimensionManager.registerProviderType(evilDimID, WorldProviderEvil.class, true);
+        DimensionManager.registerDimension(evilDimID, evilDimID);
         
         DimensionManager.registerProviderType(finalLabyrinthDimID, WorldProviderFinalLabyrinth.class, true);
         DimensionManager.registerDimension(finalLabyrinthDimID, finalLabyrinthDimID);
@@ -207,6 +213,10 @@ public class DeeperWorldgen {
         BiomeDictionary.registerBiomeType(this.biomeFarVoid, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeFarVoid);
         
+        this.biomeEvil = new BiomeGenEvil(evilBiomeID, 0);
+        BiomeEntry evilEntry = new BiomeEntry(this.biomeEvil, 50);
+        BiomeDictionary.registerBiomeType(this.biomeEvil, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeEvil);
         this.biomeFinalLabyrinth = new BiomeGenFinalLabyrinth(finalLabyrinthBiomeID, 0);
         BiomeEntry finalLabyrinthEntry = new BiomeEntry(this.biomeFinalLabyrinth, 50);
         BiomeDictionary.registerBiomeType(this.biomeFinalLabyrinth, Type.PLAINS);
