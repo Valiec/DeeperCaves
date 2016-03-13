@@ -39,7 +39,7 @@ public class WorldProviderFinalLabyrinth extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderFinalLabyrinth(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderFinalLabyrinth(this.worldObj, this.worldObj.getSeed()+16, true);
     }
 
     /**

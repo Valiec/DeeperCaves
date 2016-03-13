@@ -39,7 +39,7 @@ public class WorldProviderMaze extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderMaze(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderMaze(this.worldObj, this.worldObj.getSeed()+2, true);
     }
 
     /**

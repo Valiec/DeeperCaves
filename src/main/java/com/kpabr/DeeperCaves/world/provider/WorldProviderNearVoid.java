@@ -39,7 +39,7 @@ public class WorldProviderNearVoid extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderNearVoid(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderNearVoid(this.worldObj, this.worldObj.getSeed()+8, true);
     }
 
     /**

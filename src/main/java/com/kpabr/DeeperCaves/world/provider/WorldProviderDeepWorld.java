@@ -39,7 +39,7 @@ public class WorldProviderDeepWorld extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderDeepWorld(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderDeepWorld(this.worldObj, this.worldObj.getSeed()+9, true);
     }
 
     /**

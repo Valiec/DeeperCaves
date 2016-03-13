@@ -41,7 +41,7 @@ public class WorldProviderAbandonedCaves extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderAbandonedCaves(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderAbandonedCaves(this.worldObj, this.worldObj.getSeed()+11, true);
     }
 
     /**

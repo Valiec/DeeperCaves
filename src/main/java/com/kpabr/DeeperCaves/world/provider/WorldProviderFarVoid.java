@@ -40,7 +40,7 @@ public class WorldProviderFarVoid extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderFarVoid(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderFarVoid(this.worldObj, this.worldObj.getSeed()+13, true);
     }
 
     /**

@@ -39,7 +39,7 @@ public class WorldProviderCompressed extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderCompressed(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderCompressed(this.worldObj, this.worldObj.getSeed()+4, true);
     }
 
     /**

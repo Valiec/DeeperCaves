@@ -40,7 +40,7 @@ public class WorldProviderDarkness extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderDarkness(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderDarkness(this.worldObj, this.worldObj.getSeed()+10, true);
     }
 
     /**

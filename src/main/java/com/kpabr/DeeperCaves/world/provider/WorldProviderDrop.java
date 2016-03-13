@@ -39,7 +39,7 @@ public class WorldProviderDrop extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderDrop(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderDrop(this.worldObj, this.worldObj.getSeed()+1, true);
     }
 
     /**

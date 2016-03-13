@@ -41,7 +41,7 @@ public class WorldProviderEvil extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderEvil(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderEvil(this.worldObj, this.worldObj.getSeed()+15, true);
     }
 
     /**

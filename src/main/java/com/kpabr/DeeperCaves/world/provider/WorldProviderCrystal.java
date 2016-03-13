@@ -39,7 +39,7 @@ public class WorldProviderCrystal extends WorldProvider
     public IChunkProvider createChunkGenerator()
     {
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
-    	return new ChunkProviderCrystal(this.worldObj, this.worldObj.getSeed(), true);
+    	return new ChunkProviderCrystal(this.worldObj, this.worldObj.getSeed()+3, true);
     }
 
     /**
