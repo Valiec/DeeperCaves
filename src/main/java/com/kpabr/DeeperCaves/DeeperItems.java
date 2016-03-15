@@ -45,6 +45,8 @@ public class DeeperItems {
     public static Item vesperiteGem;
     
     public static Item voidCharm;
+    
+    public static Item profundiumIngot;
 
     /*Tool and Armor Material declarations*/
     static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
@@ -87,6 +89,8 @@ public class DeeperItems {
         GameRegistry.registerItem(this.vesperiteGem, "vesperite_gem");
         
         GameRegistry.registerItem(this.voidCharm, "void_charm");
+        
+        GameRegistry.registerItem(this.profundiumIngot, "profundiumIngot");
     }
     
     public void registerItemsOreDict()
@@ -100,6 +104,8 @@ public class DeeperItems {
     	OreDictionary.registerOre("ingotTenebrium", this.tenebriumIngot);  
     	
     	OreDictionary.registerOre("gemForgotten", this.forgottenGemstone);  
+    	
+    	OreDictionary.registerOre("ingotProfundium", this.profundiumIngot);  
     }
     
     public void setupItems()
@@ -134,5 +140,8 @@ public class DeeperItems {
         this.vesperiteGem = new ItemBase().setTextureName("deepercaves:vesperite_gem").setUnlocalizedName("vesperiteGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
         this.voidCharm = new ItemVoidCharm().setTextureName("deepercaves:voidCharm").setUnlocalizedName("voidCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.profundiumIngot = new ItemBase().setTextureName("deepercaves:profundiumIngot").setUnlocalizedName("profundiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
     }
 }

@@ -420,13 +420,14 @@ public class DeeperBlocks {
         
         this.fragmentedCobble = new BlockBase(Material.rock).setBlockTextureName("deepercaves:fragmented_cobblestone").setBlockName("fragmentedCobble").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.soulStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:soul_stone").setBlockName("soulStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.soulStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:soul_stone").setBlockName("soulStone").setHardness(4.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.corruptedSoulStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:corrupted_soul_stone").setBlockName("corruptedSoulStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.corruptedSoulStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:corrupted_soul_stone").setBlockName("corruptedSoulStone").setHardness(4.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.cryingObsidian = new BlockBase(Material.rock).setBlockTextureName("deepercaves:crying_obsidian").setBlockName("cryingObsidian").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.cryingObsidian = new BlockBase(Material.rock).setBlockTextureName("deepercaves:crying_obsidian").setBlockName("cryingObsidian").setHardness(60.0F).setResistance(6000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.profundiumOre = new BlockOreBase(Material.rock, DeeperCaves.items.vesperiteGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:profundium_ore").setBlockName("profundiumOre").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.profundiumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:profundium_ore").setBlockName("profundiumOre").setHardness(5.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
         
         
     }
@@ -485,7 +486,14 @@ public class DeeperBlocks {
         
         this.cooledObsidian.setHarvestLevel("pickaxe", 4);
         this.heatedObsidian.setHarvestLevel("pickaxe", 2);
-       
+        
+        this.darkStone.setHarvestLevel("pickaxe", 1);
+        this.abandonedStone.setHarvestLevel("pickaxe", 1);
+        this.deepStone.setHarvestLevel("pickaxe", 2);
+        
+        this.cryingObsidian.setHarvestLevel("pickaxe", 3);
+        this.soulStone.setHarvestLevel("pickaxe", 2);
+        this.corruptedSoulStone.setHarvestLevel("pickaxe", 2);
     }
     
 }
