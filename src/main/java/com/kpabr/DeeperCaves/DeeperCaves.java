@@ -17,6 +17,7 @@ import net.minecraft.command.ServerCommandManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -112,6 +113,7 @@ public class DeeperCaves
      	recipes.setupSmelting();
      	worldgen.setupWorldgen();
      	mobs.setupMobs();
+     	GameRegistry.registerFuelHandler(new DeeperFuel());
      	proxy.registerRenderers();
     }
     @SubscribeEvent
@@ -234,7 +236,7 @@ public class DeeperCaves
 	        	{
 	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.abandonedCavesDimID, new DeeperTeleporterLower(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.abandonedCavesDimID)));
 	        	}
-	        	if(player.dimension == DeeperCaves.worldgen.evilDimID && event.player.posY >= 150.0)
+	        	if(player.dimension == DeeperCaves.worldgen.evilDimID && event.player.posY >= 100.0)
 	        	{
 	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.farVoidDimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.farVoidDimID)));
 	        	}

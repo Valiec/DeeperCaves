@@ -58,6 +58,8 @@ public class DeeperRecipes {
         
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.obsidian, 2), new Object[]{DeeperCaves.blocks.cooledObsidian, DeeperCaves.blocks.heatedObsidian});
         
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.profundiumDust, 2), new Object[]{DeeperCaves.items.profundiumIngot});
+        
     }
     public void setupSmelting()
     {

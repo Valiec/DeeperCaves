@@ -48,6 +48,7 @@ public class DeeperBlocks {
     
     public static Block farVoidPortal;
     
+    public static Block evilPortal;
     public static Block finalLabyrinthPortal;
     
     public static Block sapphireOre;
@@ -159,6 +160,7 @@ public class DeeperBlocks {
         
         GameRegistry.registerBlock(this.farVoidPortal, "far_void_portal");
         
+        GameRegistry.registerBlock(this.evilPortal, "evil_portal");
         GameRegistry.registerBlock(this.finalLabyrinthPortal, "final_labyrinth_portal");
         
         GameRegistry.registerBlock(this.sapphireOre, "sapphire_ore");
@@ -339,8 +341,9 @@ public class DeeperBlocks {
         this.darknessPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.darknessDimID).setBlockName("darknessPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.abandonedCavesPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.abandonedCavesDimID).setBlockName("abandonedCavesPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         
-        this.farVoidPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.evilDimID).setBlockName("farVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        this.farVoidPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.farVoidDimID).setBlockName("farVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         
+        this.evilPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.evilDimID).setBlockName("evilPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.finalLabyrinthPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.finalLabyrinthDimID).setBlockName("finalLabyrinthPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         
         this.sapphireOre = new BlockOreBase(Material.rock, DeeperCaves.items.sapphireGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:sapphireOre").setBlockName("sapphireOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
@@ -494,6 +497,8 @@ public class DeeperBlocks {
         this.cryingObsidian.setHarvestLevel("pickaxe", 3);
         this.soulStone.setHarvestLevel("pickaxe", 2);
         this.corruptedSoulStone.setHarvestLevel("pickaxe", 2);
+        
+        this.fragmentedCobble.setHarvestLevel("pickaxe", 0);
     }
     
 }

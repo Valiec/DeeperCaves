@@ -1,3 +1,14 @@
+item.profundiumDust.name=Profundium Dust
+
+item.profundiumIngot.name=Profundium Ingot
+
+tile.profundiumOre.name=Profundium Ore
+tile.cryingObsidian.name=Crying Obsidian
+tile.corruptedSoulStone.name=Corrupted Soul Stone
+tile.soulStone.name=Soul Stone
+
+tile.fragmentedCobble.name=Fragmented Cobblestone
+
 tile.barrierLayer.name=Level Barrier
 tile.darkStone.name=Dark Stone
 tile.abandonedCavesStone.name=Abandoned Caves Stone
