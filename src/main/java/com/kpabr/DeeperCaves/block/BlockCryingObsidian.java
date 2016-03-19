@@ -43,7 +43,7 @@ public class BlockCryingObsidian extends Block {
 		ArrayList a =  new ArrayList<ItemStack>();
 		a.add(new ItemStack(Item.getItemFromBlock(Blocks.obsidian), 1));
 		a.add(new ItemStack(Items.dye, 2*(fortune+1), 4));
-        return null;
+        return a;
         
     }
 

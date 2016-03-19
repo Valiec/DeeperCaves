@@ -43,6 +43,7 @@ public class DeeperRecipes {
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.cryingObsidian, 1), new Object[]{"ZZZ", "ZXZ", "ZZZ", 'X', Blocks.obsidian, 'Z', new ItemStack(Items.dye, 1, 4)});
         
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.fragmentedCobble, 2), new Object[]{"ZZ", "ZZ", 'Z', Blocks.gravel});
     }
     public void setupShapelessCrafting()
     {
@@ -62,6 +63,8 @@ public class DeeperRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.obsidian, 2), new Object[]{DeeperCaves.blocks.cooledObsidian, DeeperCaves.blocks.heatedObsidian});
         
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.profundiumDust, 2), new Object[]{DeeperCaves.items.profundiumIngot});
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.profundiumIngot, 9), new Object[]{DeeperCaves.blocks.profundiumBlock});
         
     }
     public void setupSmelting()
@@ -88,6 +91,9 @@ public class DeeperRecipes {
         GameRegistry.addSmelting(DeeperCaves.blocks.deepCobble, new ItemStack(DeeperCaves.blocks.deepStone, 1) , 0.1F);
         
         GameRegistry.addSmelting(DeeperCaves.blocks.profundiumOre, new ItemStack(DeeperCaves.items.profundiumIngot, 1) , 1.5F);
+        
+        GameRegistry.addSmelting(DeeperCaves.blocks.fragmentedCobble, new ItemStack(Blocks.cobblestone, 1) , 0.1F);
+        
         
     }
 }
