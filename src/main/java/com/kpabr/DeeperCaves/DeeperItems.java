@@ -111,7 +111,9 @@ public class DeeperItems {
     	
     	OreDictionary.registerOre("ingotProfundium", this.profundiumIngot); 
     	
-    	OreDictionary.registerOre("dustProfundium", this.profundiumDust); 
+    	OreDictionary.registerOre("dustProfundium", this.profundiumDust);
+    	
+    	OreDictionary.registerOre("dustVesperite", this.vesperiteGem); 
     }
     
     public void setupItems()

@@ -39,6 +39,9 @@ public class DeeperRecipes {
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.vesperiteBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.vesperiteGem});
         
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.profundiumBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.profundiumIngot});
+        
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.cryingObsidian, 1), new Object[]{"ZZZ", "ZXZ", "ZZZ", 'X', Blocks.obsidian, 'Z', new ItemStack(Items.dye, 1, 4)});
         
     }
     public void setupShapelessCrafting()

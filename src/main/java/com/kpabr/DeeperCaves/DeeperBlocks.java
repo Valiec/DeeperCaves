@@ -4,12 +4,14 @@ import com.kpabr.DeeperCaves.block.BlockAmetrine;
 import com.kpabr.DeeperCaves.block.BlockBase;
 import com.kpabr.DeeperCaves.block.BlockCompressedOre;
 import com.kpabr.DeeperCaves.block.BlockCompressedRedstoneOre;
+import com.kpabr.DeeperCaves.block.BlockCryingObsidian;
 import com.kpabr.DeeperCaves.block.BlockDeepStone;
 import com.kpabr.DeeperCaves.block.BlockDeeperPortal;
 import com.kpabr.DeeperCaves.block.BlockFakeBedrock;
 import com.kpabr.DeeperCaves.block.BlockFragmentedBedrock;
 import com.kpabr.DeeperCaves.block.BlockFragmentedBedrockOre;
 import com.kpabr.DeeperCaves.block.BlockOreBase;
+import com.kpabr.DeeperCaves.block.BlockProfundium;
 import com.kpabr.DeeperCaves.block.BlockReturnPortal;
 import com.kpabr.DeeperCaves.block.BlockVanillaOre;
 import com.kpabr.DeeperCaves.block.BlockVanillaRedstoneOre;
@@ -138,6 +140,8 @@ public class DeeperBlocks {
     
     public static Block profundiumOre;
     
+    public static Block profundiumBlock;
+    
     
     
     public void registerBlocks()
@@ -247,6 +251,8 @@ public class DeeperBlocks {
         
         GameRegistry.registerBlock(this.profundiumOre, "profundium_ore");
         
+        GameRegistry.registerBlock(this.profundiumBlock, "profundium_block");
+        
     }
     public void registerBlocksOreDict()
     {
@@ -320,6 +326,11 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("cobblestone", this.abandonedStone);
     	
     	OreDictionary.registerOre("oreProfundium", this.profundiumOre);
+    	OreDictionary.registerOre("blockProfundium", this.profundiumBlock);
+    	
+    	OreDictionary.registerOre("oreVesperite", this.vesperiteOre);
+    	OreDictionary.registerOre("blockVesperite", this.vesperiteBlock);
+    	
         
     }
     public void setupBlocks()
@@ -427,11 +438,11 @@ public class DeeperBlocks {
         
         this.corruptedSoulStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:corrupted_soul_stone").setBlockName("corruptedSoulStone").setHardness(4.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        this.cryingObsidian = new BlockBase(Material.rock).setBlockTextureName("deepercaves:crying_obsidian").setBlockName("cryingObsidian").setHardness(60.0F).setResistance(6000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.cryingObsidian = new BlockCryingObsidian(Material.rock).setBlockTextureName("deepercaves:crying_obsidian").setBlockName("cryingObsidian").setHardness(60.0F).setResistance(6000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         this.profundiumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:profundium_ore").setBlockName("profundiumOre").setHardness(5.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        
+        this.profundiumBlock = new BlockProfundium(Material.rock).setBlockTextureName("deepercaves:profundium_block").setBlockName("profundiumBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
     }
     public void setupHarvestLevels()
@@ -499,6 +510,9 @@ public class DeeperBlocks {
         this.corruptedSoulStone.setHarvestLevel("pickaxe", 2);
         
         this.fragmentedCobble.setHarvestLevel("pickaxe", 0);
+        
+        this.profundiumOre.setHarvestLevel("pickaxe", 4);
+        this.profundiumBlock.setHarvestLevel("pickaxe", 4);
     }
     
 }
