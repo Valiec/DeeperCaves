@@ -14,9 +14,9 @@
 
 1. Install Minecraft Forge
 2. Run minecraft to create a mods folder 
-3. Place the DeeperCaves-0.4.0-mc1.7.10.jar file into your mods folder inside your minecraft folder
+3. Place the DeeperCaves-0.4.1-mc1.7.10.jar file into your mods folder inside your minecraft folder
 
-If Forge is not loading the mod, check that you installed the DeeperCaves-0.4.0-mc1.7.10.jar file, not the DeeperCaves-0.4.0-mc1.7.10.zip file.
+If Forge is not loading the mod, check that you installed the DeeperCaves-0.4.1-mc1.7.10.jar file, not the DeeperCaves-0.4.1-mc1.7.10.zip file.
 
 
 ##Mod Info:
