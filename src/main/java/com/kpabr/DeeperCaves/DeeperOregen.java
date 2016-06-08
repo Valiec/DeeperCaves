@@ -206,7 +206,7 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperCaves.blocks.ddiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperCaves.blocks.abandonedStone);
     	   this.addOre(DeeperCaves.blocks.demeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperCaves.blocks.abandonedStone);
     	   
-    	   if (random.nextInt(20) == 0)
+    	   if (random.nextInt(8) == 0) //TODO tweak?
            {
                int i = x + random.nextInt(16) + 8;
                int j = z + random.nextInt(16) + 8;

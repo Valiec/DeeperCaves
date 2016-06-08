@@ -10341,7 +10341,7 @@ public class StructureCaveVillage extends WorldGenerator implements IWorldGenera
 		world.setBlockMetadataWithNotify(i + 56, j + 3, k + 29, 9, 2);
 		world.setBlockMetadataWithNotify(i + 56, j + 3, k + 31, 9, 2);
 		world.setBlockMetadataWithNotify(i + 56, j + 4, k + 29, 1, 2);
-		this.setBlock(world, i + 56, j + 4, k + 30, Blocks.water, 0);
+		this.setBlock(world, i + 56, j + 4, k + 30, Blocks.flowing_water, 0);
 		world.setBlockMetadataWithNotify(i + 56, j + 4, k + 31, 1, 2);
 		world.setBlockMetadataWithNotify(i + 57, j + 1, k + 29, 1, 2);
 		world.setBlockMetadataWithNotify(i + 57, j + 1, k + 30, 9, 2);

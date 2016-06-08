@@ -1600,7 +1600,7 @@ public class CaveVillage019
 		world.setBlock(x + 44, y + 4, z + 41, Blocks.air, 0, 3);
 		world.setBlock(x + 43, y + 4, z + 41, Blocks.air, 0, 3);
 		world.setBlock(x + 42, y + 4, z + 41, Blocks.air, 0, 3);
-		world.setBlock(x + 41, y + 4, z + 41, Blocks.water, 0, 3);
+		world.setBlock(x + 41, y + 4, z + 41, Blocks.flowing_water, 0, 3);
 		world.setBlock(x + 40, y + 4, z + 41, Blocks.air, 0, 3);
 		world.setBlock(x + 39, y + 4, z + 41, Blocks.air, 0, 3);
 		world.setBlock(x + 38, y + 4, z + 41, Blocks.air, 0, 3);
