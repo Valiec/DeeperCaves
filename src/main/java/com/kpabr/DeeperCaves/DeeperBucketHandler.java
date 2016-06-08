@@ -38,14 +38,8 @@ public class DeeperBucketHandler {
 	public void onBucketFill(FillBucketEvent event)
 	{
 		Block block = event.world.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ);
-		System.out.println(block.getUnlocalizedName());
-		System.out.println(event.current.getItem().getUnlocalizedName());
-		System.out.println(DeeperCaves.items.fragmentedBedrockBucket.getUnlocalizedName());
-		System.out.println(event.current.getItem() == DeeperCaves.items.fragmentedBedrockBucket);
-		System.out.println("--\n--");		
 		if(map.containsKey(block) && event.current.getItem() == Items.bucket)
 		{
-			System.out.println("Detected standard bucket...");
 			event.setResult(Result.ALLOW);
 			event.result = new ItemStack(map.get(block));
 			event.world.setBlock(event.target.blockX, event.target.blockY, event.target.blockZ, Blocks.air);
@@ -56,7 +50,6 @@ public class DeeperBucketHandler {
 		}
 		else if(mapfr.containsKey(block) && event.current.getItem() == DeeperCaves.items.fragmentedBedrockBucket)
 		{
-			System.out.println("Detected fragmented bedrock bucket...");
 			event.setResult(Result.ALLOW);
 			event.result = new ItemStack(mapfr.get(block));
 			System.out.println(event.result.getUnlocalizedName());

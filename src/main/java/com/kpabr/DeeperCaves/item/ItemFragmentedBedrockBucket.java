@@ -45,16 +45,6 @@ public class ItemFragmentedBedrockBucket extends ItemBucket {
             }
             if (event.getResult() == Event.Result.ALLOW)
             {
-            	System.out.println(event.world.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ).getUnlocalizedName());
-            	/*if(event.world.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ) == DeeperCaves.fluids.moltenIronBlock){
-            	{
-            		event.result = new ItemStack(DeeperCaves.items.fragmentedBedrockBucketMI);
-            	}*/
-            	/*if(event.world.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ) == DeeperCaves.fluids.veneniumBlock){
-            	{
-            		event.result = new ItemStack(DeeperCaves.items.fragmentedBedrockBucketV);
-            	}*/
-            	//}
                 if (p_77659_3_.capabilities.isCreativeMode)
                 {
                     return p_77659_1_;
