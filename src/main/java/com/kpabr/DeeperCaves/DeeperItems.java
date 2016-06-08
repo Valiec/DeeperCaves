@@ -3,6 +3,7 @@ package com.kpabr.DeeperCaves;
 import com.kpabr.DeeperCaves.item.ItemBase;
 import com.kpabr.DeeperCaves.item.ItemFragmentedBedrockBucket;
 import com.kpabr.DeeperCaves.item.ItemPickaxeBase;
+import com.kpabr.DeeperCaves.item.ItemVeneniumBucket;
 import com.kpabr.DeeperCaves.item.ItemVoidCharm;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -49,6 +50,10 @@ public class DeeperItems {
     public static Item profundiumIngot;
     
     public static Item profundiumDust;
+    
+	public static Item bucketV;
+	
+	public static Item fragmentedBedrockBucketV;
 
     /*Tool and Armor Material declarations*/
     static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
@@ -95,6 +100,9 @@ public class DeeperItems {
         GameRegistry.registerItem(this.profundiumIngot, "profundium_ingot");
         
         GameRegistry.registerItem(this.profundiumDust, "profundium_dust");
+
+        GameRegistry.registerItem(this.bucketV, "bucket_venenium");
+        GameRegistry.registerItem(this.fragmentedBedrockBucketV, "fragmented_bedrock_bucket_venenium");
     }
     
     public void registerItemsOreDict()
@@ -152,6 +160,10 @@ public class DeeperItems {
         this.profundiumIngot = new ItemBase().setTextureName("deepercaves:profundium_ingot").setUnlocalizedName("profundiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
         this.profundiumDust = new ItemBase().setTextureName("deepercaves:profundium_dust").setUnlocalizedName("profundiumDust").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.bucketV = new ItemVeneniumBucket(DeeperCaves.fluids.veneniumBlock).setTextureName("deepercaves:bucket_v").setUnlocalizedName("bucketVenenium").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.fragmentedBedrockBucketV = new ItemFragmentedBedrockBucket(DeeperCaves.fluids.veneniumBlock).setTextureName("deepercaves:fragmented_bedrock_bucket_v").setUnlocalizedName("fragmentedBedrockBucketVenenium").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
     }
 }

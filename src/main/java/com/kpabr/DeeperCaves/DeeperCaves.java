@@ -60,6 +60,7 @@ public class DeeperCaves
     public static DeeperMobs mobs = new DeeperMobs();
     public static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
     public static DeeperConfig config = new DeeperConfig();
+    public static DeeperBucketHandler bucket;
     public static DeeperCaves instance;
     //public static Configuration config;
     public int nearvoid_counter = 0;
@@ -115,6 +116,11 @@ public class DeeperCaves
      	mobs.setupMobs();
      	GameRegistry.registerFuelHandler(new DeeperFuel());
      	proxy.registerRenderers();
+     	
+     	bucket = new DeeperBucketHandler();
+     	
+        FMLCommonHandler.instance().bus().register(bucket);
+		MinecraftForge.EVENT_BUS.register(bucket);
     }
     @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
