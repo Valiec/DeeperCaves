@@ -13,8 +13,10 @@ import com.kpabr.DeeperCaves.world.biome.BiomeGenDrop;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenEvil;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenFarVoid;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenFinalLabyrinth;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenForgotten;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenLava;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenMaze;
+import com.kpabr.DeeperCaves.world.biome.BiomeGenMutation;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenNearNether;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenNearVoid;
 import com.kpabr.DeeperCaves.world.chunk.ChunkProviderGenerateDuplicate;
@@ -28,8 +30,10 @@ import com.kpabr.DeeperCaves.world.provider.WorldProviderDrop;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderEvil;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderFarVoid;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderFinalLabyrinth;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderForgotten;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderLava;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderMaze;
+import com.kpabr.DeeperCaves.world.provider.WorldProviderMutation;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearNether;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearVoid;
 
@@ -117,9 +121,10 @@ public class DeeperWorldgen {
     public BiomeGenDeepWorld biomeDeepWorld;
     public BiomeGenDarkness biomeDarkness;
     public BiomeGenAbandonedCaves biomeAbandonedCaves;
-    
+    public BiomeGenMutation biomeMutation;
     public BiomeGenFarVoid biomeFarVoid;
     
+    public BiomeGenForgotten biomeForgotten;
     public BiomeGenEvil biomeEvil;
     public BiomeGenFinalLabyrinth biomeFinalLabyrinth;
     public void setupWorldgen()
@@ -151,9 +156,15 @@ public class DeeperWorldgen {
         DimensionManager.registerDimension(darknessDimID, darknessDimID);
         DimensionManager.registerProviderType(abandonedCavesDimID, WorldProviderAbandonedCaves.class, true);
         DimensionManager.registerDimension(abandonedCavesDimID, abandonedCavesDimID);
+
+        DimensionManager.registerProviderType(mutationDimID, WorldProviderMutation.class, true);
+        DimensionManager.registerDimension(mutationDimID, mutationDimID);
         
         DimensionManager.registerProviderType(farVoidDimID, WorldProviderFarVoid.class, true);
         DimensionManager.registerDimension(farVoidDimID, farVoidDimID);
+        
+        DimensionManager.registerProviderType(forgottenDimID, WorldProviderForgotten.class, true);
+        DimensionManager.registerDimension(forgottenDimID, forgottenDimID);
         
         DimensionManager.registerProviderType(evilDimID, WorldProviderEvil.class, true);
         DimensionManager.registerDimension(evilDimID, evilDimID);
@@ -207,12 +218,19 @@ public class DeeperWorldgen {
         BiomeEntry abandonedCavesEntry = new BiomeEntry(this.biomeAbandonedCaves, 50);
         BiomeDictionary.registerBiomeType(this.biomeAbandonedCaves, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeAbandonedCaves);
-        
+        this.biomeMutation = new BiomeGenMutation(mutationBiomeID, 0);
+        BiomeEntry mutationEntry = new BiomeEntry(this.biomeMutation, 50);
+        BiomeDictionary.registerBiomeType(this.biomeMutation, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeMutation);
         this.biomeFarVoid = new BiomeGenFarVoid(farVoidBiomeID, 0);
         BiomeEntry farVoidEntry = new BiomeEntry(this.biomeFarVoid, 50);
         BiomeDictionary.registerBiomeType(this.biomeFarVoid, Type.PLAINS);
         BiomeManager.addSpawnBiome(this.biomeFarVoid);
         
+        this.biomeForgotten = new BiomeGenForgotten(forgottenBiomeID, 0);
+        BiomeEntry forgottenEntry = new BiomeEntry(this.biomeForgotten, 50);
+        BiomeDictionary.registerBiomeType(this.biomeForgotten, Type.PLAINS);
+        BiomeManager.addSpawnBiome(this.biomeForgotten);
         this.biomeEvil = new BiomeGenEvil(evilBiomeID, 0);
         BiomeEntry evilEntry = new BiomeEntry(this.biomeEvil, 50);
         BiomeDictionary.registerBiomeType(this.biomeEvil, Type.PLAINS);

@@ -8,22 +8,23 @@ import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
-public class BlockFluidMoltenIron extends BlockFluidClassic {
+public class BlockFluidVenenium extends BlockFluidClassic {
 	
 	public Fluid fluid;
 	private IIcon still;
 	private IIcon flow;
 
-	public BlockFluidMoltenIron(Fluid fluid, Material material) {
+	public BlockFluidVenenium(Fluid fluid, Material material) {
 		super(fluid, material);
 		this.fluid = fluid;
+		this.opaque = false;
 		// TODO Auto-generated constructor stub
 	}
 	@Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-		this.still = iconRegister.registerIcon("DeeperCaves:molten_iron_still");
-		this.flow = iconRegister.registerIcon("DeeperCaves:molten_iron_flow");
+		this.still = iconRegister.registerIcon("DeeperCaves:venenium_still");
+		this.flow = iconRegister.registerIcon("DeeperCaves:venenium_flow");
 		this.getFluid().setIcons(this.still, this.flow);
     }
 	@Override
@@ -39,6 +40,7 @@ public class BlockFluidMoltenIron extends BlockFluidClassic {
                     return this.flow;
             }
     }
+	@Override
 	public boolean isOpaqueCube()
 	{
 		return false;

@@ -48,7 +48,11 @@ public class DeeperBlocks {
     public static Block darknessPortal;
     public static Block abandonedCavesPortal;
     
+    public static Block mutationPortal;
+    
     public static Block farVoidPortal;
+    
+    public static Block forgottenPortal;
     
     public static Block evilPortal;
     public static Block finalLabyrinthPortal;
@@ -162,7 +166,11 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.darknessPortal, "darkness_portal");
         GameRegistry.registerBlock(this.abandonedCavesPortal, "abandoned_caves_portal");
         
+        GameRegistry.registerBlock(this.mutationPortal, "mutation_portal");
+        
         GameRegistry.registerBlock(this.farVoidPortal, "far_void_portal");
+        
+        GameRegistry.registerBlock(this.forgottenPortal, "forgotten_portal");
         
         GameRegistry.registerBlock(this.evilPortal, "evil_portal");
         GameRegistry.registerBlock(this.finalLabyrinthPortal, "final_labyrinth_portal");
@@ -352,7 +360,11 @@ public class DeeperBlocks {
         this.darknessPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.darknessDimID).setBlockName("darknessPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.abandonedCavesPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.abandonedCavesDimID).setBlockName("abandonedCavesPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         
+        this.mutationPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.mutationDimID).setBlockName("mutationPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        
         this.farVoidPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.farVoidDimID).setBlockName("farVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        
+        this.forgottenPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.forgottenDimID).setBlockName("forgottenPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         
         this.evilPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.evilDimID).setBlockName("evilPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
         this.finalLabyrinthPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.finalLabyrinthDimID).setBlockName("finalLabyrinthPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();

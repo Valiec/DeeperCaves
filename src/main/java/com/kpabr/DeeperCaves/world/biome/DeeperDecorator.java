@@ -14,6 +14,9 @@ import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.Ev
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SAND_PASS2;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM;
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE;
+
+import com.kpabr.DeeperCaves.DeeperCaves;
+
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -225,12 +228,12 @@ public class DeeperDecorator extends BiomeDecorator {
         doGen = TerrainGen.decorate(currentWorld, randomGenerator, chunk_X, chunk_Z, LAKE);
         if (true)
         {
-            for (j = 0; j < 250; ++j)
+            for (j = 0; j < ((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)?64:250); ++j)
             {
                 k = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-                l = this.randomGenerator.nextInt(50);
+                l = this.randomGenerator.nextInt((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)?(100):(50));
                 i1 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-                (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.currentWorld, this.randomGenerator, k, l, i1);
+                (new WorldGenDeeperLiquids((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)?(DeeperCaves.fluids.veneniumBlock):(Blocks.flowing_lava))).setReplaceBlock((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)?(DeeperCaves.blocks.deepStone):(Blocks.stone)).generate(this.currentWorld, this.randomGenerator, k, l, i1);
             }
         }
 
