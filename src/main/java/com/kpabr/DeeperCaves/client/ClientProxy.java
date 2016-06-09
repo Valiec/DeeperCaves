@@ -12,7 +12,11 @@ import com.kpabr.DeeperCaves.CommonProxy;
 
 
 import com.kpabr.DeeperCaves.entity.EntityDeepCaveSpider;
+import com.kpabr.DeeperCaves.entity.EntityMutatedCaveSpider;
+import com.kpabr.DeeperCaves.entity.EntityShadow;
 import com.kpabr.DeeperCaves.entity.RenderDeepSpider;
+import com.kpabr.DeeperCaves.entity.RenderMutatedSpider;
+import com.kpabr.DeeperCaves.entity.RenderShadow;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.minecraft.client.model.ModelBiped;
@@ -29,6 +33,7 @@ public class ClientProxy extends CommonProxy {
     {
         
             RenderingRegistry.registerEntityRenderingHandler(EntityDeepCaveSpider.class, new RenderDeepSpider());
-//the 0.5F is the shadowsize
+            RenderingRegistry.registerEntityRenderingHandler(EntityMutatedCaveSpider.class, new RenderMutatedSpider());
+            RenderingRegistry.registerEntityRenderingHandler(EntityShadow.class, new RenderShadow(new ModelBiped(), 0.5F));
     }      
 }

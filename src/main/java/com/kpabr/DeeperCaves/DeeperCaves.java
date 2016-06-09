@@ -65,7 +65,9 @@ public class DeeperCaves
     //public static Configuration config;
     public int nearvoid_counter = 0;
     public int farvoid_counter = 0;
+    public int deep_counter = 0;
     public static boolean voidFlag = false;
+    public static boolean deepFlag = false;
     
     static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperCaves.blocks.fragmentedBedrock);
     static CreativeTabs tabDeeperCavesItems = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Items", 0);
@@ -333,11 +335,29 @@ public class DeeperCaves
 					this.farvoid_counter = this.farvoid_counter+1;
 				}
             }
+            if(player.dimension == DeeperCaves.worldgen.forgottenDimID)
+            {
+				if(this.deep_counter == 0 && voidFlag) 
+				{
+					this.voidFlag = false;
+					this.deep_counter = this.deep_counter+1;
+				}
+				else if(this.deep_counter == 1 && voidFlag) 
+				{
+					this.deep_counter = 0;
+				}
+				else
+				{
+					this.deep_counter = this.deep_counter+1;
+				}
+            }
             }
             catch(ClassCastException e)
             {
             	return; //not a player
             }
+    		
     }
+    
 }
 

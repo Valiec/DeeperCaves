@@ -20,6 +20,7 @@ public class ItemVoidCharm extends Item {
 	public void onUpdate(ItemStack p_77663_1_, World p_77663_2_, Entity p_77663_3_, int p_77663_4_, boolean p_77663_5_) 
 	{
 		DeeperCaves.voidFlag = true;
+		DeeperCaves.deepFlag = true;
 	}
 	
 
