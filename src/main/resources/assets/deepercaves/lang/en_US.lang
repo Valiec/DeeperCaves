@@ -1,3 +1,11 @@
+tile.dpcoalOre.name=Deep Coal Ore
+tile.dpironOre.name=Deep Iron Ore
+tile.dpgoldOre.name=Deep Gold Ore
+tile.dplapisOre.name=Deep Lapis Lazuli Ore
+tile.dpredstoneOre.name=Deep Redstone Ore
+tile.dpdiamondOre.name=Deep Diamond Ore
+tile.dpemeraldOre.name=Deep Emerald Ore
+
 tile.evanesciteBlock.name=Block of Evanescite
 
 entity.Shadow.name=Shadow

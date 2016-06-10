@@ -150,7 +150,14 @@ public class DeeperBlocks {
 	
     public static Block evanesciteBlock;
     
-    
+    public static Block dpcoalOre;
+    public static Block dpironOre;
+    public static Block dpgoldOre;
+    public static Block dplapisOre;
+    public static Block dpredstoneOre;
+    public static Block dpredstoneOre_glowing;
+    public static Block dpdiamondOre;
+    public static Block dpemeraldOre;
     
     public void registerBlocks()
     {
@@ -268,6 +275,15 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(this.evanesciteOre, "evanescite_ore");
         
         GameRegistry.registerBlock(this.evanesciteBlock, "evanescite_block");
+        
+        GameRegistry.registerBlock(this.dpcoalOre, "deep_coal_ore");
+        GameRegistry.registerBlock(this.dpironOre, "deep_iron_ore");
+        GameRegistry.registerBlock(this.dpgoldOre, "deep_gold_ore");
+        GameRegistry.registerBlock(this.dplapisOre, "deep_lapis_ore");
+        GameRegistry.registerBlock(this.dpredstoneOre, "deep_redstone_ore");
+        GameRegistry.registerBlock(this.dpredstoneOre_glowing, "deep_redstone_ore_glowing");
+        GameRegistry.registerBlock(this.dpdiamondOre, "deep_diamond_ore");
+        GameRegistry.registerBlock(this.dpemeraldOre, "deep_emerald_ore");
     }
     public void registerBlocksOreDict()
     {
@@ -349,7 +365,14 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("oreEvanescite", this.evanesciteOre);
     	OreDictionary.registerOre("blockEvanescite", this.evanesciteBlock);
     	
-        
+    	OreDictionary.registerOre("oreCoal", this.dpcoalOre);
+    	OreDictionary.registerOre("oreIron", this.dpironOre);
+    	OreDictionary.registerOre("oreGold", this.dpgoldOre);
+    	OreDictionary.registerOre("oreLapis", this.dplapisOre);
+    	OreDictionary.registerOre("oreRedstone", this.dpredstoneOre);
+    	OreDictionary.registerOre("oreRedstone_glowing", this.dpredstoneOre_glowing);
+    	OreDictionary.registerOre("oreDiamond", this.dpdiamondOre);
+    	OreDictionary.registerOre("oreEmerald", this.dpemeraldOre);
     }
     public void setupBlocks()
     {
@@ -469,6 +492,15 @@ public class DeeperBlocks {
         this.evanesciteOre = new BlockOreBase(Material.rock, DeeperCaves.items.evanesciteGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:evanescite_ore").setBlockName("evanesciteOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         this.evanesciteBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:evanescite_block").setBlockName("evanesciteBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.dpcoalOre = new BlockVanillaOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:dpcoal_ore").setBlockName("dpcoalOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dpironOre = new BlockVanillaOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:dpiron_ore").setBlockName("dpironOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dpgoldOre = new BlockVanillaOre(Material.rock, Blocks.gold_ore).setBlockTextureName("deepercaves:dpgold_ore").setBlockName("dpgoldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dplapisOre = new BlockVanillaOre(Material.rock, Blocks.lapis_ore).setBlockTextureName("deepercaves:dplapis_ore").setBlockName("dplapisOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dpredstoneOre = new BlockVanillaRedstoneOre(false).setBlockTextureName("deepercaves:dpredstone_ore").setBlockName("dpredstoneOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dpredstoneOre_glowing = new BlockVanillaRedstoneOre(true).setBlockTextureName("deepercaves:dpredstone_ore").setBlockName("dpredstoneOre").setHardness(3.0F).setResistance(15.0F).setLightLevel(0.625F);
+        this.dpdiamondOre = new BlockVanillaOre(Material.rock, Blocks.diamond_ore).setBlockTextureName("deepercaves:dpdiamond_ore").setBlockName("dpdiamondOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        this.dpemeraldOre = new BlockVanillaOre(Material.rock, Blocks.emerald_ore).setBlockTextureName("deepercaves:dpemerald_ore").setBlockName("dpemeraldOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
     }
     public void setupHarvestLevels()
     {
@@ -541,6 +573,24 @@ public class DeeperBlocks {
         
         this.evanesciteOre.setHarvestLevel("pickaxe", 3);
         this.evanesciteBlock.setHarvestLevel("pickaxe", 3);
+
+        this.dcoalOre.setHarvestLevel("pickaxe", 0);
+        this.dironOre.setHarvestLevel("pickaxe", 1);
+        this.dgoldOre.setHarvestLevel("pickaxe", 2);
+        this.dlapisOre.setHarvestLevel("pickaxe", 1);
+        this.dredstoneOre.setHarvestLevel("pickaxe", 2);
+        this.dredstoneOre_glowing.setHarvestLevel("pickaxe", 2);
+        this.ddiamondOre.setHarvestLevel("pickaxe", 2);
+        this.demeraldOre.setHarvestLevel("pickaxe", 2);
+        
+        this.dpcoalOre.setHarvestLevel("pickaxe", 0);
+        this.dpironOre.setHarvestLevel("pickaxe", 1);
+        this.dpgoldOre.setHarvestLevel("pickaxe", 2);
+        this.dplapisOre.setHarvestLevel("pickaxe", 1);
+        this.dpredstoneOre.setHarvestLevel("pickaxe", 2);
+        this.dpredstoneOre_glowing.setHarvestLevel("pickaxe", 2);
+        this.dpdiamondOre.setHarvestLevel("pickaxe", 2);
+        this.dpemeraldOre.setHarvestLevel("pickaxe", 2);
     }
     
 }
