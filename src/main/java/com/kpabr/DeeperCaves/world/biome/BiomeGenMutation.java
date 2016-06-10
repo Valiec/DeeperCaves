@@ -24,6 +24,7 @@ public class BiomeGenMutation extends BiomeGenBase
     public BiomeGenMutation(int p_i45377_1_, int p_i45377_2_)
     {
         super(p_i45377_1_);
+        this.spawnableMonsterList.clear();
     	this.biomeName = "Mutation";
         this.temperature = 0.80F;
         this.setHeight(BiomeGenBase.height_LowHills);

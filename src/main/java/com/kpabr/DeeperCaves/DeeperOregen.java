@@ -43,9 +43,17 @@ public class DeeperOregen implements IWorldGenerator
 					{
 							generateEvil(world, random, chunkX * 16, chunkZ * 16);
 					}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.forgottenDimID)
+					{
+							generateForgotten(world, random, chunkX * 16, chunkZ * 16);
+					}
 					else if (world.provider.dimensionId == DeeperCaves.worldgen.farVoidDimID)
 					{
 							generateFarVoid(world, random, chunkX * 16, chunkZ * 16);
+					}
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)
+					{
+							generateMutation(world, random, chunkX * 16, chunkZ * 16);
 					}
 					else if (world.provider.dimensionId == DeeperCaves.worldgen.abandonedCavesDimID)
 					{
@@ -195,6 +203,7 @@ public class DeeperOregen implements IWorldGenerator
     	   
            
        }
+       
        private void generateAbandonedCaves(World world, Random random, int x, int z)
        {
     	   
@@ -216,6 +225,11 @@ public class DeeperOregen implements IWorldGenerator
            
        }
        
+       private void generateMutation(World world, Random random, int x, int z)
+       {
+           
+       }
+       
        private void generateFarVoid(World world, Random random, int x, int z)
        {
     	   
@@ -231,6 +245,11 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperCaves.blocks.heatedObsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperCaves.blocks.deepStone);
     	   this.addOre(Blocks.end_stone, world, random, x, z, 16, 16, 15, 1, 128, 255, DeeperCaves.blocks.deepStone);
            
+       }
+       
+       private void generateForgotten(World world, Random random, int x, int z)
+       {
+    	   this.addOre(DeeperCaves.blocks.evanesciteOre, world, random, x, z, 16, 16, 6, 180, 0, 255, DeeperCaves.blocks.deepStone);
        }
        
        private void generateEvil(World world, Random random, int x, int z)

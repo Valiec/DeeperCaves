@@ -12,14 +12,14 @@ import net.minecraft.world.World;
  * on February 18, 2014
  * using Minecraft Forge 10.12.0.1022
  */
-public class ItemVoidCharm extends Item {
+public class ItemForgottenCharm extends Item {
 
-	public ItemVoidCharm() {
+	public ItemForgottenCharm() {
 		
 	}
 	public void onUpdate(ItemStack p_77663_1_, World p_77663_2_, Entity p_77663_3_, int p_77663_4_, boolean p_77663_5_) 
 	{
-		DeeperCaves.voidFlag = true;
+		DeeperCaves.deepFlag = true;
 	}
 	
 

@@ -1,3 +1,17 @@
+tile.evanesciteBlock.name=Block of Evanescite
+
+entity.Shadow.name=Shadow
+
+entity.mutatedCreeper.name=Mutated Creeper
+entity.mutatedSkeleton.name=Mutated Skeleton
+entity.mutatedZombie.name=Mutated Zombie
+entity.mutatedCaveSpider.name=Mutated Cave Spider
+
+tile.evanesciteOre.name=Evanescite Ore
+
+item.evanesciteGem.name=Evanescite Gem
+item.forgottenCharm.name=Forgotten Charm
+
 item.bucketVenenium.name=Bucket of Venenium
 item.fragmentedBedrockBucketVenenium.name=Fragmented Bedrock Bucket of Venenium
 

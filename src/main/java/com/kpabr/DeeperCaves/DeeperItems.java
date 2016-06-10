@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCaves;
 
 import com.kpabr.DeeperCaves.item.ItemBase;
+import com.kpabr.DeeperCaves.item.ItemForgottenCharm;
 import com.kpabr.DeeperCaves.item.ItemFragmentedBedrockBucket;
 import com.kpabr.DeeperCaves.item.ItemPickaxeBase;
 import com.kpabr.DeeperCaves.item.ItemVeneniumBucket;
@@ -47,6 +48,8 @@ public class DeeperItems {
     
     public static Item voidCharm;
     
+    public static Item forgottenCharm;
+    
     public static Item profundiumIngot;
     
     public static Item profundiumDust;
@@ -54,6 +57,8 @@ public class DeeperItems {
 	public static Item bucketV;
 	
 	public static Item fragmentedBedrockBucketV;
+	
+	public static Item evanesciteGem;
 
     /*Tool and Armor Material declarations*/
     static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
@@ -97,12 +102,16 @@ public class DeeperItems {
         
         GameRegistry.registerItem(this.voidCharm, "void_charm");
         
+        GameRegistry.registerItem(this.forgottenCharm, "forgotten_charm");
+        
         GameRegistry.registerItem(this.profundiumIngot, "profundium_ingot");
         
         GameRegistry.registerItem(this.profundiumDust, "profundium_dust");
 
         GameRegistry.registerItem(this.bucketV, "bucket_venenium");
         GameRegistry.registerItem(this.fragmentedBedrockBucketV, "fragmented_bedrock_bucket_venenium");
+        
+        GameRegistry.registerItem(this.evanesciteGem, "evanescite_gem");
     }
     
     public void registerItemsOreDict()
@@ -122,6 +131,8 @@ public class DeeperItems {
     	OreDictionary.registerOre("dustProfundium", this.profundiumDust);
     	
     	OreDictionary.registerOre("dustVesperite", this.vesperiteGem); 
+    	
+    	OreDictionary.registerOre("gemEvanescite", this.evanesciteGem); 
     }
     
     public void setupItems()
@@ -157,6 +168,8 @@ public class DeeperItems {
         
         this.voidCharm = new ItemVoidCharm().setTextureName("deepercaves:voidCharm").setUnlocalizedName("voidCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
+        this.forgottenCharm = new ItemForgottenCharm().setTextureName("deepercaves:forgottenCharm").setUnlocalizedName("forgottenCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
         this.profundiumIngot = new ItemBase().setTextureName("deepercaves:profundium_ingot").setUnlocalizedName("profundiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
         this.profundiumDust = new ItemBase().setTextureName("deepercaves:profundium_dust").setUnlocalizedName("profundiumDust").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
@@ -165,5 +178,6 @@ public class DeeperItems {
         
         this.fragmentedBedrockBucketV = new ItemFragmentedBedrockBucket(DeeperCaves.fluids.veneniumBlock).setTextureName("deepercaves:fragmented_bedrock_bucket_v").setUnlocalizedName("fragmentedBedrockBucketVenenium").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
+        this.evanesciteGem = new ItemBase().setTextureName("deepercaves:evanescite_gem").setUnlocalizedName("evanesciteGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);      
     }
 }

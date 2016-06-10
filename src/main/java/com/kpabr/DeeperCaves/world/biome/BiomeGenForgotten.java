@@ -26,6 +26,7 @@ public class BiomeGenForgotten extends BiomeGenBase
     public BiomeGenForgotten(int p_i45377_1_, int p_i45377_2_)
     {
         super(p_i45377_1_);
+        this.spawnableMonsterList.clear();
     	this.biomeName = "Forgotten";
         this.temperature = 0.80F;
         this.setHeight(BiomeGenBase.height_LowHills);

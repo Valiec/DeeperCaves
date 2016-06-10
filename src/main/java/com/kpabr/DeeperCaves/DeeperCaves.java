@@ -337,12 +337,12 @@ public class DeeperCaves
             }
             if(player.dimension == DeeperCaves.worldgen.forgottenDimID)
             {
-				if(this.deep_counter == 0 && voidFlag) 
+				if(this.deep_counter == 0 && deepFlag) 
 				{
-					this.voidFlag = false;
+					this.deepFlag = false;
 					this.deep_counter = this.deep_counter+1;
 				}
-				else if(this.deep_counter == 1 && voidFlag) 
+				else if(this.deep_counter >= 1 && deepFlag) 
 				{
 					this.deep_counter = 0;
 				}

@@ -146,6 +146,10 @@ public class DeeperBlocks {
     
     public static Block profundiumBlock;
     
+	public static Block evanesciteOre;
+	
+    public static Block evanesciteBlock;
+    
     
     
     public void registerBlocks()
@@ -261,6 +265,9 @@ public class DeeperBlocks {
         
         GameRegistry.registerBlock(this.profundiumBlock, "profundium_block");
         
+        GameRegistry.registerBlock(this.evanesciteOre, "evanescite_ore");
+        
+        GameRegistry.registerBlock(this.evanesciteBlock, "evanescite_block");
     }
     public void registerBlocksOreDict()
     {
@@ -338,6 +345,9 @@ public class DeeperBlocks {
     	
     	OreDictionary.registerOre("oreVesperite", this.vesperiteOre);
     	OreDictionary.registerOre("blockVesperite", this.vesperiteBlock);
+    	
+    	OreDictionary.registerOre("oreEvanescite", this.evanesciteOre);
+    	OreDictionary.registerOre("blockEvanescite", this.evanesciteBlock);
     	
         
     }
@@ -456,6 +466,9 @@ public class DeeperBlocks {
         
         this.profundiumBlock = new BlockProfundium(Material.rock).setBlockTextureName("deepercaves:profundium_block").setBlockName("profundiumBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
+        this.evanesciteOre = new BlockOreBase(Material.rock, DeeperCaves.items.evanesciteGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:evanescite_ore").setBlockName("evanesciteOre").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
+        this.evanesciteBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:evanescite_block").setBlockName("evanesciteBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
     }
     public void setupHarvestLevels()
     {
@@ -525,6 +538,9 @@ public class DeeperBlocks {
         
         this.profundiumOre.setHarvestLevel("pickaxe", 4);
         this.profundiumBlock.setHarvestLevel("pickaxe", 4);
+        
+        this.evanesciteOre.setHarvestLevel("pickaxe", 3);
+        this.evanesciteBlock.setHarvestLevel("pickaxe", 3);
     }
     
 }

@@ -38,8 +38,8 @@ public class DeeperMobs {
         EntityRegistry.registerGlobalEntityID(EntityMutatedCreeper.class, "mutatedCreeper", 109, 0x007200, 0x000000);
         EntityRegistry.addSpawn(EntityMutatedCreeper.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeMutation);
         
-        EntityRegistry.registerGlobalEntityID(EntityShadow.class, "Shadow", 110, 0x0C0000, 0x050505);
-        EntityRegistry.addSpawn(EntityShadow.class, 8, 1, 2, EnumCreatureType.monster, DeeperCaves.worldgen.biomeForgotten);
+        EntityRegistry.registerGlobalEntityID(EntityShadow.class, "Shadow", 110, 0x050505, 0x7C0000);
+        EntityRegistry.addSpawn(EntityShadow.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeForgotten);
         
         
     }
