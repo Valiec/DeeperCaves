@@ -9,6 +9,7 @@ public class DeeperConfig {
 	public Configuration config;
 	public String CATEGORY_DIM_IDS = "dimension ids";
 	public String CATEGORY_BIOME_IDS = "biome ids";
+	public String CATEGORY_ENTITY_IDS = "entity ids";
 
     public void initConfig(FMLPreInitializationEvent event)
     {
@@ -30,11 +31,11 @@ public class DeeperConfig {
         DeeperCaves.worldgen.deepWorldDimID = config.getInt("Deep World ID", this.CATEGORY_DIM_IDS, -10, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         DeeperCaves.worldgen.darknessDimID = config.getInt("Darkness ID", this.CATEGORY_DIM_IDS, -11, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         DeeperCaves.worldgen.abandonedCavesDimID = config.getInt("Abandoned Caves ID", this.CATEGORY_DIM_IDS, -12, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.mutationDimID = config.getInt("Mutation ID (level to be added)", this.CATEGORY_DIM_IDS, -13, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        DeeperCaves.worldgen.mutationDimID = config.getInt("Mutation ID", this.CATEGORY_DIM_IDS, -13, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         DeeperCaves.worldgen.farVoidDimID = config.getInt("Far Void ID", this.CATEGORY_DIM_IDS, -14, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         
-        DeeperCaves.worldgen.forgottenDimID = config.getInt("Forgotten ID (level to be added)", this.CATEGORY_DIM_IDS, -15, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.evilDimID = config.getInt("Evil ID (level to be added)", this.CATEGORY_DIM_IDS, -16, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        DeeperCaves.worldgen.forgottenDimID = config.getInt("Forgotten ID", this.CATEGORY_DIM_IDS, -15, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        DeeperCaves.worldgen.evilDimID = config.getInt("Evil ID", this.CATEGORY_DIM_IDS, -16, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         DeeperCaves.worldgen.finalLabyrinthDimID = config.getInt("Final Labyrinth ID", this.CATEGORY_DIM_IDS, -17, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         
         //------------------
@@ -54,12 +55,28 @@ public class DeeperConfig {
         DeeperCaves.worldgen.deepWorldBiomeID = config.getInt("Deep World Biome ID", this.CATEGORY_BIOME_IDS, 178, 0, 245, "");
         DeeperCaves.worldgen.darknessBiomeID = config.getInt("Darkness Biome ID", this.CATEGORY_BIOME_IDS, 179, 0, 245, "");
         DeeperCaves.worldgen.abandonedCavesBiomeID = config.getInt("Abandoned Caves Biome ID", this.CATEGORY_BIOME_IDS, 180, 0, 245, "");
-        DeeperCaves.worldgen.mutationBiomeID = config.getInt("Mutation Biome ID (level to be added)", this.CATEGORY_BIOME_IDS, 181, 0, 245, "");
+        DeeperCaves.worldgen.mutationBiomeID = config.getInt("Mutation Biome ID", this.CATEGORY_BIOME_IDS, 181, 0, 245, "");
         DeeperCaves.worldgen.farVoidBiomeID = config.getInt("Far Void Biome ID", this.CATEGORY_BIOME_IDS, 182, 0, 245, "");
         
-        DeeperCaves.worldgen.forgottenBiomeID = config.getInt("Forgotten Biome ID (level to be added)", this.CATEGORY_BIOME_IDS, 183, 0, 245, "");
-        DeeperCaves.worldgen.evilBiomeID = config.getInt("Evil Biome ID (level to be added)", this.CATEGORY_BIOME_IDS, 184, 0, 245, "");
+        DeeperCaves.worldgen.forgottenBiomeID = config.getInt("Forgotten Biome ID", this.CATEGORY_BIOME_IDS, 183, 0, 245, "");
+        DeeperCaves.worldgen.evilBiomeID = config.getInt("Evil Biome ID", this.CATEGORY_BIOME_IDS, 184, 0, 245, "");
         DeeperCaves.worldgen.finalLabyrinthBiomeID = config.getInt("Final Labyrinth Biome ID", this.CATEGORY_BIOME_IDS, 185, 0, 245, "");
+        
+        //------------------
+        
+        config.addCustomCategoryComment("entity ids", "Entity IDs");
+        
+        DeeperCaves.mobs.deepZombieID = config.getInt("Deep World Zombie Entity ID", this.CATEGORY_ENTITY_IDS, 102, 0, 255, "");
+        DeeperCaves.mobs.deepSkeletonID = config.getInt("Deep World Skeleton Entity ID", this.CATEGORY_ENTITY_IDS, 103, 0, 255, "");
+        DeeperCaves.mobs.deepCaveSpiderID = config.getInt("Deep World Cave Spider Entity ID", this.CATEGORY_ENTITY_IDS, 104, 0, 255, "");
+        DeeperCaves.mobs.deepCreeperID = config.getInt("Deep World Creeper Entity ID", this.CATEGORY_ENTITY_IDS, 105, 0, 255, "");
+        
+        DeeperCaves.mobs.mutatedZombieID = config.getInt("Mutated Zombie Entity ID", this.CATEGORY_ENTITY_IDS, 106, 0, 255, "");
+        DeeperCaves.mobs.mutatedSkeletonID = config.getInt("Mutated Skeleton Entity ID", this.CATEGORY_ENTITY_IDS, 107, 0, 255, "");
+        DeeperCaves.mobs.mutatedCaveSpiderID = config.getInt("Mutated Cave Spider Entity ID", this.CATEGORY_ENTITY_IDS, 108, 0, 255, "");
+        DeeperCaves.mobs.mutatedCreeperID = config.getInt("Mutated Creeper Entity ID", this.CATEGORY_ENTITY_IDS, 109, 0, 255, "");
+        
+        DeeperCaves.mobs.shadowID = config.getInt("Shadow Entity ID", this.CATEGORY_ENTITY_IDS, 110, 0, 255, "");
         
         config.save();
     }

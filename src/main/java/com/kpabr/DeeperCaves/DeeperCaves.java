@@ -47,9 +47,9 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "0.4.1";
+    public static final String VERSION = "0.4.2";
     public static final String NAME = "DeeperCaves";
-    static int versionID = 8; //Used by version checker!
+    static int versionID = 9; //Used by version checker!
     
     public static DeeperMaterials materials = new DeeperMaterials();
     public static DeeperBlocks blocks = new DeeperBlocks();
