@@ -136,7 +136,7 @@ public class EntityShadow extends EntityMob
     protected Item getDropItem()
     {
        
-        return Items.ender_eye;
+        return DeeperCaves.items.profundiumIngot;
     }
     @Override
     protected String getLivingSound()
