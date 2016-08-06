@@ -47,9 +47,9 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "0.4.2";
+    public static final String VERSION = "0.4.3";
     public static final String NAME = "DeeperCaves";
-    static int versionID = 9; //Used by version checker!
+    static int versionID = 10; //Used by version checker!
     
     public static DeeperMaterials materials = new DeeperMaterials();
     public static DeeperBlocks blocks = new DeeperBlocks();
@@ -62,7 +62,8 @@ public class DeeperCaves
     public static DeeperConfig config = new DeeperConfig();
     public static DeeperBucketHandler bucket;
     public static DeeperCaves instance;
-    //public static Configuration config;
+    
+    //player state data
     public int nearvoid_counter = 0;
     public int farvoid_counter = 0;
     public int deep_counter = 0;
@@ -77,12 +78,8 @@ public class DeeperCaves
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        //config = new Configuration(event.getSuggestedConfigurationFile()); //gets default config file
         
         this.instance = this;
-        
-        //config.load();
-        
         
         FMLCommonHandler.instance().bus().register(worldgen);
         MinecraftForge.EVENT_BUS.register(worldgen);
@@ -310,7 +307,7 @@ public class DeeperCaves
             {
 	    		if(!voidFlag)
 	    		{
-	    			if(this.farvoid_counter == 9) //200
+	    			if(this.farvoid_counter == 9)
 	    			{
 	    				player.attackEntityFrom(DamageSource.outOfWorld, 4.0F);
 	    				this.farvoid_counter = 0;
