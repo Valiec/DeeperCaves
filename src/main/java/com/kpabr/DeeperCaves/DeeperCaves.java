@@ -29,6 +29,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -110,7 +111,7 @@ public class DeeperCaves
      	blocks.registerBlocksOreDict();
         blocks.setupHarvestLevels();
      	recipes.setupShapelessCrafting();
-     	recipes.setupShapedCrafting();
+		recipes.setupShapedCrafting();
      	recipes.setupSmelting();
      	worldgen.setupWorldgen();
      	mobs.setupMobs();

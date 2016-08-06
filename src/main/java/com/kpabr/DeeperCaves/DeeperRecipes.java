@@ -6,6 +6,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DeeperRecipes {
@@ -43,7 +44,15 @@ public class DeeperRecipes {
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.cryingObsidian, 1), new Object[]{"ZZZ", "ZXZ", "ZZZ", 'X', Blocks.obsidian, 'Z', new ItemStack(Items.dye, 1, 4)});
         
-        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.fragmentedCobble, 2), new Object[]{"ZZ", "ZZ", 'Z', Blocks.gravel});
+        if(Loader.isModLoaded("ExtraUtilities"))
+        {
+        	System.out.println("DeeperCaves: ExtraUtilities is installed. Changing fragmented cobblestone recipe.");
+        	GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.fragmentedCobble, 2), new Object[]{"ZX", "XZ", 'X', Blocks.cobblestone, 'Z', Blocks.gravel});
+        }
+        else
+        {
+        	GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.fragmentedCobble, 2), new Object[]{"ZZ", "ZZ", 'Z', Blocks.gravel});
+        }
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.forgottenCharm, 1), new Object[]{" X ", "XYX", " X ", 'X', DeeperCaves.items.silverIngot, 'Y', DeeperCaves.items.evanesciteGem});
         
