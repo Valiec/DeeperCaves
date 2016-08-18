@@ -48,7 +48,7 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "0.4.3";
+    public static final String VERSION = "0.5.0";
     public static final String NAME = "DeeperCaves";
     static int versionID = 10; //Used by version checker!
     

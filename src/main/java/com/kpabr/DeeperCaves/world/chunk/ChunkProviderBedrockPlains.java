@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
+import com.kpabr.DeeperCaves.DeeperWorldgen;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesMaze;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 
@@ -237,29 +238,21 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
                     i3 = i2;
                     }
 
-                    if (l1 <= 0 + this.rand.nextInt(5))
+                    if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight - this.rand.nextInt(5))
                     {
                     	p_147422_3_[i2] = Blocks.bedrock;
                     }
-                    if (l1 >= 175 - this.rand.nextInt(5))
-                    {
-                    	p_147422_3_[i2] = Blocks.bedrock;
-                    }
-                    if (l1 >= 175)
+                    if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight)
                     {
                     	p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
                     }
-                    if (l1 <= 155)
+                    if (l1 <= DeeperCaves.worldgen.bedrockPlainsFloorHeight)
                     {
                     	p_147422_3_[i2] = Blocks.bedrock;
                     }
-                    if (l1 == 154)
+                    if (l1 == DeeperCaves.worldgen.bedrockPlainsFloorHeight-1)
                     {
                     	p_147422_3_[i2] = DeeperCaves.blocks.nearNetherPortal;
-                    }
-                    if (l1 == 254)
-                    {
-                    	//p_147422_3_[i2] = DeeperCaves.blocks.compressedPortal;
                     }
                     
                 }

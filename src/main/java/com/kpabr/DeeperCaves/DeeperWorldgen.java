@@ -127,6 +127,9 @@ public class DeeperWorldgen {
     public BiomeGenForgotten biomeForgotten;
     public BiomeGenEvil biomeEvil;
     public BiomeGenFinalLabyrinth biomeFinalLabyrinth;
+    
+	public int bedrockPlainsFloorHeight;
+	public int bedrockPlainsCeilingHeight;
     public void setupWorldgen()
     {
         

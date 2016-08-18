@@ -58,7 +58,7 @@ public class DeeperTeleporter extends Teleporter
             }
             if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
             {
-            j = 157;
+            j = DeeperCaves.worldgen.bedrockPlainsFloorHeight+2;
             }
             if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.nearVoidDimID)
             {

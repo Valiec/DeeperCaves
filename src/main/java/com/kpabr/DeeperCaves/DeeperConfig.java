@@ -10,6 +10,7 @@ public class DeeperConfig {
 	public String CATEGORY_DIM_IDS = "dimension ids";
 	public String CATEGORY_BIOME_IDS = "biome ids";
 	public String CATEGORY_ENTITY_IDS = "entity ids";
+	public String CATEGORY_OTHER = "other";
 
     public void initConfig(FMLPreInitializationEvent event)
     {
@@ -77,6 +78,13 @@ public class DeeperConfig {
         DeeperCaves.mobs.mutatedCreeperID = config.getInt("Mutated Creeper Entity ID", this.CATEGORY_ENTITY_IDS, 109, 0, 255, "");
         
         DeeperCaves.mobs.shadowID = config.getInt("Shadow Entity ID", this.CATEGORY_ENTITY_IDS, 110, 0, 255, "");
+        
+        //------------------
+        
+        config.addCustomCategoryComment("other", "Other");
+        
+        DeeperCaves.worldgen.bedrockPlainsFloorHeight = config.getInt("Bedrock Plains Floor Height", this.CATEGORY_OTHER, 155, 1, 255, "");
+        DeeperCaves.worldgen.bedrockPlainsCeilingHeight = config.getInt("Bedrock Plains Ceiling Height", this.CATEGORY_OTHER, 175, 0, 255, "This is the height of the level barrier. The bedrock ceiling extends about 5 blocks below this.");
         
         config.save();
     }
