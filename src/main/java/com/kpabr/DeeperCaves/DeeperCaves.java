@@ -52,6 +52,9 @@ public class DeeperCaves
     public static final String NAME = "DeeperCaves";
     static int versionID = 10; //Used by version checker!
     
+    public static DeeperCaves instance;
+    
+    //event handlers
     public static DeeperMaterials materials = new DeeperMaterials();
     public static DeeperBlocks blocks = new DeeperBlocks();
     public static DeeperFluids fluids = new DeeperFluids();
@@ -62,8 +65,7 @@ public class DeeperCaves
     public static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
     public static DeeperConfig config = new DeeperConfig();
     public static DeeperBucketHandler bucket;
-    public static DeeperDimensionHandler dimension;
-    public static DeeperCaves instance;
+    public static DeeperDimensionHandler dimension = new DeeperDimensionHandler();
     
     //player state data
     public int nearvoid_counter = 0;
@@ -72,6 +74,7 @@ public class DeeperCaves
     public static boolean voidFlag = false;
     public static boolean deepFlag = false;
     
+    //creative tabs
     static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperCaves.blocks.fragmentedBedrock);
     static CreativeTabs tabDeeperCavesItems = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Items", 0);
     static CreativeTabs tabDeeperCavesTools = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Tools", 1);
@@ -91,6 +94,9 @@ public class DeeperCaves
         
         FMLCommonHandler.instance().bus().register(config);
         MinecraftForge.EVENT_BUS.register(config);
+        
+        FMLCommonHandler.instance().bus().register(dimension);
+		MinecraftForge.EVENT_BUS.register(dimension);
         
         FMLCommonHandler.instance().bus().register(this);
         MinecraftForge.EVENT_BUS.register(this);
@@ -118,15 +124,10 @@ public class DeeperCaves
      	GameRegistry.registerFuelHandler(new DeeperFuel());
      	proxy.registerRenderers();
      	
-     	bucket = new DeeperBucketHandler();
+     	bucket = new DeeperBucketHandler(); //initialized here because blocks and items must be set up first
      	
         FMLCommonHandler.instance().bus().register(bucket);
 		MinecraftForge.EVENT_BUS.register(bucket);
-		
-     	dimension = new DeeperDimensionHandler();
-     	
-        FMLCommonHandler.instance().bus().register(dimension);
-		MinecraftForge.EVENT_BUS.register(dimension);
     }
     
     

@@ -271,14 +271,6 @@ public class DeeperWorldgen {
                         {
                         	event.blockArray[i2] = Blocks.stone;
                         }
-                        if (l1 == 2)
-                        {
-                        	//event.blockArray[i2] = DeeperCaves.blocks.dropPortal;
-                        }
-                        if (l1 == 1)
-                        {
-                        	//event.blockArray[i2] = Blocks.stone;
-                        }
                     }
                 }
         }

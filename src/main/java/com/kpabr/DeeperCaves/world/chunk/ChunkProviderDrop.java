@@ -235,14 +235,6 @@ public class ChunkProviderDrop implements IChunkProvider
                     {
                     	p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
                     }
-                    if (l1 == 2)
-                    {
-                    	//p_147422_3_[i2] = DeeperCaves.blocks.mazePortal;
-                    }
-                    if (l1 == 254)
-                    {
-                    	//p_147422_3_[i2] = DeeperCaves.blocks.returnPortal;
-                    }
                 }
             }
         }

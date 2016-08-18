@@ -28,7 +28,7 @@ public class BiomeGenLava extends BiomeGenBase
         this.temperature = 0.80F;
         this.setHeight(BiomeGenBase.height_LowHills);
         this.topBlock = Blocks.stone;
-        this.theBiomeDecorator = new DeeperDecorator();
+        this.theBiomeDecorator = new LavaDecorator();
         this.theBiomeDecorator.treesPerChunk = 0;
         this.theBiomeDecorator.grassPerChunk = 0;
         this.theBiomeDecorator.flowersPerChunk = 0;
