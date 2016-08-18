@@ -56,15 +56,15 @@ public class DeeperTeleporter extends Teleporter
             {
             j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
             }
-            if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
+            else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
             {
             j = DeeperCaves.worldgen.bedrockPlainsFloorHeight+2;
             }
-            if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.nearVoidDimID)
+            else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.nearVoidDimID)
             {
             j = 235;
             }
-            if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.farVoidDimID)
+            else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.farVoidDimID)
             {
             j = 235;
             }

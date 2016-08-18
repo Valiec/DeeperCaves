@@ -40,12 +40,17 @@ public class DeeperTeleporterLower extends Teleporter
             int i = MathHelper.floor_double(p_77185_1_.posX);
             int j = this.min;
             int cap = this.cap;
-            if(this.worldServerInstance.provider.dimensionId == 11)
+            if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
             {
             j = 157;
             cap = 252;
             }
-            if(this.worldServerInstance.provider.dimensionId == 14)
+            else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.nearVoidDimID)
+            {
+            j = 235;
+            cap = 252;
+            }
+            else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.farVoidDimID)
             {
             j = 235;
             cap = 252;
