@@ -54,7 +54,7 @@ public class DeeperRecipes {
         	GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.fragmentedCobble, 2), new Object[]{"ZZ", "ZZ", 'Z', Blocks.gravel});
         }
         
-        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.forgottenCharm, 1), new Object[]{" X ", "XYX", " X ", 'X', DeeperCaves.items.silverIngot, 'Y', DeeperCaves.items.evanesciteGem});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.forgottenCharm, 1), new Object[]{" X ", "XYX", " X ", 'X', DeeperCaves.items.tenebriumIngot, 'Y', DeeperCaves.items.evanesciteGem});
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.evanesciteBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.evanesciteGem});
     }
