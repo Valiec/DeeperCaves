@@ -92,17 +92,17 @@ public class DeeperDecorator extends BiomeDecorator {
         if (TerrainGen.generateOre(currentWorld, randomGenerator, gravelGen, chunk_X, chunk_Z, GRAVEL))
         this.genStandardOre1(8, this.gravelGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, coalGen, chunk_X, chunk_Z, COAL))
-        this.genStandardOre1(30, this.coalGen, 0, 256);
+        this.genStandardOre1(25, this.coalGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, ironGen, chunk_X, chunk_Z, IRON))
-        this.genStandardOre1(60, this.ironGen, 0, 256);
+        this.genStandardOre1(50, this.ironGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, goldGen, chunk_X, chunk_Z, GOLD))
-        this.genStandardOre1(12, this.goldGen, 0, 256);
+        this.genStandardOre1(10, this.goldGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, redstoneGen, chunk_X, chunk_Z, REDSTONE))
-        this.genStandardOre1(96, this.redstoneGen, 0, 256);
+        this.genStandardOre1(80, this.redstoneGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, diamondGen, chunk_X, chunk_Z, DIAMOND))
-        this.genStandardOre1(12, this.diamondGen, 0, 256);
+        this.genStandardOre1(10, this.diamondGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, lapisGen, chunk_X, chunk_Z, LAPIS))
-        this.genStandardOre1(14, this.lapisGen, 0, 256);
+        this.genStandardOre1(12, this.lapisGen, 0, 256);
         MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
     }
 }
