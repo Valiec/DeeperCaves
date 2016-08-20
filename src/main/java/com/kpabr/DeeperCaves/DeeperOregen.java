@@ -255,6 +255,13 @@ public class DeeperOregen implements IWorldGenerator
        
        private void generateForgotten(World world, Random random, int x, int z)
        {
+    	   this.addOre(DeeperCaves.blocks.dpcoalOre, world, random, x, z, 16, 16, 15, 80, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dpironOre, world, random, x, z, 16, 16, 10, 65, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dpgoldOre, world, random, x, z, 16, 16, 8, 15, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dplapisOre, world, random, x, z, 16, 16, 7, 18, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dpredstoneOre, world, random, x, z, 16, 16, 8, 54, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dpdiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dpemeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperCaves.blocks.deepStone);
     	   this.addOre(DeeperCaves.blocks.evanesciteOre, world, random, x, z, 16, 16, 6, 180, 0, 255, DeeperCaves.blocks.deepStone);
        }
        
