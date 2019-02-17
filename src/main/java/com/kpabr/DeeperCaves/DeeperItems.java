@@ -1,9 +1,14 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCaves.item.ItemAxeBase;
 import com.kpabr.DeeperCaves.item.ItemBase;
+import com.kpabr.DeeperCaves.item.ItemCrystal;
 import com.kpabr.DeeperCaves.item.ItemForgottenCharm;
 import com.kpabr.DeeperCaves.item.ItemFragmentedBedrockBucket;
+import com.kpabr.DeeperCaves.item.ItemHoeBase;
 import com.kpabr.DeeperCaves.item.ItemPickaxeBase;
+import com.kpabr.DeeperCaves.item.ItemSpadeBase;
+import com.kpabr.DeeperCaves.item.ItemSwordBase;
 import com.kpabr.DeeperCaves.item.ItemVeneniumBucket;
 import com.kpabr.DeeperCaves.item.ItemVoidCharm;
 
@@ -30,6 +35,26 @@ public class DeeperItems {
     
     public static Item ametrineTippedDiamondPickaxe;
     
+    public static Item ametrineTippedSilverPickaxe;
+    
+    public static Item silverPickaxe;
+    
+    public static Item ametrineTippedSilverAxe;
+    
+    public static Item silverAxe;
+    
+    public static Item ametrineTippedSilverShovel;
+    
+    public static Item silverShovel;
+    
+    public static Item ametrineTippedSilverSword;
+    
+    public static Item silverSword;
+    
+    public static Item ametrineTippedSilverHoe;
+    
+    public static Item silverHoe;
+    
     public static Item ametrineTippedGoldenPickaxe;
     public static Item ametrineTippedIronPickaxe;
     public static Item ametrineTippedStonePickaxe;
@@ -37,6 +62,8 @@ public class DeeperItems {
     public static Item ametrineTippedWoodenPickaxe;
     
     public static Item tenebriumIngot;
+    
+    public static Item tenebriumIngotRaw;
     
     public static Item fragmentedBedrockBucket;
     
@@ -59,6 +86,10 @@ public class DeeperItems {
 	public static Item fragmentedBedrockBucketV;
 	
 	public static Item evanesciteGem;
+	
+	public static Item crystalShard;
+	
+	public static Item ruby;
 
     /*Tool and Armor Material declarations*/
     static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
@@ -67,7 +98,21 @@ public class DeeperItems {
     static ToolMaterial AmetrineI = EnumHelper.addToolMaterial("AMETRINE_I", 3, 250, 11.0F, 2.0F, 14);
     static ToolMaterial AmetrineS = EnumHelper.addToolMaterial("AMETRINE_S", 2, 131, 9.0F, 1.0F, 5);
     
+    static ToolMaterial AmetrineAg = EnumHelper.addToolMaterial("AMETRINE_AG", 3, 1000, 16.0F, 2.5F, 30); //silver
+    
+    static ToolMaterial Silver = EnumHelper.addToolMaterial("SILVER", 2, 300, 16.0F, 2.5F, 30); //silver
+    
     static ToolMaterial AmetrineW = EnumHelper.addToolMaterial("AMETRINE_W", 1, 50, 7.0F, 0.0F, 15);
+    
+    static ArmorMaterial AmetrineLArmor = EnumHelper.addArmorMaterial("AMETRINE_L_ARMOR", 5, new int[]{2, 5, 4, 1}, 15);
+    
+    static ArmorMaterial AmetrineCArmor = EnumHelper.addArmorMaterial("AMETRINE_C_ARMOR", 15, new int[]{2, 6, 5, 2}, 12);
+    
+    static ArmorMaterial AmetrineIArmor = EnumHelper.addArmorMaterial("AMETRINE_I_ARMOR", 15, new int[]{3, 8, 6, 3}, 9);
+    
+    static ArmorMaterial AmetrineGArmor = EnumHelper.addArmorMaterial("AMETRINE_G_ARMOR", 7, new int[]{2, 6, 5, 2}, 25);
+    
+    static ArmorMaterial AmetrineDArmor = EnumHelper.addArmorMaterial("AMETRINE_D_ARMOR", 33, new int[]{4, 10, 7, 3}, 10);
     
     public static Item forgottenGemstone;
     
@@ -82,13 +127,35 @@ public class DeeperItems {
         
         GameRegistry.registerItem(this.ametrineTippedDiamondPickaxe, "ametrine_tipped_diamond_pickaxe");
         
+        GameRegistry.registerItem(this.ametrineTippedSilverPickaxe, "ametrine_tipped_silver_pickaxe");
+        
+        GameRegistry.registerItem(this.silverPickaxe, "silver_pickaxe");
+        
+        GameRegistry.registerItem(this.ametrineTippedSilverAxe, "ametrine_tipped_silver_axe");
+        
+        GameRegistry.registerItem(this.silverAxe, "silver_axe");
+        
+        GameRegistry.registerItem(this.ametrineTippedSilverShovel, "ametrine_tipped_silver_shovel");
+        
+        GameRegistry.registerItem(this.silverShovel, "silver_shovel");
+        
+        GameRegistry.registerItem(this.ametrineTippedSilverSword, "ametrine_tipped_silver_sword");
+        
+        GameRegistry.registerItem(this.silverSword, "silver_sword");
+        
+        GameRegistry.registerItem(this.ametrineTippedSilverHoe, "ametrine_tipped_silver_hoe");
+        
+        GameRegistry.registerItem(this.silverHoe, "silver_hoe");
+        
         GameRegistry.registerItem(this.ametrineTippedGoldenPickaxe, "ametrine_tipped_golden_pickaxe");
         GameRegistry.registerItem(this.ametrineTippedIronPickaxe, "ametrine_tipped_iron_pickaxe");
         GameRegistry.registerItem(this.ametrineTippedStonePickaxe, "ametrine_tipped_stone_pickaxe");
         
         GameRegistry.registerItem(this.ametrineTippedWoodenPickaxe, "ametrine_tipped_wooden_pickaxe");
         
-        GameRegistry.registerItem(this.tenebriumIngot, "tenebriumIngot");
+        GameRegistry.registerItem(this.tenebriumIngot, "tenebrium_ingot");
+        
+        //GameRegistry.registerItem(this.tenebriumIngotRaw, "tenebriumIngotRaw");
         
         GameRegistry.registerItem(this.forgottenGemstone, "forgottenGemstone");
         
@@ -112,6 +179,10 @@ public class DeeperItems {
         GameRegistry.registerItem(this.fragmentedBedrockBucketV, "fragmented_bedrock_bucket_venenium");
         
         GameRegistry.registerItem(this.evanesciteGem, "evanescite_gem");
+        
+        GameRegistry.registerItem(this.crystalShard, "crystal_shard");
+        
+        GameRegistry.registerItem(this.ruby, "ruby");
     }
     
     public void registerItemsOreDict()
@@ -130,9 +201,11 @@ public class DeeperItems {
     	
     	OreDictionary.registerOre("dustProfundium", this.profundiumDust);
     	
-    	OreDictionary.registerOre("dustVesperite", this.vesperiteGem); 
+    	OreDictionary.registerOre("gemVesperite", this.vesperiteGem); 
     	
-    	OreDictionary.registerOre("gemEvanescite", this.evanesciteGem); 
+    	OreDictionary.registerOre("gemEvanescite", this.evanesciteGem);
+    	
+    	OreDictionary.registerOre("gemRuby", this.ruby);
     }
     
     public void setupItems()
@@ -146,6 +219,21 @@ public class DeeperItems {
         
         this.ametrineTippedDiamondPickaxe = new ItemPickaxeBase(this.AmetrineD).setTextureName("deepercaves:ametrineTippedDiamondPickaxe").setUnlocalizedName("ametrineTippedDiamondPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
         
+        this.ametrineTippedSilverPickaxe = new ItemPickaxeBase(this.AmetrineAg).setTextureName("deepercaves:ametrineTippedSilverPickaxe").setUnlocalizedName("ametrineTippedSilverPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        this.silverPickaxe = new ItemPickaxeBase(this.Silver).setTextureName("deepercaves:silver_pickaxe").setUnlocalizedName("silverPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        
+        this.ametrineTippedSilverAxe = new ItemAxeBase(this.AmetrineAg).setTextureName("deepercaves:ametrineTippedSilverAxe").setUnlocalizedName("ametrineTippedSilverAxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        this.silverAxe = new ItemAxeBase(this.Silver).setTextureName("deepercaves:silver_axe").setUnlocalizedName("silverAxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        
+        this.ametrineTippedSilverShovel = new ItemSpadeBase(this.AmetrineAg).setTextureName("deepercaves:ametrineTippedSilverShovel").setUnlocalizedName("ametrineTippedSilverShovel").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        this.silverShovel = new ItemSpadeBase(this.Silver).setTextureName("deepercaves:silver_shovel").setUnlocalizedName("silverShovel").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        
+        this.ametrineTippedSilverSword = new ItemSwordBase(this.AmetrineAg).setTextureName("deepercaves:ametrineTippedSilverSword").setUnlocalizedName("ametrineTippedSilverSword").setCreativeTab(DeeperCaves.tabDeeperCavesCombat);
+        this.silverSword = new ItemSwordBase(this.Silver).setTextureName("deepercaves:silver_sword").setUnlocalizedName("silverSword").setCreativeTab(DeeperCaves.tabDeeperCavesCombat);
+        
+        this.ametrineTippedSilverHoe = new ItemHoeBase(this.AmetrineAg).setTextureName("deepercaves:ametrineTippedSilverHoe").setUnlocalizedName("ametrineTippedSilverHoe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        this.silverHoe = new ItemHoeBase(this.Silver).setTextureName("deepercaves:silver_hoe").setUnlocalizedName("silverHoe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
+        
         this.ametrineTippedGoldenPickaxe = new ItemPickaxeBase(this.AmetrineG).setTextureName("deepercaves:ametrineTippedGoldenPickaxe").setUnlocalizedName("ametrineTippedGoldenPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
         this.ametrineTippedIronPickaxe = new ItemPickaxeBase(this.AmetrineI).setTextureName("deepercaves:ametrineTippedIronPickaxe").setUnlocalizedName("ametrineTippedIronPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
         this.ametrineTippedStonePickaxe = new ItemPickaxeBase(this.AmetrineS).setTextureName("deepercaves:ametrineTippedStonePickaxe").setUnlocalizedName("ametrineTippedStonePickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
@@ -153,6 +241,8 @@ public class DeeperItems {
         this.ametrineTippedWoodenPickaxe = new ItemPickaxeBase(this.AmetrineW).setTextureName("deepercaves:ametrineTippedWoodenPickaxe").setUnlocalizedName("ametrineTippedWoodenPickaxe").setCreativeTab(DeeperCaves.tabDeeperCavesTools);
         
         this.tenebriumIngot = new ItemBase().setTextureName("deepercaves:tenebriumIngot").setUnlocalizedName("tenebriumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        //this.tenebriumIngotRaw = new ItemBase().setTextureName("deepercaves:drippingtenebriumIngot").setUnlocalizedName("tenebriumIngotDripping").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
         this.forgottenGemstone = new ItemBase().setTextureName("deepercaves:forgottenGemstone").setUnlocalizedName("forgottenGemstone").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
@@ -179,5 +269,9 @@ public class DeeperItems {
         this.fragmentedBedrockBucketV = new ItemFragmentedBedrockBucket(DeeperCaves.fluids.veneniumBlock).setTextureName("deepercaves:fragmented_bedrock_bucket_v").setUnlocalizedName("fragmentedBedrockBucketVenenium").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
         this.evanesciteGem = new ItemBase().setTextureName("deepercaves:evanescite_gem").setUnlocalizedName("evanesciteGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);      
+        
+        this.crystalShard = new ItemCrystal().setUnlocalizedName("crystalShard").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        
+        this.ruby = new ItemBase().setTextureName("deepercaves:ruby").setUnlocalizedName("ruby").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
     }
 }

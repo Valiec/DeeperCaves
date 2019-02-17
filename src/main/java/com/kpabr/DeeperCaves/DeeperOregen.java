@@ -127,6 +127,7 @@ public class DeeperOregen implements IWorldGenerator
        {
     	   
     	   this.addOre(DeeperCaves.blocks.silverOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.rubyOre, world, random, x, z, 16, 16, 5, 35, 0, 255, Blocks.stone);
            
        }
        private void generateCrystal(World world, Random random, int x, int z)
@@ -135,6 +136,11 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperCaves.blocks.sapphireOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.aquamarineOre, world, random, x, z, 16, 16, 9, 40, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.ametrineOre, world, random, x, z, 16, 16, 12, 4, 0, 255, Blocks.stone);
+    	   
+    	   for(int i = 0; i<13; i++)
+    	   {
+    		   this.addOre(DeeperCaves.blocks.crystal, i, world, random, x, z, 16, 16, 15, 6, 0, 255, Blocks.stone);
+    	   }
            
        }
        private void generateCompressed(World world, Random random, int x, int z)
@@ -147,6 +153,10 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperCaves.blocks.credstoneOre, world, random, x, z, 16, 16, 8, 108, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.cdiamondOre, world, random, x, z, 16, 16, 8, 13, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.cemeraldOre, world, random, x, z, 16, 16, 3, 8, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.csapphireOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.caquamarineOre, world, random, x, z, 16, 16, 9, 40, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.csilverOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
+    	   this.addOre(DeeperCaves.blocks.crubyOre, world, random, x, z, 16, 16, 5, 35, 0, 255, Blocks.stone);
            
        }
        private void generateBedrockPlains(World world, Random random, int x, int z)
@@ -160,10 +170,12 @@ public class DeeperOregen implements IWorldGenerator
     	   
     	   this.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 15, 180, 0, 255, Blocks.stone);
     	   this.addOre(Blocks.quartz_ore, world, random, x, z, 16, 16, 8, 55, 0, 255, Blocks.stone);
+    	   this.addOre(Blocks.glowstone, world, random, x, z, 16, 16, 20, 60, 0, 255, Blocks.stone);
            
        }
        private void generateLava(World world, Random random, int x, int z)
        {
+    	   this.addOre(DeeperCaves.blocks.magmaStone, world, random, x, z, 16, 16, 40, 80, 0, 255, Blocks.stone);
     	   this.addOre(Blocks.cobblestone, world, random, x, z, 16, 16, 15, 120, 0, 255, Blocks.stone);
     	   this.addOre(DeeperCaves.blocks.fragmentedCobble, world, random, x, z, 16, 16, 14, 80, 0, 255, Blocks.stone);
     	   this.addOre(Blocks.bedrock, world, random, x, z, 16, 16, 8, 55, 0, 255, Blocks.stone);
@@ -215,11 +227,11 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperCaves.blocks.ddiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperCaves.blocks.abandonedStone);
     	   this.addOre(DeeperCaves.blocks.demeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperCaves.blocks.abandonedStone);
     	   
-    	   if (random.nextInt(8) == 0) //TODO tweak?
+    	   if (random.nextInt(6) == 0) //TODO tweak?
            {
                int i = x + random.nextInt(16) + 8;
                int j = z + random.nextInt(16) + 8;
-               int k = random.nextInt(80);
+               int k = random.nextInt(60);
                (new CaveVillage()).generate(world, random, i, k, j);
            }
            
@@ -234,6 +246,10 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperCaves.blocks.dpredstoneOre, world, random, x, z, 16, 16, 8, 54, 0, 255, DeeperCaves.blocks.deepStone);
     	   this.addOre(DeeperCaves.blocks.dpdiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperCaves.blocks.deepStone);
     	   this.addOre(DeeperCaves.blocks.dpemeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperCaves.blocks.deepStone);
+    	   for(int i = 0; i<13; i++)
+    	   {
+    		   this.addOre(DeeperCaves.blocks.crystal, i, world, random, x, z, 16, 16, 8, 4, 0, 255, DeeperCaves.blocks.deepStone);
+    	   }
        }
        
        private void generateFarVoid(World world, Random random, int x, int z)
@@ -250,6 +266,10 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperCaves.blocks.cooledObsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperCaves.blocks.deepStone);
     	   this.addOre(DeeperCaves.blocks.heatedObsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperCaves.blocks.deepStone);
     	   this.addOre(Blocks.end_stone, world, random, x, z, 16, 16, 15, 1, 128, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcsapphireOre, world, random, x, z, 16, 16, 4, 32, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcaquamarineOre, world, random, x, z, 16, 16, 9, 40, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcsilverOre, world, random, x, z, 16, 16, 4, 32, 0, 255, DeeperCaves.blocks.deepStone);
+    	   this.addOre(DeeperCaves.blocks.dcrubyOre, world, random, x, z, 16, 16, 5, 35, 0, 255, DeeperCaves.blocks.deepStone);
            
        }
        
@@ -283,6 +303,18 @@ public class DeeperOregen implements IWorldGenerator
        {
              int heightRange = maxY - minY;             
              WorldGenMinable worldgenminable = new WorldGenMinable(block, maxVeinSize, generateIn);
+             for (int k1 = 0; k1 < chancesToSpawn; ++k1)
+             {
+                 int l1 = random.nextInt(16);
+                 int i2 = random.nextInt(heightRange) + minY;
+                 int j2 = random.nextInt(16);
+                 worldgenminable.generate(world, random, x+l1, i2, z+j2);
+             }
+       }
+       public void addOre(Block block, int meta, World world, Random random, int x, int z, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY, Block generateIn)
+       {
+             int heightRange = maxY - minY;             
+             WorldGenMinable worldgenminable = new WorldGenMinable(block, meta, maxVeinSize, generateIn);
              for (int k1 = 0; k1 < chancesToSpawn; ++k1)
              {
                  int l1 = random.nextInt(16);

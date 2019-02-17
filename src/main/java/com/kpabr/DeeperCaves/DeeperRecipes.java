@@ -57,6 +57,26 @@ public class DeeperRecipes {
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.forgottenCharm, 1), new Object[]{" X ", "XYX", " X ", 'X', DeeperCaves.items.tenebriumIngot, 'Y', DeeperCaves.items.evanesciteGem});
         
         GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.evanesciteBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.evanesciteGem});
+        for(int i = 0; i<13; i++)
+        {
+            GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.crystal, 1, i), new Object[]{"WW", "WW", 'W', new ItemStack(DeeperCaves.items.crystalShard, 1, i)});
+        }
+        
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.ametrineTippedSilverPickaxe, 1), new Object[]{"XYX", 'X', DeeperCaves.items.ametrineGem, 'Y', DeeperCaves.items.silverPickaxe});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.ametrineTippedSilverAxe, 1), new Object[]{"XYX", 'X', DeeperCaves.items.ametrineGem, 'Y', DeeperCaves.items.silverAxe});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.ametrineTippedSilverShovel, 1), new Object[]{"XYX", 'X', DeeperCaves.items.ametrineGem, 'Y', DeeperCaves.items.silverShovel});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.ametrineTippedSilverSword, 1), new Object[]{"XYX", 'X', DeeperCaves.items.ametrineGem, 'Y', DeeperCaves.items.silverSword});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.ametrineTippedSilverHoe, 1), new Object[]{"XYX", 'X', DeeperCaves.items.ametrineGem, 'Y', DeeperCaves.items.silverHoe});
+        
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.silverPickaxe, 1), new Object[]{"XXX", " Y ", " Y ", 'X', DeeperCaves.items.silverIngot, 'Y', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.silverAxe, 1), new Object[]{"XX ", "XY ", " Y ", 'X', DeeperCaves.items.silverIngot, 'Y', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.silverAxe, 1), new Object[]{" XX", " YX", " Y ", 'X', DeeperCaves.items.silverIngot, 'Y', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.silverShovel, 1), new Object[]{" X ", " Y ", " Y ", 'X', DeeperCaves.items.silverIngot, 'Y', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.silverSword, 1), new Object[]{" X ", " X ", " Y ", 'X', DeeperCaves.items.silverIngot, 'Y', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.silverHoe, 1), new Object[]{" XX", " Y ", " Y ", 'X', DeeperCaves.items.silverIngot, 'Y', Items.stick});
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.items.silverHoe, 1), new Object[]{"XX ", " Y ", " Y ", 'X', DeeperCaves.items.silverIngot, 'Y', Items.stick});
+        
+        GameRegistry.addRecipe(new ItemStack(DeeperCaves.blocks.rubyBlock, 1), new Object[]{"ZZZ", "ZZZ", "ZZZ", 'Z', DeeperCaves.items.ruby});
     }
     public void setupShapelessCrafting()
     {
@@ -80,6 +100,23 @@ public class DeeperRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.profundiumIngot, 9), new Object[]{DeeperCaves.blocks.profundiumBlock});
         
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.evanesciteGem, 9), new Object[]{DeeperCaves.blocks.evanesciteBlock});
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.items.ruby, 9), new Object[]{DeeperCaves.blocks.rubyBlock});
+        
+        for(ItemStack woodType:OreDictionary.getOres("plankWood"))
+        {
+        	GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.blocks.rottenPlanks, 1), new Object[]{woodType.getItem(), Items.water_bucket.setContainerItem(Items.bucket)});
+        
+        	GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.blocks.rottenPlanks, 1), new Object[]{woodType.getItem(), new ItemStack(Items.potionitem.setContainerItem(Items.glass_bottle), 1, 0)});
+        
+        	GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.blocks.rottenPlanks, 1), new Object[]{woodType.getItem(), Blocks.dirt});
+        }
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.blocks.rustedBars, 1), new Object[]{Blocks.iron_bars, Items.water_bucket.setContainerItem(Items.bucket)});
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.blocks.rustedBars, 1), new Object[]{new ItemStack(Blocks.iron_bars, 1), new ItemStack(Items.potionitem.setContainerItem(Items.glass_bottle), 1, 0)});
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperCaves.blocks.rustedBars, 1), new Object[]{Blocks.iron_bars, Blocks.dirt});
+        
     }
     public void setupSmelting()
     {
@@ -87,6 +124,8 @@ public class DeeperRecipes {
         GameRegistry.addSmelting(DeeperCaves.blocks.silverOre, new ItemStack(DeeperCaves.items.silverIngot, 1) , 0.6F);
         
         GameRegistry.addSmelting(DeeperCaves.blocks.tenebriumOre, new ItemStack(DeeperCaves.items.tenebriumIngot, 1) , 1.0F);
+        
+        //GameRegistry.addSmelting(DeeperCaves.items.tenebriumIngotRaw, new ItemStack(DeeperCaves.items.tenebriumIngot, 1) , 1.0F);
         
         GameRegistry.addSmelting(DeeperCaves.blocks.sapphireOre, new ItemStack(DeeperCaves.items.sapphireGem, 1) , 0.5F);
         GameRegistry.addSmelting(DeeperCaves.blocks.aquamarineOre, new ItemStack(DeeperCaves.items.aquamarine, 1) , 0.5F);

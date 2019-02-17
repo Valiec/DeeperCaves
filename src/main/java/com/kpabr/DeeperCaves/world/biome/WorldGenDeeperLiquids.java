@@ -5,9 +5,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class WorldGenDeeperLiquids extends WorldGenerator
+public class WorldGenDeeperLiquids extends WorldGenLiquids
 {
     private Block field_150521_a;
     private Block replaceBlock;
@@ -15,6 +16,7 @@ public class WorldGenDeeperLiquids extends WorldGenerator
 
     public WorldGenDeeperLiquids(Block p_i45465_1_)
     {
+    	super(p_i45465_1_);
         this.field_150521_a = p_i45465_1_;
     }
     public WorldGenDeeperLiquids setReplaceBlock(Block replace)

@@ -16,6 +16,7 @@ import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.MapGenRavine;
@@ -34,7 +35,7 @@ import net.minecraftforge.common.*;
 import cpw.mods.fml.common.eventhandler.Event.*;
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderGenerateDuplicate implements IChunkProvider
+public class ChunkProviderGenerateDuplicate extends ChunkProviderGenerate implements IChunkProvider
 {
 	//Duplicate of ChunkProviderGenerate (for now). Used to change class name to prevent recursion loop in Overworld gen
     /** RNG. */
@@ -86,6 +87,7 @@ public class ChunkProviderGenerateDuplicate implements IChunkProvider
 
     public ChunkProviderGenerateDuplicate(World p_i2006_1_, long p_i2006_2_, boolean p_i2006_4_)
     {
+    	super(p_i2006_1_, p_i2006_2_, p_i2006_4_);
         this.worldObj = p_i2006_1_;
         this.mapFeaturesEnabled = p_i2006_4_;
         this.field_147435_p = p_i2006_1_.getWorldInfo().getTerrainType();
@@ -214,14 +216,6 @@ public class ChunkProviderGenerateDuplicate implements IChunkProvider
                 biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
             }
         }
-    }
-
-    /**
-     * loads or generates the chunk at the chunk location specified
-     */
-    public Chunk loadChunk(int p_73158_1_, int p_73158_2_)
-    {
-        return this.provideChunk(p_73158_1_, p_73158_2_);
     }
 
     /**
@@ -382,14 +376,6 @@ public class ChunkProviderGenerateDuplicate implements IChunkProvider
     }
 
     /**
-     * Checks to see if a chunk exists at x, y
-     */
-    public boolean chunkExists(int p_73149_1_, int p_73149_2_)
-    {
-        return true;
-    }
-
-    /**
      * Populates chunk with ores etc etc
      */
     public void populate(IChunkProvider p_73153_1_, int p_73153_2_, int p_73153_3_)
@@ -480,72 +466,4 @@ public class ChunkProviderGenerateDuplicate implements IChunkProvider
         BlockFalling.fallInstantly = false;
     }
 
-    /**
-     * Two modes of operation: if passed true, save all Chunks in one go.  If passed false, save up to two chunks.
-     * Return true if all chunks have been saved.
-     */
-    public boolean saveChunks(boolean p_73151_1_, IProgressUpdate p_73151_2_)
-    {
-        return true;
-    }
-
-    /**
-     * Save extra data not associated with any Chunk.  Not saved during autosave, only during world unload.  Currently
-     * unimplemented.
-     */
-    public void saveExtraData() {}
-
-    /**
-     * Unloads chunks that are marked to be unloaded. This is not guaranteed to unload every such chunk.
-     */
-    public boolean unloadQueuedChunks()
-    {
-        return false;
-    }
-
-    /**
-     * Returns if the IChunkProvider supports saving.
-     */
-    public boolean canSave()
-    {
-        return true;
-    }
-
-    /**
-     * Converts the instance data to a readable string.
-     */
-    public String makeString()
-    {
-        return "RandomLevelSource";
-    }
-
-    /**
-     * Returns a list of creatures of the specified type that can spawn at the given location.
-     */
-    public List getPossibleCreatures(EnumCreatureType p_73155_1_, int p_73155_2_, int p_73155_3_, int p_73155_4_)
-    {
-        BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(p_73155_2_, p_73155_4_);
-        return p_73155_1_ == EnumCreatureType.monster && this.scatteredFeatureGenerator.func_143030_a(p_73155_2_, p_73155_3_, p_73155_4_) ? this.scatteredFeatureGenerator.getScatteredFeatureSpawnList() : biomegenbase.getSpawnableList(p_73155_1_);
-    }
-
-    public ChunkPosition func_147416_a(World p_147416_1_, String p_147416_2_, int p_147416_3_, int p_147416_4_, int p_147416_5_)
-    {
-        return "Stronghold".equals(p_147416_2_) && this.strongholdGenerator != null ? this.strongholdGenerator.func_151545_a(p_147416_1_, p_147416_3_, p_147416_4_, p_147416_5_) : null;
-    }
-
-    public int getLoadedChunkCount()
-    {
-        return 0;
-    }
-
-    public void recreateStructures(int p_82695_1_, int p_82695_2_)
-    {
-        if (this.mapFeaturesEnabled)
-        {
-            this.mineshaftGenerator.func_151539_a(this, this.worldObj, p_82695_1_, p_82695_2_, (Block[])null);
-            this.villageGenerator.func_151539_a(this, this.worldObj, p_82695_1_, p_82695_2_, (Block[])null);
-            this.strongholdGenerator.func_151539_a(this, this.worldObj, p_82695_1_, p_82695_2_, (Block[])null);
-            this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, p_82695_1_, p_82695_2_, (Block[])null);
-        }
-    }
 }

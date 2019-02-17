@@ -23,6 +23,7 @@ import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.MapGenRavine;
@@ -41,7 +42,7 @@ import net.minecraftforge.common.*;
 import cpw.mods.fml.common.eventhandler.Event.*;
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderBedrockPlains implements IChunkProvider
+public class ChunkProviderBedrockPlains extends ChunkProviderGenerate implements IChunkProvider
 {
     /** RNG. */
     private Random rand;
@@ -92,6 +93,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
 
     public ChunkProviderBedrockPlains(World par1World, long par2, boolean par4)
     {
+    	super(par1World, par2, par4);
         this.worldObj = par1World;
         this.mapFeaturesEnabled = par4;
         this.field_147435_p = par1World.getWorldInfo().getTerrainType();
@@ -263,14 +265,6 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
         }
 
     /**
-     * loads or generates the chunk at the chunk location specified
-     */
-    public Chunk loadChunk(int par1, int par2)
-    {
-        return this.provideChunk(par1, par2);
-    }
-
-    /**
      * Will return back a chunk, if it doesn't exist and its not a MP client it will generates all the blocks for the
      * specified chunk from the map seed and chunk seed
      */
@@ -426,15 +420,7 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
             }
         }
     }
-
-    /**
-     * Checks to see if a chunk exists at x, y
-     */
-    public boolean chunkExists(int par1, int par2)
-    {
-        return true;
-    }
-
+    
     /**
      * Populates chunk with ores etc etc
      */
@@ -526,72 +512,4 @@ public class ChunkProviderBedrockPlains implements IChunkProvider
         BlockFalling.fallInstantly = false;
     }
 
-    /**
-     * Two modes of operation: if passed true, save all Chunks in one go.  If passed false, save up to two chunks.
-     * Return true if all chunks have been saved.
-     */
-    public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate)
-    {
-        return true;
-    }
-
-    /**
-     * Save extra data not associated with any Chunk.  Not saved during autosave, only during world unload.  Currently
-     * unimplemented.
-     */
-    public void saveExtraData() {}
-
-    /**
-     * Unloads chunks that are marked to be unloaded. This is not guaranteed to unload every such chunk.
-     */
-    public boolean unloadQueuedChunks()
-    {
-        return false;
-    }
-
-    /**
-     * Returns if the IChunkProvider supports saving.
-     */
-    public boolean canSave()
-    {
-        return true;
-    }
-
-    /**
-     * Converts the instance data to a readable string.
-     */
-    public String makeString()
-    {
-        return "RandomLevelSource";
-    }
-
-    /**
-     * Returns a list of creatures of the specified type that can spawn at the given location.
-     */
-    public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int par2, int par3, int par4)
-    {
-        BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(par2, par4);
-        return par1EnumCreatureType == EnumCreatureType.monster && this.scatteredFeatureGenerator.func_143030_a(par2, par3, par4) ? this.scatteredFeatureGenerator.getScatteredFeatureSpawnList() : biomegenbase.getSpawnableList(par1EnumCreatureType);
-    }
-
-    public ChunkPosition func_147416_a(World p_147416_1_, String p_147416_2_, int p_147416_3_, int p_147416_4_, int p_147416_5_)
-    {
-        return "Stronghold".equals(p_147416_2_) && this.strongholdGenerator != null ? this.strongholdGenerator.func_151545_a(p_147416_1_, p_147416_3_, p_147416_4_, p_147416_5_) : null;
-    }
-
-    public int getLoadedChunkCount()
-    {
-        return 0;
-    }
-
-    public void recreateStructures(int par1, int par2)
-    {
-        if (this.mapFeaturesEnabled)
-        {
-            this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
-            this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
-            this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
-            this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[])null);
-        }
-    }
 }

@@ -48,9 +48,9 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "0.5.0";
+    public static final String VERSION = "1.0.0";
     public static final String NAME = "DeeperCaves";
-    static int versionID = 10; //Used by version checker!
+    static int versionID = 11; //Used by version checker!
     
     public static DeeperCaves instance;
     
@@ -79,6 +79,7 @@ public class DeeperCaves
     static CreativeTabs tabDeeperCavesItems = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Items", 0);
     static CreativeTabs tabDeeperCavesOres = new TabDeeperCavesOres(CreativeTabs.getNextID(), "Deeper Caves Ores", DeeperCaves.blocks.dcdiamondOre);
     static CreativeTabs tabDeeperCavesTools = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Tools", 1);
+    static CreativeTabs tabDeeperCavesCombat = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Combat", 2);
     
 
     @EventHandler

@@ -32,9 +32,13 @@ public class TabDeeperCaves extends CreativeTabs {
         {
         return DeeperCaves.items.sapphireGem;
         }
-        else
+        if (i == 1)
         {
         return DeeperCaves.items.ametrineTippedDiamondPickaxe;
+        }
+        else
+        {
+        return DeeperCaves.items.ametrineTippedSilverSword;
         }
     }
     public String getTranslatedTabLabel()

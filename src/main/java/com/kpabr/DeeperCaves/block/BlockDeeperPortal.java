@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.DeeperTeleporter;
 
 import net.minecraft.block.Block;
@@ -52,7 +53,7 @@ public class BlockDeeperPortal extends BlockBase
     @Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return null;
+        return (this.dim == DeeperCaves.worldgen.dropDimID)?Item.getItemFromBlock(DeeperCaves.blocks.dropPortal):null;
     }
     @Override
     public boolean canSilkHarvest(World world, EntityPlayer player, int x, int y, int z, int metadata)

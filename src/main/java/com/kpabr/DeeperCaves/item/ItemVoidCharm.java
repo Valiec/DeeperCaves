@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class ItemVoidCharm extends Item {
 
 	public ItemVoidCharm() {
-		
+		this.setMaxStackSize(1);
 	}
 	public void onUpdate(ItemStack p_77663_1_, World p_77663_2_, Entity p_77663_3_, int p_77663_4_, boolean p_77663_5_) 
 	{

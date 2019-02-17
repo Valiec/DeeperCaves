@@ -33,9 +33,9 @@ public class BlockAmetrine extends BlockBase {
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
 		this.main = iconRegister.registerIcon("DeeperCaves:ametrineBlock");
-		this.mirror = iconRegister.registerIcon("DeeperCaves:ametrineBlockm");
-		this.left = iconRegister.registerIcon("DeeperCaves:ametrineBlocko");
-		this.right = iconRegister.registerIcon("DeeperCaves:ametrineBlockb");
+		this.mirror = iconRegister.registerIcon("DeeperCaves:ametrineBlock_mirrored");
+		this.left = iconRegister.registerIcon("DeeperCaves:ametrineBlock_orange");
+		this.right = iconRegister.registerIcon("DeeperCaves:ametrineBlock_blue");
     }
     @Override
     @SideOnly(Side.CLIENT)
