@@ -1,0 +1,189 @@
+tile.crystal_0.name=White Crystal
+tile.crystal_1.name=Orange Crystal
+tile.crystal_2.name=Magenta Crystal
+tile.crystal_3.name=Light Blue Crystal
+tile.crystal_4.name=Yellow Crystal
+tile.crystal_5.name=Light Green Crystal
+tile.crystal_6.name=Pink Crystal
+tile.crystal_7.name=Turquoise Crystal
+tile.crystal_8.name=Purple Crystal
+tile.crystal_9.name=Dark Blue Crystal
+tile.crystal_10.name=Aqua Crystal
+tile.crystal_11.name=Dark Green Crystal
+tile.crystal_12.name=Red Crystal
+
+item.crystalShard_0.name=White Crystal Shard
+item.crystalShard_1.name=Orange Crystal Shard
+item.crystalShard_2.name=Magenta Crystal Shard
+item.crystalShard_3.name=Light Blue Crystal Shard
+item.crystalShard_4.name=Yellow Crystal Shard
+item.crystalShard_5.name=Light Green Crystal Shard
+item.crystalShard_6.name=Pink Crystal Shard
+item.crystalShard_7.name=Turquoise Crystal Shard
+item.crystalShard_8.name=Purple Crystal Shard
+item.crystalShard_9.name=Dark Blue Crystal Shard
+item.crystalShard_10.name=Aqua Crystal Shard
+item.crystalShard_11.name=Dark Green Crystal Shard
+item.crystalShard_12.name=Red Crystal Shard
+
+tile.dpcoalOre.name=Deep Coal Ore
+tile.dpironOre.name=Deep Iron Ore
+tile.dpgoldOre.name=Deep Gold Ore
+tile.dplapisOre.name=Deep Lapis Lazuli Ore
+tile.dpredstoneOre.name=Deep Redstone Ore
+tile.dpdiamondOre.name=Deep Diamond Ore
+tile.dpemeraldOre.name=Deep Emerald Ore
+
+tile.evanesciteBlock.name=Block of Evanescite
+
+entity.Shadow.name=Shadow
+
+entity.mutatedCreeper.name=Mutated Creeper
+entity.mutatedSkeleton.name=Mutated Skeleton
+entity.mutatedZombie.name=Mutated Zombie
+entity.mutatedCaveSpider.name=Mutated Cave Spider
+
+tile.evanesciteOre.name=Evanescite Ore
+
+item.evanesciteGem.name=Evanescite Gem
+item.forgottenCharm.name=Forgotten Charm
+
+item.bucketVenenium.name=Bucket of Venenium
+item.fragmentedBedrockBucketVenenium.name=Fragmented Bedrock Bucket of Venenium
+
+tile.profundiumBlock.name=Block of Profundium
+
+item.profundiumDust.name=Profundium Dust
+
+item.profundiumIngot.name=Profundium Ingot
+
+tile.profundiumOre.name=Profundium Ore
+tile.cryingObsidian.name=Crying Obsidian
+tile.corruptedSoulStone.name=Corrupted Soul Stone
+tile.soulStone.name=Soul Stone
+
+tile.fragmentedCobble.name=Fragmented Cobblestone
+
+tile.barrierLayer.name=Level Barrier
+tile.darkStone.name=Dark Stone
+tile.abandonedCavesStone.name=Abandoned Caves Stone
+tile.vesperiteOre.name=Vesperite Ore
+tile.vesperiteBlock.name=Block of Vesperite
+tile.deepStone.name=Deep Stone
+tile.deepCobble.name=Deep Cobblestone
+
+tile.heatedObsidian.name=Heated Obsidian
+tile.cooledObsidian.name=Supercooled Obsidian
+
+item.vesperiteGem.name=Vesperite Gem
+
+item.voidCharm.name=Void Charm
+
+tile.dccoalOre.name=Deep Compressed Coal Ore
+tile.dcironOre.name=Deep Compressed Iron Ore
+tile.dcgoldOre.name=Deep Compressed Gold Ore
+tile.dclapisOre.name=Deep Compressed Lapis Lazuli Ore
+tile.dcredstoneOre.name=Deep Compressed Redstone Ore
+tile.dcdiamondOre.name=Deep Compressed Diamond Ore
+tile.dcemeraldOre.name=Deep Compressed Emerald Ore
+
+tile.dcsapphireOre.name=Deep Compressed Sapphire Ore
+tile.dcaquamarineOre.name=Deep Compressed Aquamarine Ore
+tile.dcsilverOre.name=Deep Compressed Silver Ore
+tile.dcrubyOre.name=Deep Compressed Ruby Ore
+
+tile.csapphireOre.name=Compressed Sapphire Ore
+tile.caquamarineOre.name=Compressed Aquamarine Ore
+tile.csilverOre.name=Compressed Silver Ore
+tile.crubyOre.name=Compressed Ruby Ore
+
+tile.dcoalOre.name=Abandoned Caves Coal Ore
+tile.dironOre.name=Abandoned Caves Iron Ore
+tile.dgoldOre.name=Abandoned Caves Gold Ore
+tile.dlapisOre.name=Abandoned Caves Lapis Lazuli Ore
+tile.dredstoneOre.name=Abandoned Caves Redstone Ore
+tile.ddiamondOre.name=Abandoned Caves Diamond Ore
+tile.demeraldOre.name=Abandoned Caves Emerald Ore
+
+tile.ddcoalOre.name=Dark Coal Ore
+tile.ddironOre.name=Dark Iron Ore
+tile.ddgoldOre.name=Dark Gold Ore
+tile.ddlapisOre.name=Dark Lapis Lazuli Ore
+tile.ddredstoneOre.name=Dark Redstone Ore
+tile.dddiamondOre.name=Dark Diamond Ore
+tile.ddemeraldOre.name=Dark Emerald Ore
+
+entity.deepCreeper.name=Deep World Creeper
+entity.deepCaveSpider.name=Deep World Cave Spider
+entity.deepSkeleton.name=Deep World Skeleton
+entity.deepZombie.name=Deep World Zombie
+
+tile.dropPortal.name=Drop Portal
+
+item.fragmentedBedrockBucketMoltenIron.name=Fragmented Bedrock Bucket of Molten Iron
+item.fragmentedBedrockBucketLava.name=Fragmented Bedrock Bucket of Lava
+item.fragmentedBedrockBucketWater.name=Fragmented Bedrock Bucket of Water
+item.fragmentedBedrockBucket.name=Fragmented Bedrock Bucket
+
+tile.forgottenGemstoneBlock.name=Block of Forgotten Gemstone
+
+tile.fakeBedrock.name=Final Labyrinth Bedrock
+
+item.forgottenGemstone.name=Forgotten Gemstone
+
+tile.forgottenGemstoneOre.name=Forgotten Gemstone Ore
+
+tile.tenebrium_ore.name=Tenebrium Ore
+tile.tenebrium_block.name=Block of Tenebrium
+item.tenebriumIngot.name=Tenebrium Ingot
+item.tenebriumIngotDripping.name=Raw Tenebrium Ingot
+
+tile.silverOre.name=Silver Ore
+item.silverIngot.name=Silver Ingot
+item.ametrineGem.name=Ametrine Gem
+item.sapphireGem.name=Sapphire
+tile.sapphireOre.name=Sapphire Ore
+tile.aquamarineOre.name=Aquamarine Ore
+tile.ametrineOre.name=Ametrine Ore
+tile.ccoalOre.name=Compressed Coal Ore
+tile.cironOre.name=Compressed Iron Ore
+tile.cgoldOre.name=Compressed Gold Ore
+tile.clapisOre.name=Compressed Lapis Lazuli Ore
+tile.credstoneOre.name=Compressed Redstone Ore
+tile.cdiamondOre.name=Compressed Diamond Ore
+tile.cemeraldOre.name=Compressed Emerald Ore
+tile.fragmentedBedrock.name=Fragmented Bedrock
+
+item.aquamarine.name=Aquamarine
+
+tile.silverBlock.name=Block of Silver
+tile.sapphire_block.name=Block of Sapphire
+tile.aquamarine_block.name=Block of Aquamarine
+tile.ametrineBlock.name=Block of Ametrine
+
+item.ametrineTippedDiamondPickaxe.name=Ametrine Tipped Diamond Pickaxe
+
+item.ametrineTippedGoldenPickaxe.name=Ametrine Tipped Golden Pickaxe
+item.ametrineTippedIronPickaxe.name=Ametrine Tipped Iron Pickaxe
+item.ametrineTippedStonePickaxe.name=Ametrine Tipped Stone Pickaxe
+item.ametrineTippedWoodenPickaxe.name=Ametrine Tipped Wooden Pickaxe
+
+item.ametrineTippedSilverPickaxe.name=Ametrine Tipped Silver Pickaxe
+item.ametrineTippedSilverAxe.name=Ametrine Tipped Silver Axe
+item.ametrineTippedSilverShovel.name=Ametrine Tipped Silver Shovel
+item.ametrineTippedSilverSword.name=Ametrine Tipped Silver Sword
+item.ametrineTippedSilverHoe.name=Ametrine Tipped Silver Hoe
+
+item.silverPickaxe.name=Silver Pickaxe
+item.silverAxe.name=Silver Axe
+item.silverShovel.name=Silver Shovel
+item.silverSword.name=Silver Sword
+item.silverHoe.name=Silver Hoe
+
+item.ruby.name=Ruby
+tile.ruby_ore.name=Ruby Ore
+tile.ruby_block.name=Ruby Block
+tile.magma_stone.name=Magma Stone
+
+tile.rotten_planks.name=Rotten Planks
+tile.rusted_iron_bars.name=Rusty Iron Bars
