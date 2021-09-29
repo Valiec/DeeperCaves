@@ -29,7 +29,13 @@ public class DeeperVersionChecker {
         URLConnection read = check.openConnection();
         BufferedReader reader = new BufferedReader(new InputStreamReader(read.getInputStream()));
         String newestVersionStr = reader.readLine();
-        newestVersion = Integer.parseInt(newestVersionStr.split("-")[1]);
+        try {
+            newestVersion = Integer.parseInt(newestVersionStr.split("-")[1]);
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            throw new IOException();
+        }
         
         if (newestVersion < 0)
         {

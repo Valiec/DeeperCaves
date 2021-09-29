@@ -8,6 +8,9 @@ package com.kpabr.DeeperCaves;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 import com.kpabr.DeeperCaves.CommonProxy;
 
@@ -68,11 +71,11 @@ public class DeeperCaves
     public static DeeperDimensionHandler dimension = new DeeperDimensionHandler();
     
     //player state data
-    public int nearvoid_counter = 0;
-    public int farvoid_counter = 0;
-    public int deep_counter = 0;
-    public static boolean voidFlag = false;
-    public static boolean deepFlag = false;
+    public Map<UUID, Integer> nearvoid_counter = new HashMap<UUID, Integer>();
+    public Map<UUID, Integer> farvoid_counter = new HashMap<UUID, Integer>();
+    public Map<UUID, Integer> deep_counter = new HashMap<UUID, Integer>();
+    public static Map<UUID, Boolean> voidFlag = new HashMap<UUID, Boolean>();
+    public static Map<UUID, Boolean> deepFlag = new HashMap<UUID, Boolean>();
     
     //creative tabs
     static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperCaves.blocks.fragmentedBedrock);

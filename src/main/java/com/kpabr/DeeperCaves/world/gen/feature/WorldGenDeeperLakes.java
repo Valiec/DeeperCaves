@@ -17,6 +17,7 @@ public class WorldGenDeeperLakes extends WorldGenerator
 
     public WorldGenDeeperLakes(Block p_i45455_1_, Block p_i45455_2_)
     {
+
         this.field_150556_a = p_i45455_1_;
         this.field_150556_b = p_i45455_2_;
     }

@@ -100,7 +100,7 @@ public class EntityShadow extends EntityMob
 	@Override
 	public boolean attackEntityAsMob(Entity p_70652_1_)
     {
-    	if(DeeperCaves.deepFlag) //cancel with proper item (CHANGE ITEM VOID CHARM IS WRONG ITEM)
+    	if(DeeperCaves.deepFlag.get(p_70652_1_.getUniqueID())) //cancel with proper item (CHANGE ITEM VOID CHARM IS WRONG ITEM)
     	{
     		return false;
     	}

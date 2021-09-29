@@ -8,6 +8,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
+import net.minecraft.world.gen.MapGenCaves;
 
 public class MapGenDeeperCavesDrop extends MapGenBase
 {
@@ -46,7 +47,6 @@ public class MapGenDeeperCavesDrop extends MapGenBase
         {
             double d6 = 4.0D + (double)(MathHelper.sin((float)p_151541_15_ * (float)Math.PI / (float)p_151541_16_) * p_151541_12_ * 1.0F);
             double d7 = d6 * p_151541_17_;
-            //d7 *= 5.5; 
             float f5 = MathHelper.cos(p_151541_14_);
             float f6 = MathHelper.sin(p_151541_14_);
             p_151541_6_ += (double)(MathHelper.cos(p_151541_13_) * f5);
