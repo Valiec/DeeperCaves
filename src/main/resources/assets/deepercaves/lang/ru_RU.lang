@@ -1,0 +1,189 @@
+tile.crystal_0.name=Белый кристалл
+tile.crystal_1.name=Оранжевый кристалл
+tile.crystal_2.name=Пурпурный кристалл
+tile.crystal_3.name=Голубой кристалл
+tile.crystal_4.name=Желтый кристалл
+tile.crystal_5.name=Светло-зеленый кристалл
+tile.crystal_6.name=Розовый кристалл
+tile.crystal_7.name=Бирюзовый кристалл
+tile.crystal_8.name=Фиолетовый кристалл
+tile.crystal_9.name=Темно-синий кристалл
+tile.crystal_10.name=Аква кристалл
+tile.crystal_11.name=Темно-зеленый кристалл
+tile.crystal_12.name=Красный кристалл
+
+item.crystalShard_0.name=Осколок белого кристалла
+item.crystalShard_1.name=Осколок оранжевого кристалла
+item.crystalShard_2.name=Осколок пурпурного кристалла
+item.crystalShard_3.name=Осколок голубого кристалла
+item.crystalShard_4.name=Осколок желтого кристалла
+item.crystalShard_5.name=Светло-зеленый осколок кристалла
+item.crystalShard_6.name=Осколок розового кристалла
+item.crystalShard_7.name=Осколок бирюзового кристалла
+item.crystalShard_8.name=Осколок пурпурного кристалла
+item.crystalShard_9.name=Осколок синего кристалла
+item.crystalShard_10.name=Осколок Аква кристалла
+item.crystalShard_11.name=Осколок темно-зеленого кристалла
+item.crystalShard_12.name=Осколок красного кристалла
+
+tile.dpcoalOre.name=Глубинная угольная руда
+tile.dpironOre.name=Глубинная железная руда
+tile.dpgoldOre.name=Глубинная золотая руда
+tile.dplapisOre.name=Глубинная лазуритовая руда
+tile.dpredstoneOre.name=Глубинная руда красного камня
+tile.dpdiamondOre.name=Глубинная алмазная руда
+tile.dpemeraldOre.name=Глубинная изумрудная руда
+
+tile.evanesciteBlock.name=Блок Эванесцита
+
+entity.Shadow.name=Тень
+
+entity.mutatedCreeper.name=Мутировавший крипер
+entity.mutatedSkeleton.name=Мутировавший скелет
+entity.mutatedZombie.name=Мутировавший зомби
+entity.mutatedCaveSpider.name=Мутировавший пещерный паук
+
+tile.evanesciteOre.name=Эванесцитовая руда
+
+item.evanesciteGem.name=Эванесцитовый самоцвет
+item.forgottenCharm.name=Забытый оберег
+
+item.bucketVenenium.name=Ведро венениума
+item.fragmentedBedrockBucketVenenium.name=Ведро венениума из фрагментированной коренной породы
+
+tile.profundiumBlock.name=Блок профундиума
+
+item.profundiumDust.name=Профундиевая пыль
+
+item.profundiumIngot.name=Слиток профундиума
+
+tile.profundiumOre.name=Профундиевая руда
+tile.cryingObsidian.name=Плачущий обсидиан
+tile.corruptedSoulStone.name=Оскверненный камень души
+tile.soulStone.name=Камень души
+
+tile.fragmentedCobble.name=Фрагментированный булыжник
+
+tile.barrierLayer.name=Уровень барьера
+tile.darkStone.name=Темный камень
+tile.abandonedCavesStone.name=Заброшенные каменные пещеры 
+tile.vesperiteOre.name=Весперитовая руда
+tile.vesperiteBlock.name=Блок весперита
+tile.deepStone.name=Глубинный камень
+tile.deepCobble.name=Глубинный булыжник
+
+tile.heatedObsidian.name=Горячий обсидиан
+tile.cooledObsidian.name=Переохлажденный обсидиан
+
+item.vesperiteGem.name=Самоцвет весперита
+
+item.voidCharm.name=Оберег пустоты
+
+tile.dccoalOre.name=Глубинно сжатая угольная руда
+tile.dcironOre.name=Глубинно сжатая железная руда
+tile.dcgoldOre.name=Глубинно сжатая золотая руда
+tile.dclapisOre.name=Глубинно сжатая лазуритовая руда
+tile.dcredstoneOre.name=Глубинно сжатая руда красного камня
+tile.dcdiamondOre.name=Глубинно сжатая алмазная руда
+tile.dcemeraldOre.name=Глубинно сжатая изумрудная руда
+
+tile.dcsapphireOre.name=Глубинно сжатая  Sapphire Ore
+tile.dcaquamarineOre.name=Глубинно сжатая аквамариновая руда
+tile.dcsilverOre.name=Глубоко сжатая серебряная руда
+tile.dcrubyOre.name=Глубоко сжатая рубиновая руда
+
+tile.csapphireOre.name=Сжатая сапфировая руда
+tile.caquamarineOre.name=Сжатая аквамариновая руда
+tile.csilverOre.name=Сжатая серебряная руда
+tile.crubyOre.name=Сжатая рубиновая руда
+
+tile.dcoalOre.name=Угольная руда из заброшенных пещер
+tile.dironOre.name=Железная руда из заброшенных пещер
+tile.dgoldOre.name=Золотая руда из заброшенных пещер
+tile.dlapisOre.name=Лазуритовая руда из заброшенных пещер
+tile.dredstoneOre.name=Руда красного камня из заброшенных пещер
+tile.ddiamondOre.name=Abandoned Caves Diamond Ore из заброшенных пещер
+tile.demeraldOre.name=Abandoned Caves Emerald Ore из заброшенных пещер
+
+tile.ddcoalOre.name=Темная угольная руда
+tile.ddironOre.name=Руда черного железа
+tile.ddgoldOre.name=Темная золотая руда
+tile.ddlapisOre.name=Темная руда лазурита
+tile.ddredstoneOre.name=Темная руда красного камня
+tile.dddiamondOre.name=Темная алмазная руда
+tile.ddemeraldOre.name=Темная изумрудная руда
+
+entity.deepCreeper.name=Крипер из глубинного мира
+entity.deepCaveSpider.name=Пещерный паук из глубокого мира
+entity.deepSkeleton.name=Скелет из глубинного мира
+entity.deepZombie.name=Зомби из глубокого мира
+
+tile.dropPortal.name=Drop Portal
+
+item.fragmentedBedrockBucketMoltenIron.name=Ведро с расплавленным железом из фрагментированной коренной породы
+item.fragmentedBedrockBucketLava.name=Ведро лавы из фрагментированной коренной породы
+item.fragmentedBedrockBucketWater.name=Ведро с водой из фрагментированной коренной породы
+item.fragmentedBedrockBucket.name=Ковш из фрагментированной коренной породы
+
+tile.forgottenGemstoneBlock.name=Блок забытого драгоценного камня
+
+tile.fakeBedrock.name=Финальный лабиринт, коренная порода
+
+item.forgottenGemstone.name=Забытый драгоценный камень
+
+tile.forgottenGemstoneOre.name=Забытая драгоценная руда
+
+tile.tenebrium_ore.name=Тенебриумная руда
+tile.tenebrium_block.name=Блок тенебриума
+item.tenebriumIngot.name=Тенебриум слиток
+item.tenebriumIngotDripping.name=Необработанный слиток тенебрия
+
+tile.silverOre.name=Серебряная руда
+item.silverIngot.name=Серебряный слиток
+item.ametrineGem.name=Аметрин
+item.sapphireGem.name=Сапфир
+tile.sapphireOre.name=Сапфировая руда
+tile.aquamarineOre.name=Аквамариновая руда
+tile.ametrineOre.name=Аметрин руда
+tile.ccoalOre.name=Сжатая угольная руда
+tile.cironOre.name=Сжатая железная руда
+tile.cgoldOre.name=Сжатая золотая руда
+tile.clapisOre.name=Сжатая лазуритовая руда
+tile.credstoneOre.name=Сжатая руда красного камня
+tile.cdiamondOre.name=Сжатая алмазная руда
+tile.cemeraldOre.name=Сжатая изумрудная руда
+tile.fragmentedBedrock.name=Фрагментированная коренная порода
+
+item.aquamarine.name=Аквамарин
+
+tile.silverBlock.name=Блок серебра
+tile.sapphire_block.name=Блок сапфира
+tile.aquamarine_block.name=Блок аквамарина
+tile.ametrineBlock.name=Блок аметрина
+
+item.ametrineTippedDiamondPickaxe.name=Алмазная кирка с аметриновым наконечником
+
+item.ametrineTippedGoldenPickaxe.name=Золотая кирка с аметриновым наконечником
+item.ametrineTippedIronPickaxe.name=Железная кирка с аметриновым наконечником
+item.ametrineTippedStonePickaxe.name=Каменная кирка с аметриновым наконечником
+item.ametrineTippedWoodenPickaxe.name=Деревянная кирка с аметриновым наконечником
+
+item.ametrineTippedSilverPickaxe.name=Серебряная кирка с аметриновым наконечником
+item.ametrineTippedSilverAxe.name=Серебряный топор с аметриновым наконечником
+item.ametrineTippedSilverShovel.name=Серебряная лопата с аметриновым наконечником
+item.ametrineTippedSilverSword.name=Серебряный меч с аметриновым наконечником
+item.ametrineTippedSilverHoe.name=Серебряная мотыга с аметриновым наконечником
+
+item.silverPickaxe.name=Серебряная кирка
+item.silverAxe.name=Серебряный топор
+item.silverShovel.name=Серебряная лопата
+item.silverSword.name=Серебряный меч
+item.silverHoe.name=Серебряная мотыга
+
+item.ruby.name=Рубин
+tile.ruby_ore.name=Рубиновая руда
+tile.ruby_block.name=Рубиновый блок
+tile.magma_stone.name=Магматический камень
+
+tile.rotten_planks.name=Гнилые доски
+tile.rusted_iron_bars.name=Ржавые железные слитки
