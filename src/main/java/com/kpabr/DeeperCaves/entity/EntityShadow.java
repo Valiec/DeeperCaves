@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves.entity;
 
 import java.util.Calendar;
 
+import com.kpabr.DeeperCaves.entity.ai.EntityAIShadowTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
@@ -52,8 +53,11 @@ public class EntityShadow extends EntityMob
         this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
         this.tasks.addTask(4, new EntityAIWander(this, this.moveSpeed));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+        this.targetTasks.addTask(2, new EntityAIShadowTarget(this, EntityPlayer.class, 0, true));
     }
+
+
+
 	/**
      * Get this Entity's EnumCreatureAttribute
      */
