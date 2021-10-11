@@ -69,6 +69,7 @@ public class DeeperCaves
     public static DeeperConfig config = new DeeperConfig();
     public static DeeperBucketHandler bucket;
     public static DeeperDimensionHandler dimension = new DeeperDimensionHandler();
+    public static DeeperEventHandler events = new DeeperEventHandler();
     
     //player state data
     public Map<UUID, Integer> nearvoid_counter = new HashMap<UUID, Integer>();
@@ -105,6 +106,9 @@ public class DeeperCaves
         
         FMLCommonHandler.instance().bus().register(this);
         MinecraftForge.EVENT_BUS.register(this);
+
+        FMLCommonHandler.instance().bus().register(events);
+        MinecraftForge.EVENT_BUS.register(events);
         
         
         

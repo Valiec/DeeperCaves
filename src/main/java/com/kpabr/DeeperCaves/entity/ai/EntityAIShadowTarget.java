@@ -15,28 +15,24 @@ import java.util.UUID;
 public class EntityAIShadowTarget extends EntityAINearestAttackableTarget {
 
 
-    public EntityAIShadowTarget(EntityCreature p_i1663_1_, Class p_i1663_2_, int p_i1663_3_, boolean p_i1663_4_) {
-        super(p_i1663_1_, p_i1663_2_, p_i1663_3_, p_i1663_4_);
+    public EntityAIShadowTarget(EntityCreature entity, Class entityClass, int i, boolean b) {
+        super(entity, entityClass, i, b);
 
         IEntitySelector targetEntitySelector = new IEntitySelector()
         {
-            private static final String __OBFID = "CL_00001621";
-            /**
-             * Return whether the specified entity is applicable to this filter.
-             */
-            public boolean isEntityApplicable(Entity p_82704_1_)
+            public boolean isEntityApplicable(Entity e)
             {
-                if(!(p_82704_1_ instanceof EntityLivingBase))
+                if(!(e instanceof EntityLivingBase))
                 {
                     return false;
                 }
-                else if((p_82704_1_ instanceof EntityPlayer))
+                else if((e instanceof EntityPlayer))
                 {
-                    UUID id = ((EntityPlayer)p_82704_1_).getUniqueID();
+                    UUID id = ((EntityPlayer)e).getUniqueID();
                     Boolean flag = DeeperCaves.instance.deepFlag.get(id);
                     if(flag == null || !flag)
                     {
-                        return (EntityAIShadowTarget.this.isSuitableTarget((EntityLivingBase) p_82704_1_, false));
+                        return (EntityAIShadowTarget.this.isSuitableTarget((EntityLivingBase) e, false));
                     }
                     else
                     {
@@ -45,7 +41,7 @@ public class EntityAIShadowTarget extends EntityAINearestAttackableTarget {
                 }
                 else
                 {
-                    return (EntityAIShadowTarget.this.isSuitableTarget((EntityLivingBase) p_82704_1_, false));
+                    return (EntityAIShadowTarget.this.isSuitableTarget((EntityLivingBase) e, false));
                 }
             }
         };

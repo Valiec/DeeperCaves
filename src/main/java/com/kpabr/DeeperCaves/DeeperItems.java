@@ -91,6 +91,12 @@ public class DeeperItems {
 	
 	public static Item ruby;
 
+    public static Item incenditeGem;
+
+    public static Item robustiumIngot;
+
+    public static Item prisciumIngot;
+
     /*Tool and Armor Material declarations*/
     static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
     
@@ -183,6 +189,10 @@ public class DeeperItems {
         GameRegistry.registerItem(this.crystalShard, "crystal_shard");
         
         GameRegistry.registerItem(this.ruby, "ruby");
+
+        GameRegistry.registerItem(this.prisciumIngot, "priscium_ingot");
+        GameRegistry.registerItem(this.robustiumIngot, "robustium_ingot");
+        GameRegistry.registerItem(this.incenditeGem, "incendite_gem");
     }
     
     public void registerItemsOreDict()
@@ -206,6 +216,10 @@ public class DeeperItems {
     	OreDictionary.registerOre("gemEvanescite", this.evanesciteGem);
     	
     	OreDictionary.registerOre("gemRuby", this.ruby);
+
+        OreDictionary.registerOre("gemIncendite", this.incenditeGem);
+        OreDictionary.registerOre("ingotPriscium", this.prisciumIngot);
+        OreDictionary.registerOre("ingotRobustium", this.robustiumIngot);
     }
     
     public void setupItems()
@@ -273,5 +287,10 @@ public class DeeperItems {
         this.crystalShard = new ItemCrystal().setUnlocalizedName("crystalShard").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
         this.ruby = new ItemBase().setTextureName("deepercaves:ruby").setUnlocalizedName("ruby").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        this.incenditeGem = new ItemBase().setTextureName("deepercaves:incenditeGem").setUnlocalizedName("incenditeGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        this.prisciumIngot = new ItemBase().setTextureName("deepercaves:prisciumIngot").setUnlocalizedName("prisciumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        this.robustiumIngot = new ItemBase().setTextureName("deepercaves:robustiumIngot").setUnlocalizedName("robustiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
     }
 }

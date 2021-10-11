@@ -22,7 +22,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class DeeperFluids {
 
-    
+
 	/*Fluid declarations*/
 	
 	public static Fluid moltenIron;
@@ -43,7 +43,7 @@ public class DeeperFluids {
     {
     	this.moltenIronBlock = new BlockFluidMoltenIron(this.moltenIron, Material.lava).setBlockName("moltenIron").setBlockTextureName("deepercaves:molten_iron").setCreativeTab(null);//.setLightLevel(15.0F);
         GameRegistry.registerBlock(this.moltenIronBlock, "molten_iron");
-        this.veneniumBlock = new BlockFluidVenenium(this.venenium, Material.lava).setBlockName("venenium").setBlockTextureName("deepercaves:venenium").setCreativeTab(null);//.setLightLevel(15.0F);
+        this.veneniumBlock = new BlockFluidVenenium(this.venenium, Material.water).setBlockName("venenium").setBlockTextureName("deepercaves:venenium").setCreativeTab(null).setLightLevel(15.0F);
         GameRegistry.registerBlock(this.veneniumBlock, "venenium");
     }
 
