@@ -3,15 +3,18 @@ package com.kpabr.DeeperCaves;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionHealth;
+import net.minecraftforge.event.entity.living.LivingEvent;
 
 public class DeeperEventHandler {
 
-    public static boolean isPlayerInBlock(EntityPlayer player, Block block)
+    public static boolean isPlayerInBlock(EntityLivingBase player, Block block)
     {
         //System.out.println("==============");
         //System.out.println("CHECK: "+(int)player.posX+", "+(int)player.posY+", "+((int)(player.posZ)-1));
@@ -34,10 +37,10 @@ public class DeeperEventHandler {
     }
 
     @SubscribeEvent
-    public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        if(isPlayerInBlock(event.player, DeeperFluids.veneniumBlock))
+    public void onLivingUpdate(LivingEvent event) {
+        if(isPlayerInBlock(event.entityLiving, DeeperFluids.veneniumBlock))
         {
-            event.player.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
+            event.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
         }
     }
 }
