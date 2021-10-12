@@ -288,9 +288,9 @@ public class DeeperItems {
         
         this.ruby = new ItemBase().setTextureName("deepercaves:ruby").setUnlocalizedName("ruby").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
 
-        this.incenditeGem = new ItemBase().setTextureName("deepercaves:incenditeGem").setUnlocalizedName("incenditeGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
-        this.prisciumIngot = new ItemBase().setTextureName("deepercaves:prisciumIngot").setUnlocalizedName("prisciumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
-        this.robustiumIngot = new ItemBase().setTextureName("deepercaves:robustiumIngot").setUnlocalizedName("robustiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        this.incenditeGem = new ItemBase().setTextureName("deepercaves:incendite_gem").setUnlocalizedName("incenditeGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        this.prisciumIngot = new ItemBase().setTextureName("deepercaves:priscium_ingot").setUnlocalizedName("prisciumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        this.robustiumIngot = new ItemBase().setTextureName("deepercaves:robustium_ingot").setUnlocalizedName("robustiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
 
     }
 }

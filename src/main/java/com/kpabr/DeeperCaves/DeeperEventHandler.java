@@ -38,9 +38,10 @@ public class DeeperEventHandler {
 
     @SubscribeEvent
     public void onLivingUpdate(LivingEvent event) {
-        if(isPlayerInBlock(event.entityLiving, DeeperFluids.veneniumBlock))
-        {
-            event.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
+        if(event.entityLiving != null) {
+            if (isPlayerInBlock(event.entityLiving, DeeperFluids.veneniumBlock)) {
+                event.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
+            }
         }
     }
 }

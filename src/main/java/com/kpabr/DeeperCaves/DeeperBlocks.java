@@ -589,11 +589,11 @@ public class DeeperBlocks {
         
         DeeperBlocks.rustedBars = new BlockRustedBars("deepercaves:rusty_bars", "deepercaves:rusty_bars", Material.iron, true).setBlockTextureName("deepercaves:rusty_bars").setBlockName("rusted_iron_bars").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-        DeeperBlocks.incenditeOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:incendite").setBlockName("incendite_ore").setHardness(8.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+        DeeperBlocks.incenditeOre = new BlockOreBase(Material.rock, DeeperItems.incenditeGem, 1, 0, true, 3, 6).setBlockTextureName("deepercaves:incendite_ore").setBlockName("incendite_ore").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
-        DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:priscium").setBlockName("priscium_ore").setHardness(8.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+        DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:priscium_ore").setBlockName("priscium_ore").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
-        DeeperBlocks.robustiumRaw = new BlockBase(Material.rock).setBlockTextureName("deepercaves:robustium_raw").setBlockName("robustiumRaw").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.robustiumRaw = new BlockBase(Material.rock).setBlockTextureName("deepercaves:raw_robustium").setBlockName("robustiumRaw").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
     }
     public void setupHarvestLevels()
