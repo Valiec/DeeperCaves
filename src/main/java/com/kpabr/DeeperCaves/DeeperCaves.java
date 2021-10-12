@@ -70,6 +70,7 @@ public class DeeperCaves
     public static DeeperBucketHandler bucket;
     public static DeeperDimensionHandler dimension = new DeeperDimensionHandler();
     public static DeeperEventHandler events = new DeeperEventHandler();
+    public static DeeperAchievements achievements = new DeeperAchievements();
     
     //player state data
     public Map<UUID, Integer> nearvoid_counter = new HashMap<UUID, Integer>();
@@ -132,6 +133,9 @@ public class DeeperCaves
      	mobs.setupMobs();
      	GameRegistry.registerFuelHandler(new DeeperFuel());
      	proxy.registerRenderers();
+
+     	DeeperAchievements.setupAchievements();
+     	DeeperAchievements.registerAchievements();
      	
      	bucket = new DeeperBucketHandler(); //initialized here because blocks and items must be set up first
      	
