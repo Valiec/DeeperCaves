@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:overworld_caves",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "deepercaves:drop",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "deepercaves:drop"
+    }
+  }
+}
