@@ -7,7 +7,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "deepercaves:drop_lush",
+          "biome": "deepercaves:drop",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -19,7 +19,7 @@
           }
         },
         {
-          "biome": "deepercaves:drop",
+          "biome": "deepercaves:drop_lush",
           "parameters": {
             "temperature": 0,
             "humidity": -0.5,
