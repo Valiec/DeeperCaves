@@ -1,0 +1,190 @@
+{
+"block.deepercaves.white_crystal": "White Crystal",
+"block.deepercaves.orange_crystal": "Orange Crystal",
+"block.deepercaves.magenta_crystal": "Magenta Crystal",
+"block.deepercaves.light_blue_crystal": "Light Blue Crystal",
+"block.deepercaves.yellow_crystal": "Yellow Crystal",
+"block.deepercaves.light_green_crystal": "Light Green Crystal",
+"block.deepercaves.pink_crystal": "Pink Crystal",
+"block.deepercaves.turquoise_crystal": "Turquoise Crystal",
+"block.deepercaves.purple_crystal": "Purple Crystal",
+"block.deepercaves.dark_blue_crystal": "Dark Blue Crystal",
+"block.deepercaves.aqua_crystal": "Aqua Crystal",
+"block.deepercaves.dark_green_crystal": "Dark Green Crystal",
+"block.deepercaves.red_crystal": "Red Crystal",
+
+"item.deepercaves.white_crystal_shard": "White Crystal Shard",
+"item.deepercaves.orange_crystal_shard": "Orange Crystal Shard",
+"item.deepercaves.magenta_crystal_shard": "Magenta Crystal Shard",
+"item.deepercaves.light_blue_crystal_shard": "Light Blue Crystal Shard",
+"item.deepercaves.yellow_crystal_shard": "Yellow Crystal Shard",
+"item.deepercaves.light_green_crystal_shard": "Light Green Crystal Shard",
+"item.deepercaves.pink_crystal_shard": "Pink Crystal Shard",
+"item.deepercaves.turquoise_crystal_shard": "Turquoise Crystal Shard",
+"item.deepercaves.purple_crystal_shard": "Purple Crystal Shard",
+"item.deepercaves.dark_blue_crystal_shard": "Dark Blue Crystal Shard",
+"item.deepercaves.aqua_crystal_shard": "Aqua Crystal Shard",
+"item.deepercaves.dark_green_crystal_shard": "Dark Green Crystal Shard",
+"item.deepercaves.red_crystal_shard": "Red Crystal Shard",
+
+"block.deepercaves.deep_coal_ore": "Deep Coal Ore",
+"block.deepercaves.deep_iron_ore": "Deep Iron Ore",
+"block.deepercaves.deep_gold_ore": "Deep Gold Ore",
+"block.deepercaves.deep_lapis_ore": "Deep Lapis Lazuli Ore",
+"block.deepercaves.deep_redstone_ore": "Deep Redstone Ore",
+"block.deepercaves.deep_diamond_ore": "Deep Diamond Ore",
+"block.deepercaves.deep_emerald_ore": "Deep Emerald Ore",
+
+"block.deepercaves.evanescite_block": "Block of Evanescite",
+
+"entity.deepercaves.shadow": "Shadow",
+
+"entity.deepercaves.mutated_creeper": "Mutated Creeper",
+"entity.deepercaves.mutated_skeleton": "Mutated Skeleton",
+"entity.deepercaves.mutated_zombie": "Mutated Zombie",
+"entity.deepercaves.mutated_cave_spider": "Mutated Cave Spider",
+
+"block.deepercaves.evanescite_ore": "Evanescite Ore",
+
+"item.deepercaves.evanescite_gem": "Evanescite Gem",
+"item.deepercaves.forgotten_charm": "Forgotten Charm",
+
+"item.deepercaves.bucket_venenium": "Bucket of Venenium",
+"item.deepercaves.fragmented_vedrock_bucket_venenium": "Fragmented Bedrock Bucket of Venenium",
+
+"block.deepercaves.profundium_block": "Block of Profundium",
+
+"item.deepercaves.profundium_dust": "Profundium Dust",
+
+"item.deepercaves.profundium_ingot": "Profundium Ingot",
+
+"block.deepercaves.profundium_ore": "Profundium Ore",
+"block.deepercaves.corrupted_soul_stone": "Corrupted Soul Stone",
+"block.deepercaves.soul_stone": "Soul Stone",
+
+"block.deepercaves.fragmented_cobble": "Fragmented Cobblestone",
+
+"block.deepercaves.barrier_layer": "Level Barrier",
+"block.deepercaves.dark_stone": "Dark Stone",
+"block.deepercaves.abandoned_stone": "Abandoned Caves Stone",
+"block.deepercaves.vesperite_ore": "Vesperite Ore",
+"block.deepercaves.vesperite_block": "Block of Vesperite",
+"block.deepercaves.deep_stone": "Deep Stone",
+"block.deepercaves.deep_cobble": "Deep Cobblestone",
+
+"block.deepercaves.heated_obsidian": "Heated Obsidian",
+"block.deepercaves.cooled_obsidian": "Supercooled Obsidian",
+
+"item.deepercaves.vesperite_gem": "Vesperite Gem",
+
+"item.deepercaves.void_charm": "Void Charm",
+
+"block.deepercaves.deep_compressed_coal_ore": "Deep Compressed Coal Ore",
+"block.deepercaves.deep_compressed_iron_ore": "Deep Compressed Iron Ore",
+"block.deepercaves.deep_compressed_gold_ore": "Deep Compressed Gold Ore",
+"block.deepercaves.deep_compressed_lapis_ore": "Deep Compressed Lapis Lazuli Ore",
+"block.deepercaves.deep_compressed_redstone_ore": "Deep Compressed Redstone Ore",
+"block.deepercaves.deep_compressed_diamond_ore": "Deep Compressed Diamond Ore",
+"block.deepercaves.deep_compressed_emerald_ore": "Deep Compressed Emerald Ore",
+
+"block.deepercaves.deep_compressed_sapphire_ore": "Deep Compressed Sapphire Ore",
+"block.deepercaves.deep_compressed_aquamarine_ore": "Deep Compressed Aquamarine Ore",
+"block.deepercaves.deep_compressed_silver_ore": "Deep Compressed Silver Ore",
+"block.deepercaves.deep_compressed_ruby_ore": "Deep Compressed Ruby Ore",
+
+"block.deepercaves.compressed_sapphire_ore": "Compressed Sapphire Ore",
+"block.deepercaves.compressed_aquamarine_ore": "Compressed Aquamarine Ore",
+"block.deepercaves.compressed_silver_ore": "Compressed Silver Ore",
+"block.deepercaves.compressed_ruby_ore": "Compressed Ruby Ore",
+
+"block.deepercaves.abandoned_coal_ore": "Abandoned Caves Coal Ore",
+"block.deepercaves.abandoned_iron_ore": "Abandoned Caves Iron Ore",
+"block.deepercaves.abandoned_gold_ore": "Abandoned Caves Gold Ore",
+"block.deepercaves.abandoned_lapis_ore": "Abandoned Caves Lapis Lazuli Ore",
+"block.deepercaves.abandoned_redstone_ore": "Abandoned Caves Redstone Ore",
+"block.deepercaves.abandoned_diamond_ore": "Abandoned Caves Diamond Ore",
+"block.deepercaves.abandoned_emerald_ore": "Abandoned Caves Emerald Ore",
+
+"block.deepercaves.dark_coal_ore": "Dark Coal Ore",
+"block.deepercaves.dark_iron_ore": "Dark Iron Ore",
+"block.deepercaves.dark_gold_ore": "Dark Gold Ore",
+"block.deepercaves.dark_lapis_ore": "Dark Lapis Lazuli Ore",
+"block.deepercaves.dark_redstone_ore": "Dark Redstone Ore",
+"block.deepercaves.dark_diamond_ore": "Dark Diamond Ore",
+"block.deepercaves.dark_emerald_ore": "Dark Emerald Ore",
+
+"entity.deepercaves.deepercaves.deep_creeper": "Deep World Creeper",
+"entity.deepercaves.deepercaves.deep_cave_spider": "Deep World Cave Spider",
+"entity.deepercaves.deepercaves.deep_skeleton": "Deep World Skeleton",
+"entity.deepercaves.deepercaves.deep_zombie": "Deep World Zombie",
+
+"block.deepercaves.drop_portal": "Drop Portal",
+
+"item.deepercaves.fragmented_bedrock_bucket_molten_iron": "Fragmented Bedrock Bucket of Molten Iron",
+"item.deepercaves.fragmented_bedrock_bucket_lava": "Fragmented Bedrock Bucket of Lava",
+"item.deepercaves.fragmentedBedrock_bucket_water": "Fragmented Bedrock Bucket of Water",
+"item.deepercaves.fragmentedBedrock_bucket": "Fragmented Bedrock Bucket",
+
+"block.deepercaves.forgotten_gemstone_block": "Block of Forgotten Gemstone",
+
+"block.deepercaves.fake_bedrock": "Final Labyrinth Bedrock",
+
+"item.deepercaves.forgotten_gemstone": "Forgotten Gemstone",
+
+"block.deepercaves.forgotten_gemstone_ore": "Forgotten Gemstone Ore",
+
+"block.deepercaves.tenebrium_ore": "Tenebrium Ore",
+"block.deepercaves.tenebrium_block": "Block of Tenebrium",
+"item.deepercaves.tenebrium_ingot": "Tenebrium Ingot",
+"item.deepercaves.tenebrium_ingot_dripping": "Raw Tenebrium",
+
+"block.deepercaves.silver_ore": "Silver Ore",
+"item.deepercaves.silver_ingot": "Silver Ingot",
+"item.deepercaves.ametrine_gem": "Ametrine Gem",
+"item.deepercaves.sapphire_gem": "Sapphire",
+"block.deepercaves.sapphire_ore": "Sapphire Ore",
+"block.deepercaves.aquamarine_ore": "Aquamarine Ore",
+"block.deepercaves.ametrine_ore": "Ametrine Ore",
+"block.deepercaves.compressed_coal_ore": "Compressed Coal Ore",
+"block.deepercaves.compressed_iron_ore": "Compressed Iron Ore",
+"block.deepercaves.compressed_gold_ore": "Compressed Gold Ore",
+"block.deepercaves.compressed_lapis_ore": "Compressed Lapis Lazuli Ore",
+"block.deepercaves.compressed_redstone_ore": "Compressed Redstone Ore",
+"block.deepercaves.compressed_diamond_ore": "Compressed Diamond Ore",
+"block.deepercaves.compressed_emerald_ore": "Compressed Emerald Ore",
+"block.deepercaves.fragmented_bedrock": "Fragmented Bedrock",
+
+"item.deepercaves.aquamarine": "Aquamarine",
+
+"block.deepercaves.silver_block": "Block of Silver",
+"block.deepercaves.sapphire_block": "Block of Sapphire",
+"block.deepercaves.aquamarine_block": "Block of Aquamarine",
+"block.deepercaves.ametrine_block": "Block of Ametrine",
+
+"item.deepercaves.ametrine_tipped_diamond_pickaxe": "Ametrine Tipped Diamond Pickaxe",
+
+"item.deepercaves.ametrine_tipped_golden_pickaxe": "Ametrine Tipped Golden Pickaxe",
+"item.deepercaves.ametrine_tipped_iron_pickaxe": "Ametrine Tipped Iron Pickaxe",
+"item.deepercaves.ametrine_tipped_stone_pickaxe": "Ametrine Tipped Stone Pickaxe",
+"item.deepercaves.ametrine_tipped_wooden_pickaxe": "Ametrine Tipped Wooden Pickaxe",
+
+"item.deepercaves.ametrine_tipped_silver_pickaxe": "Ametrine Tipped Silver Pickaxe",
+"item.deepercaves.ametrine_ripped_silver_axe": "Ametrine Tipped Silver Axe",
+"item.deepercaves.ametrine_tipped_silver_shovel": "Ametrine Tipped Silver Shovel",
+"item.deepercaves.ametrine_tipped_silver_sword": "Ametrine Tipped Silver Sword",
+"item.deepercaves.ametrine_tipped_silver_hoe": "Ametrine Tipped Silver Hoe",
+
+"item.deepercaves.silver_pickaxe": "Silver Pickaxe",
+"item.deepercaves.silver_axe": "Silver Axe",
+"item.deepercaves.silver_shovel": "Silver Shovel",
+"item.deepercaves.silver_sword": "Silver Sword",
+"item.deepercaves.silver_hoe": "Silver Hoe",
+
+"item.deepercaves.ruby": "Ruby",
+"block.deepercaves.ruby_ore": "Ruby Ore",
+"block.deepercaves.ruby_block": "Ruby Block",
+"block.deepercaves.magma_stone": "Magma Stone",
+
+"block.deepercaves.rotten_planks": "Rotten Planks",
+"block.deepercaves.rusted_iron_bars": "Rusty Iron Bars"
+}

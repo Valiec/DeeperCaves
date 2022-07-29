@@ -6,25 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "deepercaves:crystal"
+          "name": "deepercaves:abandoned_stone"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:copy_state",
-          "block": "deepercaves:crystal",
-          "properties": [
-            "color"
-          ]
-        }
       ]
     }
   ]
 }
-
 

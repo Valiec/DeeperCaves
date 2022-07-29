@@ -1,6 +1,7 @@
 package com.kpabr.deepercaves;
 
 import com.kpabr.deepercaves.block.CrystalBlock;
+import com.kpabr.deepercaves.block.StoneBlock;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -34,6 +35,15 @@ public class DeeperCaves implements ModInitializer {
 	public static final Block DARK_BLUE_CRYSTAL = new CrystalBlock(FabricBlockSettings.of(Material.AMETHYST).strength(1.5f));
 	public static final Block DARK_GREEN_CRYSTAL = new CrystalBlock(FabricBlockSettings.of(Material.AMETHYST).strength(1.5f));
 	public static final Block RED_CRYSTAL = new CrystalBlock(FabricBlockSettings.of(Material.AMETHYST).strength(1.5f));
+
+
+
+	public static final Block DEEP_STONE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 6.0F));
+	public static final Block DARK_STONE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 6.0F));
+	public static final Block ABANDONED_STONE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(2.0F, 6.0F));
+	public static final Block SOUL_STONE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
+	public static final Block CORRUPTED_SOUL_STONE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
+	//public static final Block MAZE_STONE = new CrystalBlock(FabricBlockSettings.of(Material.STONE).strength(1.5f));
 
 	@Override
 	public void onInitialize() {
@@ -80,6 +90,22 @@ public class DeeperCaves implements ModInitializer {
 
 		Registry.register(Registry.BLOCK, new Identifier("deepercaves", "red_crystal"), RED_CRYSTAL);
 		Registry.register(Registry.ITEM, new Identifier("deepercaves", "red_crystal"), new BlockItem(RED_CRYSTAL, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+		Registry.register(Registry.BLOCK, new Identifier("deepercaves", "abandoned_stone"), ABANDONED_STONE);
+		Registry.register(Registry.ITEM, new Identifier("deepercaves", "abandoned_stone"), new BlockItem(ABANDONED_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+		Registry.register(Registry.BLOCK, new Identifier("deepercaves", "deep_stone"), DEEP_STONE);
+		Registry.register(Registry.ITEM, new Identifier("deepercaves", "deep_stone"), new BlockItem(DEEP_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+		Registry.register(Registry.BLOCK, new Identifier("deepercaves", "dark_stone"), DARK_STONE);
+		Registry.register(Registry.ITEM, new Identifier("deepercaves", "dark_stone"), new BlockItem(DARK_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+		Registry.register(Registry.BLOCK, new Identifier("deepercaves", "soul_stone"), SOUL_STONE);
+		Registry.register(Registry.ITEM, new Identifier("deepercaves", "soul_stone"), new BlockItem(SOUL_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+		Registry.register(Registry.BLOCK, new Identifier("deepercaves", "corrupted_soul_stone"), CORRUPTED_SOUL_STONE);
+		Registry.register(Registry.ITEM, new Identifier("deepercaves", "corrupted_soul_stone"), new BlockItem(CORRUPTED_SOUL_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
 
 		//Registry.register(Registry.BLOCK, new Identifier("deepercaves", "crystal"), CRYSTAL);
 		//Registry.register(Registry.ITEM, new Identifier("deepercaves", "crystal"), new BlockItem(CRYSTAL, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
