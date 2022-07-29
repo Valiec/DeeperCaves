@@ -7,20 +7,20 @@ import net.minecraft.client.render.RenderLayer;
 public class DeeperClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        //BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.CRYSTAL, RenderLayer.getTranslucent());
+        //BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.CRYSTAL, RenderLayer.getTranslucent());
 
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.WHITE_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.PURPLE_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.LIGHT_BLUE_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.DARK_BLUE_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.LIGHT_GREEN_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.DARK_GREEN_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.AQUA_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.TURQUOISE_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.YELLOW_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.PINK_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.RED_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.MAGENTA_CRYSTAL, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.ORANGE_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.WHITE_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.PURPLE_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.LIGHT_BLUE_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.DARK_BLUE_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.LIGHT_GREEN_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.DARK_GREEN_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.AQUA_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.TURQUOISE_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.YELLOW_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.PINK_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.RED_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.MAGENTA_CRYSTAL, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.ORANGE_CRYSTAL, RenderLayer.getTranslucent());
     }
 }
