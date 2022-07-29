@@ -330,7 +330,7 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:vertical_gradient",
-          "random_name": "minecraft:deepslate",
+          "random_name": "minecraft:stone",
           "true_at_and_below": {
             "absolute": 0
           },
@@ -341,7 +341,7 @@
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
-            "Name": "minecraft:deepslate",
+            "Name": "minecraft:stone",
             "Properties": {
               "axis": "y"
             }
