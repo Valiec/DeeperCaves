@@ -19,7 +19,7 @@ public class DeeperCaves implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("deepercaves");
 
-	public static final Block CRYSTAL = new CrystalBlock(FabricBlockSettings.of(Material.AMETHYST).strength(1.5f));
+	//public static final Block CRYSTAL = new CrystalBlock(FabricBlockSettings.of(Material.AMETHYST).strength(1.5f));
 
 	public static final Block WHITE_CRYSTAL = new CrystalBlock(FabricBlockSettings.of(Material.AMETHYST).strength(1.5f));
 	public static final Block ORANGE_CRYSTAL = new CrystalBlock(FabricBlockSettings.of(Material.AMETHYST).strength(1.5f));
@@ -81,8 +81,8 @@ public class DeeperCaves implements ModInitializer {
 		Registry.register(Registry.BLOCK, new Identifier("deepercaves", "red_crystal"), RED_CRYSTAL);
 		Registry.register(Registry.ITEM, new Identifier("deepercaves", "red_crystal"), new BlockItem(RED_CRYSTAL, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
-		Registry.register(Registry.BLOCK, new Identifier("deepercaves", "crystal"), CRYSTAL);
-		Registry.register(Registry.ITEM, new Identifier("deepercaves", "crystal"), new BlockItem(CRYSTAL, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+		//Registry.register(Registry.BLOCK, new Identifier("deepercaves", "crystal"), CRYSTAL);
+		//Registry.register(Registry.ITEM, new Identifier("deepercaves", "crystal"), new BlockItem(CRYSTAL, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
 
 

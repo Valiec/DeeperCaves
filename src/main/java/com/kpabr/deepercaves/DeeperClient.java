@@ -7,7 +7,7 @@ import net.minecraft.client.render.RenderLayer;
 public class DeeperClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.CRYSTAL, RenderLayer.getTranslucent());
+        //BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.CRYSTAL, RenderLayer.getTranslucent());
 
         BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.WHITE_CRYSTAL, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(DeeperCaves.PURPLE_CRYSTAL, RenderLayer.getTranslucent());

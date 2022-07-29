@@ -9,14 +9,14 @@ import net.minecraft.state.property.IntProperty;
 
 public class CrystalBlock extends Block {
 
-    public static final IntProperty COLOR = IntProperty.of("color", 0, 12);
+    //public static final IntProperty COLOR = IntProperty.of("color", 0, 12);
 
     public CrystalBlock(FabricBlockSettings strength) {
         super(Settings.of(Material.AMETHYST).nonOpaque());
     }
 
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(COLOR);
-    }
+    //@Override
+    //protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    //    builder.add(COLOR);
+    //}
 }
