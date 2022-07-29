@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "deepercaves:crystal",
+    "deepercaves:white_crystal",
+    "deepercaves:red_crystal",
+    "deepercaves:yellow_crystal",
+    "deepercaves:magenta_crystal",
+    "deepercaves:pink_crystal",
+    "deepercaves:purple_crystal",
+    "deepercaves:aqua_crystal",
+    "deepercaves:turquoise_crystal",
+    "deepercaves:orange_crystal",
+    "deepercaves:light_blue_crystal",
+    "deepercaves:dark_blue_crystal",
+    "deepercaves:light_green_crystal",
+    "deepercaves:dark_green_crystal"
+  ]
+}
+

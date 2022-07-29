@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.kpabr.deepercaves.DeeperCaves"
+    ],
+    "client": [
+      "com.kpabr.deepercaves.DeeperClient"
     ]
   },
   "mixins": [
