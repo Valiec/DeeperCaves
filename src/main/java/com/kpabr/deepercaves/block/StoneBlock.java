@@ -8,8 +8,8 @@ public class StoneBlock extends Block {
 
     //public static final IntProperty COLOR = IntProperty.of("color", 0, 12);
 
-    public StoneBlock(FabricBlockSettings strength) {
-        super(Settings.of(Material.STONE).requiresTool());
+    public StoneBlock(FabricBlockSettings settings) {
+        super(settings.requiresTool());
     }
 
     //@Override
