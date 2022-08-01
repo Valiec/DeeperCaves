@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "deepercaves:block/budding_onyx"
+  }
+}
+

@@ -5,7 +5,6 @@ import com.kpabr.deepercaves.block.StoneBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -38,6 +37,9 @@ public class DeeperBlocks {
 
     public static final Block SILVER_ORE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 3.0F));
     public static final Block RAW_SILVER = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(5.0F, 6.0F));
+
+    public static final Block ONYX_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).strength(1.5F).requiresTool());
+    public static final Block BUDDING_ONYX = new Block(FabricBlockSettings.of(Material.AMETHYST).strength(1.5F).requiresTool());
 
     public static void setupBlocks()
     {
@@ -100,6 +102,13 @@ public class DeeperBlocks {
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "raw_silver_block"), RAW_SILVER);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "raw_silver_block"), new BlockItem(RAW_SILVER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "onyx_block"), ONYX_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "onyx_block"), new BlockItem(ONYX_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "budding_onyx"), BUDDING_ONYX);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "budding_onyx"), new BlockItem(BUDDING_ONYX, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
 
     }
 
