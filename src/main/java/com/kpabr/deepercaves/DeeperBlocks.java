@@ -5,6 +5,7 @@ import com.kpabr.deepercaves.block.StoneBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -34,6 +35,9 @@ public class DeeperBlocks {
     public static final Block ABANDONED_STONE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(2.0F, 6.0F));
     public static final Block SOUL_STONE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
     public static final Block CORRUPTED_SOUL_STONE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
+
+    public static final Block SILVER_ORE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 3.0F));
+    public static final Block RAW_SILVER = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(5.0F, 6.0F));
 
     public static void setupBlocks()
     {
@@ -90,6 +94,12 @@ public class DeeperBlocks {
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "corrupted_soul_stone"), CORRUPTED_SOUL_STONE);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "corrupted_soul_stone"), new BlockItem(CORRUPTED_SOUL_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "silver_ore"), SILVER_ORE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "silver_ore"), new BlockItem(SILVER_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "raw_silver_block"), RAW_SILVER);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "raw_silver_block"), new BlockItem(RAW_SILVER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
     }
 
