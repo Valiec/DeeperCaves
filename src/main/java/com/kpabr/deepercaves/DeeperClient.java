@@ -22,5 +22,10 @@ public class DeeperClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.RED_CRYSTAL, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.MAGENTA_CRYSTAL, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.ORANGE_CRYSTAL, RenderLayer.getTranslucent());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.ONYX_CLUSTER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.SMALL_ONYX_BUD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.MEDIUM_ONYX_BUD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DeeperBlocks.LARGE_ONYX_BUD, RenderLayer.getCutout());
     }
 }
