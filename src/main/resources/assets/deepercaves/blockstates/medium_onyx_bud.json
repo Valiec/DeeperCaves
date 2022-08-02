@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "deepercaves:block/medium_onyx_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "deepercaves:block/medium_onyx_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "deepercaves:block/medium_onyx_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "deepercaves:block/medium_onyx_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "deepercaves:block/medium_onyx_bud"
+    },
+    "facing=west": {
+      "model": "deepercaves:block/medium_onyx_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

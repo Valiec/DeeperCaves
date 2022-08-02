@@ -4,10 +4,10 @@ import com.kpabr.deepercaves.block.CrystalBlock;
 import com.kpabr.deepercaves.block.StoneBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -38,8 +38,24 @@ public class DeeperBlocks {
     public static final Block SILVER_ORE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 3.0F));
     public static final Block RAW_SILVER = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(5.0F, 6.0F));
 
-    public static final Block ONYX_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).strength(1.5F).requiresTool());
-    public static final Block BUDDING_ONYX = new Block(FabricBlockSettings.of(Material.AMETHYST).strength(1.5F).requiresTool());
+    public static final Block ONYX_BLOCK = new AmethystBlock(FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(1.5F).requiresTool());
+    public static final Block BUDDING_ONYX = new BuddingAmethystBlock(FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(1.5F).requiresTool());
+
+    public static final Block ONYX_CLUSTER = new AmethystClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.AMETHYST_CLUSTER).requiresTool().luminance((state) -> {
+        return 5;
+    }));
+
+    public static final Block LARGE_ONYX_BUD = new AmethystClusterBlock(5, 3, FabricBlockSettings.copy(ONYX_CLUSTER).sounds(BlockSoundGroup.LARGE_AMETHYST_BUD).luminance((state) -> {
+        return 5;
+    }));
+
+    public static final Block MEDIUM_ONYX_BUD = new AmethystClusterBlock(4, 3, FabricBlockSettings.copy(ONYX_CLUSTER).sounds(BlockSoundGroup.MEDIUM_AMETHYST_BUD).luminance((state) -> {
+        return 5;
+    }));
+
+    public static final Block SMALL_ONYX_BUD = new AmethystClusterBlock(3, 4, FabricBlockSettings.copy(ONYX_CLUSTER).sounds(BlockSoundGroup.SMALL_AMETHYST_BUD).luminance((state) -> {
+        return 5;
+    }));
 
     public static void setupBlocks()
     {
@@ -109,6 +125,17 @@ public class DeeperBlocks {
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "budding_onyx"), BUDDING_ONYX);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "budding_onyx"), new BlockItem(BUDDING_ONYX, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "onyx_cluster"), ONYX_CLUSTER);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "onyx_cluster"), new BlockItem(ONYX_CLUSTER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "small_onyx_bud"), SMALL_ONYX_BUD);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "small_onyx_bud"), new BlockItem(SMALL_ONYX_BUD, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "medium_onyx_bud"), MEDIUM_ONYX_BUD);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "medium_onyx_bud"), new BlockItem(MEDIUM_ONYX_BUD, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "large_onyx_bud"), LARGE_ONYX_BUD);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "large_onyx_bud"), new BlockItem(LARGE_ONYX_BUD, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
     }
 

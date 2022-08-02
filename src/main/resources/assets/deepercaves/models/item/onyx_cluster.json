@@ -1,4 +1,11 @@
 {
-  "parent": "deepercaves:block/silver_ore"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "deepercaves:block/onyx_cluster"
+  },
+  "display": {
+    "head": {
+      "translation": [ 0, 14, -5 ]
+    }
+  }
 }
-

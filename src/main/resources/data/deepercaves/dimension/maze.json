@@ -22,7 +22,7 @@
           "biome": "deepercaves:maze_silver",
           "parameters": {
             "temperature": 0,
-            "humidity": -0.5,
+            "humidity": -0.2,
             "continentalness": 0,
             "erosion": 0,
             "weirdness": 0,
@@ -33,7 +33,7 @@
         {
           "biome": "deepercaves:maze_dripstone",
           "parameters": {
-            "temperature": 0.4,
+            "temperature": 0.6,
             "humidity": 0,
             "continentalness": 0,
             "erosion": 0,
