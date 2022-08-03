@@ -3,16 +3,31 @@ package com.kpabr.deepercaves;
 import com.kpabr.deepercaves.block.CrystalBlock;
 import com.kpabr.deepercaves.block.StoneBlock;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerChunkEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.ServerWorldAccess;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.dimension.DimensionTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import qouteall.imm_ptl.core.portal.Portal;
+import qouteall.imm_ptl.core.portal.global_portals.VerticalConnectingPortal;
+import qouteall.q_misc_util.MiscHelper;
 
 public class DeeperCaves implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -36,10 +51,36 @@ public class DeeperCaves implements ModInitializer {
 		DeeperBlocks.setupBlocks();
 		DeeperItems.setupItems();
 
-		//Registry.register(Registry.BLOCK, new Identifier("deepercaves", "crystal"), CRYSTAL);
-		//Registry.register(Registry.ITEM, new Identifier("deepercaves", "crystal"), new BlockItem(CRYSTAL, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
 
+		ServerLifecycleEvents.SERVER_STARTED.register(((server) -> {
+			VerticalConnectingPortal.connect(World.OVERWORLD, VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:drop")));
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:drop")), VerticalConnectingPortal.ConnectorType.ceil, World.OVERWORLD);
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:drop")), VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:maze")));
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:maze")), VerticalConnectingPortal.ConnectorType.ceil, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:drop")));
+		}));
+
+		ServerChunkEvents.CHUNK_LOAD.register(((world, chunk) -> {
+			if(world.getRegistryKey() == World.OVERWORLD) //is this the Overworld
+			{
+				if(chunk.getBlockState(new BlockPos(0,chunk.getBottomY(),0)).getBlock() == Blocks.BEDROCK) //has Bedrock
+				{
+					for(int x=0; x<16; x++)
+					{
+						for(int z=0; z<16; z++)
+						{
+							for(int y=0; y<6; y++)
+							{
+								if(chunk.getBlockState(new BlockPos(x,chunk.getBottomY()+y,z)).getBlock() == Blocks.BEDROCK)
+								{
+									chunk.setBlockState(new BlockPos(x,chunk.getBottomY()+y,z), Blocks.DEEPSLATE.getDefaultState(), false);
+								}
+							}
+						}
+					}
+				}
+			}
+		}));
 
 	}
 }

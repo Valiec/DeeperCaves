@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:overworld_caves",
+  "type": "deepercaves:drop",
   "generator": {
     "type": "minecraft:noise",
     "settings": "deepercaves:drop",
