@@ -49,6 +49,10 @@ public class DeeperBlocks {
 
     public static final Block SMALL_ONYX_BUD = new AmethystClusterBlock(3, 4, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.SMALL_AMETHYST_BUD).luminance((state) -> 1));
 
+
+    //public static final Block MAZE_STONE = new CrystalBlock(FabricBlockSettings.of(Material.STONE).strength(1.5f));
+
+
     public static void setupBlocks()
     {
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "white_crystal"), WHITE_CRYSTAL);
