@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "deepercaves:block/medium_onyx_bud"
+    "cross": "deepercaves:block/large_onyx_bud"
   }
 }

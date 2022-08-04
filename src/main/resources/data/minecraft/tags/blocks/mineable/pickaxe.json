@@ -21,7 +21,11 @@
     "deepercaves:dark_stone",
     "deepercaves:silver_ore",
     "deepercaves:raw_silver_block",
-    "deepercaves:onyx_block"
+    "deepercaves:onyx_block",
+    "deepercaves:onyx_cluster",
+    "deepercaves:small_onyx_bud",
+    "deepercaves:medium_onyx_bud",
+    "deepercaves:large_onyx_bud"
   ]
 }
 
