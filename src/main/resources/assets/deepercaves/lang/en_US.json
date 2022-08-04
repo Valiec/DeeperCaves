@@ -27,6 +27,9 @@
   "item.deepercaves.dark_green_crystal_shard": "Dark Green Crystal Shard",
   "item.deepercaves.red_crystal_shard": "Red Crystal Shard",
 
+  "item.deepercaves.raw_silver": "Raw Silver",
+  "item.deepercaves.onyx_shard": "Onyx Shard",
+
   "block.deepercaves.deep_coal_ore": "Deep Coal Ore",
   "block.deepercaves.deep_iron_ore": "Deep Iron Ore",
   "block.deepercaves.deep_gold_ore": "Deep Gold Ore",
@@ -36,6 +39,13 @@
   "block.deepercaves.deep_emerald_ore": "Deep Emerald Ore",
 
   "block.deepercaves.evanescite_block": "Block of Evanescite",
+  "block.deepercaves.raw_silver_block": "Block of Raw Silver",
+  "block.deepercaves.onyx_block": "Block of Onyx",
+  "block.deepercaves.budding_onyx": "Budding Onyx",
+  "block.deepercaves.small_onyx_bud": "Small Onyx Bud",
+  "block.deepercaves.medium_onyx_bud": "Medium Onyx Bud",
+  "block.deepercaves.large_onyx_bud": "Large Onyx Bud",
+  "block.deepercaves.onyx_cluster": "Onyx Cluster",
 
   "entity.deepercaves.shadow": "Shadow",
 
