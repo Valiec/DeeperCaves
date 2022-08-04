@@ -122,16 +122,16 @@ public class DeeperBlocks {
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "budding_onyx"), new BlockItem(BUDDING_ONYX, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "onyx_cluster"), ONYX_CLUSTER);
-        Registry.register(Registry.ITEM, new Identifier("deepercaves", "onyx_cluster"), new BlockItem(ONYX_CLUSTER, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "onyx_cluster"), new BlockItem(ONYX_CLUSTER, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "small_onyx_bud"), SMALL_ONYX_BUD);
-        Registry.register(Registry.ITEM, new Identifier("deepercaves", "small_onyx_bud"), new BlockItem(SMALL_ONYX_BUD, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "small_onyx_bud"), new BlockItem(SMALL_ONYX_BUD, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "medium_onyx_bud"), MEDIUM_ONYX_BUD);
-        Registry.register(Registry.ITEM, new Identifier("deepercaves", "medium_onyx_bud"), new BlockItem(MEDIUM_ONYX_BUD, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "medium_onyx_bud"), new BlockItem(MEDIUM_ONYX_BUD, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "large_onyx_bud"), LARGE_ONYX_BUD);
-        Registry.register(Registry.ITEM, new Identifier("deepercaves", "large_onyx_bud"), new BlockItem(LARGE_ONYX_BUD, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "large_onyx_bud"), new BlockItem(LARGE_ONYX_BUD, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
 
     }
 
