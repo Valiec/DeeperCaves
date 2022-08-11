@@ -12,12 +12,6 @@
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "music": {
-      "sound": "minecraft:music.overworld.dripstone_caves",
-      "min_delay": 12000,
-      "max_delay": 24000,
-      "replace_current_music": false
     }
   },
   "spawners": {
@@ -102,7 +96,8 @@
   "spawn_costs": {},
   "carvers": {
     "air": [
-      "deepercaves:maze_caves"
+      "deepercaves:default_caves",
+      "deepercaves:default_ravines"
     ]
   },
   "features": [
@@ -112,30 +107,32 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "deepercaves:maze/onyx_geode"
+      "minecraft:amethyst_geode"
     ],
     [
       "minecraft:monster_room",
-      "minecraft:monster_room_deep",
-      "deepercaves:maze/onyx_maze"
+      "minecraft:monster_room_deep"
     ],
     [],
     [],
     [
       "minecraft:ore_dirt",
       "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
       "minecraft:ore_diorite_upper",
       "minecraft:ore_diorite_lower",
       "minecraft:ore_andesite_upper",
       "minecraft:ore_andesite_lower",
       "minecraft:ore_tuff",
-      "deepercaves:maze/ore_coal_maze",
-      "deepercaves:maze/ore_iron_maze",
-      "deepercaves:maze/ore_copper_maze",
-      "deepercaves:maze/ore_gold_maze",
-      "deepercaves:maze/ore_redstone_maze",
-      "deepercaves:maze/ore_diamond_maze",
-      "deepercaves:maze/ore_lapis_maze",
+      "deepercaves:crystal/ore_coal_crystal",
+      "deepercaves:crystal/ore_iron_crystal",
+      "deepercaves:crystal/ore_copper_crystal",
+      "deepercaves:crystal/ore_gold_crystal",
+      "deepercaves:crystal/ore_redstone_crystal",
+      "deepercaves:crystal/ore_diamond_crystal",
+      "deepercaves:crystal/ore_lapis_crystal",
+      "deepercaves:crystal/crystals/ore_crystal_all",
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",

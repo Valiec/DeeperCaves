@@ -50,8 +50,12 @@ public class DeeperCaves implements ModInitializer {
 		ServerLifecycleEvents.SERVER_STARTED.register(((server) -> {
 			VerticalConnectingPortal.connect(World.OVERWORLD, VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:drop")));
 			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:drop")), VerticalConnectingPortal.ConnectorType.ceil, World.OVERWORLD);
+
 			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:drop")), VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:maze")));
 			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:maze")), VerticalConnectingPortal.ConnectorType.ceil, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:drop")));
+
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:maze")), VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:crystal")));
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:crystal")), VerticalConnectingPortal.ConnectorType.ceil, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:maze")));
 		}));
 
 		ServerChunkEvents.CHUNK_LOAD.register(((world, chunk) -> {

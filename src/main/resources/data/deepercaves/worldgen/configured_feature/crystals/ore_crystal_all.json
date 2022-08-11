@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_red"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_yellow"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_pink"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_turquoise"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_purple"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_magenta"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_white"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_aqua"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_orange"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_light_blue"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_light_green"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_dark_blue"
+      },
+      {
+        "chance": 0.0769,
+        "feature": "deepercaves:crystal/crystals/ore_crystal_dark_green"
+      }
+    ],
+    "default": "deepercaves:crystal/crystals/ore_crystal_white"
+  }
+}
