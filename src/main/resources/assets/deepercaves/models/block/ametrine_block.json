@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "deepercaves:block/ametrine_block",
+    "down": "deepercaves:block/ametrine_block",
+    "north": "deepercaves:block/ametrine_block_mirrored",
+    "south": "deepercaves:block/ametrine_block",
+    "west": "deepercaves:block/ametrine_block_orange",
+    "east": "deepercaves:block/ametrine_block_blue",
+    "particle": "deepercaves:block/ametrine_block"
+  }
+}
+

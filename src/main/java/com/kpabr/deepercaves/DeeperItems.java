@@ -25,6 +25,11 @@ public class DeeperItems {
     public static final Item RAW_SILVER = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
     public static final Item ONYX_SHARD = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
+    public static final Item AQUAMARINE = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
+    public static final Item RUBY = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
+    public static final Item SAPPHIRE = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
+    public static final Item AMETRINE = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
+
 
     public static void setupItems()
     {
@@ -44,6 +49,12 @@ public class DeeperItems {
 
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "raw_silver"), RAW_SILVER);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "onyx_shard"), ONYX_SHARD);
+
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "aquamarine"), AQUAMARINE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "ruby"), RUBY);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "sapphire"), SAPPHIRE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "ametrine"), AMETRINE);
+
 
     }
 }

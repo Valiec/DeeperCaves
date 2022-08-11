@@ -42,13 +42,20 @@ public class DeeperBlocks {
     public static final Block BUDDING_ONYX = new BuddingAmethystBlock(FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(1.5F).requiresTool());
 
     public static final Block ONYX_CLUSTER = new AmethystClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).requiresTool().luminance((state) -> 5));
-
     public static final Block LARGE_ONYX_BUD = new AmethystClusterBlock(5, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.LARGE_AMETHYST_BUD).luminance((state) -> 4));
-
     public static final Block MEDIUM_ONYX_BUD = new AmethystClusterBlock(4, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.MEDIUM_AMETHYST_BUD).luminance((state) -> 2));
-
     public static final Block SMALL_ONYX_BUD = new AmethystClusterBlock(3, 4, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.SMALL_AMETHYST_BUD).luminance((state) -> 1));
 
+    public static final Block AQUAMARINE_ORE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 3.0F));
+    public static final Block SAPPHIRE_ORE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 3.0F));
+    public static final Block RUBY_ORE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 3.0F));
+    public static final Block AMETRINE_ORE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 3.0F));
+
+    public static final Block SILVER_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F));
+    public static final Block SAPPHIRE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F));
+    public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F));
+    public static final Block AQUAMARINE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F));
+    public static final Block AMETRINE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F));
 
 
     //public static final Block MAZE_STONE = new CrystalBlock(FabricBlockSettings.of(Material.STONE).strength(1.5f));
@@ -133,6 +140,34 @@ public class DeeperBlocks {
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "large_onyx_bud"), LARGE_ONYX_BUD);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "large_onyx_bud"), new BlockItem(LARGE_ONYX_BUD, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "aquamarine_ore"), AQUAMARINE_ORE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "aquamarine_ore"), new BlockItem(AQUAMARINE_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "sapphire_ore"), SAPPHIRE_ORE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "sapphire_ore"), new BlockItem(SAPPHIRE_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "ruby_ore"), RUBY_ORE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "ruby_ore"), new BlockItem(RUBY_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "ametrine_ore"), AMETRINE_ORE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "ametrine_ore"), new BlockItem(AMETRINE_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "silver_block"), SILVER_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "silver_block"), new BlockItem(SILVER_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "sapphire_block"), SAPPHIRE_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "sapphire_block"), new BlockItem(SAPPHIRE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "aquamarine_block"), AQUAMARINE_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "aquamarine_block"), new BlockItem(AQUAMARINE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "ametrine_block"), AMETRINE_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "ametrine_block"), new BlockItem(AMETRINE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "ruby_block"), RUBY_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "ruby_block"), new BlockItem(RUBY_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
 
     }
 

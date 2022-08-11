@@ -56,7 +56,7 @@
 
   "block.deepercaves.evanescite_ore": "Evanescite Ore",
 
-  "item.deepercaves.evanescite_gem": "Evanescite Gem",
+  "item.deepercaves.evanescite": "Evanescite",
   "item.deepercaves.forgotten_charm": "Forgotten Charm",
 
   "item.deepercaves.bucket_venenium": "Bucket of Venenium",
@@ -85,7 +85,7 @@
   "block.deepercaves.heated_obsidian": "Heated Obsidian",
   "block.deepercaves.cooled_obsidian": "Supercooled Obsidian",
 
-  "item.deepercaves.vesperite_gem": "Vesperite Gem",
+  "item.deepercaves.vesperite": "Vesperite",
 
   "item.deepercaves.void_charm": "Void Charm",
 
@@ -150,8 +150,8 @@
 
   "block.deepercaves.silver_ore": "Silver Ore",
   "item.deepercaves.silver_ingot": "Silver Ingot",
-  "item.deepercaves.ametrine_gem": "Ametrine Gem",
-  "item.deepercaves.sapphire_gem": "Sapphire",
+  "item.deepercaves.ametrine": "Ametrine",
+  "item.deepercaves.sapphire": "Sapphire",
   "block.deepercaves.sapphire_ore": "Sapphire Ore",
   "block.deepercaves.aquamarine_ore": "Aquamarine Ore",
   "block.deepercaves.ametrine_ore": "Ametrine Ore",
