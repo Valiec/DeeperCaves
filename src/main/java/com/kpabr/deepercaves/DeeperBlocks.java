@@ -57,6 +57,11 @@ public class DeeperBlocks {
     public static final Block AQUAMARINE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F));
     public static final Block AMETRINE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F));
 
+    public static final Block MAGMA_STONE = new MagmaBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
+
+    public static final Block SMOOTH_BASALT = new MagmaBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
+
+    public static final Block FRAGMENTED_BEDROCK = new MagmaBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
 
     //public static final Block MAZE_STONE = new CrystalBlock(FabricBlockSettings.of(Material.STONE).strength(1.5f));
 
@@ -167,6 +172,15 @@ public class DeeperBlocks {
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "ruby_block"), RUBY_BLOCK);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "ruby_block"), new BlockItem(RUBY_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "magma_stone"), MAGMA_STONE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "magma_stone"), new BlockItem(MAGMA_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "smooth_basalt"), SMOOTH_BASALT);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "smooth_basalt"), new BlockItem(SMOOTH_BASALT, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "fragmented_bedrock"), FRAGMENTED_BEDROCK);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "fragmented_bedrock"), new BlockItem(FRAGMENTED_BEDROCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
 
     }

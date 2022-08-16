@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "deepercaves:white_crystal",
+    "deepercaves:red_crystal",
+    "deepercaves:yellow_crystal",
+    "deepercaves:magenta_crystal",
+    "deepercaves:pink_crystal",
+    "deepercaves:purple_crystal",
+    "deepercaves:aqua_crystal",
+    "deepercaves:turquoise_crystal",
+    "deepercaves:orange_crystal",
+    "deepercaves:light_blue_crystal",
+    "deepercaves:dark_blue_crystal",
+    "deepercaves:light_green_crystal",
+    "deepercaves:dark_green_crystal",
+    "deepercaves:soul_stone",
+    "deepercaves:abandoned_stone",
+    "deepercaves:corrupted_soul_stone",
+    "deepercaves:deep_stone",
+    "deepercaves:dark_stone",
+    "deepercaves:silver_ore",
+    "deepercaves:raw_silver_block",
+    "deepercaves:onyx_block",
+    "deepercaves:smooth_basalt",
+    "deepercaves:ametrine_ore",
+    "deepercaves:sapphire_ore",
+    "deepercaves:aquamarine_ore",
+    "deepercaves:ruby_ore",
+    "deepercaves:fragmented_bedrock"
+  ]
+}
+

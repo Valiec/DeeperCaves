@@ -56,6 +56,12 @@ public class DeeperCaves implements ModInitializer {
 
 			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:maze")), VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:crystal")));
 			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:crystal")), VerticalConnectingPortal.ConnectorType.ceil, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:maze")));
+
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:crystal")), VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:compressed")));
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:compressed")), VerticalConnectingPortal.ConnectorType.ceil, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:crystal")));
+
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:compressed")), VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:bedrock_plains")));
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:bedrock_plains")), VerticalConnectingPortal.ConnectorType.ceil, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:compressed")));
 		}));
 
 		ServerChunkEvents.CHUNK_LOAD.register(((world, chunk) -> {

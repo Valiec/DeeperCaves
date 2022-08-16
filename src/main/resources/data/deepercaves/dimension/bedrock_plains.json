@@ -1,0 +1,11 @@
+{
+  "type": "deepercaves:bedrock_plains",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "deepercaves:bedrock_plains",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "deepercaves:bedrock_plains"
+    }
+  }
+}
