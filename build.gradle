@@ -33,12 +33,12 @@ dependencies {
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 
-	modImplementation ("com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:${project.imm_ptl_core_version}") {
+	modImplementation ("com.github.iPortalTeam.ImmersivePortalsMod:imm_ptl_core:${project.imm_ptl_core_version}") {
 		exclude(group: "net.fabricmc.fabric-api")
 		transitive(false)
 	}
 
-	modImplementation ("com.github.qouteall.ImmersivePortalsMod:q_misc_util:${project.q_misc_util_version}"){
+	modImplementation ("com.github.iPortalTeam.ImmersivePortalsMod:q_misc_util:${project.q_misc_util_version}"){
 		exclude(group: "net.fabricmc.fabric-api")
 		transitive(false)
 	}
