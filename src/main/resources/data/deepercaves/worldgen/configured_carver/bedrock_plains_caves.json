@@ -1,24 +1,30 @@
 {
-  "type": "minecraft:canyon",
+  "type": "minecraft:cave",
   "config": {
-    "probability": 0.01,
+    "probability": 0.15,
     "y": {
       "type": "minecraft:uniform",
       "min_inclusive": {
         "above_bottom": 0
       },
       "max_inclusive": {
-        "absolute": 90
+        "below_top": 0
       }
     },
-    "yScale": 12,
+    "yScale": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 0.1,
+        "max_exclusive": 0.9
+      }
+    },
     "lava_level": {
       "absolute": -64
     },
     "replaceable": "#minecraft:overworld_carver_replaceables",
     "debug_settings": {
       "air_state": {
-        "Name": "minecraft:warped_button",
+        "Name": "minecraft:crimson_button",
         "Properties": {
           "face": "wall",
           "facing": "north",
@@ -40,39 +46,26 @@
         "Name": "minecraft:glass"
       }
     },
-    "vertical_rotation": {
+    "horizontal_radius_multiplier": {
       "type": "minecraft:uniform",
       "value": {
-        "min_inclusive": -0.125,
-        "max_exclusive": 0.125
+        "min_inclusive": 0.7,
+        "max_exclusive": 1.4
       }
     },
-    "shape": {
-      "distance_factor": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": 0.75,
-          "max_exclusive": 1
-        }
-      },
-      "thickness": {
-        "type": "minecraft:trapezoid",
-        "value": {
-          "min": 0,
-          "max": 6,
-          "plateau": 2
-        }
-      },
-      "width_smoothness": 3,
-      "horizontal_radius_factor": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": 0.75,
-          "max_exclusive": 1
-        }
-      },
-      "vertical_radius_default_factor": 1,
-      "vertical_radius_center_factor": 0
+    "vertical_radius_multiplier": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 0.8,
+        "max_exclusive": 1.3
+      }
+    },
+    "floor_level": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": -1,
+        "max_exclusive": -0.4
+      }
     }
   }
 }

@@ -96,7 +96,7 @@
   "spawn_costs": {},
   "carvers": {
     "air": [
-      "deepercaves:default_caves",
+      "deepercaves:bedrock_plains_caves",
       "deepercaves:bedrock_plains_low_ravines",
       "deepercaves:bedrock_plains_high_ravines"
     ]
