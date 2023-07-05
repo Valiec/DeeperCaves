@@ -41,10 +41,9 @@ public class DeeperCaves implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
 		DeeperBlocks.setupBlocks();
 		DeeperItems.setupItems();
-
+		DeeperWorldgen.setupWorldgen();
 
 
 		ServerLifecycleEvents.SERVER_STARTED.register(((server) -> {

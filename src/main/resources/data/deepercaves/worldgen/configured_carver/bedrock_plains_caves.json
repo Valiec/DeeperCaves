@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:cave",
+  "type": "deepercaves:no_fluid_cave",
   "config": {
     "probability": 0.15,
     "y": {
@@ -23,6 +23,7 @@
     },
     "replaceable": "#minecraft:overworld_carver_replaceables",
     "debug_settings": {
+      "debug_mode": false,
       "air_state": {
         "Name": "minecraft:crimson_button",
         "Properties": {

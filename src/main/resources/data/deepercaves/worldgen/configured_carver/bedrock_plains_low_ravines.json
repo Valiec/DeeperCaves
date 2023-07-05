@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:canyon",
+  "type": "deepercaves:no_fluid_ravine",
   "config": {
     "probability": 0.01,
     "y": {
@@ -17,6 +17,7 @@
     },
     "replaceable": "#minecraft:overworld_carver_replaceables",
     "debug_settings": {
+      "debug_mode": false,
       "air_state": {
         "Name": "minecraft:warped_button",
         "Properties": {
