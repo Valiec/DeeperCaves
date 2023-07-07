@@ -22,7 +22,7 @@
           "biome": "deepercaves:compressed_calcite",
           "parameters": {
             "temperature": 0,
-            "humidity": -0.2,
+            "humidity": 0.1,
             "continentalness": 0,
             "erosion": 0,
             "weirdness": 0,
@@ -33,7 +33,7 @@
         {
           "biome": "deepercaves:compressed_fiery",
           "parameters": {
-            "temperature": 0.6,
+            "temperature": 0.7,
             "humidity": 0,
             "continentalness": 0,
             "erosion": 0,
@@ -46,9 +46,9 @@
           "biome": "deepercaves:compressed_oreseam",
           "parameters": {
             "temperature": 0,
-            "humidity": 0.5,
+            "humidity": 0,
             "continentalness": 0,
-            "erosion": 0,
+            "erosion": 0.5,
             "weirdness": 0,
             "depth": 0,
             "offset": 0

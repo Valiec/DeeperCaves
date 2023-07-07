@@ -61,7 +61,7 @@ public class DeeperBlocks {
 
     public static final Block SMOOTH_BASALT = new MagmaBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
 
-    public static final Block FRAGMENTED_BEDROCK = new MagmaBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
+    public static final Block FRAGMENTED_BEDROCK = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(1.5F, 6.0F));
 
     //public static final Block MAZE_STONE = new CrystalBlock(FabricBlockSettings.of(Material.STONE).strength(1.5f));
 

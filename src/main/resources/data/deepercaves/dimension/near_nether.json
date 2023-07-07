@@ -1,15 +1,15 @@
 {
-  "type": "deepercaves:drop",
+  "type": "deepercaves:near_nether",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "deepercaves:drop",
+    "settings": "deepercaves:near_nether",
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "deepercaves:drop",
+          "biome": "deepercaves:near_nether",
           "parameters": {
-            "temperature": 0,
+            "temperature": 0.01,
             "humidity": 0,
             "continentalness": 0,
             "erosion": 0,
@@ -19,9 +19,9 @@
           }
         },
         {
-          "biome": "deepercaves:drop_lush",
+          "biome": "deepercaves:near_nether_basalt",
           "parameters": {
-            "temperature": 0.5,
+            "temperature": 0.7,
             "humidity": 0,
             "continentalness": 0,
             "erosion": 0,
@@ -31,12 +31,24 @@
           }
         },
         {
-          "biome": "deepercaves:drop_dripstone",
+          "biome": "deepercaves:near_nether_nethery",
           "parameters": {
-            "temperature": 0,
-            "humidity": -0.1,
+            "temperature": -0.5,
+            "humidity": 0,
             "continentalness": 0,
             "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "deepercaves:near_nether_soulsand",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0.3,
             "weirdness": 0,
             "depth": 0,
             "offset": 0

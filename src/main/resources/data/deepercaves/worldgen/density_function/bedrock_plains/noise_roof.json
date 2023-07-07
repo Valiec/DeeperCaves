@@ -2,8 +2,8 @@
   "type": "minecraft:range_choice",
   "input": {
     "type": "minecraft:y_clamped_gradient",
-    "from_y": 108,
-    "to_y": 110,
+    "from_y": 58,
+    "to_y": 60,
     "from_value": 0,
     "to_value": 1
   },
@@ -13,8 +13,8 @@
     "type": "minecraft:add",
     "argument1": {
       "type": "minecraft:y_clamped_gradient",
-      "from_y": 115,
-      "to_y": 121,
+      "from_y": 65,
+      "to_y": 71,
       "from_value": 0,
       "to_value": 1
     },
