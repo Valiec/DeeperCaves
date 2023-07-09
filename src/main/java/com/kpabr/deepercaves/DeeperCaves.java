@@ -64,6 +64,9 @@ public class DeeperCaves implements ModInitializer {
 
 			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:bedrock_plains")), VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:near_nether")));
 			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:near_nether")), VerticalConnectingPortal.ConnectorType.ceil, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:bedrock_plains")));
+
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:near_nether")), VerticalConnectingPortal.ConnectorType.floor, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:lava")));
+			VerticalConnectingPortal.connect(RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:lava")), VerticalConnectingPortal.ConnectorType.ceil, RegistryKey.of(Registry.WORLD_KEY, new Identifier("deepercaves:near_nether")));
 		}));
 
 		ServerChunkEvents.CHUNK_LOAD.register(((world, chunk) -> {
