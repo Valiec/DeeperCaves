@@ -132,6 +132,7 @@
       "deepercaves:near_nether/ore_redstone",
       "deepercaves:near_nether/ore_diamond",
       "deepercaves:near_nether/ore_lapis",
+      "deepercaves:lava/ore_cobblestone",
       "minecraft:patch_fire",
       "minecraft:underwater_magma",
       "minecraft:disk_sand",

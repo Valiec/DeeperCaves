@@ -1,9 +1,9 @@
 {
-  "feature": "deepercaves:ore_magma",
+  "feature": "deepercaves:ore_cobblestone",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 24
+      "count": 19
     },
     {
       "type": "minecraft:in_square"
@@ -11,7 +11,7 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:trapezoid",
+        "type": "minecraft:uniform",
         "min_inclusive": {
           "above_bottom": 0
         },
