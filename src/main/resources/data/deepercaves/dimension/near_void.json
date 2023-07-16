@@ -1,0 +1,48 @@
+{
+  "type": "deepercaves:near_void",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "deepercaves:near_void",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "deepercaves:lava",
+          "parameters": {
+            "temperature": 0.01,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "deepercaves:lava_volcanic",
+          "parameters": {
+            "temperature": 0.7,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "deepercaves:lava_bedrock",
+          "parameters": {
+            "temperature": -0.5,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}
