@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "deepercaves:block/grimstone_top",
+    "side": "deepercaves:block/grimstone",
+    "bottom": "deepercaves:block/grimstone_top"
+  }
+}
+

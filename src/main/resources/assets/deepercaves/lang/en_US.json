@@ -79,8 +79,8 @@
   "block.deepercaves.abandoned_stone": "Abandoned Caves Stone",
   "block.deepercaves.vesperite_ore": "Vesperite Ore",
   "block.deepercaves.vesperite_block": "Block of Vesperite",
-  "block.deepercaves.deep_stone": "Deep Stone",
-  "block.deepercaves.deep_cobble": "Deep Cobblestone",
+  "block.deepercaves.grimstone": "Grimstone",
+  "block.deepercaves.cobbled_grimstone": "Cobbled Grimstone",
 
   "block.deepercaves.heated_obsidian": "Heated Obsidian",
   "block.deepercaves.cooled_obsidian": "Supercooled Obsidian",

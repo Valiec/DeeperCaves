@@ -110,8 +110,8 @@ public class DeeperBlocks {
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "abandoned_stone"), ABANDONED_STONE);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "abandoned_stone"), new BlockItem(ABANDONED_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
-        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "deep_stone"), DEEP_STONE);
-        Registry.register(Registry.ITEM, new Identifier("deepercaves", "deep_stone"), new BlockItem(DEEP_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "grimstone"), DEEP_STONE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "grimstone"), new BlockItem(DEEP_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "dark_stone"), DARK_STONE);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "dark_stone"), new BlockItem(DARK_STONE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));

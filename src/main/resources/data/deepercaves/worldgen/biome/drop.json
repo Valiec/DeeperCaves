@@ -99,7 +99,8 @@
       "deepercaves:default_caves",
       "deepercaves:default_ravines",
       "deepercaves:drop_ravines",
-      "deepercaves:drop_caves"
+      "deepercaves:drop_caves",
+      "minecraft:canyon"
     ]
   },
   "features": [
