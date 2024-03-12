@@ -102,8 +102,8 @@
   "spawn_costs": {},
   "carvers": {
     "air": [
-      "minecraft:cave",
-      "minecraft:canyon",
+      "deepercaves:default_caves",
+      "deepercaves:default_ravines",
       "deepercaves:drop_ravines",
       "deepercaves:drop_caves"
     ]
