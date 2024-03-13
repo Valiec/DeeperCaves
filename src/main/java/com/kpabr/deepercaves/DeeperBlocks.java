@@ -65,6 +65,8 @@ public class DeeperBlocks {
 
     //public static final Block MAZE_STONE = new CrystalBlock(FabricBlockSettings.of(Material.STONE).strength(1.5f));
 
+    public static final Block TENEBRIUM_ORE = new StoneBlock(FabricBlockSettings.of(Material.STONE).strength(3.0F, 3.0F));
+
 
     public static void setupBlocks()
     {
@@ -181,6 +183,9 @@ public class DeeperBlocks {
 
         Registry.register(Registry.BLOCK, new Identifier("deepercaves", "fragmented_bedrock"), FRAGMENTED_BEDROCK);
         Registry.register(Registry.ITEM, new Identifier("deepercaves", "fragmented_bedrock"), new BlockItem(FRAGMENTED_BEDROCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+
+        Registry.register(Registry.BLOCK, new Identifier("deepercaves", "tenebrium_ore"), TENEBRIUM_ORE);
+        Registry.register(Registry.ITEM, new Identifier("deepercaves", "tenebrium_ore"), new BlockItem(TENEBRIUM_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
 
     }
