@@ -34,7 +34,7 @@ public class DeeperBucketHandler {
 		mapfr.put(Blocks.flowing_lava, DeeperCaves.items.fragmentedBedrockBucketL);
 		mapfr.put(DeeperCaves.fluids.veneniumBlock, DeeperCaves.items.fragmentedBedrockBucketV);
 	}
-	@SubscribeEvent
+	/*@SubscribeEvent
 	public void onBucketFill(FillBucketEvent event)
 	{
 		Block block = event.world.getBlock(event.target.blockX, event.target.blockY, event.target.blockZ);
@@ -66,5 +66,5 @@ public class DeeperBucketHandler {
 		}
 		return;
 		
-	}
+	}*/
 }
