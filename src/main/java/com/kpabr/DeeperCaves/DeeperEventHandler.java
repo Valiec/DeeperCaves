@@ -36,12 +36,12 @@ public class DeeperEventHandler {
         return false;
     }
 
-    @SubscribeEvent
-    public void onLivingUpdate(LivingEvent event) {
-        if(event.entityLiving != null) {
-            if (isPlayerInBlock(event.entityLiving, DeeperFluids.veneniumBlock)) {
-                event.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
-            }
-        }
-    }
+    //@SubscribeEvent
+    //public void onLivingUpdate(LivingEvent event) {
+        //if(event.entityLiving != null) {
+            //if (isPlayerInBlock(event.entityLiving, DeeperFluids.veneniumBlock)) {
+            //    event.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
+            //}
+        //}
+   // }
 }
