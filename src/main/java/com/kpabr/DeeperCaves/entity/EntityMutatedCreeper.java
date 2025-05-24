@@ -13,7 +13,7 @@ public class EntityMutatedCreeper extends EntityCreeper {
 
 	public EntityMutatedCreeper(World p_i1745_1_) {
 		super(p_i1745_1_);
-        ReflectionHelper.setPrivateValue(EntityCreeper.class, this, 5, "explosionRadius");
+        ReflectionHelper.setPrivateValue(EntityCreeper.class, this, 5, "explosionRadius", "field_82226_g");
 	}
 	protected void applyEntityAttributes()
     {

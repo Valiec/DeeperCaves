@@ -45,7 +45,6 @@ public class EntityAIShadowTarget extends EntityAINearestAttackableTarget {
                 }
             }
         };
-
-        ReflectionHelper.setPrivateValue(EntityAINearestAttackableTarget.class, this, targetEntitySelector, "targetEntitySelector");
+        ReflectionHelper.setPrivateValue(EntityAINearestAttackableTarget.class, this, targetEntitySelector, "targetEntitySelector", "field_82643_g");
     }
 }
