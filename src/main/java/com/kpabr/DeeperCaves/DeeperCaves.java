@@ -3,7 +3,6 @@ package com.kpabr.DeeperCaves;
  * Created by Valiec2019
  * started on July 6, 2013
  * released on November 28, 2013
- * currently using Minecraft Forge 10.12.0.1022
  */
 
 import java.io.IOException;
@@ -51,7 +50,7 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "1.0.1";
+    public static final String VERSION = "1.0.2";
     public static final String NAME = "DeeperCaves";
     static int versionID = 11; //Used by version checker!
     
