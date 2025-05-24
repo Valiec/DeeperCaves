@@ -50,7 +50,7 @@ public class DeeperVersionChecker {
     {
         return (getNewestVersionID(true).split("-"))[0];
     }
-    @SubscribeEvent
+    /*@SubscribeEvent
     public void onUpdateMessage(PlayerEvent.PlayerLoggedInEvent event) throws UnknownHostException, IOException
     {
         try
@@ -61,18 +61,18 @@ public class DeeperVersionChecker {
             
             if(versionID>DeeperCaves.versionID)
             {
-                event.player.addChatMessage(new ChatComponentText("Deeper Caves is out of date. The newest version is "+versionStr+". Go to the Minecraft Forums thread for updates."));
+                //event.player.addChatMessage(new ChatComponentText("Deeper Caves is out of date. The newest version is "+versionStr+". Go to the Minecraft Forums thread for updates."));
             }
                 else if(versionID<DeeperCaves.versionID)
             {
-                event.player.addChatMessage(new ChatComponentText("You are running a development version of Deeper Caves. Bugs may be present."));
+                //event.player.addChatMessage(new ChatComponentText("You are running a development version of Deeper Caves. Bugs may be present."));
             }
         
         }
         catch (IOException e)
         {
-            event.player.addChatMessage(new ChatComponentText("Failed to get latest version number from server. Check your Internet connection."));
+            //event.player.addChatMessage(new ChatComponentText("Failed to get latest version number from server. Check your Internet connection."));
         }
             
-    }
+    }*/
 }
