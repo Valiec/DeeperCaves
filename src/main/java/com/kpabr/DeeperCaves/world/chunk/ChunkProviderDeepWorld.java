@@ -64,8 +64,6 @@ public class ChunkProviderDeepWorld extends ChunkProviderGenerate implements ICh
     private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
     /** Holds Stronghold Generator */
     private MapGenStronghold strongholdGenerator = new MapGenStronghold();
-    /** Holds Village Generator */
-    private MapGenVillage villageGenerator = new MapGenVillage();
     /** Holds Mineshaft Generator */
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
@@ -83,7 +81,6 @@ public class ChunkProviderDeepWorld extends ChunkProviderGenerate implements ICh
     {
         caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
         strongholdGenerator = (MapGenStronghold) TerrainGen.getModdedMapGen(strongholdGenerator, STRONGHOLD);
-        villageGenerator = (MapGenVillage) TerrainGen.getModdedMapGen(villageGenerator, VILLAGE);
         mineshaftGenerator = (MapGenMineshaft) TerrainGen.getModdedMapGen(mineshaftGenerator, MINESHAFT);
         scatteredFeatureGenerator = (MapGenScatteredFeature) TerrainGen.getModdedMapGen(scatteredFeatureGenerator, SCATTERED_FEATURE);
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
@@ -275,7 +272,6 @@ public class ChunkProviderDeepWorld extends ChunkProviderGenerate implements ICh
         if (this.mapFeaturesEnabled)
         {
             this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
             this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
             this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
         }
@@ -434,7 +430,6 @@ public class ChunkProviderDeepWorld extends ChunkProviderGenerate implements ICh
         if (this.mapFeaturesEnabled)
         {
             this.mineshaftGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-            flag = this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
             this.strongholdGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
             this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
         }
