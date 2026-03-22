@@ -1,16 +1,7 @@
 package com.kpabr.DeeperCaves;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.block.Block;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.potion.PotionHealth;
-import net.minecraftforge.event.entity.living.LivingEvent;
 
 public class DeeperEventHandler {
 
@@ -27,13 +18,9 @@ public class DeeperEventHandler {
         }
         Block block2 = player.worldObj.getBlock((int)player.posX, (int)player.posY+1, (int)player.posZ-1);
         //System.out.println("BLOCK2: "+block2.getUnlocalizedName());
-        if(block2 == block)
-        {
-            //System.out.println("==============");
-            return true;
-        }
         //System.out.println("==============");
-        return false;
+        return block2 == block;
+        //System.out.println("==============");
     }
 
     //@SubscribeEvent

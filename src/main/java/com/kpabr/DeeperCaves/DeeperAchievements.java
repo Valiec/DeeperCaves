@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCaves;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.stats.Achievement;
@@ -101,9 +100,9 @@ public class DeeperAchievements {
         enterMutation.registerStat();
         enterFarVoid.registerStat();
 
-        //enterForgotten.registerStat();
-        //enterEvil.registerStat();
-        //enterFinalLabyrinth.registerStat();
+        enterForgotten.registerStat();
+        enterEvil.registerStat();
+        enterFinalLabyrinth.registerStat();
 
         mineAmetrine.registerStat();
         mineCompressedOre.registerStat();
@@ -119,8 +118,7 @@ public class DeeperAchievements {
         returnToOverworld.registerStat();
 
 
-        deeperPage = new AchievementPage("Deeper Caves", enterDrop, enterMaze, enterCrystal, enterCompressed, enterBedrockPlains, enterNearNether, enterLava, enterNearVoid, enterDeepWorld, enterDarkness, enterAbandonedCaves, enterMutation, enterFarVoid, mineAmetrine, mineCompressedOre, makeAmetrineTippedPickaxe, solidifyRobustium, smeltRobustium, mineTenebrium, mineVesperite, makeVoidCharm, mineEvanescite, makeForgottenCharm, mineForgottenGemstone, returnToOverworld);
-        //enterForgotten, enterEvil, enterFinalLabyrinth
+        deeperPage = new AchievementPage("Deeper Caves", enterDrop, enterMaze, enterCrystal, enterCompressed, enterBedrockPlains, enterNearNether, enterLava, enterNearVoid, enterDeepWorld, enterDarkness, enterAbandonedCaves, enterMutation, enterFarVoid, mineAmetrine, mineCompressedOre, makeAmetrineTippedPickaxe, solidifyRobustium, smeltRobustium, mineTenebrium, mineVesperite, makeVoidCharm, mineEvanescite, makeForgottenCharm, mineForgottenGemstone, returnToOverworld, enterForgotten, enterEvil, enterFinalLabyrinth);
         AchievementPage.registerAchievementPage(deeperPage);
 
     }

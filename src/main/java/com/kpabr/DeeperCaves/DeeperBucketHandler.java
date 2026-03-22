@@ -1,6 +1,6 @@
 package com.kpabr.DeeperCaves;
 
-import java.util.HashMap;
+/*import java.util.HashMap;
 
 import com.kpabr.DeeperCaves.item.ItemFragmentedBedrockBucket;
 
@@ -12,27 +12,27 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.FillBucketEvent;
+import net.minecraftforge.event.entity.player.FillBucketEvent;*/
 
 public class DeeperBucketHandler {
-	
-	private HashMap<Block, Item> map = new HashMap<Block, Item>();
-	
-	private HashMap<Block, Item> mapfr = new HashMap<Block, Item>();
+
+	//private HashMap<Block, Item> map = new HashMap<Block, Item>();
+
+	//private HashMap<Block, Item> mapfr = new HashMap<Block, Item>();
 	
 	public DeeperBucketHandler()
 	{
-		map.put(Blocks.water, Items.water_bucket);
+		/*map.put(Blocks.water, Items.water_bucket);
 		map.put(Blocks.flowing_water, Items.water_bucket);
 		map.put(Blocks.lava, Items.lava_bucket);
 		map.put(Blocks.flowing_lava, Items.lava_bucket);
-		map.put(DeeperCaves.fluids.veneniumBlock, DeeperCaves.items.bucketV);
-		mapfr.put(DeeperCaves.fluids.moltenIronBlock, DeeperCaves.items.fragmentedBedrockBucketMI);
-		mapfr.put(Blocks.water, DeeperCaves.items.fragmentedBedrockBucketW);
-		mapfr.put(Blocks.flowing_water, DeeperCaves.items.fragmentedBedrockBucketW);
-		mapfr.put(Blocks.lava, DeeperCaves.items.fragmentedBedrockBucketL);
-		mapfr.put(Blocks.flowing_lava, DeeperCaves.items.fragmentedBedrockBucketL);
-		mapfr.put(DeeperCaves.fluids.veneniumBlock, DeeperCaves.items.fragmentedBedrockBucketV);
+		map.put(DeeperFluids.veneniumBlock, DeeperItems.bucketV);
+		mapfr.put(DeeperFluids.moltenIronBlock, DeeperItems.fragmentedBedrockBucketMI);
+		mapfr.put(Blocks.water, DeeperItems.fragmentedBedrockBucketW);
+		mapfr.put(Blocks.flowing_water, DeeperItems.fragmentedBedrockBucketW);
+		mapfr.put(Blocks.lava, DeeperItems.fragmentedBedrockBucketL);
+		mapfr.put(Blocks.flowing_lava, DeeperItems.fragmentedBedrockBucketL);
+		mapfr.put(DeeperFluids.veneniumBlock, DeeperItems.fragmentedBedrockBucketV);*/
 	}
 	/*@SubscribeEvent
 	public void onBucketFill(FillBucketEvent event)

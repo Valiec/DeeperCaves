@@ -5,18 +5,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.UnknownHostException;
+//import java.net.UnknownHostException;
 
-import net.minecraft.client.Minecraft;
+/*import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.util.ChatComponentText;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;*/
 
 public class DeeperVersionChecker {
-    public String getNewestVersionID(boolean debug) throws UnknownHostException, IOException
+    public String getNewestVersionID(boolean debug) throws IOException
     {
-        int newestVersion = -1;
+        int newestVersion;
         URL check;
         if(!debug)
         {
@@ -46,7 +46,7 @@ public class DeeperVersionChecker {
             return newestVersionStr; 
         }
     }
-    public String getNewestVersionNumber() throws UnknownHostException, IOException
+    public String getNewestVersionNumber() throws IOException
     {
         return (getNewestVersionID(true).split("-"))[0];
     }

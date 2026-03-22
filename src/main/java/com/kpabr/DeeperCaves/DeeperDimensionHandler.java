@@ -9,6 +9,7 @@ public class DeeperDimensionHandler {
 
 	@SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
+			System.out.println("DIM CHECK");
     		try
         	{
 				EntityPlayerMP player = (EntityPlayerMP)event.player;
@@ -16,6 +17,7 @@ public class DeeperDimensionHandler {
 
 				if(player.dimension == 0 && event.player.posY <= 0.0D) //0 = overworld
 	        	{
+					System.out.println("SHOULD GO TO DROP");
 	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.dropDimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.dropDimID)));
 	        	}
 	        	else if(player.dimension == DeeperCaves.worldgen.dropDimID && event.player.posY <= 0.0D)
@@ -78,9 +80,6 @@ public class DeeperDimensionHandler {
 	        	{
 	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.finalLabyrinthDimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.finalLabyrinthDimID)));
 	        	}
-
-
-	        	else{}
         	}
         	catch(ClassCastException e)
         	{
@@ -154,7 +153,6 @@ public class DeeperDimensionHandler {
 	        	{
 	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.evilDimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.evilDimID)));
 	        	}
-	        	else{}
         	}
         	catch(ClassCastException e)
         	{
@@ -186,14 +184,12 @@ public class DeeperDimensionHandler {
 	    			}
 	
 	    		}
-				else if(nearvoid_counter == 0 && voidFlag)
+				else if(nearvoid_counter == 0)
 				{
-					voidFlag = false;
-					nearvoid_counter = 0;
 					DeeperCaves.instance.nearvoid_counter.put(player.getUniqueID(), nearvoid_counter);
-					DeeperCaves.instance.voidFlag.put(player.getUniqueID(), voidFlag);
+					DeeperCaves.instance.voidFlag.put(player.getUniqueID(), false);
 				}
-				else if(nearvoid_counter == 200 && voidFlag)
+				else if(nearvoid_counter == 200)
 				{
 					nearvoid_counter = 0;
 					DeeperCaves.instance.nearvoid_counter.put(player.getUniqueID(), nearvoid_counter);
@@ -221,15 +217,14 @@ public class DeeperDimensionHandler {
 	    			}
 	
 	    		}
-				else if(farvoid_counter == 0 && voidFlag)
+				else if(farvoid_counter == 0)
 				{
-					voidFlag = false;
-					DeeperCaves.instance.voidFlag.put(player.getUniqueID(), voidFlag);
+					DeeperCaves.instance.voidFlag.put(player.getUniqueID(), false);
 
 					farvoid_counter++;
 					DeeperCaves.instance.farvoid_counter.put(player.getUniqueID(), farvoid_counter);
 				}
-				else if(farvoid_counter == 9 && voidFlag)
+				else if(farvoid_counter == 9)
 				{
 					farvoid_counter = 0;
 					DeeperCaves.instance.farvoid_counter.put(player.getUniqueID(), farvoid_counter);
@@ -244,8 +239,7 @@ public class DeeperDimensionHandler {
             {
 				if(deep_counter == 0 && deepFlag)
 				{
-					deepFlag = false;
-					DeeperCaves.instance.deepFlag.put(player.getUniqueID(), deepFlag);
+					DeeperCaves.instance.deepFlag.put(player.getUniqueID(), false);
 
 					deep_counter++;
 					DeeperCaves.instance.deep_counter.put(player.getUniqueID(), deep_counter);
@@ -264,7 +258,7 @@ public class DeeperDimensionHandler {
             }
             catch(ClassCastException e)
             {
-            	return; //not a player
+            	//not a player
             }
     		
     }

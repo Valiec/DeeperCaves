@@ -21,7 +21,7 @@ public class ItemForgottenCharm extends Item {
 	public void onUpdate(ItemStack p_77663_1_, World p_77663_2_, Entity p_77663_3_, int p_77663_4_, boolean p_77663_5_) 
 	{
 		if(p_77663_3_ instanceof EntityPlayer) {
-			DeeperCaves.deepFlag.put(((EntityPlayer)p_77663_3_).getUniqueID(), true);
+			DeeperCaves.instance.deepFlag.put(((EntityPlayer)p_77663_3_).getUniqueID(), true);
 		}
 	}
 	

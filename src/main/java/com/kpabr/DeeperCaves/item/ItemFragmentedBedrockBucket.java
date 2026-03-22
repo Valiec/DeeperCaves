@@ -2,6 +2,8 @@ package com.kpabr.DeeperCaves.item;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
 
+import com.kpabr.DeeperCaves.DeeperItems;
+import com.kpabr.DeeperCaves.DeeperMaterials;
 import cpw.mods.fml.common.eventhandler.Event;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -86,19 +88,19 @@ public class ItemFragmentedBedrockBucket extends ItemBucket {
                     if (material == Material.water && l == 0)
                     {
                         p_77659_2_.setBlockToAir(i, j, k);
-                        return this.func_150910_a(p_77659_1_, p_77659_3_, DeeperCaves.items.fragmentedBedrockBucketW);
+                        return this.func_150910_a(p_77659_1_, p_77659_3_, DeeperItems.fragmentedBedrockBucketW);
                     }
                     
-                    if (material == DeeperCaves.materials.moltenIron && l == 0)
+                    if (material == DeeperMaterials.moltenIron && l == 0)
                     {
                         p_77659_2_.setBlockToAir(i, j, k);
-                        return this.func_150910_a(p_77659_1_, p_77659_3_, DeeperCaves.items.fragmentedBedrockBucketMI);
+                        return this.func_150910_a(p_77659_1_, p_77659_3_, DeeperItems.fragmentedBedrockBucketMI);
                     }
 
                     if (material == Material.lava && l == 0)
                     {
                         p_77659_2_.setBlockToAir(i, j, k);
-                        return this.func_150910_a(p_77659_1_, p_77659_3_, DeeperCaves.items.fragmentedBedrockBucketL);
+                        return this.func_150910_a(p_77659_1_, p_77659_3_, DeeperItems.fragmentedBedrockBucketL);
                     }
                 }
                 else

@@ -4,15 +4,10 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
 
 public class TabDeeperCaves extends CreativeTabs {
-
-    public boolean isBlock = false;
+    
     public int i;
     public Block block;
     public String name;
@@ -30,15 +25,15 @@ public class TabDeeperCaves extends CreativeTabs {
     {
         if (i == 0)
         {
-        return DeeperCaves.items.sapphireGem;
+        return DeeperItems.sapphireGem;
         }
         if (i == 1)
         {
-        return DeeperCaves.items.ametrineTippedDiamondPickaxe;
+        return DeeperItems.ametrineTippedDiamondPickaxe;
         }
         else
         {
-        return DeeperCaves.items.ametrineTippedSilverSword;
+        return DeeperItems.ametrineTippedSilverSword;
         }
     }
     public String getTranslatedTabLabel()

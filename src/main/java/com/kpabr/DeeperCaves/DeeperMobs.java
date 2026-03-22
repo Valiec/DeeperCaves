@@ -11,10 +11,7 @@ import com.kpabr.DeeperCaves.entity.EntityMutatedZombie;
 import com.kpabr.DeeperCaves.entity.EntityShadow;
 
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.biome.BiomeGenBase;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.VillagerRegistry;
 
 public class DeeperMobs {
 	

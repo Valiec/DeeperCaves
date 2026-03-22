@@ -4,15 +4,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
 
 public class TabDeeperCavesBlocks extends CreativeTabs {
 
-    public boolean isBlock = false;
+    public boolean isBlock;
     public Item item;
     public String name;
     public Block block;
@@ -29,7 +25,7 @@ public class TabDeeperCavesBlocks extends CreativeTabs {
     @SideOnly(Side.CLIENT)
     public Item getTabIconItem()
     {
-        return Item.getItemFromBlock(DeeperCaves.blocks.fragmentedBedrock);
+        return Item.getItemFromBlock(DeeperBlocks.fragmentedBedrock);
         
     }
     public String getTranslatedTabLabel()

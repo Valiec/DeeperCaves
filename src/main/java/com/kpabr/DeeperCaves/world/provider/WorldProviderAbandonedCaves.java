@@ -3,26 +3,14 @@ package com.kpabr.DeeperCaves.world.provider;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.world.chunk.ChunkProviderAbandonedCaves;
-import com.kpabr.DeeperCaves.world.chunk.ChunkProviderDarkness;
-import com.kpabr.DeeperCaves.world.chunk.ChunkProviderFinalLabyrinth;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.ChunkCoordinates;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkProviderEnd;
-/*
- * Created by Valiec2019
- * on February 18, 2014
- * using Minecraft Forge 10.12.0.1022
- */
 public class WorldProviderAbandonedCaves extends WorldProvider
 {
     /**
@@ -52,11 +40,11 @@ public class WorldProviderAbandonedCaves extends WorldProvider
         return 0.0F;
     }
 
-    @SideOnly(Side.CLIENT)
 
     /**
      * Returns array with sunrise/sunset colors
      */
+    @SideOnly(Side.CLIENT)
     public float[] calcSunriseSunsetColors(float par1, float par2)
     {
         return null;
@@ -89,11 +77,11 @@ public class WorldProviderAbandonedCaves extends WorldProvider
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
 
     /**
      * the y level at which clouds are rendered.
      */
+    @SideOnly(Side.CLIENT)
     public float getCloudHeight()
     {
         return 8.0F;
@@ -113,11 +101,10 @@ public class WorldProviderAbandonedCaves extends WorldProvider
         return 200;
     }
 
-    @SideOnly(Side.CLIENT)
-
     /**
      * Returns true if the given X,Z coordinate should show environmental fog.
      */
+    @SideOnly(Side.CLIENT)
     public boolean doesXZShowFog(int par1, int par2)
     {
         return false;

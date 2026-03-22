@@ -50,14 +50,13 @@ public class DeeperCaves
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
-    public static final String VERSION = "1.0.2";
+    public static final String VERSION = "1.1.0";
     public static final String NAME = "DeeperCaves";
-    static int versionID = 11; //Used by version checker!
+    //static int versionID = 11; //Used by version checker!
     
     public static DeeperCaves instance;
     
     //event handlers
-    public static DeeperMaterials materials = new DeeperMaterials();
     public static DeeperBlocks blocks = new DeeperBlocks();
     public static DeeperFluids fluids = new DeeperFluids();
     public static DeeperItems items = new DeeperItems();
@@ -72,16 +71,17 @@ public class DeeperCaves
     public static DeeperAchievements achievements = new DeeperAchievements();
     
     //player state data
+    //TODO: make this explicitly serverside
     public Map<UUID, Integer> nearvoid_counter = new HashMap<UUID, Integer>();
     public Map<UUID, Integer> farvoid_counter = new HashMap<UUID, Integer>();
     public Map<UUID, Integer> deep_counter = new HashMap<UUID, Integer>();
-    public static Map<UUID, Boolean> voidFlag = new HashMap<UUID, Boolean>();
-    public static Map<UUID, Boolean> deepFlag = new HashMap<UUID, Boolean>();
+    public Map<UUID, Boolean> voidFlag = new HashMap<UUID, Boolean>();
+    public Map<UUID, Boolean> deepFlag = new HashMap<UUID, Boolean>();
     
     //creative tabs
-    static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperCaves.blocks.fragmentedBedrock);
+    static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperBlocks.fragmentedBedrock);
     static CreativeTabs tabDeeperCavesItems = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Items", 0);
-    static CreativeTabs tabDeeperCavesOres = new TabDeeperCavesOres(CreativeTabs.getNextID(), "Deeper Caves Ores", DeeperCaves.blocks.dcdiamondOre);
+    static CreativeTabs tabDeeperCavesOres = new TabDeeperCavesOres(CreativeTabs.getNextID(), "Deeper Caves Ores", DeeperBlocks.dcdiamondOre);
     static CreativeTabs tabDeeperCavesTools = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Tools", 1);
     static CreativeTabs tabDeeperCavesCombat = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Combat", 2);
     
@@ -90,7 +90,7 @@ public class DeeperCaves
     public void preInit(FMLPreInitializationEvent event)
     {
         
-        this.instance = this;
+        instance = this;
         
         FMLCommonHandler.instance().bus().register(worldgen);
         MinecraftForge.EVENT_BUS.register(worldgen);

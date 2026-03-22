@@ -1,16 +1,9 @@
 package com.kpabr.DeeperCaves;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.ChunkCoordinates;
-import net.minecraft.util.Direction;
-import net.minecraft.util.LongHashMap;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
@@ -18,7 +11,7 @@ import net.minecraft.world.WorldServer;
 public class DeeperTeleporterLower extends Teleporter
 {
 
-    private WorldServer worldServerInstance;
+    private final WorldServer worldServerInstance;
     private final Random random;
     public int min = 2;
     public int cap = 16;
@@ -56,13 +49,10 @@ public class DeeperTeleporterLower extends Teleporter
             cap = 252;
             }
             int k = MathHelper.floor_double(p_77185_1_.posZ);
-            p_77185_1_.setPosition((double)i, (double)j+1, (double)k);
-            byte b0 = 1;
-            byte b1 = 0;
-            boolean blockIsAir = false;
+            p_77185_1_.setPosition(i, j+1, k);
             makePortal(p_77185_1_, cap);
     }
-    public boolean makePortal(Entity p_85188_1_, int cap)
+    public void makePortal(Entity p_85188_1_, int cap)
     {
         byte b0 = 16;
         double d0 = -1.0D;
@@ -275,7 +265,7 @@ public class DeeperTeleporterLower extends Teleporter
                     }
                     if(!flag)
                     {
-                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(Blocks.air), 0, 2);
+                    this.worldServerInstance.setBlock(l3, i4, j4, Blocks.air, 0, 2);
                     }
                 }
             }
@@ -292,7 +282,6 @@ public class DeeperTeleporterLower extends Teleporter
             }
         }
 
-        return true;
     }
     
 
