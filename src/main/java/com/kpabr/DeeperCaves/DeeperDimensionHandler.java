@@ -9,7 +9,6 @@ public class DeeperDimensionHandler {
 
 	@SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-			System.out.println("DIM CHECK");
     		try
         	{
 				EntityPlayerMP player = (EntityPlayerMP)event.player;
@@ -17,7 +16,6 @@ public class DeeperDimensionHandler {
 
 				if(player.dimension == 0 && event.player.posY <= 0.0D) //0 = overworld
 	        	{
-					System.out.println("SHOULD GO TO DROP");
 	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.dropDimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.dropDimID)));
 	        	}
 	        	else if(player.dimension == DeeperCaves.worldgen.dropDimID && event.player.posY <= 0.0D)
