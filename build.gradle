@@ -22,9 +22,9 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0.2-mc1.7.10"
+version = "1.0.2"
 group= "com.kpabr.DeeperCaves" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "DeeperCaves"
+archivesBaseName = "deepercaves"
 targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
 
 srcCompat = JavaVersion.VERSION_1_8
