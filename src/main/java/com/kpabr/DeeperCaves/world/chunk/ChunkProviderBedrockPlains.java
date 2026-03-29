@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
+import com.kpabr.DeeperCaves.DeeperFluids;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineCompressed;
 
@@ -134,7 +135,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
             k1 = k + this.rand.nextInt(16) + 8;
             l1 = this.rand.nextInt(256);
             i2 = l + this.rand.nextInt(16) + 8;
-            (new WorldGenDeeperLakes(DeeperCaves.fluids.moltenIronBlock, Blocks.bedrock)).generate(this.worldObj, this.rand, k1, l1, i2);
+            (new WorldGenDeeperLakes(DeeperFluids.moltenIronBlock, Blocks.bedrock)).generate(this.worldObj, this.rand, k1, l1, i2);
         }
 
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
