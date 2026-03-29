@@ -14,6 +14,24 @@ public class MapGenDeeperRavine extends MapGenBase
     private float[] field_75046_d = new float[1024];
     private static final String __OBFID = "CL_00000390";
 
+    public int maxY;
+    public int genRarity;
+    //I forgot what these do
+    public double widthFactor;
+    public double heightFactor;
+
+    public MapGenDeeperRavine(int maxY, int genRarity, double widthFactor, double heightFactor){
+        super();
+        this.maxY = maxY;
+        this.genRarity = genRarity;
+        this.widthFactor = widthFactor;
+        this.heightFactor = heightFactor;
+    }
+
+    public MapGenDeeperRavine(){
+        this(234, 13, 7.5, 5.5);
+    }
+
     protected void func_151540_a(long p_151540_1_, int p_151540_3_, int p_151540_4_, Block[] p_151540_5_, double p_151540_6_, double p_151540_8_, double p_151540_10_, float p_151540_12_, float p_151540_13_, float p_151540_14_, int p_151540_15_, int p_151540_16_, double p_151540_17_, int minHeight)
     {
         Random random = new Random(p_151540_1_);
@@ -50,11 +68,11 @@ public class MapGenDeeperRavine extends MapGenBase
 
         for (; p_151540_15_ < p_151540_16_; ++p_151540_15_)
         {
-            double d12 = 7.5D + (double)(MathHelper.sin((float)p_151540_15_ * (float)Math.PI / (float)p_151540_16_) * p_151540_12_ * 1.0F);
+            double d12 = widthFactor + (double)(MathHelper.sin((float)p_151540_15_ * (float)Math.PI / (float)p_151540_16_) * p_151540_12_ * 1.0F);
             double d6 = d12 * p_151540_17_;
             d12 *= (double)random.nextFloat() * 0.25D + 0.75D;
             d6 *= (double)random.nextFloat() * 0.25D + 0.75D;
-            d6 *= 5.5;
+            d6 *= heightFactor;
             float f6 = MathHelper.cos(p_151540_14_);
             float f7 = MathHelper.sin(p_151540_14_);
             p_151540_6_ += (double)(MathHelper.cos(p_151540_13_) * f6);
@@ -131,7 +149,7 @@ public class MapGenDeeperRavine extends MapGenBase
                             {
                                 j3 = (k2 * 16 + l2) * 256 + i3;
 
-                                if (i3 >= 0 && i3 < 256)
+                                if (i3 < 256)
                                 {
                                     Block block = p_151540_5_[j3];
 
@@ -197,10 +215,10 @@ public class MapGenDeeperRavine extends MapGenBase
 
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
-        if (this.rand.nextInt(13) == 0)
+        if (this.rand.nextInt(this.genRarity) == 0)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
-            double d1 = (double)(this.rand.nextInt(234) + 20);
+            double d1 = (double)(this.rand.nextInt(this.maxY) + 20);
             double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
             byte b0 = 1;
 
