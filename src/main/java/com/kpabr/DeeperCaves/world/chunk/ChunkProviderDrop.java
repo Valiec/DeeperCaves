@@ -4,14 +4,13 @@ import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDrop;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.*;
 
 import net.minecraftforge.event.terraingen.*;
 
-public class ChunkProviderDrop extends ChunkProviderDeeperBase implements IChunkProvider {
+public class ChunkProviderDrop extends ChunkProviderDeeperBase {
     /**
      * RNG.
      */

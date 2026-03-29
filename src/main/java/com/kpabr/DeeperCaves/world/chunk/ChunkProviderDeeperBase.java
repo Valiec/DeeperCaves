@@ -69,6 +69,8 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
     double[] field_147426_g;
     int[][] field_73219_j = new int[32][32];
     public Block baseBlock = Blocks.stone;
+    public Block baseBlock2 = Blocks.stone;
+    public Block baseBlock3 = Blocks.stone;
     public int lowerBarrierY = -1;
     public int upperBarrierY = 257;
 
@@ -177,7 +179,18 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
 
                             for (int k3 = 0; k3 < 4; ++k3)
                             {
-                                p_147424_3_[j3 += short1] = this.baseBlock;
+                                if ((d15 += d16) > 0.0D)
+                                {
+                                    p_147424_3_[j3 += short1] = this.baseBlock2;//bedrock;
+                                }
+                                else if (k2 * 8 + l2 < b0)
+                                {
+                                    p_147424_3_[j3 += short1] = this.baseBlock;
+                                }
+                                else
+                                {
+                                    p_147424_3_[j3 += short1] = this.baseBlock3;//stone;
+                                }
                             }
 
                             d10 += d12;
