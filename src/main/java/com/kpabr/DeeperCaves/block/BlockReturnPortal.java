@@ -71,7 +71,7 @@ public class BlockReturnPortal extends BlockBase
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
         	if(player.dimension != 0)
         	{
-        	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0)));
+        	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0), true));
         	}
         	}
         	catch(ClassCastException e)

@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.DeeperFluids;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
@@ -38,8 +39,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.upperBarrierY = 102;
-        this.baseBlock2 = Blocks.air;
-        this.baseBlock3 = Blocks.air;
+        this.voidBlock = Blocks.air;
     }
 
     public void replaceBlocksForBiome(int p_147422_1_, int p_147422_2_, Block[] p_147422_3_, byte[] p_147422_4_, BiomeGenBase[] p_147422_5_)
@@ -68,7 +68,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                 for (int l1 = 255; l1 >= 0; --l1)
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
-                    int i3;
+                    /*int i3;
                     if(l1<255)
                     {
                         i3 = (j1 * 16 + i1) * k1 + (l1+1);
@@ -76,23 +76,27 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                     else
                     {
                         i3 = i2;
-                    }
+                    }*/
 
                     if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight - this.rand.nextInt(5))
                     {
                         p_147422_3_[i2] = Blocks.bedrock;
                     }
-                    if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight)
+                    else if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight)
                     {
-                        p_147422_3_[i2] = DeeperCaves.blocks.barrierLayer;
+                        p_147422_3_[i2] = DeeperBlocks.barrierLayer;
                     }
-                    if (l1 <= DeeperCaves.worldgen.bedrockPlainsFloorHeight)
+                    else if (l1 == DeeperCaves.worldgen.bedrockPlainsFloorHeight-1)
+                    {
+                        p_147422_3_[i2] = DeeperBlocks.nearNetherPortal;
+                    }
+                    else if (l1 <= DeeperCaves.worldgen.bedrockPlainsFloorHeight)
                     {
                         p_147422_3_[i2] = Blocks.bedrock;
                     }
-                    if (l1 == DeeperCaves.worldgen.bedrockPlainsFloorHeight-1)
+                    else
                     {
-                        p_147422_3_[i2] = DeeperCaves.blocks.nearNetherPortal;
+                        p_147422_3_[i2] = Blocks.air;
                     }
 
                 }
