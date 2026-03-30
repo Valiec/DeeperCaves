@@ -19,17 +19,19 @@ public class MapGenDeeperRavine extends MapGenBase
     //I forgot what these do
     public double widthFactor;
     public double heightFactor;
+    public Block fillerBlock;
 
-    public MapGenDeeperRavine(int maxY, int genRarity, double widthFactor, double heightFactor){
+    public MapGenDeeperRavine(int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock){
         super();
         this.maxY = maxY;
         this.genRarity = genRarity;
         this.widthFactor = widthFactor;
         this.heightFactor = heightFactor;
+        this.fillerBlock = fillerBlock;
     }
 
     public MapGenDeeperRavine(){
-        this(234, 13, 7.5, 5.5);
+        this(234, 13, 7.5, 5.5, Blocks.stone);
     }
 
     protected void func_151540_a(long p_151540_1_, int p_151540_3_, int p_151540_4_, Block[] p_151540_5_, double p_151540_6_, double p_151540_8_, double p_151540_10_, float p_151540_12_, float p_151540_13_, float p_151540_14_, int p_151540_15_, int p_151540_16_, double p_151540_17_, int minHeight)
@@ -280,7 +282,7 @@ public class MapGenDeeperRavine extends MapGenBase
         {
             if (y < minHeight)
             {
-                data[index] = Blocks.stone;
+                data[index] = this.fillerBlock;
             }
             else
             {

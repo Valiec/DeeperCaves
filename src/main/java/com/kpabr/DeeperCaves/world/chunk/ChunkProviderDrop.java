@@ -3,6 +3,7 @@ package com.kpabr.DeeperCaves.world.chunk;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDrop;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
 
@@ -15,7 +16,7 @@ public class ChunkProviderDrop extends ChunkProviderDeeperBase {
      * RNG.
      */
     private MapGenBase caveGenerator = new MapGenDeeperCavesDrop();
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5, Blocks.stone);
 
     {
         caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);

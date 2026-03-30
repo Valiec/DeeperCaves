@@ -4,6 +4,7 @@ import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.DeeperFluids;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
+import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineCompressed;
 
 import com.kpabr.DeeperCaves.world.gen.feature.WorldGenDeeperLakes;
@@ -27,7 +28,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
 {
     /** RNG. */
     private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
-    private MapGenBase ravineGenerator = new MapGenDeeperRavineCompressed();
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 3, 1.5, 1.0, DeeperBlocks.fragmentedBedrock);
 
     {
         caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
