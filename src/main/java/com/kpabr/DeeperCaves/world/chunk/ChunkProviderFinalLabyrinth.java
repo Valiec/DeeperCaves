@@ -14,7 +14,7 @@ import net.minecraftforge.event.terraingen.*;
 public class ChunkProviderFinalLabyrinth extends ChunkProviderDeeperBase
 {
     private MapGenBase caveGenerator = new MapGenDeeperCavesFinalLabyrinth();
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 15, 7.5, 5.5, DeeperBlocks.fragmentedBedrock);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 15, 7.5, 5.5, DeeperBlocks.fakeBedrock);
 
     {
         caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
