@@ -13,7 +13,6 @@ import net.minecraftforge.event.terraingen.*;
 
 public class ChunkProviderNearVoid extends ChunkProviderDeeperBase
 {
-    /** RNG. */
     private MapGenBase caveGenerator = new MapGenDeeperCavesNearVoid();
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(220, 13, 7.5, 3.5, Blocks.stone);
 
