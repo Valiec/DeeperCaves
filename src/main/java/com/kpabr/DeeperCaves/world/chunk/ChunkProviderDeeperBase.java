@@ -241,7 +241,9 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
 
         if (this.mapFeaturesEnabled)
         {
-            this.mineshaftGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
+            if(this.doMineshafts) {
+                this.mineshaftGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
+            }
             this.strongholdGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
             this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
         }

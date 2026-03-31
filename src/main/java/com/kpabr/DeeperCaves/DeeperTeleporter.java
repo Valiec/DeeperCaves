@@ -16,8 +16,8 @@ public class DeeperTeleporter extends Teleporter
     private final WorldServer worldServerInstance;
     private final Random random;
     public int[] ids = {DeeperCaves.worldgen.dropDimID, DeeperCaves.worldgen.mazeDimID, DeeperCaves.worldgen.crystalDimID, DeeperCaves.worldgen.compressedDimID, DeeperCaves.worldgen.bedrockPlainsDimID, DeeperCaves.worldgen.nearNetherDimID, DeeperCaves.worldgen.lavaDimID, DeeperCaves.worldgen.nearVoidDimID, DeeperCaves.worldgen.deepWorldDimID, DeeperCaves.worldgen.darknessDimID, DeeperCaves.worldgen.abandonedCavesDimID, DeeperCaves.worldgen.mutationDimID, DeeperCaves.worldgen.farVoidDimID, DeeperCaves.worldgen.forgottenDimID, DeeperCaves.worldgen.evilDimID, DeeperCaves.worldgen.finalLabyrinthDimID};
-    public int[] caps = {252, 252, 147, 97, 160, 97, 47, 256, 72, 252, 97, 0, 235, 0, 147, 252};
-    public int[] mins = {185, 185, 135, 90, 156, 90, 40, 235, 65, 185, 90, 0, 256, 0, 135, 185}; //the zeroes are placeholders
+    public int[] caps = {252, 252, 147, 97, 160, 97, 47, 244, 72, 252, 252, 97, 244, 252, 97, 252};
+    public int[] mins = {185, 185, 135, 90, 156, 90, 40, 235, 65, 185, 90, 90, 235, 185, 90, 185};
 
     public int[] capsLower = {16, 16, 16, 16, 160, 16, 16, 256, 16, 16, 16, 16, 256, 16, 16, 16};
     public int[] minsLower = {2, 2, 2, 2, 156, 2, 2, 235, 2, 2, 2, 2, 235, 2, 2, 2};
@@ -57,12 +57,13 @@ public class DeeperTeleporter extends Teleporter
             int cap = this.cap;
             if(this.worldServerInstance.provider.dimensionId == 0)
             {
-            j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
+                j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
+                cap = 255;
             }
-            else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
-            {
-            j = DeeperCaves.worldgen.bedrockPlainsFloorHeight+2;
-            }
+            //else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
+            //{
+            //j = DeeperCaves.worldgen.bedrockPlainsFloorHeight+2;
+            //}
             int k = MathHelper.floor_double(p_77185_1_.posZ);
             makePortal(p_77185_1_, cap, i, j, k);
     }
