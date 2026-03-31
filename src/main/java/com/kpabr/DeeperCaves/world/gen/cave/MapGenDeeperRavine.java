@@ -278,7 +278,7 @@ public class MapGenDeeperRavine extends MapGenBase
         Block filler = (isExceptionBiome(biome) ? Blocks.dirt  : biome.fillerBlock);
         Block block  = data[index];
 
-        if (block == Blocks.stone || block == filler || block == top)
+        if (block == Blocks.stone || block == filler || block == top || block == this.fillerBlock)
         {
             if (y < minHeight)
             {
