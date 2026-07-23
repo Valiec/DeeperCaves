@@ -17,8 +17,8 @@ public class ChunkProviderEvil extends ChunkProviderDeeperBase
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 15, 1.5, 1.0, DeeperBlocks.deepStone);
 
     {
-        caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-        ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
+        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
+        //ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }
 
     public ChunkProviderEvil(World par1World, long par2, boolean par4)

@@ -15,8 +15,8 @@ public class ChunkProviderFarVoid extends ChunkProviderDeeperBase
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(220, 13, 7.5, 3.5, DeeperBlocks.deepStone);
 
     {
-        caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-        ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
+        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
+        //ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }
 
     public ChunkProviderFarVoid(World par1World, long par2, boolean par4)

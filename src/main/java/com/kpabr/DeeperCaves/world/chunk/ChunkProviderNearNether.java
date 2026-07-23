@@ -15,8 +15,8 @@ public class ChunkProviderNearNether extends ChunkProviderDeeperBase
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 3, 1.5, 1.0, Blocks.stone);
 
     {
-        caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-        ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
+        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
+        //ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }
 
     public ChunkProviderNearNether(World par1World, long par2, boolean par4)

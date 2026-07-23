@@ -15,8 +15,8 @@ public class ChunkProviderLava extends ChunkProviderDeeperBase
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 30, 7.5, 5.5, Blocks.stone);
 
     {
-        caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-        ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
+        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
+        //ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }
 
     public ChunkProviderLava(World par1World, long par2, boolean par4)

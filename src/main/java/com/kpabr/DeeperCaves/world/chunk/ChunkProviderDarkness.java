@@ -21,8 +21,8 @@ public class ChunkProviderDarkness extends ChunkProviderDeeperBase
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5, DeeperBlocks.darkStone);
 
     {
-        caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-        ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
+        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
+        //ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }
 
     public ChunkProviderDarkness(World par1World, long par2, boolean par4)
