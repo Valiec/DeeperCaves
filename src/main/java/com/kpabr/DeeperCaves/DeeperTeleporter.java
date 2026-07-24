@@ -57,7 +57,7 @@ public class DeeperTeleporter extends Teleporter
             int cap = this.cap;
             if(this.worldServerInstance.provider.dimensionId == 0)
             {
-                j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock((p_77185_1_.serverPosX), p_77185_1_.serverPosZ)) - 1;
+                j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(((int)p_77185_1_.posX), (int)p_77185_1_.posZ)) - 1;
                 cap = 255;
             }
             //else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
