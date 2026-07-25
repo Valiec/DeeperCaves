@@ -2131,7 +2131,7 @@ public class CaveVillage018
 		world.setBlock(x + 41, y + 3, z + 66, Blocks.air, 0, 3);
 		world.setBlock(x + 40, y + 3, z + 66, Blocks.air, 0, 3);
 		world.setBlock(x + 25, y + 3, z + 66, DeeperBlocks.abandonedStone, 0, 3);
-		world.setBlock(x + 24, y + 3, z + 66, Blocks.wooden_pressure_plate, 0, 3);
+		world.setBlock(x + 24, y + 3, z + 66, DeeperBlocks.rottenPressurePlate, 0, 3);
 		world.setBlock(x + 22, y + 3, z + 66, DeeperBlocks.abandonedStone, 0, 3);
 		world.setBlock(x + 71, y + 3, z + 65, DeeperBlocks.abandonedStoneBrick, 0, 3);
 		world.setBlock(x + 70, y + 3, z + 65, DeeperBlocks.abandonedStoneBrick, 0, 3);
@@ -2250,8 +2250,8 @@ public class CaveVillage018
 		world.setBlock(x + 59, y + 3, z + 61, Blocks.air, 0, 3);
 		world.setBlock(x + 58, y + 3, z + 61, Blocks.air, 0, 3);
 		world.setBlock(x + 57, y + 3, z + 61, Blocks.air, 0, 3);
-		world.setBlock(x + 56, y + 3, z + 61, Blocks.wooden_pressure_plate, 0, 3);
-		world.setBlock(x + 55, y + 3, z + 61, Blocks.wooden_pressure_plate, 0, 3);
+		world.setBlock(x + 56, y + 3, z + 61, DeeperBlocks.rottenPressurePlate, 0, 3);
+		world.setBlock(x + 55, y + 3, z + 61, DeeperBlocks.rottenPressurePlate, 0, 3);
 		world.setBlock(x + 54, y + 3, z + 61, Blocks.air, 0, 3);
 		world.setBlock(x + 52, y + 3, z + 61, DeeperBlocks.abandonedStoneBrick, 0, 3);
 		world.setBlock(x + 42, y + 3, z + 61, Blocks.air, 0, 3);
@@ -2296,8 +2296,8 @@ public class CaveVillage018
 		world.setBlock(x + 59, y + 3, z + 60, Blocks.air, 0, 3);
 		world.setBlock(x + 58, y + 3, z + 60, Blocks.air, 0, 3);
 		world.setBlock(x + 57, y + 3, z + 60, Blocks.air, 0, 3);
-		world.setBlock(x + 56, y + 3, z + 60, Blocks.wooden_pressure_plate, 0, 3);
-		world.setBlock(x + 55, y + 3, z + 60, Blocks.wooden_pressure_plate, 0, 3);
+		world.setBlock(x + 56, y + 3, z + 60, DeeperBlocks.rottenPressurePlate, 0, 3);
+		world.setBlock(x + 55, y + 3, z + 60, DeeperBlocks.rottenPressurePlate, 0, 3);
 		world.setBlock(x + 54, y + 3, z + 60, Blocks.air, 0, 3);
 		world.setBlock(x + 53, y + 3, z + 60, Blocks.air, 0, 3);
 		world.setBlock(x + 52, y + 3, z + 60, DeeperBlocks.rustedBars, 0, 3);

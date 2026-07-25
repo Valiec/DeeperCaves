@@ -817,7 +817,7 @@ public class CaveVillage026
 		world.setBlock(x + 29, y + 3, z + 89, Blocks.air, 0, 3);
 		world.setBlock(x + 29, y + 3, z + 91, Blocks.air, 0, 3);
 		world.setBlock(x + 29, y + 3, z + 92, Blocks.air, 0, 3);
-		world.setBlock(x + 29, y + 3, z + 93, Blocks.wooden_pressure_plate, 0, 3);
+		world.setBlock(x + 29, y + 3, z + 93, DeeperBlocks.rottenPressurePlate, 0, 3);
 		world.setBlock(x + 29, y + 3, z + 94, DeeperBlocks.abandonedStone, 0, 3);
 		world.setBlock(x + 28, y + 3, z + 4, DeeperBlocks.abandonedStone, 0, 3);
 		world.setBlock(x + 28, y + 3, z + 5, DeeperBlocks.abandonedStone, 0, 3);
