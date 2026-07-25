@@ -531,7 +531,7 @@ public class DeeperBlocks {
         
         DeeperBlocks.abandonedStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone").setBlockName("abandonedCavesStone").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
 
-        DeeperBlocks.abandonedStoneBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone_brick").setBlockName("abandonedCavesStoneBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
+        DeeperBlocks.abandonedStoneBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone_brick").setBlockName("abandonedStoneBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
 
         DeeperBlocks.deepStone = new BlockDeepStone().setBlockTextureName("deepercaves:deep_stone").setBlockName("deepStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
         
@@ -585,7 +585,7 @@ public class DeeperBlocks {
         DeeperBlocks.robustiumRaw = new BlockBase(Material.rock).setBlockTextureName("deepercaves:raw_robustium").setBlockName("robustiumRaw").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
         DeeperBlocks.abandonedStoneStairs = new BlockStairsBase(DeeperBlocks.abandonedStone, 0).setBlockName("abandonedCavesStoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
-        DeeperBlocks.abandonedStoneBrickStairs = new BlockStairsBase(DeeperBlocks.abandonedStoneBrick, 0).setBlockName("abandonedCavesStoneBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.abandonedStoneBrickStairs = new BlockStairsBase(DeeperBlocks.abandonedStoneBrick, 0).setBlockName("abandonedStoneBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
     }

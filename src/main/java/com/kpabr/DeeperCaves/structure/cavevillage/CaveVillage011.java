@@ -1065,7 +1065,7 @@ public class CaveVillage011
 		world.setBlock(x + 29, y + 2, z + 44, Blocks.air, 0, 3);
 		world.setBlock(x + 29, y + 2, z + 43, Blocks.air, 0, 3);
 		world.setBlock(x + 29, y + 2, z + 42, Blocks.air, 0, 3);
-		world.setBlock(x + 29, y + 2, z + 41, DeeperBlocks.abandonedCavesStoneBrick, 0, 3);
+		world.setBlock(x + 29, y + 2, z + 41, DeeperBlocks.abandonedStoneBrick, 0, 3);
 		world.setBlock(x + 29, y + 2, z + 40, Blocks.air, 0, 3);
 		world.setBlock(x + 29, y + 2, z + 39, Blocks.air, 0, 3);
 		world.setBlock(x + 29, y + 2, z + 38, Blocks.air, 0, 3);
