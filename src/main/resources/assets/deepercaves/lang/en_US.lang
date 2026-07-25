@@ -192,6 +192,9 @@ tile.rotten_planks.name=Rotten Planks
 tile.rotten_door.name=Rotten Door
 tile.rotten_trapdoor.name=Rotten Trapdoor
 tile.rotten_ladder.name=Rotten Ladder
+tile.rotten_fence.name=Rotten Fence
+tile.rotten_pressure_plate.name=Rotten Pressure Plate
+
 tile.rusted_iron_bars.name=Rusty Iron Bars
 
 tile.incendite_ore.name=Incendite Ore

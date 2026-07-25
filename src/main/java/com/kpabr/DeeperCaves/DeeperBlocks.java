@@ -5,6 +5,7 @@ import com.kpabr.DeeperCaves.block.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
+import net.minecraft.block.BlockPressurePlate;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -168,6 +169,9 @@ public class DeeperBlocks {
     public static Block rottenDoor;
     public static Block rottenTrapdoor;
     public static Block rottenLadder;
+
+    public static Block rottenFence;
+    public static Block rottenPressurePlate;
     
     public static Block rustedBars;
 
@@ -329,6 +333,9 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.rottenDoor, "rotten_door");
         GameRegistry.registerBlock(DeeperBlocks.rottenTrapdoor, "rotten_trapdoor");
         GameRegistry.registerBlock(DeeperBlocks.rottenLadder, "rotten_ladder");
+
+        GameRegistry.registerBlock(DeeperBlocks.rottenFence, "rotten_fence");
+        GameRegistry.registerBlock(DeeperBlocks.rottenPressurePlate, "rotten_pressure_plate");
 
 
         GameRegistry.registerBlock(DeeperBlocks.rustedBars, "rusted_iron_bars");
@@ -587,6 +594,9 @@ public class DeeperBlocks {
         DeeperBlocks.rottenDoor = new BlockDoorBase(Material.wood).setBlockTextureName("deepercaves:rotting_door").setBlockName("rotten_door").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F);
         DeeperBlocks.rottenTrapdoor = new BlockTrapdoorBase(Material.wood).setBlockTextureName("deepercaves:rotting_trapdoor").setBlockName("rotten_trapdoor").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.rottenLadder = new BlockLadderBase(Material.wood).setBlockTextureName("deepercaves:rotting_ladder").setBlockName("rotten_ladder").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.rottenFence = new BlockFenceBase("deepercaves:rotting_planks", Material.wood).setBlockName("rotten_fence").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rottenPressurePlate = new BlockPressurePlateBase("deepercaves:rotting_planks", Material.wood, BlockPressurePlate.Sensitivity.everything).setBlockName("rotten_pressure_plate").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
         DeeperBlocks.rustedBars = new BlockRustedBars("deepercaves:rusty_bars", "deepercaves:rusty_bars", Material.iron, true).setBlockTextureName("deepercaves:rusty_bars").setBlockName("rusted_iron_bars").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
