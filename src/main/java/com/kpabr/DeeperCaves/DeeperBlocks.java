@@ -1,25 +1,10 @@
 package com.kpabr.DeeperCaves;
 
-import com.kpabr.DeeperCaves.block.BlockAmetrine;
-import com.kpabr.DeeperCaves.block.BlockBase;
-import com.kpabr.DeeperCaves.block.BlockCompressedOre;
-import com.kpabr.DeeperCaves.block.BlockCompressedRedstoneOre;
-import com.kpabr.DeeperCaves.block.BlockCryingObsidian;
-import com.kpabr.DeeperCaves.block.BlockCrystal;
-import com.kpabr.DeeperCaves.block.BlockDeepStone;
-import com.kpabr.DeeperCaves.block.BlockDeeperPortal;
-import com.kpabr.DeeperCaves.block.BlockFakeBedrock;
-import com.kpabr.DeeperCaves.block.BlockFragmentedBedrock;
-import com.kpabr.DeeperCaves.block.BlockFragmentedBedrockOre;
-import com.kpabr.DeeperCaves.block.BlockMagmaStone;
-import com.kpabr.DeeperCaves.block.BlockOreBase;
-import com.kpabr.DeeperCaves.block.BlockProfundium;
-import com.kpabr.DeeperCaves.block.BlockReturnPortal;
-import com.kpabr.DeeperCaves.block.BlockVanillaOre;
-import com.kpabr.DeeperCaves.block.BlockVanillaRedstoneOre;
+import com.kpabr.DeeperCaves.block.*;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.oredict.OreDictionary;
@@ -130,6 +115,10 @@ public class DeeperBlocks {
     public static Block vesperiteOre;
     
     public static Block abandonedStone;
+    public static Block abandonedStoneBrick;
+
+    public static Block abandonedStoneStairs;
+    public static Block abandonedStoneBrickStairs;
     
     public static Block deepStone;
     
@@ -275,6 +264,10 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.vesperiteOre, "vesperite_ore");
         
         GameRegistry.registerBlock(DeeperBlocks.abandonedStone, "abandoned_stone");
+        GameRegistry.registerBlock(DeeperBlocks.abandonedStoneBrick, "abandoned_stone_brick");
+
+        GameRegistry.registerBlock(DeeperBlocks.abandonedStoneStairs, "abandoned_stone_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.abandonedStoneBrickStairs, "abandoned_stone_brick_stairs");
         
         GameRegistry.registerBlock(DeeperBlocks.deepStone, "deep_stone");
         
@@ -537,7 +530,9 @@ public class DeeperBlocks {
         DeeperBlocks.vesperiteOre = new BlockOreBase(Material.rock, DeeperItems.vesperiteGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:vesperite_ore").setBlockName("vesperiteOre").setHardness(9.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
         DeeperBlocks.abandonedStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone").setBlockName("abandonedCavesStone").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
-        
+
+        DeeperBlocks.abandonedStoneBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone_brick").setBlockName("abandonedCavesStoneBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
+
         DeeperBlocks.deepStone = new BlockDeepStone().setBlockTextureName("deepercaves:deep_stone").setBlockName("deepStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
         
         DeeperBlocks.cooledObsidian = new BlockBase(Material.rock).setBlockTextureName("deepercaves:cooled_obsidian").setBlockName("cooledObsidian").setHardness(85.0F).setResistance(8000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
@@ -588,6 +583,10 @@ public class DeeperBlocks {
         DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:priscium_ore").setBlockName("priscium_ore").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
         DeeperBlocks.robustiumRaw = new BlockBase(Material.rock).setBlockTextureName("deepercaves:raw_robustium").setBlockName("robustiumRaw").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.abandonedStoneStairs = new BlockStairsBase(DeeperBlocks.abandonedStone, 0).setBlockName("abandonedCavesStoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
+        DeeperBlocks.abandonedStoneBrickStairs = new BlockStairsBase(DeeperBlocks.abandonedStoneBrick, 0).setBlockName("abandonedCavesStoneBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
 
     }
     public void setupHarvestLevels()
@@ -658,6 +657,9 @@ public class DeeperBlocks {
         
         DeeperBlocks.darkStone.setHarvestLevel("pickaxe", 1);
         DeeperBlocks.abandonedStone.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.abandonedStoneBrick.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.abandonedStoneStairs.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.abandonedStoneBrickStairs.setHarvestLevel("pickaxe", 1);
         DeeperBlocks.deepStone.setHarvestLevel("pickaxe", 2);
         
         DeeperBlocks.cryingObsidian.setHarvestLevel("pickaxe", 3);
