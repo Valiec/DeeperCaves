@@ -33,6 +33,9 @@ public class DeeperTeleporter extends Teleporter
         this.isLower = isLower;
         this.worldServerInstance = p_i1963_1_;
         this.random = new Random(p_i1963_1_.getSeed());
+
+        this.handleBedrockPlainsConfig();
+
         for(int i = 0; i<ids.length; i++)
         {
         	if(this.worldServerInstance.provider.dimensionId == ids[i])
@@ -43,6 +46,20 @@ public class DeeperTeleporter extends Teleporter
         		break;
         	}
         }
+    }
+
+    public void handleBedrockPlainsConfig() {
+        int cap = DeeperCaves.worldgen.bedrockPlainsFloorHeight+5;
+        int min = DeeperCaves.worldgen.bedrockPlainsFloorHeight+1;
+
+        int capLower = DeeperCaves.worldgen.bedrockPlainsFloorHeight+5;
+        int minLower = DeeperCaves.worldgen.bedrockPlainsFloorHeight+1;
+
+        caps[4] = cap;
+        mins[4] = min;
+
+        capsLower[4] = capLower;
+        minsLower[4] = minLower;
     }
 
     /**
