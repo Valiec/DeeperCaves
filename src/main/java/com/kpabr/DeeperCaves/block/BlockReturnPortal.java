@@ -89,7 +89,7 @@ public class BlockReturnPortal extends BlockBase
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister p_149651_1_)
     {
-    	this.blockIcon = p_149651_1_.registerIcon("deepercaves:portal_2");
+    	this.blockIcon = p_149651_1_.registerIcon("deepercaves:portal_3");
     }
 
     public MapColor getMapColor(int p_149728_1_)
