@@ -189,4 +189,7 @@ tile.ruby_block.name=Ruby Block
 tile.magma_stone.name=Magma Stone
 
 tile.rotten_planks.name=Rotten Planks
+tile.rotten_door.name=Rotten Door
+tile.rotten_trapdoor.name=Rotten Trapdoor
+tile.rotten_ladder.name=Rotten Ladder
 tile.rusted_iron_bars.name=Rusty Iron Bars
