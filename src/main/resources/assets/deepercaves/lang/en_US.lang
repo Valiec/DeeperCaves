@@ -67,9 +67,9 @@ tile.fragmentedCobble.name=Fragmented Cobblestone
 tile.barrierLayer.name=Level Barrier
 tile.darkStone.name=Dark Stone
 tile.abandonedCavesStone.name=Abandoned Caves Stone
-tile.abandonedCavesStoneBrick.name=Abandoned Caves Stone Brick
+tile.abandonedStoneBrick.name=Abandoned Caves Stone Brick
 tile.abandonedCavesStoneStairs.name=Abandoned Caves Stone Stairs
-tile.abandonedCavesStoneBrickStairs.name=Abandoned Caves Stone Brick Stairs
+tile.abandonedStoneBrickStairs.name=Abandoned Caves Stone Brick Stairs
 tile.vesperiteOre.name=Vesperite Ore
 tile.vesperiteBlock.name=Block of Vesperite
 tile.deepStone.name=Deep Stone
@@ -193,3 +193,15 @@ tile.rotten_door.name=Rotten Door
 tile.rotten_trapdoor.name=Rotten Trapdoor
 tile.rotten_ladder.name=Rotten Ladder
 tile.rusted_iron_bars.name=Rusty Iron Bars
+
+tile.incendite_ore.name=Incendite Ore
+tile.priscium_ore.name=Incendite Ore
+tile.robustiumRaw.name=Raw Robustium
+
+
+item.prisciumIngot.name=Tenebrium Ingot
+item.robustiumIngot.name=Tenebrium Ingot
+
+item.incenditeGem.name=Incendite Gem
+
+item.rottenDoor.name=Rotten Door
