@@ -122,6 +122,22 @@ entity.deepSkeleton.name=Deep World Skeleton
 entity.deepZombie.name=Deep World Zombie
 
 tile.dropPortal.name=Drop Portal
+tile.mazePortal.name=Maze Portal
+tile.crystalPortal.name=Crystal Portal
+tile.compressedPortal.name=Compressed Portal
+tile.bedrockPlainsPortal.name=Bedrock Plains Portal
+tile.nearNetherPortal.name=Near Nether Portal
+tile.lavaPortal.name=Lava Portal
+tile.nearVoidPortal.name=Near Void Portal
+tile.deepWorldPortal.name=Deep World Portal
+tile.darknessPortal.name=Darkness Portal
+tile.abandonedCavesPortal.name=Abandoned Caves Portal
+tile.mutationPortal.name=Mutation Portal
+tile.farVoidPortal.name=Far Void Portal
+tile.forgottenPortal.name=Forgotten Portal
+tile.evilPortal.name=Evil Portal
+tile.finalLabyrinthPortal.name=Final Labyrinth Portal
+tile.returnPortal.name=Return Portal
 
 item.fragmentedBedrockBucketMoltenIron.name=Fragmented Bedrock Bucket of Molten Iron
 item.fragmentedBedrockBucketLava.name=Fragmented Bedrock Bucket of Lava

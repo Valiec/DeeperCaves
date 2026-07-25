@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves.block;
 
+import com.kpabr.DeeperCaves.DeeperCaves;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -32,6 +33,7 @@ public class BlockReturnPortal extends BlockBase
     {
         super(p_i45404_1_);
         this.setLightLevel(1.0F);
+        this.setCreativeTab(DeeperCaves.tabDeeperCaves);
         
     }
 

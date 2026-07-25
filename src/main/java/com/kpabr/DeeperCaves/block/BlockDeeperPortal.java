@@ -36,6 +36,7 @@ public class BlockDeeperPortal extends BlockBase
         super(p_i45404_1_);
         this.setLightLevel(1.0F);
         this.dim = dimension;
+        this.setCreativeTab(DeeperCaves.tabDeeperCaves);
         
     }
 
