@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves.block;
 
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 
 import cpw.mods.fml.relauncher.Side;
@@ -36,7 +37,7 @@ public class BlockDeepStone extends BlockBase {
 	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return Item.getItemFromBlock(DeeperCaves.blocks.deepCobble);
+        return Item.getItemFromBlock(DeeperBlocks.deepCobble);
     }
 
 }

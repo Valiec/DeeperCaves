@@ -4,6 +4,7 @@ package com.kpabr.DeeperCaves.structure.cavevillage;
 
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 
 import net.minecraft.block.Block;
@@ -20,7 +21,7 @@ public class CaveVillage extends WorldGenerator
 	{
 		return new Block[]
 		{
-			DeeperCaves.blocks.abandonedStone,
+			DeeperBlocks.abandonedStone,
 		};
 	}
 

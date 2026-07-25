@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves.block;
 
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 
 import cpw.mods.fml.relauncher.Side;
@@ -48,7 +49,7 @@ public class BlockFragmentedBedrock extends BlockBase {
 		ItemStack item = p_149727_5_.getCurrentEquippedItem();
 		if(item != null && item.getItem() == DeeperCaves.items.forgottenGemstone)
 		{
-			p_149727_1_.setBlock(p_149727_2_, p_149727_3_, p_149727_4_, DeeperCaves.blocks.returnPortal);
+			p_149727_1_.setBlock(p_149727_2_, p_149727_3_, p_149727_4_, DeeperBlocks.returnPortal);
 			item.stackSize--;
 			if(item.stackSize == 0)
 			{

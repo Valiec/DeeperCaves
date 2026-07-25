@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves.world.biome;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -35,7 +36,7 @@ public class BiomeGenFinalLabyrinth extends BiomeGenBase
         this.theBiomeDecorator.grassPerChunk = 0;
         this.theBiomeDecorator.flowersPerChunk = 0;
         this.theBiomeDecorator.generateLakes = true;
-        this.fillerBlock = DeeperCaves.blocks.fragmentedBedrock;
+        this.fillerBlock = DeeperBlocks.fragmentedBedrock;
         this.rainfall = 0.68F;
 
     }

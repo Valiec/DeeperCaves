@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves.world.biome;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -37,7 +38,7 @@ public class BiomeGenForgotten extends BiomeGenBase
         this.theBiomeDecorator.flowersPerChunk = 0;
         this.theBiomeDecorator.generateLakes = true;
         this.rainfall = 0.68F;
-        this.fillerBlock = DeeperCaves.blocks.deepStone;
+        this.fillerBlock = DeeperBlocks.deepStone;
 
     }
 }

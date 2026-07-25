@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves.world.gen.cave;
 
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 
 import net.minecraft.block.Block;
@@ -286,7 +287,7 @@ public class MapGenDeeperCavesFarVoid extends MapGenBase
         Block filler = (isExceptionBiome(biome) ? Blocks.dirt  : biome.fillerBlock);
         Block block  = data[index];
 
-        if (block == DeeperCaves.blocks.deepStone || block == filler || block == top)
+        if (block == DeeperBlocks.deepStone || block == filler || block == top)
         {
             //if (y < 10)
             //{

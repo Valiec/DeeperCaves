@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves.world.gen.cave;
 
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 
 import net.minecraft.block.Block;
@@ -261,7 +262,7 @@ public class MapGenDeeperCavesFinalLabyrinth extends MapGenBase
     private boolean isTopBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
     {
         BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
-        return data[index] == DeeperCaves.blocks.fragmentedBedrock;//(isExceptionBiome(biome) ? data[index] == Blocks.grass : data[index] == biome.topBlock);
+        return data[index] == DeeperBlocks.fragmentedBedrock;//(isExceptionBiome(biome) ? data[index] == Blocks.grass : data[index] == biome.topBlock);
     }
 
     /**
@@ -286,7 +287,7 @@ public class MapGenDeeperCavesFinalLabyrinth extends MapGenBase
         Block filler = (isExceptionBiome(biome) ? Blocks.dirt  : biome.fillerBlock);
         Block block  = data[index];
 
-        if (block == Blocks.stone || block == filler || block == top || block == DeeperCaves.blocks.fakeBedrock)
+        if (block == Blocks.stone || block == filler || block == top || block == DeeperBlocks.fakeBedrock)
         {
             //if (y < 10)
             //{
@@ -298,8 +299,8 @@ public class MapGenDeeperCavesFinalLabyrinth extends MapGenBase
 
                 //if (foundTop && data[index - 1] != null && data[index - 1] != Blocks.air && data[index - 1] != Blocks.gold_block)
                 //{
-                    data[index - 1] = DeeperCaves.blocks.fakeBedrock;
-                    if(data[index+1] == DeeperCaves.blocks.fakeBedrock)
+                    data[index - 1] = DeeperBlocks.fakeBedrock;
+                    if(data[index+1] == DeeperBlocks.fakeBedrock)
                     {
                     	data[index+1] = null;
                     }
