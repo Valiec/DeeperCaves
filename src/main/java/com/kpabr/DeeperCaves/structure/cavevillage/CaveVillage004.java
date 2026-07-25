@@ -2541,16 +2541,16 @@ public class CaveVillage004
 		world.setBlock(x + 61, y + 3, z + 28, Blocks.air, 0, 3);
 		world.setBlock(x + 62, y + 3, z + 28, Blocks.air, 0, 3);
 		world.setBlock(x + 63, y + 3, z + 28, Blocks.air, 0, 3);
-		world.setBlock(x + 48, y + 2, z + 54, Blocks.wooden_door, 1, 3);
-		world.setBlock(x + 73, y + 3, z + 7, Blocks.wooden_door, 8, 3);
-		world.setBlock(x + 36, y + 3, z + 12, Blocks.wooden_door, 8, 3);
-		world.setBlock(x + 73, y + 2, z + 7, Blocks.wooden_door, 0, 3);
-		world.setBlock(x + 36, y + 2, z + 12, Blocks.wooden_door, 1, 3);
-		world.setBlock(x + 72, y + 2, z + 32, Blocks.wooden_door, 2, 3);
-		world.setBlock(x + 18, y + 2, z + 35, Blocks.wooden_door, 3, 3);
-		world.setBlock(x + 41, y + 2, z + 36, Blocks.wooden_door, 1, 3);
-		world.setBlock(x + 90, y + 2, z + 41, Blocks.wooden_door, 1, 3);
-		world.setBlock(x + 54, y + 2, z + 49, Blocks.wooden_door, 2, 3);
+		world.setBlock(x + 48, y + 2, z + 54, DeeperBlocks.rottenDoor, 1, 3);
+		world.setBlock(x + 73, y + 3, z + 7, DeeperBlocks.rottenDoor, 8, 3);
+		world.setBlock(x + 36, y + 3, z + 12, DeeperBlocks.rottenDoor, 8, 3);
+		world.setBlock(x + 73, y + 2, z + 7, DeeperBlocks.rottenDoor, 0, 3);
+		world.setBlock(x + 36, y + 2, z + 12, DeeperBlocks.rottenDoor, 1, 3);
+		world.setBlock(x + 72, y + 2, z + 32, DeeperBlocks.rottenDoor, 2, 3);
+		world.setBlock(x + 18, y + 2, z + 35, DeeperBlocks.rottenDoor, 3, 3);
+		world.setBlock(x + 41, y + 2, z + 36, DeeperBlocks.rottenDoor, 1, 3);
+		world.setBlock(x + 90, y + 2, z + 41, DeeperBlocks.rottenDoor, 1, 3);
+		world.setBlock(x + 54, y + 2, z + 49, DeeperBlocks.rottenDoor, 2, 3);
 
 		new CaveVillage005().generate_r00(world, rand, x, y, z);
 		return true;

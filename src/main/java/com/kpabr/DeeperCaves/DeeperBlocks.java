@@ -4,6 +4,7 @@ import com.kpabr.DeeperCaves.block.*;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -164,6 +165,9 @@ public class DeeperBlocks {
     public static Block magmaStone;
     
     public static Block rottenPlanks;
+    public static Block rottenDoor;
+    public static Block rottenTrapdoor;
+    public static Block rottenLadder;
     
     public static Block rustedBars;
 
@@ -322,6 +326,11 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.crubyOre, "compressed_ruby_ore");
         
         GameRegistry.registerBlock(DeeperBlocks.rottenPlanks, "rotten_planks");
+        GameRegistry.registerBlock(DeeperBlocks.rottenDoor, "rotten_door");
+        GameRegistry.registerBlock(DeeperBlocks.rottenTrapdoor, "rotten_trapdoor");
+        GameRegistry.registerBlock(DeeperBlocks.rottenLadder, "rotten_ladder");
+
+
         GameRegistry.registerBlock(DeeperBlocks.rustedBars, "rusted_iron_bars");
 
         GameRegistry.registerBlock(DeeperBlocks.incenditeOre, "incendite_ore");
@@ -575,7 +584,11 @@ public class DeeperBlocks {
         DeeperBlocks.magmaStone = new BlockMagmaStone(Material.rock).setBlockTextureName("deepercaves:magma_stone").setBlockName("magma_stone").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         DeeperBlocks.rottenPlanks = new BlockBase(Material.wood).setBlockTextureName("deepercaves:rotting_planks").setBlockName("rotten_planks").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        
+        DeeperBlocks.rottenDoor = new BlockDoorBase(Material.wood).setBlockTextureName("deepercaves:rotting_door").setBlockName("rotten_door").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F);
+        DeeperBlocks.rottenTrapdoor = new BlockTrapdoorBase(Material.wood).setBlockTextureName("deepercaves:rotting_trapdoor").setBlockName("rotten_trapdoor").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rottenLadder = new BlockLadderBase(Material.wood).setBlockTextureName("deepercaves:rotting_ladder").setBlockName("rotten_ladder").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+
         DeeperBlocks.rustedBars = new BlockRustedBars("deepercaves:rusty_bars", "deepercaves:rusty_bars", Material.iron, true).setBlockTextureName("deepercaves:rusty_bars").setBlockName("rusted_iron_bars").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
         DeeperBlocks.incenditeOre = new BlockOreBase(Material.rock, DeeperItems.incenditeGem, 1, 0, true, 3, 6).setBlockTextureName("deepercaves:incendite_ore").setBlockName("incendite_ore").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);

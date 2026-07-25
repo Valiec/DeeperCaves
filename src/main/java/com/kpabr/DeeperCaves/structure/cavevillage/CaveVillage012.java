@@ -2447,12 +2447,12 @@ public class CaveVillage012
 		world.setBlock(x + 27, y + 5, z + 37, Blocks.air, 0, 3);
 		world.setBlock(x + 28, y + 5, z + 45, Blocks.air, 0, 3);
 		world.setBlock(x + 28, y + 5, z + 44, Blocks.air, 0, 3);
-		world.setBlock(x + 32, y + 3, z + 25, Blocks.wooden_door, 8, 3);
-		world.setBlock(x + 35, y + 3, z + 79, Blocks.wooden_door, 8, 3);
-		world.setBlock(x + 36, y + 3, z + 56, Blocks.wooden_door, 8, 3);
-		world.setBlock(x + 41, y + 3, z + 7, Blocks.wooden_door, 8, 3);
-		world.setBlock(x + 49, y + 3, z + 43, Blocks.wooden_door, 8, 3);
-		world.setBlock(x + 54, y + 3, z + 49, Blocks.wooden_door, 8, 3);
+		world.setBlock(x + 32, y + 3, z + 25, DeeperBlocks.rottenDoor, 8, 3);
+		world.setBlock(x + 35, y + 3, z + 79, DeeperBlocks.rottenDoor, 8, 3);
+		world.setBlock(x + 36, y + 3, z + 56, DeeperBlocks.rottenDoor, 8, 3);
+		world.setBlock(x + 41, y + 3, z + 7, DeeperBlocks.rottenDoor, 8, 3);
+		world.setBlock(x + 49, y + 3, z + 43, DeeperBlocks.rottenDoor, 8, 3);
+		world.setBlock(x + 54, y + 3, z + 49, DeeperBlocks.rottenDoor, 8, 3);
 
 		new CaveVillage013().generate_r10(world, rand, x, y, z);
 		return true;

@@ -1,21 +1,13 @@
 package com.kpabr.DeeperCaves;
 
-import com.kpabr.DeeperCaves.item.ItemAxeBase;
-import com.kpabr.DeeperCaves.item.ItemBase;
-import com.kpabr.DeeperCaves.item.ItemCrystal;
-import com.kpabr.DeeperCaves.item.ItemForgottenCharm;
-import com.kpabr.DeeperCaves.item.ItemFragmentedBedrockBucket;
-import com.kpabr.DeeperCaves.item.ItemHoeBase;
-import com.kpabr.DeeperCaves.item.ItemPickaxeBase;
-import com.kpabr.DeeperCaves.item.ItemSpadeBase;
-import com.kpabr.DeeperCaves.item.ItemSwordBase;
-import com.kpabr.DeeperCaves.item.ItemVeneniumBucket;
-import com.kpabr.DeeperCaves.item.ItemVoidCharm;
+import com.kpabr.DeeperCaves.item.*;
 
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemDoor;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -91,6 +83,8 @@ public class DeeperItems {
     public static Item robustiumIngot;
 
     public static Item prisciumIngot;
+
+    public static Item rottenDoor;
 
     /*Tool and Armor Material declarations*/
     static ToolMaterial AmetrineD = EnumHelper.addToolMaterial("AMETRINE_D", 4, 1561, 14.0F, 3.0F, 10);
@@ -188,6 +182,8 @@ public class DeeperItems {
         GameRegistry.registerItem(prisciumIngot, "priscium_ingot");
         GameRegistry.registerItem(robustiumIngot, "robustium_ingot");
         GameRegistry.registerItem(incenditeGem, "incendite_gem");
+
+        GameRegistry.registerItem(rottenDoor, "rotten_door_item");
     }
     
     public void registerItemsOreDict()
@@ -286,6 +282,8 @@ public class DeeperItems {
         incenditeGem = new ItemBase().setTextureName("deepercaves:incendite_gem").setUnlocalizedName("incenditeGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         prisciumIngot = new ItemBase().setTextureName("deepercaves:priscium_ingot").setUnlocalizedName("prisciumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         robustiumIngot = new ItemBase().setTextureName("deepercaves:robustium_ingot").setUnlocalizedName("robustiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        rottenDoor = new ItemRottenDoor(Material.wood).setTextureName("deepercaves:rotting_door").setUnlocalizedName("rottenDoor").setCreativeTab(DeeperCaves.tabDeeperCaves);
 
     }
 }
