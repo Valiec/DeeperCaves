@@ -74,7 +74,7 @@ public class DeeperTeleporter extends Teleporter
             int cap = this.cap;
             if(this.worldServerInstance.provider.dimensionId == 0)
             {
-                j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(((int)p_77185_1_.posX), (int)p_77185_1_.posZ)) - 1;
+                j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(((int)p_77185_1_.posX), (int)p_77185_1_.posZ));
                 cap = 255;
             }
             //else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
@@ -86,7 +86,7 @@ public class DeeperTeleporter extends Teleporter
     }
     public void makePortal(Entity entity, int cap, int i, int j, int k)
     {
-        byte b0 = 16;
+        byte b0 = 32;
 
         int min = j;
 
@@ -105,11 +105,11 @@ public class DeeperTeleporter extends Teleporter
                 {
                     if(this.worldServerInstance.getBlock(testX, testY-1, testZ) != Blocks.air &&
                             this.worldServerInstance.getBlock(testX, testY, testZ) == Blocks.air &&
-                            this.worldServerInstance.getBlock(testX, testY+1, testZ) != Blocks.air)
+                            this.worldServerInstance.getBlock(testX, testY+1, testZ) == Blocks.air)
                     {
-                        baseX = i;
-                        baseY = j;
-                        baseZ = k;
+                        baseX = testX;
+                        baseY = testY;
+                        baseZ = testZ;
                         break;
                     }
                 }
