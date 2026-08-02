@@ -25,14 +25,22 @@ public class DeeperTeleporter extends Teleporter
     public int min;
     public int cap;
     public boolean isLower;
+    public boolean isReturnPortal;
     public Block stone;
 
-	public DeeperTeleporter(WorldServer p_i1963_1_, boolean isLower)
+    public DeeperTeleporter(WorldServer worldServer, boolean isLower, boolean isReturnPortal)
     {
-        super(p_i1963_1_);
+        this(worldServer, isLower);
+        this.isReturnPortal = isReturnPortal;
+    }
+
+	public DeeperTeleporter(WorldServer worldServer, boolean isLower)
+    {
+        super(worldServer);
         this.isLower = isLower;
-        this.worldServerInstance = p_i1963_1_;
-        this.random = new Random(p_i1963_1_.getSeed());
+        this.isReturnPortal = false;
+        this.worldServerInstance = worldServer;
+        this.random = new Random(worldServer.getSeed());
 
         this.handleBedrockPlainsConfig();
 
@@ -74,8 +82,14 @@ public class DeeperTeleporter extends Teleporter
             int cap = this.cap;
             if(this.worldServerInstance.provider.dimensionId == 0)
             {
-                j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(((int)p_77185_1_.posX), (int)p_77185_1_.posZ));
-                cap = 255;
+                if(this.isReturnPortal) {
+                    j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(((int) p_77185_1_.posX), (int) p_77185_1_.posZ));
+                    cap = 255;
+                }
+                else {
+                    j = 2;
+                    cap = 255;
+                }
             }
             //else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
             //{
