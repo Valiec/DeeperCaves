@@ -29,7 +29,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
 {
     /** RNG. */
     private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 3, 1.5, 1.0, DeeperBlocks.fragmentedBedrock);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(DeeperCaves.worldgen.bedrockPlainsFloorHeight-16, DeeperCaves.worldgen.bedrockPlainsFloorHeight+16, 60, 0.8, 5.0, Blocks.bedrock, -1, DeeperCaves.worldgen.bedrockPlainsFloorHeight+8);
 
     NoiseGeneratorOctaves floorHeightNoise;
     NoiseGeneratorOctaves ceilingHeightNoise;
@@ -42,7 +42,6 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
     {
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
-        this.upperBarrierY = 102;
         this.voidBlock = Blocks.air;
 
         this.floorHeightNoise = new NoiseGeneratorOctaves(this.rand, 8);
@@ -116,10 +115,10 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                     {
                         p_147422_3_[i2] = DeeperBlocks.barrierLayer;
                     }
-                    /*else if (l1 == trueFloorHeight-1)
+                    else if (l1 <= trueFloorHeight-30)
                     {
-                        p_147422_3_[i2] = DeeperBlocks.nearNetherPortal;
-                    }*/
+                        p_147422_3_[i2] = Blocks.air;
+                    }
                     else if (l1 <= trueFloorHeight)
                     {
                         p_147422_3_[i2] = Blocks.bedrock;
@@ -158,8 +157,8 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
 
         if (this.mapFeaturesEnabled)
         {
-            this.mineshaftGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-            this.strongholdGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
+            //this.mineshaftGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
+            //this.strongholdGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
             this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
         }
 

@@ -82,8 +82,8 @@ public class DeeperConfig {
         
         config.addCustomCategoryComment("other", "Other");
         
-        DeeperCaves.worldgen.bedrockPlainsFloorHeight = config.getInt("Bedrock Plains Floor Height", this.CATEGORY_OTHER, 155, 1, 255, "");
-        DeeperCaves.worldgen.bedrockPlainsCeilingHeight = config.getInt("Bedrock Plains Ceiling Height", this.CATEGORY_OTHER, 175, 0, 255, "This is the height of the level barrier. The bedrock ceiling extends about 5 blocks below this.");
+        DeeperCaves.worldgen.bedrockPlainsFloorHeight = config.getInt("Bedrock Plains Floor Height", this.CATEGORY_OTHER, 32, 1, 255, "");
+        DeeperCaves.worldgen.bedrockPlainsCeilingHeight = config.getInt("Bedrock Plains Ceiling Height", this.CATEGORY_OTHER, 52, 0, 255, "This is the height of the level barrier. The bedrock ceiling extends about 5 blocks below this.");
         
         config.save();
     }

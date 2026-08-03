@@ -2,6 +2,8 @@ package com.kpabr.DeeperCaves.world.gen.cave;
 
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
+import com.kpabr.DeeperCaves.DeeperFluids;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
@@ -15,19 +17,29 @@ public class MapGenDeeperRavine extends MapGenBase
     private static final String __OBFID = "CL_00000390";
 
     public int maxY;
+    public int minY;
     public int genRarity;
     //I forgot what these do
     public double widthFactor;
     public double heightFactor;
     public Block fillerBlock;
+    public int minCarvingDepth;
+    public int maxCarvingDepth;
 
-    public MapGenDeeperRavine(int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock){
+    public MapGenDeeperRavine(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock, int minCarvingDepth, int maxCarvingDepth){
         super();
         this.maxY = maxY;
+        this.minY = minY;
         this.genRarity = genRarity;
         this.widthFactor = widthFactor;
         this.heightFactor = heightFactor;
         this.fillerBlock = fillerBlock;
+        this.minCarvingDepth = minCarvingDepth;
+        this.maxCarvingDepth = maxCarvingDepth;
+    }
+
+    public MapGenDeeperRavine(int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock){
+        this(0, maxY, genRarity, widthFactor, heightFactor, fillerBlock, 0, 255);
     }
 
     public MapGenDeeperRavine(){
@@ -220,7 +232,7 @@ public class MapGenDeeperRavine extends MapGenBase
         if (this.rand.nextInt(this.genRarity) == 0)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
-            double d1 = (double)(this.rand.nextInt(this.maxY) + 20);
+            double d1 = (double)(this.minY+this.rand.nextInt(this.maxY-this.minY) + 20);
             double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
             byte b0 = 1;
 
@@ -229,7 +241,7 @@ public class MapGenDeeperRavine extends MapGenBase
                 float f = this.rand.nextFloat() * (float)Math.PI * 2.0F;
                 float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
                 float f2 = (this.rand.nextFloat() * 2.0F + this.rand.nextFloat()) * 2.0F;
-                this.func_151540_a(this.rand.nextLong(), p_151538_4_, p_151538_5_, p_151538_6_, d0, d1, d2, f2, f, f1, 0, 0, 3.0D, this.rand.nextInt(11)+5);
+                this.func_151540_a(this.rand.nextLong(), p_151538_4_, p_151538_5_, p_151538_6_, d0, d1, d2, f2, f, f1, 0, 0, 3.0D, (minCarvingDepth >= 0 ? (this.rand.nextInt(11)+minCarvingDepth) : 0));
             }
         }
     }
@@ -280,7 +292,7 @@ public class MapGenDeeperRavine extends MapGenBase
 
         if (block == Blocks.stone || block == filler || block == top || block == this.fillerBlock)
         {
-            if (y < minHeight)
+            if (y < minHeight || y > maxCarvingDepth)
             {
                 data[index] = this.fillerBlock;
             }
