@@ -103,7 +103,7 @@ public class DeeperDimensionHandler {
 	        	{
 	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.crystalDimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.crystalDimID), true));
 	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.bedrockPlainsDimID && event.player.posY >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight-3)
+	         	if(player.dimension == DeeperCaves.worldgen.bedrockPlainsDimID && event.player.posY >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight+6)
 	        	{
 	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.compressedDimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.compressedDimID), true));
 	        	}

@@ -29,7 +29,9 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
 {
     /** RNG. */
     private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(DeeperCaves.worldgen.bedrockPlainsFloorHeight-16, DeeperCaves.worldgen.bedrockPlainsFloorHeight+16, 60, 0.8, 5.0, Blocks.bedrock, -1, DeeperCaves.worldgen.bedrockPlainsFloorHeight+8);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(DeeperCaves.worldgen.bedrockPlainsFloorHeight-16, DeeperCaves.worldgen.bedrockPlainsFloorHeight+16, 60, 0.8, 5.0, Blocks.bedrock, -1, DeeperCaves.worldgen.bedrockPlainsFloorHeight+8, false);
+
+    private MapGenBase ravineGenerator2 = new MapGenDeeperRavine(DeeperCaves.worldgen.bedrockPlainsCeilingHeight-8, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+16, 60, 0.8, 2.0, Blocks.bedrock, DeeperCaves.worldgen.bedrockPlainsCeilingHeight-8, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+16, false, 413);
 
     NoiseGeneratorOctaves floorHeightNoise;
     NoiseGeneratorOctaves ceilingHeightNoise;
@@ -107,13 +109,13 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                         i3 = i2;
                     }*/
 
-                    if (l1 >= trueCeilingHeight - this.rand.nextInt(2))
-                    {
-                        p_147422_3_[i2] = Blocks.bedrock;
-                    }
-                    else if (l1 >= trueCeilingHeight)
+                    if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight + 8 && l1 >= trueCeilingHeight)
                     {
                         p_147422_3_[i2] = DeeperBlocks.barrierLayer;
+                    }
+                    else if (l1 >= trueCeilingHeight - this.rand.nextInt(2))
+                    {
+                        p_147422_3_[i2] = Blocks.bedrock;
                     }
                     else if (l1 <= trueFloorHeight-30)
                     {
@@ -136,6 +138,8 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
             }
 
         }
+
+        this.ravineGenerator2.func_151539_a(this, this.worldObj, p_147422_1_, p_147422_2_, p_147422_3_);
     }
 
     /**
@@ -169,7 +173,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, flag, LAVA) && !flag && this.rand.nextInt(8) == 0)
         {
             k1 = k + this.rand.nextInt(16) + 8;
-            l1 = this.rand.nextInt(this.rand.nextInt(256));
+            l1 = this.rand.nextInt(256);
             i2 = l + this.rand.nextInt(16) + 8;
 
             (new WorldGenDeeperLakes(DeeperFluids.moltenIronBlock, Blocks.bedrock)).generate(this.worldObj, this.rand, k1, l1, i2);
