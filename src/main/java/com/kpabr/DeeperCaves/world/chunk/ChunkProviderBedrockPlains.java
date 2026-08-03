@@ -5,7 +5,6 @@ import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.DeeperFluids;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineCompressed;
 
 import com.kpabr.DeeperCaves.world.gen.feature.WorldGenDeeperLakes;
 import cpw.mods.fml.common.eventhandler.Event;
@@ -17,9 +16,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.*;
+
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.*;
 
+import net.minecraft.world.gen.NoiseGeneratorOctaves;
+import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.*;
@@ -30,10 +31,12 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
     private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 3, 1.5, 1.0, DeeperBlocks.fragmentedBedrock);
 
-    {
-        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-        //ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
-    }
+    NoiseGeneratorOctaves floorHeightNoise;
+    NoiseGeneratorOctaves ceilingHeightNoise;
+    NoiseGeneratorPerlin pillarHeightNoise;
+    double[] floorNoise;
+    double[] pillarNoise;
+    double[] ceilingNoise;
 
     public ChunkProviderBedrockPlains(World par1World, long par2, boolean par4)
     {
@@ -41,6 +44,10 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.upperBarrierY = 102;
         this.voidBlock = Blocks.air;
+
+        this.floorHeightNoise = new NoiseGeneratorOctaves(this.rand, 8);
+        this.ceilingHeightNoise = new NoiseGeneratorOctaves(this.rand, 4);
+        this.pillarHeightNoise = new NoiseGeneratorPerlin(this.rand, 1);
     }
 
     public void replaceBlocksForBiome(int p_147422_1_, int p_147422_2_, Block[] p_147422_3_, byte[] p_147422_4_, BiomeGenBase[] p_147422_5_)
@@ -50,7 +57,16 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
         if (event.getResult() == Event.Result.DENY) return;
 
         double d0 = 0.03125D;
-        this.stoneNoise = this.field_147430_m.func_151599_a(this.stoneNoise, (double)(p_147422_1_ * 16), (double)(p_147422_2_ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+        this.stoneNoise = this.perlinNoise.func_151599_a(this.stoneNoise, (double)(p_147422_1_ * 16), (double)(p_147422_2_ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+
+        int bedrockPlainsGapHeight = DeeperCaves.worldgen.bedrockPlainsCeilingHeight-DeeperCaves.worldgen.bedrockPlainsFloorHeight;
+
+        floorNoise = this.floorHeightNoise.generateNoiseOctaves(floorNoise, p_147422_1_*16, 0, p_147422_2_*16, 16, 1, 16, 2, 0, 2);
+
+        pillarNoise = this.pillarHeightNoise.func_151599_a(pillarNoise, p_147422_1_*16, p_147422_2_*16, 16, 16, 0.02, 0.02, 1);
+
+        ceilingNoise = this.ceilingHeightNoise.generateNoiseOctaves(ceilingNoise, p_147422_1_*16, 0, p_147422_2_*16, 16, 1, 16, 0.25, 0, 0.25);
+
 
         for (int k = 0; k < 16; ++k)
         {
@@ -66,9 +82,22 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                 int i1 = p_147422_1_ * 16 + k & 15;
                 int j1 = p_147422_2_ * 16 + l & 15;
                 int k1 = p_147422_3_.length / 256;
+
+                int trueFloorHeight = DeeperCaves.worldgen.bedrockPlainsFloorHeight + (int)(0.1*floorNoise[j1 * 16 + i1]);
+
+                int trueCeilingHeight = (trueFloorHeight + bedrockPlainsGapHeight) - (int)(ceilingNoise[j1 * 16 + i1]);
+
+                double pillarVal = ((pillarNoise[i1 * 16 + j1])-0.4);
+
+                if(pillarVal > 0) {
+                    trueFloorHeight += (int)(130*pillarVal);
+                    trueCeilingHeight -= (int)(130*pillarVal);
+                }
+
                 for (int l1 = 255; l1 >= 0; --l1)
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
+
                     /*int i3;
                     if(l1<255)
                     {
@@ -79,21 +108,25 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                         i3 = i2;
                     }*/
 
-                    if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight - this.rand.nextInt(5))
+                    if (l1 >= trueCeilingHeight - this.rand.nextInt(2))
                     {
                         p_147422_3_[i2] = Blocks.bedrock;
                     }
-                    else if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight)
+                    else if (l1 >= trueCeilingHeight)
                     {
                         p_147422_3_[i2] = DeeperBlocks.barrierLayer;
                     }
-                    else if (l1 == DeeperCaves.worldgen.bedrockPlainsFloorHeight-1)
+                    /*else if (l1 == trueFloorHeight-1)
                     {
                         p_147422_3_[i2] = DeeperBlocks.nearNetherPortal;
-                    }
-                    else if (l1 <= DeeperCaves.worldgen.bedrockPlainsFloorHeight)
+                    }*/
+                    else if (l1 <= trueFloorHeight)
                     {
                         p_147422_3_[i2] = Blocks.bedrock;
+                    }
+                    else if (l1 >= trueFloorHeight && l1 <= DeeperCaves.worldgen.bedrockPlainsFloorHeight-2)
+                    {
+                        p_147422_3_[i2] = DeeperFluids.moltenIronBlock;
                     }
                     else
                     {

@@ -1,14 +1,10 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
-import com.kpabr.DeeperCaves.DeeperCaves;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDrop;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
@@ -36,7 +32,7 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
 {
     /** RNG. */
     Random rand;
-    NoiseGeneratorPerlin field_147430_m;
+    NoiseGeneratorPerlin perlinNoise;
     public NoiseGeneratorOctaves mobSpawnerNoise;
     /** Reference to the World object. */
     World worldObj;
@@ -75,12 +71,12 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
         this.mapFeaturesEnabled = par4;
         this.field_147435_p = par1World.getWorldInfo().getTerrainType();
         this.rand = new Random(par2);
-        this.field_147430_m = new NoiseGeneratorPerlin(this.rand, 4);
+        this.perlinNoise = new NoiseGeneratorPerlin(this.rand, 4);
         this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
 
-        NoiseGenerator[] noiseGens = {field_147430_m, mobSpawnerNoise};
+        NoiseGenerator[] noiseGens = {perlinNoise, mobSpawnerNoise};
         noiseGens = TerrainGen.getModdedNoiseGenerators(par1World, this.rand, noiseGens);
-        this.field_147430_m = (NoiseGeneratorPerlin)noiseGens[0];
+        this.perlinNoise = (NoiseGeneratorPerlin)noiseGens[0];
         this.mobSpawnerNoise = (NoiseGeneratorOctaves)noiseGens[1];
     }
 
@@ -143,7 +139,7 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
         if (event.getResult() == Result.DENY) return;
 
         double d0 = 0.03125D;
-        this.stoneNoise = this.field_147430_m.func_151599_a(this.stoneNoise, (double)(p_147422_1_ * 16), (double)(p_147422_2_ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+        this.stoneNoise = this.perlinNoise.func_151599_a(this.stoneNoise, (double)(p_147422_1_ * 16), (double)(p_147422_2_ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 
         for (int k = 0; k < 16; ++k)
         {
