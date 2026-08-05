@@ -117,44 +117,44 @@ public class DeeperWorldgen {
         
        
         /*Setting up worldgen*/
-        DimensionManager.registerProviderType(dropDimID, WorldProviderDrop.class, true);
+        DimensionManager.registerProviderType(dropDimID, WorldProviderDrop.class, false);
         DimensionManager.registerDimension(dropDimID, dropDimID);
-        DimensionManager.registerProviderType(mazeDimID, WorldProviderMaze.class, true);
+        DimensionManager.registerProviderType(mazeDimID, WorldProviderMaze.class, false);
         DimensionManager.registerDimension(mazeDimID, mazeDimID);
-        DimensionManager.registerProviderType(crystalDimID, WorldProviderCrystal.class, true);
+        DimensionManager.registerProviderType(crystalDimID, WorldProviderCrystal.class, false);
         DimensionManager.registerDimension(crystalDimID, crystalDimID);
-        DimensionManager.registerProviderType(compressedDimID, WorldProviderCompressed.class, true);
+        DimensionManager.registerProviderType(compressedDimID, WorldProviderCompressed.class, false);
         DimensionManager.registerDimension(compressedDimID, compressedDimID);
-        DimensionManager.registerProviderType(bedrockPlainsDimID, WorldProviderBedrockPlains.class, true);
+        DimensionManager.registerProviderType(bedrockPlainsDimID, WorldProviderBedrockPlains.class, false);
         DimensionManager.registerDimension(bedrockPlainsDimID, bedrockPlainsDimID);
         
-        DimensionManager.registerProviderType(nearNetherDimID, WorldProviderNearNether.class, true);
+        DimensionManager.registerProviderType(nearNetherDimID, WorldProviderNearNether.class, false);
         DimensionManager.registerDimension(nearNetherDimID, nearNetherDimID);
-        DimensionManager.registerProviderType(lavaDimID, WorldProviderLava.class, true);
+        DimensionManager.registerProviderType(lavaDimID, WorldProviderLava.class, false);
         DimensionManager.registerDimension(lavaDimID, lavaDimID);
-        DimensionManager.registerProviderType(nearVoidDimID, WorldProviderNearVoid.class, true);
+        DimensionManager.registerProviderType(nearVoidDimID, WorldProviderNearVoid.class, false);
         DimensionManager.registerDimension(nearVoidDimID, nearVoidDimID);
         
-        DimensionManager.registerProviderType(deepWorldDimID, WorldProviderDeepWorld.class, true);
+        DimensionManager.registerProviderType(deepWorldDimID, WorldProviderDeepWorld.class, false);
         DimensionManager.registerDimension(deepWorldDimID, deepWorldDimID);
-        DimensionManager.registerProviderType(darknessDimID, WorldProviderDarkness.class, true);
+        DimensionManager.registerProviderType(darknessDimID, WorldProviderDarkness.class, false);
         DimensionManager.registerDimension(darknessDimID, darknessDimID);
-        DimensionManager.registerProviderType(abandonedCavesDimID, WorldProviderAbandonedCaves.class, true);
+        DimensionManager.registerProviderType(abandonedCavesDimID, WorldProviderAbandonedCaves.class, false);
         DimensionManager.registerDimension(abandonedCavesDimID, abandonedCavesDimID);
 
-        DimensionManager.registerProviderType(mutationDimID, WorldProviderMutation.class, true);
+        DimensionManager.registerProviderType(mutationDimID, WorldProviderMutation.class, false);
         DimensionManager.registerDimension(mutationDimID, mutationDimID);
         
-        DimensionManager.registerProviderType(farVoidDimID, WorldProviderFarVoid.class, true);
+        DimensionManager.registerProviderType(farVoidDimID, WorldProviderFarVoid.class, false);
         DimensionManager.registerDimension(farVoidDimID, farVoidDimID);
         
-        DimensionManager.registerProviderType(forgottenDimID, WorldProviderForgotten.class, true);
+        DimensionManager.registerProviderType(forgottenDimID, WorldProviderForgotten.class, false);
         DimensionManager.registerDimension(forgottenDimID, forgottenDimID);
         
-        DimensionManager.registerProviderType(evilDimID, WorldProviderEvil.class, true);
+        DimensionManager.registerProviderType(evilDimID, WorldProviderEvil.class, false);
         DimensionManager.registerDimension(evilDimID, evilDimID);
         
-        DimensionManager.registerProviderType(finalLabyrinthDimID, WorldProviderFinalLabyrinth.class, true);
+        DimensionManager.registerProviderType(finalLabyrinthDimID, WorldProviderFinalLabyrinth.class, false);
         DimensionManager.registerDimension(finalLabyrinthDimID, finalLabyrinthDimID);
         GameRegistry.registerWorldGenerator(deeperblock, 1);
         this.biomeDrop = new BiomeGenDrop(dropBiomeID, 0);
