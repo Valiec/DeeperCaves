@@ -135,9 +135,9 @@ public class MapGenDeeperCavesCompressed extends MapGenDeeperCavesDefault {
                         l1 = 16;
                     }
 
-                    if (j4 < 1)
+                    if (j4 < (this.floorCutoff ? 1 : -1))
                     {
-                        j4 = 1;
+                        j4 = (this.floorCutoff ? 1 : -1);
                     }
 
                     if (i2 > 248)

@@ -27,8 +27,9 @@ public class MapGenDeeperRavine extends MapGenBase
     public int maxCarvingDepth;
     public boolean jitterMin;
     public int seedSalt;
+    public boolean floorCutoff;
 
-    public MapGenDeeperRavine(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin, int seedSalt){
+    public MapGenDeeperRavine(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin, int seedSalt, boolean floorCutoff){
         super();
         this.maxY = maxY;
         this.minY = minY;
@@ -40,14 +41,15 @@ public class MapGenDeeperRavine extends MapGenBase
         this.maxCarvingDepth = maxCarvingDepth;
         this.jitterMin = jitterMin;
         this.seedSalt = seedSalt;
+        this.floorCutoff = floorCutoff;
     }
 
     public MapGenDeeperRavine(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin){
-        this(minY, maxY, genRarity, widthFactor, heightFactor, fillerBlock, minCarvingDepth, maxCarvingDepth, jitterMin, 0);
+        this(minY, maxY, genRarity, widthFactor, heightFactor, fillerBlock, minCarvingDepth, maxCarvingDepth, jitterMin, 0, false);
     }
 
     public MapGenDeeperRavine(int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock){
-        this(0, maxY, genRarity, widthFactor, heightFactor, fillerBlock, 0, 255, true, 0);
+        this(0, maxY, genRarity, widthFactor, heightFactor, fillerBlock, -1, 255, true, 0, false);
     }
 
     public MapGenDeeperRavine(){
@@ -139,9 +141,9 @@ public class MapGenDeeperRavine extends MapGenBase
                         l1 = 16;
                     }
 
-                    if (j4 < 1)
+                    if (j4 < (this.floorCutoff ? 1 : -1))
                     {
-                        j4 = 1;
+                        j4 = (this.floorCutoff ? 1 : -1);
                     }
 
                     if (i2 > 248)
@@ -171,7 +173,7 @@ public class MapGenDeeperRavine extends MapGenBase
                             {
                                 j3 = (k2 * 16 + l2) * 256 + i3;
 
-                                if (i3 < 256)
+                                if (i3 >= 0 && i3 < 256)
                                 {
                                     Block block = p_151540_5_[j3];
 
@@ -207,7 +209,7 @@ public class MapGenDeeperRavine extends MapGenBase
                                     {
                                         double d11 = ((double)l3 + 0.5D - p_151540_8_) / d6;
 
-                                        if ((d13 * d13 + d14 * d14) * (double)this.field_75046_d[l3] + d11 * d11 / 6.0D < 1.0D)
+                                        if ((d13 * d13 + d14 * d14) * (double)this.field_75046_d[l3 < 0 ? 0 : l3] + d11 * d11 / 6.0D < 1.0D)
                                         {
                                             Block block1 = p_151540_5_[k3];
 
@@ -304,7 +306,7 @@ public class MapGenDeeperRavine extends MapGenBase
             {
                 data[index] = null;
 
-                if (foundTop && data[index - 1] == biome.fillerBlock)
+                if (foundTop && (index & 255) != 0 && data[index - 1] == biome.fillerBlock)
                 {
                     data[index - 1] = biome.topBlock;
                 }

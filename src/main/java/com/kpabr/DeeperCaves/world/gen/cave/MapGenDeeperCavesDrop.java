@@ -14,6 +14,18 @@ public class MapGenDeeperCavesDrop extends MapGenBase
 {
     private static final String __OBFID = "CL_00000393";
 
+    public boolean floorCutoff;
+
+    public MapGenDeeperCavesDrop(boolean floorCutoff) {
+        super();
+        this.floorCutoff = floorCutoff;
+    }
+
+    public MapGenDeeperCavesDrop() {
+        this(false);
+    }
+
+
     protected void func_151542_a(long p_151542_1_, int p_151542_3_, int p_151542_4_, Block[] p_151542_5_, double p_151542_6_, double p_151542_8_, double p_151542_10_)
     {
         this.func_151541_a(p_151542_1_, p_151542_3_, p_151542_4_, p_151542_5_, p_151542_6_, p_151542_8_, p_151542_10_, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
@@ -107,9 +119,9 @@ public class MapGenDeeperCavesDrop extends MapGenBase
                         l1 = 16;
                     }
 
-                    if (j4 < 1)
+                    if (j4 < (this.floorCutoff ? 1 : -1))
                     {
-                        j4 = 1;
+                        j4 = (this.floorCutoff ? 1 : -1);
                     }
 
                     if (i2 > 248)
@@ -294,10 +306,10 @@ public class MapGenDeeperCavesDrop extends MapGenBase
             //{
                 data[index] = null;
 
-                if (foundTop && data[index - 1] == filler)
-                {
-                    data[index - 1] = top;
-                }
+            if (foundTop && (index & 255) != 0 && data[index - 1] == filler)
+            {
+                data[index - 1] = top;
+            }
             //}
         }
     }

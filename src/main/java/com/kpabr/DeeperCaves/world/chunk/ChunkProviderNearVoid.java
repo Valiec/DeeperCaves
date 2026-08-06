@@ -3,7 +3,6 @@ package com.kpabr.DeeperCaves.world.chunk;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesNearVoid;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineCompressed;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
