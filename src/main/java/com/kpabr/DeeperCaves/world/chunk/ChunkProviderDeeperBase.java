@@ -179,6 +179,9 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
         }
     }
 
+    public void finalGenPass(int p_147422_1_, int p_147422_2_, Block[] p_147422_3_, byte[] p_147422_4_, BiomeGenBase[] p_147422_5_)
+    {}
+
     /**
      * Will return back a chunk, if it doesn't exist and its not a MP client it will generates all the blocks for the
      * specified chunk from the map seed and chunk seed
@@ -203,6 +206,8 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
             //this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
             //this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
         }
+
+        this.finalGenPass(par1, par2, ablock, abyte, this.biomesForGeneration);
 
 
         Chunk chunk = new Chunk(this.worldObj, ablock, abyte, par1, par2);

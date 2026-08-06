@@ -43,12 +43,15 @@ public class BlockCrystal extends Block
         {
             return 1;
         }
+
         @Override
         public boolean shouldSideBeRendered(IBlockAccess p_149646_1_, int p_149646_2_, int p_149646_3_, int p_149646_4_, int p_149646_5_)
         {
             Block block = p_149646_1_.getBlock(p_149646_2_, p_149646_3_, p_149646_4_);
-            return !(block instanceof BlockCrystal);
+            // don't render if facing other crystal or opaque blocks
+            return !(block instanceof BlockCrystal) && super.shouldSideBeRendered(p_149646_1_, p_149646_2_, p_149646_3_, p_149646_4_, p_149646_5_);
         }
+
         @Override
         public int damageDropped(int p_149692_1_)
         {
