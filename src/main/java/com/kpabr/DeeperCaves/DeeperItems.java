@@ -7,7 +7,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.item.ItemDoor;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -64,9 +63,9 @@ public class DeeperItems {
     
     public static Item forgottenCharm;
     
-    public static Item profundiumIngot;
+    public static Item prisciumIngot;
     
-    public static Item profundiumDust;
+    public static Item prisciumDust;
     
 	public static Item bucketV;
 	
@@ -82,7 +81,7 @@ public class DeeperItems {
 
     public static Item robustiumIngot;
 
-    public static Item prisciumIngot;
+    public static Item profundiumIngot;
 
     public static Item rottenDoor;
 
@@ -166,9 +165,9 @@ public class DeeperItems {
         
         GameRegistry.registerItem(forgottenCharm, "forgotten_charm");
         
-        GameRegistry.registerItem(profundiumIngot, "profundium_ingot");
+        GameRegistry.registerItem(prisciumIngot, "priscium_ingot");
         
-        GameRegistry.registerItem(profundiumDust, "profundium_dust");
+        GameRegistry.registerItem(prisciumDust, "priscium_dust");
 
         GameRegistry.registerItem(bucketV, "bucket_venenium");
         GameRegistry.registerItem(fragmentedBedrockBucketV, "fragmented_bedrock_bucket_venenium");
@@ -179,7 +178,7 @@ public class DeeperItems {
         
         GameRegistry.registerItem(ruby, "ruby");
 
-        GameRegistry.registerItem(prisciumIngot, "priscium_ingot");
+        GameRegistry.registerItem(profundiumIngot, "profundium_ingot");
         GameRegistry.registerItem(robustiumIngot, "robustium_ingot");
         GameRegistry.registerItem(incenditeGem, "incendite_gem");
 
@@ -198,9 +197,9 @@ public class DeeperItems {
     	
     	OreDictionary.registerOre("gemForgotten", forgottenGemstone);
     	
-    	OreDictionary.registerOre("ingotProfundium", profundiumIngot);
+    	OreDictionary.registerOre("ingotPriscium", prisciumIngot);
     	
-    	OreDictionary.registerOre("dustProfundium", profundiumDust);
+    	OreDictionary.registerOre("dustPriscium", prisciumDust);
     	
     	OreDictionary.registerOre("gemVesperite", vesperiteGem);
     	
@@ -209,7 +208,7 @@ public class DeeperItems {
     	OreDictionary.registerOre("gemRuby", ruby);
 
         OreDictionary.registerOre("gemIncendite", incenditeGem);
-        OreDictionary.registerOre("ingotPriscium", prisciumIngot);
+        OreDictionary.registerOre("ingotProfundium", profundiumIngot);
         OreDictionary.registerOre("ingotRobustium", robustiumIngot);
     }
     
@@ -265,9 +264,9 @@ public class DeeperItems {
         
         forgottenCharm = new ItemForgottenCharm().setTextureName("deepercaves:forgottenCharm").setUnlocalizedName("forgottenCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
-        profundiumIngot = new ItemBase().setTextureName("deepercaves:profundium_ingot").setUnlocalizedName("profundiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
-        
-        profundiumDust = new ItemBase().setTextureName("deepercaves:profundium_dust").setUnlocalizedName("profundiumDust").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        prisciumIngot = new ItemBase().setTextureName("deepercaves:priscium_ingot").setUnlocalizedName("prisciumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        prisciumDust = new ItemBase().setTextureName("deepercaves:priscium_dust").setUnlocalizedName("prisciumDust").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
         bucketV = new ItemVeneniumBucket(DeeperFluids.veneniumBlock).setTextureName("deepercaves:bucket_v").setUnlocalizedName("bucketVenenium").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
@@ -280,7 +279,7 @@ public class DeeperItems {
         ruby = new ItemBase().setTextureName("deepercaves:ruby").setUnlocalizedName("ruby").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
 
         incenditeGem = new ItemBase().setTextureName("deepercaves:incendite_gem").setUnlocalizedName("incenditeGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
-        prisciumIngot = new ItemBase().setTextureName("deepercaves:priscium_ingot").setUnlocalizedName("prisciumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        profundiumIngot = new ItemBase().setTextureName("deepercaves:profundium_ingot").setUnlocalizedName("profundiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         robustiumIngot = new ItemBase().setTextureName("deepercaves:robustium_ingot").setUnlocalizedName("robustiumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
 
         rottenDoor = new ItemRottenDoor(Material.wood).setTextureName("deepercaves:rotting_door").setUnlocalizedName("rottenDoor").setCreativeTab(DeeperCaves.tabDeeperCaves);

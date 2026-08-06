@@ -1,9 +1,4 @@
 package com.kpabr.DeeperCaves;
-/*
- * Created by Valiec2019
- * started on July 6, 2013
- * released on November 28, 2013
- */
 
 import java.io.IOException;
 import java.net.UnknownHostException;

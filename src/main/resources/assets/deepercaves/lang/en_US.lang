@@ -51,13 +51,13 @@ item.forgottenCharm.name=Forgotten Charm
 item.bucketVenenium.name=Bucket of Venenium
 item.fragmentedBedrockBucketVenenium.name=Fragmented Bedrock Bucket of Venenium
 
-tile.profundiumBlock.name=Block of Profundium
+tile.prisciumBlock.name=Block of Priscium
 
-item.profundiumDust.name=Profundium Dust
+item.prisciumDust.name=Priscium Dust
 
-item.profundiumIngot.name=Profundium Ingot
+item.prisciumIngot.name=Priscium Ingot
 
-tile.profundiumOre.name=Profundium Ore
+tile.prisciumOre.name=Priscium Ore
 tile.cryingObsidian.name=Crying Obsidian
 tile.corruptedSoulStone.name=Corrupted Soul Stone
 tile.soulStone.name=Soul Stone
@@ -214,11 +214,11 @@ tile.rotten_pressure_plate.name=Rotten Pressure Plate
 tile.rusted_iron_bars.name=Rusty Iron Bars
 
 tile.incendite_ore.name=Incendite Ore
-tile.priscium_ore.name=Priscium Ore
+tile.profundium_ore.name=Profundium Ore
 tile.robustiumRaw.name=Raw Robustium
 
 
-item.prisciumIngot.name=Priscium Ingot
+item.profundiumIngot.name=Profundium Ingot
 item.robustiumIngot.name=Robustium Ingot
 
 item.incenditeGem.name=Incendite Gem

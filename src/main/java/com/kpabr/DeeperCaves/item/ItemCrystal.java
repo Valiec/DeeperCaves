@@ -9,11 +9,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-/*
- * Created by Valiec2019
- * on February 18, 2014
- * using Minecraft Forge 10.12.0.1022
- */
+
 public class ItemCrystal extends Item {
 
     private final static String[] names = {

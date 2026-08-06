@@ -6,11 +6,7 @@ import net.minecraft.client.renderer.entity.RenderBiped;
 //import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
-/*
- * Created by Valiec2019
- * on February 18, 2014
- * using Minecraft Forge 10.12.0.1022
- */
+
 public class RenderShadow extends RenderBiped {
 
 	private static final ResourceLocation texture = new ResourceLocation("deepercaves:mobs/shadow.png");

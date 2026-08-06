@@ -4,9 +4,7 @@ import com.kpabr.DeeperCaves.block.*;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockPressurePlate;
-import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.oredict.OreDictionary;
@@ -140,9 +138,9 @@ public class DeeperBlocks {
     
     public static Block corruptedSoulStone;
     
-    public static Block profundiumOre;
+    public static Block prisciumOre;
     
-    public static Block profundiumBlock;
+    public static Block prisciumBlock;
     
 	public static Block evanesciteOre;
 	
@@ -177,7 +175,7 @@ public class DeeperBlocks {
 
     public static Block incenditeOre;
 
-    public static Block prisciumOre;
+    public static Block profundiumOre;
 
     public static Block robustiumRaw;
     
@@ -294,9 +292,9 @@ public class DeeperBlocks {
         
         GameRegistry.registerBlock(DeeperBlocks.corruptedSoulStone, "corrupted_soul_stone");
         
-        GameRegistry.registerBlock(DeeperBlocks.profundiumOre, "profundium_ore");
+        GameRegistry.registerBlock(DeeperBlocks.prisciumOre, "priscium_ore");
         
-        GameRegistry.registerBlock(DeeperBlocks.profundiumBlock, "profundium_block");
+        GameRegistry.registerBlock(DeeperBlocks.prisciumBlock, "priscium_block");
         
         GameRegistry.registerBlock(DeeperBlocks.evanesciteOre, "evanescite_ore");
         
@@ -341,7 +339,7 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.rustedBars, "rusted_iron_bars");
 
         GameRegistry.registerBlock(DeeperBlocks.incenditeOre, "incendite_ore");
-        GameRegistry.registerBlock(DeeperBlocks.prisciumOre, "priscium_ore");
+        GameRegistry.registerBlock(DeeperBlocks.profundiumOre, "profundium_ore");
 
         GameRegistry.registerBlock(DeeperBlocks.robustiumRaw, "raw_robustium");
     }
@@ -416,8 +414,8 @@ public class DeeperBlocks {
     	
     	OreDictionary.registerOre("cobblestone", DeeperBlocks.abandonedStone);
     	
-    	OreDictionary.registerOre("oreProfundium", DeeperBlocks.profundiumOre);
-    	OreDictionary.registerOre("blockProfundium", DeeperBlocks.profundiumBlock);
+    	OreDictionary.registerOre("orePriscium", DeeperBlocks.prisciumOre);
+    	OreDictionary.registerOre("blockPriscium", DeeperBlocks.prisciumBlock);
     	
     	OreDictionary.registerOre("oreVesperite", DeeperBlocks.vesperiteOre);
     	OreDictionary.registerOre("blockVesperite", DeeperBlocks.vesperiteBlock);
@@ -439,7 +437,7 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("blockRuby", DeeperBlocks.rubyBlock);
 
         OreDictionary.registerOre("oreIncendite", DeeperBlocks.incenditeOre);
-        OreDictionary.registerOre("orePriscium", DeeperBlocks.prisciumOre);
+        OreDictionary.registerOre("oreProfundium", DeeperBlocks.profundiumOre);
 
         OreDictionary.registerOre("blockRawRobustium", DeeperBlocks.robustiumRaw);
     }
@@ -567,9 +565,9 @@ public class DeeperBlocks {
         
         DeeperBlocks.cryingObsidian = new BlockCryingObsidian(Material.rock).setBlockTextureName("deepercaves:crying_obsidian").setBlockName("cryingObsidian").setHardness(60.0F).setResistance(6000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.profundiumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:profundium_ore").setBlockName("profundiumOre").setHardness(8.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+        DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:profundium_ore").setBlockName("profundiumOre").setHardness(8.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
-        DeeperBlocks.profundiumBlock = new BlockProfundium(Material.rock).setBlockTextureName("deepercaves:profundium_block").setBlockName("profundiumBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.prisciumBlock = new BlockPriscium(Material.rock).setBlockTextureName("deepercaves:priscium_block").setBlockName("prisciumBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         DeeperBlocks.evanesciteOre = new BlockOreBase(Material.rock, DeeperItems.evanesciteGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:evanescite_ore").setBlockName("evanesciteOre").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
@@ -603,7 +601,7 @@ public class DeeperBlocks {
 
         DeeperBlocks.incenditeOre = new BlockOreBase(Material.rock, DeeperItems.incenditeGem, 1, 0, true, 3, 6).setBlockTextureName("deepercaves:incendite_ore").setBlockName("incendite_ore").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
-        DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:priscium_ore").setBlockName("priscium_ore").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+        DeeperBlocks.profundiumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:profundium_ore").setBlockName("profundium_ore").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
         DeeperBlocks.robustiumRaw = new BlockBase(Material.rock).setBlockTextureName("deepercaves:raw_robustium").setBlockName("robustiumRaw").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
@@ -691,8 +689,8 @@ public class DeeperBlocks {
         
         DeeperBlocks.fragmentedCobble.setHarvestLevel("pickaxe", 0);
         
-        DeeperBlocks.profundiumOre.setHarvestLevel("pickaxe", 4);
-        DeeperBlocks.profundiumBlock.setHarvestLevel("pickaxe", 4);
+        DeeperBlocks.prisciumOre.setHarvestLevel("pickaxe", 4);
+        DeeperBlocks.prisciumBlock.setHarvestLevel("pickaxe", 4);
         
         DeeperBlocks.evanesciteOre.setHarvestLevel("pickaxe", 3);
         DeeperBlocks.evanesciteBlock.setHarvestLevel("pickaxe", 3);
@@ -723,7 +721,7 @@ public class DeeperBlocks {
         DeeperBlocks.rubyBlock.setHarvestLevel("pickaxe", 2);
 
         DeeperBlocks.incenditeOre.setHarvestLevel("pickaxe", 4);
-        DeeperBlocks.profundiumOre.setHarvestLevel("pickaxe", 4);
+        DeeperBlocks.prisciumOre.setHarvestLevel("pickaxe", 4);
     }
     
 }

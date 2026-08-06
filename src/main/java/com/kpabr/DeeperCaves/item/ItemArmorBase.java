@@ -3,11 +3,7 @@ package com.kpabr.DeeperCaves.item;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-/*
- * Created by Valiec2019
- * on February 18, 2014
- * using Minecraft Forge 10.12.0.1022
- */
+
 public class ItemArmorBase extends ItemArmor {
 
 	public ItemArmorBase(ArmorMaterial arg0, int arg1, int arg2) {

@@ -14,11 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-/*
- * Created by Valiec2019
- * on February 18, 2014
- * using Minecraft Forge 10.12.0.1022
- */
+
 public class BlockCompressedOre extends BlockBase {
 
 	public Block ore;

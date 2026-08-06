@@ -18,11 +18,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderEnd;
-/*
- * Created by Valiec2019
- * on February 18, 2014
- * using Minecraft Forge 10.12.0.1022
- */
+
 public class WorldProviderForgotten extends WorldProvider
 {
     /**

@@ -1,9 +1,5 @@
 package com.kpabr.DeeperCaves.client;
-/*
- * Created by Valiec2019
- * on February 18, 2014
- * using Minecraft Forge 10.12.0.1022
- */
+
 import com.kpabr.DeeperCaves.CommonProxy;
 //import com.kpabr.DeeperCaves.EndRenderHandler;
 //import com.kpabr.DeeperCaves.EntityDragonfire;

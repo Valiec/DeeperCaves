@@ -4,35 +4,24 @@ import java.util.Calendar;
 
 import com.kpabr.DeeperCaves.entity.ai.EntityAIShadowTarget;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import java.util.Random;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
-/*
- * Created by Valiec2019
- * on February 18, 2014
- * using Minecraft Forge 10.12.0.1022
- */
+
 public class EntityShadow extends EntityMob
 {
 	
@@ -140,7 +129,7 @@ public class EntityShadow extends EntityMob
     protected Item getDropItem()
     {
        
-        return DeeperCaves.items.profundiumIngot;
+        return DeeperCaves.items.prisciumIngot;
     }
     @Override
     protected String getLivingSound()

@@ -18,9 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
-/*
- * Created by Valiec2019
- */
+
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 

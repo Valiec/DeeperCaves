@@ -38,7 +38,7 @@ public class DeeperRecipes {
         
         GameRegistry.addRecipe(new ItemStack(DeeperBlocks.vesperiteBlock, 1), "ZZZ", "ZZZ", "ZZZ", 'Z', DeeperItems.vesperiteGem);
         
-        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.profundiumBlock, 1), "ZZZ", "ZZZ", "ZZZ", 'Z', DeeperItems.profundiumIngot);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.prisciumBlock, 1), "ZZZ", "ZZZ", "ZZZ", 'Z', DeeperItems.prisciumIngot);
         
         GameRegistry.addRecipe(new ItemStack(DeeperBlocks.cryingObsidian, 1), "ZZZ", "ZXZ", "ZZZ", 'X', Blocks.obsidian, 'Z', new ItemStack(Items.dye, 1, 4));
         
@@ -93,9 +93,9 @@ public class DeeperRecipes {
         
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.obsidian, 2), DeeperBlocks.cooledObsidian, DeeperBlocks.heatedObsidian);
         
-        GameRegistry.addShapelessRecipe(new ItemStack(DeeperItems.profundiumDust, 2), DeeperItems.profundiumIngot);
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperItems.prisciumDust, 2), DeeperItems.prisciumIngot);
         
-        GameRegistry.addShapelessRecipe(new ItemStack(DeeperItems.profundiumIngot, 9), DeeperBlocks.profundiumBlock);
+        GameRegistry.addShapelessRecipe(new ItemStack(DeeperItems.prisciumIngot, 9), DeeperBlocks.prisciumBlock);
         
         GameRegistry.addShapelessRecipe(new ItemStack(DeeperItems.evanesciteGem, 9), DeeperBlocks.evanesciteBlock);
         
@@ -142,7 +142,7 @@ public class DeeperRecipes {
         
         GameRegistry.addSmelting(DeeperBlocks.deepCobble, new ItemStack(DeeperBlocks.deepStone, 1) , 0.1F);
         
-        GameRegistry.addSmelting(DeeperBlocks.profundiumOre, new ItemStack(DeeperItems.profundiumIngot, 1) , 1.5F);
+        GameRegistry.addSmelting(DeeperBlocks.prisciumOre, new ItemStack(DeeperItems.prisciumIngot, 1) , 1.5F);
         
         GameRegistry.addSmelting(DeeperBlocks.fragmentedCobble, new ItemStack(Blocks.cobblestone, 1) , 0.1F);
         
