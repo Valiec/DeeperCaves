@@ -1,21 +1,49 @@
 package com.kpabr.DeeperCaves.world.gen.cave;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
 
-public class MapGenDeeperCavesDefault extends MapGenBase
-{
-    private static final String __OBFID = "CL_00000393";
+import java.util.Random;
 
-    protected void func_151542_a(long p_151542_1_, int p_151542_3_, int p_151542_4_, Block[] p_151542_5_, double p_151542_6_, double p_151542_8_, double p_151542_10_)
+public class MapGenDeeperCavesCompressed extends MapGenDeeperCavesDefault {
+    protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
-        this.func_151541_a(p_151542_1_, p_151542_3_, p_151542_4_, p_151542_5_, p_151542_6_, p_151542_8_, p_151542_10_, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
+        int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(47) + 1) + 1);
+
+        if (this.rand.nextInt(5) != 0)
+        {
+            i1 = 0;
+        }
+
+        for (int j1 = 0; j1 < i1; ++j1)
+        {
+            double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
+            double d1 = (double)this.rand.nextInt(this.rand.nextInt(248) + 8);
+            double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
+            int k1 = 1;
+
+            if (this.rand.nextInt(4) == 0)
+            {
+                this.func_151542_a(this.rand.nextLong(), p_151538_4_, p_151538_5_, p_151538_6_, d0, d1, d2);
+                k1 += this.rand.nextInt(4);
+            }
+
+            for (int l1 = 0; l1 < k1; ++l1)
+            {
+                float f = this.rand.nextFloat() * (float)Math.PI * 2.0F;
+                float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
+                float f2 = (this.rand.nextFloat() * 2.0F + this.rand.nextFloat()) / 2.0F;
+
+                if (this.rand.nextInt(10) == 0)
+                {
+                    f2 *= this.rand.nextFloat() * this.rand.nextFloat() * 3.0F + 1.0F;
+                }
+
+                this.func_151541_a(this.rand.nextLong(), p_151538_4_, p_151538_5_, p_151538_6_, d0, d1, d2, f2, f, f1, 0, 0, 1.0D);
+            }
+        }
     }
 
     protected void func_151541_a(long p_151541_1_, int p_151541_3_, int p_151541_4_, Block[] p_151541_5_, double p_151541_6_, double p_151541_8_, double p_151541_10_, float p_151541_12_, float p_151541_13_, float p_151541_14_, int p_151541_15_, int p_151541_16_, double p_151541_17_)
@@ -44,7 +72,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
 
         for (boolean flag = random.nextInt(6) == 0; p_151541_15_ < p_151541_16_; ++p_151541_15_)
         {
-            double d6 = 1.5D + (double)(MathHelper.sin((float)p_151541_15_ * (float)Math.PI / (float)p_151541_16_) * p_151541_12_ * 1.0F);
+            double d6 = 1.0D + (double)(MathHelper.sin((float)p_151541_15_ * (float)Math.PI / (float)p_151541_16_) * p_151541_12_ * 1.0F);
             double d7 = d6 * p_151541_17_;
             //d7 *= 5.5;
             float f5 = MathHelper.cos(p_151541_14_);
@@ -202,103 +230,5 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         }
     }
 
-    protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
-    {
-        int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(47) + 1) + 1);
-
-        if (this.rand.nextInt(5) != 0)
-        {
-            i1 = 0;
-        }
-
-        for (int j1 = 0; j1 < i1; ++j1)
-        {
-            double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
-            double d1 = (double)this.rand.nextInt(this.rand.nextInt(248) + 8);
-            double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
-            int k1 = 1;
-
-            if (this.rand.nextInt(4) == 0)
-            {
-                this.func_151542_a(this.rand.nextLong(), p_151538_4_, p_151538_5_, p_151538_6_, d0, d1, d2);
-                k1 += this.rand.nextInt(4);
-            }
-
-            for (int l1 = 0; l1 < k1; ++l1)
-            {
-                float f = this.rand.nextFloat() * (float)Math.PI * 2.0F;
-                float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
-                float f2 = this.rand.nextFloat() * 2.0F + this.rand.nextFloat();
-
-                if (this.rand.nextInt(10) == 0)
-                {
-                    f2 *= this.rand.nextFloat() * this.rand.nextFloat() * 3.0F + 1.0F;
-                }
-
-                this.func_151541_a(this.rand.nextLong(), p_151538_4_, p_151538_5_, p_151538_6_, d0, d1, d2, f2, f, f1, 0, 0, 1.0D);
-            }
-        }
-    }
-
-    protected boolean isOceanBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
-    {
-        return data[index] == Blocks.flowing_water || data[index] == Blocks.water;
-    }
-
-    //Exception biomes to make sure we generate like vanilla
-    private boolean isExceptionBiome(BiomeGenBase biome)
-    {
-        if (biome == BiomeGenBase.mushroomIsland) return true;
-        if (biome == BiomeGenBase.beach) return true;
-        if (biome == BiomeGenBase.desert) return true;
-        return false;
-    }
-
-    //Determine if the block at the specified location is the top block for the biome, we take into account
-    //Vanilla bugs to make sure that we generate the map the same way vanilla does.
-    public boolean isTopBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
-    {
-        BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
-        return (isExceptionBiome(biome) ? data[index] == Blocks.grass : data[index] == biome.topBlock);
-    }
-
-    /**
-     * Digs out the current block, default implementation removes stone, filler, and top block
-     * Sets the block to lava if y is less then 10, and air other wise.
-     * If setting to air, it also checks to see if we've broken the surface and if so 
-     * tries to make the floor the biome's top block
-     * 
-     * @param data Block data array
-     * @param index Pre-calculated index into block data
-     * @param x local X position
-     * @param y local Y position
-     * @param z local Z position
-     * @param chunkX Chunk X position
-     * @param chunkZ Chunk Y position
-     * @param foundTop True if we've encountered the biome's top block. Ideally if we've broken the surface.
-     */
-    protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop)
-    {
-        BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
-        Block top    = (isExceptionBiome(biome) ? Blocks.grass : biome.topBlock);
-        Block filler = (isExceptionBiome(biome) ? Blocks.dirt  : biome.fillerBlock);
-        Block block  = data[index];
-
-        if (block == Blocks.stone || block == filler || block == top)
-        {
-            //if (y < 10)
-            //{
-                //data[index] = Blocks.lava;
-            //}
-            //else
-            //{
-                data[index] = null;
-
-                if (foundTop && data[index - 1] == filler)
-                {
-                    data[index - 1] = top;
-                }
-            //}
-        }
-    }
 }
+
