@@ -18,8 +18,8 @@ public class DeeperTeleporter extends Teleporter
     private final WorldServer worldServerInstance;
     private final Random random;
     public int[] ids = {DeeperCaves.worldgen.dropDimID, DeeperCaves.worldgen.mazeDimID, DeeperCaves.worldgen.crystalDimID, DeeperCaves.worldgen.compressedDimID, DeeperCaves.worldgen.bedrockPlainsDimID, DeeperCaves.worldgen.nearNetherDimID, DeeperCaves.worldgen.lavaDimID, DeeperCaves.worldgen.nearVoidDimID, DeeperCaves.worldgen.deepWorldDimID, DeeperCaves.worldgen.darknessDimID, DeeperCaves.worldgen.abandonedCavesDimID, DeeperCaves.worldgen.mutationDimID, DeeperCaves.worldgen.farVoidDimID, DeeperCaves.worldgen.forgottenDimID, DeeperCaves.worldgen.evilDimID, DeeperCaves.worldgen.finalLabyrinthDimID};
-    public int[] caps = {252, 252, 147, 97, 160, 97, 47, 244, 72, 252, 252, 97, 244, 252, 97, 252};
-    public int[] mins = {185, 185, 135, 90, 156, 90, 40, 235, 65, 185, 90, 90, 235, 185, 90, 185};
+    public int[] caps = {197, 197, 147, 97, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+3, 97, 47, 242, 72, 242, 97, 97, 242, 227, 97, 242};
+    public int[] mins = {185, 185, 135, 90, DeeperCaves.worldgen.bedrockPlainsFloorHeight-8, 90, 40, 235, 65, 185, 90, 90, 235, 185, 90, 185};
 
     public int[] capsLower = {16, 16, 16, 16, 160, 16, 16, 256, 16, 16, 16, 16, 256, 16, 16, 16};
     public int[] minsLower = {2, 2, 2, 2, 156, 2, 2, 235, 2, 2, 2, 2, 235, 2, 2, 2};
@@ -144,7 +144,7 @@ public class DeeperTeleporter extends Teleporter
                     int incr = this.isLower ? 1 : -1;
                     int startY = this.isLower ? min : cap;
                     int endY = this.isLower ? cap : min;
-                    for (int testY = startY; testY >= endY; testY += incr) {
+                    for (int testY = startY; (testY >= endY && !this.isLower) || (testY <= endY && this.isLower); testY += incr) {
                         if (isPositionValid(testX, testY, testZ)) {
                             baseX = testX;
                             baseY = testY;
