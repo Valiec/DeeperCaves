@@ -21,7 +21,7 @@ public class DeeperTeleporter extends Teleporter
     public int[] caps = {197, 197, 147, 97, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+3, 97, 47, 242, 72, 242, 97, 97, 242, 227, 97, 242};
     public int[] mins = {185, 185, 135, 90, DeeperCaves.worldgen.bedrockPlainsFloorHeight-8, 90, 40, 235, 65, 185, 90, 90, 235, 185, 90, 185};
 
-    public int[] capsLower = {16, 16, 16, 16, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+3, 16, 16, 256, 16, 16, 16, 16, 256, 16, 16, 16};
+    public int[] capsLower = {16, 16, 16, 16, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+3, 16, 16, 242, 16, 16, 16, 16, 242, 16, 16, 16};
     public int[] minsLower = {2, 2, 2, 2, DeeperCaves.worldgen.bedrockPlainsFloorHeight-8, 2, 2, 235, 2, 2, 2, 2, 235, 2, 2, 2};
     public Block[] stones = {Blocks.stone, Blocks.stone, Blocks.stone, Blocks.stone, DeeperBlocks.fragmentedBedrock, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.stone, DeeperBlocks.darkStone, DeeperBlocks.abandonedStone, DeeperBlocks.deepStone, DeeperBlocks.deepStone, DeeperBlocks.deepStone, DeeperBlocks.deepStone, DeeperBlocks.fragmentedBedrock};
     public int min;
