@@ -11,17 +11,39 @@ import net.minecraft.world.gen.MapGenBase;
 
 public class MapGenDeeperCavesDefault extends MapGenBase
 {
-    private static final String __OBFID = "CL_00000393";
 
     public boolean floorCutoff;
+    public float widthDivisor;
+    public double widthMin;
+    public int heightMax;
+    public int heightSkewMin;
+    public int heightMin;
+    public int startCountMax;
+    public int startSkipChance;
+    public boolean doClumpCaves;
+    public boolean doSkewHeight;
 
-    public MapGenDeeperCavesDefault(boolean floorCutoff) {
+    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight) {
         super();
         this.floorCutoff = floorCutoff;
+        this.widthDivisor = widthDivisor;
+        this.widthMin = widthMin;
+        this.heightMax = heightMax;
+        this.heightMin = heightSkewMin;
+        this.heightSkewMin = heightSkewMin;
+        this.startCountMax = startCountMax;
+        this.startSkipChance = startSkipChance;
+        this.doClumpCaves = doClumpCaves;
+        this.doSkewHeight = doSkewHeight;
     }
 
+    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin) {
+        this(false, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, true);
+    }
+
+
     public MapGenDeeperCavesDefault() {
-        this(false);
+        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, true);
     }
 
     protected void func_151542_a(long p_151542_1_, int p_151542_3_, int p_151542_4_, Block[] p_151542_5_, double p_151542_6_, double p_151542_8_, double p_151542_10_)
@@ -55,7 +77,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
 
         for (boolean flag = random.nextInt(6) == 0; p_151541_15_ < p_151541_16_; ++p_151541_15_)
         {
-            double d6 = 1.5D + (double)(MathHelper.sin((float)p_151541_15_ * (float)Math.PI / (float)p_151541_16_) * p_151541_12_ * 1.0F);
+            double d6 = this.widthMin + (double)(MathHelper.sin((float)p_151541_15_ * (float)Math.PI / (float)p_151541_16_) * p_151541_12_ * 1.0F);
             double d7 = d6 * p_151541_17_;
             //d7 *= 5.5;
             float f5 = MathHelper.cos(p_151541_14_);
@@ -213,11 +235,29 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         }
     }
 
+    public int getCaveStartCount() {
+        if(doClumpCaves) {
+            return this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(this.startCountMax) + 1) + 1);
+        }
+        else {
+            return this.rand.nextInt(this.startCountMax);
+        }
+    }
+
+    public int getCaveStartHeight() {
+        if(this.doSkewHeight) {
+            return this.rand.nextInt(this.rand.nextInt(this.heightMax) + this.heightSkewMin) + this.heightMin;
+        }
+        else {
+            return this.rand.nextInt(this.heightMax) + this.heightMin;
+        }
+    }
+
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
-        int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(47) + 1) + 1);
+        int i1 = getCaveStartCount();
 
-        if (this.rand.nextInt(5) != 0)
+        if (this.rand.nextInt(this.startSkipChance) != 0)
         {
             i1 = 0;
         }
@@ -225,7 +265,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         for (int j1 = 0; j1 < i1; ++j1)
         {
             double d0 = (double)(p_151538_2_ * 16 + this.rand.nextInt(16));
-            double d1 = (double)this.rand.nextInt(this.rand.nextInt(248) + 8);
+            double d1 = (double)getCaveStartHeight();
             double d2 = (double)(p_151538_3_ * 16 + this.rand.nextInt(16));
             int k1 = 1;
 
@@ -239,7 +279,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
             {
                 float f = this.rand.nextFloat() * (float)Math.PI * 2.0F;
                 float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
-                float f2 = this.rand.nextFloat() * 2.0F + this.rand.nextFloat();
+                float f2 = (this.rand.nextFloat() * 2.0F + this.rand.nextFloat()) / this.widthDivisor;
 
                 if (this.rand.nextInt(10) == 0)
                 {

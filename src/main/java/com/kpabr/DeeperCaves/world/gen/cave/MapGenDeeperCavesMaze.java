@@ -268,7 +268,7 @@ public class MapGenDeeperCavesMaze extends MapGenBase
 
     //Determine if the block at the specified location is the top block for the biome, we take into account
     //Vanilla bugs to make sure that we generate the map the same way vanilla does.
-    private boolean isTopBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
+    public boolean isTopBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
     {
         BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
         return (isExceptionBiome(biome) ? data[index] == Blocks.grass : data[index] == biome.topBlock);
@@ -306,10 +306,10 @@ public class MapGenDeeperCavesMaze extends MapGenBase
             //{
                 data[index] = null;
 
-            if (foundTop && (index & 255) != 0 && data[index - 1] == filler)
-            {
-                data[index - 1] = top;
-            }
+                if (foundTop && (index & 255) != 0 && data[index - 1] == filler)
+                {
+                    data[index - 1] = top;
+                }
             //}
         }
     }

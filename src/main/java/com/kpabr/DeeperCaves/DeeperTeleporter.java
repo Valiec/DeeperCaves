@@ -10,6 +10,8 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
+import static java.lang.Math.abs;
+
 public class DeeperTeleporter extends Teleporter
 {
 
@@ -98,9 +100,21 @@ public class DeeperTeleporter extends Teleporter
             int k = MathHelper.floor_double(p_77185_1_.posZ);
             makePortal(p_77185_1_, cap, i, j, k);
     }
+
+    public boolean isValidGround(Block block) {
+        return block != Blocks.air && block != Blocks.water && block != Blocks.lava && block != DeeperBlocks.magmaStone && block != Blocks.flowing_water && block != Blocks.flowing_lava;
+    }
+
+    public boolean isPositionValid(int testX, int testY, int testZ) {
+        return this.isValidGround(this.worldServerInstance.getBlock(testX, testY-1, testZ)) &&
+                this.worldServerInstance.getBlock(testX, testY, testZ) == Blocks.air &&
+                this.worldServerInstance.getBlock(testX, testY+1, testZ) == Blocks.air;
+    }
+
+
     public void makePortal(Entity entity, int cap, int i, int j, int k)
     {
-        byte b0 = 32;
+        int maxRadius = 32;
 
         int min = j;
 
@@ -108,48 +122,62 @@ public class DeeperTeleporter extends Teleporter
         int baseY = j;
         int baseZ = k;
 
-        for (int testX = i - b0; testX <= i + b0; ++testX)
+        boolean pos_ok = false;
+
+        pos_scan:
+        for (int radius = 0; radius <= maxRadius; radius++)
         {
-            for (int testZ = k - b0; testZ <= k + b0; ++testZ)
-            {
-                int incr = this.isLower ? 1 : -1;
-                int startY = this.isLower ? min : cap;
-                int endY = this.isLower ? cap : min;
-                for (int testY = startY; testY >= endY; testY+=incr)
-                {
-                    if(this.worldServerInstance.getBlock(testX, testY-1, testZ) != Blocks.air &&
-                            this.worldServerInstance.getBlock(testX, testY, testZ) == Blocks.air &&
-                            this.worldServerInstance.getBlock(testX, testY+1, testZ) == Blocks.air)
-                    {
-                        baseX = testX;
-                        baseY = testY;
-                        baseZ = testZ;
-                        break;
+
+            int testX = baseX - radius;
+
+            while (testX <= baseX + radius) {
+
+                int testZ = baseZ - radius;
+
+                while (testZ <= baseZ + radius) {
+
+                    if (abs(testX-baseX) < radius && abs(testZ-baseZ) < radius) {
+                        testZ = baseZ + radius;
+                        //skip middle
+                    }
+
+                    int incr = this.isLower ? 1 : -1;
+                    int startY = this.isLower ? min : cap;
+                    int endY = this.isLower ? cap : min;
+                    for (int testY = startY; testY >= endY; testY += incr) {
+                        if (isPositionValid(testX, testY, testZ)) {
+                            baseX = testX;
+                            baseY = testY;
+                            baseZ = testZ;
+                            pos_ok = true;
+                            break pos_scan;
+                        }
+                    }
+                    testZ++;
+                }
+                testX++;
+            }
+        }
+
+        if(!pos_ok) {
+
+            for (int xCoord = baseX - 1; xCoord <= baseX + 1; ++xCoord) {
+                for (int zCoord = baseZ - 1; zCoord <= baseZ + 1; ++zCoord) {
+                    for (int yCoord = baseY; yCoord <= baseY + 2; ++yCoord) {
+                        this.worldServerInstance.setBlock(xCoord, yCoord, zCoord, Blocks.air, 0, 2);
                     }
                 }
             }
-        }
 
-        for (int xCoord = baseX-1; xCoord <= baseX+1; ++xCoord)
-        {
-            for (int zCoord = baseZ-1; zCoord <= baseZ+1; ++zCoord)
-            {
-                for (int yCoord = baseY; yCoord <= baseY+2; ++yCoord)
-                {
-                    this.worldServerInstance.setBlock(xCoord, yCoord, zCoord, Blocks.air, 0, 2);
+
+            for (int xCoord = baseX - 1; xCoord <= baseX + 1; ++xCoord) {
+                for (int zCoord = baseZ - 1; zCoord <= baseZ + 1; ++zCoord) {
+                    if (this.worldServerInstance.getBlock(xCoord, baseY - 1, zCoord) == Blocks.air) {
+                        this.worldServerInstance.setBlock(xCoord, baseY - 1, zCoord, stone, 0, 2);
+                    }
                 }
             }
-        }
 
-
-        for (int xCoord = baseX-1; xCoord <= baseX+1; ++xCoord)
-        {
-            for (int zCoord = baseZ-1; zCoord <= baseZ+1; ++zCoord)
-            {
-                if(this.worldServerInstance.getBlock(xCoord, baseY-1, zCoord) == Blocks.air) {
-                    this.worldServerInstance.setBlock(xCoord, baseY - 1, zCoord, stone, 0, 2);
-                }
-            }
         }
 
         entity.setPosition(baseX+0.5, baseY, baseZ+0.5);
