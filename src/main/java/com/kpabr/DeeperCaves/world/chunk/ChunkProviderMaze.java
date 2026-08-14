@@ -1,6 +1,6 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesMaze;
+import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 
 import net.minecraft.init.Blocks;
@@ -12,7 +12,8 @@ import net.minecraftforge.event.terraingen.*;
 public class ChunkProviderMaze extends ChunkProviderDeeperBase
 {
     /** RNG. */
-    private MapGenBase caveGenerator = new MapGenDeeperCavesMaze();
+    //private MapGenBase caveGenerator = new MapGenDeeperCavesMaze();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false, 1.0F, 4.0D, 254, 0, 0, 36, 7, true, false);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 40, 2.5, 2.5, Blocks.stone);
 
     {

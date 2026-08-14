@@ -29,7 +29,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         this.widthDivisor = widthDivisor;
         this.widthMin = widthMin;
         this.heightMax = heightMax;
-        this.heightMin = heightSkewMin;
+        this.heightMin = heightMin;
         this.heightSkewMin = heightSkewMin;
         this.startCountMax = startCountMax;
         this.startSkipChance = startSkipChance;
@@ -246,10 +246,10 @@ public class MapGenDeeperCavesDefault extends MapGenBase
 
     public int getCaveStartHeight() {
         if(this.doSkewHeight) {
-            return this.rand.nextInt(this.rand.nextInt(this.heightMax) + this.heightSkewMin) + this.heightMin;
+            return this.rand.nextInt(this.rand.nextInt(this.heightMax-this.heightMin) + this.heightSkewMin) + this.heightMin;
         }
         else {
-            return this.rand.nextInt(this.heightMax) + this.heightMin;
+            return this.rand.nextInt(this.heightMax-this.heightMin) + this.heightMin;
         }
     }
 
