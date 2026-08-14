@@ -28,7 +28,7 @@ import net.minecraftforge.event.terraingen.*;
 public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
 {
     /** RNG. */
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(Blocks.bedrock);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(DeeperCaves.worldgen.bedrockPlainsFloorHeight-16, DeeperCaves.worldgen.bedrockPlainsFloorHeight+16, 60, 0.8, 5.0, Blocks.bedrock, -1, DeeperCaves.worldgen.bedrockPlainsFloorHeight+8, false);
 
     private MapGenBase ravineGenerator2 = new MapGenDeeperRavine(DeeperCaves.worldgen.bedrockPlainsCeilingHeight-8, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+16, 60, 0.8, 2.0, Blocks.bedrock, DeeperCaves.worldgen.bedrockPlainsCeilingHeight-8, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+16, false, 413, false);

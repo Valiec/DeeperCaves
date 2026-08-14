@@ -40,12 +40,16 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     }
 
     public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin) {
-        this(false, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, true, Blocks.stone);
+        this(false, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, false, Blocks.stone);
     }
 
 
     public MapGenDeeperCavesDefault() {
-        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, true, Blocks.stone);
+        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, Blocks.stone);
+    }
+
+    public MapGenDeeperCavesDefault(Block carvableBlock) {
+        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, carvableBlock);
     }
 
     protected void func_151542_a(long p_151542_1_, int p_151542_3_, int p_151542_4_, Block[] p_151542_5_, double p_151542_6_, double p_151542_8_, double p_151542_10_)
