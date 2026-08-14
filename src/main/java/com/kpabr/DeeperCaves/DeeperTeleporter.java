@@ -106,9 +106,9 @@ public class DeeperTeleporter extends Teleporter
     }
 
     public boolean isPositionValid(int testX, int testY, int testZ) {
-        return this.isValidGround(this.worldServerInstance.getBlock(testX, testY-1, testZ)) &&
+        return this.worldServerInstance.getBlock(testX, testY+1, testZ) == Blocks.air &&
                 this.worldServerInstance.getBlock(testX, testY, testZ) == Blocks.air &&
-                this.worldServerInstance.getBlock(testX, testY+1, testZ) == Blocks.air;
+                this.isValidGround(this.worldServerInstance.getBlock(testX, testY-1, testZ));
     }
 
 
