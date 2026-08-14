@@ -13,7 +13,7 @@ public class ChunkProviderMaze extends ChunkProviderDeeperBase
 {
     /** RNG. */
     //private MapGenBase caveGenerator = new MapGenDeeperCavesMaze();
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false, 1.0F, 4.0D, 254, 0, 0, 36, 7, true, false);
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false, 1.0F, 4.0D, 254, 0, 0, 36, 7, true, false, Blocks.stone);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 40, 2.5, 2.5, Blocks.stone);
 
     {

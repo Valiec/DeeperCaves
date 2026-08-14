@@ -1,7 +1,6 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesNearVoid;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 
 import net.minecraft.init.Blocks;
@@ -12,7 +11,7 @@ import net.minecraftforge.event.terraingen.*;
 
 public class ChunkProviderNearVoid extends ChunkProviderDeeperBase
 {
-    private MapGenBase caveGenerator = new MapGenDeeperCavesNearVoid();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false,  1.0F,  4.0D, 254, 0, 220, 15, 12, false, false, Blocks.stone);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(220, 13, 7.5, 3.5, Blocks.stone);
 
     {

@@ -1,11 +1,11 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDarknessLower;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDarknessUpper;
+import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.MapGenBase;
@@ -16,8 +16,8 @@ import net.minecraftforge.event.terraingen.*;
 
 public class ChunkProviderForgotten extends ChunkProviderDeeperBase
 {
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDarknessLower();
-    private MapGenBase caveGenerator2 = new MapGenDeeperCavesDarknessUpper();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 150, 0,   0, 36,  7, true,  false, DeeperBlocks.deepStone);
+    private MapGenBase caveGenerator2 = new MapGenDeeperCavesDefault(false, 1.0F,  2.5D, 255, 0, 150, 47,  4, true,  false, DeeperBlocks.deepStone);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5, DeeperBlocks.deepStone);
 
     {

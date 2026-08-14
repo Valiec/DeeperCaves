@@ -22,8 +22,9 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     public int startSkipChance;
     public boolean doClumpCaves;
     public boolean doSkewHeight;
+    public Block carvableBlock;
 
-    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight) {
+    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight, Block carvableBlock) {
         super();
         this.floorCutoff = floorCutoff;
         this.widthDivisor = widthDivisor;
@@ -35,15 +36,16 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         this.startSkipChance = startSkipChance;
         this.doClumpCaves = doClumpCaves;
         this.doSkewHeight = doSkewHeight;
+        this.carvableBlock = carvableBlock;
     }
 
     public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin) {
-        this(false, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, true);
+        this(false, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, true, Blocks.stone);
     }
 
 
     public MapGenDeeperCavesDefault() {
-        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, true);
+        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, true, Blocks.stone);
     }
 
     protected void func_151542_a(long p_151542_1_, int p_151542_3_, int p_151542_4_, Block[] p_151542_5_, double p_151542_6_, double p_151542_8_, double p_151542_10_)
@@ -297,7 +299,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     }
 
     //Exception biomes to make sure we generate like vanilla
-    private boolean isExceptionBiome(BiomeGenBase biome)
+    public boolean isExceptionBiome(BiomeGenBase biome)
     {
         if (biome == BiomeGenBase.mushroomIsland) return true;
         if (biome == BiomeGenBase.beach) return true;
@@ -335,7 +337,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         Block filler = (isExceptionBiome(biome) ? Blocks.dirt  : biome.fillerBlock);
         Block block  = data[index];
 
-        if (block == Blocks.stone || block == filler || block == top)
+        if (block == this.carvableBlock || block == filler || block == top)
         {
             //if (y < 10)
             //{
