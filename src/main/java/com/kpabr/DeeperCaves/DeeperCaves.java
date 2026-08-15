@@ -36,7 +36,6 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import net.minecraftforge.event.*;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
-import scala.actors.threadpool.Arrays;
 @Mod(modid = DeeperCaves.MODID, version = DeeperCaves.VERSION, name = DeeperCaves.NAME)
 public class DeeperCaves
 {
@@ -124,6 +123,8 @@ public class DeeperCaves
 		recipes.setupShapedCrafting();
      	recipes.setupSmelting();
      	worldgen.setupWorldgen();
+        blocks.setupPortals();
+        blocks.registerPortals();
      	mobs.setupMobs();
      	GameRegistry.registerFuelHandler(new DeeperFuel());
      	proxy.registerRenderers();

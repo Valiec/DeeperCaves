@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
+import com.kpabr.DeeperCaves.DeeperConfig;
 import com.kpabr.DeeperCaves.DeeperFluids;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
@@ -29,9 +30,9 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
 {
     /** RNG. */
     private MapGenBase caveGenerator = null;
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(DeeperCaves.worldgen.bedrockPlainsFloorHeight-16, DeeperCaves.worldgen.bedrockPlainsFloorHeight+16, 60, 0.8, 5.0, Blocks.bedrock, -1, DeeperCaves.worldgen.bedrockPlainsFloorHeight+8, false);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(DeeperConfig.bedrockPlainsFloorHeight-16, DeeperConfig.bedrockPlainsFloorHeight+16, 60, 0.8, 5.0, Blocks.bedrock, -1, DeeperConfig.bedrockPlainsFloorHeight+8, false);
 
-    private MapGenBase ravineGenerator2 = new MapGenDeeperRavine(DeeperCaves.worldgen.bedrockPlainsCeilingHeight-8, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+16, 60, 0.8, 2.0, Blocks.bedrock, DeeperCaves.worldgen.bedrockPlainsCeilingHeight-8, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+16, false, 413, false);
+    private MapGenBase ravineGenerator2 = new MapGenDeeperRavine(DeeperConfig.bedrockPlainsCeilingHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+16, 60, 0.8, 2.0, Blocks.bedrock, DeeperConfig.bedrockPlainsCeilingHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+16, false, 413, false);
 
     NoiseGeneratorOctaves floorHeightNoise;
     NoiseGeneratorOctaves ceilingHeightNoise;
@@ -60,7 +61,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
         double d0 = 0.03125D;
         this.stoneNoise = this.perlinNoise.func_151599_a(this.stoneNoise, (double)(p_147422_1_ * 16), (double)(p_147422_2_ * 16), 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 
-        int bedrockPlainsGapHeight = DeeperCaves.worldgen.bedrockPlainsCeilingHeight-DeeperCaves.worldgen.bedrockPlainsFloorHeight;
+        int bedrockPlainsGapHeight = DeeperConfig.bedrockPlainsCeilingHeight-DeeperConfig.bedrockPlainsFloorHeight;
 
         floorNoise = this.floorHeightNoise.generateNoiseOctaves(floorNoise, p_147422_1_*16, 0, p_147422_2_*16, 16, 1, 16, 2, 0, 2);
 
@@ -84,7 +85,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                 int j1 = p_147422_2_ * 16 + l & 15;
                 int k1 = p_147422_3_.length / 256;
 
-                int trueFloorHeight = DeeperCaves.worldgen.bedrockPlainsFloorHeight + (int)(0.1*floorNoise[j1 * 16 + i1]);
+                int trueFloorHeight = DeeperConfig.bedrockPlainsFloorHeight + (int)(0.1*floorNoise[j1 * 16 + i1]);
 
                 int trueCeilingHeight = (trueFloorHeight + bedrockPlainsGapHeight) - (int)(ceilingNoise[j1 * 16 + i1]);
 
@@ -109,7 +110,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                         i3 = i2;
                     }*/
 
-                    if (l1 >= DeeperCaves.worldgen.bedrockPlainsCeilingHeight + 8 && l1 >= trueCeilingHeight)
+                    if (l1 >= DeeperConfig.bedrockPlainsCeilingHeight + 8 && l1 >= trueCeilingHeight)
                     {
                         p_147422_3_[i2] = DeeperBlocks.barrierLayer;
                     }
@@ -125,7 +126,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
                     {
                         p_147422_3_[i2] = Blocks.bedrock;
                     }
-                    else if (l1 >= trueFloorHeight && l1 <= DeeperCaves.worldgen.bedrockPlainsFloorHeight-2)
+                    else if (l1 >= trueFloorHeight && l1 <= DeeperConfig.bedrockPlainsFloorHeight-2)
                     {
                         p_147422_3_[i2] = DeeperFluids.moltenIronBlock;
                     }

@@ -55,12 +55,12 @@ public class LavaDecorator extends DeeperDecorator {
         boolean doGen = TerrainGen.decorate(currentWorld, randomGenerator, chunk_X, chunk_Z, LAKE);
         if (true)
         {
-            for (j = 0; j < ((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)?64:250); ++j)
+            for (j = 0; j < ((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?64:250); ++j)
             {
                 k = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-                l = this.randomGenerator.nextInt((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)?(100):(50));
+                l = this.randomGenerator.nextInt((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(100):(50));
                 i1 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-                (new WorldGenDeeperLiquids((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)?(DeeperCaves.fluids.veneniumBlock):(Blocks.flowing_lava))).setReplaceBlock((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)?(DeeperBlocks.deepStone):(Blocks.stone)).generate(this.currentWorld, this.randomGenerator, k, l, i1);
+                (new WorldGenDeeperLiquids((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(DeeperCaves.fluids.veneniumBlock):(Blocks.flowing_lava))).setReplaceBlock((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(DeeperBlocks.deepStone):(Blocks.stone)).generate(this.currentWorld, this.randomGenerator, k, l, i1);
             }
         }
 

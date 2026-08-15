@@ -11,6 +11,53 @@ public class DeeperConfig {
 	public String CATEGORY_ENTITY_IDS = "entity ids";
 	public String CATEGORY_OTHER = "other";
 
+
+    public static int dropDimID;
+    public static int mazeDimID;
+    public static int crystalDimID;
+    public static int compressedDimID;
+    public static int bedrockPlainsDimID;
+
+    public static int nearNetherDimID;
+    public static int lavaDimID;
+    public static int nearVoidDimID;
+
+    public static int deepWorldDimID;
+    public static int darknessDimID;
+    public static int abandonedCavesDimID;
+    public static int mutationDimID;
+    public static int farVoidDimID;
+
+    public static int forgottenDimID;
+    public static int evilDimID;
+    public static int finalLabyrinthDimID;
+
+    //-----------------
+
+    public static int dropBiomeID;
+    public static int mazeBiomeID;
+    public static int crystalBiomeID;
+    public static int compressedBiomeID;
+    public static int bedrockPlainsBiomeID;
+
+    public static int nearNetherBiomeID;
+    public static int lavaBiomeID;
+    public static int nearVoidBiomeID;
+
+    public static int deepWorldBiomeID;
+    public static int darknessBiomeID;
+    public static int abandonedCavesBiomeID;
+    public static int mutationBiomeID;
+    public static int farVoidBiomeID;
+
+    public static int forgottenBiomeID;
+    public static int evilBiomeID;
+    public static int finalLabyrinthBiomeID;
+
+    public static int bedrockPlainsFloorHeight;
+    public static int bedrockPlainsCeilingHeight;
+
+
     public void initConfig(FMLPreInitializationEvent event)
     {
         config = new Configuration(event.getSuggestedConfigurationFile()); //gets default config file
@@ -18,49 +65,49 @@ public class DeeperConfig {
         config.load();
         config.addCustomCategoryComment("dimension ids", "Dimension IDs");
         
-        DeeperCaves.worldgen.dropDimID = config.getInt("Drop ID", this.CATEGORY_DIM_IDS, -2, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.mazeDimID = config.getInt("Maze ID", this.CATEGORY_DIM_IDS, -3, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.crystalDimID = config.getInt("Crystal ID", this.CATEGORY_DIM_IDS, -4, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.compressedDimID = config.getInt("Compressed ID", this.CATEGORY_DIM_IDS, -5, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.bedrockPlainsDimID = config.getInt("Bedrock Plains ID", this.CATEGORY_DIM_IDS, -6, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        dropDimID = config.getInt("Drop ID", this.CATEGORY_DIM_IDS, -2, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        mazeDimID = config.getInt("Maze ID", this.CATEGORY_DIM_IDS, -3, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        crystalDimID = config.getInt("Crystal ID", this.CATEGORY_DIM_IDS, -4, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        compressedDimID = config.getInt("Compressed ID", this.CATEGORY_DIM_IDS, -5, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        bedrockPlainsDimID = config.getInt("Bedrock Plains ID", this.CATEGORY_DIM_IDS, -6, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         
-        DeeperCaves.worldgen.nearNetherDimID = config.getInt("Near Nether ID", this.CATEGORY_DIM_IDS, -7, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.lavaDimID = config.getInt("Lava ID", this.CATEGORY_DIM_IDS, -8, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.nearVoidDimID = config.getInt("Near Void ID", this.CATEGORY_DIM_IDS, -9, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        nearNetherDimID = config.getInt("Near Nether ID", this.CATEGORY_DIM_IDS, -7, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        lavaDimID = config.getInt("Lava ID", this.CATEGORY_DIM_IDS, -8, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        nearVoidDimID = config.getInt("Near Void ID", this.CATEGORY_DIM_IDS, -9, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         
-        DeeperCaves.worldgen.deepWorldDimID = config.getInt("Deep World ID", this.CATEGORY_DIM_IDS, -10, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.darknessDimID = config.getInt("Darkness ID", this.CATEGORY_DIM_IDS, -11, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.abandonedCavesDimID = config.getInt("Abandoned Caves ID", this.CATEGORY_DIM_IDS, -12, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.mutationDimID = config.getInt("Mutation ID", this.CATEGORY_DIM_IDS, -13, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.farVoidDimID = config.getInt("Far Void ID", this.CATEGORY_DIM_IDS, -14, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        deepWorldDimID = config.getInt("Deep World ID", this.CATEGORY_DIM_IDS, -10, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        darknessDimID = config.getInt("Darkness ID", this.CATEGORY_DIM_IDS, -11, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        abandonedCavesDimID = config.getInt("Abandoned Caves ID", this.CATEGORY_DIM_IDS, -12, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        mutationDimID = config.getInt("Mutation ID", this.CATEGORY_DIM_IDS, -13, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        farVoidDimID = config.getInt("Far Void ID", this.CATEGORY_DIM_IDS, -14, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         
-        DeeperCaves.worldgen.forgottenDimID = config.getInt("Forgotten ID", this.CATEGORY_DIM_IDS, -15, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.evilDimID = config.getInt("Evil ID", this.CATEGORY_DIM_IDS, -16, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        DeeperCaves.worldgen.finalLabyrinthDimID = config.getInt("Final Labyrinth ID", this.CATEGORY_DIM_IDS, -17, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        forgottenDimID = config.getInt("Forgotten ID", this.CATEGORY_DIM_IDS, -15, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        evilDimID = config.getInt("Evil ID", this.CATEGORY_DIM_IDS, -16, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        finalLabyrinthDimID = config.getInt("Final Labyrinth ID", this.CATEGORY_DIM_IDS, -17, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         
         //------------------
         
         config.addCustomCategoryComment("biome ids", "Biome IDs");
         
-        DeeperCaves.worldgen.dropBiomeID = config.getInt("Drop Biome ID", this.CATEGORY_BIOME_IDS, 170, 0, 245, "");
-        DeeperCaves.worldgen.mazeBiomeID = config.getInt("Maze Biome ID", this.CATEGORY_BIOME_IDS, 171, 0, 245, "");
-        DeeperCaves.worldgen.crystalBiomeID = config.getInt("Crystal Biome ID", this.CATEGORY_BIOME_IDS, 172, 0, 245, "");
-        DeeperCaves.worldgen.compressedBiomeID = config.getInt("Compressed Biome ID", this.CATEGORY_BIOME_IDS, 173, 0, 245, "");
-        DeeperCaves.worldgen.bedrockPlainsBiomeID = config.getInt("Bedrock Plains Biome ID", this.CATEGORY_BIOME_IDS, 174, 0, 245, "");
+        dropBiomeID = config.getInt("Drop Biome ID", this.CATEGORY_BIOME_IDS, 170, 0, 245, "");
+        mazeBiomeID = config.getInt("Maze Biome ID", this.CATEGORY_BIOME_IDS, 171, 0, 245, "");
+        crystalBiomeID = config.getInt("Crystal Biome ID", this.CATEGORY_BIOME_IDS, 172, 0, 245, "");
+        compressedBiomeID = config.getInt("Compressed Biome ID", this.CATEGORY_BIOME_IDS, 173, 0, 245, "");
+        bedrockPlainsBiomeID = config.getInt("Bedrock Plains Biome ID", this.CATEGORY_BIOME_IDS, 174, 0, 245, "");
         
-        DeeperCaves.worldgen.nearNetherBiomeID = config.getInt("Near Nether Biome ID", this.CATEGORY_BIOME_IDS, 175, 0, 245, "");
-        DeeperCaves.worldgen.lavaBiomeID = config.getInt("Lava Biome ID", this.CATEGORY_BIOME_IDS, 176, 0, 245, "");
-        DeeperCaves.worldgen.nearVoidBiomeID = config.getInt("Near Void Biome ID", this.CATEGORY_BIOME_IDS, 177, 0, 245, "");
+        nearNetherBiomeID = config.getInt("Near Nether Biome ID", this.CATEGORY_BIOME_IDS, 175, 0, 245, "");
+        lavaBiomeID = config.getInt("Lava Biome ID", this.CATEGORY_BIOME_IDS, 176, 0, 245, "");
+        nearVoidBiomeID = config.getInt("Near Void Biome ID", this.CATEGORY_BIOME_IDS, 177, 0, 245, "");
         
-        DeeperCaves.worldgen.deepWorldBiomeID = config.getInt("Deep World Biome ID", this.CATEGORY_BIOME_IDS, 178, 0, 245, "");
-        DeeperCaves.worldgen.darknessBiomeID = config.getInt("Darkness Biome ID", this.CATEGORY_BIOME_IDS, 179, 0, 245, "");
-        DeeperCaves.worldgen.abandonedCavesBiomeID = config.getInt("Abandoned Caves Biome ID", this.CATEGORY_BIOME_IDS, 180, 0, 245, "");
-        DeeperCaves.worldgen.mutationBiomeID = config.getInt("Mutation Biome ID", this.CATEGORY_BIOME_IDS, 181, 0, 245, "");
-        DeeperCaves.worldgen.farVoidBiomeID = config.getInt("Far Void Biome ID", this.CATEGORY_BIOME_IDS, 182, 0, 245, "");
+        deepWorldBiomeID = config.getInt("Deep World Biome ID", this.CATEGORY_BIOME_IDS, 178, 0, 245, "");
+        darknessBiomeID = config.getInt("Darkness Biome ID", this.CATEGORY_BIOME_IDS, 179, 0, 245, "");
+        abandonedCavesBiomeID = config.getInt("Abandoned Caves Biome ID", this.CATEGORY_BIOME_IDS, 180, 0, 245, "");
+        mutationBiomeID = config.getInt("Mutation Biome ID", this.CATEGORY_BIOME_IDS, 181, 0, 245, "");
+        farVoidBiomeID = config.getInt("Far Void Biome ID", this.CATEGORY_BIOME_IDS, 182, 0, 245, "");
         
-        DeeperCaves.worldgen.forgottenBiomeID = config.getInt("Forgotten Biome ID", this.CATEGORY_BIOME_IDS, 183, 0, 245, "");
-        DeeperCaves.worldgen.evilBiomeID = config.getInt("Evil Biome ID", this.CATEGORY_BIOME_IDS, 184, 0, 245, "");
-        DeeperCaves.worldgen.finalLabyrinthBiomeID = config.getInt("Final Labyrinth Biome ID", this.CATEGORY_BIOME_IDS, 185, 0, 245, "");
+        forgottenBiomeID = config.getInt("Forgotten Biome ID", this.CATEGORY_BIOME_IDS, 183, 0, 245, "");
+        evilBiomeID = config.getInt("Evil Biome ID", this.CATEGORY_BIOME_IDS, 184, 0, 245, "");
+        finalLabyrinthBiomeID = config.getInt("Final Labyrinth Biome ID", this.CATEGORY_BIOME_IDS, 185, 0, 245, "");
         
         //------------------
         
@@ -82,8 +129,8 @@ public class DeeperConfig {
         
         config.addCustomCategoryComment("other", "Other");
         
-        DeeperCaves.worldgen.bedrockPlainsFloorHeight = config.getInt("Bedrock Plains Floor Height", this.CATEGORY_OTHER, 32, 1, 255, "");
-        DeeperCaves.worldgen.bedrockPlainsCeilingHeight = config.getInt("Bedrock Plains Ceiling Height", this.CATEGORY_OTHER, 52, 0, 255, "This is the height of the level barrier. The bedrock ceiling extends about 5 blocks below this.");
+        bedrockPlainsFloorHeight = config.getInt("Bedrock Plains Floor Height", this.CATEGORY_OTHER, 32, 1, 255, "");
+        bedrockPlainsCeilingHeight = config.getInt("Bedrock Plains Ceiling Height", this.CATEGORY_OTHER, 52, 0, 255, "This is the height of the level barrier. The bedrock ceiling extends about 5 blocks below this.");
         
         config.save();
     }

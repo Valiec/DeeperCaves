@@ -15,67 +15,67 @@ public class DeeperOregen implements IWorldGenerator
 	   @Override
        public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
        {
-					if (world.provider.dimensionId == DeeperCaves.worldgen.finalLabyrinthDimID)
+					if (world.provider.dimensionId == DeeperCaves.worldgen.finalLabyrinth.dimID)
 					{
 							generateFinalLabyrinth(world, random, chunkX * 16, chunkZ * 16);
 					}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.evilDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.evil.dimID)
 					{
 							generateEvil(world, random, chunkX * 16, chunkZ * 16);
 					}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.forgottenDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.forgotten.dimID)
 					{
 							generateForgotten(world, random, chunkX * 16, chunkZ * 16);
 					}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.farVoidDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.farVoid.dimID)
 					{
 							generateFarVoid(world, random, chunkX * 16, chunkZ * 16);
 					}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.mutationDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)
 					{
 							generateMutation(world, random, chunkX * 16, chunkZ * 16);
 					}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.abandonedCavesDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.abandonedCaves.dimID)
 					{
 							generateAbandonedCaves(world, random, chunkX * 16, chunkZ * 16);
 					}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.darknessDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.darkness.dimID)
 					{
 							generateDarkness(world, random, chunkX * 16, chunkZ * 16);
 					}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.deepWorldDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.deepWorld.dimID)
 					{
   							generateDeepWorld(world, random, chunkX * 16, chunkZ * 16);
       				}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.nearVoidDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.nearVoid.dimID)
 					{
       						generateNearVoid(world, random, chunkX * 16, chunkZ * 16);
       				}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.lavaDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.lava.dimID)
 					{
  							generateLava(world, random, chunkX * 16, chunkZ * 16);
              		}
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.nearNetherDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.nearNether.dimID)
 					{
              				generateNearNether(world, random, chunkX * 16, chunkZ * 16);
 		            }
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.bedrockPlainsDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.bedrockPlains.dimID)
 					{
 		             		generateBedrockPlains(world, random, chunkX * 16, chunkZ * 16);
 		            }
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.compressedDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.compressed.dimID)
 					{
 		             		generateCompressed(world, random, chunkX * 16, chunkZ * 16);		
 		            }
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.crystalDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.crystal.dimID)
 					{
 		             		generateCrystal(world, random, chunkX * 16, chunkZ * 16);	
                     }
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.mazeDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.maze.dimID)
 					{
                     		generateMaze(world, random, chunkX * 16, chunkZ * 16);
                     }
-					else if (world.provider.dimensionId == DeeperCaves.worldgen.dropDimID)
+					else if (world.provider.dimensionId == DeeperCaves.worldgen.drop.dimID)
 					{ 
                     		generateDrop(world, random, chunkX * 16, chunkZ * 16);
 					}

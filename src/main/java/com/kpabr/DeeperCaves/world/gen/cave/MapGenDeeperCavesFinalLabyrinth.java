@@ -51,14 +51,17 @@ public class MapGenDeeperCavesFinalLabyrinth extends MapGenDeeperCavesDefault
         if (block == Blocks.stone || block == filler || block == top || block == DeeperBlocks.fakeBedrock)
         {
                 data[index] = null;
-                data[index - 1] = DeeperBlocks.fakeBedrock;
-                if(data[index+1] == DeeperBlocks.fakeBedrock)
+
+                //fake bedrock floor replacing solid blocks under the cave, unless there's air under that solid block
+                if(index > 0 && data[index-1] != Blocks.air && (index == 1 || data[index-2] == Blocks.air))
+                {
+                    data[index-1] = DeeperBlocks.fakeBedrock;
+                }
+
+                //if there's fake bedrock floor directly above this block, remove it too
+                if(index < data.length-1 && data[index+1] == DeeperBlocks.fakeBedrock)
                 {
                     data[index+1] = null;
-                }
-                if(data[index-2] == Blocks.air)
-                {
-                    data[index-1] = null;
                 }
         }
     }

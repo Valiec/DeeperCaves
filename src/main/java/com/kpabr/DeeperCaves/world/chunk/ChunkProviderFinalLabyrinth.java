@@ -4,6 +4,7 @@ import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesFinalLabyrinth;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
 
+import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineFinalLabyrinth;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.*;
@@ -14,7 +15,7 @@ import net.minecraftforge.event.terraingen.*;
 public class ChunkProviderFinalLabyrinth extends ChunkProviderDeeperBase
 {
     private MapGenBase caveGenerator = new MapGenDeeperCavesFinalLabyrinth();
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 15, 3.5, 1.8, DeeperBlocks.fakeBedrock);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavineFinalLabyrinth(234, 15, 3.5, 1.8, DeeperBlocks.fakeBedrock);
 
     {
         //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);

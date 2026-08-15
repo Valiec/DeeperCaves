@@ -55,7 +55,7 @@ public class BlockDeeperPortal extends BlockBase
     @Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return (this.dim == DeeperCaves.worldgen.dropDimID)?Item.getItemFromBlock(DeeperBlocks.dropPortal):null;
+        return (this.dim == DeeperCaves.worldgen.drop.dimID)?Item.getItemFromBlock(DeeperBlocks.dropPortal):null;
     }
     @Override
     public boolean canSilkHarvest(World world, EntityPlayer player, int x, int y, int z, int metadata)

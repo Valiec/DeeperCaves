@@ -31,25 +31,25 @@ public class DeeperMobs {
     {
         /*Registering mobs*/
         EntityRegistry.registerGlobalEntityID(EntityDeepZombie.class, "deepZombie", this.deepZombieID, 0x007A7A, 0x365226); //*
-        EntityRegistry.addSpawn(EntityDeepZombie.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeDeepWorld);
+        EntityRegistry.addSpawn(EntityDeepZombie.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.deepWorld.biome);
         EntityRegistry.registerGlobalEntityID(EntityDeepSkeleton.class, "deepSkeleton", this.deepSkeletonID, 0x8A8A8A, 0x0A0A0A);
-        EntityRegistry.addSpawn(EntityDeepSkeleton.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeDeepWorld);
+        EntityRegistry.addSpawn(EntityDeepSkeleton.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.deepWorld.biome);
         EntityRegistry.registerGlobalEntityID(EntityDeepCaveSpider.class, "deepCaveSpider", this.deepCaveSpiderID, 0x00141F, 0x5B0000);
-        EntityRegistry.addSpawn(EntityDeepCaveSpider.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeDeepWorld);
+        EntityRegistry.addSpawn(EntityDeepCaveSpider.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.deepWorld.biome);
         EntityRegistry.registerGlobalEntityID(EntityDeepCreeper.class, "deepCreeper", this.deepCreeperID, 0x007200, 0x000000);
-        EntityRegistry.addSpawn(EntityDeepCreeper.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeDeepWorld);
+        EntityRegistry.addSpawn(EntityDeepCreeper.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.deepWorld.biome);
         
         EntityRegistry.registerGlobalEntityID(EntityMutatedCaveSpider.class, "mutatedCaveSpider", this.mutatedCaveSpiderID, 0x00141F, 0x5B0000);
-        EntityRegistry.addSpawn(EntityMutatedCaveSpider.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeMutation);
+        EntityRegistry.addSpawn(EntityMutatedCaveSpider.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.mutation.biome);
         EntityRegistry.registerGlobalEntityID(EntityMutatedZombie.class, "mutatedZombie", this.mutatedZombieID, 0x007A7A, 0x365226);
-        EntityRegistry.addSpawn(EntityMutatedZombie.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeMutation);
+        EntityRegistry.addSpawn(EntityMutatedZombie.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.mutation.biome);
         EntityRegistry.registerGlobalEntityID(EntityMutatedSkeleton.class, "mutatedSkeleton", this.mutatedSkeletonID, 0x8A8A8A, 0x0A0A0A);
-        EntityRegistry.addSpawn(EntityMutatedSkeleton.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeMutation);
+        EntityRegistry.addSpawn(EntityMutatedSkeleton.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.mutation.biome);
         EntityRegistry.registerGlobalEntityID(EntityMutatedCreeper.class, "mutatedCreeper", this.mutatedCreeperID, 0x007200, 0x000000);
-        EntityRegistry.addSpawn(EntityMutatedCreeper.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeMutation);
+        EntityRegistry.addSpawn(EntityMutatedCreeper.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.mutation.biome);
         
         EntityRegistry.registerGlobalEntityID(EntityShadow.class, "Shadow", this.shadowID, 0x050505, 0x7C0000);
-        EntityRegistry.addSpawn(EntityShadow.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.biomeForgotten);
+        EntityRegistry.addSpawn(EntityShadow.class, 100, 4, 4, EnumCreatureType.monster, DeeperCaves.worldgen.forgotten.biome);
         
         
     }

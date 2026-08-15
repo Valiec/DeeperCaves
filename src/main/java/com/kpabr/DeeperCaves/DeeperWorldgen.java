@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCaves.world.DeeperLayer;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenAbandonedCaves;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenBedrockPlains;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenCompressed;
@@ -16,7 +17,7 @@ import com.kpabr.DeeperCaves.world.biome.BiomeGenMaze;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenMutation;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenNearNether;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenNearVoid;
-import com.kpabr.DeeperCaves.world.chunk.ChunkProviderGenerateDuplicate;
+import com.kpabr.DeeperCaves.world.chunk.*;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderAbandonedCaves;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderBedrockPlains;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderCompressed;
@@ -48,193 +49,108 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class DeeperWorldgen {
     /*World Generator Declaration*/
     DeeperOregen deeperblock = new DeeperOregen();
-    public int dropDimID;
-    public int mazeDimID;
-    public int crystalDimID;
-    public int compressedDimID;
-    public int bedrockPlainsDimID;
-    
-    public int nearNetherDimID;
-    public int lavaDimID;
-    public int nearVoidDimID;
-    
-    public int deepWorldDimID;
-    public int darknessDimID;
-    public int abandonedCavesDimID;
-    public int mutationDimID;
-    public int farVoidDimID;
-    
-    public int forgottenDimID;
-    public int evilDimID;
-    public int finalLabyrinthDimID;    
-    
-    //-----------------
 
-    public int dropBiomeID;
-    public int mazeBiomeID;
-    public int crystalBiomeID;
-    public int compressedBiomeID;
-    public int bedrockPlainsBiomeID;
-    
-    public int nearNetherBiomeID;
-    public int lavaBiomeID;
-    public int nearVoidBiomeID;
-    
-    public int deepWorldBiomeID;
-    public int darknessBiomeID;
-    public int abandonedCavesBiomeID;
-    public int mutationBiomeID;
-    public int farVoidBiomeID;
-    
-    public int forgottenBiomeID;
-    public int evilBiomeID;
-    public int finalLabyrinthBiomeID;    
+    public DeeperLayer drop;
+    public DeeperLayer maze;
+    public DeeperLayer crystal;
+    public DeeperLayer compressed;
+    public DeeperLayer bedrockPlains;
 
-    public BiomeGenDrop biomeDrop;
-    public BiomeGenMaze biomeMaze;
-    public BiomeGenCrystal biomeCrystal;
-    public BiomeGenCompressed biomeCompressed;
-    public BiomeGenBedrockPlains biomeBedrockPlains;
-    
-    public BiomeGenNearNether biomeNearNether;
-    public BiomeGenLava biomeLava;
-    public BiomeGenNearVoid biomeNearVoid;
-    
-    public BiomeGenDeepWorld biomeDeepWorld;
-    public BiomeGenDarkness biomeDarkness;
-    public BiomeGenAbandonedCaves biomeAbandonedCaves;
-    public BiomeGenMutation biomeMutation;
-    public BiomeGenFarVoid biomeFarVoid;
-    
-    public BiomeGenForgotten biomeForgotten;
-    public BiomeGenEvil biomeEvil;
-    public BiomeGenFinalLabyrinth biomeFinalLabyrinth;
-    
-	public int bedrockPlainsFloorHeight;
-	public int bedrockPlainsCeilingHeight;
+    public DeeperLayer nearNether;
+    public DeeperLayer lava;
+    public DeeperLayer nearVoid;
+
+    public DeeperLayer deepWorld;
+    public DeeperLayer darkness;
+    public DeeperLayer abandonedCaves;
+    public DeeperLayer mutation;
+    public DeeperLayer farVoid;
+
+    public DeeperLayer forgotten;
+    public DeeperLayer evil;
+    public DeeperLayer finalLabyrinth;
+
     public void setupWorldgen()
     {
-        
-       
-        /*Setting up worldgen*/
-        DimensionManager.registerProviderType(dropDimID, WorldProviderDrop.class, false);
-        DimensionManager.registerDimension(dropDimID, dropDimID);
-        DimensionManager.registerProviderType(mazeDimID, WorldProviderMaze.class, false);
-        DimensionManager.registerDimension(mazeDimID, mazeDimID);
-        DimensionManager.registerProviderType(crystalDimID, WorldProviderCrystal.class, false);
-        DimensionManager.registerDimension(crystalDimID, crystalDimID);
-        DimensionManager.registerProviderType(compressedDimID, WorldProviderCompressed.class, false);
-        DimensionManager.registerDimension(compressedDimID, compressedDimID);
-        DimensionManager.registerProviderType(bedrockPlainsDimID, WorldProviderBedrockPlains.class, false);
-        DimensionManager.registerDimension(bedrockPlainsDimID, bedrockPlainsDimID);
-        
-        DimensionManager.registerProviderType(nearNetherDimID, WorldProviderNearNether.class, false);
-        DimensionManager.registerDimension(nearNetherDimID, nearNetherDimID);
-        DimensionManager.registerProviderType(lavaDimID, WorldProviderLava.class, false);
-        DimensionManager.registerDimension(lavaDimID, lavaDimID);
-        DimensionManager.registerProviderType(nearVoidDimID, WorldProviderNearVoid.class, false);
-        DimensionManager.registerDimension(nearVoidDimID, nearVoidDimID);
-        
-        DimensionManager.registerProviderType(deepWorldDimID, WorldProviderDeepWorld.class, false);
-        DimensionManager.registerDimension(deepWorldDimID, deepWorldDimID);
-        DimensionManager.registerProviderType(darknessDimID, WorldProviderDarkness.class, false);
-        DimensionManager.registerDimension(darknessDimID, darknessDimID);
-        DimensionManager.registerProviderType(abandonedCavesDimID, WorldProviderAbandonedCaves.class, false);
-        DimensionManager.registerDimension(abandonedCavesDimID, abandonedCavesDimID);
 
-        DimensionManager.registerProviderType(mutationDimID, WorldProviderMutation.class, false);
-        DimensionManager.registerDimension(mutationDimID, mutationDimID);
-        
-        DimensionManager.registerProviderType(farVoidDimID, WorldProviderFarVoid.class, false);
-        DimensionManager.registerDimension(farVoidDimID, farVoidDimID);
-        
-        DimensionManager.registerProviderType(forgottenDimID, WorldProviderForgotten.class, false);
-        DimensionManager.registerDimension(forgottenDimID, forgottenDimID);
-        
-        DimensionManager.registerProviderType(evilDimID, WorldProviderEvil.class, false);
-        DimensionManager.registerDimension(evilDimID, evilDimID);
-        
-        DimensionManager.registerProviderType(finalLabyrinthDimID, WorldProviderFinalLabyrinth.class, false);
-        DimensionManager.registerDimension(finalLabyrinthDimID, finalLabyrinthDimID);
+        this.drop = new DeeperLayer("Drop", DeeperConfig.dropDimID).setLayerBounds(0, 202).setUpperArrivalRange(12)
+                .setChunkProvider(ChunkProviderDrop.class).setWorldProvider(WorldProviderDrop.class)
+                .setBiome(new BiomeGenDrop(DeeperConfig.dropBiomeID, 0), Type.PLAINS);
+
+        this.maze = new DeeperLayer("Maze", DeeperConfig.mazeDimID).setLayerBounds(0, 202).setUpperArrivalRange(12)
+                .setChunkProvider(ChunkProviderMaze.class).setWorldProvider(WorldProviderMaze.class)
+                .setBiome(new BiomeGenMaze(DeeperConfig.mazeBiomeID, 0), Type.PLAINS);
+
+        this.crystal = new DeeperLayer("Crystal", DeeperConfig.crystalDimID).setLayerBounds(0, 152).setUpperArrivalRange(12)
+                .setChunkProvider(ChunkProviderCrystal.class).setWorldProvider(WorldProviderCrystal.class)
+                .setBiome(new BiomeGenCrystal(DeeperConfig.crystalBiomeID, 0), Type.PLAINS);
+
+        this.compressed = new DeeperLayer("Compressed", DeeperConfig.compressedDimID).setLayerBounds(0, 102).setUpperArrivalRange(12)
+                .setChunkProvider(ChunkProviderCompressed.class).setWorldProvider(WorldProviderCompressed.class)
+                .setBiome(new BiomeGenCompressed(DeeperConfig.compressedBiomeID, 0), Type.PLAINS);
+
+        this.bedrockPlains = new DeeperLayer("Bedrock Plains", DeeperConfig.bedrockPlainsDimID).setLayerBounds(0, DeeperConfig.bedrockPlainsCeilingHeight+8)
+                .setUpperArrivalBounds(DeeperConfig.bedrockPlainsFloorHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+3)
+                .setLowerArrivalBounds(DeeperConfig.bedrockPlainsFloorHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+3)
+                .setUpperArrivalRange(12).setChunkProvider(ChunkProviderBedrockPlains.class).setWorldProvider(WorldProviderBedrockPlains.class)
+                .setBiome(new BiomeGenBedrockPlains(DeeperConfig.bedrockPlainsBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.fragmentedBedrock);
+
+        this.nearNether = new DeeperLayer("Near Nether", DeeperConfig.nearNetherDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
+                .setChunkProvider(ChunkProviderNearNether.class).setWorldProvider(WorldProviderNearNether.class)
+                .setBiome(new BiomeGenNearNether(DeeperConfig.nearNetherBiomeID, 0), Type.PLAINS);
+
+        this.lava = new DeeperLayer("Lava", DeeperConfig.lavaDimID).setLayerBounds(0, 52).setUpperArrivalRange(7)
+                .setChunkProvider(ChunkProviderLava.class).setWorldProvider(WorldProviderLava.class)
+                .setBiome(new BiomeGenLava(DeeperConfig.lavaBiomeID, 0), Type.PLAINS);
+
+        this.nearVoid = new DeeperLayer("Near Void", DeeperConfig.nearVoidDimID).setLayerBounds(120, 247)
+                .setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
+                .setChunkProvider(ChunkProviderNearVoid.class).setWorldProvider(WorldProviderNearVoid.class)
+                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID, 0), Type.PLAINS);
+
+        this.deepWorld = new DeeperLayer("Deep World", DeeperConfig.deepWorldDimID).setLayerBounds(0, 77).setUpperArrivalRange(7)
+                .setChunkProvider(ChunkProviderDeepWorld.class).setWorldProvider(WorldProviderDeepWorld.class)
+                .setBiome(new BiomeGenDeepWorld(DeeperConfig.deepWorldBiomeID, 0), Type.PLAINS);
+
+        this.darkness = new DeeperLayer("Darkness", DeeperConfig.darknessDimID).setLayerBounds(0, 247).setUpperArrivalRange(12)
+                .setChunkProvider(ChunkProviderDarkness.class).setWorldProvider(WorldProviderDarkness.class)
+                .setBiome(new BiomeGenDarkness(DeeperConfig.darknessBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.darkStone);
+
+        this.abandonedCaves = new DeeperLayer("Abandoned Caves", DeeperConfig.abandonedCavesDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
+                .setChunkProvider(ChunkProviderAbandonedCaves.class).setWorldProvider(WorldProviderAbandonedCaves.class)
+                .setBiome(new BiomeGenAbandonedCaves(DeeperConfig.abandonedCavesBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.abandonedStone);
+
+        this.mutation = new DeeperLayer("Mutation", DeeperConfig.mutationDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
+                .setChunkProvider(ChunkProviderMutation.class).setWorldProvider(WorldProviderMutation.class)
+                .setBiome(new BiomeGenMutation(DeeperConfig.mutationBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.deepStone);
+
+        this.farVoid = new DeeperLayer("Far Void", DeeperConfig.farVoidDimID).setLayerBounds(120, 247)
+                .setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
+                .setChunkProvider(ChunkProviderFarVoid.class).setWorldProvider(WorldProviderFarVoid.class)
+                .setBiome(new BiomeGenFarVoid(DeeperConfig.farVoidBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.deepStone);
+
+        this.forgotten = new DeeperLayer("Forgotten", DeeperConfig.forgottenDimID).setLayerBounds(0, 232).setUpperArrivalRange(42)
+                .setChunkProvider(ChunkProviderForgotten.class).setWorldProvider(WorldProviderForgotten.class)
+                .setBiome(new BiomeGenForgotten(DeeperConfig.forgottenBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.deepStone);
+
+        this.evil = new DeeperLayer("Evil", DeeperConfig.evilDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
+                .setChunkProvider(ChunkProviderEvil.class).setWorldProvider(WorldProviderEvil.class)
+                .setBiome(new BiomeGenEvil(DeeperConfig.evilBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.deepStone);
+
+        this.finalLabyrinth = new DeeperLayer("Final Labyrinth", DeeperConfig.finalLabyrinthDimID).setLayerBounds(0, 247).setUpperArrivalRange(57)
+                .setChunkProvider(ChunkProviderFinalLabyrinth.class).setWorldProvider(WorldProviderFinalLabyrinth.class)
+                .setBiome(new BiomeGenFinalLabyrinth(DeeperConfig.finalLabyrinthBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.fragmentedBedrock);
+
+        DeeperLayer.registerAllLayers();
+
+        /*Setting up worldgen*/
         GameRegistry.registerWorldGenerator(deeperblock, 1);
-        this.biomeDrop = new BiomeGenDrop(dropBiomeID, 0);
-        //BiomeEntry dropEntry = new BiomeEntry(this.biomeDrop, 50);
-        BiomeDictionary.registerBiomeType(this.biomeDrop, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeDrop);
-        this.biomeMaze = new BiomeGenMaze(mazeBiomeID, 0);
-        //BiomeEntry mazeEntry = new BiomeEntry(this.biomeMaze, 50);
-        BiomeDictionary.registerBiomeType(this.biomeMaze, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeMaze);
-        this.biomeCrystal = new BiomeGenCrystal(crystalBiomeID, 0);
-        //BiomeEntry crystalEntry = new BiomeEntry(this.biomeCrystal, 50);
-        BiomeDictionary.registerBiomeType(this.biomeCrystal, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeCrystal);
-        this.biomeCompressed = new BiomeGenCompressed(compressedBiomeID, 0);
-        //BiomeEntry compressedEntry = new BiomeEntry(this.biomeCompressed, 50);
-        BiomeDictionary.registerBiomeType(this.biomeCompressed, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeCompressed);
-        this.biomeBedrockPlains = new BiomeGenBedrockPlains(bedrockPlainsBiomeID, 0);
-        //BiomeEntry bedrockPlainsEntry = new BiomeEntry(this.biomeBedrockPlains, 50);
-        BiomeDictionary.registerBiomeType(this.biomeBedrockPlains, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeBedrockPlains);
-        this.biomeNearNether = new BiomeGenNearNether(nearNetherBiomeID, 0);
-        
-        //BiomeEntry nearNetherEntry = new BiomeEntry(this.biomeNearNether, 50);
-        BiomeDictionary.registerBiomeType(this.biomeNearNether, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeNearNether);
-        this.biomeLava = new BiomeGenLava(lavaBiomeID, 0);
-        //BiomeEntry lavaEntry = new BiomeEntry(this.biomeLava, 50);
-        BiomeDictionary.registerBiomeType(this.biomeLava, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeLava);
-        this.biomeNearVoid = new BiomeGenNearVoid(nearVoidBiomeID, 0);
-        //BiomeEntry nearVoidEntry = new BiomeEntry(this.biomeNearVoid, 50);
-        BiomeDictionary.registerBiomeType(this.biomeNearVoid, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeNearVoid);
-        
-        this.biomeDeepWorld = new BiomeGenDeepWorld(deepWorldBiomeID, 0);
-        //BiomeEntry deepWorldEntry = new BiomeEntry(this.biomeDeepWorld, 50);
-        BiomeDictionary.registerBiomeType(this.biomeDeepWorld, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeDeepWorld);   
-        this.biomeDarkness = new BiomeGenDarkness(darknessBiomeID, 0);
-        //BiomeEntry darknessEntry = new BiomeEntry(this.biomeDarkness, 50);
-        BiomeDictionary.registerBiomeType(this.biomeDarkness, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeDarkness);
-        this.biomeAbandonedCaves = new BiomeGenAbandonedCaves(abandonedCavesBiomeID, 0);
-        //BiomeEntry abandonedCavesEntry = new BiomeEntry(this.biomeAbandonedCaves, 50);
-        BiomeDictionary.registerBiomeType(this.biomeAbandonedCaves, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeAbandonedCaves);
-        this.biomeMutation = new BiomeGenMutation(mutationBiomeID, 0);
-        //BiomeEntry mutationEntry = new BiomeEntry(this.biomeMutation, 50);
-        BiomeDictionary.registerBiomeType(this.biomeMutation, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeMutation);
-        this.biomeFarVoid = new BiomeGenFarVoid(farVoidBiomeID, 0);
-        //BiomeEntry farVoidEntry = new BiomeEntry(this.biomeFarVoid, 50);
-        BiomeDictionary.registerBiomeType(this.biomeFarVoid, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeFarVoid);
-        
-        this.biomeForgotten = new BiomeGenForgotten(forgottenBiomeID, 0);
-        //BiomeEntry forgottenEntry = new BiomeEntry(this.biomeForgotten, 50);
-        BiomeDictionary.registerBiomeType(this.biomeForgotten, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeForgotten);
-        this.biomeEvil = new BiomeGenEvil(evilBiomeID, 0);
-        //BiomeEntry evilEntry = new BiomeEntry(this.biomeEvil, 50);
-        BiomeDictionary.registerBiomeType(this.biomeEvil, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeEvil);
-        this.biomeFinalLabyrinth = new BiomeGenFinalLabyrinth(finalLabyrinthBiomeID, 0);
-        //BiomeEntry finalLabyrinthEntry = new BiomeEntry(this.biomeFinalLabyrinth, 50);
-        BiomeDictionary.registerBiomeType(this.biomeFinalLabyrinth, Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeFinalLabyrinth);
     }
     @SubscribeEvent
     public void onOverworldBiomes(ReplaceBiomeBlocks event)
     {
         if (event.chunkProvider.getClass() == ChunkProviderGenerate.class)
         {
-            
-        
-            
-        	//ChunkProviderGenerate gen = new ChunkProviderGenerate(DimensionManager.getWorld(0), DimensionManager.getWorld(0).getSeed(), true);
-
 
             ChunkProviderGenerateDuplicate gen = new ChunkProviderGenerateDuplicate(event.world, event.world.getSeed(), true);
             event.setResult(Result.DENY);

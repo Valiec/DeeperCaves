@@ -178,33 +178,37 @@ public class DeeperBlocks {
     public static Block profundiumOre;
 
     public static Block robustiumRaw;
-    
-    public void registerBlocks()
+
+    public void registerPortals()
     {
-        GameRegistry.registerBlock(DeeperBlocks.silverOre, "silver_ore");
         GameRegistry.registerBlock(DeeperBlocks.dropPortal, "drop_portal");
         GameRegistry.registerBlock(DeeperBlocks.returnPortal, "return_portal");
         GameRegistry.registerBlock(DeeperBlocks.mazePortal, "maze_portal");
         GameRegistry.registerBlock(DeeperBlocks.crystalPortal, "crystal_portal");
         GameRegistry.registerBlock(DeeperBlocks.compressedPortal, "compressed_portal");
         GameRegistry.registerBlock(DeeperBlocks.bedrockPlainsPortal, "bedrock_plains_portal");
-        
+
         GameRegistry.registerBlock(DeeperBlocks.nearNetherPortal, "near_nether_portal");
         GameRegistry.registerBlock(DeeperBlocks.lavaPortal, "lava_portal");
         GameRegistry.registerBlock(DeeperBlocks.nearVoidPortal, "near_void_portal");
-        
+
         GameRegistry.registerBlock(DeeperBlocks.deepWorldPortal, "deep_world_portal");
         GameRegistry.registerBlock(DeeperBlocks.darknessPortal, "darkness_portal");
         GameRegistry.registerBlock(DeeperBlocks.abandonedCavesPortal, "abandoned_caves_portal");
-        
+
         GameRegistry.registerBlock(DeeperBlocks.mutationPortal, "mutation_portal");
-        
+
         GameRegistry.registerBlock(DeeperBlocks.farVoidPortal, "far_void_portal");
-        
+
         GameRegistry.registerBlock(DeeperBlocks.forgottenPortal, "forgotten_portal");
-        
+
         GameRegistry.registerBlock(DeeperBlocks.evilPortal, "evil_portal");
         GameRegistry.registerBlock(DeeperBlocks.finalLabyrinthPortal, "final_labyrinth_portal");
+    }
+    
+    public void registerBlocks()
+    {
+        GameRegistry.registerBlock(DeeperBlocks.silverOre, "silver_ore");
         
         GameRegistry.registerBlock(DeeperBlocks.sapphireOre, "sapphire_ore");
         GameRegistry.registerBlock(DeeperBlocks.aquamarineOre, "aquamarine_ore");
@@ -441,35 +445,41 @@ public class DeeperBlocks {
 
         OreDictionary.registerOre("blockRawRobustium", DeeperBlocks.robustiumRaw);
     }
+
+    public void setupPortals()
+    {
+        DeeperBlocks.dropPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.drop.dimID).setBlockName("dropPortal").setHardness(3.5F).setResistance(10000000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.returnPortal = new BlockReturnPortal(Material.rock).setBlockName("returnPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.mazePortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.maze.dimID).setBlockName("mazePortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.crystalPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.crystal.dimID).setBlockName("crystalPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.compressedPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.compressed.dimID).setBlockName("compressedPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.bedrockPlainsPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.bedrockPlains.dimID).setBlockName("bedrockPlainsPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+
+        DeeperBlocks.nearNetherPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.nearNether.dimID).setBlockName("nearNetherPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.lavaPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.lava.dimID).setBlockName("lavaPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.nearVoidPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.nearVoid.dimID).setBlockName("nearVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+
+        DeeperBlocks.deepWorldPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.deepWorld.dimID).setBlockName("deepWorldPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.darknessPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.darkness.dimID).setBlockName("darknessPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.abandonedCavesPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.abandonedCaves.dimID).setBlockName("abandonedCavesPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+
+        DeeperBlocks.mutationPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.mutation.dimID).setBlockName("mutationPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+
+        DeeperBlocks.farVoidPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.farVoid.dimID).setBlockName("farVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+
+        DeeperBlocks.forgottenPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.forgotten.dimID).setBlockName("forgottenPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+
+        DeeperBlocks.evilPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.evil.dimID).setBlockName("evilPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+        DeeperBlocks.finalLabyrinthPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.finalLabyrinth.dimID).setBlockName("finalLabyrinthPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
+
+
+    }
+
     public void setupBlocks()
     {
         
         DeeperBlocks.silverOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:silver_ore").setBlockName("silverOre").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.rubyOre = new BlockOreBase(Material.rock, DeeperItems.ruby, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:ruby_ore").setBlockName("ruby_ore").setLightOpacity(0).setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
-        DeeperBlocks.dropPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.dropDimID).setBlockName("dropPortal").setHardness(3.5F).setResistance(10000000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.returnPortal = new BlockReturnPortal(Material.rock).setBlockName("returnPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.mazePortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.mazeDimID).setBlockName("mazePortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.crystalPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.crystalDimID).setBlockName("crystalPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.compressedPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.compressedDimID).setBlockName("compressedPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.bedrockPlainsPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.bedrockPlainsDimID).setBlockName("bedrockPlainsPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        
-        DeeperBlocks.nearNetherPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.nearNetherDimID).setBlockName("nearNetherPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.lavaPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.lavaDimID).setBlockName("lavaPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.nearVoidPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.nearVoidDimID).setBlockName("nearVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        
-        DeeperBlocks.deepWorldPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.deepWorldDimID).setBlockName("deepWorldPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.darknessPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.darknessDimID).setBlockName("darknessPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.abandonedCavesPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.abandonedCavesDimID).setBlockName("abandonedCavesPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        
-        DeeperBlocks.mutationPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.mutationDimID).setBlockName("mutationPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        
-        DeeperBlocks.farVoidPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.farVoidDimID).setBlockName("farVoidPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        
-        DeeperBlocks.forgottenPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.forgottenDimID).setBlockName("forgottenPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        
-        DeeperBlocks.evilPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.evilDimID).setBlockName("evilPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        DeeperBlocks.finalLabyrinthPortal = new BlockDeeperPortal(Material.rock, DeeperCaves.worldgen.finalLabyrinthDimID).setBlockName("finalLabyrinthPortal").setHardness(3.5F).setResistance(10000000.0F).setBlockUnbreakable();
-        
         DeeperBlocks.sapphireOre = new BlockOreBase(Material.rock, DeeperItems.sapphireGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:sapphire_ore").setBlockName("sapphireOre").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.aquamarineOre = new BlockOreBase(Material.rock, DeeperItems.aquamarine, 3, 3, true, 3, 6).setBlockTextureName("deepercaves:aquamarineOre").setBlockName("aquamarineOre").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.ametrineOre = new BlockOreBase(Material.rock, DeeperItems.ametrineGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:ametrine").setBlockName("ametrineOre").setHardness(4.5F).setResistance(6.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
@@ -714,8 +724,6 @@ public class DeeperBlocks {
         DeeperBlocks.dpemeraldOre.setHarvestLevel("pickaxe", 2);
         
         DeeperBlocks.crystal.setHarvestLevel("pickaxe", 0);
-        
-        DeeperBlocks.dropPortal.setHarvestLevel("pickaxe", 0);
         
         DeeperBlocks.rubyOre.setHarvestLevel("pickaxe", 2);
         DeeperBlocks.rubyBlock.setHarvestLevel("pickaxe", 2);
