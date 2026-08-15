@@ -23,8 +23,13 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     public boolean doClumpCaves;
     public boolean doSkewHeight;
     public Block carvableBlock;
+    public int steepChance;
 
     public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight, Block carvableBlock) {
+        this(floorCutoff, widthDivisor, widthMin, heightMax, heightSkewMin, heightMin, startCountMax, startSkipChance, doClumpCaves, doSkewHeight, carvableBlock, 6);
+    }
+
+    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight, Block carvableBlock, int steepChance) {
         super();
         this.floorCutoff = floorCutoff;
         this.widthDivisor = widthDivisor;
@@ -37,19 +42,32 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         this.doClumpCaves = doClumpCaves;
         this.doSkewHeight = doSkewHeight;
         this.carvableBlock = carvableBlock;
+        this.steepChance = steepChance;
     }
 
     public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin) {
-        this(false, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, false, Blocks.stone);
+        this(floorCutoff, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, false, Blocks.stone, 6);
+    }
+
+    public MapGenDeeperCavesDefault(float widthDivisor, double widthMin) {
+        this(false, widthDivisor, widthMin);
+    }
+
+    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, Block carvableBlock) {
+        this(floorCutoff, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, false, carvableBlock, 6);
+    }
+
+    public MapGenDeeperCavesDefault(float widthDivisor, double widthMin, Block carvableBlock) {
+        this(false, widthDivisor, widthMin, carvableBlock);
     }
 
 
     public MapGenDeeperCavesDefault() {
-        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, Blocks.stone);
+        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, Blocks.stone, 6);
     }
 
     public MapGenDeeperCavesDefault(Block carvableBlock) {
-        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, carvableBlock);
+        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, carvableBlock, 6);
     }
 
     protected void func_151542_a(long p_151542_1_, int p_151542_3_, int p_151542_4_, Block[] p_151542_5_, double p_151542_6_, double p_151542_8_, double p_151542_10_)
@@ -81,7 +99,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
 
         int k1 = random.nextInt(p_151541_16_ / 2) + p_151541_16_ / 4;
 
-        for (boolean flag = random.nextInt(6) == 0; p_151541_15_ < p_151541_16_; ++p_151541_15_)
+        for (boolean flag = random.nextInt(steepChance) == 0; p_151541_15_ < p_151541_16_; ++p_151541_15_)
         {
             double d6 = this.widthMin + (double)(MathHelper.sin((float)p_151541_15_ * (float)Math.PI / (float)p_151541_16_) * p_151541_12_ * 1.0F);
             double d7 = d6 * p_151541_17_;

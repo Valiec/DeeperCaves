@@ -19,7 +19,7 @@ import net.minecraft.world.gen.NoiseGeneratorPerlin;
 public class ChunkProviderCrystal extends ChunkProviderDeeperBase
 {
     /** RNG. */
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(1.0F, 4.0D);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 3, 1.5, 1.0, Blocks.stone);
     private NoiseGeneratorOctaves caveFloorNoise;
     private NoiseGeneratorOctaves caveCeilingNoise;

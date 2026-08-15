@@ -46,4 +46,10 @@ public class BlockFluidVenenium extends BlockFluidClassic {
 		return false;
 	}
 
+	@Override
+	public boolean func_149698_L()
+	{
+		return true;
+	}
+
 }
