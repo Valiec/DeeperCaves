@@ -11,6 +11,9 @@ tile.crystal_9.name=Dark Blue Crystal
 tile.crystal_10.name=Aqua Crystal
 tile.crystal_11.name=Dark Green Crystal
 tile.crystal_12.name=Red Crystal
+tile.crystal_13.name=Brown Crystal
+tile.crystal_14.name=Gray Crystal
+tile.crystal_15.name=Black Crystal
 
 item.crystalShard_0.name=White Crystal Shard
 item.crystalShard_1.name=Orange Crystal Shard

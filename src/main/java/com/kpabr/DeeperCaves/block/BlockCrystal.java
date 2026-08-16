@@ -29,7 +29,7 @@ public class BlockCrystal extends Block
         public BlockCrystal (Material material) 
         {
                 super(material); 
-                this.texture = new IIcon[13];
+                this.texture = new IIcon[16];
         }
         @Override
         public boolean isOpaqueCube()
@@ -68,7 +68,7 @@ public class BlockCrystal extends Block
         @Override
         @SideOnly(Side.CLIENT)
         public void registerBlockIcons(IIconRegister iconRegister) {
-            for (int i  = 0; i<13; i++)
+            for (int i  = 0; i<16; i++)
             {
             this.texture[i] = iconRegister.registerIcon("DeeperCaves:crystal_"+Integer.toString(i));
             }
@@ -81,7 +81,7 @@ public class BlockCrystal extends Block
         }
         public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_)
         {
-            for (int i = 0; i<13; i++)
+            for (int i = 0; i<16; i++)
             {
                 p_149666_3_.add(new ItemStack(p_149666_1_, 1, i));
             }
