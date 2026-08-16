@@ -117,7 +117,7 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperBlocks.aquamarineOre, world, random, x, z, 16, 16, 9, 40, 0, 255, Blocks.stone);
     	   this.addOre(DeeperBlocks.ametrineOre, world, random, x, z, 16, 16, 12, 4, 0, 255, Blocks.stone);
     	   
-    	   for(int i = 0; i<13; i++)
+    	   for(int i = 0; i<16; i++)
     	   {
     		   this.addOre(DeeperBlocks.crystal, i, world, random, x, z, 16, 16, 15, 6, 0, 255, Blocks.stone);
     	   }
@@ -228,7 +228,7 @@ public class DeeperOregen implements IWorldGenerator
     	   this.addOre(DeeperBlocks.dpredstoneOre, world, random, x, z, 16, 16, 8, 54, 0, 255, DeeperBlocks.deepStone);
     	   this.addOre(DeeperBlocks.dpdiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperBlocks.deepStone);
     	   this.addOre(DeeperBlocks.dpemeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperBlocks.deepStone);
-    	   for(int i = 0; i<13; i++)
+    	   for(int i = 0; i<16; i++)
     	   {
     		   this.addOre(DeeperBlocks.crystal, i, world, random, x, z, 16, 16, 8, 4, 0, 255, DeeperBlocks.deepStone);
     	   }
