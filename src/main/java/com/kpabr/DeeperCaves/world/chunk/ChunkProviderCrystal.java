@@ -53,6 +53,20 @@ public class ChunkProviderCrystal extends ChunkProviderDeeperBase
 
         ceilingNoise = this.caveCeilingNoise.generateNoiseOctaves(ceilingNoise, p_147422_1_ * 16, 0, p_147422_2_ * 16, 16, 1, 16, 0.03125, 0, 0.03125);
 
+        int crystalFloorBase = 36;
+
+        //scales the height range of floor/ceiling noise
+        double noiseHeightScale = 1.5;
+
+        //scales the height range of the wall noise items
+        double wallNoiseHeightScale = 16.5;
+
+        //offset on wall noise to determine how much is cavern vs wall
+        double wallThreshold = 2.1;
+
+        double pillarThreshold = 0.3;
+
+        int pillarHeightFactor = 110;
 
         for (int k = 0; k < 16; ++k) {
             for (int l = 0; l < 16; ++l) {
@@ -66,22 +80,28 @@ public class ChunkProviderCrystal extends ChunkProviderDeeperBase
                 int j1 = p_147422_2_ * 16 + l & 15;
                 int k1 = p_147422_3_.length / 256;
 
-                double floorHeightRaw = 36 + 1.5 * floorNoise[j1 * 16 + i1];
-                double wallHeightRaw = 14.0 * (1.18* wallNoise[i1 * 16 + j1] + 0.15);
-                double cavernHeightRaw = wallHeightRaw + 1.5 * ceilingNoise[j1 * 16 + i1];
+                double floorHeightRaw = crystalFloorBase + noiseHeightScale * floorNoise[j1 * 16 + i1];
+                double cavernHeight = wallNoiseHeightScale * wallNoise[i1 * 16 + j1] + wallThreshold;
+                double ceilingAdjustedHeight = cavernHeight + noiseHeightScale * ceilingNoise[j1 * 16 + i1];
 
-                if (cavernHeightRaw < 0) {
-                    cavernHeightRaw = 0;
+                //prevent the ceiling from going below the baseline floor height
+                if (ceilingAdjustedHeight < 0) {
+                    ceilingAdjustedHeight = 0;
                 }
 
-                int trueFloorHeight   = MathHelper.floor_double(floorHeightRaw - wallHeightRaw);
-                int trueCeilingHeight = MathHelper.floor_double(floorHeightRaw + cavernHeightRaw);
+                //prevent void holes
+                if (cavernHeight >= floorHeightRaw) {
+                    cavernHeight = floorHeightRaw-1;
+                }
 
-                double pillarVal = ((pillarNoise[i1 * 16 + j1]) - 0.3);
+                int trueFloorHeight   = MathHelper.floor_double(floorHeightRaw - cavernHeight);
+                int trueCeilingHeight = MathHelper.floor_double(floorHeightRaw + ceilingAdjustedHeight);
+
+                double pillarVal = ((pillarNoise[i1 * 16 + j1]) - pillarThreshold);
 
                 if (pillarVal > 0) {
-                    trueFloorHeight += (int) (110 * pillarVal);
-                    trueCeilingHeight -= (int) (110 * pillarVal);
+                    trueFloorHeight += (int) (pillarHeightFactor * pillarVal);
+                    trueCeilingHeight -= (int) (pillarHeightFactor * pillarVal);
                 }
 
                 for (int l1 = 255; l1 >= 0; --l1) {
