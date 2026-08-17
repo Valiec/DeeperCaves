@@ -575,7 +575,7 @@ public class DeeperBlocks {
         
         DeeperBlocks.cryingObsidian = new BlockCryingObsidian(Material.rock).setBlockTextureName("deepercaves:crying_obsidian").setBlockName("cryingObsidian").setHardness(60.0F).setResistance(6000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:profundium_ore").setBlockName("profundiumOre").setHardness(8.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+        DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:priscium_ore").setBlockName("prisciumOre").setHardness(8.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
         DeeperBlocks.prisciumBlock = new BlockPriscium(Material.rock).setBlockTextureName("deepercaves:priscium_block").setBlockName("prisciumBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
