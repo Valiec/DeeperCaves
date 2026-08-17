@@ -28,6 +28,9 @@ item.crystalShard_9.name=Dark Blue Crystal Shard
 item.crystalShard_10.name=Aqua Crystal Shard
 item.crystalShard_11.name=Dark Green Crystal Shard
 item.crystalShard_12.name=Red Crystal Shard
+item.crystalShard_13.name=Brown Crystal Shard
+item.crystalShard_14.name=Gray Crystal Shard
+item.crystalShard_15.name=Black Crystal Shard
 
 tile.dpcoalOre.name=Deep Coal Ore
 tile.dpironOre.name=Deep Iron Ore
