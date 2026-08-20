@@ -77,7 +77,7 @@ public class DeeperTeleporter extends Teleporter
     }
 
     public boolean isValidGround(Block block) {
-        return block != Blocks.air && block != Blocks.water && block != Blocks.lava && block != Blocks.flowing_water && block != Blocks.flowing_lava;
+        return block != Blocks.air && block != Blocks.water && block != Blocks.lava && block != Blocks.flowing_water && block != Blocks.flowing_lava && !solidGroundBlacklist.contains(block);
     }
 
     public boolean isPositionValid(int testX, int testY, int testZ) {
