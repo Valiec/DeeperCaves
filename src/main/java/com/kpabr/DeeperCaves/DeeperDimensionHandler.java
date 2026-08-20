@@ -16,7 +16,7 @@ public class DeeperDimensionHandler {
 				boolean voidFlag = ((DeeperCaves.instance.voidFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.voidFlag.get(player.getUniqueID()) : false);
 
 				for(DeeperLayer layer: DeeperLayer.deeperLayers) {
-					if(player.dimension == layer.dimID && event.player.posY <= layer.minY && layer.nextLayer != null) {
+					if(player.dimension == layer.dimID && event.player.posY <= layer.tpTriggerLower && layer.nextLayer != null) {
 						if(layer != DeeperCaves.worldgen.farVoid || voidFlag)
 						{
 							player.mcServer.getConfigurationManager().transferPlayerToDimension(player, layer.nextLayer.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(layer.nextLayer.dimID), false));
@@ -34,7 +34,7 @@ public class DeeperDimensionHandler {
 
 
 				for(DeeperLayer layer: DeeperLayer.deeperLayers) {
-					if(player.dimension == layer.dimID && event.player.posY >= layer.maxY && layer.prevLayer != null) {
+					if(player.dimension == layer.dimID && event.player.posY >= layer.tpTriggerUpper && layer.prevLayer != null) {
 						player.mcServer.getConfigurationManager().transferPlayerToDimension(player, layer.prevLayer.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(layer.prevLayer.dimID), true));
 					}
 				}
