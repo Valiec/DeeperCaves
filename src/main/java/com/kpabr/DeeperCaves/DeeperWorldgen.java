@@ -70,7 +70,7 @@ public class DeeperWorldgen {
     public DeeperLayer evil;
     public DeeperLayer finalLabyrinth;
 
-    public static boolean nearVoidCheck(EntityPlayerMP player, boolean lower) {
+    public static boolean farVoidCheck(EntityPlayerMP player, boolean lower) {
         if(lower) {
             return true;
         }
@@ -115,7 +115,7 @@ public class DeeperWorldgen {
         this.nearVoid = new DeeperLayer("Near Void", DeeperConfig.nearVoidDimID).setLayerBounds(120, 247)
                 .setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderNearVoid.class).setWorldProvider(WorldProviderNearVoid.class)
-                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID, 0), Type.PLAINS).setExitCheck(DeeperWorldgen::nearVoidCheck);
+                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID, 0), Type.PLAINS);
 
         this.deepWorld = new DeeperLayer("Deep World", DeeperConfig.deepWorldDimID).setLayerBounds(0, 77).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderDeepWorld.class).setWorldProvider(WorldProviderDeepWorld.class)
@@ -136,7 +136,8 @@ public class DeeperWorldgen {
         this.farVoid = new DeeperLayer("Far Void", DeeperConfig.farVoidDimID).setLayerBounds(120, 247)
                 .setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderFarVoid.class).setWorldProvider(WorldProviderFarVoid.class)
-                .setBiome(new BiomeGenFarVoid(DeeperConfig.farVoidBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.deepStone);
+                .setBiome(new BiomeGenFarVoid(DeeperConfig.farVoidBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.deepStone)
+                .setExitCheck(DeeperWorldgen::farVoidCheck);
 
         this.forgotten = new DeeperLayer("Forgotten", DeeperConfig.forgottenDimID).setLayerBounds(0, 232).setUpperArrivalRange(42)
                 .setChunkProvider(ChunkProviderForgotten.class).setWorldProvider(WorldProviderForgotten.class)
