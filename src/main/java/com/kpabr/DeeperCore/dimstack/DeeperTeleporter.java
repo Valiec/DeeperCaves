@@ -1,10 +1,10 @@
-package com.kpabr.DeeperCaves;
+package com.kpabr.DeeperCore.dimstack;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-import com.kpabr.DeeperCaves.world.DeeperLayer;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
@@ -16,15 +16,9 @@ import static java.lang.Math.abs;
 public class DeeperTeleporter extends Teleporter
 {
 
+    public static List<Block> solidGroundBlacklist = new ArrayList<Block>();
     private final WorldServer worldServerInstance;
     private final Random random;
-    //public int[] ids = {DeeperCaves.worldgen.drop.dimID, DeeperCaves.worldgen.maze.dimID, DeeperCaves.worldgen.crystal.dimID, DeeperCaves.worldgen.compressed.dimID, DeeperCaves.worldgen.bedrockPlains.dimID, DeeperCaves.worldgen.nearNether.dimID, DeeperCaves.worldgen.lava.dimID, DeeperCaves.worldgen.nearVoid.dimID, DeeperCaves.worldgen.deepWorld.dimID, DeeperCaves.worldgen.darkness.dimID, DeeperCaves.worldgen.abandonedCaves.dimID, DeeperCaves.worldgen.mutation.dimID, DeeperCaves.worldgen.farVoid.dimID, DeeperCaves.worldgen.forgotten.dimID, DeeperCaves.worldgen.evil.dimID, DeeperCaves.worldgen.finalLabyrinth.dimID};
-    //public int[] caps = {197, 197, 147, 97, DeeperConfig.bedrockPlainsCeilingHeight+3, 97, 47, 242, 72, 242, 97, 97, 242, 227, 97, 242};
-    //public int[] mins = {185, 185, 135, 90, DeeperConfig.bedrockPlainsFloorHeight-8, 90, 40, 235, 65, 185, 90, 90, 235, 185, 90, 185};
-
-    //public int[] capsLower = {16, 16, 16, 16, DeeperCaves.worldgen.bedrockPlainsCeilingHeight+3, 16, 16, 242, 16, 16, 16, 16, 242, 16, 16, 16};
-    //public int[] minsLower = {2, 2, 2, 2, DeeperCaves.worldgen.bedrockPlainsFloorHeight-8, 2, 2, 235, 2, 2, 2, 2, 235, 2, 2, 2};
-    //public Block[] stones = {Blocks.stone, Blocks.stone, Blocks.stone, Blocks.stone, DeeperBlocks.fragmentedBedrock, Blocks.stone, Blocks.stone, Blocks.stone, Blocks.stone, DeeperBlocks.darkStone, DeeperBlocks.abandonedStone, DeeperBlocks.deepStone, DeeperBlocks.deepStone, DeeperBlocks.deepStone, DeeperBlocks.deepStone, DeeperBlocks.fragmentedBedrock};
     public int min;
     public int cap;
     public boolean isLower;
@@ -59,20 +53,6 @@ public class DeeperTeleporter extends Teleporter
         }
     }
 
-    /*public void handleBedrockPlainsConfig() {
-        int cap = DeeperCaves.worldgen.bedrockPlainsFloorHeight+5;
-        int min = DeeperCaves.worldgen.bedrockPlainsFloorHeight+1;
-
-        int capLower = DeeperCaves.worldgen.bedrockPlainsFloorHeight+5;
-        int minLower = DeeperCaves.worldgen.bedrockPlainsFloorHeight+1;
-
-        caps[4] = cap;
-        mins[4] = min;
-
-        capsLower[4] = capLower;
-        minsLower[4] = minLower;
-    }*/
-
     /**
      * Place an entity in a nearby portal, creating one if necessary.
      */
@@ -92,16 +72,12 @@ public class DeeperTeleporter extends Teleporter
                     cap = 255;
                 }
             }
-            //else if(this.worldServerInstance.provider.dimensionId == DeeperCaves.worldgen.bedrockPlains.dimID)
-            //{
-            //j = DeeperCaves.worldgen.bedrockPlainsFloorHeight+2;
-            //}
             int k = MathHelper.floor_double(p_77185_1_.posZ);
             makePortal(p_77185_1_, cap, i, j, k);
     }
 
     public boolean isValidGround(Block block) {
-        return block != Blocks.air && block != Blocks.water && block != Blocks.lava && block != DeeperBlocks.magmaStone && block != Blocks.flowing_water && block != Blocks.flowing_lava;
+        return block != Blocks.air && block != Blocks.water && block != Blocks.lava && block != Blocks.flowing_water && block != Blocks.flowing_lava;
     }
 
     public boolean isPositionValid(int testX, int testY, int testZ) {

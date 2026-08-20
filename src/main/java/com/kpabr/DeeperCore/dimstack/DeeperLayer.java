@@ -1,20 +1,17 @@
-package com.kpabr.DeeperCaves.world;
+package com.kpabr.DeeperCore.dimstack;
 
-import com.kpabr.DeeperCaves.world.chunk.ChunkProviderDeeperBase;
-import com.kpabr.DeeperCaves.world.provider.WorldProviderDeeperCaves;
+import com.kpabr.DeeperCore.worldgen.ChunkProviderDeeperBase;
+import com.kpabr.DeeperCore.worldgen.WorldProviderDeeperCaves;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.DimensionManager;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.BiPredicate;
-import java.util.function.Predicate;
 
 public class DeeperLayer {
 
@@ -48,6 +45,8 @@ public class DeeperLayer {
     DeeperBiomeInfo biomeData;
 
     public BiPredicate<EntityPlayerMP, Boolean> canExitFrom;
+
+    public QuadConsumer<World, Random, Integer, Integer> generateOres;
 
     public static Map<String, DeeperLayer> layerNames = new HashMap<String, DeeperLayer>();
 
@@ -107,6 +106,11 @@ public class DeeperLayer {
 
     public DeeperLayer setExitCheck(BiPredicate<EntityPlayerMP, Boolean> checkFunc) {
         this.canExitFrom = checkFunc;
+        return this;
+    }
+
+    public DeeperLayer setOreGeneration(QuadConsumer<World, Random, Integer, Integer> oreGen) {
+        this.generateOres = oreGen;
         return this;
     }
 

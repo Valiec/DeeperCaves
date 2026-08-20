@@ -1,11 +1,10 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
-import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.DeeperConfig;
 import com.kpabr.DeeperCaves.DeeperFluids;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesDefault;
-import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavine;
+import com.kpabr.DeeperCore.worldgen.ChunkProviderDeeperBase;
+import com.kpabr.DeeperCore.worldgen.MapGenDeeperRavine;
 
 import com.kpabr.DeeperCaves.world.gen.feature.WorldGenDeeperLakes;
 import cpw.mods.fml.common.eventhandler.Event;
@@ -44,6 +43,7 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperBase
     public ChunkProviderBedrockPlains(World par1World, long par2, boolean par4)
     {
         super(par1World, par2, par4);
+        this.barrierBlock = DeeperBlocks.barrierLayer;
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.voidBlock = Blocks.air;
 

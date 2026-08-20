@@ -1,10 +1,8 @@
-package com.kpabr.DeeperCaves;
+package com.kpabr.DeeperCore.dimstack;
 
-import com.kpabr.DeeperCaves.world.DeeperLayer;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.util.DamageSource;
 
 public class DeeperDimensionHandler {
 

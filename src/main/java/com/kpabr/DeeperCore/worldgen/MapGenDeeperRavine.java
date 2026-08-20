@@ -1,9 +1,7 @@
-package com.kpabr.DeeperCaves.world.gen.cave;
+package com.kpabr.DeeperCore.worldgen;
 
 import java.util.Random;
 
-import com.kpabr.DeeperCaves.DeeperBlocks;
-import com.kpabr.DeeperCaves.DeeperFluids;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;

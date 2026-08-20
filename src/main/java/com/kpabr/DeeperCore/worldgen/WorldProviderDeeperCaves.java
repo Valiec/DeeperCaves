@@ -1,11 +1,6 @@
-package com.kpabr.DeeperCaves.world.provider;
+package com.kpabr.DeeperCore.worldgen;
 
-
-import com.kpabr.DeeperCaves.DeeperCaves;
-import com.kpabr.DeeperCaves.world.DeeperLayer;
-import com.kpabr.DeeperCaves.world.chunk.ChunkProviderAbandonedCaves;
-import com.kpabr.DeeperCaves.world.chunk.ChunkProviderDeeperBase;
-import com.kpabr.DeeperCaves.world.chunk.ChunkProviderDrop;
+import com.kpabr.DeeperCore.dimstack.DeeperLayer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;

@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCaves.block;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
+import com.kpabr.DeeperCore.dimstack.DeeperTeleporter;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -8,21 +9,15 @@ import java.util.List;
 import java.util.Random;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
-import com.kpabr.DeeperCaves.DeeperTeleporter;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityEndPortal;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockDeeperPortal extends BlockBase
@@ -30,14 +25,24 @@ public class BlockDeeperPortal extends BlockBase
     public static boolean field_149948_a;
     private static final String __OBFID = "CL_00000236";
     private int dim;
+    private boolean lower;
+    private boolean returnPortal;
 
     public BlockDeeperPortal(Material p_i45404_1_, int dimension)
+    {
+        this(p_i45404_1_, dimension, false, false);
+        
+    }
+
+    public BlockDeeperPortal(Material p_i45404_1_, int dimension, boolean lower, boolean returnPortal)
     {
         super(p_i45404_1_);
         this.setLightLevel(1.0F);
         this.dim = dimension;
+        this.lower = lower;
+        this.returnPortal = returnPortal;
         this.setCreativeTab(DeeperCaves.tabDeeperCaves);
-        
+
     }
 
     /**
@@ -75,7 +80,7 @@ public class BlockDeeperPortal extends BlockBase
         	EntityPlayerMP player = (EntityPlayerMP)p_149670_5_;
         	if(player.dimension != this.dim && !(this.dim == 7 && player.dimension > 7))
         	{
-        	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, this.dim, new DeeperTeleporter(player.mcServer.worldServerForDimension(this.dim), false));
+        	player.mcServer.getConfigurationManager().transferPlayerToDimension(player, this.dim, new DeeperTeleporter(player.mcServer.worldServerForDimension(this.dim), lower, returnPortal));
         	}
         	}
         	catch(ClassCastException e)

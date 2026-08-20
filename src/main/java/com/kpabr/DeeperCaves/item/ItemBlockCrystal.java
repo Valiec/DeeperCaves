@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCaves;
+package com.kpabr.DeeperCaves.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

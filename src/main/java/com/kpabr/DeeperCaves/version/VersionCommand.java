@@ -1,7 +1,8 @@
-package com.kpabr.DeeperCaves;
+package com.kpabr.DeeperCaves.version;
 
 import java.io.IOException;
 
+import com.kpabr.DeeperCaves.DeeperCaves;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
@@ -30,7 +31,7 @@ public class VersionCommand extends CommandBase
       
     try
     {
-        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("You have DeeperCaves "+DeeperCaves.VERSION+". Newest release is DeeperCaves "+DeeperCaves.versionChecker.getNewestVersionNumber()+"."));
+        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("You have DeeperCaves "+ DeeperCaves.VERSION+". Newest release is DeeperCaves "+DeeperCaves.versionChecker.getNewestVersionNumber()+"."));
     }
     catch (IOException e)
     {

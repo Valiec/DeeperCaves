@@ -1,6 +1,5 @@
-package com.kpabr.DeeperCaves.world;
+package com.kpabr.DeeperCore.dimstack;
 
-import com.kpabr.DeeperCaves.world.chunk.ChunkProviderDeeperBase;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;

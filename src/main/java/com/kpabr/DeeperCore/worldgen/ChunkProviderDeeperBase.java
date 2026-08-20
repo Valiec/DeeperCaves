@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCaves.world.chunk;
+package com.kpabr.DeeperCore.worldgen;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
 import cpw.mods.fml.common.eventhandler.Event.Result;
@@ -31,31 +31,32 @@ import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.Ev
 public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate implements IChunkProvider
 {
     /** RNG. */
-    Random rand;
-    NoiseGeneratorPerlin perlinNoise;
+    protected Random rand;
+    protected NoiseGeneratorPerlin perlinNoise;
     public NoiseGeneratorOctaves mobSpawnerNoise;
     /** Reference to the World object. */
-    World worldObj;
+    protected World worldObj;
     /** are map structures going to be generated (e.g. strongholds) */
-    boolean mapFeaturesEnabled = false;
+    protected boolean mapFeaturesEnabled = false;
     public boolean doMineshafts;
     WorldType field_147435_p = null;
-    double[] stoneNoise = new double[256];
+    protected double[] stoneNoise = new double[256];
     MapGenBase caveGenerator;
     /** Holds Stronghold Generator */
-    MapGenStronghold strongholdGenerator = new MapGenStronghold();
+    protected MapGenStronghold strongholdGenerator = new MapGenStronghold();
     /** Holds Mineshaft Generator */
-    MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
-    MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
+    protected MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
+    protected MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     /** Holds ravine generator */
     MapGenBase ravineGenerator;
     /** The biomes that are used to generate the chunk */
-    BiomeGenBase[] biomesForGeneration;
+    protected BiomeGenBase[] biomesForGeneration;
     public Block baseBlock = Blocks.stone;
     public Block voidBlock = Blocks.air;
     public int lowerBarrierY = -1;
     public int upperBarrierY = 257;
     public int voidTerrainCutoff = 0;
+    public Block barrierBlock;
 
     {
         strongholdGenerator = (MapGenStronghold) TerrainGen.getModdedMapGen(strongholdGenerator, STRONGHOLD);
@@ -66,6 +67,7 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
     public ChunkProviderDeeperBase(World par1World, long par2, boolean par4)
     {
     	super(par1World, par2, par4);
+        this.barrierBlock = Blocks.bedrock;
         this.doMineshafts = true;
         this.worldObj = par1World;
         this.mapFeaturesEnabled = par4;
@@ -168,11 +170,11 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
                     }
                     if (l1 <= lowerBarrierY)
                     {
-                        p_147422_3_[i2] = DeeperBlocks.barrierLayer;
+                        p_147422_3_[i2] = barrierBlock;
                     }
                     if (l1 >= upperBarrierY)
                     {
-                    	p_147422_3_[i2] = DeeperBlocks.barrierLayer;
+                    	p_147422_3_[i2] = barrierBlock;
                     }
                 }
             }

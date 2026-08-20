@@ -1,14 +1,10 @@
 package com.kpabr.DeeperCaves.world.gen.cave;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
+import com.kpabr.DeeperCore.worldgen.MapGenDeeperRavine;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.MathHelper;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.gen.MapGenBase;
-
-import java.util.Random;
 
 public class MapGenDeeperRavineFinalLabyrinth extends MapGenDeeperRavine
 {

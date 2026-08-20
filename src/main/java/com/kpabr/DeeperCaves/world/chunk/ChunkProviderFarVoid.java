@@ -1,13 +1,12 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
-import com.kpabr.DeeperCaves.world.gen.cave.*;
 
-import net.minecraft.init.Blocks;
+import com.kpabr.DeeperCore.worldgen.ChunkProviderDeeperBase;
+import com.kpabr.DeeperCore.worldgen.MapGenDeeperCavesDefault;
+import com.kpabr.DeeperCore.worldgen.MapGenDeeperRavine;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.*;
-import net.minecraftforge.event.terraingen.*;
 
 public class ChunkProviderFarVoid extends ChunkProviderDeeperBase
 {
@@ -22,6 +21,7 @@ public class ChunkProviderFarVoid extends ChunkProviderDeeperBase
     public ChunkProviderFarVoid(World par1World, long par2, boolean par4)
     {
         super(par1World, par2, par4);
+        this.barrierBlock = DeeperBlocks.barrierLayer;
         this.doMineshafts = false;
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.upperBarrierY = 247;

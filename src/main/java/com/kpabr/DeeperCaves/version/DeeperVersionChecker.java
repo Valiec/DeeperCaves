@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCaves;
+package com.kpabr.DeeperCaves.version;
 
 import java.io.BufferedReader;
 import java.io.IOException;

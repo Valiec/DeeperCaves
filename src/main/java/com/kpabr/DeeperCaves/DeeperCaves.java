@@ -1,42 +1,25 @@
 package com.kpabr.DeeperCaves;
 
-import java.io.IOException;
-import java.net.UnknownHostException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import com.kpabr.DeeperCaves.CommonProxy;
-
-import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.command.ServerCommandManager;
+import com.kpabr.DeeperCaves.version.DeeperVersionChecker;
+import com.kpabr.DeeperCaves.version.VersionCommand;
+import com.kpabr.DeeperCore.dimstack.DeeperTeleporter;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.util.EnumHelper;
-import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.Event.Result;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.VillagerRegistry;
-import cpw.mods.fml.relauncher.Side;
-import net.minecraftforge.event.*;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
-@Mod(modid = DeeperCaves.MODID, version = DeeperCaves.VERSION, name = DeeperCaves.NAME)
+
+@Mod(modid = DeeperCaves.MODID, version = DeeperCaves.VERSION, name = DeeperCaves.NAME, dependencies = "required-after:deepercore")
 public class DeeperCaves
 {
     @SidedProxy(clientSide="com.kpabr.DeeperCaves.client.ClientProxy", serverSide="com.kpabr.DeeperCaves.CommonProxy")
@@ -60,9 +43,7 @@ public class DeeperCaves
     public static DeeperVersionChecker versionChecker = new DeeperVersionChecker();
     public static DeeperConfig config = new DeeperConfig();
     public static DeeperBucketHandler bucket;
-    public static DeeperDimensionHandler dimension = new DeeperDimensionHandler();
     public static DeeperEventHandler events = new DeeperEventHandler();
-    public static DeeperAchievements achievements = new DeeperAchievements();
     
     //player state data
     //TODO: make this explicitly serverside
@@ -94,9 +75,6 @@ public class DeeperCaves
         
         FMLCommonHandler.instance().bus().register(config);
         MinecraftForge.EVENT_BUS.register(config);
-        
-        FMLCommonHandler.instance().bus().register(dimension);
-		MinecraftForge.EVENT_BUS.register(dimension);
         
         FMLCommonHandler.instance().bus().register(this);
         MinecraftForge.EVENT_BUS.register(this);
@@ -133,6 +111,8 @@ public class DeeperCaves
      	DeeperAchievements.registerAchievements();
      	
      	bucket = new DeeperBucketHandler(); //initialized here because blocks and items must be set up first
+
+        DeeperTeleporter.solidGroundBlacklist.addAll(Arrays.asList(DeeperBlocks.magmaStone, DeeperFluids.moltenIronBlock));
      	
         FMLCommonHandler.instance().bus().register(bucket);
 		MinecraftForge.EVENT_BUS.register(bucket);

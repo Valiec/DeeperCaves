@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCaves;
 
-import com.kpabr.DeeperCaves.world.DeeperLayer;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.block.Block;
