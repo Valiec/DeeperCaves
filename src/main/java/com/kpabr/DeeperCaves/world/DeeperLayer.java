@@ -2,16 +2,16 @@ package com.kpabr.DeeperCaves.world;
 
 import com.kpabr.DeeperCaves.world.chunk.ChunkProviderDeeperBase;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDeeperCaves;
-import com.kpabr.DeeperCaves.world.provider.WorldProviderDrop;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.DimensionManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DeeperLayer {
 
@@ -35,11 +35,16 @@ public class DeeperLayer {
 
     public Block stoneBlock;
 
+    public DeeperLayer prevLayer;
+    public DeeperLayer nextLayer;
+
     public int dimID;
 
     //public List<DeeperBiomeInfo> biomes;
 
     DeeperBiomeInfo biomeData;
+
+    public static Map<String, DeeperLayer> layerNames = new HashMap<String, DeeperLayer>();
 
     public BiomeGenBase biome;
 
@@ -68,11 +73,30 @@ public class DeeperLayer {
 
     public DeeperLayer(String layerName, int dimID) {
         this(layerName);
+        layerNames.put(layerName, this);
         this.setDimID(dimID);
     }
 
     public DeeperLayer setWorldProvider(Class<? extends WorldProviderDeeperCaves> worldProvider) {
         this.worldProvider = worldProvider;
+        return this;
+    }
+
+    public DeeperLayer insertAfter(DeeperLayer otherLayer) {
+        if(otherLayer.nextLayer != null) {
+            this.nextLayer = otherLayer.nextLayer;
+        }
+        this.prevLayer = otherLayer;
+        otherLayer.nextLayer = this;
+        return this;
+    }
+
+    public DeeperLayer insertBefore(DeeperLayer otherLayer) {
+        if(otherLayer.prevLayer != null) {
+            this.prevLayer = otherLayer.prevLayer;
+        }
+        this.nextLayer = otherLayer;
+        otherLayer.prevLayer = this;
         return this;
     }
 
@@ -88,13 +112,17 @@ public class DeeperLayer {
     }
 
     public DeeperLayer registerBiomes() {
-        this.biomeData.register();
+        if(this.biomeData != null) {
+            this.biomeData.register();
+        }
         return this;
     }
 
     public DeeperLayer registerDimension() {
-        DimensionManager.registerProviderType(this.dimID, this.worldProvider, false);
-        DimensionManager.registerDimension(this.dimID, this.dimID);
+        if(this.worldProvider != null) {
+            DimensionManager.registerProviderType(this.dimID, this.worldProvider, false);
+            DimensionManager.registerDimension(this.dimID, this.dimID);
+        }
         return this;
     }
 

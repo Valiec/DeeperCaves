@@ -57,6 +57,9 @@ public class DeeperConfig {
     public static int bedrockPlainsFloorHeight;
     public static int bedrockPlainsCeilingHeight;
 
+    public static String[] levelOrder = new String[] { "Overworld", "Drop", "Maze", "Crystal", "Compressed",
+            "Bedrock Plains", "Near Nether", "Lava", "Near Void", "Deep World", "Darkness",
+            "Abandoned Caves", "Mutation", "Far Void", "Forgotten", "Evil", "Final Labyrinth" };
 
     public void initConfig(FMLPreInitializationEvent event)
     {

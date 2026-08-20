@@ -36,11 +36,8 @@ import com.kpabr.DeeperCaves.world.provider.WorldProviderNearNether;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearVoid;
 
 import net.minecraftforge.common.BiomeDictionary.Type;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.ChunkProviderGenerate;
-import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent.ReplaceBiomeBlocks;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
@@ -49,6 +46,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class DeeperWorldgen {
     /*World Generator Declaration*/
     DeeperOregen deeperblock = new DeeperOregen();
+
+    public DeeperLayer surface;
 
     public DeeperLayer drop;
     public DeeperLayer maze;
@@ -72,6 +71,8 @@ public class DeeperWorldgen {
 
     public void setupWorldgen()
     {
+
+        this.surface = new DeeperLayer("Overworld", 0).setLayerBounds(0, 255);
 
         this.drop = new DeeperLayer("Drop", DeeperConfig.dropDimID).setLayerBounds(0, 202).setUpperArrivalRange(12)
                 .setChunkProvider(ChunkProviderDrop.class).setWorldProvider(WorldProviderDrop.class)
@@ -142,6 +143,15 @@ public class DeeperWorldgen {
                 .setBiome(new BiomeGenFinalLabyrinth(DeeperConfig.finalLabyrinthBiomeID, 0), Type.PLAINS).setStoneBlock(DeeperBlocks.fragmentedBedrock);
 
         DeeperLayer.registerAllLayers();
+
+        String prevName = null;
+
+        for(String levelName: DeeperConfig.levelOrder) {
+            if(prevName != null) {
+                DeeperLayer.layerNames.get(levelName).insertAfter(DeeperLayer.layerNames.get(prevName));
+            }
+            prevName = levelName;
+        }
 
         /*Setting up worldgen*/
         GameRegistry.registerWorldGenerator(deeperblock, 1);

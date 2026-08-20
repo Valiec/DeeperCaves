@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCaves.world.DeeperLayer;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -14,70 +15,14 @@ public class DeeperDimensionHandler {
 				EntityPlayerMP player = (EntityPlayerMP)event.player;
 				boolean voidFlag = ((DeeperCaves.instance.voidFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.voidFlag.get(player.getUniqueID()) : false);
 
-				if(player.dimension == 0 && event.player.posY <= 0.0D) //0 = overworld
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.drop.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.drop.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.drop.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.maze.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.maze.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.maze.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.crystal.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.crystal.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.crystal.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.compressed.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.compressed.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.compressed.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.bedrockPlains.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.bedrockPlains.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.bedrockPlains.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.nearNether.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.nearNether.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.nearNether.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.lava.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.lava.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.lava.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.nearVoid.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.nearVoid.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.nearVoid.dimID && event.player.posY <= 120.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.deepWorld.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.deepWorld.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.deepWorld.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.darkness.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.darkness.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.darkness.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.abandonedCaves.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.abandonedCaves.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.abandonedCaves.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.mutation.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.mutation.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.mutation.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.farVoid.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.farVoid.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.farVoid.dimID && event.player.posY <= 120.0D && voidFlag)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.forgotten.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.forgotten.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.forgotten.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.evil.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.evil.dimID), false));
-	        	}
-	        	else if(player.dimension == DeeperCaves.worldgen.evil.dimID && event.player.posY <= 0.0D)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.finalLabyrinth.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.finalLabyrinth.dimID), false));
-	        	}
+				for(DeeperLayer layer: DeeperLayer.deeperLayers) {
+					if(player.dimension == layer.dimID && event.player.posY <= layer.minY && layer.nextLayer != null) {
+						if(layer != DeeperCaves.worldgen.farVoid || voidFlag)
+						{
+							player.mcServer.getConfigurationManager().transferPlayerToDimension(player, layer.nextLayer.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(layer.nextLayer.dimID), false));
+						}
+					}
+				}
         	}
         	catch(ClassCastException e)
         	{
@@ -87,70 +32,12 @@ public class DeeperDimensionHandler {
         	{
 	        	EntityPlayerMP player = (EntityPlayerMP)event.player;
 
-	        	if(player.dimension == DeeperCaves.worldgen.drop.dimID && event.player.posY >= 200.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new DeeperTeleporter(player.mcServer.worldServerForDimension(0), true));
-	        	}
-	        	if(player.dimension == DeeperCaves.worldgen.maze.dimID && event.player.posY >= 200.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.drop.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.drop.dimID), true));
-	        	}
-	        	if(player.dimension == DeeperCaves.worldgen.crystal.dimID && event.player.posY >= 150.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.maze.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.maze.dimID), true));
-	        	}
-	        	if(player.dimension == DeeperCaves.worldgen.compressed.dimID && event.player.posY >= 100.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.crystal.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.crystal.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.bedrockPlains.dimID && event.player.posY >= DeeperConfig.bedrockPlainsCeilingHeight+6)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.compressed.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.compressed.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.nearNether.dimID && event.player.posY >= 100.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.bedrockPlains.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.bedrockPlains.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.lava.dimID && event.player.posY >= 50.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.nearNether.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.nearNether.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.nearVoid.dimID && event.player.posY >= 245.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.lava.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.lava.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.deepWorld.dimID && event.player.posY >= 75.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.nearVoid.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.nearVoid.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.darkness.dimID && event.player.posY >= 245.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.deepWorld.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.deepWorld.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.abandonedCaves.dimID && event.player.posY >= 100.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.darkness.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.darkness.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.mutation.dimID && event.player.posY >= 100.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.abandonedCaves.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.abandonedCaves.dimID), true));
-	        	}
-	         	if(player.dimension == DeeperCaves.worldgen.farVoid.dimID && event.player.posY >= 245.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.mutation.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.mutation.dimID), true));
-	        	}
-	        	if(player.dimension == DeeperCaves.worldgen.forgotten.dimID && event.player.posY >= 230.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.farVoid.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.farVoid.dimID), true));
-	        	}
-	        	if(player.dimension == DeeperCaves.worldgen.evil.dimID && event.player.posY >= 100.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.forgotten.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.forgotten.dimID), true));
-	        	}
-	        	if(player.dimension == DeeperCaves.worldgen.finalLabyrinth.dimID && event.player.posY >= 245.0)
-	        	{
-	        		player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DeeperCaves.worldgen.evil.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(DeeperCaves.worldgen.evil.dimID), true));
-	        	}
+
+				for(DeeperLayer layer: DeeperLayer.deeperLayers) {
+					if(player.dimension == layer.dimID && event.player.posY >= layer.maxY && layer.prevLayer != null) {
+						player.mcServer.getConfigurationManager().transferPlayerToDimension(player, layer.prevLayer.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(layer.prevLayer.dimID), true));
+					}
+				}
         	}
         	catch(ClassCastException e)
         	{
