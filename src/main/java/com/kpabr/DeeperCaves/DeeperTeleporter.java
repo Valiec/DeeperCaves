@@ -181,7 +181,7 @@ public class DeeperTeleporter extends Teleporter
 
         }
 
-        //System.out.println("placing at: "+baseX+0.5+","+baseY+","+baseZ+0.5+" in "+this.worldServerInstance.provider.getDimensionName());
+        System.out.println("placing at: "+baseX+0.5+","+baseY+","+baseZ+0.5+" in "+this.worldServerInstance.provider.getDimensionName());
         entity.setPosition(baseX+0.5, baseY, baseZ+0.5);
 
     }

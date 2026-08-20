@@ -35,6 +35,7 @@ import com.kpabr.DeeperCaves.world.provider.WorldProviderMutation;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearNether;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearVoid;
 
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.ChunkProviderGenerate;
@@ -68,6 +69,13 @@ public class DeeperWorldgen {
     public DeeperLayer forgotten;
     public DeeperLayer evil;
     public DeeperLayer finalLabyrinth;
+
+    public static boolean nearVoidCheck(EntityPlayerMP player, boolean lower) {
+        if(lower) {
+            return true;
+        }
+        return (DeeperCaves.instance.voidFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.voidFlag.get(player.getUniqueID()) : false;
+    }
 
     public void setupWorldgen()
     {
@@ -107,7 +115,7 @@ public class DeeperWorldgen {
         this.nearVoid = new DeeperLayer("Near Void", DeeperConfig.nearVoidDimID).setLayerBounds(120, 247)
                 .setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderNearVoid.class).setWorldProvider(WorldProviderNearVoid.class)
-                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID, 0), Type.PLAINS);
+                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID, 0), Type.PLAINS).setExitCheck(DeeperWorldgen::nearVoidCheck);
 
         this.deepWorld = new DeeperLayer("Deep World", DeeperConfig.deepWorldDimID).setLayerBounds(0, 77).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderDeepWorld.class).setWorldProvider(WorldProviderDeepWorld.class)

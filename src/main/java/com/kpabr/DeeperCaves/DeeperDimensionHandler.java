@@ -13,14 +13,11 @@ public class DeeperDimensionHandler {
     		try
         	{
 				EntityPlayerMP player = (EntityPlayerMP)event.player;
-				boolean voidFlag = ((DeeperCaves.instance.voidFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.voidFlag.get(player.getUniqueID()) : false);
 
 				for(DeeperLayer layer: DeeperLayer.deeperLayers) {
-					if(player.dimension == layer.dimID && event.player.posY <= layer.tpTriggerLower && layer.nextLayer != null) {
-						if(layer != DeeperCaves.worldgen.farVoid || voidFlag)
-						{
-							player.mcServer.getConfigurationManager().transferPlayerToDimension(player, layer.nextLayer.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(layer.nextLayer.dimID), false));
-						}
+					if(player.dimension == layer.dimID && event.player.posY <= layer.tpTriggerLower && layer.nextLayer != null && (layer.canExitFrom == null || layer.canExitFrom.test(player, false))) {
+						player.mcServer.getConfigurationManager().transferPlayerToDimension(player, layer.nextLayer.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(layer.nextLayer.dimID), false));
+						break;
 					}
 				}
         	}
@@ -32,10 +29,10 @@ public class DeeperDimensionHandler {
         	{
 	        	EntityPlayerMP player = (EntityPlayerMP)event.player;
 
-
 				for(DeeperLayer layer: DeeperLayer.deeperLayers) {
-					if(player.dimension == layer.dimID && event.player.posY >= layer.tpTriggerUpper && layer.prevLayer != null) {
+					if(player.dimension == layer.dimID && event.player.posY >= layer.tpTriggerUpper && layer.prevLayer != null && (layer.canExitFrom == null || layer.canExitFrom.test(player, true))) {
 						player.mcServer.getConfigurationManager().transferPlayerToDimension(player, layer.prevLayer.dimID, new DeeperTeleporter(player.mcServer.worldServerForDimension(layer.prevLayer.dimID), true));
+						break;
 					}
 				}
         	}

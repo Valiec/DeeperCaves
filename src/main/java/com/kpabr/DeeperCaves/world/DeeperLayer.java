@@ -3,6 +3,7 @@ package com.kpabr.DeeperCaves.world;
 import com.kpabr.DeeperCaves.world.chunk.ChunkProviderDeeperBase;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderDeeperCaves;
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public class DeeperLayer {
 
@@ -43,6 +46,8 @@ public class DeeperLayer {
     //public List<DeeperBiomeInfo> biomes;
 
     DeeperBiomeInfo biomeData;
+
+    public BiPredicate<EntityPlayerMP, Boolean> canExitFrom;
 
     public static Map<String, DeeperLayer> layerNames = new HashMap<String, DeeperLayer>();
 
@@ -100,6 +105,11 @@ public class DeeperLayer {
         return this;
     }
 
+    public DeeperLayer setExitCheck(BiPredicate<EntityPlayerMP, Boolean> checkFunc) {
+        this.canExitFrom = checkFunc;
+        return this;
+    }
+
     //public DeeperLayer addBiome(Class<? extends BiomeGenBase> biomeGen, int biomeID, BiomeManager.BiomeType biomeType) {
    //     this.biomes.add(new DeeperBiomeInfo(biomeID, biomeGen, biomeType));
    //     return this;
@@ -145,16 +155,14 @@ public class DeeperLayer {
         this.minY = minY;
         this.maxY = maxY;
 
-        if(this.tpTriggerUpper == 0 && this.tpTriggerLower == 0) {
-            this.setTPTriggerBounds(minY-2, maxY);
-            computeUpperArrivalBounds();
-            computeLowerArrivalBounds();
-        }
+        this.setTPTriggerBounds(minY-2, maxY);
+        computeUpperArrivalBounds();
+        computeLowerArrivalBounds();
 
         return this;
     }
 
-    public DeeperLayer setTPTriggerBounds(int upper, int lower) {
+    public DeeperLayer setTPTriggerBounds(int lower, int upper) {
         this.tpTriggerUpper = upper;
         this.tpTriggerLower = lower;
         return this;
