@@ -27,29 +27,29 @@ public class DeeperDecorator extends BiomeDecorator {
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
         this.generateOres();
         int i;
+        
         int j;
         int k;
-        
-        int l;
+
         int i1;
 
         boolean doGen = TerrainGen.decorate(currentWorld, randomGenerator, chunk_X, chunk_Z, LAKE);
         if (doGen && this.generateLakes)
         {
-            for (j = 0; j < 50; ++j)
+            for (i1 = 0; i1 < 50; ++i1)
             {
-                k = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-                l = this.randomGenerator.nextInt(this.randomGenerator.nextInt(248) + 8);
-                i1 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-                (new WorldGenLiquids(Blocks.flowing_water)).generate(this.currentWorld, this.randomGenerator, k, l, i1);
+                i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+                j = this.randomGenerator.nextInt(this.randomGenerator.nextInt(248) + 8);
+                k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+                (new WorldGenLiquids(Blocks.flowing_water)).generate(this.currentWorld, this.randomGenerator, i, j, k);
             }
 
-            for (j = 0; j < 20; ++j)
+            for (i1 = 0; i1 < 20; ++i1)
             {
-                k = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-                l = this.randomGenerator.nextInt(this.randomGenerator.nextInt(this.randomGenerator.nextInt(240) + 8) + 8);
-                i1 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-                (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.currentWorld, this.randomGenerator, k, l, i1);
+                i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+                j = this.randomGenerator.nextInt(this.randomGenerator.nextInt(this.randomGenerator.nextInt(240) + 8) + 8);
+                k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+                (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.currentWorld, this.randomGenerator, i, j, k);
             }
         }
 
@@ -61,21 +61,21 @@ public class DeeperDecorator extends BiomeDecorator {
     {
         MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
         if (TerrainGen.generateOre(currentWorld, randomGenerator, dirtGen, chunk_X, chunk_Z, DIRT))
-        this.genStandardOre1(15, this.dirtGen, 0, 256);
+            this.genStandardOre1(15, this.dirtGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, gravelGen, chunk_X, chunk_Z, GRAVEL))
-        this.genStandardOre1(8, this.gravelGen, 0, 256);
+            this.genStandardOre1(8, this.gravelGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, coalGen, chunk_X, chunk_Z, COAL))
-        this.genStandardOre1(25, this.coalGen, 0, 256);
+            this.genStandardOre1(25, this.coalGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, ironGen, chunk_X, chunk_Z, IRON))
-        this.genStandardOre1(50, this.ironGen, 0, 256);
+            this.genStandardOre1(50, this.ironGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, goldGen, chunk_X, chunk_Z, GOLD))
-        this.genStandardOre1(10, this.goldGen, 0, 256);
+            this.genStandardOre1(10, this.goldGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, redstoneGen, chunk_X, chunk_Z, REDSTONE))
-        this.genStandardOre1(80, this.redstoneGen, 0, 256);
+            this.genStandardOre1(80, this.redstoneGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, diamondGen, chunk_X, chunk_Z, DIAMOND))
-        this.genStandardOre1(10, this.diamondGen, 0, 256);
+            this.genStandardOre1(10, this.diamondGen, 0, 256);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, lapisGen, chunk_X, chunk_Z, LAPIS))
-        this.genStandardOre1(12, this.lapisGen, 0, 256);
+            this.genStandardOre1(12, this.lapisGen, 0, 256);
         MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
     }
 }

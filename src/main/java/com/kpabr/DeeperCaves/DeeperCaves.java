@@ -8,7 +8,6 @@ import java.util.UUID;
 import com.kpabr.DeeperCaves.version.DeeperVersionChecker;
 import com.kpabr.DeeperCaves.version.VersionCommand;
 import com.kpabr.DeeperCore.dimstack.DeeperTeleporter;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;

@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCore.worldgen;
 
-import com.kpabr.DeeperCaves.DeeperBlocks;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;

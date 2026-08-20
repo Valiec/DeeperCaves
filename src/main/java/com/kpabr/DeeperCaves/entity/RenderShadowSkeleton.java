@@ -1,10 +1,8 @@
 package com.kpabr.DeeperCaves.entity;
 
 import net.minecraft.client.renderer.entity.RenderSkeleton;
-import net.minecraft.client.renderer.entity.RenderSpider;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderShadowSkeleton extends RenderSkeleton {

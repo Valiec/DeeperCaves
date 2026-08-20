@@ -1,0 +1,13 @@
+# keep as LF
+* text=auto
+
+# gradle scripts
+/gradlew text eol=lf
+*.bat text eol=crlf
+
+# if I ever end up with shell scripts
+*.sh text eol=lf
+
+# just to be sure
+*.png binary
+*.jar binary

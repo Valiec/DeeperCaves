@@ -2,7 +2,6 @@ package com.kpabr.DeeperCaves.item;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

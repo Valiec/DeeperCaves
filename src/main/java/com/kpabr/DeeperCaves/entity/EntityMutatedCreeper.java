@@ -2,12 +2,8 @@ package com.kpabr.DeeperCaves.entity;
 
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeModContainer;
 
 public class EntityMutatedCreeper extends EntityCreeper {
 

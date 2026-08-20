@@ -1,9 +1,7 @@
 package com.kpabr.DeeperCaves.entity;
 
-import net.minecraft.client.renderer.entity.RenderSpider;
 import net.minecraft.client.renderer.entity.RenderZombie;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.ResourceLocation;
 

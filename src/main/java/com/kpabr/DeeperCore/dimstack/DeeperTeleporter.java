@@ -18,7 +18,7 @@ public class DeeperTeleporter extends Teleporter
 
     public static List<Block> solidGroundBlacklist = new ArrayList<Block>();
     private final WorldServer worldServerInstance;
-    private final Random random;
+    //private final Random random;
     public int min;
     public int cap;
     public boolean isLower;
@@ -37,7 +37,7 @@ public class DeeperTeleporter extends Teleporter
         this.isLower = isLower;
         this.isReturnPortal = false;
         this.worldServerInstance = worldServer;
-        this.random = new Random(worldServer.getSeed());
+        //this.random = new Random(worldServer.getSeed());
 
         //this.handleBedrockPlainsConfig();
 

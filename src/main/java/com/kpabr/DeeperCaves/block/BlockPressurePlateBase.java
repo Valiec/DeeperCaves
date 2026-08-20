@@ -1,7 +1,6 @@
 package com.kpabr.DeeperCaves.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockPressurePlate;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;

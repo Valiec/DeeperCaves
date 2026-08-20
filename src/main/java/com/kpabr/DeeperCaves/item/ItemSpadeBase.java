@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCaves.item;
 
-import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 
 public class ItemSpadeBase extends ItemSpade{

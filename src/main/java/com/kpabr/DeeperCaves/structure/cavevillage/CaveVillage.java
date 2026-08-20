@@ -5,9 +5,7 @@ package com.kpabr.DeeperCaves.structure.cavevillage;
 import java.util.Random;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
-import com.kpabr.DeeperCaves.DeeperCaves;
 
-import com.kpabr.DeeperCaves.DeeperBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;

@@ -9,7 +9,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.player.EntityPlayer;
 
-import java.rmi.server.UID;
 import java.util.UUID;
 
 public class EntityAIShadowTarget extends EntityAINearestAttackableTarget {
