@@ -155,7 +155,7 @@ public class DeeperLayer {
         this.minY = minY;
         this.maxY = maxY;
 
-        this.setTPTriggerBounds(minY-2, maxY);
+        this.setTPTriggerBounds(minY, maxY-2);
         computeUpperArrivalBounds();
         computeLowerArrivalBounds();
 
@@ -224,7 +224,7 @@ public class DeeperLayer {
             throw new IllegalArgumentException("level bounds both 0 or unset!");
         }
         this.arrivalCapUpper = maxY-5;
-        this.arrivalMinUpper = minY-5-upperArrivalRange;
+        this.arrivalMinUpper = maxY-5-upperArrivalRange;
 
         return this;
     }

@@ -78,8 +78,6 @@ public class DeeperTeleporter extends Teleporter
      */
     public void placeInPortal(Entity p_77185_1_, double p_77185_2_, double p_77185_4_, double p_77185_6_, float p_77185_8_)
     {
-    		
-       
             int i = MathHelper.floor_double(p_77185_1_.posX);
             int j = this.min;
             int cap = this.cap;
@@ -124,6 +122,9 @@ public class DeeperTeleporter extends Teleporter
         int baseZ = k;
 
         boolean pos_ok = false;
+
+        System.out.println("attempting TP to: "+i+","+k+" between y="+min+" and y="+cap+" in "+this.worldServerInstance.provider.getDimensionName());
+
 
         pos_scan:
         for (int radius = 0; radius <= maxRadius; radius++)
