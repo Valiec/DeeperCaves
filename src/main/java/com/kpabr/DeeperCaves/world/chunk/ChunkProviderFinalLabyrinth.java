@@ -4,7 +4,7 @@ import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesFinalLabyrinth;
 
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineFinalLabyrinth;
-import com.kpabr.DeeperCore.worldgen.ChunkProviderDeeperBase;
+import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
 

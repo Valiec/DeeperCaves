@@ -3,10 +3,10 @@ package com.kpabr.DeeperCaves.world.chunk;
 import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperConfig;
 import com.kpabr.DeeperCaves.DeeperFluids;
-import com.kpabr.DeeperCore.worldgen.ChunkProviderDeeperBase;
-import com.kpabr.DeeperCore.worldgen.MapGenDeeperRavine;
+import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
+import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
 
-import com.kpabr.DeeperCaves.world.gen.feature.WorldGenDeeperLakes;
+import com.kpabr.DeeperCore.world.feature.WorldGenDeeperLakes;
 import cpw.mods.fml.common.eventhandler.Event;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;

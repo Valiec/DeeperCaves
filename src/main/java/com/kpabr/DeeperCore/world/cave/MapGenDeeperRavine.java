@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCore.worldgen;
+package com.kpabr.DeeperCore.world.cave;
 
 import java.util.Random;
 

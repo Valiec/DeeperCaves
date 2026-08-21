@@ -2,8 +2,7 @@ package com.kpabr.DeeperCaves.world.biome;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
 
-import com.kpabr.DeeperCaves.structure.cavevillage.CaveVillage;
-import com.kpabr.DeeperCore.worldgen.LayerOregen;
+import com.kpabr.DeeperCore.world.biome.LayerOregen;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 

@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCore.worldgen;
+package com.kpabr.DeeperCore.world.biome;
 
 import com.kpabr.DeeperCore.dimstack.DeeperLayer;
 import net.minecraft.world.biome.BiomeDecorator;

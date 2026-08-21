@@ -35,16 +35,14 @@ import com.kpabr.DeeperCaves.world.provider.WorldProviderMutation;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearNether;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearVoid;
 
-import com.kpabr.DeeperCore.worldgen.LayerOregen;
+import com.kpabr.DeeperCore.world.biome.LayerOregen;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent.ReplaceBiomeBlocks;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DeeperWorldgen {
     /*World Generator Declaration*/

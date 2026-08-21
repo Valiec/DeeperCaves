@@ -1,23 +1,11 @@
 package com.kpabr.DeeperCaves.world.biome;
 
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.COAL;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.DIAMOND;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.DIRT;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.GOLD;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.GRAVEL;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.IRON;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.LAPIS;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.REDSTONE;
 
-import com.kpabr.DeeperCore.worldgen.DeeperBaseDecorator;
+import com.kpabr.DeeperCore.world.biome.DeeperBaseDecorator;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenLiquids;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
-import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class DeeperDecorator extends DeeperBaseDecorator {

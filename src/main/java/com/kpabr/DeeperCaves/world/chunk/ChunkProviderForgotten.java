@@ -1,9 +1,9 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
-import com.kpabr.DeeperCore.worldgen.ChunkProviderDeeperBase;
-import com.kpabr.DeeperCore.worldgen.MapGenDeeperCavesDefault;
-import com.kpabr.DeeperCore.worldgen.MapGenDeeperRavine;
+import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
+import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
+import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.World;

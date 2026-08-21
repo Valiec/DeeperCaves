@@ -2,7 +2,7 @@ package com.kpabr.DeeperCaves.world.biome;
 
 
 
-import com.kpabr.DeeperCore.worldgen.BiomeGenDeeperBase;
+import com.kpabr.DeeperCore.world.biome.BiomeGenDeeperBase;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.world.World;

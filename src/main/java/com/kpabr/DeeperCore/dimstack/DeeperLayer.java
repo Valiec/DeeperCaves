@@ -1,11 +1,10 @@
 package com.kpabr.DeeperCore.dimstack;
 
-import com.kpabr.DeeperCore.worldgen.ChunkProviderDeeperBase;
-import com.kpabr.DeeperCore.worldgen.WorldProviderDeeperCaves;
+import com.kpabr.DeeperCore.world.WorldProviderDeeperCaves;
+import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.DimensionManager;

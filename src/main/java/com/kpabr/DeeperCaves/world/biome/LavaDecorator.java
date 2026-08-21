@@ -6,10 +6,9 @@ import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 
 import com.kpabr.DeeperCaves.DeeperFluids;
+import com.kpabr.DeeperCore.world.feature.WorldGenDeeperLiquids;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 //import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class LavaDecorator extends DeeperDecorator {

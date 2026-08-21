@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCore.worldgen;
+package com.kpabr.DeeperCore.world.chunk;
 
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.block.Block;

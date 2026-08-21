@@ -1,6 +1,7 @@
-package com.kpabr.DeeperCore.worldgen;
+package com.kpabr.DeeperCore.world;
 
 import com.kpabr.DeeperCore.dimstack.DeeperLayer;
+import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;

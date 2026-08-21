@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCore.dimstack;
+package com.kpabr.DeeperCore.dimstack.util;
 
 @FunctionalInterface
 public interface QuadConsumer<T,U,V,W> {

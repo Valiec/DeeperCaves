@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCaves.world.biome;
+package com.kpabr.DeeperCore.world.feature;
 
 import java.util.Random;
 import net.minecraft.block.Block;
