@@ -13,7 +13,9 @@ public class DeeperBaseDecorator extends BiomeDecorator {
 	protected void genDecorations(BiomeGenBase biome)
     {
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
-        this.generateOres();
+        if(biome instanceof BiomeGenDeeperBase) {
+            this.generateOres((BiomeGenDeeperBase) biome);
+        }
         this.decorate(biome);
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
     }
