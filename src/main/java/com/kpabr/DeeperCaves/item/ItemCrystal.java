@@ -46,11 +46,11 @@ public class ItemCrystal extends Item {
         return getUnlocalizedName() + "_" + names[itemstack.getItemDamage()];
     }
     @SideOnly(Side.CLIENT)
-    public void getSubItems(Item p_150895_1_, CreativeTabs p_150895_2_, List p_150895_3_)
+    public void getSubItems(Item item, CreativeTabs p_150895_2_, List subItems)
     {
         for (int i = 0; i < 16; ++i)
         {
-            p_150895_3_.add(new ItemStack(p_150895_1_, 1, i));
+            subItems.add(new ItemStack(item, 1, i));
         }
     }
 }

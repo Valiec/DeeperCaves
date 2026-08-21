@@ -15,7 +15,7 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 public class LavaDecorator extends DeeperDecorator {
 
 	@Override
-	protected void genDecorations(BiomeGenBase p_150513_1_)
+	protected void genDecorations(BiomeGenBase biome)
     {
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
         this.generateOres();

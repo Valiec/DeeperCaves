@@ -11,8 +11,8 @@ public class BlockFenceBase extends BlockFence {
         super(str, wood);
     }
 
-    public static boolean func_149825_a(Block p_149825_0_)
+    public static boolean func_149825_a(Block theBlock)
     {
-        return p_149825_0_ == Blocks.fence || p_149825_0_ == Blocks.nether_brick_fence || p_149825_0_ == DeeperBlocks.rottenFence;
+        return theBlock == Blocks.fence || theBlock == Blocks.nether_brick_fence || theBlock == DeeperBlocks.rottenFence;
     }
 }

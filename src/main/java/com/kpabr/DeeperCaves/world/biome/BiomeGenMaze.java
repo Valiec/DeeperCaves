@@ -1,14 +1,16 @@
 package com.kpabr.DeeperCaves.world.biome;
 
+
 import net.minecraft.init.Blocks;
 
-public class BiomeGenMaze extends BiomeGenDeeper
+public class BiomeGenMaze extends BiomeGenDeeperCavesBase
 {
-    public BiomeGenMaze(int p_i45377_1_)
+    public BiomeGenMaze(int biomeID)
     {
-        super(p_i45377_1_);
+        super(biomeID);
     	this.biomeName = "Maze";
         this.fillerBlock = Blocks.dirt;
+        this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
     }
 }

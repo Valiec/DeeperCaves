@@ -14,7 +14,6 @@ public class DeeperBiomeInfo {
     }
 
     public void register() {
-        BiomeDictionary.registerBiomeType(this.biomeGen, BiomeDictionary.Type.PLAINS);
-        BiomeManager.addSpawnBiome(this.biomeGen);
+        BiomeDictionary.registerBiomeType(this.biomeGen, biomeType);
     }
 }

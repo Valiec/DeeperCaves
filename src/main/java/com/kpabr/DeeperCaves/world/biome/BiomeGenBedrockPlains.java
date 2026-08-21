@@ -2,12 +2,13 @@ package com.kpabr.DeeperCaves.world.biome;
 
 import net.minecraft.init.Blocks;
 
-public class BiomeGenBedrockPlains extends BiomeGenDeeper
+public class BiomeGenBedrockPlains extends BiomeGenDeeperCavesBase
 {
-    public BiomeGenBedrockPlains(int p_i45377_1_)
+    public BiomeGenBedrockPlains(int biomeID)
     {
-        super(p_i45377_1_);
+        super(biomeID);
     	this.biomeName = "Bedrock Plains";
+        this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
         this.fillerBlock = Blocks.dirt;
     }

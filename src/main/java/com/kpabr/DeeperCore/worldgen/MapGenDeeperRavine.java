@@ -12,7 +12,6 @@ import net.minecraft.world.gen.MapGenBase;
 public class MapGenDeeperRavine extends MapGenBase
 {
     private float[] field_75046_d = new float[1024];
-    private static final String __OBFID = "CL_00000390";
 
     public int maxY;
     public int minY;

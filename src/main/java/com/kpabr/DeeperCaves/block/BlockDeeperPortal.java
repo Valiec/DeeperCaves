@@ -22,8 +22,6 @@ import net.minecraft.world.World;
 
 public class BlockDeeperPortal extends BlockBase
 {
-    public static boolean field_149948_a;
-    private static final String __OBFID = "CL_00000236";
     private int dim;
     private boolean lower;
     private boolean returnPortal;

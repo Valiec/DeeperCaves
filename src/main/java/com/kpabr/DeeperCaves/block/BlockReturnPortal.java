@@ -8,9 +8,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 
 public class BlockReturnPortal extends BlockDeeperPortal
 {
-    public static boolean field_149948_a;
-    private static final String __OBFID = "CL_00000236";
-
     public BlockReturnPortal(Material p_i45404_1_)
     {
         super(p_i45404_1_, 0, true, true);
