@@ -3,7 +3,11 @@ package com.kpabr.DeeperCaves.world.biome;
 import com.kpabr.DeeperCaves.DeeperBlocks;
 
 
+import com.kpabr.DeeperCore.worldgen.LayerOregen;
 import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class BiomeGenFinalLabyrinth extends BiomeGenDeeperCavesBase
 {
@@ -16,5 +20,9 @@ public class BiomeGenFinalLabyrinth extends BiomeGenDeeperCavesBase
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
 
+    }
+
+    public void generateOres(World world, Random random, int x, int z) {
+        LayerOregen.addOre(DeeperBlocks.forgottenGemstoneOre, world, random, x, z, 16, 16, 4, 50, 0, 255, DeeperBlocks.fragmentedBedrock);
     }
 }

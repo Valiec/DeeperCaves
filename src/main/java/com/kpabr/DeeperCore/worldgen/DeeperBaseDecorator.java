@@ -14,19 +14,30 @@ public class DeeperBaseDecorator extends BiomeDecorator {
     {
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
         this.generateOres();
+        this.decorate(biome);
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
     }
 
-	@Override
-	protected void generateOres() {
+    protected void decorate(BiomeGenBase biome)
+    {
+        //no-op
+    }
+
+	protected void generateOres(BiomeGenDeeperBase biome) {
         for (DeeperLayer layer : DeeperLayer.deeperLayers) {
-            if (currentWorld.provider.dimensionId == layer.dimID && layer.generateOres != null) {
+            if (currentWorld.provider.dimensionId == layer.dimID) {
                 MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
-                layer.generateOres.accept(currentWorld, randomGenerator, chunk_X, chunk_Z);
+                //layer.generateOres.accept(currentWorld, randomGenerator, chunk_X, chunk_Z);
+                biome.generateOres(currentWorld, randomGenerator, chunk_X, chunk_Z);
                 MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
                 break;
 
             }
         }
+    }
+
+    @Override
+    protected void generateOres() {
+        //no-op
     }
 }

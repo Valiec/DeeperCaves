@@ -1,9 +1,12 @@
 package com.kpabr.DeeperCore.worldgen;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
-public class BiomeGenDeeperBase extends BiomeGenBase
+import java.util.Random;
+
+public class BiomeGenDeeperBase extends BiomeGenBase implements DeeperBiome
 {
     public BiomeGenDeeperBase(int biomeID)
     {
@@ -22,6 +25,10 @@ public class BiomeGenDeeperBase extends BiomeGenBase
         this.theBiomeDecorator.generateLakes = false;
         this.fillerBlock = Blocks.stone;
         this.rainfall = 0.68F;
+
+    }
+
+    public void generateOres(World world, Random random, int x, int z) {
 
     }
 }

@@ -5,7 +5,10 @@ package com.kpabr.DeeperCaves.world.biome;
 import com.kpabr.DeeperCore.worldgen.BiomeGenDeeperBase;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+
+import java.util.Random;
 
 public class BiomeGenDeeperCavesBase extends BiomeGenDeeperBase {
     public BiomeGenDeeperCavesBase(int biomeID) {
@@ -24,5 +27,9 @@ public class BiomeGenDeeperCavesBase extends BiomeGenDeeperBase {
         this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityWitch.class, 5, 1, 1));
         this.spawnableWaterCreatureList.add(new BiomeGenBase.SpawnListEntry(EntitySquid.class, 10, 4, 4));
         this.spawnableCaveCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityBat.class, 10, 8, 8));
+    }
+
+    public void generateOres(World world, Random random, int x, int z) {
+
     }
 }

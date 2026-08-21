@@ -39,8 +39,6 @@ public class DeeperTeleporter extends Teleporter
         this.worldServerInstance = worldServer;
         //this.random = new Random(worldServer.getSeed());
 
-        //this.handleBedrockPlainsConfig();
-
         for(DeeperLayer layer: DeeperLayer.deeperLayers)
         {
         	if(this.worldServerInstance.provider.dimensionId == layer.dimID)

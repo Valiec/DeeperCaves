@@ -23,10 +23,8 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 public class DeeperDecorator extends DeeperBaseDecorator {
 
 	@Override
-	protected void genDecorations(BiomeGenBase biome)
+	protected void decorate(BiomeGenBase biome)
     {
-        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
-        this.generateOres();
         int i;
         
         int j;
@@ -53,7 +51,5 @@ public class DeeperDecorator extends DeeperBaseDecorator {
                 (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.currentWorld, this.randomGenerator, i, j, k);
             }
         }
-
-        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
     }
 }

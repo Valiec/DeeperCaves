@@ -46,7 +46,7 @@ public class DeeperLayer {
 
     public BiPredicate<EntityPlayerMP, Boolean> canExitFrom;
 
-    public QuadConsumer<World, Random, Integer, Integer> generateOres;
+    //public QuadConsumer<World, Random, Integer, Integer> generateOres;
 
     public static Map<String, DeeperLayer> layerNames = new HashMap<String, DeeperLayer>();
 
@@ -109,10 +109,10 @@ public class DeeperLayer {
         return this;
     }
 
-    public DeeperLayer setOreGeneration(QuadConsumer<World, Random, Integer, Integer> oreGen) {
-        this.generateOres = oreGen;
-        return this;
-    }
+    //public DeeperLayer setOreGeneration(QuadConsumer<World, Random, Integer, Integer> oreGen) {
+    //    this.generateOres = oreGen;
+    //    return this;
+    //}
 
     //public DeeperLayer addBiome(Class<? extends BiomeGenBase> biomeGen, int biomeID, BiomeManager.BiomeType biomeType) {
    //     this.biomes.add(new DeeperBiomeInfo(biomeID, biomeGen, biomeType));

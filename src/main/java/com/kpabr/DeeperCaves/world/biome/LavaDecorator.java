@@ -15,9 +15,8 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 public class LavaDecorator extends DeeperDecorator {
 
 	@Override
-	protected void genDecorations(BiomeGenBase biome)
+	protected void decorate(BiomeGenBase biome)
     {
-        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));
         this.generateOres();
         int i1;
         int i;
@@ -33,7 +32,5 @@ public class LavaDecorator extends DeeperDecorator {
             k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
             (new WorldGenDeeperLiquids((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(DeeperFluids.veneniumBlock):(Blocks.flowing_lava))).setReplaceBlock((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(DeeperBlocks.deepStone):(Blocks.stone)).generate(this.currentWorld, this.randomGenerator, i, j, k);
         }
-
-        MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
     }
 }
