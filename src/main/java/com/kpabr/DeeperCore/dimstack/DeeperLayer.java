@@ -6,6 +6,7 @@ import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.BiomeDictionary;
@@ -54,7 +55,7 @@ public class DeeperLayer {
     public BiomeGenBase biome;
 
     public Class<? extends IChunkProvider> chunkProvider;
-    public Class<? extends WorldProviderDeeperBase> worldProvider;
+    public Class<? extends WorldProvider> worldProvider;
     public String layerName;
 
     public int lowerArrivalRange = 15;

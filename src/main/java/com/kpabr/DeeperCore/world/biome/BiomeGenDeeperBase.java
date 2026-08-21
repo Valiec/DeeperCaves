@@ -6,7 +6,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 
 import java.util.Random;
 
-public class BiomeGenDeeperBase extends BiomeGenBase implements DeeperBiome
+public class BiomeGenDeeperBase extends BiomeGenBase implements IDeeperBiome
 {
     public BiomeGenDeeperBase(int biomeID)
     {
