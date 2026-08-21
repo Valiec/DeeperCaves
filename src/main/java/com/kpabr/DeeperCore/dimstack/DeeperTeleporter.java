@@ -97,7 +97,7 @@ public class DeeperTeleporter extends Teleporter
 
         boolean pos_ok = false;
 
-        System.out.println("attempting TP to: "+i+","+k+" between y="+min+" and y="+cap+" in "+this.worldServerInstance.provider.getDimensionName());
+        //System.out.println("attempting TP to: "+i+","+k+" between y="+min+" and y="+cap+" in "+this.worldServerInstance.provider.getDimensionName());
 
 
         pos_scan:
@@ -156,7 +156,7 @@ public class DeeperTeleporter extends Teleporter
 
         }
 
-        System.out.println("placing at: "+(baseX+0.5)+","+(baseY)+","+(baseZ+0.5)+" in "+this.worldServerInstance.provider.getDimensionName());
+        //System.out.println("placing at: "+(baseX+0.5)+","+(baseY)+","+(baseZ+0.5)+" in "+this.worldServerInstance.provider.getDimensionName());
         entity.setLocationAndAngles(baseX+0.5, baseY, baseZ+0.5, entity.rotationYaw, entity.rotationPitch);
         entity.motionX = entity.motionY = entity.motionZ = 0.0D;
     }

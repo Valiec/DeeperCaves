@@ -1,11 +1,13 @@
 package com.kpabr.DeeperCore.dimstack;
 
+import com.kpabr.DeeperCore.world.WorldProviderDeeperBase;
 import com.kpabr.DeeperCore.world.WorldProviderDeeperCaves;
 import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.DimensionManager;
 
@@ -51,8 +53,8 @@ public class DeeperLayer {
 
     public BiomeGenBase biome;
 
-    public Class<? extends ChunkProviderDeeperBase> chunkProvider;
-    public Class<? extends WorldProviderDeeperCaves> worldProvider;
+    public Class<? extends IChunkProvider> chunkProvider;
+    public Class<? extends WorldProviderDeeperBase> worldProvider;
     public String layerName;
 
     public int lowerArrivalRange = 15;

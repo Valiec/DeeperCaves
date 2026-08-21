@@ -14,15 +14,11 @@ import net.minecraft.world.chunk.IChunkProvider;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-public abstract class WorldProviderDeeperCaves extends WorldProvider
+public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
 {
 
-    public DeeperLayer layer;
-
-
     public WorldProviderDeeperCaves(DeeperLayer layer) {
-        super();
-        this.layer = layer;
+        super(layer);
     }
 
     /**
@@ -43,7 +39,7 @@ public abstract class WorldProviderDeeperCaves extends WorldProvider
         //return new ChunkProviderEnder(this.worldObj, this.worldObj.getSeed());
 
         try {
-            Constructor<? extends ChunkProviderDeeperBase> constructor = layer.chunkProvider.getConstructor(World.class, long.class, boolean.class);
+            Constructor<? extends IChunkProvider> constructor = layer.chunkProvider.getConstructor(World.class, long.class, boolean.class);
             return constructor.newInstance(this.worldObj, this.worldObj.getSeed()+this.layer.seedOffset, true);
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
