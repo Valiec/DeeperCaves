@@ -9,7 +9,7 @@ import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
 
-public class ChunkProviderFarVoid extends ChunkProviderDeeperBase
+public class ChunkProviderFarVoid extends ChunkProviderDeeperCavesBase
 {
     private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false,  1.0F,  4.0D, 254, 0, 220, 20, 12, false, false, DeeperBlocks.deepStone);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(220, 13, 7.5, 3.5, DeeperBlocks.deepStone);

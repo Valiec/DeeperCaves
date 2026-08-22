@@ -10,7 +10,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
 
-public class ChunkProviderDeepWorld extends ChunkProviderDeeperBase
+public class ChunkProviderDeepWorld extends ChunkProviderDeeperCavesBase
 {
     private MapGenBase caveGenerator = new MapGenDeeperCavesDefault();
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 3, 1.5, 1.0, Blocks.stone);

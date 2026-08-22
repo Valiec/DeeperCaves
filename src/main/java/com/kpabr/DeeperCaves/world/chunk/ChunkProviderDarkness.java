@@ -12,7 +12,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.MapGenBase;
 
 
-public class ChunkProviderDarkness extends ChunkProviderDeeperBase
+public class ChunkProviderDarkness extends ChunkProviderDeeperCavesBase
 {
     private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 150, 0,   0, 36,  7, true,  false, DeeperBlocks.darkStone);
     private MapGenBase caveGenerator2 = new MapGenDeeperCavesDefault(false, 1.0F,  2.5D, 255, 0, 150, 47,  4, true,  false, DeeperBlocks.darkStone);

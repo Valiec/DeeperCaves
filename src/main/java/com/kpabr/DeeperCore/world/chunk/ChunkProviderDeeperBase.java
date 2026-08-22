@@ -93,8 +93,8 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
         this.baseBlock = layer.stoneBlock;
         this.lowerBarrierY = layer.minY;
         this.upperBarrierY = layer.maxY;
-        this.voidTerrainCutoffLower = layer.openBottom ? layer.minY : 257;
-        this.voidTerrainCutoffUpper = layer.openTop ? layer.maxY : -1;
+        this.voidTerrainCutoffLower = layer.openBottom ? layer.minY : -1;
+        this.voidTerrainCutoffUpper = layer.openTop ? layer.maxY : 257;
         this.layer = layer;
     }
 
@@ -131,11 +131,11 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
 
                             for (int k3 = 0; k3 < 4; ++k3)
                             {
-                                if (k2 * 8 + l2 < voidTerrainCutoffLower)
+                                if (k2 * 8 + l2 <= voidTerrainCutoffLower)
                                 {
                                     p_147424_3_[j3 += short1] = this.voidBlock;
                                 }
-                                else if (k2 * 8 + l2 > voidTerrainCutoffUpper)
+                                else if (k2 * 8 + l2 >= voidTerrainCutoffUpper)
                                 {
                                     p_147424_3_[j3 += short1] = this.voidBlock;
                                 }
@@ -188,11 +188,11 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
                     {
                     	p_147422_3_[i2] = this.baseBlock;
                     }
-                    if (l1 <= lowerBarrierY)
+                    if (l1 <= lowerBarrierY && !layer.openBottom)
                     {
                         p_147422_3_[i2] = barrierBlock;
                     }
-                    if (l1 >= upperBarrierY)
+                    if (l1 >= upperBarrierY && !layer.openTop)
                     {
                     	p_147422_3_[i2] = barrierBlock;
                     }

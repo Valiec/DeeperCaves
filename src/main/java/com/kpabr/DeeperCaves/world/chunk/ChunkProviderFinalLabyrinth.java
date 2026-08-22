@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
 
 
-public class ChunkProviderFinalLabyrinth extends ChunkProviderDeeperBase
+public class ChunkProviderFinalLabyrinth extends ChunkProviderDeeperCavesBase
 {
     private MapGenBase caveGenerator = new MapGenDeeperCavesFinalLabyrinth();
     private MapGenBase ravineGenerator = new MapGenDeeperRavineFinalLabyrinth(234, 15, 3.5, 1.8, DeeperBlocks.fakeBedrock);
