@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
+import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
@@ -30,9 +31,8 @@ public class ChunkProviderCrystal extends ChunkProviderDeeperBase
     public ChunkProviderCrystal(World par1World, long par2, boolean par4)
     {
     	super(par1World, par2, par4);
-        this.barrierBlock = DeeperBlocks.barrierLayer;
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
-        this.upperBarrierY = 152;
+        this.setupGenFromLayer(DeeperCaves.worldgen.crystal);
         this.caveFloorNoise = new NoiseGeneratorOctaves(this.rand, 5);
         this.caveCeilingNoise = new NoiseGeneratorOctaves(this.rand, 5);
         this.pillarHeightNoise = new NoiseGeneratorPerlin(this.rand, 1);

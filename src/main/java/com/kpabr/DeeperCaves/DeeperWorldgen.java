@@ -114,8 +114,8 @@ public class DeeperWorldgen {
                 .setChunkProvider(ChunkProviderLava.class).setWorldProvider(WorldProviderLava.class)
                 .setBiome(new BiomeGenLava(DeeperConfig.lavaBiomeID), deeperCavesType);
 
-        this.nearVoid = new DeeperLayer("Near Void", DeeperConfig.nearVoidDimID).setLayerBounds(120, 247)
-                .setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
+        this.nearVoid = new DeeperLayer("Near Void", DeeperConfig.nearVoidDimID).setLayerBounds(220, 247)
+                .setTPTriggerBounds(120, 245).setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderNearVoid.class).setWorldProvider(WorldProviderNearVoid.class)
                 .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID), deeperCavesType);
 
@@ -135,8 +135,8 @@ public class DeeperWorldgen {
                 .setChunkProvider(ChunkProviderMutation.class).setWorldProvider(WorldProviderMutation.class)
                 .setBiome(new BiomeGenMutation(DeeperConfig.mutationBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
 
-        this.farVoid = new DeeperLayer("Far Void", DeeperConfig.farVoidDimID).setLayerBounds(120, 247)
-                .setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
+        this.farVoid = new DeeperLayer("Far Void", DeeperConfig.farVoidDimID).setLayerBounds(220, 247)
+                .setTPTriggerBounds(120, 245).setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderFarVoid.class).setWorldProvider(WorldProviderFarVoid.class)
                 .setBiome(new BiomeGenFarVoid(DeeperConfig.farVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone)
                 .setExitCheck(DeeperWorldgen::farVoidCheck);

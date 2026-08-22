@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCore.world.chunk;
 
+import com.kpabr.DeeperCore.dimstack.DeeperLayer;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
@@ -38,6 +39,8 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
     /** are map structures going to be generated (e.g. strongholds) */
     protected boolean mapFeaturesEnabled = false;
     public boolean doMineshafts;
+    public boolean doStrongholds;
+    public boolean doScatteredFeatures;
     WorldType field_147435_p = null;
     protected double[] stoneNoise = new double[256];
     MapGenBase caveGenerator;
@@ -54,8 +57,10 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
     public Block voidBlock = Blocks.air;
     public int lowerBarrierY = -1;
     public int upperBarrierY = 257;
-    public int voidTerrainCutoff = 0;
+    public int voidTerrainCutoffLower = 0;
+    public int voidTerrainCutoffUpper = 257;
     public Block barrierBlock;
+    public DeeperLayer layer;
 
     {
         strongholdGenerator = (MapGenStronghold) TerrainGen.getModdedMapGen(strongholdGenerator, STRONGHOLD);
@@ -67,7 +72,9 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
     {
     	super(par1World, par2, par4);
         this.barrierBlock = Blocks.bedrock;
-        this.doMineshafts = true;
+        this.doMineshafts = false;
+        this.doStrongholds = false;
+        this.doScatteredFeatures = false;
         this.worldObj = par1World;
         this.mapFeaturesEnabled = par4;
         this.field_147435_p = par1World.getWorldInfo().getTerrainType();
@@ -79,6 +86,16 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
         noiseGens = TerrainGen.getModdedNoiseGenerators(par1World, this.rand, noiseGens);
         this.perlinNoise = (NoiseGeneratorPerlin)noiseGens[0];
         this.mobSpawnerNoise = (NoiseGeneratorOctaves)noiseGens[1];
+    }
+
+    public void setupGenFromLayer(DeeperLayer layer)
+    {
+        this.baseBlock = layer.stoneBlock;
+        this.lowerBarrierY = layer.minY;
+        this.upperBarrierY = layer.maxY;
+        this.voidTerrainCutoffLower = layer.openBottom ? layer.minY : 257;
+        this.voidTerrainCutoffUpper = layer.openTop ? layer.maxY : -1;
+        this.layer = layer;
     }
 
     public void initCaveRavineGen(MapGenBase caves, MapGenBase ravines)
@@ -114,7 +131,11 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
 
                             for (int k3 = 0; k3 < 4; ++k3)
                             {
-                                if (k2 * 8 + l2 < voidTerrainCutoff)
+                                if (k2 * 8 + l2 < voidTerrainCutoffLower)
+                                {
+                                    p_147424_3_[j3 += short1] = this.voidBlock;
+                                }
+                                else if (k2 * 8 + l2 > voidTerrainCutoffUpper)
                                 {
                                     p_147424_3_[j3 += short1] = this.voidBlock;
                                 }
@@ -155,11 +176,11 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
                 {
                     int i2 = (j1 * 16 + i1) * k1 + l1;
 
-                    if (l1 <= 5 && p_147422_3_[i2] == Blocks.bedrock && this.voidTerrainCutoff <= l1)
+                    if (l1 <= 5 && p_147422_3_[i2] == Blocks.bedrock && this.voidTerrainCutoffLower <= l1)
                     {
                     	p_147422_3_[i2] = this.baseBlock;
                     }
-                    if (l1 <= 5 && p_147422_3_[i2] == Blocks.bedrock && this.voidTerrainCutoff > l1)
+                    if (l1 <= 5 && p_147422_3_[i2] == Blocks.bedrock && this.voidTerrainCutoffLower > l1)
                     {
                         p_147422_3_[i2] = this.voidBlock;
                     }
@@ -208,8 +229,14 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
             if(this.doMineshafts) {
                 this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
             }
-            //this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
-            //this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+
+            if(this.doStrongholds) {
+                this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            }
+
+            if(this.doScatteredFeatures) {
+                this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            }
         }
 
         this.finalGenPass(par1, par2, ablock, abyte, this.biomesForGeneration);

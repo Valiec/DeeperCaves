@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
+import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
 import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
@@ -17,18 +18,11 @@ public class ChunkProviderDarkness extends ChunkProviderDeeperBase
     private MapGenBase caveGenerator2 = new MapGenDeeperCavesDefault(false, 1.0F,  2.5D, 255, 0, 150, 47,  4, true,  false, DeeperBlocks.darkStone);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5, DeeperBlocks.darkStone);
 
-    {
-        //caveGenerator = TerrainGen.getModdedMapGen(caveGenerator, CAVE);
-        //ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
-    }
-
     public ChunkProviderDarkness(World par1World, long par2, boolean par4)
     {
         super(par1World, par2, par4);
-        this.barrierBlock = DeeperBlocks.barrierLayer;
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
-        this.upperBarrierY = 247;
-        this.baseBlock = DeeperBlocks.darkStone;
+        this.setupGenFromLayer(DeeperCaves.worldgen.darkness);
     }
 
 

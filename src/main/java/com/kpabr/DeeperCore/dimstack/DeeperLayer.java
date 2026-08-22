@@ -40,6 +40,9 @@ public class DeeperLayer {
     public DeeperLayer prevLayer;
     public DeeperLayer nextLayer;
 
+    public boolean openTop;
+    public boolean openBottom;
+
     public int dimID;
 
     //public List<DeeperBiomeInfo> biomes;
@@ -79,12 +82,20 @@ public class DeeperLayer {
 
     public DeeperLayer(String layerName, int dimID) {
         this(layerName);
+        this.openTop = false;
+        this.openBottom = true;
         layerNames.put(layerName, this);
         this.setDimID(dimID);
     }
 
     public DeeperLayer setWorldProvider(Class<? extends WorldProviderDeeperCaves> worldProvider) {
         this.worldProvider = worldProvider;
+        return this;
+    }
+
+    public DeeperLayer setOpenTopBottom(boolean openTop, boolean openBottom) {
+        this.openTop = openTop;
+        this.openBottom = openBottom;
         return this;
     }
 
