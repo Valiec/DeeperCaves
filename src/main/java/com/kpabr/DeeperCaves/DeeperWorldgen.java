@@ -123,11 +123,11 @@ public class DeeperWorldgen {
                 .setChunkProvider(ChunkProviderDeepWorld.class).setWorldProvider(WorldProviderDeepWorld.class)
                 .setBiome(new BiomeGenDeepWorld(DeeperConfig.deepWorldBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.abandonedStone);
 
-        this.abandonedCaves = new DeeperLayer("Abandoned Caves", DeeperConfig.abandonedCavesDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
+        this.abandonedCaves = new DeeperLayer("Abandoned Caves", DeeperConfig.abandonedCavesDimID).setLayerBounds(0, 207).setUpperArrivalRange(12)
                 .setChunkProvider(ChunkProviderAbandonedCaves.class).setWorldProvider(WorldProviderAbandonedCaves.class)
                 .setBiome(new BiomeGenAbandonedCaves(DeeperConfig.abandonedCavesBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.abandonedStone);
 
-        this.darkness = new DeeperLayer("Darkness", DeeperConfig.darknessDimID).setLayerBounds(0, 247).setUpperArrivalRange(12)
+        this.darkness = new DeeperLayer("Darkness", DeeperConfig.darknessDimID).setLayerBounds(0, 152).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderDarkness.class).setWorldProvider(WorldProviderDarkness.class)
                 .setBiome(new BiomeGenDarkness(DeeperConfig.darknessBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone);
 

@@ -9,11 +9,13 @@ import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
@@ -29,14 +31,54 @@ import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.Ev
 
 public class ChunkProviderAbandonedCaves extends ChunkProviderDeeperCavesBase
 {
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 150, 0,   0, 36,  7, true,  false, DeeperBlocks.abandonedStone);
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5, DeeperBlocks.abandonedStone);
+
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 120, 0,   0, 36,  7, true,  false, DeeperBlocks.abandonedStone);
+    private MapGenBase caveGenerator2 = new MapGenDeeperCavesDefault(false, 1.0F,  2.5D, 210, 0, 100, 47,  4, true,  false, DeeperBlocks.abandonedStone);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(184, 13, 7.5, 5.5, DeeperBlocks.abandonedStone);
+
+
+    //private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 150, 0,   0, 36,  7, true,  false, DeeperBlocks.abandonedStone);
+    //private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5, DeeperBlocks.abandonedStone);
 
     public ChunkProviderAbandonedCaves(World par1World, long par2, boolean par4)
     {
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.setupGenFromLayer(DeeperCaves.worldgen.abandonedCaves);
+    }
+
+    /**
+     * Will return back a chunk, if it doesn't exist and its not a MP client it will generates all the blocks for the
+     * specified chunk from the map seed and chunk seed
+     */
+    public Chunk provideChunk(int par1, int par2)
+    {
+        this.rand.setSeed((long)par1 * 341873128712L + (long)par2 * 132897987541L);
+        Block[] ablock = new Block[65536];
+        byte[] abyte = new byte[65536];
+        this.func_147424_a(par1, par2, ablock);
+        this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
+        this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
+        this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+        this.caveGenerator2.func_151539_a(this, this.worldObj, par1, par2, ablock);
+
+        if (this.mapFeaturesEnabled)
+        {
+            this.mineshaftGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            this.strongholdGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+            this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
+        }
+
+        Chunk chunk = new Chunk(this.worldObj, ablock, abyte, par1, par2);
+        byte[] abyte1 = chunk.getBiomeArray();
+
+        for (int k = 0; k < abyte1.length; ++k)
+        {
+            abyte1[k] = (byte)this.biomesForGeneration[k].biomeID;
+        }
+
+        chunk.generateSkylightMap();
+        return chunk;
     }
 
     /**
