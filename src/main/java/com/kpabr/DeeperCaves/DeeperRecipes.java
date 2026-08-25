@@ -157,6 +157,14 @@ public class DeeperRecipes {
         GameRegistry.addSmelting(DeeperBlocks.dredstoneOre, new ItemStack(Items.redstone, 1) , 0.7F);
         GameRegistry.addSmelting(DeeperBlocks.ddiamondOre, new ItemStack(Items.diamond, 1) , 1.0F);
         GameRegistry.addSmelting(DeeperBlocks.demeraldOre, new ItemStack(Items.emerald, 1) , 1.0F);
+
+        GameRegistry.addSmelting(DeeperBlocks.ncoalOre, new ItemStack(Items.coal, 1) , 0.1F);
+        GameRegistry.addSmelting(DeeperBlocks.nironOre, new ItemStack(Items.iron_ingot, 1) , 0.7F);
+        GameRegistry.addSmelting(DeeperBlocks.ngoldOre, new ItemStack(Items.gold_ingot, 1) , 1.0F);
+        GameRegistry.addSmelting(DeeperBlocks.nlapisOre, new ItemStack(Items.dye, 1, 4) , 0.2F);
+        GameRegistry.addSmelting(DeeperBlocks.nredstoneOre, new ItemStack(Items.redstone, 1) , 0.7F);
+        GameRegistry.addSmelting(DeeperBlocks.ndiamondOre, new ItemStack(Items.diamond, 1) , 1.0F);
+        GameRegistry.addSmelting(DeeperBlocks.nemeraldOre, new ItemStack(Items.emerald, 1) , 1.0F);
         
         GameRegistry.addSmelting(DeeperBlocks.ddcoalOre, new ItemStack(Items.coal, 1) , 0.1F);
         GameRegistry.addSmelting(DeeperBlocks.ddironOre, new ItemStack(Items.iron_ingot, 1) , 0.7F);

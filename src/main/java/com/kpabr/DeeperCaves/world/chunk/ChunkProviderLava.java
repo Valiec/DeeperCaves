@@ -12,8 +12,8 @@ import net.minecraft.world.gen.MapGenBase;
 
 public class ChunkProviderLava extends ChunkProviderDeeperCavesBase
 {
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false, 1.0F, 1.5D, 255, 0, 0, 47, 4, true, false, Blocks.stone);
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 30, 7.5, 5.5, Blocks.stone);
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false, 1.0F, 1.5D, 255, 0, 0, 47, 4, true, false, DeeperBlocks.nearNetherStone);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 30, 7.5, 5.5, DeeperBlocks.nearNetherStone);
 
     public ChunkProviderLava(World par1World, long par2, boolean par4)
     {

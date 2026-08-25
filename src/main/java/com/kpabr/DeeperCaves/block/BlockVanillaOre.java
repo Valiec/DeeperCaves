@@ -22,7 +22,12 @@ public class BlockVanillaOre extends BlockBase {
 	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return ore.getItemDropped(par1, par2Random, par3);
+        if(ore.getItemDropped(par1, par2Random, par3) != Item.getItemFromBlock(ore)) {
+            return ore.getItemDropped(par1, par2Random, par3);
+        }
+        else {
+            return Item.getItemFromBlock(this);
+        }
         
     }
 	@Override

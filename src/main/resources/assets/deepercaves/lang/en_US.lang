@@ -32,13 +32,13 @@ item.crystalShard_13.name=Brown Crystal Shard
 item.crystalShard_14.name=Gray Crystal Shard
 item.crystalShard_15.name=Black Crystal Shard
 
-tile.dpcoalOre.name=Deep Coal Ore
-tile.dpironOre.name=Deep Iron Ore
-tile.dpgoldOre.name=Deep Gold Ore
-tile.dplapisOre.name=Deep Lapis Lazuli Ore
-tile.dpredstoneOre.name=Deep Redstone Ore
-tile.dpdiamondOre.name=Deep Diamond Ore
-tile.dpemeraldOre.name=Deep Emerald Ore
+tile.dpcoalOre.name=Forgotten Coal Ore
+tile.dpironOre.name=Forgotten Iron Ore
+tile.dpgoldOre.name=Forgotten Gold Ore
+tile.dplapisOre.name=Forgotten Lapis Lazuli Ore
+tile.dpredstoneOre.name=Forgotten Redstone Ore
+tile.dpdiamondOre.name=Forgotten Diamond Ore
+tile.dpemeraldOre.name=Forgotten Emerald Ore
 
 tile.evanesciteBlock.name=Block of Evanescite
 
@@ -78,8 +78,8 @@ tile.abandonedCavesStoneStairs.name=Abandoned Caves Stone Stairs
 tile.abandonedStoneBrickStairs.name=Abandoned Caves Stone Brick Stairs
 tile.vesperiteOre.name=Vesperite Ore
 tile.vesperiteBlock.name=Block of Vesperite
-tile.deepStone.name=Deep Stone
-tile.deepCobble.name=Deep Cobblestone
+tile.deepStone.name=Forgotten Stone
+tile.deepCobble.name=Forgotten Cobblestone
 
 tile.heatedObsidian.name=Heated Obsidian
 tile.cooledObsidian.name=Supercooled Obsidian
@@ -88,18 +88,18 @@ item.vesperiteGem.name=Vesperite Gem
 
 item.voidCharm.name=Void Charm
 
-tile.dccoalOre.name=Deep Compressed Coal Ore
-tile.dcironOre.name=Deep Compressed Iron Ore
-tile.dcgoldOre.name=Deep Compressed Gold Ore
-tile.dclapisOre.name=Deep Compressed Lapis Lazuli Ore
-tile.dcredstoneOre.name=Deep Compressed Redstone Ore
-tile.dcdiamondOre.name=Deep Compressed Diamond Ore
-tile.dcemeraldOre.name=Deep Compressed Emerald Ore
+tile.dccoalOre.name=Dark Compressed Coal Ore
+tile.dcironOre.name=Dark Compressed Iron Ore
+tile.dcgoldOre.name=Dark Compressed Gold Ore
+tile.dclapisOre.name=Dark Compressed Lapis Lazuli Ore
+tile.dcredstoneOre.name=Dark Compressed Redstone Ore
+tile.dcdiamondOre.name=Dark Compressed Diamond Ore
+tile.dcemeraldOre.name=Dark Compressed Emerald Ore
 
-tile.dcsapphireOre.name=Deep Compressed Sapphire Ore
-tile.dcaquamarineOre.name=Deep Compressed Aquamarine Ore
-tile.dcsilverOre.name=Deep Compressed Silver Ore
-tile.dcrubyOre.name=Deep Compressed Ruby Ore
+tile.dcsapphireOre.name=Dark Compressed Sapphire Ore
+tile.dcaquamarineOre.name=Dark Compressed Aquamarine Ore
+tile.dcsilverOre.name=Dark Compressed Silver Ore
+tile.dcrubyOre.name=Dark Compressed Ruby Ore
 
 tile.csapphireOre.name=Compressed Sapphire Ore
 tile.caquamarineOre.name=Compressed Aquamarine Ore
@@ -230,3 +230,13 @@ item.robustiumIngot.name=Robustium Ingot
 item.incenditeGem.name=Incendite Gem
 
 item.rottenDoor.name=Rotten Door
+
+
+tile.nearNetherStone.name=Deep Stone
+tile.ncoalOre.name=Deep Coal Ore
+tile.nironOre.name=Deep Iron Ore
+tile.ngoldOre.name=Deep Gold Ore
+tile.nlapisOre.name=Deep Lapis Lazuli Ore
+tile.nredstoneOre.name=Deep Redstone Ore
+tile.ndiamondOre.name=Deep Diamond Ore
+tile.nemeraldOre.name=Deep Emerald Ore

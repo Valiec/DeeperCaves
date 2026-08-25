@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves.world.biome;
 
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE;
 
+import com.kpabr.DeeperCaves.structure.cavevillage.CaveVillage;
 import com.kpabr.DeeperCore.world.biome.DeeperBaseDecorator;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -39,5 +40,12 @@ public class DeeperDecorator extends DeeperBaseDecorator {
                 (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.currentWorld, this.randomGenerator, i, j, k);
             }
         }
+
+        decorateAdditional(biome);
+    }
+
+    protected void decorateAdditional(BiomeGenBase biome)
+    {
+        //do nothing
     }
 }

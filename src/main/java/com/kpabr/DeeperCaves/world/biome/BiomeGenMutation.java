@@ -22,16 +22,16 @@ public class BiomeGenMutation extends BiomeGenDeeperCavesBase
     }
 
     public void generateOres(World world, Random random, int x, int z) {
-        LayerOregen.addOre(DeeperBlocks.dpcoalOre, world, random, x, z, 16, 16, 15, 80, 0, 255, DeeperBlocks.deepStone);
-        LayerOregen.addOre(DeeperBlocks.dpironOre, world, random, x, z, 16, 16, 10, 65, 0, 255, DeeperBlocks.deepStone);
-        LayerOregen.addOre(DeeperBlocks.dpgoldOre, world, random, x, z, 16, 16, 8, 15, 0, 255, DeeperBlocks.deepStone);
-        LayerOregen.addOre(DeeperBlocks.dplapisOre, world, random, x, z, 16, 16, 7, 18, 0, 255, DeeperBlocks.deepStone);
-        LayerOregen.addOre(DeeperBlocks.dpredstoneOre, world, random, x, z, 16, 16, 8, 54, 0, 255, DeeperBlocks.deepStone);
-        LayerOregen.addOre(DeeperBlocks.dpdiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperBlocks.deepStone);
-        LayerOregen.addOre(DeeperBlocks.dpemeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperBlocks.deepStone);
+        LayerOregen.addOre(DeeperBlocks.ddcoalOre, world, random, x, z, 16, 16, 15, 80, 0, 255, DeeperBlocks.darkStone);
+        LayerOregen.addOre(DeeperBlocks.ddironOre, world, random, x, z, 16, 16, 10, 65, 0, 255, DeeperBlocks.darkStone);
+        LayerOregen.addOre(DeeperBlocks.ddgoldOre, world, random, x, z, 16, 16, 8, 15, 0, 255, DeeperBlocks.darkStone);
+        LayerOregen.addOre(DeeperBlocks.ddlapisOre, world, random, x, z, 16, 16, 7, 18, 0, 255, DeeperBlocks.darkStone);
+        LayerOregen.addOre(DeeperBlocks.ddredstoneOre, world, random, x, z, 16, 16, 8, 54, 0, 255, DeeperBlocks.darkStone);
+        LayerOregen.addOre(DeeperBlocks.dddiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperBlocks.darkStone);
+        LayerOregen.addOre(DeeperBlocks.ddemeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperBlocks.darkStone);
         for(int i = 0; i<16; i++)
         {
-            LayerOregen.addOre(DeeperBlocks.crystal, i, world, random, x, z, 16, 16, 8, 4, 0, 255, DeeperBlocks.deepStone);
+            LayerOregen.addOre(DeeperBlocks.crystal, i, world, random, x, z, 16, 16, 8, 4, 0, 255, DeeperBlocks.darkStone);
         }
     }
 }

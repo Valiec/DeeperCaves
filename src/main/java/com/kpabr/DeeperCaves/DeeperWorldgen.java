@@ -108,37 +108,37 @@ public class DeeperWorldgen {
 
         this.nearNether = new DeeperLayer("Near Nether", DeeperConfig.nearNetherDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderNearNether.class).setWorldProvider(WorldProviderNearNether.class)
-                .setBiome(new BiomeGenNearNether(DeeperConfig.nearNetherBiomeID), deeperCavesType);
+                .setBiome(new BiomeGenNearNether(DeeperConfig.nearNetherBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.nearNetherStone);
 
         this.lava = new DeeperLayer("Lava", DeeperConfig.lavaDimID).setLayerBounds(0, 52).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderLava.class).setWorldProvider(WorldProviderLava.class)
-                .setBiome(new BiomeGenLava(DeeperConfig.lavaBiomeID), deeperCavesType);
+                .setBiome(new BiomeGenLava(DeeperConfig.lavaBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.nearNetherStone);
 
         this.nearVoid = new DeeperLayer("Near Void", DeeperConfig.nearVoidDimID).setLayerBounds(220, 247)
                 .setTPTriggerBounds(120, 245).setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderNearVoid.class).setWorldProvider(WorldProviderNearVoid.class)
-                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID), deeperCavesType);
+                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.nearNetherStone);
 
         this.deepWorld = new DeeperLayer("Deep World", DeeperConfig.deepWorldDimID).setLayerBounds(0, 77).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderDeepWorld.class).setWorldProvider(WorldProviderDeepWorld.class)
-                .setBiome(new BiomeGenDeepWorld(DeeperConfig.deepWorldBiomeID), deeperCavesType);
-
-        this.darkness = new DeeperLayer("Darkness", DeeperConfig.darknessDimID).setLayerBounds(0, 247).setUpperArrivalRange(12)
-                .setChunkProvider(ChunkProviderDarkness.class).setWorldProvider(WorldProviderDarkness.class)
-                .setBiome(new BiomeGenDarkness(DeeperConfig.darknessBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone);
+                .setBiome(new BiomeGenDeepWorld(DeeperConfig.deepWorldBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.abandonedStone);
 
         this.abandonedCaves = new DeeperLayer("Abandoned Caves", DeeperConfig.abandonedCavesDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderAbandonedCaves.class).setWorldProvider(WorldProviderAbandonedCaves.class)
                 .setBiome(new BiomeGenAbandonedCaves(DeeperConfig.abandonedCavesBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.abandonedStone);
 
+        this.darkness = new DeeperLayer("Darkness", DeeperConfig.darknessDimID).setLayerBounds(0, 247).setUpperArrivalRange(12)
+                .setChunkProvider(ChunkProviderDarkness.class).setWorldProvider(WorldProviderDarkness.class)
+                .setBiome(new BiomeGenDarkness(DeeperConfig.darknessBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone);
+
         this.mutation = new DeeperLayer("Mutation", DeeperConfig.mutationDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderMutation.class).setWorldProvider(WorldProviderMutation.class)
-                .setBiome(new BiomeGenMutation(DeeperConfig.mutationBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
+                .setBiome(new BiomeGenMutation(DeeperConfig.mutationBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone);
 
         this.farVoid = new DeeperLayer("Far Void", DeeperConfig.farVoidDimID).setLayerBounds(220, 247)
                 .setTPTriggerBounds(120, 245).setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderFarVoid.class).setWorldProvider(WorldProviderFarVoid.class)
-                .setBiome(new BiomeGenFarVoid(DeeperConfig.farVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone)
+                .setBiome(new BiomeGenFarVoid(DeeperConfig.farVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone)
                 .setExitCheck(DeeperWorldgen::farVoidCheck);
 
         this.forgotten = new DeeperLayer("Forgotten", DeeperConfig.forgottenDimID).setLayerBounds(0, 232).setUpperArrivalRange(42)
