@@ -27,8 +27,7 @@ public class EntityShadow extends EntityMob
 {
 	
     private String texture;
-	private double moveSpeed;
-	float num;
+	float num = 1.0F;
 
 	public EntityShadow(World par1World)
     {
@@ -37,13 +36,13 @@ public class EntityShadow extends EntityMob
         this.num = (2.0F*rand.nextFloat())+0.5F;
 
         this.setSize(((1.0F)*(this.num)), (2.0F*this.num));
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1856D/this.num);
         this.dataWatcher.updateObject(13, num);
-        this.moveSpeed = 0.58D/this.num;
         this.tasks.addTask(0, new EntityAISwimming(this));
         //this.tasks.addTask(1, new EntityAIBreakDoor(this));
-        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, true));
+        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0F, true));
         this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.tasks.addTask(4, new EntityAIWander(this, this.moveSpeed));
+        this.tasks.addTask(4, new EntityAIWander(this, 1.0F));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAIShadowTarget(this, EntityPlayer.class, 0, true));
     }
@@ -53,6 +52,8 @@ public class EntityShadow extends EntityMob
         super.entityInit();
         this.dataWatcher.addObject(13, 1.0F);
     }
+
+
 
 	/**
      * Get this Entity's EnumCreatureAttribute
@@ -84,7 +85,9 @@ public class EntityShadow extends EntityMob
 
     public void func_145781_i(int p_145781_1_) {
         if(p_145781_1_ == 13) {
-            this.dataWatcher.updateObject(13, this.dataWatcher.getWatchableObjectFloat(13));
+            this.num = this.dataWatcher.getWatchableObjectFloat(13);
+            this.setSize(((1.0F)*(this.num)), (2.0F*this.num));
+            this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1856D/this.num);
         }
     }
 
@@ -95,7 +98,7 @@ public class EntityShadow extends EntityMob
         this.setSize(((1.0F)*(this.num)), (2.0F*this.num));
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100.0D);
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(16.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.32D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1856D/this.num);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(4.0D);
     }
 	@Override
@@ -167,6 +170,7 @@ public class EntityShadow extends EntityMob
         this.num =  p_70037_1_.getFloat("Scale");
         this.setSize(((1.0F)*(this.num)), (2.0F*this.num));
         this.dataWatcher.updateObject(13, this.num);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1856D/this.num);
     }
 
     @Override
