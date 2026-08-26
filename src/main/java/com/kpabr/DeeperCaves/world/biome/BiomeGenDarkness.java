@@ -14,6 +14,7 @@ public class BiomeGenDarkness extends BiomeGenDeeperCavesBase
     public BiomeGenDarkness(int biomeID)
     {
         super(biomeID);
+        this.spawnableMonsterList.clear();
     	this.biomeName = "Darkness";
         this.topBlock = Blocks.bedrock;
         this.fillerBlock = DeeperBlocks.darkStone;

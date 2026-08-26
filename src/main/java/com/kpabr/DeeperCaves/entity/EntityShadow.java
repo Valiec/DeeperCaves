@@ -14,6 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.EnumDifficulty;
@@ -27,14 +28,16 @@ public class EntityShadow extends EntityMob
 	
     private String texture;
 	private double moveSpeed;
-	private float num;
+	float num;
 
 	public EntityShadow(World par1World)
     {
         super(par1World);
         Random rand = new Random();
-        this.num = 1;//Float.parseFloat(Double.toString(((rand.nextInt(5))/2.0)));
+        this.num = (2.0F*rand.nextFloat())+0.5F;
+
         this.setSize(((1.0F)*(this.num)), (2.0F*this.num));
+        this.dataWatcher.updateObject(13, num);
         this.moveSpeed = 0.58D/this.num;
         this.tasks.addTask(0, new EntityAISwimming(this));
         //this.tasks.addTask(1, new EntityAIBreakDoor(this));
@@ -45,7 +48,11 @@ public class EntityShadow extends EntityMob
         this.targetTasks.addTask(2, new EntityAIShadowTarget(this, EntityPlayer.class, 0, true));
     }
 
-
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataWatcher.addObject(13, 1.0F);
+    }
 
 	/**
      * Get this Entity's EnumCreatureAttribute
@@ -75,10 +82,17 @@ public class EntityShadow extends EntityMob
         return p_110161_1_;
     }
 
+    public void func_145781_i(int p_145781_1_) {
+        if(p_145781_1_ == 13) {
+            this.dataWatcher.updateObject(13, this.dataWatcher.getWatchableObjectFloat(13));
+        }
+    }
+
 	@Override
 	protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
+        this.setSize(((1.0F)*(this.num)), (2.0F*this.num));
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100.0D);
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(16.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.32D);
@@ -131,6 +145,30 @@ public class EntityShadow extends EntityMob
        
         return DeeperCaves.items.prisciumIngot;
     }
+
+
+    /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    public void writeEntityToNBT(NBTTagCompound p_70014_1_)
+    {
+        super.writeEntityToNBT(p_70014_1_);
+
+        p_70014_1_.setFloat("Scale", this.num);
+    }
+
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    public void readEntityFromNBT(NBTTagCompound p_70037_1_)
+    {
+        super.readEntityFromNBT(p_70037_1_);
+
+        this.num =  p_70037_1_.getFloat("Scale");
+        this.setSize(((1.0F)*(this.num)), (2.0F*this.num));
+        this.dataWatcher.updateObject(13, this.num);
+    }
+
     @Override
     protected String getLivingSound()
     {

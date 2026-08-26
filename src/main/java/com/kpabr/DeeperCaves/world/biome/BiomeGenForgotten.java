@@ -14,7 +14,6 @@ public class BiomeGenForgotten extends BiomeGenDeeperCavesBase
     public BiomeGenForgotten(int biomeID)
     {
         super(biomeID);
-        this.spawnableMonsterList.clear();
     	this.biomeName = "Forgotten";
         this.topBlock = Blocks.bedrock;
         this.fillerBlock = DeeperBlocks.deepStone;
