@@ -14,6 +14,10 @@ public class BiomeGenFinalLabyrinth extends BiomeGenDeeperCavesBase
     public BiomeGenFinalLabyrinth(int biomeID)
     {
         super(biomeID);
+        this.spawnableMonsterList.clear();
+        this.spawnableCreatureList.clear();
+        this.spawnableWaterCreatureList.clear();
+        this.spawnableCaveCreatureList.clear();
     	this.biomeName = "Final Labyrinth";
         this.topBlock = Blocks.bedrock;
         this.fillerBlock = DeeperBlocks.fragmentedBedrock;
