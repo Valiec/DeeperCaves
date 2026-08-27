@@ -18,6 +18,7 @@ import java.util.function.BiPredicate;
 public class DeeperLayer {
 
     public static List<DeeperLayer> deeperLayers = new ArrayList<DeeperLayer>();
+    public static List<Integer> layerDimIDs = new ArrayList<Integer>();
 
     private static int curSeedOffset = 1;
 
@@ -25,6 +26,9 @@ public class DeeperLayer {
 
     public int minY;
     public int maxY;
+
+    public int layerTop;
+    public int layerBottom;
 
     public int tpTriggerLower;
     public int tpTriggerUpper;
@@ -64,11 +68,52 @@ public class DeeperLayer {
     public int lowerArrivalRange = 15;
     public int upperArrivalRange = 7;
 
+    public int layerHeight = 0;
+
     public static void registerAllLayers() {
         for(DeeperLayer layer : DeeperLayer.deeperLayers) {
             layer.registerDimension();
             layer.registerBiomes();
+            layerDimIDs.add(layer.dimID);
         }
+    }
+
+    public void updateLayerHeight()
+    {
+        int upper = maxY;
+        int lower = minY;
+        if (tpTriggerUpper != 0 && tpTriggerUpper > maxY-2) {
+            upper = tpTriggerUpper+2;
+        }
+
+        if (tpTriggerLower != 0 && tpTriggerLower < minY) {
+            lower = tpTriggerLower;
+        }
+
+        layerHeight = upper-lower;
+        layerTop = upper;
+        layerBottom = lower;
+    }
+
+    public static double getTotalDepth(int dimID, double dimY, DeeperLayer top)
+    {
+        double cumulativeDepth = 0;
+        DeeperLayer current = top;
+        boolean found = false;
+        while(current != null)
+        {
+            if(current.dimID != dimID)
+            {
+                cumulativeDepth += current.layerHeight;
+            }
+            else {
+                cumulativeDepth += current.layerTop-dimY;
+                found = true;
+                break;
+            }
+            current = current.nextLayer;
+        }
+        return found ? cumulativeDepth : Double.NaN;
     }
 
     public DeeperLayer(String layerName) {
@@ -175,6 +220,7 @@ public class DeeperLayer {
         this.setTPTriggerBounds(minY, maxY-2);
         computeUpperArrivalBounds();
         computeLowerArrivalBounds();
+        updateLayerHeight();
 
         return this;
     }
@@ -182,6 +228,7 @@ public class DeeperLayer {
     public DeeperLayer setTPTriggerBounds(int lower, int upper) {
         this.tpTriggerUpper = upper;
         this.tpTriggerLower = lower;
+        updateLayerHeight();
         return this;
     }
 

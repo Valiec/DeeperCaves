@@ -79,6 +79,17 @@ public class DeeperWorldgen {
         return (DeeperCaves.instance.voidFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.voidFlag.get(player.getUniqueID()) : false;
     }
 
+    public double getTotalDepth(int dimID, double dimY)
+    {
+        if(dimID ==  this.surface.dimID)
+        {
+            return dimY;
+        }
+        else {
+            return (-1 * DeeperLayer.getTotalDepth(dimID, dimY, this.drop));
+        }
+    }
+
     public void setupWorldgen()
     {
 

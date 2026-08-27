@@ -83,7 +83,9 @@ public class DeeperCaves
         
         
         
-        ClientCommandHandler.instance.registerCommand(new VersionCommand());
+        //ClientCommandHandler.instance.registerCommand(new VersionCommand());
+
+        ClientCommandHandler.instance.registerCommand(new DepthCommand());
 
         
         config.initConfig(event);
