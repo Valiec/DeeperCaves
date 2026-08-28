@@ -73,13 +73,29 @@ tile.fragmentedCobble.name=Fragmented Cobblestone
 tile.barrierLayer.name=Level Barrier
 tile.darkStone.name=Dark Stone
 tile.abandonedCavesStone.name=Abandoned Caves Stone
-tile.abandonedStoneBrick.name=Abandoned Caves Stone Brick
+tile.abandonedStoneBrick.name=Abandoned Caves Stone Bricks
 tile.abandonedCavesStoneStairs.name=Abandoned Caves Stone Stairs
+tile.abandonedCavesCobblestoneStairs.name=Abandoned Caves Cobblestone Stairs
 tile.abandonedStoneBrickStairs.name=Abandoned Caves Stone Brick Stairs
 tile.vesperiteOre.name=Vesperite Ore
 tile.vesperiteBlock.name=Block of Vesperite
-tile.deepStone.name=Forgotten Stone
-tile.deepCobble.name=Forgotten Cobblestone
+tile.forgottenStone.name=Forgotten Stone
+tile.forgottenCobble.name=Forgotten Cobblestone
+
+tile.darkStoneBrick.name=Dark Stone Bricks
+tile.darkStoneStairs.name=Dark Stone Stairs
+tile.darkCobblestoneStairs.name=Dark Cobblestone Stairs
+tile.darkStoneBrickStairs.name=Dark Stone Brick Stairs
+
+tile.deepStoneBrick.name=Deep Stone Bricks
+tile.deepStoneStairs.name=Deep Stone Stairs
+tile.deepCobblestoneStairs.name=Deep Cobblestone Stairs
+tile.deepStoneBrickStairs.name=Deep Stone Brick Stairs
+
+tile.forgottenStoneBrick.name=Forgotten Stone Bricks
+tile.forgottenStoneStairs.name=Forgotten Stone Stairs
+tile.forgottenCobblestoneStairs.name=Forgotten Cobblestone Stairs
+tile.forgottenStoneBrickStairs.name=Forgotten Stone Brick Stairs
 
 tile.heatedObsidian.name=Heated Obsidian
 tile.cooledObsidian.name=Supercooled Obsidian
@@ -232,7 +248,12 @@ item.incenditeGem.name=Incendite Gem
 item.rottenDoor.name=Rotten Door
 
 
-tile.nearNetherStone.name=Deep Stone
+tile.deepStone.name=Deep Stone
+tile.deepCobblestone.name=Deep Cobblestone
+
+tile.darkCobblestone.name=Dark Cobblestone
+tile.abandonedCavesCobblestone.name=Abandoned Caves Cobblestone
+
 tile.ncoalOre.name=Deep Coal Ore
 tile.nironOre.name=Deep Iron Ore
 tile.ngoldOre.name=Deep Gold Ore

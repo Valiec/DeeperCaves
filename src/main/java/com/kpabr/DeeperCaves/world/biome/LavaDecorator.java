@@ -29,7 +29,7 @@ public class LavaDecorator extends DeeperDecorator {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(100):(50));
             k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-            (new WorldGenDeeperLiquids((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(DeeperFluids.veneniumBlock):(Blocks.flowing_lava))).setReplaceBlock((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(DeeperBlocks.darkStone):(DeeperBlocks.nearNetherStone)).generate(this.currentWorld, this.randomGenerator, i, j, k);
+            (new WorldGenDeeperLiquids((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(DeeperFluids.veneniumBlock):(Blocks.flowing_lava))).setReplaceBlock((this.currentWorld.provider.dimensionId == DeeperCaves.worldgen.mutation.dimID)?(DeeperBlocks.darkStone):(DeeperBlocks.deepStone)).generate(this.currentWorld, this.randomGenerator, i, j, k);
         }
     }
 }

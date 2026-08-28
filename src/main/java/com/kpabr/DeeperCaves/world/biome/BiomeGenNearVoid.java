@@ -21,16 +21,16 @@ public class BiomeGenNearVoid extends BiomeGenDeeperCavesBase
     }
 
     public void generateOres(World world, Random random, int x, int z) {
-        LayerOregen.addOre(Blocks.dirt, world, random, x, z, 16, 16, 32, 15, 0, 256, DeeperBlocks.nearNetherStone);
-        LayerOregen.addOre(Blocks.gravel, world, random, x, z, 16, 16, 32, 8, 0, 256, DeeperBlocks.nearNetherStone);
-        LayerOregen.addOre(DeeperBlocks.ncoalOre, world, random, x, z, 16, 16, 16, 25, 0, 256, DeeperBlocks.nearNetherStone);
-        LayerOregen.addOre(DeeperBlocks.nironOre, world, random, x, z, 16, 16, 8, 50, 0, 256, DeeperBlocks.nearNetherStone);
-        LayerOregen.addOre(DeeperBlocks.ngoldOre, world, random, x, z, 16, 16, 8, 10, 0, 256, DeeperBlocks.nearNetherStone);
-        LayerOregen.addOre(DeeperBlocks.nredstoneOre, world, random, x, z, 16, 16, 7, 80, 0, 256, DeeperBlocks.nearNetherStone);
-        LayerOregen.addOre(DeeperBlocks.ndiamondOre, world, random, x, z, 16, 16, 7, 10, 0, 256, DeeperBlocks.nearNetherStone);
-        LayerOregen.addOre(DeeperBlocks.nlapisOre, world, random, x, z, 16, 16, 6, 12, 0, 256, DeeperBlocks.nearNetherStone);
+        LayerOregen.addOre(Blocks.dirt, world, random, x, z, 16, 16, 32, 15, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(Blocks.gravel, world, random, x, z, 16, 16, 32, 8, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(DeeperBlocks.ncoalOre, world, random, x, z, 16, 16, 16, 25, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(DeeperBlocks.nironOre, world, random, x, z, 16, 16, 8, 50, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(DeeperBlocks.ngoldOre, world, random, x, z, 16, 16, 8, 10, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(DeeperBlocks.nredstoneOre, world, random, x, z, 16, 16, 7, 80, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(DeeperBlocks.ndiamondOre, world, random, x, z, 16, 16, 7, 10, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(DeeperBlocks.nlapisOre, world, random, x, z, 16, 16, 6, 12, 0, 256, DeeperBlocks.deepStone);
 
 
-        LayerOregen.addOre(DeeperBlocks.tenebriumOre, world, random, x, z, 16, 16, 8, 8, 0, 255, DeeperBlocks.nearNetherStone);
+        LayerOregen.addOre(DeeperBlocks.tenebriumOre, world, random, x, z, 16, 16, 8, 8, 0, 255, DeeperBlocks.deepStone);
     }
 }

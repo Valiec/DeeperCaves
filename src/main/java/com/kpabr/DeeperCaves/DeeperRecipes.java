@@ -75,6 +75,27 @@ public class DeeperRecipes {
         GameRegistry.addRecipe(new ItemStack(DeeperItems.silverHoe, 1), "XX ", " Y ", " Y ", 'X', DeeperItems.silverIngot, 'Y', Items.stick);
         
         GameRegistry.addRecipe(new ItemStack(DeeperBlocks.rubyBlock, 1), "ZZZ", "ZZZ", "ZZZ", 'Z', DeeperItems.ruby);
+
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.deepCobblestoneStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.deepCobblestone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.abandonedCobblestoneStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.abandonedCobblestone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.darkCobblestoneStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.darkCobblestone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.forgottenCobblestoneStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.forgottenCobble);
+
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.deepStoneStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.deepStone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.abandonedStoneStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.abandonedStone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.darkStoneStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.darkStone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.forgottenStoneStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.forgottenStone);
+
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.deepStoneBrickStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.deepStoneBrick);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.abandonedStoneBrickStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.abandonedStoneBrick);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.darkStoneBrickStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.darkStoneBrick);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.forgottenStoneBrickStairs, 4), "ZZZ", "ZZ ", "Z ", 'Z', DeeperBlocks.forgottenStoneBrick);
+
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.deepStoneBrick, 4), "ZZ", "ZZ", 'Z', DeeperBlocks.deepStone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.abandonedStoneBrick, 4), "ZZ", "ZZ", 'Z', DeeperBlocks.abandonedStone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.darkStoneBrick, 4), "ZZ", "ZZ", 'Z', DeeperBlocks.darkStone);
+        GameRegistry.addRecipe(new ItemStack(DeeperBlocks.forgottenStoneBrick, 4), "ZZ", "ZZ", 'Z', DeeperBlocks.forgottenStone);
+
     }
     public void setupShapelessCrafting()
     {
@@ -139,8 +160,11 @@ public class DeeperRecipes {
         GameRegistry.addSmelting(DeeperBlocks.cemeraldOre, new ItemStack(Items.emerald, 2) , 2.0F);
         
         GameRegistry.addSmelting(DeeperBlocks.forgottenGemstoneOre, new ItemStack(DeeperItems.forgottenGemstone, 1) , 2.0F);
-        
-        GameRegistry.addSmelting(DeeperBlocks.deepCobble, new ItemStack(DeeperBlocks.deepStone, 1) , 0.1F);
+
+        GameRegistry.addSmelting(DeeperBlocks.deepCobblestone, new ItemStack(DeeperBlocks.deepStone, 1) , 0.1F);
+        GameRegistry.addSmelting(DeeperBlocks.abandonedCobblestone, new ItemStack(DeeperBlocks.abandonedStone, 1) , 0.1F);
+        GameRegistry.addSmelting(DeeperBlocks.darkCobblestone, new ItemStack(DeeperBlocks.darkStone, 1) , 0.1F);
+        GameRegistry.addSmelting(DeeperBlocks.forgottenCobble, new ItemStack(DeeperBlocks.forgottenStone, 1) , 0.1F);
         
         GameRegistry.addSmelting(DeeperBlocks.prisciumOre, new ItemStack(DeeperItems.prisciumIngot, 1) , 1.5F);
         

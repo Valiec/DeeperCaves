@@ -121,20 +121,39 @@ public class DeeperBlocks {
     public static Block barrierLayer;
     
     public static Block darkStone;
+    public static Block darkCobblestone;
     
     public static Block vesperiteOre;
     
     public static Block abandonedStone;
+    public static Block abandonedCobblestone;
+    
     public static Block abandonedStoneBrick;
-
+    public static Block abandonedCobblestoneStairs;
     public static Block abandonedStoneStairs;
     public static Block abandonedStoneBrickStairs;
     
-    public static Block deepStone;
-
-    public static Block nearNetherStone;
+    public static Block deepStoneBrick;
+    public static Block deepCobblestoneStairs;
+    public static Block deepStoneStairs;
+    public static Block deepStoneBrickStairs;
     
-    public static Block deepCobble;
+    public static Block darkStoneBrick;
+    public static Block darkCobblestoneStairs;
+    public static Block darkStoneStairs;
+    public static Block darkStoneBrickStairs;
+    
+    public static Block forgottenStoneBrick;
+    public static Block forgottenCobblestoneStairs;
+    public static Block forgottenStoneStairs;
+    public static Block forgottenStoneBrickStairs;
+    
+    public static Block forgottenStone;
+
+    public static Block deepStone;
+    public static Block deepCobblestone;
+    
+    public static Block forgottenCobble;
     
     public static Block cooledObsidian;
     
@@ -291,25 +310,44 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.barrierLayer, "barrier_layer");
         
         GameRegistry.registerBlock(DeeperBlocks.darkStone, "dark_stone");
+        GameRegistry.registerBlock(DeeperBlocks.darkCobblestone, "dark_cobblestone");
         
         GameRegistry.registerBlock(DeeperBlocks.vesperiteOre, "vesperite_ore");
         
         GameRegistry.registerBlock(DeeperBlocks.abandonedStone, "abandoned_stone");
+        GameRegistry.registerBlock(DeeperBlocks.abandonedCobblestone, "abandoned_cobblestone");
+        
         GameRegistry.registerBlock(DeeperBlocks.abandonedStoneBrick, "abandoned_stone_brick");
-
+        GameRegistry.registerBlock(DeeperBlocks.abandonedCobblestoneStairs, "abandoned_cobblestone_stairs");
         GameRegistry.registerBlock(DeeperBlocks.abandonedStoneStairs, "abandoned_stone_stairs");
         GameRegistry.registerBlock(DeeperBlocks.abandonedStoneBrickStairs, "abandoned_stone_brick_stairs");
-        
-        GameRegistry.registerBlock(DeeperBlocks.deepStone, "deep_stone");
 
-        GameRegistry.registerBlock(DeeperBlocks.nearNetherStone, "near_nether_stone");
+        GameRegistry.registerBlock(DeeperBlocks.deepStoneBrick, "deep_stone_brick");
+        GameRegistry.registerBlock(DeeperBlocks.deepCobblestoneStairs, "deep_cobblestone_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.deepStoneStairs, "deep_stone_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.deepStoneBrickStairs, "deep_stone_brick_stairs");
+
+        GameRegistry.registerBlock(DeeperBlocks.darkStoneBrick, "dark_stone_brick");
+        GameRegistry.registerBlock(DeeperBlocks.darkCobblestoneStairs, "dark_cobblestone_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.darkStoneStairs, "dark_stone_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.darkStoneBrickStairs, "dark_stone_brick_stairs");
+
+        GameRegistry.registerBlock(DeeperBlocks.forgottenStoneBrick, "forgotten_stone_brick");
+        GameRegistry.registerBlock(DeeperBlocks.forgottenCobblestoneStairs, "forgotten_cobblestone_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.forgottenStoneStairs, "forgotten_stone_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.forgottenStoneBrickStairs, "forgotten_stone_brick_stairs");
+        
+        GameRegistry.registerBlock(DeeperBlocks.forgottenStone, "forgotten_stone");
+
+        GameRegistry.registerBlock(DeeperBlocks.deepStone, "deep_stone");
+        GameRegistry.registerBlock(DeeperBlocks.deepCobblestone, "deep_cobblestone");
         
         GameRegistry.registerBlock(DeeperBlocks.cooledObsidian, "supercooled_obsidian");
         GameRegistry.registerBlock(DeeperBlocks.heatedObsidian, "heated_obsidian");
         
         GameRegistry.registerBlock(DeeperBlocks.vesperiteBlock, "vesperite_block");
         
-        GameRegistry.registerBlock(DeeperBlocks.deepCobble, "deep_cobblestone");
+        GameRegistry.registerBlock(DeeperBlocks.forgottenCobble, "forgotten_cobblestone");
         
         GameRegistry.registerBlock(DeeperBlocks.fragmentedCobble, "fragmented_cobblestone");
         
@@ -429,11 +467,12 @@ public class DeeperBlocks {
     	
     	OreDictionary.registerOre("blockForgottenGemstone", DeeperBlocks.forgottenGemstoneBlock);
     	
-    	OreDictionary.registerOre("stone", DeeperBlocks.deepStone);
+    	OreDictionary.registerOre("stone", DeeperBlocks.forgottenStone);
 
-        OreDictionary.registerOre("stone", DeeperBlocks.nearNetherStone);
+        OreDictionary.registerOre("stone", DeeperBlocks.deepStone);
+        OreDictionary.registerOre("cobblestone", DeeperBlocks.deepCobblestone);
     	
-    	OreDictionary.registerOre("cobblestone", DeeperBlocks.deepCobble);
+    	OreDictionary.registerOre("cobblestone", DeeperBlocks.forgottenCobble);
     	
     	OreDictionary.registerOre("stone", DeeperBlocks.darkStone);
     	
@@ -441,7 +480,7 @@ public class DeeperBlocks {
     	
     	OreDictionary.registerOre("stone", DeeperBlocks.abandonedStone);
     	
-    	OreDictionary.registerOre("cobblestone", DeeperBlocks.abandonedStone);
+    	OreDictionary.registerOre("cobblestone", DeeperBlocks.abandonedCobblestone);
     	
     	OreDictionary.registerOre("orePriscium", DeeperBlocks.prisciumOre);
     	OreDictionary.registerOre("blockPriscium", DeeperBlocks.prisciumBlock);
@@ -582,18 +621,20 @@ public class DeeperBlocks {
         DeeperBlocks.forgottenGemstoneBlock = new BlockFakeBedrock(Material.rock).setBlockTextureName("deepercaves:forgotten_gemstone_block").setBlockName("forgottenGemstoneBlock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         DeeperBlocks.barrierLayer = new BlockBarrier(Material.rock).setBlockTextureName("deepercaves:barrier_layer").setBlockName("barrierLayer").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves).setBlockUnbreakable();
-        
-        DeeperBlocks.darkStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dark_stone").setBlockName("darkStone").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //dark stone
+
+        DeeperBlocks.darkCobblestone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dark_cobblestone").setBlockName("darkCobblestone").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //dark cobblestone
+        DeeperBlocks.darkStone = new BlockNewStone(DeeperBlocks.darkCobblestone).setBlockTextureName("deepercaves:dark_stone").setBlockName("darkStone").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //dark stone
         
         DeeperBlocks.vesperiteOre = new BlockOreBase(Material.rock, DeeperItems.vesperiteGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:vesperite_ore").setBlockName("vesperiteOre").setHardness(9.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+
+        DeeperBlocks.abandonedCobblestone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_cobblestone").setBlockName("abandonedCavesCobblestone").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned cobblestone
+        DeeperBlocks.abandonedStone = new BlockNewStone(DeeperBlocks.abandonedCobblestone).setBlockTextureName("deepercaves:abandoned_stone").setBlockName("abandonedCavesStone").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
         
-        DeeperBlocks.abandonedStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone").setBlockName("abandonedCavesStone").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
+        DeeperBlocks.forgottenCobble = new BlockBase(Material.rock).setBlockTextureName("deepercaves:forgotten_cobblestone").setBlockName("forgottenCobble").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.forgottenStone = new BlockNewStone(DeeperBlocks.forgottenCobble).setBlockTextureName("deepercaves:forgotten_stone").setBlockName("forgottenStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
 
-        DeeperBlocks.abandonedStoneBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone_brick").setBlockName("abandonedStoneBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
-
-        DeeperBlocks.deepStone = new BlockDeepStone().setBlockTextureName("deepercaves:deep_stone").setBlockName("deepStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
-
-        DeeperBlocks.nearNetherStone = new BlockNearNetherStone().setBlockTextureName("deepercaves:near_nether_stone").setBlockName("nearNetherStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
+        DeeperBlocks.deepCobblestone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:deep_cobblestone").setBlockName("deepCobblestone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep cobblestone
+        DeeperBlocks.deepStone = new BlockNewStone(DeeperBlocks.deepCobblestone).setBlockTextureName("deepercaves:deep_stone").setBlockName("deepStone").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
 
         DeeperBlocks.cooledObsidian = new BlockBase(Material.rock).setBlockTextureName("deepercaves:cooled_obsidian").setBlockName("cooledObsidian").setHardness(85.0F).setResistance(8000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
@@ -601,8 +642,7 @@ public class DeeperBlocks {
         
         DeeperBlocks.vesperiteBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:vesperite_block").setBlockName("vesperiteBlock").setHardness(5.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.deepCobble = new BlockBase(Material.rock).setBlockTextureName("deepercaves:deep_cobblestone").setBlockName("deepCobble").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        
+
         DeeperBlocks.fragmentedCobble = new BlockBase(Material.rock).setBlockTextureName("deepercaves:fragmented_cobblestone").setBlockName("fragmentedCobble").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //!!!
         
         DeeperBlocks.soulStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:soul_stone").setBlockName("soulStone").setHardness(4.0F).setResistance(13.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
@@ -651,9 +691,26 @@ public class DeeperBlocks {
 
         DeeperBlocks.robustiumRaw = new BlockBase(Material.rock).setBlockTextureName("deepercaves:raw_robustium").setBlockName("robustiumRaw").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
+        DeeperBlocks.deepStoneBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:deep_stone_brick").setBlockName("deepStoneBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
+        DeeperBlocks.deepStoneStairs = new BlockStairsBase(DeeperBlocks.deepStone, 0).setBlockName("deepStoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
+        DeeperBlocks.deepCobblestoneStairs = new BlockStairsBase(DeeperBlocks.deepCobblestone, 0).setBlockName("deepCobblestoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //deep stone
+        DeeperBlocks.deepStoneBrickStairs = new BlockStairsBase(DeeperBlocks.deepStoneBrick, 0).setBlockName("deepStoneBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.abandonedStoneBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_stone_brick").setBlockName("abandonedStoneBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
         DeeperBlocks.abandonedStoneStairs = new BlockStairsBase(DeeperBlocks.abandonedStone, 0).setBlockName("abandonedCavesStoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
+        DeeperBlocks.abandonedCobblestoneStairs = new BlockStairsBase(DeeperBlocks.abandonedCobblestone, 0).setBlockName("abandonedCavesCobblestoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
         DeeperBlocks.abandonedStoneBrickStairs = new BlockStairsBase(DeeperBlocks.abandonedStoneBrick, 0).setBlockName("abandonedStoneBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
+        DeeperBlocks.darkStoneBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dark_stone_brick").setBlockName("darkStoneBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //dark stone
+        DeeperBlocks.darkStoneStairs = new BlockStairsBase(DeeperBlocks.darkStone, 0).setBlockName("darkStoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //dark stone
+        DeeperBlocks.darkCobblestoneStairs = new BlockStairsBase(DeeperBlocks.darkCobblestone, 0).setBlockName("darkCobblestoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //dark stone
+        DeeperBlocks.darkStoneBrickStairs = new BlockStairsBase(DeeperBlocks.darkStoneBrick, 0).setBlockName("darkBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.forgottenStoneBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:forgotten_stone_brick").setBlockName("forgottenStoneBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //forgotten stone
+        DeeperBlocks.forgottenStoneStairs = new BlockStairsBase(DeeperBlocks.forgottenStone, 0).setBlockName("forgottenStoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //forgotten stone
+        DeeperBlocks.forgottenCobblestoneStairs = new BlockStairsBase(DeeperBlocks.forgottenCobble, 0).setBlockName("forgottenCobblestoneStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //forgotten stone
+        DeeperBlocks.forgottenStoneBrickStairs = new BlockStairsBase(DeeperBlocks.forgottenStoneBrick, 0).setBlockName("forgottenStoneBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        
 
     }
     public void setupHarvestLevels()
@@ -730,13 +787,34 @@ public class DeeperBlocks {
         
         DeeperBlocks.cooledObsidian.setHarvestLevel("pickaxe", 4);
         DeeperBlocks.heatedObsidian.setHarvestLevel("pickaxe", 2);
-        
+
+        DeeperBlocks.deepStone.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.deepCobblestone.setHarvestLevel("pickaxe", 0);
+
         DeeperBlocks.darkStone.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.darkCobblestone.setHarvestLevel("pickaxe", 1);
         DeeperBlocks.abandonedStone.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.abandonedCobblestone.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.abandonedCobblestoneStairs.setHarvestLevel("pickaxe", 1);
         DeeperBlocks.abandonedStoneBrick.setHarvestLevel("pickaxe", 1);
         DeeperBlocks.abandonedStoneStairs.setHarvestLevel("pickaxe", 1);
         DeeperBlocks.abandonedStoneBrickStairs.setHarvestLevel("pickaxe", 1);
-        DeeperBlocks.deepStone.setHarvestLevel("pickaxe", 2);
+        DeeperBlocks.forgottenStone.setHarvestLevel("pickaxe", 2);
+
+        DeeperBlocks.deepCobblestoneStairs.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.deepStoneBrick.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.deepStoneStairs.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.deepStoneBrickStairs.setHarvestLevel("pickaxe", 0);
+
+        DeeperBlocks.darkCobblestoneStairs.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.darkStoneBrick.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.darkStoneStairs.setHarvestLevel("pickaxe", 1);
+        DeeperBlocks.darkStoneBrickStairs.setHarvestLevel("pickaxe", 1);
+
+        DeeperBlocks.forgottenCobblestoneStairs.setHarvestLevel("pickaxe", 2);
+        DeeperBlocks.forgottenStoneBrick.setHarvestLevel("pickaxe", 2);
+        DeeperBlocks.forgottenStoneStairs.setHarvestLevel("pickaxe", 2);
+        DeeperBlocks.forgottenStoneBrickStairs.setHarvestLevel("pickaxe", 2);
         
         DeeperBlocks.cryingObsidian.setHarvestLevel("pickaxe", 3);
         DeeperBlocks.soulStone.setHarvestLevel("pickaxe", 2);
@@ -776,7 +854,7 @@ public class DeeperBlocks {
         DeeperBlocks.incenditeOre.setHarvestLevel("pickaxe", 4);
         DeeperBlocks.prisciumOre.setHarvestLevel("pickaxe", 4);
 
-        DeeperBlocks.deepStone.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.forgottenStone.setHarvestLevel("pickaxe", 0);
     }
     
 }

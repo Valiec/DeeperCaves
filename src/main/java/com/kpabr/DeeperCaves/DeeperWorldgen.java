@@ -119,16 +119,16 @@ public class DeeperWorldgen {
 
         this.nearNether = new DeeperLayer("Near Nether", DeeperConfig.nearNetherDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderNearNether.class).setWorldProvider(WorldProviderNearNether.class)
-                .setBiome(new BiomeGenNearNether(DeeperConfig.nearNetherBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.nearNetherStone);
+                .setBiome(new BiomeGenNearNether(DeeperConfig.nearNetherBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
 
         this.lava = new DeeperLayer("Lava", DeeperConfig.lavaDimID).setLayerBounds(0, 52).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderLava.class).setWorldProvider(WorldProviderLava.class)
-                .setBiome(new BiomeGenLava(DeeperConfig.lavaBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.nearNetherStone);
+                .setBiome(new BiomeGenLava(DeeperConfig.lavaBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
 
         this.nearVoid = new DeeperLayer("Near Void", DeeperConfig.nearVoidDimID).setLayerBounds(220, 247)
                 .setTPTriggerBounds(120, 245).setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderNearVoid.class).setWorldProvider(WorldProviderNearVoid.class)
-                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.nearNetherStone);
+                .setBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
 
         this.deepWorld = new DeeperLayer("Deep World", DeeperConfig.deepWorldDimID).setLayerBounds(0, 77).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderDeepWorld.class).setWorldProvider(WorldProviderDeepWorld.class)
@@ -154,11 +154,11 @@ public class DeeperWorldgen {
 
         this.forgotten = new DeeperLayer("Forgotten", DeeperConfig.forgottenDimID).setLayerBounds(0, 232).setUpperArrivalRange(42)
                 .setChunkProvider(ChunkProviderForgotten.class).setWorldProvider(WorldProviderForgotten.class)
-                .setBiome(new BiomeGenForgotten(DeeperConfig.forgottenBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
+                .setBiome(new BiomeGenForgotten(DeeperConfig.forgottenBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.forgottenStone);
 
         this.evil = new DeeperLayer("Evil", DeeperConfig.evilDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderEvil.class).setWorldProvider(WorldProviderEvil.class)
-                .setBiome(new BiomeGenEvil(DeeperConfig.evilBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
+                .setBiome(new BiomeGenEvil(DeeperConfig.evilBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.forgottenStone);
 
         this.finalLabyrinth = new DeeperLayer("Final Labyrinth", DeeperConfig.finalLabyrinthDimID).setLayerBounds(0, 247).setUpperArrivalRange(57)
                 .setChunkProvider(ChunkProviderFinalLabyrinth.class).setWorldProvider(WorldProviderFinalLabyrinth.class)

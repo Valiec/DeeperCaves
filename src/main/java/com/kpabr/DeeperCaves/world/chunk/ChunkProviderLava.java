@@ -2,18 +2,16 @@ package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
-import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
 
 public class ChunkProviderLava extends ChunkProviderDeeperCavesBase
 {
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false, 1.0F, 1.5D, 255, 0, 0, 47, 4, true, false, DeeperBlocks.nearNetherStone);
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 30, 7.5, 5.5, DeeperBlocks.nearNetherStone);
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(false, 1.0F, 1.5D, 255, 0, 0, 47, 4, true, false, DeeperBlocks.deepStone);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 30, 7.5, 5.5, DeeperBlocks.deepStone);
 
     public ChunkProviderLava(World par1World, long par2, boolean par4)
     {
