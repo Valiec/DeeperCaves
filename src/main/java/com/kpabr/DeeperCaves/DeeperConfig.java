@@ -92,41 +92,41 @@ public class DeeperConfig {
         
         config.addCustomCategoryComment("biome ids", "Biome IDs");
         
-        dropBiomeID = config.getInt("Drop Biome ID", this.CATEGORY_BIOME_IDS, 170, 0, 245, "");
-        mazeBiomeID = config.getInt("Maze Biome ID", this.CATEGORY_BIOME_IDS, 171, 0, 245, "");
-        crystalBiomeID = config.getInt("Crystal Biome ID", this.CATEGORY_BIOME_IDS, 172, 0, 245, "");
-        compressedBiomeID = config.getInt("Compressed Biome ID", this.CATEGORY_BIOME_IDS, 173, 0, 245, "");
-        bedrockPlainsBiomeID = config.getInt("Bedrock Plains Biome ID", this.CATEGORY_BIOME_IDS, 174, 0, 245, "");
+        dropBiomeID = config.getInt("Drop Biome ID", this.CATEGORY_BIOME_IDS, 170, 0, 65536, "");
+        mazeBiomeID = config.getInt("Maze Biome ID", this.CATEGORY_BIOME_IDS, 171, 0, 65536, "");
+        crystalBiomeID = config.getInt("Crystal Biome ID", this.CATEGORY_BIOME_IDS, 172, 0, 65536, "");
+        compressedBiomeID = config.getInt("Compressed Biome ID", this.CATEGORY_BIOME_IDS, 173, 0, 65536, "");
+        bedrockPlainsBiomeID = config.getInt("Bedrock Plains Biome ID", this.CATEGORY_BIOME_IDS, 174, 0, 65536, "");
         
-        nearNetherBiomeID = config.getInt("Near Nether Biome ID", this.CATEGORY_BIOME_IDS, 175, 0, 245, "");
-        lavaBiomeID = config.getInt("Lava Biome ID", this.CATEGORY_BIOME_IDS, 176, 0, 245, "");
-        nearVoidBiomeID = config.getInt("Near Void Biome ID", this.CATEGORY_BIOME_IDS, 177, 0, 245, "");
+        nearNetherBiomeID = config.getInt("Near Nether Biome ID", this.CATEGORY_BIOME_IDS, 175, 0, 65536, "");
+        lavaBiomeID = config.getInt("Lava Biome ID", this.CATEGORY_BIOME_IDS, 176, 0, 65536, "");
+        nearVoidBiomeID = config.getInt("Near Void Biome ID", this.CATEGORY_BIOME_IDS, 177, 0, 65536, "");
         
-        deepWorldBiomeID = config.getInt("Deep World Biome ID", this.CATEGORY_BIOME_IDS, 178, 0, 245, "");
-        darknessBiomeID = config.getInt("Darkness Biome ID", this.CATEGORY_BIOME_IDS, 179, 0, 245, "");
-        abandonedCavesBiomeID = config.getInt("Abandoned Caves Biome ID", this.CATEGORY_BIOME_IDS, 180, 0, 245, "");
-        mutationBiomeID = config.getInt("Mutation Biome ID", this.CATEGORY_BIOME_IDS, 181, 0, 245, "");
-        farVoidBiomeID = config.getInt("Far Void Biome ID", this.CATEGORY_BIOME_IDS, 182, 0, 245, "");
+        deepWorldBiomeID = config.getInt("Deep World Biome ID", this.CATEGORY_BIOME_IDS, 178, 0, 65536, "");
+        darknessBiomeID = config.getInt("Darkness Biome ID", this.CATEGORY_BIOME_IDS, 179, 0, 65536, "");
+        abandonedCavesBiomeID = config.getInt("Abandoned Caves Biome ID", this.CATEGORY_BIOME_IDS, 180, 0, 65536, "");
+        mutationBiomeID = config.getInt("Mutation Biome ID", this.CATEGORY_BIOME_IDS, 181, 0, 65536, "");
+        farVoidBiomeID = config.getInt("Far Void Biome ID", this.CATEGORY_BIOME_IDS, 182, 0, 65536, "");
         
-        forgottenBiomeID = config.getInt("Forgotten Biome ID", this.CATEGORY_BIOME_IDS, 183, 0, 245, "");
-        evilBiomeID = config.getInt("Evil Biome ID", this.CATEGORY_BIOME_IDS, 184, 0, 245, "");
-        finalLabyrinthBiomeID = config.getInt("Final Labyrinth Biome ID", this.CATEGORY_BIOME_IDS, 185, 0, 245, "");
+        forgottenBiomeID = config.getInt("Forgotten Biome ID", this.CATEGORY_BIOME_IDS, 183, 0, 65536, "");
+        evilBiomeID = config.getInt("Evil Biome ID", this.CATEGORY_BIOME_IDS, 184, 0, 65536, "");
+        finalLabyrinthBiomeID = config.getInt("Final Labyrinth Biome ID", this.CATEGORY_BIOME_IDS, 185, 0, 65536, "");
         
         //------------------
         
         config.addCustomCategoryComment("entity ids", "Entity IDs");
         
-        DeeperCaves.mobs.deepZombieID = config.getInt("Deep World Zombie Entity ID", this.CATEGORY_ENTITY_IDS, 102, 0, 255, "");
-        DeeperCaves.mobs.deepSkeletonID = config.getInt("Deep World Skeleton Entity ID", this.CATEGORY_ENTITY_IDS, 103, 0, 255, "");
-        DeeperCaves.mobs.deepCaveSpiderID = config.getInt("Deep World Cave Spider Entity ID", this.CATEGORY_ENTITY_IDS, 104, 0, 255, "");
-        DeeperCaves.mobs.deepCreeperID = config.getInt("Deep World Creeper Entity ID", this.CATEGORY_ENTITY_IDS, 105, 0, 255, "");
+        DeeperCaves.mobs.deepZombieID = config.getInt("Deep World Zombie Entity ID", this.CATEGORY_ENTITY_IDS, 102, 0, 32768, "");
+        DeeperCaves.mobs.deepSkeletonID = config.getInt("Deep World Skeleton Entity ID", this.CATEGORY_ENTITY_IDS, 103, 0, 32768, "");
+        DeeperCaves.mobs.deepCaveSpiderID = config.getInt("Deep World Cave Spider Entity ID", this.CATEGORY_ENTITY_IDS, 104, 0, 32768, "");
+        DeeperCaves.mobs.deepCreeperID = config.getInt("Deep World Creeper Entity ID", this.CATEGORY_ENTITY_IDS, 105, 0, 32768, "");
         
-        DeeperCaves.mobs.mutatedZombieID = config.getInt("Mutated Zombie Entity ID", this.CATEGORY_ENTITY_IDS, 106, 0, 255, "");
-        DeeperCaves.mobs.mutatedSkeletonID = config.getInt("Mutated Skeleton Entity ID", this.CATEGORY_ENTITY_IDS, 107, 0, 255, "");
-        DeeperCaves.mobs.mutatedCaveSpiderID = config.getInt("Mutated Cave Spider Entity ID", this.CATEGORY_ENTITY_IDS, 108, 0, 255, "");
-        DeeperCaves.mobs.mutatedCreeperID = config.getInt("Mutated Creeper Entity ID", this.CATEGORY_ENTITY_IDS, 109, 0, 255, "");
+        DeeperCaves.mobs.mutatedZombieID = config.getInt("Mutated Zombie Entity ID", this.CATEGORY_ENTITY_IDS, 106, 0, 32768, "");
+        DeeperCaves.mobs.mutatedSkeletonID = config.getInt("Mutated Skeleton Entity ID", this.CATEGORY_ENTITY_IDS, 107, 0, 32768, "");
+        DeeperCaves.mobs.mutatedCaveSpiderID = config.getInt("Mutated Cave Spider Entity ID", this.CATEGORY_ENTITY_IDS, 108, 0, 32768, "");
+        DeeperCaves.mobs.mutatedCreeperID = config.getInt("Mutated Creeper Entity ID", this.CATEGORY_ENTITY_IDS, 109, 0, 32768, "");
         
-        DeeperCaves.mobs.shadowID = config.getInt("Shadow Entity ID", this.CATEGORY_ENTITY_IDS, 110, 0, 255, "");
+        DeeperCaves.mobs.shadowID = config.getInt("Shadow Entity ID", this.CATEGORY_ENTITY_IDS, 110, 0, 32768, "");
         
         //------------------
         
