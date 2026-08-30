@@ -43,6 +43,7 @@ import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent.ReplaceBiomeBlocks;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
+import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 
 public class DeeperWorldgen {
     /*World Generator Declaration*/
@@ -179,30 +180,20 @@ public class DeeperWorldgen {
         //GameRegistry.registerWorldGenerator(deeperblock, 1);
     }
     @SubscribeEvent
-    public void onOverworldBiomes(ReplaceBiomeBlocks event)
+    public void onOverworldBiomes(PopulateChunkEvent.Post event)
     {
-        if (event.chunkProvider.getClass() == ChunkProviderGenerate.class)
+
+        if (event.world.provider.dimensionId == DeeperCaves.worldgen.surface.dimID)
         {
-
-            ChunkProviderGenerateDuplicate gen = new ChunkProviderGenerateDuplicate(event.world, event.world.getSeed(), true);
-            event.setResult(Result.DENY);
-            gen.replaceBlocksForBiome(event.chunkX, event.chunkZ, event.blockArray, event.metaArray, event.biomeArray);
-        	for (int k = 0; k < 16; ++k)
+        	for (int x = 0; x < 16; ++x)
             {
-                for (int l = 0; l < 16; ++l)
+                for (int z = 0; z < 16; ++z)
                 {
-                    //BiomeGenBase biomegenbase = p_147422_5_[l + k * 16];
-                    //biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
-                    int i1 = event.chunkX * 16 + k & 15;
-                    int j1 = event.chunkZ * 16 + l & 15;
-                    int k1 = event.blockArray.length / 256;
-                    for (int l1 = 255; l1 >= 0; --l1)
+                    for (int y = 5; y >= 0; --y)
                     {
-                        int i2 = (j1 * 16 + i1) * k1 + l1;
-
-                        if (l1 <= 5 && event.blockArray[i2] == Blocks.bedrock)
+                        if (event.world.getBlock(event.chunkX * 16 + x, y, event.chunkZ * 16 + z) == Blocks.bedrock)
                         {
-                        	event.blockArray[i2] = Blocks.stone;
+                        	event.world.setBlock(event.chunkX * 16 + x, y, event.chunkZ * 16 + z, Blocks.stone, 0, 2);
                         }
                     }
                 }
