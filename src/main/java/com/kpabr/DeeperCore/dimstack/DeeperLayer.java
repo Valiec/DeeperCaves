@@ -18,7 +18,7 @@ import java.util.function.BiPredicate;
 public class DeeperLayer {
 
     public static List<DeeperLayer> deeperLayers = new ArrayList<DeeperLayer>();
-    public static List<Integer> layerDimIDs = new ArrayList<Integer>();
+    public static HashMap<Integer, DeeperLayer> layersForDimId = new HashMap<Integer, DeeperLayer>();
 
     private static int curSeedOffset = 1;
 
@@ -74,7 +74,7 @@ public class DeeperLayer {
         for(DeeperLayer layer : DeeperLayer.deeperLayers) {
             layer.registerDimension();
             layer.registerBiomes();
-            layerDimIDs.add(layer.dimID);
+            layersForDimId.put(layer.dimID, layer);
         }
     }
 

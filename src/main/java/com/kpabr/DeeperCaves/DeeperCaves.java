@@ -43,15 +43,7 @@ public class DeeperCaves
     public static DeeperConfig config = new DeeperConfig();
     public static DeeperBucketHandler bucket;
     public static DeeperEventHandler events = new DeeperEventHandler();
-    
-    //player state data
-    //TODO: make this explicitly serverside
-    public Map<UUID, Integer> nearvoid_counter = new HashMap<UUID, Integer>();
-    public Map<UUID, Integer> farvoid_counter = new HashMap<UUID, Integer>();
-    public Map<UUID, Integer> deep_counter = new HashMap<UUID, Integer>();
-    public Map<UUID, Boolean> voidFlag = new HashMap<UUID, Boolean>();
-    public Map<UUID, Boolean> deepFlag = new HashMap<UUID, Boolean>();
-    
+
     //creative tabs
     public static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperBlocks.fragmentedBedrock);
     public static CreativeTabs tabDeeperCavesItems = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Items", 0);

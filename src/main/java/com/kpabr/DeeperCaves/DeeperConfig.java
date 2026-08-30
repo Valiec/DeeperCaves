@@ -61,6 +61,8 @@ public class DeeperConfig {
             "Bedrock Plains", "Near Nether", "Lava", "Near Void", "Deep World", "Abandoned Caves",
             "Darkness", "Mutation", "Far Void", "Forgotten", "Evil", "Final Labyrinth" };
 
+    public static int bedrockRemovalType;
+
     public void initConfig(FMLPreInitializationEvent event)
     {
         config = new Configuration(event.getSuggestedConfigurationFile()); //gets default config file
@@ -134,7 +136,9 @@ public class DeeperConfig {
         
         bedrockPlainsFloorHeight = config.getInt("Bedrock Plains Floor Height", this.CATEGORY_OTHER, 32, 1, 255, "");
         bedrockPlainsCeilingHeight = config.getInt("Bedrock Plains Ceiling Height", this.CATEGORY_OTHER, 52, 0, 255, "This is the height of the level barrier. The bedrock ceiling extends about 5 blocks below this.");
-        
+
+        bedrockRemovalType = config.getInt("Bedrock Removal Type", this.CATEGORY_OTHER, 0, 0, 3, "This is the method used for Overworld bedrock removal. 0=replace all bedrock with stone (default), 1=replace patches of bedrock with stone, 2=replace patches of bedrock with fragmented bedrock, 3=do not alter the bedrock layer");
+
         config.save();
     }
 }

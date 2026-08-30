@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCaves.entity.ai;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
+import com.kpabr.DeeperCaves.DeeperCavesExtendedPlayerData;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import net.minecraft.command.IEntitySelector;
 import net.minecraft.entity.Entity;
@@ -28,14 +29,20 @@ public class EntityAIShadowTarget extends EntityAINearestAttackableTarget {
                 else if((e instanceof EntityPlayer))
                 {
                     UUID id = ((EntityPlayer)e).getUniqueID();
-                    Boolean flag = DeeperCaves.instance.deepFlag.get(id);
-                    if(flag == null || !flag)
+                    boolean flag = false;
+
+                    DeeperCavesExtendedPlayerData extData = (DeeperCavesExtendedPlayerData) e.getExtendedProperties(DeeperCavesExtendedPlayerData.NAME);
+                    if(extData != null) {
+                        flag = extData.forgottenCharm();
+                    }
+
+                    if(flag)
                     {
-                        return (EntityAIShadowTarget.this.isSuitableTarget((EntityLivingBase) e, false));
+                        return false;
                     }
                     else
                     {
-                        return false;
+                        return (EntityAIShadowTarget.this.isSuitableTarget((EntityLivingBase) e, false));
                     }
                 }
                 else

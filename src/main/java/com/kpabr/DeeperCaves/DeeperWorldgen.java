@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCore.DeeperBedrockUtils;
 import com.kpabr.DeeperCore.dimstack.DeeperLayer;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenAbandonedCaves;
 import com.kpabr.DeeperCaves.world.biome.BiomeGenBedrockPlains;
@@ -36,7 +37,10 @@ import com.kpabr.DeeperCaves.world.provider.WorldProviderNearNether;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearVoid;
 
 import com.kpabr.DeeperCore.world.biome.LayerOregen;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.ChunkProviderGenerate;
@@ -44,6 +48,8 @@ import net.minecraftforge.event.terraingen.ChunkProviderEvent.ReplaceBiomeBlocks
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+
+import java.util.HashMap;
 
 public class DeeperWorldgen {
     /*World Generator Declaration*/
@@ -77,7 +83,16 @@ public class DeeperWorldgen {
         if(lower) {
             return true;
         }
-        return (DeeperCaves.instance.voidFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.voidFlag.get(player.getUniqueID()) : false;
+
+        DeeperCavesExtendedPlayerData extData = (DeeperCavesExtendedPlayerData) player.getExtendedProperties(DeeperCavesExtendedPlayerData.NAME);
+
+        if (extData != null) {
+
+            return extData.voidCharm();
+        }
+        else {
+            return false;
+        }
     }
 
     public double getTotalDepth(int dimID, double dimY)
@@ -169,8 +184,8 @@ public class DeeperWorldgen {
 
         String prevName = null;
 
-        for(String levelName: DeeperConfig.levelOrder) {
-            if(prevName != null) {
+        for (String levelName: DeeperConfig.levelOrder) {
+            if (prevName != null) {
                 DeeperLayer.layerNames.get(levelName).insertAfter(DeeperLayer.layerNames.get(prevName));
             }
             prevName = levelName;
@@ -179,27 +194,27 @@ public class DeeperWorldgen {
         /*Setting up worldgen*/
         //GameRegistry.registerWorldGenerator(deeperblock, 1);
     }
+
     @SubscribeEvent
-    public void onOverworldBiomes(PopulateChunkEvent.Post event)
-    {
+    public void onOverworldBiomes(PopulateChunkEvent.Post event) {
+        if (event.world.provider.dimensionId == DeeperCaves.worldgen.surface.dimID) {
+            switch(DeeperConfig.bedrockRemovalType) {
+                case 0:
+                    DeeperBedrockUtils.removeAllBedrock(event.world, event.chunkX, event.chunkZ, Blocks.stone);
+                    break;
+                case 1:
+                    DeeperBedrockUtils.removeSomeBedrock(event.world, event.chunkX, event.chunkZ, Blocks.stone);
+                    break;
+                case 2:
+                    DeeperBedrockUtils.removeSomeBedrock(event.world, event.chunkX, event.chunkZ, DeeperBlocks.fragmentedBedrock);
+                    break;
+                default:
+                    //do nothing
+                    break;
+            }
 
-        if (event.world.provider.dimensionId == DeeperCaves.worldgen.surface.dimID)
-        {
-        	for (int x = 0; x < 16; ++x)
-            {
-                for (int z = 0; z < 16; ++z)
-                {
-                    for (int y = 5; y >= 0; --y)
-                    {
-                        if (event.world.getBlock(event.chunkX * 16 + x, y, event.chunkZ * 16 + z) == Blocks.bedrock)
-                        {
-                        	event.world.setBlock(event.chunkX * 16 + x, y, event.chunkZ * 16 + z, Blocks.stone, 0, 2);
-                        }
-                    }
-                }
         }
-
     }
-    
-}
+
+
 }

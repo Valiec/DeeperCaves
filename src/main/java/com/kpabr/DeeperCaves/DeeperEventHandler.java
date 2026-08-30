@@ -4,10 +4,27 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.DamageSource;
+import net.minecraftforge.event.entity.EntityEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 
 public class DeeperEventHandler {
+
+
+    @SubscribeEvent
+    public void onEntityConstructing(EntityEvent.EntityConstructing event) {
+        if(event.entity instanceof EntityPlayer && (event.entity).getExtendedProperties(DeeperCavesExtendedPlayerData.NAME) == null) {
+            EntityPlayer player = (EntityPlayer)event.entity;
+            player.registerExtendedProperties(DeeperCavesExtendedPlayerData.NAME, new DeeperCavesExtendedPlayerData(player));
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlayerClone(PlayerEvent.Clone event) {
+        event.entity.registerExtendedProperties(DeeperCavesExtendedPlayerData.NAME, event.original.getExtendedProperties(DeeperCavesExtendedPlayerData.NAME));
+    }
 
     public static boolean isPlayerInBlock(EntityLivingBase player, Block block)
     {
@@ -41,98 +58,77 @@ public class DeeperEventHandler {
         try
         {
             EntityPlayerMP player = (EntityPlayerMP)event.player;
-            boolean voidFlag = ((DeeperCaves.instance.voidFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.voidFlag.get(player.getUniqueID()) : false);
-            boolean deepFlag = ((DeeperCaves.instance.deepFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.deepFlag.get(player.getUniqueID()) : false);
+            //boolean voidFlag = ((DeeperCaves.instance.voidFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.voidFlag.get(player.getUniqueID()) : false);
+            //boolean deepFlag = ((DeeperCaves.instance.deepFlag.get(player.getUniqueID()) != null) ? DeeperCaves.instance.deepFlag.get(player.getUniqueID()) : false);
 
-            int nearvoid_counter = ((DeeperCaves.instance.nearvoid_counter.get(player.getUniqueID()) != null) ? DeeperCaves.instance.nearvoid_counter.get(player.getUniqueID()) : 0);
-            int farvoid_counter = ((DeeperCaves.instance.farvoid_counter.get(player.getUniqueID()) != null) ? DeeperCaves.instance.farvoid_counter.get(player.getUniqueID()) : 0);
-            int deep_counter = ((DeeperCaves.instance.deep_counter.get(player.getUniqueID()) != null) ? DeeperCaves.instance.deep_counter.get(player.getUniqueID()) : 0);
-            if(event.player.posY <= 240.0D && player.dimension == DeeperCaves.worldgen.nearVoid.dimID)
-            {
-                if(!voidFlag)
-                {
-                    if(nearvoid_counter == 200)
-                    {
-                        player.attackEntityFrom(DamageSource.outOfWorld, 0.5F);
-                        nearvoid_counter = 0;
-                        DeeperCaves.instance.nearvoid_counter.put(player.getUniqueID(), nearvoid_counter);
+            DeeperCavesExtendedPlayerData extData = (DeeperCavesExtendedPlayerData) player.getExtendedProperties(DeeperCavesExtendedPlayerData.NAME);
+
+            if (extData != null) {
+
+                boolean voidFlag = extData.voidCharm();
+                boolean deepFlag = extData.forgottenCharm();
+
+                int voidCounter = extData.voidCounter();
+                int deepCounter = extData.deepCounter();
+
+                if (event.player.posY <= 240.0D && player.dimension == DeeperCaves.worldgen.nearVoid.dimID) {
+                    if (!voidFlag) {
+                        if (voidCounter == 200) {
+                            player.attackEntityFrom(DamageSource.outOfWorld, 0.5F);
+                            voidCounter = 0;
+                            extData.setVoidCounter(voidCounter);
+                        } else {
+                            voidCounter++;
+                            extData.setVoidCounter(voidCounter);
+                        }
+
+                    } else if (voidCounter == 0) {
+                        extData.setVoidCounter(voidCounter);
+                        extData.unsetVoidCharm();
+                    } else if (voidCounter == 200) {
+                        voidCounter = 0;
+                        extData.setVoidCounter(voidCounter);
+                    } else {
+                        voidCounter++;
+                        extData.setVoidCounter(voidCounter);
                     }
-                    else
-                    {
-                        nearvoid_counter++;
-                        DeeperCaves.instance.nearvoid_counter.put(player.getUniqueID(), nearvoid_counter);
+                }
+                if (event.player.posY <= 240.0D && player.dimension == DeeperCaves.worldgen.farVoid.dimID) {
+                    if (!voidFlag) {
+                        if (voidCounter >= 9) {
+                            player.attackEntityFrom(DamageSource.outOfWorld, 4.0F);
+                            voidCounter = 0;
+                            extData.setVoidCounter(voidCounter);
+                        } else {
+                            voidCounter++;
+                            extData.setVoidCounter(voidCounter);
+                        }
+
+                    } else if (voidCounter == 0) {
+
+                        extData.unsetVoidCharm();
+                        voidCounter++;
+                        extData.setVoidCounter(voidCounter);
+                    } else if (voidCounter >= 9) {
+                        voidCounter = 0;
+                        extData.setVoidCounter(voidCounter);
+                    } else {
+                        voidCounter++;
+                        extData.setVoidCounter(voidCounter);
                     }
-
                 }
-                else if(nearvoid_counter == 0)
-                {
-                    DeeperCaves.instance.nearvoid_counter.put(player.getUniqueID(), nearvoid_counter);
-                    DeeperCaves.instance.voidFlag.put(player.getUniqueID(), false);
-                }
-                else if(nearvoid_counter == 200)
-                {
-                    nearvoid_counter = 0;
-                    DeeperCaves.instance.nearvoid_counter.put(player.getUniqueID(), nearvoid_counter);
-                }
-                else
-                {
-                    nearvoid_counter++;
-                    DeeperCaves.instance.nearvoid_counter.put(player.getUniqueID(), nearvoid_counter);
-                }
-            }
-            if(event.player.posY <= 240.0D && player.dimension == DeeperCaves.worldgen.farVoid.dimID)
-            {
-                if(!voidFlag)
-                {
-                    if(farvoid_counter == 9)
-                    {
-                        player.attackEntityFrom(DamageSource.outOfWorld, 4.0F);
-                        farvoid_counter = 0;
-                        DeeperCaves.instance.farvoid_counter.put(player.getUniqueID(), farvoid_counter);
+                if (player.dimension == DeeperCaves.worldgen.forgotten.dimID) {
+                    if (deepCounter == 0 && deepFlag) {
+                        extData.unsetForgottenCharm();
+                        deepCounter++;
+                        extData.setDeepCounter(deepCounter);
+                    } else if (deepCounter >= 1 && deepFlag) {
+                        deepCounter = 0;
+                        extData.setDeepCounter(deepCounter);
+                    } else {
+                        deepCounter++;
+                        extData.setDeepCounter(deepCounter);
                     }
-                    else
-                    {
-                        farvoid_counter++;
-                        DeeperCaves.instance.farvoid_counter.put(player.getUniqueID(), farvoid_counter);
-                    }
-
-                }
-                else if(farvoid_counter == 0)
-                {
-                    DeeperCaves.instance.voidFlag.put(player.getUniqueID(), false);
-
-                    farvoid_counter++;
-                    DeeperCaves.instance.farvoid_counter.put(player.getUniqueID(), farvoid_counter);
-                }
-                else if(farvoid_counter == 9)
-                {
-                    farvoid_counter = 0;
-                    DeeperCaves.instance.farvoid_counter.put(player.getUniqueID(), farvoid_counter);
-                }
-                else
-                {
-                    farvoid_counter++;
-                    DeeperCaves.instance.farvoid_counter.put(player.getUniqueID(), farvoid_counter);
-                }
-            }
-            if(player.dimension == DeeperCaves.worldgen.forgotten.dimID)
-            {
-                if(deep_counter == 0 && deepFlag)
-                {
-                    DeeperCaves.instance.deepFlag.put(player.getUniqueID(), false);
-
-                    deep_counter++;
-                    DeeperCaves.instance.deep_counter.put(player.getUniqueID(), deep_counter);
-                }
-                else if(deep_counter >= 1 && deepFlag)
-                {
-                    deep_counter = 0;
-                    DeeperCaves.instance.deep_counter.put(player.getUniqueID(), deep_counter);
-                }
-                else
-                {
-                    deep_counter++;
-                    DeeperCaves.instance.deep_counter.put(player.getUniqueID(), deep_counter);
                 }
             }
         }
