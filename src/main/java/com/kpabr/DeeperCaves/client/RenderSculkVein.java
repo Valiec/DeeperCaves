@@ -57,6 +57,6 @@ public class RenderSculkVein implements ISimpleBlockRenderingHandler {
 
     @Override
     public int getRenderId() {
-        return 0;
+        return renderID;
     }
 }

@@ -28,5 +28,6 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityShadow.class, new RenderShadow(new ModelBiped(), 0.5F));
         MinecraftForge.EVENT_BUS.register(new DeeperF3Mesages());
         RenderingRegistry.registerBlockHandler(RenderSculkVein.renderID, new RenderSculkVein());
+        RenderingRegistry.registerBlockHandler(RenderSculkSensor.renderID, new RenderSculkSensor());
     }
 }
