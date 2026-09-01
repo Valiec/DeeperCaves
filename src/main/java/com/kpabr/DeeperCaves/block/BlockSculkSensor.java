@@ -7,7 +7,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+
+import java.util.Random;
 
 public class BlockSculkSensor extends Block {
 
@@ -20,6 +23,18 @@ public class BlockSculkSensor extends Block {
 	public BlockSculkSensor(Material par2Material) {
 		super(par2Material);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
+	}
+
+	@Override
+	public Item getItemDropped(int par1, Random par2Random, int par3)
+	{
+		return null;
+	}
+
+	@Override
+	public boolean canSilkHarvest()
+	{
+		return true;
 	}
 
 	public boolean isOpaqueCube()

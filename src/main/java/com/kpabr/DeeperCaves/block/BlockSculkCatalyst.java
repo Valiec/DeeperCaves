@@ -6,7 +6,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+
+import java.util.Random;
 
 public class BlockSculkCatalyst extends Block {
 
@@ -30,6 +33,18 @@ public class BlockSculkCatalyst extends Block {
 		this.sideBloom = iconRegister.registerIcon("DeeperCaves:sculk_catalyst_side_bloom");
 		this.topBloom = iconRegister.registerIcon("DeeperCaves:sculk_catalyst_top_bloom");
 
+	}
+
+	@Override
+	public Item getItemDropped(int par1, Random par2Random, int par3)
+	{
+		return null;
+	}
+
+	@Override
+	public boolean canSilkHarvest()
+	{
+		return true;
 	}
 
 	@Override

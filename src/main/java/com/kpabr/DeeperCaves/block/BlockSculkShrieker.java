@@ -7,7 +7,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+
+import java.util.Random;
 
 public class BlockSculkShrieker extends Block {
 
@@ -22,9 +25,21 @@ public class BlockSculkShrieker extends Block {
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 	}
 
+	@Override
+	public boolean canSilkHarvest()
+	{
+		return true;
+	}
+
 	public boolean isOpaqueCube()
 	{
 		return false;
+	}
+
+	@Override
+	public Item getItemDropped(int par1, Random par2Random, int par3)
+	{
+		return null;
 	}
 
 	@Override

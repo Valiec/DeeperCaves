@@ -7,10 +7,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class BlockSculkVein extends Block {
 
@@ -19,6 +22,18 @@ public class BlockSculkVein extends Block {
 	public BlockSculkVein(Material par2Material) {
 		super(Material.plants);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.625F, 1.0F);
+	}
+
+	@Override
+	public Item getItemDropped(int par1, Random par2Random, int par3)
+	{
+		return null;
+	}
+
+	@Override
+	public boolean canSilkHarvest()
+	{
+		return true;
 	}
 
 	public boolean isOpaqueCube()
