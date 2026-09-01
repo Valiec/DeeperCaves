@@ -212,6 +212,7 @@ public class DeeperBlocks {
 
     public static Block sculk;
     public static Block sculkSensor;
+    public static Block sculkShrieker;
     public static Block sculkFlesh;
     public static Block sculkVein;
     public static Block sculkVines;
@@ -417,6 +418,7 @@ public class DeeperBlocks {
 
         GameRegistry.registerBlock(DeeperBlocks.sculk, "sculk");
         GameRegistry.registerBlock(DeeperBlocks.sculkSensor, "sculk_sensor");
+        GameRegistry.registerBlock(DeeperBlocks.sculkShrieker, "sculk_shrieker");
         GameRegistry.registerBlock(DeeperBlocks.sculkFlesh, "sculk_flesh");
         GameRegistry.registerBlock(DeeperBlocks.sculkVein, "sculk_vein");
         GameRegistry.registerBlock(DeeperBlocks.sculkVines, "sculk_vines");
@@ -731,6 +733,7 @@ public class DeeperBlocks {
         DeeperBlocks.sculkVines = new BlockSculkVine(Material.plants).setBlockTextureName("deepercaves:sculk_vines").setBlockName("sculkVines").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkFlesh = new BlockBase(Material.sponge).setBlockTextureName("deepercaves:sculk_flesh").setBlockName("sculkFlesh").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkCatalyst = new BlockSculkCatalyst(Material.sponge).setBlockTextureName("deepercaves:sculk_catalyst").setBlockName("sculkCatalyst").setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkShrieker = new BlockSculkShrieker(Material.sponge).setBlockName("sculkShrieker").setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
     }

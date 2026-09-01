@@ -30,10 +30,6 @@ public class RenderSculkVein implements ISimpleBlockRenderingHandler {
         int l = world.getBlockMetadata(x, y, z);
 
         IIcon iicon = block.getIcon(0, l);
-        double d0 = (double)iicon.getMinU();
-        double d1 = (double)iicon.getMinV();
-        double d2 = (double)iicon.getMaxU();
-        double d3 = (double)iicon.getMaxV();
 
         double d5 = 0.05D;
 
@@ -41,10 +37,10 @@ public class RenderSculkVein implements ISimpleBlockRenderingHandler {
         // z -> v
         // vertex order counterclockwise from rendered side
 
-        tessellator.addVertexWithUV((double)(x + 0), (double)(y) + d5, (double)(z + 0), d0, d1);
-        tessellator.addVertexWithUV((double)(x + 0), (double)(y) + d5, (double)(z + 1), d0, d3);
-        tessellator.addVertexWithUV((double)(x + 1), (double)(y) + d5, (double)(z + 1), d2, d3);
-        tessellator.addVertexWithUV((double)(x + 1), (double)(y) + d5, (double)(z + 0), d2, d1);
+        tessellator.addVertexWithUV((double)(x + 0), (double)(y) + d5, (double)(z + 0), iicon.getMinU(), iicon.getMinV());
+        tessellator.addVertexWithUV((double)(x + 0), (double)(y) + d5, (double)(z + 1), iicon.getMinU(), iicon.getMaxV());
+        tessellator.addVertexWithUV((double)(x + 1), (double)(y) + d5, (double)(z + 1), iicon.getMaxU(), iicon.getMaxV());
+        tessellator.addVertexWithUV((double)(x + 1), (double)(y) + d5, (double)(z + 0), iicon.getMaxU(), iicon.getMinV());
 
 
         return true;
