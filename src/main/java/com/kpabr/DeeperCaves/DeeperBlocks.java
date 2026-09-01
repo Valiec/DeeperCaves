@@ -880,13 +880,13 @@ public class DeeperBlocks {
 
         DeeperBlocks.forgottenStone.setHarvestLevel("pickaxe", 0);
 
-        DeeperBlocks.sculk.setHarvestLevel("shovel", 0);
-        DeeperBlocks.sculkCatalyst.setHarvestLevel("shovel", 0);
-        DeeperBlocks.sculkVines.setHarvestLevel("shovel", 0);
-        DeeperBlocks.sculkVein.setHarvestLevel("shovel", 0);
-        DeeperBlocks.sculkFlesh.setHarvestLevel("shovel", 0);
-        DeeperBlocks.sculkSensor.setHarvestLevel("shovel", 0);
-        DeeperBlocks.sculkShrieker.setHarvestLevel("shovel", 0);
+        DeeperBlocks.sculk.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkCatalyst.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkVines.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkVein.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkFlesh.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkSensor.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkShrieker.setHarvestLevel("axe", 0);
     }
     
 }
