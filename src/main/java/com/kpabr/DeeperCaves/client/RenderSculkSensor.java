@@ -91,36 +91,69 @@ public class RenderSculkSensor implements ISimpleBlockRenderingHandler {
         float maxU = iicon.getMaxU();
         float maxV = iicon.getMaxV();
 
-        float trueUWidth = (float) (Math.sqrt(0.5))*(maxU - minU);
+        float trueUWidth = (float) (Math.sqrt(0.28125))*(maxU - minU);
         float uOffset = ((maxU - minU)/2.0F)-(trueUWidth/2.0F);
         float minV = fullMinV + (maxV-fullMinV)/2.0F;
 
-        //tendril 1
-        tessellator.setNormal((float) (Math.sqrt(0.5F)),0, (float) (-1.0F*Math.sqrt(0.5F)));
-        tessellator.addVertexWithUV((double)(x), (double)(y + 0.5), (double)(z + 0.5), maxU-uOffset, maxV);
-        tessellator.addVertexWithUV((double)(x), (double)(y + 1), (double)(z + 0.5), maxU-uOffset, minV);
-        tessellator.addVertexWithUV((double)(x + 0.5) , (double)(y + 1), (double)(z + 1), minU+uOffset, minV);
-        tessellator.addVertexWithUV((double)(x + 0.5), (double)(y + 0.5), (double)(z + 1), minU+uOffset, maxV);
+        double lowerConst = 0.375;
 
+        double upperConst = 0.625;
+
+        //tendril 1
         tessellator.setNormal((float) (-1.0F*Math.sqrt(0.5F)),0, (float) (Math.sqrt(0.5F)));
-        tessellator.addVertexWithUV((double)(x + 0.5), (double)(y + 0.5), (double)(z + 1), maxU-uOffset, maxV);
-        tessellator.addVertexWithUV((double)(x + 0.5) , (double)(y + 1), (double)(z + 1), maxU-uOffset, minV);
-        tessellator.addVertexWithUV((double)(x), (double)(y + 1), (double)(z + 0.5), minU+uOffset, minV);
-        tessellator.addVertexWithUV((double)(x), (double)(y + 0.5), (double)(z + 0.5), minU+uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x + lowerConst), (double)(y + 0.5), (double)(z + 1), minU+uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x + lowerConst) , (double)(y + 1), (double)(z + 1), minU+uOffset, minV);
+        tessellator.addVertexWithUV((double)(x), (double)(y + 1), (double)(z + upperConst), maxU-uOffset, minV);
+        tessellator.addVertexWithUV((double)(x), (double)(y + 0.5), (double)(z + upperConst), maxU-uOffset, maxV);
+
+        tessellator.setNormal((float) (Math.sqrt(0.5F)),0, (float) (-1.0F*Math.sqrt(0.5F)));
+        tessellator.addVertexWithUV((double)(x), (double)(y + 0.5), (double)(z + upperConst), maxU-uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x), (double)(y + 1), (double)(z + upperConst), maxU-uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + lowerConst) , (double)(y + 1), (double)(z + 1), minU+uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + lowerConst), (double)(y + 0.5), (double)(z + 1), minU+uOffset, maxV);
 
 
         //tendril 2
-        tessellator.setNormal((float) (-1.0F*Math.sqrt(0.5F)),0, (float) (Math.sqrt(0.5F)));
-        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 0.5), (double)(z + 0.5), minU+uOffset, maxV);
-        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 1), (double)(z + 0.5), minU+uOffset, minV);
-        tessellator.addVertexWithUV((double)(x + 0.5) , (double)(y + 1), (double)(z), maxU-uOffset, minV);
-        tessellator.addVertexWithUV((double)(x + 0.5), (double)(y + 0.5), (double)(z), maxU-uOffset, maxV);
-
         tessellator.setNormal((float) (Math.sqrt(0.5F)),0, (float) (-1.0F*Math.sqrt(0.5F)));
-        tessellator.addVertexWithUV((double)(x + 0.5), (double)(y + 0.5), (double)(z), minU+uOffset, maxV);
-        tessellator.addVertexWithUV((double)(x + 0.5) , (double)(y + 1), (double)(z), minU+uOffset, minV);
-        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 1), (double)(z + 0.5), maxU-uOffset, minV);
-        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 0.5), (double)(z + 0.5), maxU-uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x + upperConst), (double)(y + 0.5), (double)(z), minU+uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x + upperConst) , (double)(y + 1), (double)(z), minU+uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 1), (double)(z + lowerConst), maxU-uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 0.5), (double)(z + lowerConst), maxU-uOffset, maxV);
+
+        tessellator.setNormal((float) (-1.0F*Math.sqrt(0.5F)),0, (float) (Math.sqrt(0.5F)));
+        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 0.5), (double)(z + lowerConst), maxU-uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 1), (double)(z + lowerConst), maxU-uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + upperConst) , (double)(y + 1), (double)(z), minU+uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + upperConst), (double)(y + 0.5), (double)(z), minU+uOffset, maxV);
+
+
+        //tendril 3
+        tessellator.setNormal((float) (-1.0F*Math.sqrt(0.5F)),0, (float) (-1.0F*Math.sqrt(0.5F)));
+        tessellator.addVertexWithUV((double)(x), (double)(y + 0.5), (double)(z + lowerConst), maxU-uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x) , (double)(y + 1), (double)(z + lowerConst), maxU-uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + lowerConst), (double)(y + 1), (double)(z), minU+uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + lowerConst), (double)(y + 0.5), (double)(z), minU+uOffset, maxV);
+
+        tessellator.setNormal((float) (Math.sqrt(0.5F)),0, (float) (Math.sqrt(0.5F)));
+        tessellator.addVertexWithUV((double)(x + lowerConst), (double)(y + 0.5), (double)(z), minU+uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x + lowerConst), (double)(y + 1), (double)(z), minU+uOffset, minV);
+        tessellator.addVertexWithUV((double)(x) , (double)(y + 1), (double)(z + lowerConst), maxU-uOffset, minV);
+        tessellator.addVertexWithUV((double)(x), (double)(y + 0.5), (double)(z + lowerConst), maxU-uOffset, maxV);
+
+
+        //tendril 4
+        tessellator.setNormal((float) (Math.sqrt(0.5F)),0, (float) (Math.sqrt(0.5F)));
+        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 0.5), (double)(z + upperConst), maxU-uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x + 1) , (double)(y + 1), (double)(z + upperConst), maxU-uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + upperConst), (double)(y + 1), (double)(z + 1), minU+uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + upperConst), (double)(y + 0.5), (double)(z + 1), minU+uOffset, maxV);
+
+        tessellator.setNormal((float) (-1.0F*Math.sqrt(0.5F)),0, (float) (-1.0F*Math.sqrt(0.5F)));
+        tessellator.addVertexWithUV((double)(x + upperConst), (double)(y + 0.5), (double)(z + 1), minU+uOffset, maxV);
+        tessellator.addVertexWithUV((double)(x + upperConst), (double)(y + 1), (double)(z + 1), minU+uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + 1) , (double)(y + 1), (double)(z + upperConst), maxU-uOffset, minV);
+        tessellator.addVertexWithUV((double)(x + 1), (double)(y + 0.5), (double)(z + upperConst), maxU-uOffset, maxV);
+
     }
 
     @Override
