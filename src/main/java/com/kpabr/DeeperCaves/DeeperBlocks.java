@@ -215,6 +215,7 @@ public class DeeperBlocks {
     public static Block sculkFlesh;
     public static Block sculkVein;
     public static Block sculkVines;
+    public static Block sculkCatalyst;
 
     public void registerPortals()
     {
@@ -419,6 +420,7 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.sculkFlesh, "sculk_flesh");
         GameRegistry.registerBlock(DeeperBlocks.sculkVein, "sculk_vein");
         GameRegistry.registerBlock(DeeperBlocks.sculkVines, "sculk_vines");
+        GameRegistry.registerBlock(DeeperBlocks.sculkCatalyst, "sculk_catalyst");
     }
     public void registerBlocksOreDict()
     {
@@ -728,6 +730,7 @@ public class DeeperBlocks {
         DeeperBlocks.sculkVein = new BlockSculkLayer(Material.plants).setBlockTextureName("deepercaves:sculk_vein").setBlockName("sculkVein").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkVines = new BlockSculkVine(Material.plants).setBlockTextureName("deepercaves:sculk_vines").setBlockName("sculkVines").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkFlesh = new BlockBase(Material.sponge).setBlockTextureName("deepercaves:sculk_flesh").setBlockName("sculkFlesh").setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkCatalyst = new BlockSculkCatalyst(Material.sponge).setBlockTextureName("deepercaves:sculk_catalyst").setBlockName("sculkCatalyst").setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
     }
