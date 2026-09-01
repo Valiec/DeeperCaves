@@ -85,7 +85,7 @@ tile.forgottenCobble.name=Forgotten Cobblestone
 tile.darkStoneBrick.name=Dark Stone Bricks
 tile.darkStoneStairs.name=Dark Stone Stairs
 tile.darkCobblestoneStairs.name=Dark Cobblestone Stairs
-tile.darkStoneBrickStairs.name=Dark Stone Brick Stairs
+tile.darkBrickStairs.name=Dark Stone Brick Stairs
 
 tile.deepStoneBrick.name=Deep Stone Bricks
 tile.deepStoneStairs.name=Deep Stone Stairs
@@ -261,3 +261,9 @@ tile.nlapisOre.name=Deep Lapis Lazuli Ore
 tile.nredstoneOre.name=Deep Redstone Ore
 tile.ndiamondOre.name=Deep Diamond Ore
 tile.nemeraldOre.name=Deep Emerald Ore
+
+tile.sculkBlock.name=Sculk
+tile.sculkVein.name=Sculk Vein
+tile.sculkVines.name=Sculk Vines
+tile.sculkFlesh.name=Sculk Flesh
+tile.sculkSensor.name=Sculk Sensor
