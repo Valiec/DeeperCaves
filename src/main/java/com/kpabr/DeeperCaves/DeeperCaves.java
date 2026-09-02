@@ -87,6 +87,7 @@ public class DeeperCaves
      	items.registerItems();
      	items.registerItemsOreDict();
      	blocks.setupBlocks();
+        blocks.registerTileEntities();
      	blocks.registerBlocks();
      	blocks.registerBlocksOreDict();
         blocks.setupHarvestLevels();

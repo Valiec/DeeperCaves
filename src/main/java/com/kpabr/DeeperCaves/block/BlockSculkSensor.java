@@ -2,17 +2,21 @@ package com.kpabr.DeeperCaves.block;
 
 import com.kpabr.DeeperCaves.client.RenderSculkSensor;
 import com.kpabr.DeeperCaves.client.RenderSculkVein;
+import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class BlockSculkSensor extends Block {
+public class BlockSculkSensor extends Block implements ITileEntityProvider {
 
 	public IIcon side;
 	public IIcon top;
@@ -53,6 +57,16 @@ public class BlockSculkSensor extends Block {
 
 	}
 
+	public IIcon getTendrilTextureFromMeta(int meta) {
+		if(meta == 1) {
+			return this.tendrils_active;
+		}
+		else {
+			return this.tendrils;
+		}
+
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int i, int j)
@@ -81,4 +95,8 @@ public class BlockSculkSensor extends Block {
 	}
 
 
+	@Override
+	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
+		return new TileEntitySculkSensor();
+	}
 }

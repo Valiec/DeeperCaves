@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves;
 
 import com.kpabr.DeeperCaves.block.*;
 
+import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
 import com.kpabr.DeeperCaves.item.ItemBlockCrystal;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -217,6 +218,10 @@ public class DeeperBlocks {
     public static Block sculkVein;
     public static Block sculkVines;
     public static Block sculkCatalyst;
+
+    public void registerTileEntities() {
+        GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
+    }
 
     public void registerPortals()
     {

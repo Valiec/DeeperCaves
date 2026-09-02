@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
@@ -35,7 +36,7 @@ public class DeeperEventHandler {
                     if(isq+jsq+ksq <= 8*8) {
                         Block block = event.world.getBlock(x+i, y+j, z+k);
                         if(block == DeeperBlocks.sculkSensor) {
-                            System.out.println("Sculk found!!!!!!!");
+                            ((TileEntitySculkSensor)event.world.getTileEntity(x+i, y+j, z+k)).activate((int)Math.ceil(Math.sqrt(isq+jsq+ksq)));
                         }
                     }
                 }

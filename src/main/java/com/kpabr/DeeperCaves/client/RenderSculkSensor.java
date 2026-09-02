@@ -56,7 +56,7 @@ public class RenderSculkSensor implements ISimpleBlockRenderingHandler {
         tessellator.draw();
 
         tessellator.startDrawingQuads();
-        renderTendrils(block,0, 0, 0, tessellator);
+        renderTendrils(block,0, 0, 0, tessellator, 0);
         tessellator.draw();
 
         GL11.glTranslatef(0.5F, 0.5F, 0.5F);
@@ -76,14 +76,16 @@ public class RenderSculkSensor implements ISimpleBlockRenderingHandler {
         renderer.setRenderBounds(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);
         renderer.renderStandardBlock(block, x, y, z);
 
-        renderTendrils(block,x, y, z, tessellator);
+        int meta = world.getBlockMetadata(x, y, z);
+
+        renderTendrils(block,x, y, z, tessellator, meta);
 
         return true;
     }
 
-    public void renderTendrils(Block block, int x, int y, int z, Tessellator tessellator) {
+    public void renderTendrils(Block block, int x, int y, int z, Tessellator tessellator, int meta) {
 
-        IIcon iicon = ((BlockSculkSensor)block).tendrils;
+        IIcon iicon = ((BlockSculkSensor)block).getTendrilTextureFromMeta(meta);
 
         float minU = iicon.getMinU();
         float fullMinV = iicon.getMinV();
