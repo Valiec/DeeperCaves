@@ -1,9 +1,11 @@
 package com.kpabr.DeeperCaves;
 
+import cpw.mods.fml.common.eventhandler.Cancelable;
 import cpw.mods.fml.common.eventhandler.Event;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 
+@Cancelable
 public class VibrationEvent extends Event {
     public enum VibrationEventType
     {
@@ -40,5 +42,11 @@ public class VibrationEvent extends Event {
             this.hasEntity = false;
         }
 
+    }
+
+    public static class Before extends VibrationEvent {
+        public Before(VibrationEventType type, double x, double y, double z, Entity entity, World world) {
+            super(type, x, y, z, entity, world);
+        }
     }
 }

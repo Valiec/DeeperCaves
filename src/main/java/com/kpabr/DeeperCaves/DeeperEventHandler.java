@@ -5,17 +5,27 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 
 public class DeeperEventHandler {
+
+    public void postVibrationEvent(VibrationEvent.VibrationEventType type, double x, double y, double z, Entity entity, World world) {
+        //allow the event to be canceled
+        if(!FMLCommonHandler.instance().bus().post(new VibrationEvent.Before(type, x, y, z, entity, world)))
+        {
+            FMLCommonHandler.instance().bus().post(new VibrationEvent(type, x, y, z, entity, world));
+        }
+    }
 
     @SubscribeEvent
     public void onVibration(VibrationEvent event) {
@@ -54,7 +64,7 @@ public class DeeperEventHandler {
             //System.out.println(event.name);
 
             if(!event.entity.isSneaking()) {
-                FMLCommonHandler.instance().bus().post(new VibrationEvent(VibrationEvent.VibrationEventType.ENTITY_SOUND, entityX, entityY, entityZ, event.entity, event.entity.worldObj));
+                postVibrationEvent(VibrationEvent.VibrationEventType.ENTITY_SOUND, entityX, entityY, entityZ, event.entity, event.entity.worldObj);
             }
         }
     }
@@ -62,14 +72,14 @@ public class DeeperEventHandler {
     @SubscribeEvent
     public void onBlockBreak(BlockEvent.BreakEvent event) {
         if(event.block != Blocks.wool && event.block != Blocks.carpet) {
-            FMLCommonHandler.instance().bus().post(new VibrationEvent(VibrationEvent.VibrationEventType.BLOCK_BREAK, event.x, event.y, event.z, event.getPlayer(), event.world));
+            postVibrationEvent(VibrationEvent.VibrationEventType.BLOCK_BREAK, event.x, event.y, event.z, event.getPlayer(), event.world);
         }
     }
 
     @SubscribeEvent
     public void onBlockPlace(BlockEvent.PlaceEvent event) {
         if(event.block != Blocks.wool && event.block != Blocks.carpet) {
-            FMLCommonHandler.instance().bus().post(new VibrationEvent(VibrationEvent.VibrationEventType.BLOCK_PLACE, event.x, event.y, event.z, event.player, event.world));
+            postVibrationEvent(VibrationEvent.VibrationEventType.BLOCK_PLACE, event.x, event.y, event.z, event.player, event.world);
         }
     }
 
