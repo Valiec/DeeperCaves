@@ -1,16 +1,76 @@
 package com.kpabr.DeeperCaves;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.EntityEvent;
+import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.world.BlockEvent;
 
 public class DeeperEventHandler {
+
+    @SubscribeEvent
+    public void onVibration(VibrationEvent event) {
+        int x = (int) event.x;
+        int y = (int) event.y;
+        int z = (int) event.z;
+
+        int isq;
+        int jsq;
+        int ksq;
+
+        for(int i = -8; i <= 8; ++i) {
+            isq = i * i;
+            for(int j = -8; j <= 8; ++j) {
+                jsq = j * j;
+                for(int k = -8; k <= 8; ++k) {
+                    ksq = k * k;
+                    if(isq+jsq+ksq <= 8*8) {
+                        Block block = event.world.getBlock(x+i, y+j, z+k);
+                        if(block == DeeperBlocks.sculkSensor) {
+                            System.out.println("Sculk found!!!!!!!");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlaySound(PlaySoundAtEntityEvent event) {
+        if(!event.entity.worldObj.isRemote) {
+            double entityX = event.entity.posX;
+            double entityY = event.entity.posY;
+            double entityZ = event.entity.posZ;
+
+            //System.out.println(event.name);
+
+            if(!event.entity.isSneaking()) {
+                FMLCommonHandler.instance().bus().post(new VibrationEvent(VibrationEvent.VibrationEventType.ENTITY_SOUND, entityX, entityY, entityZ, event.entity, event.entity.worldObj));
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onBlockBreak(BlockEvent.BreakEvent event) {
+        if(event.block != Blocks.wool && event.block != Blocks.carpet) {
+            FMLCommonHandler.instance().bus().post(new VibrationEvent(VibrationEvent.VibrationEventType.BLOCK_BREAK, event.x, event.y, event.z, event.getPlayer(), event.world));
+        }
+    }
+
+    @SubscribeEvent
+    public void onBlockPlace(BlockEvent.PlaceEvent event) {
+        if(event.block != Blocks.wool && event.block != Blocks.carpet) {
+            FMLCommonHandler.instance().bus().post(new VibrationEvent(VibrationEvent.VibrationEventType.BLOCK_PLACE, event.x, event.y, event.z, event.player, event.world));
+        }
+    }
 
 
     @SubscribeEvent
