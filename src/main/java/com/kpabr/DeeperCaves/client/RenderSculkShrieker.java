@@ -98,6 +98,8 @@ public class RenderSculkShrieker implements ISimpleBlockRenderingHandler {
         double offset = 0.0625;
 
 
+        tessellator.setColorOpaque_F(0.8F, 0.8F, 0.8F);
+
         //face 1
         tessellator.setNormal(0.0F, 0.0F, -1.0F);
         tessellator.addVertexWithUV((double)(x + 0), (double)(y + 0.5), (double)(z + offset), minU, maxV);
@@ -123,6 +125,8 @@ public class RenderSculkShrieker implements ISimpleBlockRenderingHandler {
         tessellator.addVertexWithUV((double)(x + 0), (double)(y + 1), (double)(z + 1 - offset), minU, minV);
         tessellator.addVertexWithUV((double)(x + 1), (double)(y + 1), (double)(z + 1 - offset), maxU, minV);
         tessellator.addVertexWithUV((double)(x + 1), (double)(y + 0.5), (double)(z + 1 - offset), maxU, maxV);
+
+        tessellator.setColorOpaque_F(0.6F, 0.6F, 0.6F);
 
         //face 3
         tessellator.setNormal(-1.0F, 0.0F, 0.0F);
@@ -151,7 +155,7 @@ public class RenderSculkShrieker implements ISimpleBlockRenderingHandler {
         tessellator.addVertexWithUV((double)(x + 1 - offset), (double)(y + 1), (double)(z + 0), minU, minV);
         tessellator.addVertexWithUV((double)(x + 1 - offset), (double)(y + 0.5), (double)(z + 0), minU, maxV);
 
-
+        tessellator.setColorOpaque_F(1.0F, 1.0F, 1.0F);
 
         //top
         tessellator.setNormal(0.0F, 1.0F, 0.0F);
