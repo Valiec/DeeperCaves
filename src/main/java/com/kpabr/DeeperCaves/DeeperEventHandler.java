@@ -11,12 +11,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
+import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.tuple.Triple;
+import org.lwjgl.Sys;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,15 +35,15 @@ public class DeeperEventHandler {
         }
     }
 
-    public int getMaxOf3(double rateX, double rateY, double rateZ) {
+    public static int getMaxOf3(double rateX, double rateY, double rateZ) {
         return getMinMaxOf3(rateX, rateY, rateZ, false);
     }
 
-    public int getMinOf3(double rateX, double rateY, double rateZ) {
+    public static int getMinOf3(double rateX, double rateY, double rateZ) {
         return getMinMaxOf3(rateX, rateY, rateZ, true);
     }
 
-    public int getMinMaxOf3(double rateX, double rateY, double rateZ, boolean invert) {
+    public static int getMinMaxOf3(double rateX, double rateY, double rateZ, boolean invert) {
         //0=x, 1=y, 2=z
         int maxInd;
 
@@ -69,7 +74,7 @@ public class DeeperEventHandler {
         return maxInd;
     }
 
-    public double[] getNextBlockPos(double rateX, double rateY, double rateZ, double curX, double curY, double curZ) {
+    public static double[] getNextBlockPos(double rateX, double rateY, double rateZ, double curX, double curY, double curZ) {
         double distToNewBlockX = rateX > 0 ? Math.ceil(curX)-curX : curX-Math.floor(curX);
         double distToNewBlockY = rateY > 0 ? Math.ceil(curY)-curY : curY-Math.floor(curY);
         double distToNewBlockZ = rateZ > 0 ? Math.ceil(curZ)-curZ : curZ-Math.floor(curZ);
@@ -117,7 +122,7 @@ public class DeeperEventHandler {
 
     }
 
-    public boolean woolInPath(double x1, double y1, double z1, double x2, double y2, double z2, World world) {
+    public static boolean woolInPath(double x1, double y1, double z1, double x2, double y2, double z2, World world) {
         double[] curPos = new  double[] {x1, y1, z1};
 
         double rateX = x2 - x1;
@@ -146,32 +151,53 @@ public class DeeperEventHandler {
         return false;
     }
 
-    @SubscribeEvent
-    public void onVibration(VibrationEvent event) {
-        int x = (int) event.x;
-        int y = (int) event.y;
-        int z = (int) event.z;
+    public static List<Triple<Block, Integer[], Double>> findBlocksWithinRadius(double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, Block... targets) {
+        List<Block> targetBlocks = Arrays.asList(targets);
+
+        List<Triple<Block, Integer[], Double>> foundBlocks = new ArrayList<Triple<Block, Integer[], Double>>();
+
+        int x = (int) xPos;
+        int y = (int) yPos;
+        int z = (int) zPos;
 
         int isq;
         int jsq;
         int ksq;
 
-        for(int i = -8; i <= 8; ++i) {
+        int sqRadius = radius*radius;
+
+        for(int i = -8; i <= radius; ++i) {
             isq = i * i;
-            for(int j = -8; j <= 8; ++j) {
+            for(int j = -8; j <= radius; ++j) {
                 jsq = j * j;
-                for(int k = -8; k <= 8; ++k) {
+                for(int k = -8; k <= radius; ++k) {
                     ksq = k * k;
-                    if(isq+jsq+ksq <= 8*8) {
-                        Block block = event.world.getBlock(x+i, y+j, z+k);
-                        if(block == DeeperBlocks.sculkSensor) {
-                            if(!woolInPath(event.x, event.y, event.z, x+i+0.5D, y+j+0.5D, z+k+0.5D, event.world)) {
-                                ((TileEntitySculkSensor) event.world.getTileEntity(x + i, y + j, z + k)).activate((int) Math.ceil(Math.sqrt(isq + jsq + ksq)));
+                    if(isq+jsq+ksq <= sqRadius) {
+                        Block block = world.getBlock(x+i, y+j, z+k);
+                        if(targetBlocks.contains(block)) {
+                            if(!woolCheck || !woolInPath(xPos, yPos, zPos, x+i+0.5D, y+j+0.5D, z+k+0.5D, world)) {
+                                foundBlocks.add(Triple.of(block, new Integer[] {x+i, y+j, z+k}, Math.ceil(Math.sqrt(isq + jsq + ksq))));
                             }
                         }
                     }
                 }
             }
+        }
+        return foundBlocks;
+    }
+
+    @SubscribeEvent
+    public void onVibration(VibrationEvent event) {
+        List<Triple<Block, Integer[], Double>> sensors = findBlocksWithinRadius(event.x, event.y, event.z, 8, event.world, true, DeeperBlocks.sculkSensor);
+
+        for(Triple<Block, Integer[], Double> sensor : sensors) {
+            Integer[] coords = sensor.getMiddle();
+            double dist = sensor.getRight();
+            EntityPlayer activatingPlayer = null;
+            if (event.hasEntity && event.entity instanceof EntityPlayer) {
+                activatingPlayer = (EntityPlayer)event.entity;
+            }
+            ((TileEntitySculkSensor) event.world.getTileEntity(coords[0], coords[1], coords[2])).activate((int)dist, activatingPlayer);
         }
     }
 
@@ -183,6 +209,8 @@ public class DeeperEventHandler {
             double entityZ = event.entity.posZ;
 
             List<String> excludedSounds = Arrays.asList("step.cloth", "dig.cloth", "hit.cloth", "jump.cloth", "land.cloth", "fall.cloth");
+
+
 
             if(!event.entity.isSneaking() && !excludedSounds.contains(event.name)) {
                 postVibrationEvent(VibrationEvent.VibrationEventType.ENTITY_SOUND, entityX, entityY, entityZ, event.entity, event.entity.worldObj);

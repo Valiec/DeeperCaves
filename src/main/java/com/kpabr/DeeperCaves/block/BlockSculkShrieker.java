@@ -2,17 +2,22 @@ package com.kpabr.DeeperCaves.block;
 
 import com.kpabr.DeeperCaves.client.RenderSculkSensor;
 import com.kpabr.DeeperCaves.client.RenderSculkShrieker;
+import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
+import com.kpabr.DeeperCaves.entity.TileEntitySculkShrieker;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class BlockSculkShrieker extends Block {
+public class BlockSculkShrieker extends Block implements ITileEntityProvider {
 
 	public IIcon side;
 	public IIcon top;
@@ -52,13 +57,23 @@ public class BlockSculkShrieker extends Block {
 		this.topInnerActive = iconRegister.registerIcon("DeeperCaves:sculk_shrieker_can_summon_inner_top");
 	}
 
+	public IIcon getTopTextureFromMeta(int meta) {
+		if((meta & 2) != 0) {
+			return this.topInnerActive;
+		}
+		else {
+			return this.topInner;
+		}
+
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int i, int j)
 	{
 		if (i == 1)
 		{
-			return this.topInner;
+			return getTopTextureFromMeta(j);
 		}
 		if (i == 4 || i == 5 || i == 2 || i == 3)
 		{
@@ -77,6 +92,11 @@ public class BlockSculkShrieker extends Block {
 	@Override
 	public int getRenderType() {
 		return RenderSculkShrieker.renderID;
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
+		return new TileEntitySculkShrieker();
 	}
 
 
