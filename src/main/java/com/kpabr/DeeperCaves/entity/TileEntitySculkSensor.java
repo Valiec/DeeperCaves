@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.IBlockAccess;
 import org.apache.commons.lang3.tuple.Triple;
 
 import java.util.List;
@@ -38,7 +39,6 @@ public class TileEntitySculkSensor extends TileEntity {
                 this.doActivate();
             }
         }
-
     }
 
     public void doActivate() {
