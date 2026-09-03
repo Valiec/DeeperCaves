@@ -9,8 +9,12 @@ import net.minecraft.util.IIcon;
 import java.util.Random;
 
 public class BlockSculkBase extends Block {
-    public BlockSculkBase(Material sponge) {
+
+    public boolean rotating = false;
+
+    public BlockSculkBase(Material sponge, boolean rotating) {
         super(sponge);
+        this.rotating = rotating;
     }
 
     @Override
@@ -27,6 +31,6 @@ public class BlockSculkBase extends Block {
 
     @Override
     public int getRenderType() {
-        return RenderBlockTextureRotation.renderID;
+        return this.rotating ? RenderBlockTextureRotation.renderID : 0;
     }
 }
