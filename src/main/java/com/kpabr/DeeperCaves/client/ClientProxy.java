@@ -30,5 +30,6 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerBlockHandler(RenderSculkVein.renderID, new RenderSculkVein());
         RenderingRegistry.registerBlockHandler(RenderSculkSensor.renderID, new RenderSculkSensor());
         RenderingRegistry.registerBlockHandler(RenderSculkShrieker.renderID, new RenderSculkShrieker());
+        RenderingRegistry.registerBlockHandler(RenderBlockTextureRotation.renderID, new RenderBlockTextureRotation());
     }
 }

@@ -70,13 +70,13 @@ public class RenderSculkSensor implements ISimpleBlockRenderingHandler {
         // z -> v
         // vertex order counterclockwise from rendered side
 
-        tessellator.setBrightness(block.getMixedBrightnessForBlock(world, x, y, z));
-        tessellator.setColorOpaque_F(1.0F, 1.0F, 1.0F);
-
         renderer.setRenderBounds(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);
         renderer.renderStandardBlock(block, x, y, z);
 
         int meta = world.getBlockMetadata(x, y, z);
+
+        tessellator.setBrightness(block.getMixedBrightnessForBlock(world, x, y, z));
+        tessellator.setColorOpaque_F(1.0F, 1.0F, 1.0F);
 
         renderTendrils(block,x, y, z, tessellator, meta);
 

@@ -2,6 +2,8 @@ package com.kpabr.DeeperCaves.block;
 
 import java.util.Random;
 
+import com.kpabr.DeeperCaves.client.RenderBlockTextureRotation;
+import com.kpabr.DeeperCaves.client.RenderSculkSensor;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
