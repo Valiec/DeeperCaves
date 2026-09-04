@@ -17,12 +17,13 @@ public class BiomeGenForgotten extends BiomeGenDeeperCavesBase
     	this.biomeName = "Forgotten";
         this.topBlock = Blocks.bedrock;
         this.fillerBlock = DeeperBlocks.forgottenStone;
-        this.theBiomeDecorator = new DeeperDecorator();
+        this.theBiomeDecorator = new ForgottenDecorator();
         this.theBiomeDecorator.generateLakes = true;
 
     }
 
     public void generateOres(World world, Random random, int x, int z) {
+        LayerOregen.addOre(DeeperBlocks.sculk, world, random, x, z, 16, 16, 32, 120, 0, 235, DeeperBlocks.forgottenStone);
         LayerOregen.addOre(DeeperBlocks.dpcoalOre, world, random, x, z, 16, 16, 15, 80, 0, 255, DeeperBlocks.forgottenStone);
         LayerOregen.addOre(DeeperBlocks.dpironOre, world, random, x, z, 16, 16, 10, 65, 0, 255, DeeperBlocks.forgottenStone);
         LayerOregen.addOre(DeeperBlocks.dpgoldOre, world, random, x, z, 16, 16, 8, 15, 0, 255, DeeperBlocks.forgottenStone);

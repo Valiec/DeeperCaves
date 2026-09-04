@@ -9,6 +9,9 @@ import net.minecraftforge.event.terraingen.OreGenEvent;
 
 public class DeeperBaseDecorator extends BiomeDecorator {
 
+    public boolean generateLavaLakes = true;
+    public boolean generateWaterLakes = true;
+
 	@Override
 	protected void genDecorations(BiomeGenBase biome)
     {

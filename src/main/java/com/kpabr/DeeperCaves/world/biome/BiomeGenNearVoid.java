@@ -21,7 +21,7 @@ public class BiomeGenNearVoid extends BiomeGenDeeperCavesBase
     }
 
     public void generateOres(World world, Random random, int x, int z) {
-        LayerOregen.addOre(Blocks.dirt, world, random, x, z, 16, 16, 32, 15, 0, 256, DeeperBlocks.deepStone);
+        //LayerOregen.addOre(Blocks.dirt, world, random, x, z, 16, 16, 32, 15, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(Blocks.gravel, world, random, x, z, 16, 16, 32, 8, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.ncoalOre, world, random, x, z, 16, 16, 16, 25, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.nironOre, world, random, x, z, 16, 16, 8, 50, 0, 256, DeeperBlocks.deepStone);

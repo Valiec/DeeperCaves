@@ -22,15 +22,16 @@ public class DeeperDecorator extends DeeperBaseDecorator {
         int i1;
 
         boolean doGen = TerrainGen.decorate(currentWorld, randomGenerator, chunk_X, chunk_Z, LAKE);
-        if (doGen && this.generateLakes)
-        {
-            for (i1 = 0; i1 < 50; ++i1)
-            {
+        if (doGen && this.generateWaterLakes) {
+            for (i1 = 0; i1 < 50; ++i1) {
                 i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
                 j = this.randomGenerator.nextInt(this.randomGenerator.nextInt(248) + 8);
                 k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
                 (new WorldGenLiquids(Blocks.flowing_water)).generate(this.currentWorld, this.randomGenerator, i, j, k);
             }
+        }
+
+        if (doGen && (this.generateLakes || this.generateLavaLakes)) {
 
             for (i1 = 0; i1 < 20; ++i1)
             {

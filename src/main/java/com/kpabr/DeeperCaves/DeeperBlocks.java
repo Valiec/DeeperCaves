@@ -742,7 +742,6 @@ public class DeeperBlocks {
         DeeperBlocks.sculkCatalyst = new BlockSculkCatalyst(Material.sponge).setBlockTextureName("deepercaves:sculk_catalyst").setHardness(3.0F).setResistance(3.0F).setLightLevel(0.4F).setBlockName("sculkCatalyst").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkShrieker = new BlockSculkShrieker(Material.sponge).setBlockName("sculkShrieker").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-
     }
     public void setupHarvestLevels()
     {
