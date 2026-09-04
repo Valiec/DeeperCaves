@@ -90,6 +90,9 @@ public class ChunkProviderForgotten extends ChunkProviderDeeperCavesBase
                     if (noiseField[ind] < -0.15 && p_147422_3_[blockInd] == DeeperBlocks.forgottenStone) {
                         p_147422_3_[blockInd] = DeeperBlocks.sculk;
                     }
+                    else if (sculkY < 231 && noiseField[ind] < -0.08 && p_147422_3_[blockInd] != null && p_147422_3_[blockInd].isNormalCube()  && (p_147422_3_[blockInd+1] == Blocks.air || p_147422_3_[blockInd+1] == null)) {
+                        p_147422_3_[blockInd+1] = DeeperBlocks.sculkVein;
+                    }
                 }
             }
         }
