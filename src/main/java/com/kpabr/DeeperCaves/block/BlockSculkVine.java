@@ -14,7 +14,7 @@ public class BlockSculkVine extends Block {
 
 
 	public BlockSculkVine(Material par2Material) {
-		super(Material.vine);
+		super(par2Material);
 		// TODO Auto-generated constructor stub
 	}
 

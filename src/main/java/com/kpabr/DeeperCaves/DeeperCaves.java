@@ -7,7 +7,10 @@ import java.util.UUID;
 
 import com.kpabr.DeeperCaves.version.DeeperVersionChecker;
 import com.kpabr.DeeperCaves.version.VersionCommand;
+import com.kpabr.DeeperCaves.world.biome.EvilDecorator;
 import com.kpabr.DeeperCore.dimstack.DeeperTeleporter;
+import cpw.mods.fml.common.event.FMLServerStoppingEvent;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -111,7 +114,17 @@ public class DeeperCaves
         FMLCommonHandler.instance().bus().register(bucket);
 		MinecraftForge.EVENT_BUS.register(bucket);
     }
-    
-    
+
+    public void cleanupWorldData() {
+        EvilDecorator.sculkNoise = null;
+
+    }
+
+    @EventHandler
+    public void onServerStopping(FMLServerStoppingEvent event) {
+        if(FMLCommonHandler.instance().getSide() == Side.CLIENT) {
+            cleanupWorldData();
+        }
+    }
 }
 

@@ -218,6 +218,7 @@ public class DeeperBlocks {
     public static Block sculkFlesh;
     public static Block sculkVein;
     public static Block sculkVines;
+    public static Block sculkKelp;
     public static Block sculkCatalyst;
 
     public void registerTileEntities() {
@@ -429,6 +430,7 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.sculkFlesh, "sculk_flesh");
         GameRegistry.registerBlock(DeeperBlocks.sculkVein, "sculk_vein");
         GameRegistry.registerBlock(DeeperBlocks.sculkVines, "sculk_vines");
+        GameRegistry.registerBlock(DeeperBlocks.sculkKelp, "sculk_kelp");
         GameRegistry.registerBlock(DeeperBlocks.sculkCatalyst, "sculk_catalyst");
     }
     public void registerBlocksOreDict()
@@ -736,8 +738,9 @@ public class DeeperBlocks {
 
         DeeperBlocks.sculk = new BlockSculkBase(Material.sponge, true).setBlockTextureName("deepercaves:sculk").setBlockName("sculkBlock").setHardness(0.2F).setResistance(0.2F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkSensor = new BlockSculkSensor(Material.sponge).setBlockName("sculkSensor").setHardness(1.5F).setResistance(1.5F).setLightLevel(0.067F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.sculkVein = new BlockSculkVein(Material.plants).setBlockTextureName("deepercaves:sculk_vein").setBlockName("sculkVein").setHardness(0.2F).setResistance(0.2F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.sculkVines = new BlockSculkVine(Material.plants).setBlockTextureName("deepercaves:sculk_vines").setBlockName("sculkVines").setHardness(0.2F).setResistance(0.2F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkVein = new BlockSculkVein(Material.sponge).setBlockTextureName("deepercaves:sculk_vein").setBlockName("sculkVein").setHardness(0.2F).setResistance(0.2F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkVines = new BlockSculkVine(Material.sponge).setBlockTextureName("deepercaves:sculk_vines").setBlockName("sculkVines").setHardness(0.2F).setResistance(0.2F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkKelp = new BlockSculkTendril(Material.sponge).setBlockTextureName("deepercaves:sculk_kelp").setBlockName("sculkKelp").setHardness(0.2F).setResistance(0.2F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkFlesh = new BlockSculkBase(Material.sponge, false).setBlockTextureName("deepercaves:sculk_flesh").setBlockName("sculkFlesh").setHardness(0.5F).setResistance(0.5F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkCatalyst = new BlockSculkCatalyst(Material.sponge).setBlockTextureName("deepercaves:sculk_catalyst").setHardness(3.0F).setResistance(3.0F).setLightLevel(0.4F).setBlockName("sculkCatalyst").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkShrieker = new BlockSculkShrieker(Material.sponge).setBlockName("sculkShrieker").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
@@ -889,6 +892,7 @@ public class DeeperBlocks {
         DeeperBlocks.sculk.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkCatalyst.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkVines.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkKelp.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkVein.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkFlesh.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkSensor.setHarvestLevel("axe", 0);
