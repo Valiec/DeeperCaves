@@ -20,7 +20,7 @@ public class ChunkProviderEvil extends ChunkProviderDeeperCavesBase
 {
 
     NoiseGeneratorOctaves sculkNoise;
-    long seed;
+    NoiseGeneratorOctaves caveNoise;
 
     double[] noiseField = new double[59392];
 
@@ -32,15 +32,11 @@ public class ChunkProviderEvil extends ChunkProviderDeeperCavesBase
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.setupGenFromLayer(DeeperCaves.worldgen.evil);
+        sculkNoise = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + ((WorldProviderDeeperCaves)this.worldObj.provider).layer.seedOffset), 2);
     }
 
     public void finalGenPass(int p_147422_1_, int p_147422_2_, Block[] p_147422_3_, byte[] p_147422_4_, BiomeGenBase[] p_147422_5_)
     {
-        if(sculkNoise == null || this.seed != this.worldObj.getSeed()) { //don't have a world earlier, or this isn't the same world
-            sculkNoise = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + ((WorldProviderDeeperCaves)this.worldObj.provider).layer.seedOffset), 2);
-            this.seed = this.worldObj.getSeed();
-        }
-
         noiseField = sculkNoise.generateNoiseOctaves(noiseField, p_147422_1_*16, 0, p_147422_2_*16, 16, 102, 16, 0.15, 0.15, 0.15);
 
         for(int sculkX = 0; sculkX < 16; sculkX++) {

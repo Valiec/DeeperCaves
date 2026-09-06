@@ -118,7 +118,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
                     this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkKelp, 1, 2);
                     curj++;
                 }
-                
+
                 if(curj > j) {
                     this.currentWorld.setBlock(i, curj - 1, k, DeeperBlocks.sculkKelp, 0, 2);
                 }
