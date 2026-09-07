@@ -55,13 +55,20 @@ public class BlockSculkTendril extends Block {
 
 	@Override
 	public void onNeighborBlockChange(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_) {
+		int meta = p_149695_1_.getBlockMetadata(p_149695_2_, p_149695_3_, p_149695_4_);
+
 		if(p_149695_3_ < 255 && p_149695_1_.getBlock(p_149695_2_, p_149695_3_+1, p_149695_4_) == this) {
-			p_149695_1_.setBlockMetadataWithNotify(p_149695_2_, p_149695_3_, p_149695_4_, 1, 2);
+			p_149695_1_.setBlockMetadataWithNotify(p_149695_2_, p_149695_3_, p_149695_4_, meta | 1, 2);
 		}
-		else if(p_149695_3_ < 255 && p_149695_1_.getBlockMetadata(p_149695_2_, p_149695_3_, p_149695_4_) != 0
+		else if(p_149695_3_ < 255 && (meta & 1) != 0
 				&& p_149695_1_.getBlock(p_149695_2_, p_149695_3_+1, p_149695_4_) != this) {
-			p_149695_1_.setBlockMetadataWithNotify(p_149695_2_, p_149695_3_, p_149695_4_, 0, 2);
+			p_149695_1_.setBlockMetadataWithNotify(p_149695_2_, p_149695_3_, p_149695_4_, meta & ~1, 2);
 		}
+	}
+
+	public int getLightValue(IBlockAccess world, int x, int y, int z) {
+		int meta = world.getBlockMetadata(x, y, z);
+		return (meta & 2) == 0 ? 0 : 4;
 	}
 
 	@Override

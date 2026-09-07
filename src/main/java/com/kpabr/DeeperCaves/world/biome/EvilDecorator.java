@@ -55,18 +55,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
             }
         }
 
-        if (doGen && (this.generateLakes || this.generateLavaLakes)) {
-
-            for (i1 = 0; i1 < 20; ++i1)
-            {
-                i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-                j = this.randomGenerator.nextInt(this.randomGenerator.nextInt(this.randomGenerator.nextInt(240) + 8) + 8);
-                k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-                (new WorldGenLiquids(Blocks.flowing_lava)).generate(this.currentWorld, this.randomGenerator, i, j, k);
-            }
-        }
-
-        for (i1 = 0; i1 < 320; ++i1)
+        for (i1 = 0; i1 < 960; ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt(102)+1;
@@ -146,20 +135,22 @@ public class EvilDecorator extends DeeperBaseDecorator {
 
                 boolean generated = false;
 
+                int tendrilMeta = randomGenerator.nextInt(8) == 0 ? 2 : 0;
+
 
                 while(curj > 0 && curj < j+kelpHeight && this.currentWorld.getBlock(i, curj, k) == Blocks.air) {
-                    this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkKelp, 1, 2);
+                    this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkKelp, tendrilMeta | 1, 2);
                     generated = true;
                     curj++;
                 }
 
                 if(generated) {
-                    this.currentWorld.setBlock(i, curj - 1, k, DeeperBlocks.sculkKelp, 0, 2);
+                    this.currentWorld.setBlock(i, curj - 1, k, DeeperBlocks.sculkKelp, tendrilMeta, 2);
                 }
             }
         }
 
-        for (i1 = 0; i1 < 80; ++i1)
+        for (i1 = 0; i1 < 240; ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt(102)+1;
@@ -170,7 +161,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
             }
         }
 
-        for (i1 = 0; i1 < 96; ++i1)
+        for (i1 = 0; i1 < 288; ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt(102)+1;
@@ -182,7 +173,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
         }
 
 
-        for (i1 = 0; i1 < 480; ++i1)
+        for (i1 = 0; i1 < 960; ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt(102)+1;

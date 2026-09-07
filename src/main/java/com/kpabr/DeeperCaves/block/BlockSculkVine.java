@@ -29,6 +29,13 @@ public class BlockSculkVine extends Block {
 	}
 
 	@Override
+	public int getLightValue(IBlockAccess world, int x, int y, int z) {
+		int meta = world.getBlockMetadata(x, y, z);
+		return (meta & 2) == 0 ? 0 : 6;
+	}
+
+
+	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
 	{
 		return null;

@@ -48,17 +48,16 @@ public class ForgottenDecorator extends DeeperBaseDecorator {
             }
         }
 
-            for (i1 = 0; i1 < 320; ++i1)
+        for (i1 = 0; i1 < 320; ++i1)
+        {
+            i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+            j = this.randomGenerator.nextInt(234)+1;
+            k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+            if(this.currentWorld.getBlock(i, j-1, k) == DeeperBlocks.sculk && this.currentWorld.getBlock(i, j, k) == Blocks.air)
             {
-                i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-                j = this.randomGenerator.nextInt(234)+1;
-                k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-                if(this.currentWorld.getBlock(i, j-1, k) == DeeperBlocks.sculk && this.currentWorld.getBlock(i, j, k) == Blocks.air)
-                {
-                    this.currentWorld.setBlock(i, j, k, DeeperBlocks.sculkSensor, 0, 2);
-                }
+                this.currentWorld.setBlock(i, j, k, DeeperBlocks.sculkSensor, 0, 2);
             }
-
+        }
 
         for (i1 = 0; i1 < 320; ++i1)
         {
@@ -67,10 +66,13 @@ public class ForgottenDecorator extends DeeperBaseDecorator {
             k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
             if(this.currentWorld.getBlock(i, j+1, k) == DeeperBlocks.sculk && this.currentWorld.getBlock(i, j, k) == Blocks.air)
             {
+
+                int vineMeta = randomGenerator.nextInt(16) == 0 ? 2 : 0;
+
                 int curj = j;
                 int veinHeight = this.randomGenerator.nextInt(77)+3;
                 while(curj > 0 && curj > j-veinHeight && this.currentWorld.getBlock(i, curj, k) == Blocks.air) {
-                    this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkVines, 0, 2);
+                    this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkVines, vineMeta, 2);
                     curj--;
                 }
 
