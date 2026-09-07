@@ -36,6 +36,11 @@ public class BlockSculkTendril extends Block {
 	}
 
 	@Override
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
+
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.icon = iconRegister.registerIcon("DeeperCaves:sculk_kelp_plant");

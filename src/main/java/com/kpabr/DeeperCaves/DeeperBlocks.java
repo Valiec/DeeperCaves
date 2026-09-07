@@ -220,6 +220,7 @@ public class DeeperBlocks {
     public static Block sculkVines;
     public static Block sculkKelp;
     public static Block sculkCatalyst;
+    public static Block sculkGrass;
 
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
@@ -432,6 +433,8 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.sculkVines, "sculk_vines");
         GameRegistry.registerBlock(DeeperBlocks.sculkKelp, "sculk_kelp");
         GameRegistry.registerBlock(DeeperBlocks.sculkCatalyst, "sculk_catalyst");
+
+        GameRegistry.registerBlock(DeeperBlocks.sculkGrass, "sculk_grass");
     }
     public void registerBlocksOreDict()
     {
@@ -745,6 +748,8 @@ public class DeeperBlocks {
         DeeperBlocks.sculkCatalyst = new BlockSculkCatalyst(Material.sponge).setBlockTextureName("deepercaves:sculk_catalyst").setHardness(3.0F).setResistance(3.0F).setLightLevel(0.4F).setBlockName("sculkCatalyst").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkShrieker = new BlockSculkShrieker(Material.sponge).setBlockName("sculkShrieker").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
+        DeeperBlocks.sculkGrass = new BlockSculkGrass(Material.plants).setBlockName("sculkGrass").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
     }
     public void setupHarvestLevels()
     {
@@ -897,6 +902,8 @@ public class DeeperBlocks {
         DeeperBlocks.sculkFlesh.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkSensor.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkShrieker.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkKelp.setHarvestLevel("axe", 0);
+        DeeperBlocks.sculkGrass.setHarvestLevel("axe", 0);
     }
     
 }

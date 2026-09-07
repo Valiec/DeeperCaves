@@ -99,7 +99,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
 
         double tendrilFactor = 1.0/vineFactor;
 
-        for (i1 = 0; i1 < 1600*(vineFactor*vineTendrilFactor2); ++i1)
+        for (i1 = 0; i1 < 2400*(vineFactor*vineTendrilFactor2); ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt(102)+1;
@@ -107,8 +107,18 @@ public class EvilDecorator extends DeeperBaseDecorator {
             if((this.currentWorld.getBlock(i, j+1, k) == DeeperBlocks.sculk || this.currentWorld.getBlock(i, j+1, k) == DeeperBlocks.sculkFlesh) && this.currentWorld.getBlock(i, j, k) == Blocks.air)
             {
                 int curj = j;
-                int veinHeight = this.randomGenerator.nextInt(42)+3;
-                while(curj > 0 && curj > j-veinHeight && this.currentWorld.getBlock(i, curj, k) == Blocks.air) {
+
+                int floorHeight = 1;
+
+                int maxHeight = this.randomGenerator.nextInt(42)+3;
+
+                while(floorHeight < maxHeight && this.currentWorld.getBlock(i, curj-floorHeight, k) == Blocks.air) {
+                    floorHeight++;
+                }
+
+                int vineHeight = this.randomGenerator.nextInt(floorHeight)+1;
+
+                while(curj > 0 && curj > j-vineHeight && this.currentWorld.getBlock(i, curj, k) == Blocks.air) {
                     this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkVines, 0, 2);
                     curj--;
                 }
@@ -116,7 +126,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
             }
         }
 
-        for (i1 = 0; i1 < 1600*(tendrilFactor*vineTendrilFactor2); ++i1)
+        for (i1 = 0; i1 < 6400*(tendrilFactor*vineTendrilFactor2); ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt(102)+1;
@@ -124,13 +134,26 @@ public class EvilDecorator extends DeeperBaseDecorator {
             if((this.currentWorld.getBlock(i, j-1, k) == DeeperBlocks.sculk || this.currentWorld.getBlock(i, j-1, k) == DeeperBlocks.sculkFlesh) && this.currentWorld.getBlock(i, j, k) == Blocks.air)
             {
                 int curj = j;
-                int veinHeight = this.randomGenerator.nextInt(20)+3;
-                while(curj > 0 && curj > j-veinHeight && this.currentWorld.getBlock(i, curj, k) == Blocks.air) {
+                int ceilingHeight = 1;
+
+                int maxHeight = this.randomGenerator.nextInt(20)+3;
+
+                while(ceilingHeight < maxHeight && this.currentWorld.getBlock(i, curj+ceilingHeight, k) == Blocks.air) {
+                    ceilingHeight++;
+                }
+
+                int kelpHeight = this.randomGenerator.nextInt(ceilingHeight)+1;
+
+                boolean generated = false;
+
+
+                while(curj > 0 && curj < j+kelpHeight && this.currentWorld.getBlock(i, curj, k) == Blocks.air) {
                     this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkKelp, 1, 2);
+                    generated = true;
                     curj++;
                 }
 
-                if(curj > j) {
+                if(generated) {
                     this.currentWorld.setBlock(i, curj - 1, k, DeeperBlocks.sculkKelp, 0, 2);
                 }
             }

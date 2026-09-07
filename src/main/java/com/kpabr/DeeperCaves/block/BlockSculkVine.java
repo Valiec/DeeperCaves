@@ -51,4 +51,9 @@ public class BlockSculkVine extends Block {
 		return 1;
 	}
 
+	@Override
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
+
 }
