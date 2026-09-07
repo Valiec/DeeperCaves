@@ -117,6 +117,8 @@ public class DeeperCaves
 
     public void cleanupWorldData() {
         EvilDecorator.sculkNoise = null;
+        EvilDecorator.vineTendrilNoise = null;
+        EvilDecorator.vineTendrilNoise2 = null;
 
     }
 

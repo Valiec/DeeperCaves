@@ -19,7 +19,11 @@ public class EvilDecorator extends DeeperBaseDecorator {
 
     public static NoiseGeneratorPerlin sculkNoise;
 
-    //double[] noiseField = new double[256];
+    double[] vineTendrilDensityNoiseField = new double[1];
+    double[] vineTendrilNoiseField = new double[1];
+
+    public static NoiseGeneratorOctaves vineTendrilNoise;
+    public static NoiseGeneratorOctaves vineTendrilNoise2;
 
     @Override
     protected void decorate(BiomeGenBase biome)
@@ -31,6 +35,8 @@ public class EvilDecorator extends DeeperBaseDecorator {
 
         //noiseField = sculkNoise.func_151600_a(noiseField, chunk_X, 0, chunk_Z, 1, 1, 0.15, 0.15, 1);
 
+        vineTendrilNoise = new NoiseGeneratorOctaves(new Random(this.currentWorld.getSeed() + ((WorldProviderDeeperCaves)this.currentWorld.provider).layer.seedOffset + 3), 1);
+        vineTendrilNoise2 = new NoiseGeneratorOctaves(new Random(this.currentWorld.getSeed() + ((WorldProviderDeeperCaves)this.currentWorld.provider).layer.seedOffset + 4), 1);
 
         int i;
 
@@ -71,24 +77,29 @@ public class EvilDecorator extends DeeperBaseDecorator {
             }
         }
 
+        vineTendrilDensityNoiseField = vineTendrilNoise2.generateNoiseOctaves(vineTendrilDensityNoiseField, chunk_X, 0, chunk_Z, 1, 1, 1, 0.08, 0.08, 0.08);
 
-        double vineTendrilFactor = randomGenerator.nextDouble();
+        vineTendrilNoiseField = vineTendrilNoise.generateNoiseOctaves(vineTendrilNoiseField, chunk_X, 0, chunk_Z, 1, 1, 1, 0.15, 0.15, 0.15);
 
-        double vineFactor = ((1-vineTendrilFactor)*2)-1;
+        double vineTendrilFactor = vineTendrilNoiseField[0]+1;
 
-        if(vineFactor<0)
+        double vineTendrilFactor2 = (vineTendrilDensityNoiseField[0]*2)+1;
+
+        if(vineTendrilFactor2 < 0)
         {
-            vineFactor = 0;
+            vineTendrilFactor2 = 0;
         }
 
-        double tendrilFactor = ((vineTendrilFactor)*2)-1;
-
-        if(tendrilFactor<0)
+        if(vineTendrilFactor2 > 2)
         {
-            tendrilFactor = 0;
+            vineTendrilFactor2 = 2;
         }
 
-        for (i1 = 0; i1 < 1024*(vineFactor); ++i1)
+        double vineFactor = vineTendrilFactor;
+
+        double tendrilFactor = 1.0/vineFactor;
+
+        for (i1 = 0; i1 < 1600*(vineFactor*vineTendrilFactor2); ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt(102)+1;
@@ -105,7 +116,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
             }
         }
 
-        for (i1 = 0; i1 < 1024*(tendrilFactor); ++i1)
+        for (i1 = 0; i1 < 1600*(tendrilFactor*vineTendrilFactor2); ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
             j = this.randomGenerator.nextInt(102)+1;
