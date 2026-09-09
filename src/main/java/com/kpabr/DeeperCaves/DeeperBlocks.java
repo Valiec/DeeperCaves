@@ -223,6 +223,8 @@ public class DeeperBlocks {
     public static Block sculkCatalyst;
     public static Block sculkGrass;
     public static Block sculkBone;
+    public static Block sculkBigBone;
+    public static Block sculkMarrow;
 
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
@@ -437,6 +439,8 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.sculkCatalyst, "sculk_catalyst");
         GameRegistry.registerBlock(DeeperBlocks.sculkGrass, "sculk_grass");
         GameRegistry.registerBlock(DeeperBlocks.sculkBone, ItemBlockSculkBone.class, "sculk_bone");
+        GameRegistry.registerBlock(DeeperBlocks.sculkBigBone, ItemBlockSculkBone.class, "sculk_big_bone");
+        GameRegistry.registerBlock(DeeperBlocks.sculkMarrow, "sculk_marrow");
     }
     public void registerBlocksOreDict()
     {
@@ -750,6 +754,8 @@ public class DeeperBlocks {
         DeeperBlocks.sculkCatalyst = new BlockSculkCatalyst(Material.sponge).setBlockTextureName("deepercaves:sculk_catalyst").setHardness(3.0F).setResistance(3.0F).setLightLevel(0.4F).setBlockName("sculkCatalyst").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkShrieker = new BlockSculkShrieker(Material.sponge).setBlockName("sculkShrieker").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkBone = new BlockSculkBone(Material.sponge, false).setBlockName("sculkBone").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkBigBone = new BlockSculkBigBone(Material.sponge, false).setBlockName("sculkBigBone").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkMarrow = new BlockSculkBase(Material.sponge, false).setBlockTextureName("deepercaves:sculk_marrow").setBlockName("sculkMarrow").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
         DeeperBlocks.sculkGrass = new BlockSculkGrass(Material.plants).setBlockName("sculkGrass").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
@@ -909,6 +915,8 @@ public class DeeperBlocks {
         DeeperBlocks.sculkKelp.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkGrass.setHarvestLevel("axe", 0);
         DeeperBlocks.sculkBone.setHarvestLevel("axe", 3);
+        DeeperBlocks.sculkBigBone.setHarvestLevel("axe", 3);
+        DeeperBlocks.sculkMarrow.setHarvestLevel("axe", 2);
     }
     
 }

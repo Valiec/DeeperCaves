@@ -10,11 +10,10 @@ public class ItemBlockSculkBone extends ItemBlock{
     {
         super(p_i45328_1_);
         setHasSubtypes(true);
-        setUnlocalizedName("sculkBone");
       
     }
     private final static String[] names = {
-        "", "vines",  "veins"
+        "", "_vines",  "_veins"
     };
     
     @Override
@@ -24,7 +23,7 @@ public class ItemBlockSculkBone extends ItemBlock{
     
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        return "sculk_bone_" + names[itemstack.getItemDamage()];
+        return this.getUnlocalizedName() + names[itemstack.getItemDamage()];
     }
     
 }

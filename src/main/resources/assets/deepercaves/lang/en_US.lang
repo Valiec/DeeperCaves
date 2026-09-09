@@ -271,3 +271,12 @@ tile.sculkCatalyst.name=Sculk Catalyst
 tile.sculkShrieker.name=Sculk Shrieker
 tile.sculkKelp.name=Sculk Stalk
 tile.sculkGrass.name=Sculk Hyphae
+
+tile.sculkBone.name=Sculk Bone
+tile.sculkBone_vines.name=Vined Sculk Bone
+tile.sculkBone_veins.name=Veined Sculk Bone
+
+tile.sculkBigBone.name=Large Sculk Bone
+tile.sculkBigBone_vines.name=Vined Large Sculk Bone
+tile.sculkBigBone_veins.name=Veined Large Sculk Bone
+tile.sculkMarrow.name=Sculk Marrow
