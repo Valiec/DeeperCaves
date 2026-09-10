@@ -6,6 +6,7 @@ import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
 import com.kpabr.DeeperCaves.entity.TileEntitySculkShrieker;
 import com.kpabr.DeeperCaves.item.ItemBlockCrystal;
 import com.kpabr.DeeperCaves.item.ItemBlockSculkBone;
+import com.kpabr.DeeperCaves.item.ItemBlockVanillaStone;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPressurePlate;
@@ -135,7 +136,8 @@ public class DeeperBlocks {
     public static Block abandonedCobblestoneStairs;
     public static Block abandonedStoneStairs;
     public static Block abandonedStoneBrickStairs;
-    
+
+    public static Block deepStone;
     public static Block deepStoneBrick;
     public static Block deepCobblestoneStairs;
     public static Block deepStoneStairs;
@@ -153,7 +155,7 @@ public class DeeperBlocks {
     
     public static Block forgottenStone;
 
-    public static Block deepStone;
+
     public static Block deepCobblestone;
     
     public static Block forgottenCobble;
@@ -225,6 +227,24 @@ public class DeeperBlocks {
     public static Block sculkBone;
     public static Block sculkBigBone;
     public static Block sculkMarrow;
+
+    public static Block granite;
+    public static Block graniteBrick;
+    public static Block graniteStairs;
+    public static Block polishedGraniteStairs;
+    public static Block graniteBrickStairs;
+
+    public static Block diorite;
+    public static Block dioriteBrick;
+    public static Block dioriteStairs;
+    public static Block polishedDioriteStairs;
+    public static Block dioriteBrickStairs;
+
+    public static Block andesite;
+    public static Block andesiteBrick;
+    public static Block andesiteStairs;
+    public static Block polishedAndesiteStairs;
+    public static Block andesiteBrickStairs;
 
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
@@ -441,6 +461,25 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.sculkBone, ItemBlockSculkBone.class, "sculk_bone");
         GameRegistry.registerBlock(DeeperBlocks.sculkBigBone, ItemBlockSculkBone.class, "sculk_big_bone");
         GameRegistry.registerBlock(DeeperBlocks.sculkMarrow, "sculk_marrow");
+
+
+        GameRegistry.registerBlock(DeeperBlocks.granite, ItemBlockVanillaStone.class, "granite");
+        GameRegistry.registerBlock(DeeperBlocks.graniteBrick, "granite_brick");
+        GameRegistry.registerBlock(DeeperBlocks.polishedGraniteStairs, "polished_granite_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.graniteStairs, "granite_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.graniteBrickStairs, "granite_brick_stairs");
+        
+        GameRegistry.registerBlock(DeeperBlocks.andesite, ItemBlockVanillaStone.class, "andesite");
+        GameRegistry.registerBlock(DeeperBlocks.andesiteBrick, "andesite_brick");
+        GameRegistry.registerBlock(DeeperBlocks.polishedAndesiteStairs, "polished_andesite_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.andesiteStairs, "andesite_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.andesiteBrickStairs, "andesite_brick_stairs");
+
+        GameRegistry.registerBlock(DeeperBlocks.diorite, ItemBlockVanillaStone.class, "diorite");
+        GameRegistry.registerBlock(DeeperBlocks.dioriteBrick, "diorite_brick");
+        GameRegistry.registerBlock(DeeperBlocks.polishedDioriteStairs, "polished_diorite_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.dioriteStairs, "diorite_stairs");
+        GameRegistry.registerBlock(DeeperBlocks.dioriteBrickStairs, "diorite_brick_stairs");
     }
     public void registerBlocksOreDict()
     {
@@ -542,6 +581,10 @@ public class DeeperBlocks {
         OreDictionary.registerOre("oreProfundium", DeeperBlocks.profundiumOre);
 
         OreDictionary.registerOre("blockRawRobustium", DeeperBlocks.robustiumRaw);
+
+        OreDictionary.registerOre("granite", DeeperBlocks.granite);
+        OreDictionary.registerOre("andesite", DeeperBlocks.andesite);
+        OreDictionary.registerOre("diorite", DeeperBlocks.diorite);
     }
 
     public void setupPortals()
@@ -760,6 +803,25 @@ public class DeeperBlocks {
 
         DeeperBlocks.sculkGrass = new BlockSculkGrass(Material.plants).setBlockName("sculkGrass").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
+        DeeperBlocks.granite = new BlockVanillaStone("granite").setBlockName("granite").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.graniteBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:granite_brick").setBlockName("graniteBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.graniteStairs = new BlockStairsBase(DeeperBlocks.granite, 0).setBlockName("graniteStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.polishedGraniteStairs = new BlockStairsBase(DeeperBlocks.granite, 1).setBlockName("polishedGraniteStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.graniteBrickStairs = new BlockStairsBase(DeeperBlocks.graniteBrick, 0).setBlockName("graniteBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.andesite = new BlockVanillaStone("andesite").setBlockName("andesite").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.andesiteBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:andesite_brick").setBlockName("andesiteBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.andesiteStairs = new BlockStairsBase(DeeperBlocks.andesite, 0).setBlockName("andesiteStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.polishedAndesiteStairs = new BlockStairsBase(DeeperBlocks.andesite, 1).setBlockName("polishedAndesiteStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.andesiteBrickStairs = new BlockStairsBase(DeeperBlocks.andesiteBrick, 0).setBlockName("andesiteBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.diorite = new BlockVanillaStone("diorite").setBlockName("diorite").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.dioriteBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:diorite_brick").setBlockName("dioriteBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.dioriteStairs = new BlockStairsBase(DeeperBlocks.diorite, 0).setBlockName("dioriteStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.polishedDioriteStairs = new BlockStairsBase(DeeperBlocks.diorite, 1).setBlockName("polishedDioriteStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.dioriteBrickStairs = new BlockStairsBase(DeeperBlocks.dioriteBrick, 0).setBlockName("dioriteBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+
     }
     public void setupHarvestLevels()
     {
@@ -917,6 +979,25 @@ public class DeeperBlocks {
         DeeperBlocks.sculkBone.setHarvestLevel("axe", 3);
         DeeperBlocks.sculkBigBone.setHarvestLevel("axe", 3);
         DeeperBlocks.sculkMarrow.setHarvestLevel("axe", 2);
+
+
+        DeeperBlocks.granite.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.polishedGraniteStairs.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.graniteBrick.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.graniteStairs.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.graniteBrickStairs.setHarvestLevel("pickaxe", 0);
+
+        DeeperBlocks.andesite.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.polishedAndesiteStairs.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.andesiteBrick.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.andesiteStairs.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.andesiteBrickStairs.setHarvestLevel("pickaxe", 0);
+
+        DeeperBlocks.diorite.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.polishedDioriteStairs.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.dioriteBrick.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.dioriteStairs.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.dioriteBrickStairs.setHarvestLevel("pickaxe", 0);
     }
     
 }

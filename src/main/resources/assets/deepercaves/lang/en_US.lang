@@ -280,3 +280,24 @@ tile.sculkBigBone.name=Large Sculk Bone
 tile.sculkBigBone_vines.name=Vined Large Sculk Bone
 tile.sculkBigBone_veins.name=Veined Large Sculk Bone
 tile.sculkMarrow.name=Sculk Marrow
+
+tile.granite.name=Granite
+tile.granite_polished.name=Polished Granite
+tile.graniteBrick.name=Granite Bricks
+tile.graniteStairs.name=Granite Stairs
+tile.polishedGraniteStairs.name=Polished Granite Stairs
+tile.graniteBrickStairs.name=Granite Brick Stairs
+
+tile.andesite.name=Andesite
+tile.andesite_polished.name=Polished Andesite
+tile.andesiteBrick.name=Andesite Bricks
+tile.andesiteStairs.name=Andesite Stairs
+tile.polishedAndesiteStairs.name=Polished Andesite Stairs
+tile.andesiteBrickStairs.name=Andesite Brick Stairs
+
+tile.diorite.name=Diorite
+tile.diorite_polished.name=Polished Diorite
+tile.dioriteBrick.name=Diorite Bricks
+tile.dioriteStairs.name=Diorite Stairs
+tile.polishedDioriteStairs.name=Polished Diorite Stairs
+tile.dioriteBrickStairs.name=Diorite Brick Stairs
