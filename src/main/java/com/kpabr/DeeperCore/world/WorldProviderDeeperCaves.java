@@ -8,11 +8,15 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
 {
@@ -26,7 +30,7 @@ public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(this.layer.biome, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerDeeper(this.getSeed() + this.layer.seedOffset, this.worldObj.getWorldInfo().getTerrainType(), this.layer, 0.5F);
         this.dimensionId = this.layer.dimID;
         this.hasNoSky = true;
     }

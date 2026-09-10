@@ -49,9 +49,11 @@ public class DeeperLayer {
 
     public int dimID;
 
-    //public List<DeeperBiomeInfo> biomes;
+    public Map<String, BiomeGenBase> biomes;
 
-    DeeperBiomeInfo biomeData;
+    //DeeperBiomeInfo biomeData;
+
+    List<DeeperBiomeInfo> biomeDatas;
 
     public BiPredicate<EntityPlayerMP, Boolean> canExitFrom;
 
@@ -59,7 +61,7 @@ public class DeeperLayer {
 
     public static Map<String, DeeperLayer> layerNames = new HashMap<String, DeeperLayer>();
 
-    public BiomeGenBase biome;
+    //public BiomeGenBase biome;
 
     public Class<? extends IChunkProvider> chunkProvider;
     public Class<? extends WorldProvider> worldProvider;
@@ -117,6 +119,8 @@ public class DeeperLayer {
     }
 
     public DeeperLayer(String layerName) {
+        this.biomes = new HashMap<>();
+        this.biomeDatas = new ArrayList<>();
         this.seedOffset = curSeedOffset;
         curSeedOffset++;
         this.layerName = layerName;
@@ -172,20 +176,15 @@ public class DeeperLayer {
     //    return this;
     //}
 
-    //public DeeperLayer addBiome(Class<? extends BiomeGenBase> biomeGen, int biomeID, BiomeManager.BiomeType biomeType) {
-   //     this.biomes.add(new DeeperBiomeInfo(biomeID, biomeGen, biomeType));
-   //     return this;
-   // }
-
-    public DeeperLayer setBiome(BiomeGenBase biomeGen, BiomeDictionary.Type biomeType) {
-        this.biomeData = new DeeperBiomeInfo(biomeGen, biomeType);
-        this.biome = biomeGen;
+    public DeeperLayer addBiome(BiomeGenBase biomeGen, BiomeDictionary.Type biomeType) {
+        this.biomeDatas.add(new DeeperBiomeInfo(biomeGen, biomeType));
+        this.biomes.put(biomeGen.biomeName, biomeGen);
         return this;
     }
 
     public DeeperLayer registerBiomes() {
-        if(this.biomeData != null) {
-            this.biomeData.register();
+        for(DeeperBiomeInfo biomeInfo : this.biomeDatas) {
+            biomeInfo.register();
         }
         return this;
     }
