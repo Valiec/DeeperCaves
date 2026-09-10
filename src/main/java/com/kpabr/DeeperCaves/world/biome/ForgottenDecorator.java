@@ -59,6 +59,17 @@ public class ForgottenDecorator extends DeeperBaseDecorator {
             }
         }
 
+        for (i1 = 0; i1 < 4800; ++i1)
+        {
+            i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+            j = this.randomGenerator.nextInt(234)+1;
+            k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+            if((this.currentWorld.getBlock(i, j-1, k) == DeeperBlocks.sculk || this.currentWorld.getBlock(i, j-1, k) == DeeperBlocks.sculkFlesh) && this.currentWorld.getBlock(i, j, k) == Blocks.air)
+            {
+                this.currentWorld.setBlock(i, j, k, DeeperBlocks.sculkGrass, 0, 2);
+            }
+        }
+
         for (i1 = 0; i1 < 320; ++i1)
         {
             i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
