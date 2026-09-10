@@ -2,6 +2,8 @@ package com.kpabr.DeeperCaves.world.gen.cave;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
 
+import com.kpabr.DeeperCaves.DeeperCaves;
+import com.kpabr.DeeperCaves.DeeperWorldgen;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -58,6 +60,31 @@ public class MapGenDeeperCavesFinalLabyrinth extends MapGenDeeperCavesDefault
                 {
                     data[index+1] = null;
                 }
+
         }
+
+        /*if(biome.biomeID == DeeperCaves.worldgen.finalLabyrinth.biomes.get("Final Labyrinth Sculk").biomeID) {
+
+            boolean sculkVein = false;
+
+            if ((index > 0 && data[index - 1] != null && data[index - 1] != DeeperBlocks.sculkVein) ||
+                    (index < 65535 && data[index + 1] != null && data[index + 1] != DeeperBlocks.sculkVein)) {
+                sculkVein = true;
+            } else if ((index > 256 && data[index - 256] != null && data[index - 256] != DeeperBlocks.sculkVein) ||
+                    (index < 65280 && data[index + 256] != null && data[index + 256] != DeeperBlocks.sculkVein)) {
+                sculkVein = true;
+            } else if ((index > 4096 && data[index - 4096] != null && data[index - 4096] != DeeperBlocks.sculkVein)
+                    || (index < 61440 && data[index + 4096] != null && data[index + 4096] != DeeperBlocks.sculkVein)) {
+                sculkVein = true;
+            }
+
+            if (this.rand.nextInt(5) != 0) {
+                sculkVein = false;
+            }
+
+            if (sculkVein && data[index] == null || data[index] == Blocks.air) {
+                data[index] = DeeperBlocks.sculkVein;
+            }
+        }*/
     }
 }

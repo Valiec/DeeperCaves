@@ -9,16 +9,16 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class BiomeGenFinalLabyrinth extends BiomeGenDeeperCavesBase
+public class BiomeGenFinalLabyrinthSculk extends BiomeGenDeeperCavesBase
 {
-    public BiomeGenFinalLabyrinth(int biomeID)
+    public BiomeGenFinalLabyrinthSculk(int biomeID)
     {
         super(biomeID);
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
         this.spawnableCaveCreatureList.clear();
-    	this.biomeName = "Final Labyrinth";
+    	this.biomeName = "Final Labyrinth Sculk";
         this.topBlock = Blocks.bedrock;
         this.fillerBlock = DeeperBlocks.fragmentedBedrock;
         this.theBiomeDecorator = new FinalLabyrinthDecorator();

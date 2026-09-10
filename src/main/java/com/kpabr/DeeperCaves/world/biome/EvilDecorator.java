@@ -26,8 +26,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
     public static NoiseGeneratorOctaves vineTendrilNoise2;
 
     @Override
-    protected void decorate(BiomeGenBase biome)
-    {
+    protected void decorate(BiomeGenBase biome) {
 
         //if(sculkNoise == null) { //don't have a world earlier, or this isn't the same world
         //    sculkNoise = new NoiseGeneratorPerlin(new Random(currentWorld.getSeed() + ((WorldProviderDeeperCaves)currentWorld.provider).layer.seedOffset), 1);
@@ -35,8 +34,13 @@ public class EvilDecorator extends DeeperBaseDecorator {
 
         //noiseField = sculkNoise.func_151600_a(noiseField, chunk_X, 0, chunk_Z, 1, 1, 0.15, 0.15, 1);
 
-        vineTendrilNoise = new NoiseGeneratorOctaves(new Random(this.currentWorld.getSeed() + ((WorldProviderDeeperCaves)this.currentWorld.provider).layer.seedOffset + 3), 1);
-        vineTendrilNoise2 = new NoiseGeneratorOctaves(new Random(this.currentWorld.getSeed() + ((WorldProviderDeeperCaves)this.currentWorld.provider).layer.seedOffset + 4), 1);
+        if (vineTendrilNoise == null) {
+            vineTendrilNoise = new NoiseGeneratorOctaves(new Random(this.currentWorld.getSeed() + ((WorldProviderDeeperCaves) this.currentWorld.provider).layer.seedOffset + 3), 1);
+        }
+
+        if (vineTendrilNoise2 == null) {
+            vineTendrilNoise2 = new NoiseGeneratorOctaves(new Random(this.currentWorld.getSeed() + ((WorldProviderDeeperCaves) this.currentWorld.provider).layer.seedOffset + 4), 1);
+        }
 
         int i;
 

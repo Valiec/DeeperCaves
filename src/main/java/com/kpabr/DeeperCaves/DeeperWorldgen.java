@@ -1,23 +1,8 @@
 package com.kpabr.DeeperCaves;
 
+import com.kpabr.DeeperCaves.world.biome.*;
 import com.kpabr.DeeperCore.DeeperBedrockUtils;
 import com.kpabr.DeeperCore.dimstack.DeeperLayer;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenAbandonedCaves;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenBedrockPlains;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenCompressed;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenCrystal;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenDarkness;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenDeepWorld;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenDrop;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenEvil;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenFarVoid;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenFinalLabyrinth;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenForgotten;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenLava;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenMaze;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenMutation;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenNearNether;
-import com.kpabr.DeeperCaves.world.biome.BiomeGenNearVoid;
 import com.kpabr.DeeperCaves.world.chunk.*;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderAbandonedCaves;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderBedrockPlains;
@@ -178,7 +163,8 @@ public class DeeperWorldgen {
 
         this.finalLabyrinth = new DeeperLayer("Final Labyrinth", DeeperConfig.finalLabyrinthDimID).setLayerBounds(0, 247).setUpperArrivalRange(57)
                 .setChunkProvider(ChunkProviderFinalLabyrinth.class).setWorldProvider(WorldProviderFinalLabyrinth.class)
-                .addBiome(new BiomeGenFinalLabyrinth(DeeperConfig.finalLabyrinthBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.fragmentedBedrock);
+                .setStoneBlock(DeeperBlocks.fragmentedBedrock).addBiome(new BiomeGenFinalLabyrinth(DeeperConfig.finalLabyrinthBiomeID), deeperCavesType)
+                .addBiome(new BiomeGenFinalLabyrinthSculk(DeeperConfig.finalLabyrinthSculkBiomeID), deeperCavesType);
 
         DeeperLayer.registerAllLayers();
 

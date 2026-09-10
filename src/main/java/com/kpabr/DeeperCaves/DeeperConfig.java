@@ -53,6 +53,7 @@ public class DeeperConfig {
     public static int forgottenBiomeID;
     public static int evilBiomeID;
     public static int finalLabyrinthBiomeID;
+    public static int finalLabyrinthSculkBiomeID;
 
     public static int bedrockPlainsFloorHeight;
     public static int bedrockPlainsCeilingHeight;
@@ -113,6 +114,7 @@ public class DeeperConfig {
         forgottenBiomeID = config.getInt("Forgotten Biome ID", this.CATEGORY_BIOME_IDS, 183, 0, 65536, "");
         evilBiomeID = config.getInt("Evil Biome ID", this.CATEGORY_BIOME_IDS, 184, 0, 65536, "");
         finalLabyrinthBiomeID = config.getInt("Final Labyrinth Biome ID", this.CATEGORY_BIOME_IDS, 185, 0, 65536, "");
+        finalLabyrinthSculkBiomeID = config.getInt("Final Labyrinth Sculk Biome ID", this.CATEGORY_BIOME_IDS, 186, 0, 65536, "");
         
         //------------------
         

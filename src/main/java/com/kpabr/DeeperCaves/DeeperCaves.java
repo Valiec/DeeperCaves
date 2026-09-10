@@ -8,6 +8,7 @@ import java.util.UUID;
 import com.kpabr.DeeperCaves.version.DeeperVersionChecker;
 import com.kpabr.DeeperCaves.version.VersionCommand;
 import com.kpabr.DeeperCaves.world.biome.EvilDecorator;
+import com.kpabr.DeeperCaves.world.biome.FinalLabyrinthDecorator;
 import com.kpabr.DeeperCore.dimstack.DeeperTeleporter;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.relauncher.Side;
@@ -119,6 +120,8 @@ public class DeeperCaves
         EvilDecorator.sculkNoise = null;
         EvilDecorator.vineTendrilNoise = null;
         EvilDecorator.vineTendrilNoise2 = null;
+        FinalLabyrinthDecorator.sculkNoise = null;
+        FinalLabyrinthDecorator.boneNoise = null;
 
     }
 
