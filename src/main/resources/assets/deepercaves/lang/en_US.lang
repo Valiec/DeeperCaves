@@ -306,3 +306,6 @@ tile.basalt.name=Basalt
 tile.basalt_polished.name=Polished Basalt
 
 tile.deepslate.name=Deepslate
+tile.deepslateBricks.name=Deepslate Bricks
+tile.deepslateTiles.name=Deepslate Tiles
+tile.polishedDeepslate.name=Polished Deepslate

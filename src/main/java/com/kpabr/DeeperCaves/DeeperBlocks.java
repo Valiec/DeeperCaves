@@ -250,6 +250,10 @@ public class DeeperBlocks {
     public static Block basalt;
     public static Block deepslate;
 
+    public static Block deepslateBricks;
+    public static Block deepslateTiles;
+    public static Block polishedDeepslate;
+
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
         GameRegistry.registerTileEntity(TileEntitySculkShrieker.class, "sculkShrieker");
@@ -488,6 +492,9 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.basalt, ItemBlockBasalt.class, "basalt");
 
         GameRegistry.registerBlock(DeeperBlocks.deepslate, "deepslate");
+        GameRegistry.registerBlock(DeeperBlocks.deepslateBricks, "deepslate_bricks");
+        GameRegistry.registerBlock(DeeperBlocks.deepslateTiles, "deepslate_tiles");
+        GameRegistry.registerBlock(DeeperBlocks.polishedDeepslate, "polished_deepslate");
     }
 
     public void registerBlocksOreDict()
@@ -836,6 +843,9 @@ public class DeeperBlocks {
         DeeperBlocks.basalt = new BlockBasaltColumn(Material.rock, false).setBlockName("basalt").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
         DeeperBlocks.deepslate = new BlockDeepslate(Material.rock, false).setBlockName("deepslate").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.deepslateBricks = new BlockBase(Material.rock).setBlockTextureName("deepercaves:deepslate_bricks").setBlockName("deepslateBricks").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.deepslateTiles = new BlockBase(Material.rock).setBlockTextureName("deepercaves:deepslate_tiles").setBlockName("deepslateTiles").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.polishedDeepslate = new BlockBase(Material.rock).setBlockTextureName("deepercaves:polished_deepslate").setBlockName("polishedDeepslate").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
     }
     public void setupHarvestLevels()
