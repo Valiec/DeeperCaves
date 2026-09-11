@@ -248,6 +248,7 @@ public class DeeperBlocks {
     public static Block andesiteBrickStairs;
 
     public static Block basalt;
+    public static Block deepslate;
 
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
@@ -484,7 +485,9 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.dioriteStairs, "diorite_stairs");
         GameRegistry.registerBlock(DeeperBlocks.dioriteBrickStairs, "diorite_brick_stairs");
 
-        GameRegistry.registerBlock(DeeperBlocks.basalt, ItemBlockBasalt.class, "sculk_basalt");
+        GameRegistry.registerBlock(DeeperBlocks.basalt, ItemBlockBasalt.class, "basalt");
+
+        GameRegistry.registerBlock(DeeperBlocks.deepslate, "deepslate");
     }
 
     public void registerBlocksOreDict()
@@ -591,6 +594,9 @@ public class DeeperBlocks {
         OreDictionary.registerOre("granite", DeeperBlocks.granite);
         OreDictionary.registerOre("andesite", DeeperBlocks.andesite);
         OreDictionary.registerOre("diorite", DeeperBlocks.diorite);
+
+        OreDictionary.registerOre("deepslate", DeeperBlocks.deepslate);
+        OreDictionary.registerOre("basalt", DeeperBlocks.basalt);
     }
 
     public void setupPortals()
@@ -827,7 +833,9 @@ public class DeeperBlocks {
         DeeperBlocks.polishedDioriteStairs = new BlockStairsBase(DeeperBlocks.diorite, 1).setBlockName("polishedDioriteStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.dioriteBrickStairs = new BlockStairsBase(DeeperBlocks.dioriteBrick, 0).setBlockName("dioriteBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-        DeeperBlocks.basalt = new BlockBasaltColumn(Material.sponge, false).setBlockName("basalt").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.basalt = new BlockBasaltColumn(Material.rock, false).setBlockName("basalt").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.deepslate = new BlockDeepslate(Material.rock, false).setBlockName("deepslate").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
     }
     public void setupHarvestLevels()
@@ -1007,6 +1015,7 @@ public class DeeperBlocks {
         DeeperBlocks.dioriteBrickStairs.setHarvestLevel("pickaxe", 0);
 
         DeeperBlocks.basalt.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.deepslate.setHarvestLevel("pickaxe", 0);
     }
     
 }

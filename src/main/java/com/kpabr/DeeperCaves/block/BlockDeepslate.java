@@ -17,43 +17,31 @@ import net.minecraft.world.IBlockAccess;
 import java.util.List;
 import java.util.Random;
 
-public class BlockBasaltColumn extends BlockRotatedPillar {
+public class BlockDeepslate extends BlockRotatedPillar {
 
     public IIcon side;
     public IIcon end;
-    public IIcon sidePolished;
-    public IIcon endPolished;
 
-    public IIcon[] sides;
-    public IIcon[] ends;
-
-
-    public BlockBasaltColumn(Material sponge, boolean rotating) {
+    public BlockDeepslate(Material sponge, boolean rotating) {
         super(sponge);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.side = iconRegister.registerIcon("DeeperCaves:basalt_side");
-        this.end = iconRegister.registerIcon("DeeperCaves:basalt_top");
-        this.sidePolished = iconRegister.registerIcon("DeeperCaves:polished_basalt_side");
-        this.endPolished = iconRegister.registerIcon("DeeperCaves:polished_basalt_top");
-
-        this.sides = new IIcon[] {this.side, this.sidePolished};
-        this.ends = new IIcon[] {this.end, this.endPolished};
-
+        this.side = iconRegister.registerIcon("DeeperCaves:deepslate");
+        this.end = iconRegister.registerIcon("DeeperCaves:deepslate_top");
     }
 
     @Override
     protected IIcon getSideIcon(int p_150163_1_) {
-        return this.sides[p_150163_1_ & 3];
+        return this.side;
     }
 
     @SideOnly(Side.CLIENT)
     protected IIcon getTopIcon(int p_150161_1_)
     {
-        return this.ends[p_150161_1_ & 3];
+        return this.end;
     }
 
     @Override
@@ -67,13 +55,4 @@ public class BlockBasaltColumn extends BlockRotatedPillar {
     {
         return null;
     }
-
-    public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_)
-    {
-        for (int i = 0; i<2; i++)
-        {
-            p_149666_3_.add(new ItemStack(p_149666_1_, 1, i));
-        }
-    }
-
 }
