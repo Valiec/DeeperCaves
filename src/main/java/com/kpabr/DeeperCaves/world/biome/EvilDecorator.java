@@ -172,7 +172,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
             k = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
             if(this.currentWorld.getBlock(i, j-1, k) == DeeperBlocks.sculk && this.currentWorld.getBlock(i, j, k) == Blocks.air)
             {
-                this.currentWorld.setBlock(i, j, k, DeeperBlocks.sculkShrieker, 0, 2);
+                this.currentWorld.setBlock(i, j, k, DeeperBlocks.sculkShrieker, 2, 2);
             }
         }
 
