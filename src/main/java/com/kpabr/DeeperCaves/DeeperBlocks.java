@@ -257,6 +257,15 @@ public class DeeperBlocks {
     public static Block basaltBricks;
     public static Block smoothBasalt;
 
+    public static Block lirilvenBrick;
+    public static Block lirilvenPillar;
+    public static Block lirilvenBrickChiseled;
+    public static Block lirilvenPillarReinforced;
+    public static Block lirilvenStonePolished;
+
+    public static Block prisciumBulb;
+    public static Block prisciumGrate;
+
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
         GameRegistry.registerTileEntity(TileEntitySculkShrieker.class, "sculkShrieker");
@@ -501,6 +510,15 @@ public class DeeperBlocks {
 
         GameRegistry.registerBlock(DeeperBlocks.smoothBasalt, "smooth_basalt");
         GameRegistry.registerBlock(DeeperBlocks.basaltBricks, "basalt_bricks");
+
+        GameRegistry.registerBlock(DeeperBlocks.lirilvenBrick, "lirilven_brick");
+        GameRegistry.registerBlock(DeeperBlocks.lirilvenPillar, "lirilven_pillar");
+        GameRegistry.registerBlock(DeeperBlocks.lirilvenBrickChiseled, "lirilven_brick_chiseled");
+        GameRegistry.registerBlock(DeeperBlocks.lirilvenPillarReinforced, "lirilven_pillar_reinforced");
+        GameRegistry.registerBlock(DeeperBlocks.lirilvenStonePolished, "lirilven_stone_polished");
+
+        GameRegistry.registerBlock(DeeperBlocks.prisciumBulb, "priscium_bulb");
+        GameRegistry.registerBlock(DeeperBlocks.prisciumGrate, "priscium_grate");
     }
 
     public void registerBlocksOreDict()
@@ -857,6 +875,15 @@ public class DeeperBlocks {
         DeeperBlocks.smoothBasalt = new BlockBase(Material.rock).setBlockTextureName("deepercaves:smooth_basalt").setBlockName("smoothBasalt").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.basaltBricks = new BlockBase(Material.rock).setBlockTextureName("deepercaves:basalt_bricks").setBlockName("basaltBricks").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
+        DeeperBlocks.lirilvenBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:lirilven_brick").setBlockName("lirilvenBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.lirilvenPillar = new BlockColumn(Material.rock, "lirilven_pillar").setBlockName("lirilvenPillar").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.lirilvenBrickChiseled = new BlockColumn(Material.rock, "chiseled_lirilven_brick").setBlockName("lirilvenBrickChiseled").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.lirilvenPillarReinforced = new BlockColumn(Material.rock, "reinforced_lirilven_pillar").setBlockName("lirilvenPillarReinforced").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.lirilvenStonePolished = new BlockBase(Material.rock).setBlockTextureName("deepercaves:polished_lirilven_stone").setBlockName("lirilvenStonePolished").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.prisciumBulb = new BlockBase(Material.iron).setBlockTextureName("deepercaves:priscium_bulb").setBlockName("prisciumGrate").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.prisciumGrate = new BlockTransparentBase(Material.iron).setBlockTextureName("deepercaves:priscium_grate").setBlockName("prisciumGrate").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
     }
     public void setupHarvestLevels()
     {
@@ -1042,6 +1069,16 @@ public class DeeperBlocks {
         DeeperBlocks.deepslateBricks.setHarvestLevel("pickaxe", 0);
         DeeperBlocks.deepslateTiles.setHarvestLevel("pickaxe", 0);
         DeeperBlocks.polishedDeepslate.setHarvestLevel("pickaxe", 0);
+
+        DeeperBlocks.lirilvenBrick.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.lirilvenPillar.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.lirilvenBrickChiseled.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.lirilvenPillarReinforced.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.lirilvenStonePolished.setHarvestLevel("pickaxe", 0);
+
+        DeeperBlocks.prisciumBulb.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.prisciumGrate.setHarvestLevel("pickaxe", 0);
+
     }
     
 }
