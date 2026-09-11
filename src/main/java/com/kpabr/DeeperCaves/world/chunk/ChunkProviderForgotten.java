@@ -23,7 +23,7 @@ public class ChunkProviderForgotten extends ChunkProviderDeeperCavesBase
 
     double[] noiseField = new double[59392];
 
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 150, 0,   0, 36,  7, true,  false, DeeperBlocks.forgottenStone);
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 150, 0,   0, 36,  7, true,  false, DeeperBlocks.forgottenStone).setSmoothCutoffLower(true);
     private MapGenBase caveGenerator2 = new MapGenDeeperCavesDefault(false, 1.0F,  2.5D, 255, 0, 150, 47,  4, true,  false, DeeperBlocks.forgottenStone);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5, DeeperBlocks.forgottenStone);
 

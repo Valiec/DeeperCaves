@@ -32,7 +32,7 @@ import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.Ev
 public class ChunkProviderAbandonedCaves extends ChunkProviderDeeperCavesBase
 {
 
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 120, 0,   0, 36,  7, true,  false, DeeperBlocks.abandonedStone);
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 120, 0,   0, 36,  7, true,  false, DeeperBlocks.abandonedStone).setSmoothCutoffLower(true);
     private MapGenBase caveGenerator2 = new MapGenDeeperCavesDefault(false, 1.0F,  2.5D, 210, 0, 100, 47,  4, true,  false, DeeperBlocks.abandonedStone);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(184, 13, 7.5, 5.5, DeeperBlocks.abandonedStone);
 

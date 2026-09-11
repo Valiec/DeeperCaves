@@ -14,7 +14,7 @@ import net.minecraft.world.gen.MapGenBase;
 
 public class ChunkProviderDarkness extends ChunkProviderDeeperCavesBase
 {
-    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 150, 0,   0, 36,  7, true,  false, DeeperBlocks.darkStone);
+    private MapGenBase caveGenerator = new MapGenDeeperCavesDefault(true,  1.0F, 12.0D, 150, 0,   0, 36,  7, true,  false, DeeperBlocks.darkStone).setSmoothCutoffLower(true);
     private MapGenBase ravineGenerator = new MapGenDeeperRavine(234, 13, 7.5, 5.5, DeeperBlocks.darkStone);
 
     public ChunkProviderDarkness(World par1World, long par2, boolean par4)

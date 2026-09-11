@@ -2,12 +2,15 @@ package com.kpabr.DeeperCore.world.cave;
 
 import java.util.Random;
 
+import com.kpabr.DeeperCore.dimstack.DeeperLayer;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
+import net.minecraft.world.gen.NoiseGenerator;
+import net.minecraft.world.gen.NoiseGeneratorOctaves;
 
 public class MapGenDeeperCavesDefault extends MapGenBase
 {
@@ -24,6 +27,14 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     public boolean doSkewHeight;
     public Block carvableBlock;
     public int steepChance;
+    public boolean smoothCutoffLower;
+    public boolean smoothCutoffUpper;
+
+    public NoiseGeneratorOctaves noiseGen;
+    public int noiseChunkX;
+    public int noiseChunkZ;
+
+    public double[] noiseField = new double[256];
 
     public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight, Block carvableBlock) {
         this(floorCutoff, widthDivisor, widthMin, heightMax, heightSkewMin, heightMin, startCountMax, startSkipChance, doClumpCaves, doSkewHeight, carvableBlock, 6);
@@ -43,6 +54,18 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         this.doSkewHeight = doSkewHeight;
         this.carvableBlock = carvableBlock;
         this.steepChance = steepChance;
+        this.smoothCutoffLower = false;
+
+    }
+
+    public MapGenDeeperCavesDefault setSmoothCutoffLower(boolean smoothCutoffLower) {
+        this.smoothCutoffLower = smoothCutoffLower;
+        return this;
+    }
+
+    public MapGenDeeperCavesDefault setSmoothCutoffUpper(boolean smoothCutoffs) {
+        this.smoothCutoffUpper = smoothCutoffs;
+        return this;
     }
 
     public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin) {
@@ -279,6 +302,17 @@ public class MapGenDeeperCavesDefault extends MapGenBase
 
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
+        if(this.noiseGen == null && this.smoothCutoffLower) {
+            this.noiseGen = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + DeeperLayer.layersForDimId.get(this.worldObj.provider.dimensionId).seedOffset), 8);
+        }
+
+        if(this.smoothCutoffLower && (p_151538_4_ != this.noiseChunkX || p_151538_5_ != this.noiseChunkZ)) {
+            this.noiseField = this.noiseGen.generateNoiseOctaves(noiseField, p_151538_4_ * 16, 0, p_151538_5_ * 16, 16, 1, 16, 1.5, 0, 1.5);
+            this.noiseChunkX = p_151538_4_;
+            this.noiseChunkZ = p_151538_5_;
+        }
+
+
         int i1 = getCaveStartCount();
 
         if (this.rand.nextInt(this.startSkipChance) != 0)
@@ -352,28 +386,28 @@ public class MapGenDeeperCavesDefault extends MapGenBase
      * @param chunkZ Chunk Y position
      * @param foundTop True if we've encountered the biome's top block. Ideally if we've broken the surface.
      */
-    protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop)
-    {
+    protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop) {
         BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
-        Block top    = (isExceptionBiome(biome) ? Blocks.grass : biome.topBlock);
-        Block filler = (isExceptionBiome(biome) ? Blocks.dirt  : biome.fillerBlock);
-        Block block  = data[index];
+        Block top = (isExceptionBiome(biome) ? Blocks.grass : biome.topBlock);
+        Block filler = (isExceptionBiome(biome) ? Blocks.dirt : biome.fillerBlock);
+        Block block = data[index];
 
-        if (block == this.carvableBlock || block == filler || block == top)
-        {
-            //if (y < 10)
-            //{
+        if (!this.smoothCutoffLower || (this.noiseField[z + x * 16] * 0.067) + 10 < y) {
+
+            if (block == this.carvableBlock || block == filler || block == top) {
+                //if (y < 10)
+                //{
                 //data[index] = Blocks.lava;
-            //}
-            //else
-            //{
+                //}
+                //else
+                //{
                 data[index] = null;
 
-                if (foundTop && (index & 255) != 0 && data[index - 1] == filler)
-                {
+                if (foundTop && (index & 255) != 0 && data[index - 1] == filler) {
                     data[index - 1] = top;
                 }
-            //}
+                //}
+            }
         }
     }
 }
