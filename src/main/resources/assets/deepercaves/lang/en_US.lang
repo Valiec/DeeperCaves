@@ -319,4 +319,6 @@ tile.lirilvenBrickChiseled.name=Chiseled Lirilven Brick
 tile.lirilvenPillarReinforced.name=Reinforced Lirilven Pillar
 tile.lirilvenStonePolished.name=Polished Lirilven Stone
 tile.prisciumBulb.name=Priscium Bulb
+tile.prisciumBulbLit.name=Lit Priscium Bulb
 tile.prisciumGrate.name=Priscium Grate
+tile.priscium_trapdoor.name=Priscium Trapdoor

@@ -264,7 +264,10 @@ public class DeeperBlocks {
     public static Block lirilvenStonePolished;
 
     public static Block prisciumBulb;
+    public static Block prisciumBulbLit;
     public static Block prisciumGrate;
+
+    public static Block prisciumTrapdoor;
 
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
@@ -518,7 +521,9 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.lirilvenStonePolished, "lirilven_stone_polished");
 
         GameRegistry.registerBlock(DeeperBlocks.prisciumBulb, "priscium_bulb");
+        GameRegistry.registerBlock(DeeperBlocks.prisciumBulbLit, "priscium_bulb_lit");
         GameRegistry.registerBlock(DeeperBlocks.prisciumGrate, "priscium_grate");
+        GameRegistry.registerBlock(DeeperBlocks.prisciumTrapdoor, "priscium_trapdoor");
     }
 
     public void registerBlocksOreDict()
@@ -881,8 +886,12 @@ public class DeeperBlocks {
         DeeperBlocks.lirilvenPillarReinforced = new BlockColumn(Material.rock, "reinforced_lirilven_pillar").setBlockName("lirilvenPillarReinforced").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.lirilvenStonePolished = new BlockBase(Material.rock).setBlockTextureName("deepercaves:polished_lirilven_stone").setBlockName("lirilvenStonePolished").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-        DeeperBlocks.prisciumBulb = new BlockBase(Material.iron).setBlockTextureName("deepercaves:priscium_bulb").setBlockName("prisciumGrate").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.prisciumBulb = new BlockPrisciumBulb(Material.iron, false).setBlockName("prisciumBulb").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.prisciumBulbLit = new BlockPrisciumBulb(Material.iron, true).setLightLevel(1.0F).setBlockName("prisciumBulbLit").setHardness(2.5F).setResistance(12.0F);
         DeeperBlocks.prisciumGrate = new BlockTransparentBase(Material.iron).setBlockTextureName("deepercaves:priscium_grate").setBlockName("prisciumGrate").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
+        DeeperBlocks.prisciumTrapdoor = new BlockTrapdoorBase(Material.iron).setBlockTextureName("deepercaves:priscium_trapdoor").setBlockName("priscium_trapdoor").setLightOpacity(0).setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
 
     }
     public void setupHarvestLevels()
@@ -1077,6 +1086,7 @@ public class DeeperBlocks {
         DeeperBlocks.lirilvenStonePolished.setHarvestLevel("pickaxe", 0);
 
         DeeperBlocks.prisciumBulb.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.prisciumBulbLit.setHarvestLevel("pickaxe", 0);
         DeeperBlocks.prisciumGrate.setHarvestLevel("pickaxe", 0);
 
     }
