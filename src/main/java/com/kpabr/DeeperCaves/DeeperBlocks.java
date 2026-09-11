@@ -254,6 +254,9 @@ public class DeeperBlocks {
     public static Block deepslateTiles;
     public static Block polishedDeepslate;
 
+    public static Block basaltBricks;
+    public static Block smoothBasalt;
+
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
         GameRegistry.registerTileEntity(TileEntitySculkShrieker.class, "sculkShrieker");
@@ -495,6 +498,9 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.deepslateBricks, "deepslate_bricks");
         GameRegistry.registerBlock(DeeperBlocks.deepslateTiles, "deepslate_tiles");
         GameRegistry.registerBlock(DeeperBlocks.polishedDeepslate, "polished_deepslate");
+
+        GameRegistry.registerBlock(DeeperBlocks.smoothBasalt, "smooth_basalt");
+        GameRegistry.registerBlock(DeeperBlocks.basaltBricks, "basalt_bricks");
     }
 
     public void registerBlocksOreDict()
@@ -604,6 +610,7 @@ public class DeeperBlocks {
 
         OreDictionary.registerOre("deepslate", DeeperBlocks.deepslate);
         OreDictionary.registerOre("basalt", DeeperBlocks.basalt);
+        OreDictionary.registerOre("basalt", DeeperBlocks.smoothBasalt);
     }
 
     public void setupPortals()
@@ -847,6 +854,9 @@ public class DeeperBlocks {
         DeeperBlocks.deepslateTiles = new BlockBase(Material.rock).setBlockTextureName("deepercaves:deepslate_tiles").setBlockName("deepslateTiles").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.polishedDeepslate = new BlockBase(Material.rock).setBlockTextureName("deepercaves:polished_deepslate").setBlockName("polishedDeepslate").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
+        DeeperBlocks.smoothBasalt = new BlockBase(Material.rock).setBlockTextureName("deepercaves:smooth_basalt").setBlockName("smoothBasalt").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.basaltBricks = new BlockBase(Material.rock).setBlockTextureName("deepercaves:basalt_bricks").setBlockName("basaltBricks").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+
     }
     public void setupHarvestLevels()
     {
@@ -1025,7 +1035,13 @@ public class DeeperBlocks {
         DeeperBlocks.dioriteBrickStairs.setHarvestLevel("pickaxe", 0);
 
         DeeperBlocks.basalt.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.smoothBasalt.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.basaltBricks.setHarvestLevel("pickaxe", 0);
+
         DeeperBlocks.deepslate.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.deepslateBricks.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.deepslateTiles.setHarvestLevel("pickaxe", 0);
+        DeeperBlocks.polishedDeepslate.setHarvestLevel("pickaxe", 0);
     }
     
 }
