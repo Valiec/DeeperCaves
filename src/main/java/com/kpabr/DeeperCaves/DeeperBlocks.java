@@ -4,6 +4,7 @@ import com.kpabr.DeeperCaves.block.*;
 
 import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
 import com.kpabr.DeeperCaves.entity.TileEntitySculkShrieker;
+import com.kpabr.DeeperCaves.item.ItemBlockBasalt;
 import com.kpabr.DeeperCaves.item.ItemBlockCrystal;
 import com.kpabr.DeeperCaves.item.ItemBlockSculkBone;
 import com.kpabr.DeeperCaves.item.ItemBlockVanillaStone;
@@ -246,6 +247,8 @@ public class DeeperBlocks {
     public static Block polishedAndesiteStairs;
     public static Block andesiteBrickStairs;
 
+    public static Block basalt;
+
     public void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, "sculkSensor");
         GameRegistry.registerTileEntity(TileEntitySculkShrieker.class, "sculkShrieker");
@@ -480,7 +483,10 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.polishedDioriteStairs, "polished_diorite_stairs");
         GameRegistry.registerBlock(DeeperBlocks.dioriteStairs, "diorite_stairs");
         GameRegistry.registerBlock(DeeperBlocks.dioriteBrickStairs, "diorite_brick_stairs");
+
+        GameRegistry.registerBlock(DeeperBlocks.basalt, ItemBlockBasalt.class, "sculk_basalt");
     }
+
     public void registerBlocksOreDict()
     {
     	OreDictionary.registerOre("oreSilver", DeeperBlocks.silverOre);
@@ -821,6 +827,7 @@ public class DeeperBlocks {
         DeeperBlocks.polishedDioriteStairs = new BlockStairsBase(DeeperBlocks.diorite, 1).setBlockName("polishedDioriteStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.dioriteBrickStairs = new BlockStairsBase(DeeperBlocks.dioriteBrick, 0).setBlockName("dioriteBrickStairs").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
+        DeeperBlocks.basalt = new BlockBasaltColumn(Material.sponge, false).setBlockName("basalt").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
     }
     public void setupHarvestLevels()
@@ -998,6 +1005,8 @@ public class DeeperBlocks {
         DeeperBlocks.dioriteBrick.setHarvestLevel("pickaxe", 0);
         DeeperBlocks.dioriteStairs.setHarvestLevel("pickaxe", 0);
         DeeperBlocks.dioriteBrickStairs.setHarvestLevel("pickaxe", 0);
+
+        DeeperBlocks.basalt.setHarvestLevel("pickaxe", 0);
     }
     
 }

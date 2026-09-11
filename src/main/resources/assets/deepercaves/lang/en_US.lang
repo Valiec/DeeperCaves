@@ -301,3 +301,6 @@ tile.dioriteBrick.name=Diorite Bricks
 tile.dioriteStairs.name=Diorite Stairs
 tile.polishedDioriteStairs.name=Polished Diorite Stairs
 tile.dioriteBrickStairs.name=Diorite Brick Stairs
+
+tile.basalt.name=Basalt
+tile.basalt_polished.name=Polished Basalt
