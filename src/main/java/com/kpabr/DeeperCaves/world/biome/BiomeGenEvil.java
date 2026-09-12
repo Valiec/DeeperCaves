@@ -28,7 +28,6 @@ public class BiomeGenEvil extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.soulStone, world, random, x, z, 16, 16, 25, 180, 0, 255, DeeperBlocks.forgottenStone);
         LayerOregen.addOre(DeeperBlocks.corruptedSoulStone, world, random, x, z, 16, 16, 16, 120, 0, 255, DeeperBlocks.forgottenStone);
         LayerOregen.addOre(DeeperBlocks.cryingObsidian, world, random, x, z, 16, 16, 14, 92, 0, 255, DeeperBlocks.forgottenStone);
-        LayerOregen.addOre(DeeperBlocks.prisciumOre, world, random, x, z, 16, 16, 6, 67, 0, 255, DeeperBlocks.forgottenStone);
         LayerOregen.addOre(DeeperBlocks.profundiumOre, world, random, x, z, 16, 16, 3, 50, 0, 255, DeeperBlocks.forgottenStone);
     }
 }

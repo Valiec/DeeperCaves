@@ -38,6 +38,10 @@ public class BiomeGenDeepWorld extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.dredstoneOre, world, random, x, z, 16, 16, 8, 108, 0, 255, DeeperBlocks.abandonedStone);
         LayerOregen.addOre(DeeperBlocks.ddiamondOre, world, random, x, z, 16, 16, 8, 13, 0, 255, DeeperBlocks.abandonedStone);
         LayerOregen.addOre(DeeperBlocks.demeraldOre, world, random, x, z, 16, 16, 3, 8, 0, 255, DeeperBlocks.abandonedStone);
+
+        LayerOregen.addOre(DeeperBlocks.dvesperiteOre, world, random, x, z, 16, 16, 6, 80, 0, 255, DeeperBlocks.abandonedStone);
+
+        LayerOregen.addOre(DeeperBlocks.dtenebriumOre, world, random, x, z, 16, 16, 8, 8, 0, 255, DeeperBlocks.abandonedStone);
     }
     
 }

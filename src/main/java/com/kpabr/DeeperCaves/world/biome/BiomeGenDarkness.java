@@ -33,6 +33,8 @@ public class BiomeGenDarkness extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.dddiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperBlocks.darkStone);
         LayerOregen.addOre(DeeperBlocks.ddemeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperBlocks.darkStone);
 
-        LayerOregen.addOre(DeeperBlocks.vesperiteOre, world, random, x, z, 16, 16, 6, 80, 0, 255, DeeperBlocks.darkStone);
+        LayerOregen.addOre(DeeperBlocks.vesperiteOre, world, random, x, z, 16, 16, 6, 40, 0, 255, DeeperBlocks.darkStone);
+
+        LayerOregen.addOre(DeeperBlocks.ddevanesciteOre, world, random, x, z, 16, 16, 6, 80, 0, 255, DeeperBlocks.darkStone);
     }
 }

@@ -19,7 +19,8 @@ public class DeeperBlocks {
 
 
     /*Block declarations*/
-    
+
+    public static Block ddsilverOre;
     public static Block silverOre;
     public static Block dropPortal;
     public static Block returnPortal;
@@ -113,7 +114,8 @@ public class DeeperBlocks {
     public static Block aquamarineBlock;
     
     public static Block ametrineBlock;
-    
+
+    public static Block dtenebriumOre;
     public static Block tenebriumOre;
     public static Block tenebriumBlock;
     
@@ -127,7 +129,8 @@ public class DeeperBlocks {
     
     public static Block darkStone;
     public static Block darkCobblestone;
-    
+
+    public static Block dvesperiteOre;
     public static Block vesperiteOre;
     
     public static Block abandonedStone;
@@ -174,11 +177,13 @@ public class DeeperBlocks {
     public static Block soulStone;
     
     public static Block corruptedSoulStone;
-    
+
+    public static Block dprisciumOre;
     public static Block prisciumOre;
     
     public static Block prisciumBlock;
-    
+
+    public static Block ddevanesciteOre;
 	public static Block evanesciteOre;
 	
     public static Block evanesciteBlock;
@@ -304,6 +309,7 @@ public class DeeperBlocks {
     public void registerBlocks()
     {
         GameRegistry.registerBlock(DeeperBlocks.silverOre, "silver_ore");
+        GameRegistry.registerBlock(DeeperBlocks.ddsilverOre, "dark_silver_ore");
         
         GameRegistry.registerBlock(DeeperBlocks.sapphireOre, "sapphire_ore");
         GameRegistry.registerBlock(DeeperBlocks.aquamarineOre, "aquamarine_ore");
@@ -361,7 +367,8 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.sapphireBlock, "sapphire_block");
         GameRegistry.registerBlock(DeeperBlocks.aquamarineBlock, "aquamarine_block");
         GameRegistry.registerBlock(DeeperBlocks.ametrineBlock, "ametrine_block");
-        
+
+        GameRegistry.registerBlock(DeeperBlocks.dtenebriumOre, "abandoned_caves_tenebrium_ore");
         GameRegistry.registerBlock(DeeperBlocks.tenebriumOre, "tenebrium_ore"); 
         GameRegistry.registerBlock(DeeperBlocks.tenebriumBlock, "tenebrium_block");
         
@@ -375,8 +382,9 @@ public class DeeperBlocks {
         
         GameRegistry.registerBlock(DeeperBlocks.darkStone, "dark_stone");
         GameRegistry.registerBlock(DeeperBlocks.darkCobblestone, "dark_cobblestone");
-        
-        GameRegistry.registerBlock(DeeperBlocks.vesperiteOre, "vesperite_ore");
+
+        GameRegistry.registerBlock(DeeperBlocks.dvesperiteOre, "vesperite_ore");
+        GameRegistry.registerBlock(DeeperBlocks.vesperiteOre, "dark_vesperite_ore");
         
         GameRegistry.registerBlock(DeeperBlocks.abandonedStone, "abandoned_stone");
         GameRegistry.registerBlock(DeeperBlocks.abandonedCobblestone, "abandoned_cobblestone");
@@ -420,12 +428,14 @@ public class DeeperBlocks {
         GameRegistry.registerBlock(DeeperBlocks.soulStone, "soul_stone");
         
         GameRegistry.registerBlock(DeeperBlocks.corruptedSoulStone, "corrupted_soul_stone");
-        
-        GameRegistry.registerBlock(DeeperBlocks.prisciumOre, "priscium_ore");
+
+        GameRegistry.registerBlock(DeeperBlocks.dprisciumOre, "priscium_ore");
+        GameRegistry.registerBlock(DeeperBlocks.prisciumOre, "forgotten_priscium_ore");
         
         GameRegistry.registerBlock(DeeperBlocks.prisciumBlock, "priscium_block");
-        
-        GameRegistry.registerBlock(DeeperBlocks.evanesciteOre, "evanescite_ore");
+
+        GameRegistry.registerBlock(DeeperBlocks.ddevanesciteOre, "evanescite_ore");
+        GameRegistry.registerBlock(DeeperBlocks.evanesciteOre, "forgotten_evanescite_ore");
         
         GameRegistry.registerBlock(DeeperBlocks.evanesciteBlock, "evanescite_block");
         
@@ -529,6 +539,7 @@ public class DeeperBlocks {
     public void registerBlocksOreDict()
     {
     	OreDictionary.registerOre("oreSilver", DeeperBlocks.silverOre);
+        OreDictionary.registerOre("oreSilver", DeeperBlocks.ddsilverOre);
     	
     	OreDictionary.registerOre("oreSapphire", DeeperBlocks.sapphireOre);
     	OreDictionary.registerOre("oreAquamarine", DeeperBlocks.aquamarineOre);
@@ -576,8 +587,9 @@ public class DeeperBlocks {
     	
     	OreDictionary.registerOre("blockSapphire", DeeperBlocks.sapphireBlock);
     	OreDictionary.registerOre("blockAquamarine", DeeperBlocks.aquamarineBlock);
-    	OreDictionary.registerOre("blockAmetrine", DeeperBlocks.ametrineBlock);  
- 
+    	OreDictionary.registerOre("blockAmetrine", DeeperBlocks.ametrineBlock);
+
+        OreDictionary.registerOre("oreTenebrium", DeeperBlocks.dtenebriumOre);
     	OreDictionary.registerOre("oreTenebrium", DeeperBlocks.tenebriumOre);
     	OreDictionary.registerOre("blockTenebrium", DeeperBlocks.tenebriumBlock);
     	
@@ -599,13 +611,16 @@ public class DeeperBlocks {
     	OreDictionary.registerOre("stone", DeeperBlocks.abandonedStone);
     	
     	OreDictionary.registerOre("cobblestone", DeeperBlocks.abandonedCobblestone);
-    	
+
+        OreDictionary.registerOre("orePriscium", DeeperBlocks.dprisciumOre);
     	OreDictionary.registerOre("orePriscium", DeeperBlocks.prisciumOre);
     	OreDictionary.registerOre("blockPriscium", DeeperBlocks.prisciumBlock);
-    	
+
+        OreDictionary.registerOre("oreVesperite", DeeperBlocks.dvesperiteOre);
     	OreDictionary.registerOre("oreVesperite", DeeperBlocks.vesperiteOre);
     	OreDictionary.registerOre("blockVesperite", DeeperBlocks.vesperiteBlock);
-    	
+
+        OreDictionary.registerOre("oreEvanescite", DeeperBlocks.ddevanesciteOre);
     	OreDictionary.registerOre("oreEvanescite", DeeperBlocks.evanesciteOre);
     	OreDictionary.registerOre("blockEvanescite", DeeperBlocks.evanesciteBlock);
     	
@@ -667,7 +682,7 @@ public class DeeperBlocks {
 
     public void setupBlocks()
     {
-        
+        DeeperBlocks.ddsilverOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:ddsilver_ore").setBlockName("ddsilverOre").setHardness(9.0F).setResistance(7.5F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.silverOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:silver_ore").setBlockName("silverOre").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.rubyOre = new BlockOreBase(Material.rock, DeeperItems.ruby, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:ruby_ore").setBlockName("ruby_ore").setLightOpacity(0).setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.sapphireOre = new BlockOreBase(Material.rock, DeeperItems.sapphireGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:sapphire_ore").setBlockName("sapphireOre").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
@@ -736,7 +751,8 @@ public class DeeperBlocks {
         DeeperBlocks.sapphireBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:sapphireBlock").setBlockName("sapphire_block").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.aquamarineBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:aquamarine_block").setBlockName("aquamarine_block").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.ametrineBlock = new BlockAmetrine(Material.rock).setBlockName("ametrineBlock").setHardness(7.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        
+
+        DeeperBlocks.dtenebriumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dtenebrium_ore").setBlockName("dtenebriumOre").setHardness(8.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.tenebriumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:tenebrium").setBlockName("tenebrium_ore").setHardness(8.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.tenebriumBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:tenebriumBlock").setBlockName("tenebrium_block").setHardness(10.5F).setResistance(20.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
@@ -750,8 +766,9 @@ public class DeeperBlocks {
 
         DeeperBlocks.darkCobblestone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dark_cobblestone").setBlockName("darkCobblestone").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //dark cobblestone
         DeeperBlocks.darkStone = new BlockNewStone(DeeperBlocks.darkCobblestone).setBlockTextureName("deepercaves:dark_stone").setBlockName("darkStone").setHardness(4.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //dark stone
-        
-        DeeperBlocks.vesperiteOre = new BlockOreBase(Material.rock, DeeperItems.vesperiteGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:vesperite_ore").setBlockName("vesperiteOre").setHardness(9.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+
+        DeeperBlocks.dvesperiteOre = new BlockOreBase(Material.rock, DeeperItems.vesperiteGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:dvesperite_ore").setBlockName("vesperiteOre").setHardness(5.0F).setResistance(8.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+        DeeperBlocks.vesperiteOre = new BlockOreBase(Material.rock, DeeperItems.vesperiteGem, 1, 1, true, 5, 8).setBlockTextureName("deepercaves:vesperite_ore").setBlockName("ddvesperiteOre").setHardness(9.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
         DeeperBlocks.abandonedCobblestone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:abandoned_cobblestone").setBlockName("abandonedCavesCobblestone").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned cobblestone
         DeeperBlocks.abandonedStone = new BlockNewStone(DeeperBlocks.abandonedCobblestone).setBlockTextureName("deepercaves:abandoned_stone").setBlockName("abandonedCavesStone").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //abandoned stone
@@ -776,12 +793,15 @@ public class DeeperBlocks {
         DeeperBlocks.corruptedSoulStone = new BlockBase(Material.rock).setBlockTextureName("deepercaves:corrupted_soul_stone").setBlockName("corruptedSoulStone").setHardness(3.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         DeeperBlocks.cryingObsidian = new BlockCryingObsidian(Material.rock).setBlockTextureName("deepercaves:crying_obsidian").setBlockName("cryingObsidian").setHardness(60.0F).setResistance(6000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        
-        DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:priscium_ore").setBlockName("prisciumOre").setHardness(8.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+
+        DeeperBlocks.dprisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dpriscium_ore").setBlockName("prisciumOre").setHardness(5.0F).setResistance(8.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+        DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:priscium_ore").setBlockName("dpprisciumOre").setHardness(8.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
         DeeperBlocks.prisciumBlock = new BlockPriscium(Material.rock).setBlockTextureName("deepercaves:priscium_block").setBlockName("prisciumBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        
-        DeeperBlocks.evanesciteOre = new BlockOreBase(Material.rock, DeeperItems.evanesciteGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:evanescite_ore").setBlockName("evanesciteOre").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+
+        DeeperBlocks.ddevanesciteOre = new BlockOreBase(Material.rock, DeeperItems.evanesciteGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:ddevanescite_ore").setBlockName("evanesciteOre").setHardness(9.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+
+        DeeperBlocks.evanesciteOre = new BlockOreBase(Material.rock, DeeperItems.evanesciteGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:evanescite_ore").setBlockName("dpevanesciteOre").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
         DeeperBlocks.evanesciteBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:evanescite_block").setBlockName("evanesciteBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
@@ -898,6 +918,7 @@ public class DeeperBlocks {
     {
         /*Setting up block harvest levels*/
         DeeperBlocks.silverOre.setHarvestLevel("pickaxe", 2);
+        DeeperBlocks.ddsilverOre.setHarvestLevel("pickaxe", 2);
         DeeperBlocks.silverBlock.setHarvestLevel("pickaxe", 2);
         
         DeeperBlocks.sapphireOre.setHarvestLevel("pickaxe", 2);
@@ -955,14 +976,16 @@ public class DeeperBlocks {
         DeeperBlocks.nemeraldOre.setHarvestLevel("pickaxe", 2);
         
         DeeperBlocks.fragmentedBedrock.setHarvestLevel("pickaxe", 4);
-        
+
+        DeeperBlocks.dtenebriumOre.setHarvestLevel("pickaxe", 4);
         DeeperBlocks.tenebriumOre.setHarvestLevel("pickaxe", 4);
         DeeperBlocks.tenebriumBlock.setHarvestLevel("pickaxe", 4);
       
         DeeperBlocks.forgottenGemstoneOre.setHarvestLevel("pickaxe", 4);
         
         DeeperBlocks.forgottenGemstoneBlock.setHarvestLevel("pickaxe", 4);
-        
+
+        DeeperBlocks.dvesperiteOre.setHarvestLevel("pickaxe", 3);
         DeeperBlocks.vesperiteOre.setHarvestLevel("pickaxe", 3);
         DeeperBlocks.vesperiteBlock.setHarvestLevel("pickaxe", 3);
         
@@ -1002,10 +1025,12 @@ public class DeeperBlocks {
         DeeperBlocks.corruptedSoulStone.setHarvestLevel("pickaxe", 2);
         
         DeeperBlocks.fragmentedCobble.setHarvestLevel("pickaxe", 0);
-        
+
+        DeeperBlocks.dprisciumOre.setHarvestLevel("pickaxe", 4);
         DeeperBlocks.prisciumOre.setHarvestLevel("pickaxe", 4);
         DeeperBlocks.prisciumBlock.setHarvestLevel("pickaxe", 4);
-        
+
+        DeeperBlocks.ddevanesciteOre.setHarvestLevel("pickaxe", 3);
         DeeperBlocks.evanesciteOre.setHarvestLevel("pickaxe", 3);
         DeeperBlocks.evanesciteBlock.setHarvestLevel("pickaxe", 3);
 
@@ -1033,7 +1058,7 @@ public class DeeperBlocks {
         DeeperBlocks.rubyBlock.setHarvestLevel("pickaxe", 2);
 
         DeeperBlocks.incenditeOre.setHarvestLevel("pickaxe", 4);
-        DeeperBlocks.prisciumOre.setHarvestLevel("pickaxe", 4);
+        DeeperBlocks.profundiumOre.setHarvestLevel("pickaxe", 4);
 
         DeeperBlocks.forgottenStone.setHarvestLevel("pickaxe", 0);
 

@@ -29,5 +29,7 @@ public class BiomeGenAbandonedCaves extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.dredstoneOre, world, random, x, z, 16, 16, 8, 54, 0, 255, DeeperBlocks.abandonedStone);
         LayerOregen.addOre(DeeperBlocks.ddiamondOre, world, random, x, z, 16, 16, 8, 7, 0, 255, DeeperBlocks.abandonedStone);
         LayerOregen.addOre(DeeperBlocks.demeraldOre, world, random, x, z, 16, 16, 3, 4, 0, 255, DeeperBlocks.abandonedStone);
+        LayerOregen.addOre(DeeperBlocks.dprisciumOre, world, random, x, z, 16, 16, 6, 67, 0, 255, DeeperBlocks.abandonedStone);
+        LayerOregen.addOre(DeeperBlocks.dvesperiteOre, world, random, x, z, 16, 16, 6, 32, 0, 255, DeeperBlocks.abandonedStone);
     }
 }

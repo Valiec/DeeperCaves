@@ -50,6 +50,7 @@ entity.mutatedZombie.name=Mutated Zombie
 entity.mutatedCaveSpider.name=Mutated Cave Spider
 
 tile.evanesciteOre.name=Evanescite Ore
+tile.dpevanesciteOre.name=Forgotten Evanescite Ore
 
 item.evanesciteGem.name=Evanescite Gem
 item.forgottenCharm.name=Forgotten Charm
@@ -64,6 +65,9 @@ item.prisciumDust.name=Priscium Dust
 item.prisciumIngot.name=Priscium Ingot
 
 tile.prisciumOre.name=Priscium Ore
+tile.dpprisciumOre.name=Forgotten Priscium Ore
+
+
 tile.cryingObsidian.name=Crying Obsidian
 tile.corruptedSoulStone.name=Corrupted Soul Stone
 tile.soulStone.name=Soul Stone
@@ -78,6 +82,7 @@ tile.abandonedCavesStoneStairs.name=Abandoned Caves Stone Stairs
 tile.abandonedCavesCobblestoneStairs.name=Abandoned Caves Cobblestone Stairs
 tile.abandonedStoneBrickStairs.name=Abandoned Caves Stone Brick Stairs
 tile.vesperiteOre.name=Vesperite Ore
+tile.ddvesperiteOre.name=Dark Vesperite Ore
 tile.vesperiteBlock.name=Block of Vesperite
 tile.forgottenStone.name=Forgotten Stone
 tile.forgottenCobble.name=Forgotten Cobblestone
@@ -174,11 +179,13 @@ item.forgottenGemstone.name=Forgotten Gemstone
 
 tile.forgottenGemstoneOre.name=Forgotten Gemstone Ore
 
+tile.dtenebriumOre.name=Abandoned Caves Tenebrium Ore
 tile.tenebrium_ore.name=Tenebrium Ore
 tile.tenebrium_block.name=Block of Tenebrium
 item.tenebriumIngot.name=Tenebrium Ingot
 item.tenebriumIngotDripping.name=Raw Tenebrium Ingot
 
+tile.ddsilverOre.name=Dark Silver Ore
 tile.silverOre.name=Silver Ore
 item.silverIngot.name=Silver Ingot
 item.ametrineGem.name=Ametrine Gem

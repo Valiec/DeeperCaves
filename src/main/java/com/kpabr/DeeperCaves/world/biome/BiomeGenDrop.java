@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCaves.world.biome;
 
 
+import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCore.world.biome.LayerOregen;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -32,6 +33,9 @@ public class BiomeGenDrop extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(Blocks.gold_ore, world, random, x, z, 16, 16, 16, 8, 0, 256, Blocks.stone);
         LayerOregen.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 12, 2, 0, 256, Blocks.stone);
         LayerOregen.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 8, 1, 0, 256, Blocks.stone);
+
+        LayerOregen.addOre(DeeperBlocks.sapphireOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
+
 
     }
 }
