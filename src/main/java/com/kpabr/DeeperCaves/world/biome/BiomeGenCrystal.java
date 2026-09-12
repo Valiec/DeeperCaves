@@ -27,7 +27,9 @@ public class BiomeGenCrystal extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(Blocks.iron_ore, world, random, x, z, 16, 16, 8, 50, 0, 256, Blocks.stone);
         LayerOregen.addOre(Blocks.gold_ore, world, random, x, z, 16, 16, 8, 10, 0, 256, Blocks.stone);
         LayerOregen.addOre(Blocks.redstone_ore, world, random, x, z, 16, 16, 7, 80, 0, 256, Blocks.stone);
-        LayerOregen.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 7, 10, 0, 256, Blocks.stone);
+        LayerOregen.addOre(Blocks.emerald_ore, world, random, x, z, 16, 16, 7, 8, 0, 256, Blocks.stone);
+
+        LayerOregen.addOre(Blocks.diamond_ore, world, random, x, z, 16, 16, 7, 18, 0, 256, Blocks.stone);
         LayerOregen.addOre(Blocks.lapis_ore, world, random, x, z, 16, 16, 6, 12, 0, 256, Blocks.stone);
 
         LayerOregen.addOre(DeeperBlocks.rubyOre, world, random, x, z, 16, 16, 5, 35, 0, 255, Blocks.stone);

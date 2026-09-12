@@ -26,14 +26,14 @@ public class BiomeGenCompressed extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.cgoldOre, world, random, x, z, 16, 16, 8, 30, 0, 255, Blocks.stone);
         LayerOregen.addOre(DeeperBlocks.clapisOre, world, random, x, z, 16, 16, 7, 35, 0, 255, Blocks.stone);
         LayerOregen.addOre(DeeperBlocks.credstoneOre, world, random, x, z, 16, 16, 8, 108, 0, 255, Blocks.stone);
-        LayerOregen.addOre(DeeperBlocks.cdiamondOre, world, random, x, z, 16, 16, 8, 13, 0, 255, Blocks.stone);
-        LayerOregen.addOre(DeeperBlocks.cemeraldOre, world, random, x, z, 16, 16, 3, 8, 0, 255, Blocks.stone);
+        LayerOregen.addOre(DeeperBlocks.cdiamondOre, world, random, x, z, 16, 16, 8, 4, 0, 255, Blocks.stone);
+        LayerOregen.addOre(DeeperBlocks.cemeraldOre, world, random, x, z, 16, 16, 3, 1, 0, 255, Blocks.stone);
         LayerOregen.addOre(DeeperBlocks.csilverOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
 
 
-        LayerOregen.addOre(DeeperBlocks.csapphireOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
-        LayerOregen.addOre(DeeperBlocks.caquamarineOre, world, random, x, z, 16, 16, 9, 40, 0, 255, Blocks.stone);
-        LayerOregen.addOre(DeeperBlocks.crubyOre, world, random, x, z, 16, 16, 5, 35, 0, 255, Blocks.stone);
+        //LayerOregen.addOre(DeeperBlocks.csapphireOre, world, random, x, z, 16, 16, 4, 32, 0, 255, Blocks.stone);
+        //LayerOregen.addOre(DeeperBlocks.caquamarineOre, world, random, x, z, 16, 16, 9, 40, 0, 255, Blocks.stone);
+        //LayerOregen.addOre(DeeperBlocks.crubyOre, world, random, x, z, 16, 16, 5, 35, 0, 255, Blocks.stone);
 
         LayerOregen.addOre(DeeperBlocks.ametrineOre, world, random, x, z, 16, 16, 12, 4, 0, 255, Blocks.stone);
 
