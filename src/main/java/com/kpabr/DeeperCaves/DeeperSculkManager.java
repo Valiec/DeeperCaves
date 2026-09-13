@@ -11,15 +11,31 @@ import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import org.apache.commons.lang3.tuple.Triple;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.function.BiPredicate;
 
 public class DeeperSculkManager {
 
-    public static List<Block> vibrationReceivers =  new ArrayList<Block>();
-    public static List<Block> signalReceivers =  new ArrayList<Block>();
+    public static Map<SculkActivation.ActivationType, List<Block>> listeningBlocks =  new HashMap<SculkActivation.ActivationType, List<Block>>();
+
+    public static void registerTypeForBlock(Block block, SculkActivation.ActivationType activationType) {
+        registerTypesForBlock(block, activationType);
+    }
+
+    public static void registerTypesForBlockExcept(Block block, SculkActivation.ActivationType... exceptTypes) {
+        List<SculkActivation.ActivationType> activationTypes = new ArrayList<SculkActivation.ActivationType>(Arrays.asList(SculkActivation.ActivationType.values()));
+        activationTypes.removeAll(Arrays.asList(exceptTypes));
+        registerTypesForBlock(block, activationTypes.toArray(new SculkActivation.ActivationType[0]));
+    }
+
+    public static void registerTypesForBlock(Block block, SculkActivation.ActivationType... activationTypes) {
+        for(SculkActivation.ActivationType activationType : activationTypes) {
+            if(!listeningBlocks.containsKey(activationType)) {
+                listeningBlocks.put(activationType, new ArrayList<Block>());
+            }
+            listeningBlocks.get(activationType).add(block);
+        }
+    }
 
     //exists to avoid array operations for one block
     public static boolean hasNeighbor(int x, int y, int z, World world, Block block) {
@@ -41,35 +57,7 @@ public class DeeperSculkManager {
                 blockList.contains(world.getBlock(x, y, z + 1));
     }
 
-    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, Block... targetBlocks) {
-        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, true, null, targetBlocks);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, Block... targetBlocks) {
-        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, woolCheck, null, targetBlocks);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
-        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, true, broadcastCheck, targetBlocks);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
-        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, woolCheck, broadcastCheck, targetBlocks);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, Block... targetBlocks) {
-        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, true, null, targetBlocks);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, Block... targetBlocks) {
-        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, woolCheck, null, targetBlocks);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
-        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, true, broadcastCheck, targetBlocks);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
+    public static void broadcastInRadiusBlocks(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
 
         List<Triple<Block, Integer[], Double>> targets = DeeperSculkManager.findBlocksWithinRadius(xPos, yPos, zPos, radius, world, woolCheck, targetBlocks);
 
@@ -82,6 +70,40 @@ public class DeeperSculkManager {
                 }
             }
         }
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world) {
+        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, true, null);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck) {
+        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, woolCheck, null);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, BiPredicate<Block, SculkActivation> broadcastCheck) {
+        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, true, broadcastCheck);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck) {
+        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, woolCheck, broadcastCheck);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world) {
+        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, true, null);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck) {
+        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, woolCheck, null);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, BiPredicate<Block, SculkActivation> broadcastCheck) {
+        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, true, broadcastCheck);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck) {
+
+        Block[] targetBlocks = listeningBlocks.get(newActivation.activationType).toArray(new Block[0]);
+        broadcastInRadiusBlocks(activation, newActivation, xPos, yPos, zPos, radius, world, woolCheck, broadcastCheck, targetBlocks);
     }
 
     public static void postVibrationEvent(SculkVibration vibration, Entity entity, World world) {
@@ -245,7 +267,7 @@ public class DeeperSculkManager {
 
     @SubscribeEvent
     public void onVibration(VibrationEvent event) {
-        DeeperSculkManager.broadcastInRadius(new SculkActivation(event.hasEntity ? event.entity : null, SculkActivation.ActivationType.VIBRATION, event.vibration), event.vibration.x, event.vibration.y, event.vibration.z, 8, event.world, DeeperSculkManager.vibrationReceivers.toArray(new Block[0]));
+        DeeperSculkManager.broadcastInRadius(new SculkActivation(event.hasEntity ? event.entity : null, SculkActivation.ActivationType.VIBRATION, event.vibration), event.vibration.x, event.vibration.y, event.vibration.z, 8, event.world);
     }
 
     @SubscribeEvent

@@ -1,13 +1,9 @@
 package com.kpabr.DeeperCaves.entity;
 
-import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperSculkManager;
 import com.kpabr.DeeperCaves.SculkActivation;
 import com.kpabr.DeeperCaves.block.BlockSculkTendril;
 import net.minecraft.block.Block;
-import org.apache.commons.lang3.tuple.Triple;
-
-import java.util.List;
 
 public class TileEntitySculkTendril extends TileEntitySculkActivatable {
 
@@ -35,7 +31,7 @@ public class TileEntitySculkTendril extends TileEntitySculkActivatable {
             i++;
         }
 
-        DeeperSculkManager.broadcastInRadius(this.activation, activation.withType(SculkActivation.ActivationType.TENDRIL), this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, TileEntitySculkTendril::doBroadcastTo, DeeperSculkManager.signalReceivers.toArray(new Block[0]));
+        DeeperSculkManager.broadcastInRadius(this.activation, activation.withType(SculkActivation.ActivationType.TENDRIL), this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, TileEntitySculkTendril::doBroadcastTo);
     }
 
 

@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCaves.block;
 
 import com.kpabr.DeeperCaves.DeeperSculkManager;
+import com.kpabr.DeeperCaves.SculkActivation;
 import com.kpabr.DeeperCaves.entity.TileEntitySculkShrieker;
 import com.kpabr.DeeperCaves.entity.TileEntitySculkTendril;
 import cpw.mods.fml.relauncher.Side;
@@ -22,7 +23,7 @@ public class BlockSculkTendrilRoot extends BlockSculkTendril  implements ITileEn
 
 	public BlockSculkTendrilRoot(Material par2Material) {
 		super(par2Material);
-		DeeperSculkManager.signalReceivers.add(this);
+		DeeperSculkManager.registerTypesForBlockExcept(this, SculkActivation.ActivationType.VIBRATION);
 		//DeeperSculkManager.vibrationReceivers.add(this);
 		// TODO Auto-generated constructor stub
 	}
