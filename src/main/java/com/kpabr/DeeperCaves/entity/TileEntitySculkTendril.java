@@ -31,7 +31,7 @@ public class TileEntitySculkTendril extends TileEntitySculkActivatable {
             i++;
         }
 
-        DeeperSculkManager.broadcastInRadius(this.activation, activation.withType(SculkActivation.ActivationType.TENDRIL), this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, TileEntitySculkTendril::doBroadcastTo);
+        this.activation.broadcastInRadius(activation.withType(SculkActivation.ActivationType.TENDRIL), this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, TileEntitySculkTendril::doBroadcastTo);
     }
 
 

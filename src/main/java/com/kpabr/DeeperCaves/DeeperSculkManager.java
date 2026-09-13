@@ -72,34 +72,6 @@ public class DeeperSculkManager {
         }
     }
 
-    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world) {
-        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, true, null);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck) {
-        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, woolCheck, null);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, BiPredicate<Block, SculkActivation> broadcastCheck) {
-        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, true, broadcastCheck);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck) {
-        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, woolCheck, broadcastCheck);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world) {
-        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, true, null);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck) {
-        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, woolCheck, null);
-    }
-
-    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, BiPredicate<Block, SculkActivation> broadcastCheck) {
-        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, true, broadcastCheck);
-    }
-
     public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck) {
 
         Block[] targetBlocks = listeningBlocks.get(newActivation.activationType).toArray(new Block[0]);
@@ -267,7 +239,7 @@ public class DeeperSculkManager {
 
     @SubscribeEvent
     public void onVibration(VibrationEvent event) {
-        DeeperSculkManager.broadcastInRadius(new SculkActivation(event.hasEntity ? event.entity : null, SculkActivation.ActivationType.VIBRATION, event.vibration), event.vibration.x, event.vibration.y, event.vibration.z, 8, event.world);
+        new SculkActivation(event.hasEntity ? event.entity : null, SculkActivation.ActivationType.VIBRATION, event.vibration).broadcastInRadius(event.vibration.x, event.vibration.y, event.vibration.z, 8, event.world);
     }
 
     @SubscribeEvent
