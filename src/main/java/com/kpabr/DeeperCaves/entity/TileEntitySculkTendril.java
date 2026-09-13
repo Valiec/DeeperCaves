@@ -16,6 +16,10 @@ public class TileEntitySculkTendril extends TileEntitySculkActivatable {
         this.cooldownDuration = 10;
     }
 
+    public static boolean doBroadcastTo(Block block, SculkActivation activation) {
+        return activation.activationType != SculkActivation.ActivationType.TENDRIL || !(block instanceof BlockSculkTendril);
+    }
+
     @Override
     public void handleActivation() {
         int meta = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
@@ -31,16 +35,7 @@ public class TileEntitySculkTendril extends TileEntitySculkActivatable {
             i++;
         }
 
-        List<Triple<Block, Integer[], Double>> shriekers = DeeperSculkManager.findBlocksWithinRadius(this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, true, DeeperSculkManager.signalReceivers.toArray(new Block[0]));
-
-        for(Triple<Block, Integer[], Double> sensor : shriekers) {
-            Integer[] coords = sensor.getMiddle();
-            double dist = sensor.getRight();
-            //System.out.println("SHRIEKER!!!");
-            if(this.activation.activationType != SculkActivation.ActivationType.TENDRIL || !(sensor.getLeft() instanceof BlockSculkTendril)) {
-                ((TileEntitySculkActivatable) this.worldObj.getTileEntity(coords[0], coords[1], coords[2])).activate((int) dist, new SculkActivation(this.activation.activatingEntity, SculkActivation.ActivationType.TENDRIL, null));
-            }
-        }
+        DeeperSculkManager.broadcastInRadius(this.activation, activation.withType(SculkActivation.ActivationType.TENDRIL), this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, TileEntitySculkTendril::doBroadcastTo, DeeperSculkManager.signalReceivers.toArray(new Block[0]));
     }
 
 

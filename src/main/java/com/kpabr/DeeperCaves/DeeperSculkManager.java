@@ -1,32 +1,88 @@
 package com.kpabr.DeeperCaves;
 
 import com.kpabr.DeeperCaves.entity.TileEntitySculkActivatable;
-import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import org.apache.commons.lang3.tuple.Triple;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiPredicate;
 
 public class DeeperSculkManager {
 
     public static List<Block> vibrationReceivers =  new ArrayList<Block>();
     public static List<Block> signalReceivers =  new ArrayList<Block>();
+
+    //exists to avoid array operations for one block
+    public static boolean hasNeighbor(int x, int y, int z, World world, Block block) {
+        return world.getBlock(x - 1, y, z) == block ||
+                world.getBlock(x + 1, y, z) == block ||
+                world.getBlock(x, y + 1, z) == block ||
+                world.getBlock(x, y + 1, z) == block ||
+                world.getBlock(x, y, z - 1) == block ||
+                world.getBlock(x, y, z + 1) == block;
+    }
+
+    public static boolean hasNeighborMulti(int x, int y, int z, World world, Block... blocks) {
+        List<Block> blockList = Arrays.asList(blocks);
+        return blockList.contains(world.getBlock(x - 1, y, z)) ||
+                blockList.contains(world.getBlock(x + 1, y, z)) ||
+                blockList.contains(world.getBlock(x, y + 1, z)) ||
+                blockList.contains(world.getBlock(x, y + 1, z)) ||
+                blockList.contains(world.getBlock(x, y, z - 1)) ||
+                blockList.contains(world.getBlock(x, y, z + 1));
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, Block... targetBlocks) {
+        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, true, null, targetBlocks);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, Block... targetBlocks) {
+        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, woolCheck, null, targetBlocks);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
+        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, true, broadcastCheck, targetBlocks);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
+        broadcastInRadius(activation, activation, xPos, yPos, zPos, radius, world, woolCheck, broadcastCheck, targetBlocks);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, Block... targetBlocks) {
+        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, true, null, targetBlocks);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, Block... targetBlocks) {
+        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, woolCheck, null, targetBlocks);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
+        broadcastInRadius(activation, newActivation, xPos, yPos, zPos, radius, world, true, broadcastCheck, targetBlocks);
+    }
+
+    public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
+
+        List<Triple<Block, Integer[], Double>> targets = DeeperSculkManager.findBlocksWithinRadius(xPos, yPos, zPos, radius, world, woolCheck, targetBlocks);
+
+        if(activation != null) {
+            for (Triple<Block, Integer[], Double> target : targets) {
+                Integer[] coords = target.getMiddle();
+                double dist = target.getRight();
+                if (broadcastCheck == null || broadcastCheck.test(target.getLeft(), activation)) {
+                    ((TileEntitySculkActivatable) world.getTileEntity(coords[0], coords[1], coords[2])).activate((int) dist, newActivation);
+                }
+            }
+        }
+    }
 
     public static void postVibrationEvent(SculkVibration vibration, Entity entity, World world) {
         //allow the event to be canceled
@@ -189,13 +245,7 @@ public class DeeperSculkManager {
 
     @SubscribeEvent
     public void onVibration(VibrationEvent event) {
-        List<Triple<Block, Integer[], Double>> sensors = findBlocksWithinRadius(event.vibration.x, event.vibration.y, event.vibration.z, 8, event.world, true, DeeperSculkManager.vibrationReceivers.toArray(new Block[0]));
-
-        for(Triple<Block, Integer[], Double> sensor : sensors) {
-            Integer[] coords = sensor.getMiddle();
-            double dist = sensor.getRight();
-            ((TileEntitySculkActivatable) event.world.getTileEntity(coords[0], coords[1], coords[2])).activate((int)dist, new SculkActivation(event.hasEntity ? event.entity : null, SculkActivation.ActivationType.VIBRATION, event.vibration));
-        }
+        DeeperSculkManager.broadcastInRadius(new SculkActivation(event.hasEntity ? event.entity : null, SculkActivation.ActivationType.VIBRATION, event.vibration), event.vibration.x, event.vibration.y, event.vibration.z, 8, event.world, DeeperSculkManager.vibrationReceivers.toArray(new Block[0]));
     }
 
     @SubscribeEvent

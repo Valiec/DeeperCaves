@@ -20,32 +20,10 @@ public class TileEntitySculkSensor extends TileEntitySculkActivatable {
     @Override
     public void handleActivation() {
         this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, 1, 2);
-        List<Triple<Block, Integer[], Double>> shriekers = DeeperSculkManager.findBlocksWithinRadius(this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, true, DeeperSculkManager.signalReceivers.toArray(new Block[0]));
+        DeeperSculkManager.broadcastInRadius(this.activation, activation.withType(SculkActivation.ActivationType.SIGNAL), this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, DeeperSculkManager.signalReceivers.toArray(new Block[0]));
 
-        for(Triple<Block, Integer[], Double> sensor : shriekers) {
-            Integer[] coords = sensor.getMiddle();
-            double dist = sensor.getRight();
-            //System.out.println("SHRIEKER!!!");
-            if(this.activation != null) {
-                ((TileEntitySculkActivatable) this.worldObj.getTileEntity(coords[0], coords[1], coords[2])).activate((int) dist, new SculkActivation(this.activation.activatingEntity, SculkActivation.ActivationType.SIGNAL, null));
-            }
-        }
-
-        boolean amethystCheck = this.worldObj.getBlock(this.xCoord - 1, this.yCoord, this.zCoord) == DeeperBlocks.vesperiteBlock ||
-                this.worldObj.getBlock(this.xCoord + 1, this.yCoord, this.zCoord) == DeeperBlocks.vesperiteBlock ||
-                this.worldObj.getBlock(this.xCoord, this.yCoord + 1, this.zCoord) == DeeperBlocks.vesperiteBlock ||
-                this.worldObj.getBlock(this.xCoord, this.yCoord + 1, this.zCoord) == DeeperBlocks.vesperiteBlock ||
-                this.worldObj.getBlock(this.xCoord, this.yCoord, this.zCoord - 1) == DeeperBlocks.vesperiteBlock ||
-                this.worldObj.getBlock(this.xCoord, this.yCoord, this.zCoord + 1) == DeeperBlocks.vesperiteBlock;
-
-        if(amethystCheck) {
-            List<Triple<Block, Integer[], Double>> sensors = DeeperSculkManager.findBlocksWithinRadius(this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, true, DeeperSculkManager.vibrationReceivers.toArray(new Block[0]));
-
-            for (Triple<Block, Integer[], Double> sensor : sensors) {
-                Integer[] coords = sensor.getMiddle();
-                double dist = sensor.getRight();
-                ((TileEntitySculkActivatable) this.worldObj.getTileEntity(coords[0], coords[1], coords[2])).activate((int) dist, new SculkActivation(this.activation.activatingEntity, SculkActivation.ActivationType.SENSOR_REBROADCAST, null));
-            }
+        if(DeeperSculkManager.hasNeighbor(this.xCoord, this.yCoord, this.zCoord, worldObj, DeeperBlocks.vesperiteBlock)) {
+            DeeperSculkManager.broadcastInRadius(this.activation, activation.withType(SculkActivation.ActivationType.SENSOR_REBROADCAST), this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, DeeperSculkManager.vibrationReceivers.toArray(new Block[0]));
         }
     }
 

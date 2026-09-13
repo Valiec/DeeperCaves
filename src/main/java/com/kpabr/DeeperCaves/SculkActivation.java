@@ -27,6 +27,10 @@ public class SculkActivation {
 
     }
 
+    public SculkActivation withType(ActivationType type) {
+        return new SculkActivation(this.activatingEntity, type, vibration);
+    }
+
     public static SculkActivation fromNBT(NBTTagCompound compound, World world)
     {
         return new SculkActivation(world.getEntityByID(compound.getInteger("entityID")), ActivationType.valueOf(compound.getString("type")), compound.hasKey("vibration") ? SculkVibration.fromNBT(compound) : null);
