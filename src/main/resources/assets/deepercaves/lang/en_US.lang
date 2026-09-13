@@ -277,6 +277,9 @@ tile.sculkSensor.name=Sculk Sensor
 tile.sculkCatalyst.name=Sculk Catalyst
 tile.sculkShrieker.name=Sculk Shrieker
 tile.sculkKelp.name=Sculk Stalk
+tile.sculkKelpRoot.name=Sculk Stalk Base
+tile.sculkKelp_glow.name=Glowing Sculk Stalk
+tile.sculkKelpRoot_glow.name=Glowing Sculk Stalk Base
 tile.sculkGrass.name=Sculk Hyphae
 
 tile.sculkBone.name=Sculk Bone

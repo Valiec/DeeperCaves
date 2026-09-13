@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves.block;
 
+import com.kpabr.DeeperCaves.DeeperSculkManager;
 import com.kpabr.DeeperCaves.client.RenderSculkSensor;
 import com.kpabr.DeeperCaves.client.RenderSculkShrieker;
 import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
@@ -27,6 +28,7 @@ public class BlockSculkShrieker extends Block implements ITileEntityProvider {
 
 	public BlockSculkShrieker(Material par2Material) {
 		super(par2Material);
+		DeeperSculkManager.signalReceivers.add(this);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 	}
 

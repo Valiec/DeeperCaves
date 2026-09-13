@@ -47,6 +47,7 @@ public class DeeperCaves
     public static DeeperConfig config = new DeeperConfig();
     public static DeeperBucketHandler bucket;
     public static DeeperEventHandler events = new DeeperEventHandler();
+    public static DeeperSculkManager sculk = new DeeperSculkManager();
 
     //creative tabs
     public static CreativeTabs tabDeeperCaves = new TabDeeperCavesBlocks(CreativeTabs.getNextID(), "Deeper Caves Blocks", DeeperBlocks.fragmentedBedrock);
@@ -76,8 +77,9 @@ public class DeeperCaves
 
         FMLCommonHandler.instance().bus().register(events);
         MinecraftForge.EVENT_BUS.register(events);
-        
-        
+
+        FMLCommonHandler.instance().bus().register(sculk);
+        MinecraftForge.EVENT_BUS.register(sculk);
         
         //ClientCommandHandler.instance.registerCommand(new VersionCommand());
 

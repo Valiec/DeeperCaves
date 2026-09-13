@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCaves.block;
 
+import com.kpabr.DeeperCaves.DeeperSculkManager;
 import com.kpabr.DeeperCaves.client.RenderSculkSensor;
 import com.kpabr.DeeperCaves.client.RenderSculkVein;
 import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
@@ -28,6 +29,7 @@ public class BlockSculkSensor extends Block implements ITileEntityProvider {
 
 	public BlockSculkSensor(Material par2Material) {
 		super(par2Material);
+		DeeperSculkManager.vibrationReceivers.add(this);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
 	}
 

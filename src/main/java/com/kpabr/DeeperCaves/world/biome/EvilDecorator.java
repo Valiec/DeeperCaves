@@ -150,17 +150,22 @@ public class EvilDecorator extends DeeperBaseDecorator {
 
                 boolean generated = false;
 
-                int tendrilMeta = randomGenerator.nextInt(8) == 0 ? 2 : 0;
+                int tendrilMeta = randomGenerator.nextInt(8) == 0 ? 1 : 0;
 
 
                 while(curj > 0 && curj < j+kelpHeight && this.currentWorld.getBlock(i, curj, k) == Blocks.air) {
-                    this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkKelp, tendrilMeta | 1, 2);
+                    if(!generated) {
+                        this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkKelpRoot, tendrilMeta | 0x4, 2);
+                    }
+                    else {
+                        this.currentWorld.setBlock(i, curj, k, DeeperBlocks.sculkKelp, tendrilMeta | 0x4, 2);
+                    }
                     generated = true;
                     curj++;
                 }
 
                 if(generated) {
-                    this.currentWorld.setBlock(i, curj - 1, k, DeeperBlocks.sculkKelp, tendrilMeta, 2);
+                    this.currentWorld.setBlockMetadataWithNotify(i, curj - 1, k, tendrilMeta, 2);
                 }
             }
         }
