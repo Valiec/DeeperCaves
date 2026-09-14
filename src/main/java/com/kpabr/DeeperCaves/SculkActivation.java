@@ -6,19 +6,44 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
+import java.util.UUID;
 import java.util.function.BiPredicate;
 
 public class SculkActivation {
-    public Entity activatingEntity;
+    private Entity activatingEntity;
     public boolean isPlayer;
     public ActivationType activationType;
     public SculkVibration vibration;
+    private UUID entityUUID;
 
     public SculkActivation(Entity entity, ActivationType type, SculkVibration vibration) {
         this.activatingEntity = entity;
         this.activationType = type;
         this.vibration = vibration;
         this.isPlayer = entity instanceof EntityPlayer;
+    }
+
+    public Entity getActivatingEntity(World world) {
+        if(this.activatingEntity == null && this.entityUUID != null) {
+            for(Object entity : world.loadedEntityList) {
+                if(entity instanceof Entity && ((Entity)entity).getUniqueID().equals(this.entityUUID)) {
+                    this.activatingEntity = (Entity)entity;
+                    return this.activatingEntity;
+                }
+            }
+        }
+        return this.activatingEntity;
+    }
+
+    public Entity getActivatingEntity() {
+        return this.activatingEntity;
+    }
+
+    public SculkActivation(UUID entityUUID, ActivationType type, SculkVibration vibration, boolean player) {
+        this.entityUUID = entityUUID;
+        this.activationType = type;
+        this.vibration = vibration;
+        this.isPlayer = player;
     }
 
     public enum ActivationType {
@@ -63,13 +88,17 @@ public class SculkActivation {
     }
 
 
-        public SculkActivation withType(ActivationType type) {
+    public SculkActivation withType(ActivationType type) {
         return new SculkActivation(this.activatingEntity, type, vibration);
     }
 
     public static SculkActivation fromNBT(NBTTagCompound compound, World world)
     {
-        return new SculkActivation(world.getEntityByID(compound.getInteger("entityID")), ActivationType.valueOf(compound.getString("type")), compound.hasKey("vibration") ? SculkVibration.fromNBT(compound) : null);
+        return new SculkActivation(
+                compound.hasKey("entityUUID") ? UUID.fromString(compound.getString("entityUUID")) : null,
+                ActivationType.valueOf(compound.getString("type")),
+                compound.hasKey("vibration") ? SculkVibration.fromNBT(compound.getCompoundTag("vibration")) : null,
+                compound.getBoolean("isPlayer"));
     }
 
     public NBTTagCompound asNBT()
@@ -77,7 +106,10 @@ public class SculkActivation {
 
         NBTTagCompound compound = new NBTTagCompound();
         compound.setBoolean("isPlayer", this.isPlayer);
-        compound.setInteger("entityID", this.activatingEntity.getEntityId());
+        compound.setString("type", this.activationType.toString());
+        if(this.getActivatingEntity() != null) {
+            compound.setString("entityUUID", this.getActivatingEntity().getUniqueID().toString());
+        }
         if(this.vibration != null)
         {
         compound.setTag("vibration", this.vibration.asNBT());

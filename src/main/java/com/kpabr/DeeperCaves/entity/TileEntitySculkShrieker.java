@@ -16,10 +16,10 @@ public class TileEntitySculkShrieker extends TileEntitySculkActivatable {
 
     @Override
     public void handleActivation() {
-        if(activation.isPlayer) {
             int meta = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
             this.worldObj.setBlockMetadataWithNotify(this.xCoord, this.yCoord, this.zCoord, meta | 1, 2);
-            DeeperCavesExtendedPlayerData extData = (DeeperCavesExtendedPlayerData) activation.activatingEntity.getExtendedProperties(DeeperCavesExtendedPlayerData.NAME);
+            this.worldObj.playSoundEffect(this.xCoord + 0.5D, this.yCoord + 0.5D, this.zCoord + 0.5D, "deepercaves:block.sculk_shrieker.shriek", 1.7F, 0.6F + this.worldObj.rand.nextFloat() * 0.4F);
+            DeeperCavesExtendedPlayerData extData = (DeeperCavesExtendedPlayerData) activation.getActivatingEntity(this.worldObj).getExtendedProperties(DeeperCavesExtendedPlayerData.NAME);
             if (extData != null && (meta & 2) != 0) {
                 extData.shriekerCooldown = 200;
                 if (extData.shriekerWarning < 4) {
@@ -30,7 +30,6 @@ public class TileEntitySculkShrieker extends TileEntitySculkActivatable {
                 }
                 extData.shriekerWarningCooldown = 12000;
             }
-        }
     }
 
     @Override

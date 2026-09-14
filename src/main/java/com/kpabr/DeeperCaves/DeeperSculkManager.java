@@ -77,6 +77,7 @@ public class DeeperSculkManager {
     public static void broadcastInRadius(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck) {
 
         Block[] targetBlocks = listeningBlocks.get(newActivation.activationType).toArray(new Block[0]);
+        //System.out.println("targets:"+ Arrays.toString(targetBlocks));
         broadcastInRadiusBlocks(activation, newActivation, xPos, yPos, zPos, radius, world, woolCheck, broadcastCheck, targetBlocks);
     }
 

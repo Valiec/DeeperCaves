@@ -34,6 +34,7 @@ public class BlockSculkSensor extends Block implements ITileEntityProvider {
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
 	}
 
+	/*
 	//attempting to make it render brighter when active like vanilla does
 	public int getMixedBrightnessForBlock(IBlockAccess world, int x, int y, int z)
 	{
@@ -58,6 +59,7 @@ public class BlockSculkSensor extends Block implements ITileEntityProvider {
 
 		return lightData;
 	}
+	*/
 
 	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)

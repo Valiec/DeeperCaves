@@ -19,7 +19,7 @@ public abstract class TileEntitySculkActivatable extends TileEntity {
     {
         this.activation = activation;
 
-        if(!onlyPlayerActivation || !this.activation.isPlayer) {
+        if(!onlyPlayerActivation || this.activation.isPlayer) {
             if (!this.activated && this.cooldownTicks == 0 && this.delayTicks == 0) {
                 activatedTicks = activatedDuration;
                 if (delay > 0) {

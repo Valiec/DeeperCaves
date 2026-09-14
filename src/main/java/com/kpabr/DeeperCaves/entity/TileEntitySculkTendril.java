@@ -31,6 +31,7 @@ public class TileEntitySculkTendril extends TileEntitySculkActivatable {
             i++;
         }
 
+        this.worldObj.playSoundEffect(this.xCoord + 0.5D, this.yCoord + 0.5D, this.zCoord + 0.5D, "deepercaves:block.sculk_sensor.clicking", 0.73F, 1.2F + this.worldObj.rand.nextFloat() * 0.3F);
         this.activation.broadcastInRadius(activation.withType(SculkActivation.ActivationType.TENDRIL), this.xCoord, this.yCoord, this.zCoord, 8, this.worldObj, TileEntitySculkTendril::doBroadcastTo);
     }
 
@@ -50,5 +51,6 @@ public class TileEntitySculkTendril extends TileEntitySculkActivatable {
             this.worldObj.func_147451_t(this.xCoord, i, this.zCoord);
             i++;
         }
+        this.worldObj.playSoundEffect(this.xCoord + 0.5D, this.yCoord + 0.5D, this.zCoord + 0.5D, "deepercaves:block.sculk_sensor.clicking_stop", 0.62F, 1.2F + this.worldObj.rand.nextFloat() * 0.3F);
     }
 }
