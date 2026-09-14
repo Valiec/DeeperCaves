@@ -9,6 +9,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.event.world.ExplosionEvent;
 import org.apache.commons.lang3.tuple.Triple;
 
 import java.util.*;
@@ -271,5 +272,10 @@ public class DeeperSculkManager {
         if(event.block != Blocks.wool && event.block != Blocks.carpet) {
             postVibrationEvent(new SculkVibration(SculkVibration.VibrationEventType.BLOCK_PLACE, event.x+0.5D, event.y+0.5D, event.z+0.5D), event.player, event.world);
         }
+    }
+
+    @SubscribeEvent
+    public void onExplosion(ExplosionEvent event) {
+        postVibrationEvent(new SculkVibration(SculkVibration.VibrationEventType.EXPLOSION, event.explosion.explosionX+0.5D, event.explosion.explosionY+0.5D, event.explosion.explosionZ+0.5D), event.explosion.exploder, event.world);
     }
 }
