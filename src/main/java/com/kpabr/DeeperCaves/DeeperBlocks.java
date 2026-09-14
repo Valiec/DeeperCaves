@@ -873,7 +873,7 @@ public class DeeperBlocks {
         DeeperBlocks.sculkMarrow = new BlockSculkBase(DeeperMaterials.sculk, false).setStepSound(DeeperMaterials.sculkSound).setBlockTextureName("deepercaves:sculk_marrow").setBlockName("sculkMarrow").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
-        DeeperBlocks.sculkGrass = new BlockSculkGrass(Material.plants).setBlockName("sculkGrass").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkGrass = new BlockSculkGrass(Material.plants).setStepSound(DeeperMaterials.sculkVeinSound).setBlockName("sculkGrass").setHardness(3.0F).setResistance(3.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
         DeeperBlocks.granite = new BlockVanillaStone("granite").setBlockName("granite").setHardness(3.5F).setResistance(14.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.graniteBrick = new BlockBase(Material.rock).setBlockTextureName("deepercaves:granite_brick").setBlockName("graniteBrick").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
