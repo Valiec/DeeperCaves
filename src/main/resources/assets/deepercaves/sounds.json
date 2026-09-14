@@ -24,7 +24,6 @@
         }
       ]
   },
-
   "block.sculk_sensor.clicking": {
     "category": "block",
     "sounds": [
@@ -77,6 +76,399 @@
         "name": "block/sculk_sensor/sculk_clicking_stop5",
         "volume": 0.62
       }
+    ]
+  },
+  "dig.sculk": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/break1",
+      "block/sculk/break2",
+      "block/sculk/break3",
+      "block/sculk/break4",
+      "block/sculk/break5",
+      "block/sculk/break6",
+      "block/sculk/break7",
+      "block/sculk/break8",
+      "block/sculk/break9",
+      "block/sculk/break10",
+      "block/sculk/break11",
+      "block/sculk/break12",
+      "block/sculk/break13",
+      "block/sculk/break14"
+    ]
+  },
+  "block.sculk.fall": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "block.sculk.hit": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "block.sculk.place": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/place1",
+      "block/sculk/place2",
+      "block/sculk/place3",
+      "block/sculk/place4",
+      "block/sculk/place5"
+    ]
+  },
+  "step.sculk": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "dig.sculk_catalyst": {
+    "category": "block",
+    "sounds": [
+      "block/sculk_catalyst/break1",
+      "block/sculk_catalyst/break2",
+      "block/sculk_catalyst/break3",
+      "block/sculk_catalyst/break4",
+      "block/sculk_catalyst/break5",
+      "block/sculk_catalyst/break6",
+      "block/sculk_catalyst/break7",
+      "block/sculk_catalyst/break8",
+      "block/sculk_catalyst/break9",
+      "block/sculk_catalyst/break10"
+    ]
+  },
+  "block.sculk_catalyst.fall": {
+    "category": "block",
+    "sounds": [
+      "block/sculk_catalyst/step1",
+      "block/sculk_catalyst/step2",
+      "block/sculk_catalyst/step3",
+      "block/sculk_catalyst/step4",
+      "block/sculk_catalyst/step5",
+      "block/sculk_catalyst/step6"
+    ]
+  },
+  "block.sculk_catalyst.hit": {
+    "category": "block",
+    "sounds": [
+      "block/sculk_catalyst/step1",
+      "block/sculk_catalyst/step2",
+      "block/sculk_catalyst/step3",
+      "block/sculk_catalyst/step4",
+      "block/sculk_catalyst/step5",
+      "block/sculk_catalyst/step6"
+    ]
+  },
+  "block.sculk_catalyst.place": {
+    "category": "block",
+    "sounds": [
+      "block/sculk_catalyst/place1",
+      "block/sculk_catalyst/place2",
+      "block/sculk_catalyst/place3",
+      "block/sculk_catalyst/place4",
+      "block/sculk_catalyst/place5"
+    ]
+  },
+  "step.sculk_catalyst": {
+    "category": "block",
+    "sounds": [
+      "block/sculk_catalyst/step1",
+      "block/sculk_catalyst/step2",
+      "block/sculk_catalyst/step3",
+      "block/sculk_catalyst/step4",
+      "block/sculk_catalyst/step5",
+      "block/sculk_catalyst/step6"
+    ]
+  },
+  "dig.sculk_sensor": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "block/sculk_sensor/break1",
+        "pitch": 1.2,
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_sensor/break2",
+        "pitch": 1.2,
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_sensor/break3",
+        "pitch": 1.2,
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_sensor/break4",
+        "pitch": 1.2,
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_sensor/break5",
+        "pitch": 1.2,
+        "volume": 0.9
+      }
+    ]
+  },
+  "block.sculk_sensor.fall": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "block.sculk_sensor.hit": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "block.sculk_sensor.place": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "block/sculk_sensor/place1",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_sensor/place2",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_sensor/place3",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_sensor/place4",
+        "pitch": 1.2,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_sensor/place5",
+        "pitch": 1.2,
+        "volume": 0.8
+      }
+    ]
+  },
+  "step.sculk_sensor": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "dig.sculk_shrieker": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "block/sculk_shrieker/break1",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/break2",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/break3",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/break4",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/break5",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/break6",
+        "volume": 0.9
+      }
+    ]
+  },
+  "block.sculk_shrieker.fall": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "block.sculk_shrieker.hit": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "block.sculk_shrieker.place": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "block/sculk_shrieker/place1",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/place2",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/place3",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/place4",
+        "volume": 0.9
+      },
+      {
+        "name": "block/sculk_shrieker/place5",
+        "volume": 0.9
+      }
+    ]
+  },
+  "step.sculk_shrieker": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "dig.sculk_vein": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "block/sculk_vein/break1",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_vein/break2",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_vein/break3",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_vein/break4",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_vein/break5",
+        "pitch": 1.1,
+        "volume": 0.8
+      }
+    ]
+  },
+  "block.sculk_vein.fall": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "block.sculk_vein.hit": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
+    ]
+  },
+  "block.sculk_vein.place": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "block/sculk_vein/break1",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_vein/break2",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_vein/break3",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_vein/break4",
+        "pitch": 1.1,
+        "volume": 0.8
+      },
+      {
+        "name": "block/sculk_vein/break5",
+        "pitch": 1.1,
+        "volume": 0.8
+      }
+    ]
+  },
+  "step.sculk_vein": {
+    "category": "block",
+    "sounds": [
+      "block/sculk/step1",
+      "block/sculk/step2",
+      "block/sculk/step3",
+      "block/sculk/step4",
+      "block/sculk/step5",
+      "block/sculk/step6"
     ]
   }
 }
