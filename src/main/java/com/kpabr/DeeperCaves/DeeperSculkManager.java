@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.ExplosionEvent;
+import net.minecraftforge.event.world.NoteBlockEvent;
 import org.apache.commons.lang3.tuple.Triple;
 
 import java.util.*;
@@ -277,5 +278,10 @@ public class DeeperSculkManager {
     @SubscribeEvent
     public void onExplosion(ExplosionEvent event) {
         postVibrationEvent(new SculkVibration(SculkVibration.VibrationEventType.EXPLOSION, event.explosion.explosionX+0.5D, event.explosion.explosionY+0.5D, event.explosion.explosionZ+0.5D), event.explosion.exploder, event.world);
+    }
+
+    @SubscribeEvent
+    public void onNoteBlock(NoteBlockEvent.Play event) {
+        postVibrationEvent(new SculkVibration(SculkVibration.VibrationEventType.NOTE_BLOCK, event.x+0.5D, event.y+0.5D, event.z+0.5D), event.world.getClosestPlayer(event.x+0.5D, event.y+0.5D, event.z+0.5D, 4), event.world);
     }
 }

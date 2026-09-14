@@ -15,7 +15,8 @@ public class SculkVibration {
         PROJECTILE,
         ENTITY_SOUND,
         CHEST,
-        EXPLOSION
+        EXPLOSION,
+        NOTE_BLOCK
     }
 
     public VibrationEventType vibrationType;
