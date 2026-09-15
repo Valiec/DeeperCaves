@@ -27,6 +27,8 @@ public class BlockSculkTendril extends Block {
 
 	public IIcon icon;
 	public IIcon iconTop;
+	public IIcon iconActive;
+	public IIcon iconTopActive;
 
 	public BlockSculkTendril(Material par2Material) {
 		super(par2Material);
@@ -84,12 +86,19 @@ public class BlockSculkTendril extends Block {
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.icon = iconRegister.registerIcon("DeeperCaves:sculk_kelp_plant");
 		this.iconTop = iconRegister.registerIcon("DeeperCaves:sculk_kelp");
+		this.iconActive = iconRegister.registerIcon("DeeperCaves:sculk_kelp_plant_active");
+		this.iconTopActive = iconRegister.registerIcon("DeeperCaves:sculk_kelp_active");
 	}
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int i, int j)
 	{
-		return (j & 4) == 0 ? this.iconTop : this.icon;
+		if((j & 2) != 0) {
+			return ((j & 4) == 0) ? this.iconTopActive : this.iconActive;
+		}
+		else {
+			return ((j & 4) == 0) ? this.iconTop : this.icon;
+		}
 	}
 
 	@Override
