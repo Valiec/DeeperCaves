@@ -33,7 +33,7 @@ public class BiomeGenMutation extends BiomeGenDeeperCavesBase
 
         for(int i = 0; i<16; i++)
         {
-            LayerOregen.addOre(DeeperBlocks.crystal, i, world, random, x, z, 16, 16, 8, 4, 0, 255, DeeperBlocks.darkStone);
+            LayerOregen.addOre(DeeperBlocks.crystal, i, world, random, x, z, 16, 16, 16, 4, 0, 255, DeeperBlocks.darkStone);
         }
     }
 }
