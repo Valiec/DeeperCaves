@@ -15,6 +15,7 @@ import com.kpabr.DeeperCaves.entity.RenderMutatedSpider;
 import com.kpabr.DeeperCaves.entity.RenderShadow;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -31,5 +32,15 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerBlockHandler(RenderSculkSensor.renderID, new RenderSculkSensor());
         RenderingRegistry.registerBlockHandler(RenderSculkShrieker.renderID, new RenderSculkShrieker());
         RenderingRegistry.registerBlockHandler(RenderBlockTextureRotation.renderID, new RenderBlockTextureRotation());
+    }
+
+    public void spawnVibrationParticle(double xSrc, double ySrc, double zSrc, double xDest, double yDest, double zDest, double speed) {
+        Minecraft.getMinecraft().effectRenderer.addEffect(new ParticleVibration(Minecraft.getMinecraft().theWorld, xSrc, ySrc, zSrc, xDest, yDest, zDest, speed));
+    }
+
+    public void spawnShriekParticle(double xSrc, double ySrc, double zSrc) {
+        for(int i = 0; i < 10; i++) {
+            Minecraft.getMinecraft().effectRenderer.addEffect(new ParticleShriek(Minecraft.getMinecraft().theWorld, xSrc, ySrc, zSrc, i * 5));
+        }
     }
 }

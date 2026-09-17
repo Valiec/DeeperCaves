@@ -44,7 +44,7 @@ public class DeeperRecipes {
         
         if(Loader.isModLoaded("ExtraUtilities"))
         {
-        	System.out.println("DeeperCaves: ExtraUtilities is installed. Changing fragmented cobblestone recipe.");
+        	DeeperCaves.logger.info("ExtraUtilities is installed. Changing fragmented cobblestone recipe.");
         	GameRegistry.addRecipe(new ItemStack(DeeperBlocks.fragmentedCobble, 2), "ZX", "XZ", 'X', Blocks.cobblestone, 'Z', Blocks.gravel);
         }
         else

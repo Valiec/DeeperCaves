@@ -5,12 +5,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import com.kpabr.DeeperCaves.network.PacketSculkActivationS2C;
+import com.kpabr.DeeperCaves.network.PacketSculkShriekS2C;
 import com.kpabr.DeeperCaves.version.DeeperVersionChecker;
 import com.kpabr.DeeperCaves.version.VersionCommand;
 import com.kpabr.DeeperCaves.world.biome.EvilDecorator;
 import com.kpabr.DeeperCaves.world.biome.FinalLabyrinthDecorator;
 import com.kpabr.DeeperCore.dimstack.DeeperTeleporter;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.Side;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.client.ClientCommandHandler;
@@ -21,12 +25,16 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = DeeperCaves.MODID, version = DeeperCaves.VERSION, name = DeeperCaves.NAME, dependencies = "required-after:deepercore")
 public class DeeperCaves
 {
     @SidedProxy(clientSide="com.kpabr.DeeperCaves.client.ClientProxy", serverSide="com.kpabr.DeeperCaves.CommonProxy")
     public static CommonProxy proxy;
+
+    public static SimpleNetworkWrapper network;
  
     /*Mod ID and Version declarations*/
     public static final String MODID = "DeeperCaves";
@@ -35,6 +43,8 @@ public class DeeperCaves
     //static int versionID = 11; //Used by version checker!
     
     public static DeeperCaves instance;
+
+
     
     //event handlers
     public static DeeperBlocks blocks = new DeeperBlocks();
@@ -55,13 +65,19 @@ public class DeeperCaves
     public static CreativeTabs tabDeeperCavesOres = new TabDeeperCavesOres(CreativeTabs.getNextID(), "Deeper Caves Ores", DeeperBlocks.dcdiamondOre);
     public static CreativeTabs tabDeeperCavesTools = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Tools", 1);
     public static CreativeTabs tabDeeperCavesCombat = new TabDeeperCaves(CreativeTabs.getNextID(), "Deeper Caves Combat", 2);
-    
+
+    public static Logger logger = LogManager.getLogger("DeeperCaves");
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+
         
         instance = this;
+
+        network = NetworkRegistry.INSTANCE.newSimpleChannel(DeeperCaves.MODID);
+        network.registerMessage(PacketSculkActivationS2C.Handler.class, PacketSculkActivationS2C.class, 0, Side.CLIENT);
+        network.registerMessage(PacketSculkShriekS2C.Handler.class, PacketSculkShriekS2C.class, 1, Side.CLIENT);
         
         FMLCommonHandler.instance().bus().register(worldgen);
         MinecraftForge.EVENT_BUS.register(worldgen);

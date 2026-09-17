@@ -1,8 +1,11 @@
 package com.kpabr.DeeperCaves;
 
 import com.kpabr.DeeperCaves.entity.TileEntitySculkActivatable;
+import com.kpabr.DeeperCaves.network.PacketSculkActivationS2C;
+import com.kpabr.DeeperCaves.network.PacketSculkShriekS2C;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
@@ -61,14 +64,17 @@ public class DeeperSculkManager {
 
     public static void broadcastInRadiusBlocks(SculkActivation activation, SculkActivation newActivation, double xPos, double yPos, double zPos, int radius, World world, boolean woolCheck, BiPredicate<Block, SculkActivation> broadcastCheck, Block... targetBlocks) {
 
-        List<Triple<Block, Integer[], Double>> targets = DeeperSculkManager.findBlocksWithinRadius(xPos, yPos, zPos, radius, world, woolCheck, targetBlocks);
+        if(!world.isRemote) { //server side
+            List<Triple<Block, Integer[], Double>> targets = DeeperSculkManager.findBlocksWithinRadius(xPos, yPos, zPos, radius, world, woolCheck, targetBlocks);
 
-        if(activation != null) {
-            for (Triple<Block, Integer[], Double> target : targets) {
-                Integer[] coords = target.getMiddle();
-                double dist = target.getRight();
-                if (broadcastCheck == null || broadcastCheck.test(target.getLeft(), activation)) {
-                    ((TileEntitySculkActivatable) world.getTileEntity(coords[0], coords[1], coords[2])).activate((int) dist, newActivation);
+            if (activation != null) {
+                for (Triple<Block, Integer[], Double> target : targets) {
+                    Integer[] coords = target.getMiddle();
+                    double dist = target.getRight();
+                    if (broadcastCheck == null || broadcastCheck.test(target.getLeft(), activation)) {
+                        DeeperCaves.network.sendToAllAround(new PacketSculkActivationS2C(xPos, yPos, zPos, coords[0] + 0.5D, coords[1] + 0.5D, coords[2] + 0.5D), new NetworkRegistry.TargetPoint(world.provider.dimensionId, xPos + 0.5D, yPos + 0.5D, zPos + 0.5D, 32));
+                        ((TileEntitySculkActivatable) world.getTileEntity(coords[0], coords[1], coords[2])).activate((int) dist, newActivation);
+                    }
                 }
             }
         }
