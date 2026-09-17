@@ -15,6 +15,7 @@ import com.kpabr.DeeperCaves.entity.RenderMutatedSpider;
 import com.kpabr.DeeperCaves.entity.RenderShadow;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,6 +29,8 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityMutatedCaveSpider.class, new RenderMutatedSpider());
         RenderingRegistry.registerEntityRenderingHandler(EntityShadow.class, new RenderShadow(new ModelBiped(), 0.5F));
         MinecraftForge.EVENT_BUS.register(new DeeperF3Mesages());
+
+        FMLCommonHandler.instance().bus().register(new ClientEventHandler());
         RenderingRegistry.registerBlockHandler(RenderSculkVein.renderID, new RenderSculkVein());
         RenderingRegistry.registerBlockHandler(RenderSculkSensor.renderID, new RenderSculkSensor());
         RenderingRegistry.registerBlockHandler(RenderSculkShrieker.renderID, new RenderSculkShrieker());

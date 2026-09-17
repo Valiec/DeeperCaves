@@ -17,6 +17,9 @@ public class DeeperParticleBase extends EntityFX {
     public int frameCycleTime;
     public int delay;
     public boolean globalFrame = false;
+    public boolean pickFrameOnSpawn = false;
+    public boolean isAnimated = false;
+    public int fixedFrameNum = 0;
 
     public DeeperParticleBase(World world, double srcX, double srcY, double srcZ, double motionX, double motionY, double motionZ)
     {
@@ -58,6 +61,15 @@ public class DeeperParticleBase extends EntityFX {
         this.frameCount = frameCount;
         this.frameTime = frameTime;
         this.frameCycleTime = frameCount*frameTime;
+        this.isAnimated = true;
+        return this;
+    }
+
+    public DeeperParticleBase setupVariedTexture(ResourceLocation texture, int frameCount)
+    {
+        this.setupTexture(texture);
+        this.frameCount = frameCount;
+        this.fixedFrameNum = Minecraft.getMinecraft().theWorld.rand.nextInt(this.frameCount);
         return this;
     }
 
@@ -89,10 +101,10 @@ public class DeeperParticleBase extends EntityFX {
     public void doRenderParticle(Tessellator tessellator, float partialTicks, float rotationX, float rotationXZ, float rotationZ, float rotationYZ, float rotationXY)
     {
 
-        double frameHeight = 1;
-        int frameNum = 0;
+        double frameHeight = 1.0 / frameCount;
+        int frameNum = fixedFrameNum;
 
-        if(frameCount > 1) {
+        if(isAnimated) {
             double exactAge;
             if(this.globalFrame) {
                 exactAge = Minecraft.getMinecraft().theWorld.getWorldTime() + partialTicks;
@@ -104,7 +116,6 @@ public class DeeperParticleBase extends EntityFX {
 
             frameNum = (int) Math.floor((exactAge % this.frameCycleTime) / frameTime);
 
-            frameHeight = 1.0 / frameCount;
         }
 
         Minecraft.getMinecraft().renderEngine.bindTexture(this.texture);
