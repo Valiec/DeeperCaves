@@ -35,7 +35,6 @@ public class BiomeGenLava extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.magmaStone, world, random, x, z, 16, 16, 40, 80, 0, 255, DeeperBlocks.deepStone);
         LayerOregen.addOre(Blocks.cobblestone, world, random, x, z, 16, 16, 15, 120, 0, 255, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.fragmentedCobble, world, random, x, z, 16, 16, 14, 80, 0, 255, DeeperBlocks.deepStone);
-        LayerOregen.addOre(DeeperBlocks.fragmentedBedrock, world, random, x, z, 16, 16, 8, 55, 0, 255, DeeperBlocks.deepStone);
         LayerOregen.addOre(Blocks.flowing_lava, world, random, x, z, 16, 16, 1, 65, 0, 255, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.incenditeOre, world, random, x, z, 16, 16, 3, 4, 0, 50, DeeperBlocks.deepStone);
     }

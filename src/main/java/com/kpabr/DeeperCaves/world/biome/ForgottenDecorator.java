@@ -73,7 +73,7 @@ public class ForgottenDecorator extends DeeperBaseDecorator {
             if(this.currentWorld.getBlock(i, j+1, k) == DeeperBlocks.sculk && this.currentWorld.getBlock(i, j, k) == Blocks.air)
             {
 
-                int vineMeta = randomGenerator.nextInt(16) == 0 ? 2 : 0;
+                int vineMeta = randomGenerator.nextInt(6) == 0 ? 2 : 0;
 
                 int curj = j;
                 int veinHeight = this.randomGenerator.nextInt(77)+3;

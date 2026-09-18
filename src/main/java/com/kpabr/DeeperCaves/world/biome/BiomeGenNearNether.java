@@ -34,5 +34,7 @@ public class BiomeGenNearNether extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 40, 120, 0, 110, DeeperBlocks.deepStone);
         LayerOregen.addOre(Blocks.quartz_ore, world, random, x, z, 16, 16, 8, 55, 0, 110, Blocks.netherrack);
         LayerOregen.addOre(Blocks.glowstone, world, random, x, z, 16, 16, 20, 60, 0, 110, Blocks.netherrack);
+        LayerOregen.addOre(DeeperBlocks.fragmentedBedrock, world, random, x, z, 16, 16, 8, 55, 0, 255, DeeperBlocks.deepStone);
+
     }
 }
