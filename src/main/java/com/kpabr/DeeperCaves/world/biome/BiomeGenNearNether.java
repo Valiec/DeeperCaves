@@ -15,8 +15,8 @@ public class BiomeGenNearNether extends BiomeGenDeeperCavesBase
         super(biomeID);
     	this.biomeName = "Near Nether";
         this.theBiomeDecorator = new DeeperDecorator();
-        ((DeeperDecorator)this.theBiomeDecorator).generateLavaLakes = true;
-        ((DeeperDecorator)this.theBiomeDecorator).generateWaterLakes = false;
+        ((DeeperDecorator)this.theBiomeDecorator).generateLava = true;
+        ((DeeperDecorator)this.theBiomeDecorator).generateWater = false;
         this.fillerBlock = Blocks.dirt;
 
     }

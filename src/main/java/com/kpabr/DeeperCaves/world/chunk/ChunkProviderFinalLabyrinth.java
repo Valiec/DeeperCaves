@@ -33,6 +33,8 @@ public class ChunkProviderFinalLabyrinth extends ChunkProviderDeeperCavesBase
         this.doMineshafts = false;
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.setupGenFromLayer(DeeperCaves.worldgen.finalLabyrinth);
+        this.generateLavaLakes = false;
+        this.generateWaterLakes = false;
         sculkNoise = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + ((WorldProviderDeeperCaves)this.worldObj.provider).layer.seedOffset), 2);
     }
 

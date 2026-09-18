@@ -50,7 +50,7 @@ public class EvilDecorator extends DeeperBaseDecorator {
         int i1;
 
         boolean doGen = TerrainGen.decorate(currentWorld, randomGenerator, chunk_X, chunk_Z, LAKE);
-        if (doGen && this.generateWaterLakes) {
+        if (doGen && this.generateWater) {
             for (i1 = 0; i1 < 50; ++i1) {
                 i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
                 j = this.randomGenerator.nextInt(this.randomGenerator.nextInt(248) + 8);

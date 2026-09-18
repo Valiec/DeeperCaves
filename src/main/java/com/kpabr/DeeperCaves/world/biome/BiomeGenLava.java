@@ -2,6 +2,7 @@ package com.kpabr.DeeperCaves.world.biome;
 
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
+import com.kpabr.DeeperCore.world.biome.DeeperBaseDecorator;
 import com.kpabr.DeeperCore.world.biome.LayerOregen;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -16,7 +17,8 @@ public class BiomeGenLava extends BiomeGenDeeperCavesBase
     	this.biomeName = "Lava";
         this.fillerBlock = Blocks.dirt;
         this.theBiomeDecorator = new LavaDecorator();
-        this.theBiomeDecorator.generateLakes = true;
+        ((DeeperBaseDecorator)this.theBiomeDecorator).generateLava = true;
+        ((DeeperBaseDecorator)this.theBiomeDecorator).generateWater = false;
     }
 
     public void generateOres(World world, Random random, int x, int z) {

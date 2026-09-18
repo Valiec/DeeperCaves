@@ -2,11 +2,10 @@ package com.kpabr.DeeperCaves.world.biome;
 
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
-import com.kpabr.DeeperCore.world.WorldProviderDeeperCaves;
+import com.kpabr.DeeperCore.world.biome.DeeperBaseDecorator;
 import com.kpabr.DeeperCore.world.biome.LayerOregen;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.NoiseGeneratorOctaves;
 
 import java.util.Random;
 
@@ -19,7 +18,9 @@ public class BiomeGenEvil extends BiomeGenDeeperCavesBase
     	this.biomeName = "Evil";
         this.fillerBlock = Blocks.dirt;
         this.theBiomeDecorator = new EvilDecorator();
-        this.theBiomeDecorator.generateLakes = true;
+        this.theBiomeDecorator.generateLakes = false;
+        ((DeeperBaseDecorator)this.theBiomeDecorator).generateLava = false;
+        ((DeeperBaseDecorator)this.theBiomeDecorator).generateWater = false;
 
     }
 

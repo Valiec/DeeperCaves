@@ -20,6 +20,7 @@ public class ChunkProviderMutation extends ChunkProviderDeeperCavesBase
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.setupGenFromLayer(DeeperCaves.worldgen.mutation);
+        this.doMineshafts = false;
     }
 
 

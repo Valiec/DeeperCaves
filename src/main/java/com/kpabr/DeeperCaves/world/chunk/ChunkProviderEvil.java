@@ -35,6 +35,9 @@ public class ChunkProviderEvil extends ChunkProviderDeeperCavesBase
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.setupGenFromLayer(DeeperCaves.worldgen.evil);
+        this.generateLavaLakes = false;
+        this.generateWaterLakes = false;
+        this.doMineshafts = false;
         sculkNoise = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + ((WorldProviderDeeperCaves)this.worldObj.provider).layer.seedOffset), 2);
         caveNoise = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + ((WorldProviderDeeperCaves)this.worldObj.provider).layer.seedOffset + 1), 3);
         caveNoise2 = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + ((WorldProviderDeeperCaves)this.worldObj.provider).layer.seedOffset + 2), 1);

@@ -17,6 +17,8 @@ public class ChunkProviderNearNether extends ChunkProviderDeeperCavesBase
     {
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
+        this.generateLavaLakes = true;
+        this.generateWaterLakes = false;
         this.setupGenFromLayer(DeeperCaves.worldgen.nearNether);
     }
 

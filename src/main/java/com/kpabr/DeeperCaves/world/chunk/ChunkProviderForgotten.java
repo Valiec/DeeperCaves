@@ -32,6 +32,9 @@ public class ChunkProviderForgotten extends ChunkProviderDeeperCavesBase
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.setupGenFromLayer(DeeperCaves.worldgen.forgotten);
+        this.doMineshafts = false;
+        this.generateLavaLakes = false;
+        this.generateWaterLakes = false;
         sculkNoise = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + ((WorldProviderDeeperCaves)this.worldObj.provider).layer.seedOffset), 2);
     }
 

@@ -2,7 +2,6 @@ package com.kpabr.DeeperCaves.world.biome;
 
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE;
 
-import com.kpabr.DeeperCaves.structure.cavevillage.CaveVillage;
 import com.kpabr.DeeperCore.world.biome.DeeperBaseDecorator;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -22,7 +21,7 @@ public class DeeperDecorator extends DeeperBaseDecorator {
         int i1;
 
         boolean doGen = TerrainGen.decorate(currentWorld, randomGenerator, chunk_X, chunk_Z, LAKE);
-        if (doGen && this.generateWaterLakes) {
+        if (doGen && this.generateWater) {
             for (i1 = 0; i1 < 50; ++i1) {
                 i = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
                 j = this.randomGenerator.nextInt(this.randomGenerator.nextInt(248) + 8);
@@ -31,7 +30,7 @@ public class DeeperDecorator extends DeeperBaseDecorator {
             }
         }
 
-        if (doGen && (this.generateLakes || this.generateLavaLakes)) {
+        if (doGen && this.generateLava) {
 
             for (i1 = 0; i1 < 20; ++i1)
             {

@@ -46,6 +46,8 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperCavesBase
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.setupGenFromLayer(DeeperCaves.worldgen.bedrockPlains);
         this.voidBlock = Blocks.air;
+        this.generateLavaLakes = false;
+        this.generateWaterLakes = false;
 
         this.floorHeightNoise = new NoiseGeneratorOctaves(this.rand, 8);
         this.ceilingHeightNoise = new NoiseGeneratorOctaves(this.rand, 4);

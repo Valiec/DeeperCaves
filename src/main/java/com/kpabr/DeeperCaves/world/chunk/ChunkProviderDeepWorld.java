@@ -20,6 +20,7 @@ public class ChunkProviderDeepWorld extends ChunkProviderDeeperCavesBase
         super(par1World, par2, par4);
         super.initCaveRavineGen(caveGenerator, ravineGenerator);
         this.setupGenFromLayer(DeeperCaves.worldgen.deepWorld);
+        this.doMineshafts = false;
     }
 
 }

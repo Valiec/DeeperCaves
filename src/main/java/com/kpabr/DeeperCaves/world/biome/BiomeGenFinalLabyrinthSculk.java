@@ -9,24 +9,11 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class BiomeGenFinalLabyrinthSculk extends BiomeGenDeeperCavesBase
+public class BiomeGenFinalLabyrinthSculk extends BiomeGenFinalLabyrinth
 {
     public BiomeGenFinalLabyrinthSculk(int biomeID)
     {
         super(biomeID);
-        this.spawnableMonsterList.clear();
-        this.spawnableCreatureList.clear();
-        this.spawnableWaterCreatureList.clear();
-        this.spawnableCaveCreatureList.clear();
-    	this.biomeName = "Final Labyrinth Sculk";
-        this.topBlock = Blocks.bedrock;
-        this.fillerBlock = DeeperBlocks.fragmentedBedrock;
-        this.theBiomeDecorator = new FinalLabyrinthDecorator();
-        this.theBiomeDecorator.generateLakes = false;
-
-    }
-
-    public void generateOres(World world, Random random, int x, int z) {
-        LayerOregen.addOre(DeeperBlocks.forgottenGemstoneOre, world, random, x, z, 16, 16, 4, 50, 0, 255, DeeperBlocks.fragmentedBedrock);
+        this.biomeName = "Final Labyrinth Sculk";
     }
 }

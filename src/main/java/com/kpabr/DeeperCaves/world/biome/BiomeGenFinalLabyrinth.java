@@ -3,6 +3,7 @@ package com.kpabr.DeeperCaves.world.biome;
 import com.kpabr.DeeperCaves.DeeperBlocks;
 
 
+import com.kpabr.DeeperCore.world.biome.DeeperBaseDecorator;
 import com.kpabr.DeeperCore.world.biome.LayerOregen;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -23,6 +24,8 @@ public class BiomeGenFinalLabyrinth extends BiomeGenDeeperCavesBase
         this.fillerBlock = DeeperBlocks.fragmentedBedrock;
         this.theBiomeDecorator = new FinalLabyrinthDecorator();
         this.theBiomeDecorator.generateLakes = false;
+        ((DeeperBaseDecorator)this.theBiomeDecorator).generateLava = false;
+        ((DeeperBaseDecorator)this.theBiomeDecorator).generateWater = false;
 
     }
 
