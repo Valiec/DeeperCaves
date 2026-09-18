@@ -3,6 +3,7 @@ package com.kpabr.DeeperCaves;
 
 import com.kpabr.DeeperCaves.block.MaterialMoltenIron;
 
+import com.kpabr.DeeperCaves.block.MaterialVenenium;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -10,6 +11,7 @@ import net.minecraft.block.material.MaterialLiquid;
 
 public class DeeperMaterials {
 	public static MaterialLiquid moltenIron = (new MaterialMoltenIron());
+	public static MaterialLiquid venenium = (new MaterialVenenium());
 
 	public static Material sculk = new Material(MapColor.cyanColor);
 

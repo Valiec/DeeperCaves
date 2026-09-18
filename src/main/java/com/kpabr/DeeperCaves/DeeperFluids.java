@@ -34,7 +34,7 @@ public class DeeperFluids {
     {
     	moltenIronBlock = new BlockFluidMoltenIron(moltenIron, Material.lava).setBlockName("moltenIron").setBlockTextureName("deepercaves:molten_iron").setCreativeTab(null).setLightLevel(1.0F);
         GameRegistry.registerBlock(moltenIronBlock, "molten_iron");
-        veneniumBlock = new BlockFluidVenenium(venenium, Material.lava).setBlockName("venenium").setBlockTextureName("deepercaves:venenium").setCreativeTab(null).setLightLevel(1.0F);
+        veneniumBlock = new BlockFluidVenenium(venenium, DeeperMaterials.venenium).setBlockName("venenium").setBlockTextureName("deepercaves:venenium").setCreativeTab(null).setLightLevel(1.0F);
         GameRegistry.registerBlock(veneniumBlock, "venenium");
     }
 

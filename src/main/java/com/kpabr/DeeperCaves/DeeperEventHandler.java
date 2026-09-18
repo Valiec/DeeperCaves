@@ -19,6 +19,7 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.PlaySoundAtEntityEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent;
 import net.minecraftforge.event.world.BlockEvent;
@@ -44,33 +45,6 @@ public class DeeperEventHandler {
     public void onPlayerClone(PlayerEvent.Clone event) {
         event.entity.registerExtendedProperties(DeeperCavesExtendedPlayerData.NAME, event.original.getExtendedProperties(DeeperCavesExtendedPlayerData.NAME));
     }
-
-    public static boolean isPlayerInBlock(EntityLivingBase player, Block block)
-    {
-        //System.out.println("==============");
-        //System.out.println("CHECK: "+(int)player.posX+", "+(int)player.posY+", "+((int)(player.posZ)-1));
-        Block block1 = player.worldObj.getBlock((int)player.posX, (int)player.posY, (int)player.posZ-1);
-        //System.out.println("BLOCK1: "+block1.getUnlocalizedName());
-        if(block1 == block)
-        {
-            //System.out.println("==============");
-            return true;
-        }
-        Block block2 = player.worldObj.getBlock((int)player.posX, (int)player.posY+1, (int)player.posZ-1);
-        //System.out.println("BLOCK2: "+block2.getUnlocalizedName());
-        //System.out.println("==============");
-        return block2 == block;
-        //System.out.println("==============");
-    }
-
-    //@SubscribeEvent
-    //public void onLivingUpdate(LivingEvent event) {
-        //if(event.entityLiving != null) {
-            //if (isPlayerInBlock(event.entityLiving, DeeperFluids.veneniumBlock)) {
-            //    event.entityLiving.addPotionEffect(new PotionEffect(Potion.poison.id, 100, 1));
-            //}
-        //}
-   // }
 
     @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
