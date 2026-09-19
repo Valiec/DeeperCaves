@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCore.world.biome;
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -8,6 +9,8 @@ import java.util.Random;
 
 public class BiomeGenDeeperBase extends BiomeGenBase implements IDeeperBiome
 {
+    public Block stoneBlock = null;
+
     public BiomeGenDeeperBase(int biomeID)
     {
         super(biomeID);

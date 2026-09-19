@@ -1,6 +1,7 @@
 package com.kpabr.DeeperCore.world.chunk;
 
 import com.kpabr.DeeperCore.dimstack.DeeperLayer;
+import com.kpabr.DeeperCore.world.biome.BiomeGenDeeperBase;
 import com.kpabr.DeeperCore.world.feature.WorldGenDeeperLakes;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.block.Block;
@@ -171,7 +172,10 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
             for (int l = 0; l < 16; ++l)
             {
                 BiomeGenBase biomegenbase = p_147422_5_[l + k * 16];
-                biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
+                Block biomeBaseBlock = this.baseBlock;
+                if(biomegenbase != null && biomegenbase instanceof BiomeGenDeeperBase && ((BiomeGenDeeperBase)biomegenbase).stoneBlock != null) {
+                    biomeBaseBlock = ((BiomeGenDeeperBase)biomegenbase).stoneBlock;
+                }
                 int i1 = p_147422_1_ * 16 + k & 15;
                 int j1 = p_147422_2_ * 16 + l & 15;
                 int k1 = p_147422_3_.length / 256;
@@ -181,7 +185,7 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
 
                     if (l1 <= 5 && p_147422_3_[i2] == Blocks.bedrock && this.voidTerrainCutoffLower <= l1)
                     {
-                    	p_147422_3_[i2] = this.baseBlock;
+                    	p_147422_3_[i2] = biomeBaseBlock;
                     }
                     if (l1 <= 5 && p_147422_3_[i2] == Blocks.bedrock && this.voidTerrainCutoffLower > l1)
                     {
@@ -189,7 +193,7 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
                     }
                     if (l1 >= 250 && l1 <= 255 && p_147422_3_[i2] == Blocks.bedrock)
                     {
-                    	p_147422_3_[i2] = this.baseBlock;
+                    	p_147422_3_[i2] = biomeBaseBlock;
                     }
                     if (l1 <= lowerBarrierY && !layer.openBottom)
                     {
@@ -199,7 +203,13 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
                     {
                     	p_147422_3_[i2] = barrierBlock;
                     }
+                    if(this.baseBlock != biomeBaseBlock && p_147422_3_[i2] == this.baseBlock)
+                    {
+                        p_147422_3_[i2] = biomeBaseBlock;
+                    }
                 }
+
+                biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
             }
         }
     }

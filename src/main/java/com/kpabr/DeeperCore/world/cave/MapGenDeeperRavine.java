@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCore.world.cave;
 
+import java.util.HashSet;
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -8,6 +9,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
+import scala.actors.threadpool.Arrays;
 
 public class MapGenDeeperRavine extends MapGenBase
 {
@@ -19,21 +21,21 @@ public class MapGenDeeperRavine extends MapGenBase
     //I forgot what these do
     public double widthFactor;
     public double heightFactor;
-    public Block fillerBlock;
+    public HashSet<Block> fillerBlock;
     public int minCarvingDepth;
     public int maxCarvingDepth;
     public boolean jitterMin;
     public int seedSalt;
     public boolean floorCutoff;
 
-    public MapGenDeeperRavine(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin, int seedSalt, boolean floorCutoff){
+    public MapGenDeeperRavine(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin, int seedSalt, boolean floorCutoff, Block... fillerBlock){
         super();
         this.maxY = maxY;
         this.minY = minY;
         this.genRarity = genRarity;
         this.widthFactor = widthFactor;
         this.heightFactor = heightFactor;
-        this.fillerBlock = fillerBlock;
+        this.fillerBlock = new HashSet<Block>(Arrays.asList(fillerBlock));
         this.minCarvingDepth = minCarvingDepth;
         this.maxCarvingDepth = maxCarvingDepth;
         this.jitterMin = jitterMin;
@@ -41,12 +43,12 @@ public class MapGenDeeperRavine extends MapGenBase
         this.floorCutoff = floorCutoff;
     }
 
-    public MapGenDeeperRavine(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin){
-        this(minY, maxY, genRarity, widthFactor, heightFactor, fillerBlock, minCarvingDepth, maxCarvingDepth, jitterMin, 0, false);
+    public MapGenDeeperRavine(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin, Block... fillerBlock){
+        this(minY, maxY, genRarity, widthFactor, heightFactor, minCarvingDepth, maxCarvingDepth, jitterMin, 0, false, fillerBlock);
     }
 
-    public MapGenDeeperRavine(int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock){
-        this(0, maxY, genRarity, widthFactor, heightFactor, fillerBlock, -1, 255, true, 0, false);
+    public MapGenDeeperRavine(int maxY, int genRarity, double widthFactor, double heightFactor, Block... fillerBlock){
+        this(0, maxY, genRarity, widthFactor, heightFactor, -1, 255, true, 0, false, fillerBlock);
     }
 
     public MapGenDeeperRavine(){
@@ -293,11 +295,11 @@ public class MapGenDeeperRavine extends MapGenBase
         BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
         Block block  = data[index];
 
-        if (block == Blocks.stone || block == biome.fillerBlock || block == biome.topBlock || block == this.fillerBlock)
+        if (block == Blocks.stone || block == biome.fillerBlock || block == biome.topBlock || this.fillerBlock.contains(block))
         {
             if (y < minHeight || y > maxCarvingDepth)
             {
-                data[index] = this.fillerBlock;
+                data[index] = biome.fillerBlock;
             }
             else
             {

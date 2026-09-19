@@ -8,16 +8,16 @@ import net.minecraft.world.biome.BiomeGenBase;
 
 public class MapGenDeeperRavineFinalLabyrinth extends MapGenDeeperRavine
 {
-    public MapGenDeeperRavineFinalLabyrinth(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin, int seedSalt, boolean floorCutoff){
-        super(minY, maxY, genRarity, widthFactor, heightFactor, fillerBlock, minCarvingDepth, maxCarvingDepth, jitterMin, seedSalt, floorCutoff);
+    public MapGenDeeperRavineFinalLabyrinth(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin, int seedSalt, boolean floorCutoff, Block... fillerBlock){
+        super(minY, maxY, genRarity, widthFactor, heightFactor, minCarvingDepth, maxCarvingDepth, jitterMin, seedSalt, floorCutoff, fillerBlock);
     }
 
-    public MapGenDeeperRavineFinalLabyrinth(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin){
-        this(minY, maxY, genRarity, widthFactor, heightFactor, fillerBlock, minCarvingDepth, maxCarvingDepth, jitterMin, 0, false);
+    public MapGenDeeperRavineFinalLabyrinth(int minY, int maxY, int genRarity, double widthFactor, double heightFactor, int minCarvingDepth, int maxCarvingDepth, boolean jitterMin, Block... fillerBlock){
+        this(minY, maxY, genRarity, widthFactor, heightFactor, minCarvingDepth, maxCarvingDepth, jitterMin, 0, false, fillerBlock);
     }
 
-    public MapGenDeeperRavineFinalLabyrinth(int maxY, int genRarity, double widthFactor, double heightFactor, Block fillerBlock){
-        this(0, maxY, genRarity, widthFactor, heightFactor, fillerBlock, -1, 255, true, 0, false);
+    public MapGenDeeperRavineFinalLabyrinth(int maxY, int genRarity, double widthFactor, double heightFactor, Block... fillerBlock){
+        this(0, maxY, genRarity, widthFactor, heightFactor, -1, 255, true, 0, false, fillerBlock);
     }
 
     public MapGenDeeperRavineFinalLabyrinth(){
@@ -30,11 +30,11 @@ public class MapGenDeeperRavineFinalLabyrinth extends MapGenDeeperRavine
         BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
         Block block  = data[index];
 
-        if (block == Blocks.stone || block == biome.fillerBlock || block == biome.topBlock || block == this.fillerBlock)
+        if (block == Blocks.stone || block == biome.fillerBlock || block == biome.topBlock || this.fillerBlock.contains(block))
         {
             if (y < minHeight || y > maxCarvingDepth)
             {
-                data[index] = this.fillerBlock;
+                data[index] = biome.fillerBlock;
             }
             else
             {

@@ -29,9 +29,9 @@ public class ChunkProviderBedrockPlains extends ChunkProviderDeeperCavesBase
 {
     /** RNG. */
     private MapGenBase caveGenerator = null;
-    private MapGenBase ravineGenerator = new MapGenDeeperRavine(DeeperConfig.bedrockPlainsFloorHeight-16, DeeperConfig.bedrockPlainsFloorHeight+16, 60, 0.8, 5.0, Blocks.bedrock, -1, DeeperConfig.bedrockPlainsFloorHeight+8, false);
+    private MapGenBase ravineGenerator = new MapGenDeeperRavine(DeeperConfig.bedrockPlainsFloorHeight-16, DeeperConfig.bedrockPlainsFloorHeight+16, 60, 0.8, 5.0, -1, DeeperConfig.bedrockPlainsFloorHeight+8, false, Blocks.bedrock);
 
-    private MapGenBase ravineGenerator2 = new MapGenDeeperRavine(DeeperConfig.bedrockPlainsCeilingHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+16, 60, 0.8, 2.0, Blocks.bedrock, DeeperConfig.bedrockPlainsCeilingHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+16, false, 413, false);
+    private MapGenBase ravineGenerator2 = new MapGenDeeperRavine(DeeperConfig.bedrockPlainsCeilingHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+16, 60, 0.8, 2.0, DeeperConfig.bedrockPlainsCeilingHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+16, false, 413, false, Blocks.bedrock);
 
     NoiseGeneratorOctaves floorHeightNoise;
     NoiseGeneratorOctaves ceilingHeightNoise;

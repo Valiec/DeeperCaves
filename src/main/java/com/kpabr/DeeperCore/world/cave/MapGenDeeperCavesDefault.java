@@ -1,5 +1,7 @@
 package com.kpabr.DeeperCore.world.cave;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Random;
 
 import com.kpabr.DeeperCore.dimstack.DeeperLayer;
@@ -25,7 +27,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     public int startSkipChance;
     public boolean doClumpCaves;
     public boolean doSkewHeight;
-    public Block carvableBlock;
+    public HashSet<Block> carvableBlocks;
     public int steepChance;
     public boolean smoothCutoffLower;
     public boolean smoothCutoffUpper;
@@ -36,11 +38,11 @@ public class MapGenDeeperCavesDefault extends MapGenBase
 
     public double[] noiseField = new double[256];
 
-    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight, Block carvableBlock) {
-        this(floorCutoff, widthDivisor, widthMin, heightMax, heightSkewMin, heightMin, startCountMax, startSkipChance, doClumpCaves, doSkewHeight, carvableBlock, 6);
+    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight, Block... carvableBlock) {
+        this(floorCutoff, widthDivisor, widthMin, heightMax, heightSkewMin, heightMin, startCountMax, startSkipChance, doClumpCaves, doSkewHeight, 6, carvableBlock);
     }
 
-    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight, Block carvableBlock, int steepChance) {
+    public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, int heightMax, int heightSkewMin, int heightMin, int startCountMax, int startSkipChance, boolean doClumpCaves, boolean doSkewHeight, int steepChance, Block... carvableBlock) {
         super();
         this.floorCutoff = floorCutoff;
         this.widthDivisor = widthDivisor;
@@ -52,7 +54,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
         this.startSkipChance = startSkipChance;
         this.doClumpCaves = doClumpCaves;
         this.doSkewHeight = doSkewHeight;
-        this.carvableBlock = carvableBlock;
+        this.carvableBlocks = new HashSet<Block>(Arrays.asList(carvableBlock));
         this.steepChance = steepChance;
         this.smoothCutoffLower = false;
 
@@ -69,7 +71,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     }
 
     public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin) {
-        this(floorCutoff, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, false, Blocks.stone, 6);
+        this(floorCutoff, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, false, 6, Blocks.stone);
     }
 
     public MapGenDeeperCavesDefault(float widthDivisor, double widthMin) {
@@ -77,7 +79,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     }
 
     public MapGenDeeperCavesDefault(boolean floorCutoff, float widthDivisor, double widthMin, Block carvableBlock) {
-        this(floorCutoff, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, false, carvableBlock, 6);
+        this(floorCutoff, widthDivisor, widthMin, 248, 8, 0, 47, 5, true, false, 6, carvableBlock);
     }
 
     public MapGenDeeperCavesDefault(float widthDivisor, double widthMin, Block carvableBlock) {
@@ -86,11 +88,11 @@ public class MapGenDeeperCavesDefault extends MapGenBase
 
 
     public MapGenDeeperCavesDefault() {
-        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, Blocks.stone, 6);
+        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, 6, Blocks.stone);
     }
 
     public MapGenDeeperCavesDefault(Block carvableBlock) {
-        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, carvableBlock, 6);
+        this(false, 1.0F, 1.5D, 248, 8, 0, 47, 5, true, false, 6, carvableBlock);
     }
 
     protected void func_151542_a(long p_151542_1_, int p_151542_3_, int p_151542_4_, Block[] p_151542_5_, double p_151542_6_, double p_151542_8_, double p_151542_10_)
@@ -394,7 +396,7 @@ public class MapGenDeeperCavesDefault extends MapGenBase
 
         if (!this.smoothCutoffLower || (this.noiseField[z + x * 16] * 0.067) + 10 < y) {
 
-            if (block == this.carvableBlock || block == filler || block == top) {
+            if (this.carvableBlocks.contains(block) || block == filler || block == top) {
                 //if (y < 10)
                 //{
                 //data[index] = Blocks.lava;
