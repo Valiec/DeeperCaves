@@ -16,7 +16,7 @@ public class BiomeGenBedrockPlains extends BiomeGenDeeperCavesBase
     	this.biomeName = "Bedrock Plains";
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = DeeperBlocks.fragmentedBedrock;
     }
 
     public void generateOres(World world, Random random, int x, int z) {

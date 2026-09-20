@@ -14,7 +14,7 @@ public class BiomeGenFarVoid extends BiomeGenDeeperCavesBase
     {
         super(biomeID);
     	this.biomeName = "Far Void";
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = DeeperBlocks.darkStone;
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
 

@@ -16,7 +16,7 @@ public class BiomeGenCrystal extends BiomeGenDeeperCavesBase
     	this.biomeName = "Crystal";
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = Blocks.stone;
 
     }
 

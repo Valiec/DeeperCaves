@@ -16,7 +16,7 @@ public class BiomeGenEvil extends BiomeGenDeeperCavesBase
     {
         super(biomeID);
     	this.biomeName = "Evil";
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = DeeperBlocks.forgottenStone;
         this.theBiomeDecorator = new EvilDecorator();
         this.theBiomeDecorator.generateLakes = false;
         ((DeeperBaseDecorator)this.theBiomeDecorator).generateLava = false;

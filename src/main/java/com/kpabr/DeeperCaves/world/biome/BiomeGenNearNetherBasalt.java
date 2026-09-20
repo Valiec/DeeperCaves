@@ -15,6 +15,7 @@ public class BiomeGenNearNetherBasalt extends BiomeGenNearNether
         super(biomeID);
         this.biomeName = "Near Nether Basalt";
         this.stoneBlock = DeeperBlocks.basalt;
+        this.fillerBlock = DeeperBlocks.basalt;
     }
 
     public void generateOres(World world, Random random, int x, int z) {

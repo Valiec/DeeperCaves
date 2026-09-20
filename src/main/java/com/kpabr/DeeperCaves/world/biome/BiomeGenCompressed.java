@@ -16,7 +16,7 @@ public class BiomeGenCompressed extends BiomeGenDeeperCavesBase
     	this.biomeName = "Compressed";
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = Blocks.stone;
 
     }
 

@@ -14,7 +14,7 @@ public class BiomeGenMaze extends BiomeGenDeeperCavesBase
     {
         super(biomeID);
     	this.biomeName = "Maze";
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = Blocks.stone;
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
     }

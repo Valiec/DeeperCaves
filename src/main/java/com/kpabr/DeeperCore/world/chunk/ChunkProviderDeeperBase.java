@@ -176,6 +176,7 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
                 if(biomegenbase != null && biomegenbase instanceof BiomeGenDeeperBase && ((BiomeGenDeeperBase)biomegenbase).stoneBlock != null) {
                     biomeBaseBlock = ((BiomeGenDeeperBase)biomegenbase).stoneBlock;
                 }
+                biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
                 int i1 = p_147422_1_ * 16 + k & 15;
                 int j1 = p_147422_2_ * 16 + l & 15;
                 int k1 = p_147422_3_.length / 256;
@@ -208,8 +209,6 @@ public abstract class ChunkProviderDeeperBase extends ChunkProviderGenerate impl
                         p_147422_3_[i2] = biomeBaseBlock;
                     }
                 }
-
-                biomegenbase.genTerrainBlocks(this.worldObj, this.rand, p_147422_3_, p_147422_4_, p_147422_1_ * 16 + k, p_147422_2_ * 16 + l, this.stoneNoise[l + k * 16]);
             }
         }
     }

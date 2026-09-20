@@ -16,7 +16,7 @@ public class BiomeGenNearVoid extends BiomeGenDeeperCavesBase
     	this.biomeName = "Near Void";
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = DeeperBlocks.deepStone;
 
     }
 

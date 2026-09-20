@@ -16,7 +16,7 @@ public class BiomeGenMutation extends BiomeGenDeeperCavesBase
         this.spawnableMonsterList.clear();
     	this.biomeName = "Mutation";
         this.theBiomeDecorator = new LavaDecorator();
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = DeeperBlocks.darkStone;
         this.theBiomeDecorator.generateLakes = true;
 
     }

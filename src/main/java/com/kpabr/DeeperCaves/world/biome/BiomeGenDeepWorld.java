@@ -15,7 +15,7 @@ public class BiomeGenDeepWorld extends BiomeGenDeeperCavesBase
         super(biomeID);
         this.spawnableMonsterList.clear();
     	this.biomeName = "Deep World";
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = DeeperBlocks.abandonedStone;
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
 

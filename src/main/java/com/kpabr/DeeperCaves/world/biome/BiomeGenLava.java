@@ -15,7 +15,7 @@ public class BiomeGenLava extends BiomeGenDeeperCavesBase
     {
         super(biomeID);
     	this.biomeName = "Lava";
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = DeeperBlocks.deepStone;
         this.theBiomeDecorator = new LavaDecorator();
         ((DeeperBaseDecorator)this.theBiomeDecorator).generateLava = true;
         ((DeeperBaseDecorator)this.theBiomeDecorator).generateWater = false;

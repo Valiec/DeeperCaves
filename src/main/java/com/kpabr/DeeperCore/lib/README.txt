@@ -1,0 +1,1 @@
+KJpg's OpenSimplex2, used to replace vanilla noise functions because of quirks

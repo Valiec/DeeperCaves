@@ -14,7 +14,7 @@ public class BiomeGenDrop extends BiomeGenDeeperCavesBase
     {
         super(biomeID);
     	this.biomeName = "Drop";
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = Blocks.stone;
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
 

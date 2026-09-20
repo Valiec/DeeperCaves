@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class BiomeGenNearNether extends BiomeGenDeeperCavesBase
 {
+
     public BiomeGenNearNether(int biomeID)
     {
         super(biomeID);

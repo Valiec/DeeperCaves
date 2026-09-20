@@ -20,7 +20,6 @@ public class BiomeGenDarkness extends BiomeGenDeeperCavesBase
         this.fillerBlock = DeeperBlocks.darkStone;
         this.theBiomeDecorator = new DeeperDecorator();
         this.theBiomeDecorator.generateLakes = true;
-        this.fillerBlock = Blocks.dirt;
 
     }
 
