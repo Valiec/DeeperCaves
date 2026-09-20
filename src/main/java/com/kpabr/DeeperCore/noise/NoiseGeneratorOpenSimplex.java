@@ -2,9 +2,7 @@ package com.kpabr.DeeperCore.noise;
 
 import net.minecraft.world.gen.NoiseGenerator;
 
-import java.util.Random;
-
-import static com.kpabr.DeeperCore.lib.OpenSimplex2.noise3_ImproveXZ;
+import static com.kpabr.DeeperCore.lib.kdotjpg.OpenSimplex2.noise3_ImproveXZ;
 
 public class NoiseGeneratorOpenSimplex extends NoiseGenerator
 {

@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCore.lib;
+package com.kpabr.DeeperCore.lib.kdotjpg;
 
 /**
  * K.jpg's OpenSimplex 2, faster variant
