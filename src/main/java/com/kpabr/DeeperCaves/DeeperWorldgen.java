@@ -121,7 +121,7 @@ public class DeeperWorldgen {
         this.nearNether = new DeeperLayer("Near Nether", DeeperConfig.nearNetherDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderNearNether.class).setWorldProvider(WorldProviderNearNether.class).setStoneBlock(DeeperBlocks.deepStone)
                 .addBiome(new BiomeGenNearNether(DeeperConfig.nearNetherBiomeID), deeperCavesType)
-                .addBiome(new BiomeGenNearNetherBasalt(DeeperConfig.nearNetherBiomeID), deeperCavesType);
+                .addBiome(new BiomeGenNearNetherBasalt(DeeperConfig.nearNetherBasaltBiomeID), deeperCavesType);
 
         this.lava = new DeeperLayer("Lava", DeeperConfig.lavaDimID).setLayerBounds(0, 52).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderLava.class).setWorldProvider(WorldProviderLava.class)

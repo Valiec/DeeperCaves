@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCore;
+package com.kpabr.DeeperCore.noise;
 
 import java.util.Random;
 import net.minecraft.util.MathHelper;

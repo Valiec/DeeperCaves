@@ -1,4 +1,4 @@
-package com.kpabr.DeeperCore;
+package com.kpabr.DeeperCore.noise;
 
 import net.minecraft.world.gen.NoiseGenerator;
 

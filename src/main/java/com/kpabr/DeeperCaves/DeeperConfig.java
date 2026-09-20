@@ -41,6 +41,7 @@ public class DeeperConfig {
     public static int bedrockPlainsBiomeID;
 
     public static int nearNetherBiomeID;
+    public static int nearNetherBasaltBiomeID;
     public static int lavaBiomeID;
     public static int nearVoidBiomeID;
 
@@ -102,6 +103,7 @@ public class DeeperConfig {
         bedrockPlainsBiomeID = config.getInt("Bedrock Plains Biome ID", this.CATEGORY_BIOME_IDS, 174, 0, 65536, "");
         
         nearNetherBiomeID = config.getInt("Near Nether Biome ID", this.CATEGORY_BIOME_IDS, 175, 0, 65536, "");
+        nearNetherBasaltBiomeID = config.getInt("Near Nether Basalt Biome ID", this.CATEGORY_BIOME_IDS, 187, 0, 65536, "");
         lavaBiomeID = config.getInt("Lava Biome ID", this.CATEGORY_BIOME_IDS, 176, 0, 65536, "");
         nearVoidBiomeID = config.getInt("Near Void Biome ID", this.CATEGORY_BIOME_IDS, 177, 0, 65536, "");
         
