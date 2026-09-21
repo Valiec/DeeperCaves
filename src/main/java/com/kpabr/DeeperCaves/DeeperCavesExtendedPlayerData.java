@@ -12,7 +12,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
 
     public EntityPlayer player;
     public byte charmState;
-    public int voidCounter;
     public int shriekerCooldown;
     public int shriekerWarning;
     public int shriekerWarningCooldown;
@@ -20,7 +19,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
     public DeeperCavesExtendedPlayerData(EntityPlayer player) {
         this.player = player;
         this.charmState = 0;
-        this.voidCounter = 0;
         this.shriekerCooldown = 0;
     }
 
@@ -42,16 +40,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
     public boolean unblemishedCharm()
     {
         return (this.charmState & 0x8) != 0;
-    }
-
-    public int voidCounter()
-    {
-        return this.voidCounter;
-    }
-
-    public void setVoidCounter(int value)
-    {
-        this.voidCounter = value;
     }
 
     public void setVoidCharm() {
@@ -92,7 +80,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
     public void saveNBTData(NBTTagCompound compound) {
         NBTTagCompound deeperCoreData  = new NBTTagCompound();
         deeperCoreData.setByte("charmState", this.charmState);
-        deeperCoreData.setInteger("voidCounter", this.voidCounter);
         deeperCoreData.setInteger("shriekerCooldown", this.shriekerCooldown);
         deeperCoreData.setInteger("shriekerWarning", this.shriekerWarning);
         deeperCoreData.setInteger("shriekerWarningCooldown", this.shriekerWarningCooldown);
@@ -103,7 +90,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
     public void loadNBTData(NBTTagCompound compound) {
         NBTTagCompound deeperCoreData = compound.getCompoundTag("deeperCavesData");
         this.charmState = deeperCoreData.getByte("charmState");
-        this.voidCounter = deeperCoreData.getInteger("voidCounter");
         this.shriekerCooldown = deeperCoreData.getInteger("shriekerCooldown");
         this.shriekerWarning = deeperCoreData.getInteger("shriekerWarning");
         this.shriekerWarningCooldown = deeperCoreData.getInteger("shriekerWarningCooldown");

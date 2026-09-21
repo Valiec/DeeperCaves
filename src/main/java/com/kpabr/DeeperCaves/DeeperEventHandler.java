@@ -76,48 +76,24 @@ public class DeeperEventHandler {
                 }
 
                 boolean voidFlag = extData.voidCharm();
-                boolean deepFlag = extData.forgottenCharm();
-                boolean unblemishedFlag = extData.unblemishedCharm();
-                boolean echoFlag = extData.echoCharm();
-
-                int voidCounter = extData.voidCounter();
+                //boolean deepFlag = extData.forgottenCharm();
+                //boolean unblemishedFlag = extData.unblemishedCharm();
+                //boolean echoFlag = extData.echoCharm();
 
                 if (event.player.posY <= 240.0D && player.dimension == DeeperCaves.worldgen.nearVoid.dimID) {
                     if (!voidFlag) {
-                        if (voidCounter == 200) {
+                        if (event.player.ticksExisted % 200 == 0 && !event.player.capabilities.disableDamage) {
                             player.attackEntityFrom(DamageSource.outOfWorld, 0.5F);
-                            voidCounter = 0;
-                            extData.setVoidCounter(voidCounter);
-                        } else {
-                            voidCounter++;
-                            extData.setVoidCounter(voidCounter);
                         }
-
-                    } else if (voidCounter == 200) {
-                        voidCounter = 0;
-                        extData.setVoidCounter(voidCounter);
-                    } else {
-                        voidCounter++;
-                        extData.setVoidCounter(voidCounter);
                     }
                 }
+
                 if (event.player.posY <= 240.0D && player.dimension == DeeperCaves.worldgen.farVoid.dimID) {
                     if (!voidFlag) {
-                        if (voidCounter >= 9) {
+                        if(event.player.ticksExisted % 8 == 0 && !event.player.capabilities.disableDamage) {
                             player.attackEntityFrom(DamageSource.outOfWorld, 4.0F);
-                            voidCounter = 0;
-                            extData.setVoidCounter(voidCounter);
-                        } else {
-                            voidCounter++;
-                            extData.setVoidCounter(voidCounter);
                         }
 
-                    } else if (voidCounter >= 9) {
-                        voidCounter = 0;
-                        extData.setVoidCounter(voidCounter);
-                    } else {
-                        voidCounter++;
-                        extData.setVoidCounter(voidCounter);
                     }
                 }
             }
