@@ -30,6 +30,7 @@ public class BiomeGenLava extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.nredstoneOre, world, random, x, z, 16, 16, 7, 80, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.ndiamondOre, world, random, x, z, 16, 16, 7, 10, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.nlapisOre, world, random, x, z, 16, 16, 6, 12, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(Blocks.obsidian, world, random, x, z, 16, 16, 15, 20, 0, 256, DeeperBlocks.deepStone);
 
 
         LayerOregen.addOre(DeeperBlocks.magmaStone, world, random, x, z, 16, 16, 40, 80, 0, 255, DeeperBlocks.deepStone);

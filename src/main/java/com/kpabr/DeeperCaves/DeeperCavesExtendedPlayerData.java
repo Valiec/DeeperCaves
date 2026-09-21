@@ -13,7 +13,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
     public EntityPlayer player;
     public byte charmState;
     public int voidCounter;
-    public int deepCounter;
     public int shriekerCooldown;
     public int shriekerWarning;
     public int shriekerWarningCooldown;
@@ -22,7 +21,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
         this.player = player;
         this.charmState = 0;
         this.voidCounter = 0;
-        this.deepCounter = 0;
         this.shriekerCooldown = 0;
     }
 
@@ -36,26 +34,25 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
         return (this.charmState & 0x2) != 0;
     }
 
+    public boolean echoCharm()
+    {
+        return (this.charmState & 0x4) != 0;
+    }
+
+    public boolean unblemishedCharm()
+    {
+        return (this.charmState & 0x8) != 0;
+    }
+
     public int voidCounter()
     {
         return this.voidCounter;
-    }
-
-    public int deepCounter()
-    {
-        return this.deepCounter;
     }
 
     public void setVoidCounter(int value)
     {
         this.voidCounter = value;
     }
-
-    public void setDeepCounter(int value)
-    {
-       this.deepCounter = value;
-    }
-
 
     public void setVoidCharm() {
         this.charmState = (byte) (this.charmState | 0x1);
@@ -96,7 +93,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
         NBTTagCompound deeperCoreData  = new NBTTagCompound();
         deeperCoreData.setByte("charmState", this.charmState);
         deeperCoreData.setInteger("voidCounter", this.voidCounter);
-        deeperCoreData.setInteger("deepCounter", this.deepCounter);
         deeperCoreData.setInteger("shriekerCooldown", this.shriekerCooldown);
         deeperCoreData.setInteger("shriekerWarning", this.shriekerWarning);
         deeperCoreData.setInteger("shriekerWarningCooldown", this.shriekerWarningCooldown);
@@ -108,7 +104,6 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
         NBTTagCompound deeperCoreData = compound.getCompoundTag("deeperCavesData");
         this.charmState = deeperCoreData.getByte("charmState");
         this.voidCounter = deeperCoreData.getInteger("voidCounter");
-        this.deepCounter = deeperCoreData.getInteger("deepCounter");
         this.shriekerCooldown = deeperCoreData.getInteger("shriekerCooldown");
         this.shriekerWarning = deeperCoreData.getInteger("shriekerWarning");
         this.shriekerWarningCooldown = deeperCoreData.getInteger("shriekerWarningCooldown");

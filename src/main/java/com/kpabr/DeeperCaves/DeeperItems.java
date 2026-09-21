@@ -62,6 +62,10 @@ public class DeeperItems {
     public static Item voidCharm;
     
     public static Item forgottenCharm;
+
+    public static Item echoCharm;
+
+    public static Item unblemishedCharm;
     
     public static Item prisciumIngot;
     
@@ -164,6 +168,10 @@ public class DeeperItems {
         GameRegistry.registerItem(voidCharm, "void_charm");
         
         GameRegistry.registerItem(forgottenCharm, "forgotten_charm");
+
+        GameRegistry.registerItem(unblemishedCharm, "unblemished_charm");
+
+        GameRegistry.registerItem(echoCharm, "echo_charm");
         
         GameRegistry.registerItem(prisciumIngot, "priscium_ingot");
         
@@ -260,10 +268,15 @@ public class DeeperItems {
         
         vesperiteGem = new ItemBase().setTextureName("deepercaves:vesperite_gem").setUnlocalizedName("vesperiteGem").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
-        voidCharm = new ItemVoidCharm().setTextureName("deepercaves:voidCharm").setUnlocalizedName("voidCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+        voidCharm = new ItemCharm().setTextureName("deepercaves:voidCharm").setUnlocalizedName("voidCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
         
-        forgottenCharm = new ItemForgottenCharm().setTextureName("deepercaves:forgottenCharm").setUnlocalizedName("forgottenCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
-        
+        forgottenCharm = new ItemCharm().setTextureName("deepercaves:forgottenCharm").setUnlocalizedName("forgottenCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        unblemishedCharm = new ItemCharm().setTextureName("deepercaves:unblemishedCharm").setUnlocalizedName("unblemishedCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        echoCharm = new ItemCharm().setTextureName("deepercaves:echoCharm").setUnlocalizedName("echoCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+
         prisciumIngot = new ItemBase().setTextureName("deepercaves:priscium_ingot").setUnlocalizedName("prisciumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
 
         prisciumDust = new ItemBase().setTextureName("deepercaves:priscium_dust").setUnlocalizedName("prisciumDust").setCreativeTab(DeeperCaves.tabDeeperCavesItems);

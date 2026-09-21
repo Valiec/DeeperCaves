@@ -21,7 +21,8 @@ public class BiomeGenNearNetherBasalt extends BiomeGenNearNether
     public void generateOres(World world, Random random, int x, int z) {
         //LayerOregen.addOre(Blocks.soul_sand, world, random, x, z, 16, 16, 30, 15, 0, 256, DeeperBlocks.basalt);
         //LayerOregen.addOre(Blocks.gravel, world, random, x, z, 16, 16, 32, 8, 0, 256, DeeperBlocks.deepStone);
-        LayerOregen.addOre(DeeperBlocks.deepStone, world, random, x, z, 16, 16, 40, 60, 0, 110, DeeperBlocks.basalt);
+        LayerOregen.addOre(DeeperBlocks.heatedObsidian, world, random, x, z, 16, 16, 15, 10, 0, 256, DeeperBlocks.basalt);
+        LayerOregen.addOre(DeeperBlocks.deepStone, world, random, x, z, 16, 16, 40, 30, 0, 110, DeeperBlocks.basalt);
 
         LayerOregen.addOre(DeeperBlocks.ncoalOre, world, random, x, z, 16, 16, 16, 25, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.nironOre, world, random, x, z, 16, 16, 8, 50, 0, 256, DeeperBlocks.deepStone);
@@ -29,6 +30,8 @@ public class BiomeGenNearNetherBasalt extends BiomeGenNearNether
         LayerOregen.addOre(DeeperBlocks.nredstoneOre, world, random, x, z, 16, 16, 7, 80, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.ndiamondOre, world, random, x, z, 16, 16, 7, 10, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.nlapisOre, world, random, x, z, 16, 16, 6, 12, 0, 256, DeeperBlocks.deepStone);
+
+
 
         LayerOregen.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 30, 60, 0, 110, DeeperBlocks.basalt);
         LayerOregen.addOre(Blocks.quartz_ore, world, random, x, z, 16, 16, 8, 55, 0, 110, Blocks.netherrack);

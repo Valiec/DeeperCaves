@@ -18,7 +18,7 @@ public class BiomeGenNearNether extends BiomeGenDeeperCavesBase
         this.theBiomeDecorator = new DeeperDecorator();
         ((DeeperDecorator)this.theBiomeDecorator).generateLava = true;
         ((DeeperDecorator)this.theBiomeDecorator).generateWater = false;
-        this.fillerBlock = Blocks.dirt;
+        this.fillerBlock = DeeperBlocks.deepStone;
 
     }
 
@@ -31,6 +31,7 @@ public class BiomeGenNearNether extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.nredstoneOre, world, random, x, z, 16, 16, 7, 80, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.ndiamondOre, world, random, x, z, 16, 16, 7, 10, 0, 256, DeeperBlocks.deepStone);
         LayerOregen.addOre(DeeperBlocks.nlapisOre, world, random, x, z, 16, 16, 6, 12, 0, 256, DeeperBlocks.deepStone);
+        LayerOregen.addOre(DeeperBlocks.heatedObsidian, world, random, x, z, 16, 16, 15, 20, 0, 256, DeeperBlocks.deepStone);
 
         LayerOregen.addOre(Blocks.netherrack, world, random, x, z, 16, 16, 40, 120, 0, 110, DeeperBlocks.deepStone);
         LayerOregen.addOre(Blocks.quartz_ore, world, random, x, z, 16, 16, 8, 55, 0, 110, Blocks.netherrack);

@@ -28,9 +28,8 @@ public class BiomeGenFarVoid extends BiomeGenDeeperCavesBase
         LayerOregen.addOre(DeeperBlocks.dcredstoneOre, world, random, x, z, 16, 16, 8, 1, 220, 235, DeeperBlocks.darkStone);
         LayerOregen.addOre(DeeperBlocks.dcdiamondOre, world, random, x, z, 16, 16, 8, 1, 220, 235, DeeperBlocks.darkStone);
         LayerOregen.addOre(DeeperBlocks.dcemeraldOre, world, random, x, z, 16, 16, 3, 1, 220, 235, DeeperBlocks.darkStone);
-        LayerOregen.addOre(Blocks.obsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperBlocks.darkStone);
         LayerOregen.addOre(DeeperBlocks.cooledObsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperBlocks.darkStone);
-        LayerOregen.addOre(DeeperBlocks.heatedObsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperBlocks.darkStone);
+        //LayerOregen.addOre(DeeperBlocks.heatedObsidian, world, random, x, z, 16, 16, 15, 3, 220, 255, DeeperBlocks.darkStone);
         //LayerOregen.addOre(Blocks.end_stone, world, random, x, z, 16, 16, 15, 1, 128, 255, DeeperBlocks.darkStone);
         LayerOregen.addOre(DeeperBlocks.dcsapphireOre, world, random, x, z, 16, 16, 4, 32, 0, 255, DeeperBlocks.darkStone);
         LayerOregen.addOre(DeeperBlocks.dcaquamarineOre, world, random, x, z, 16, 16, 9, 40, 0, 255, DeeperBlocks.darkStone);
