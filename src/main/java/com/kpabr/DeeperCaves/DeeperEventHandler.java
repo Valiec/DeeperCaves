@@ -19,8 +19,6 @@ public class DeeperEventHandler {
             if(extData != null && extData.echoCharm()) {
                 event.setCanceled(true);
             }
-            else {
-            }
         }
     }
 
@@ -47,33 +45,12 @@ public class DeeperEventHandler {
             DeeperCavesExtendedPlayerData extData = (DeeperCavesExtendedPlayerData) player.getExtendedProperties(DeeperCavesExtendedPlayerData.NAME);
 
             if (extData != null) {
-                if(player.inventory.hasItemStack(new ItemStack(DeeperItems.voidCharm))) {
-                    extData.setVoidCharm();
-                }
-                else {
-                    extData.unsetVoidCharm();
-                }
 
-                if(player.inventory.hasItemStack(new ItemStack(DeeperItems.forgottenCharm))) {
-                    extData.setForgottenCharm();
-                }
-                else {
-                    extData.unsetForgottenCharm();
-                }
+                extData.setVoidCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.voidCharm)));
+                extData.setForgottenCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.forgottenCharm)));
+                extData.setEchoCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.echoCharm)));
+                extData.setUnblemishedCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.unblemishedCharm)));
 
-                if(player.inventory.hasItemStack(new ItemStack(DeeperItems.echoCharm))) {
-                    extData.setEchoCharm();
-                }
-                else {
-                    extData.unsetEchoCharm();
-                }
-
-                if(player.inventory.hasItemStack(new ItemStack(DeeperItems.unblemishedCharm))) {
-                    extData.setUnblemishedCharm();
-                }
-                else {
-                    extData.unsetUnblemishedCharm();
-                }
 
                 boolean voidFlag = extData.voidCharm();
                 //boolean deepFlag = extData.forgottenCharm();

@@ -42,37 +42,24 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
         return (this.charmState & 0x8) != 0;
     }
 
-    public void setVoidCharm() {
-        this.charmState = (byte) (this.charmState | 0x1);
+    public void setCharmFlag(boolean state, byte flag) {
+        this.charmState =  (byte) (state ? (this.charmState | flag) : (this.charmState & ~flag));
     }
 
-    public void setForgottenCharm() {
-        this.charmState = (byte) (this.charmState | 0x2);
+    public void setVoidCharm(boolean state) {
+        setCharmFlag(state, (byte) 0x1);
     }
 
-    public void setEchoCharm() {
-        this.charmState = (byte) (this.charmState | 0x4);
+    public void setForgottenCharm(boolean state) {
+        setCharmFlag(state, (byte) 0x2);
     }
 
-    public void setUnblemishedCharm() {
-        this.charmState = (byte) (this.charmState | 0x8);
+    public void setEchoCharm(boolean state) {
+        setCharmFlag(state, (byte) 0x4);
     }
 
-
-    public void unsetVoidCharm() {
-        this.charmState = (byte) (this.charmState & ~0x1);
-    }
-
-    public void unsetForgottenCharm() {
-        this.charmState = (byte) (this.charmState & ~0x2);
-    }
-
-    public void unsetEchoCharm() {
-        this.charmState = (byte) (this.charmState & ~0x4);
-    }
-
-    public void unsetUnblemishedCharm() {
-        this.charmState = (byte) (this.charmState & ~0x8);
+    public void setUnblemishedCharm(boolean state) {
+        setCharmFlag(state, (byte) 0x8);
     }
 
 
