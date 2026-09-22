@@ -1,5 +1,6 @@
 package com.kpabr.DeeperCore.world.cave;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -9,7 +10,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
-import scala.actors.threadpool.Arrays;
 
 public class MapGenDeeperRavine extends MapGenBase
 {
