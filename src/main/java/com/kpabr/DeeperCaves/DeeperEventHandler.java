@@ -60,6 +60,7 @@ public class DeeperEventHandler {
 
                 boolean voidFlag = extData.voidCharm();
                 boolean cavernFlag = extData.cavernCharm();
+                boolean waterFlag = extData.waterCharm();
                 //boolean deepFlag = extData.forgottenCharm();
                 //boolean unblemishedFlag = extData.unblemishedCharm();
                 //boolean echoFlag = extData.echoCharm();
@@ -83,6 +84,10 @@ public class DeeperEventHandler {
 
                 if(event.player.ticksExisted % 20 == 0 && cavernFlag) {
                     player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 300, 0, true));
+                }
+
+                if(event.player.ticksExisted % 20 == 0 && waterFlag && event.player.isInWater()) {
+                    player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, 100, 0, true));
                 }
             }
         }
