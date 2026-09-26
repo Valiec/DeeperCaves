@@ -35,6 +35,14 @@ public class DeeperRecipes {
         GameRegistry.addRecipe(new ItemStack(DeeperBlocks.dropPortal, 1), "ZZZ", "Z Z", "ZZZ", 'Z', Blocks.obsidian);
         
         GameRegistry.addRecipe(new ItemStack(DeeperItems.voidCharm, 1), " X ", "XYX", " X ", 'X', DeeperItems.tenebriumIngot, 'Y', DeeperItems.vesperiteGem);
+
+        GameRegistry.addRecipe(new ItemStack(DeeperItems.cavernCharm, 1), " X ", "XYX", " X ", 'X', DeeperItems.tenebriumIngot, 'Y', Items.quartz);
+
+        GameRegistry.addRecipe(new ItemStack(DeeperItems.ametrineCharm, 1), " X ", "XYX", " X ", 'X', DeeperItems.tenebriumIngot, 'Y', DeeperItems.ametrineGem);
+
+        GameRegistry.addRecipe(new ItemStack(DeeperItems.featherCharm, 1), " X ", "XYX", " X ", 'X', DeeperItems.silverIngot, 'Y', DeeperItems.sapphireGem);
+
+        GameRegistry.addRecipe(new ItemStack(DeeperItems.waterCharm, 1), " X ", "XYX", " X ", 'X', DeeperItems.silverIngot, 'Y', DeeperItems.aquamarine);
         
         GameRegistry.addRecipe(new ItemStack(DeeperBlocks.vesperiteBlock, 1), "ZZZ", "ZZZ", "ZZZ", 'Z', DeeperItems.vesperiteGem);
         
