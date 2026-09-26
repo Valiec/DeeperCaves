@@ -66,6 +66,14 @@ public class DeeperItems {
     public static Item echoCharm;
 
     public static Item unblemishedCharm;
+
+    public static Item featherCharm;
+
+    public static Item ametrineCharm;
+
+    public static Item cavernCharm;
+
+    public static Item waterCharm;
     
     public static Item prisciumIngot;
     
@@ -172,6 +180,14 @@ public class DeeperItems {
         GameRegistry.registerItem(unblemishedCharm, "unblemished_charm");
 
         GameRegistry.registerItem(echoCharm, "echo_charm");
+
+        GameRegistry.registerItem(ametrineCharm, "ametrine_charm");
+
+        GameRegistry.registerItem(featherCharm, "feather_charm");
+
+        GameRegistry.registerItem(cavernCharm, "cavern_charm");
+
+        GameRegistry.registerItem(waterCharm, "water_charm");
         
         GameRegistry.registerItem(prisciumIngot, "priscium_ingot");
         
@@ -275,6 +291,14 @@ public class DeeperItems {
         unblemishedCharm = new ItemCharm().setTextureName("deepercaves:unblemishedCharm").setUnlocalizedName("unblemishedCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
 
         echoCharm = new ItemCharm().setTextureName("deepercaves:echoCharm").setUnlocalizedName("echoCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        featherCharm = new ItemCharm().setTextureName("deepercaves:featherCharm").setUnlocalizedName("featherCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        ametrineCharm = new ItemCharm().setTextureName("deepercaves:ametrineCharm").setUnlocalizedName("ametrineCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        cavernCharm = new ItemCharm().setTextureName("deepercaves:cavernCharm").setUnlocalizedName("cavernCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
+
+        waterCharm = new ItemCharm().setTextureName("deepercaves:waterCharm").setUnlocalizedName("waterCharm").setCreativeTab(DeeperCaves.tabDeeperCavesItems);
 
 
         prisciumIngot = new ItemBase().setTextureName("deepercaves:priscium_ingot").setUnlocalizedName("prisciumIngot").setCreativeTab(DeeperCaves.tabDeeperCavesItems);

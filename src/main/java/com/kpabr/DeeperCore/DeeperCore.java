@@ -14,7 +14,7 @@ import net.minecraftforge.common.MinecraftForge;
 @Mod(modid = DeeperCore.MODID, version = DeeperCore.VERSION, name = DeeperCore.NAME)
 public class DeeperCore
 {
-    //@SidedProxy(clientSide="com.kpabr.DeeperCaves.client.ClientProxy", serverSide="com.kpabr.DeeperCaves.CommonProxy")
+    //@SidedProxy(clientSide="com.kpabr.DeeperCore.client.ClientProxy", serverSide="com.kpabr.DeeperCore.CommonProxy")
     //public static CommonProxy proxy;
  
     /*Mod ID and Version declarations*/

@@ -5,6 +5,8 @@ import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -50,9 +52,14 @@ public class DeeperEventHandler {
                 extData.setForgottenCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.forgottenCharm)));
                 extData.setEchoCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.echoCharm)));
                 extData.setUnblemishedCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.unblemishedCharm)));
+                extData.setFeatherCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.featherCharm)));
+                extData.setAmetrineCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.ametrineCharm)));
+                extData.setCavernCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.cavernCharm)));
+                extData.setWaterCharm(player.inventory.hasItemStack(new ItemStack(DeeperItems.waterCharm)));
 
 
                 boolean voidFlag = extData.voidCharm();
+                boolean cavernFlag = extData.cavernCharm();
                 //boolean deepFlag = extData.forgottenCharm();
                 //boolean unblemishedFlag = extData.unblemishedCharm();
                 //boolean echoFlag = extData.echoCharm();
@@ -72,6 +79,10 @@ public class DeeperEventHandler {
                         }
 
                     }
+                }
+
+                if(event.player.ticksExisted % 20 == 0 && cavernFlag) {
+                    player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 300, 0, true));
                 }
             }
         }

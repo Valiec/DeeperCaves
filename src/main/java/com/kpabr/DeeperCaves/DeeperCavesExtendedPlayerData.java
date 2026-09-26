@@ -10,6 +10,15 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
 
     public static final String NAME = "DeeperCavesExtendedPlayerData";
 
+    public static final int FEATHER = 0x1;
+    public static final int WATER = 0x2;
+    public static final int VOID = 0x4;
+    public static final int CAVERN = 0x8;
+    public static final int AMETRINE = 0x10;
+    public static final int FORGOTTEN = 0x20;
+    public static final int UNBLEMISHED = 0x40;
+    public static final int ECHO = 0x80;
+
     public EntityPlayer player;
     public byte charmState;
     public int shriekerCooldown;
@@ -22,45 +31,83 @@ public class DeeperCavesExtendedPlayerData implements IExtendedEntityProperties 
         this.shriekerCooldown = 0;
     }
 
+    public boolean featherCharm()
+    {
+        return (this.charmState & FEATHER) != 0;
+    }
+
+    public boolean waterCharm()
+    {
+        return (this.charmState & WATER) != 0;
+    }
+
     public boolean voidCharm()
     {
-        return (this.charmState & 0x1) != 0;
+        return (this.charmState & VOID) != 0;
+    }
+
+    public boolean cavernCharm()
+    {
+        return (this.charmState & CAVERN) != 0;
+    }
+
+    public boolean ametrineCharm()
+    {
+        return (this.charmState & AMETRINE) != 0;
     }
 
     public boolean forgottenCharm()
     {
-        return (this.charmState & 0x2) != 0;
-    }
-
-    public boolean echoCharm()
-    {
-        return (this.charmState & 0x4) != 0;
+        return (this.charmState & FORGOTTEN) != 0;
     }
 
     public boolean unblemishedCharm()
     {
-        return (this.charmState & 0x8) != 0;
+        return (this.charmState & UNBLEMISHED) != 0;
     }
+
+    public boolean echoCharm()
+    {
+        return (this.charmState & ECHO) != 0;
+    }
+
 
     public void setCharmFlag(boolean state, byte flag) {
         this.charmState =  (byte) (state ? (this.charmState | flag) : (this.charmState & ~flag));
     }
 
+    public void setFeatherCharm(boolean state) {
+        setCharmFlag(state, (byte) FEATHER);
+    }
+
+    public void setWaterCharm(boolean state) {
+        setCharmFlag(state, (byte) WATER);
+    }
+
     public void setVoidCharm(boolean state) {
-        setCharmFlag(state, (byte) 0x1);
+        setCharmFlag(state, (byte) VOID);
+    }
+
+    public void setCavernCharm(boolean state) {
+        setCharmFlag(state, (byte) CAVERN);
     }
 
     public void setForgottenCharm(boolean state) {
-        setCharmFlag(state, (byte) 0x2);
+        setCharmFlag(state, (byte) FORGOTTEN);
     }
 
     public void setEchoCharm(boolean state) {
-        setCharmFlag(state, (byte) 0x4);
+        setCharmFlag(state, (byte) ECHO);
     }
 
     public void setUnblemishedCharm(boolean state) {
-        setCharmFlag(state, (byte) 0x8);
+        setCharmFlag(state, (byte) UNBLEMISHED);
     }
+
+    public void setAmetrineCharm(boolean state) {
+        setCharmFlag(state, (byte) AMETRINE);
+    }
+
 
 
     @Override
