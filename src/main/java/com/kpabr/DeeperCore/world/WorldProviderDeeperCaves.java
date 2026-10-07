@@ -23,6 +23,8 @@ public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
 
     public WorldProviderDeeperCaves(DeeperLayer layer) {
         super(layer);
+        this.skyColor = 0x202020;
+        this.fogColor = 0x202020;
     }
 
     /**

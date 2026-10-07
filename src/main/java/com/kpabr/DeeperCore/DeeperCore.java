@@ -29,8 +29,6 @@ public class DeeperCore
 
     public static DeeperBedrockUtils bedrock = new DeeperBedrockUtils();
 
-
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
