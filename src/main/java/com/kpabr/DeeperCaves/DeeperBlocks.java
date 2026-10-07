@@ -819,7 +819,7 @@ public class DeeperBlocks {
         
         DeeperBlocks.rubyBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:rubyBlock").setBlockName("ruby_block").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-        DeeperBlocks.magmaStone = new BlockMagmaStone(Material.rock).setBlockTextureName("deepercaves:magma_stone").setBlockName("magma_stone").setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.magmaStone = new BlockMagmaStone(Material.rock).setBlockTextureName("deepercaves:magma_stone").setBlockName("magma_stone").setHardness(2.2F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         DeeperBlocks.rottenPlanks = new BlockBase(Material.wood).setBlockTextureName("deepercaves:rotting_planks").setBlockName("rotten_planks").setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.rottenDoor = new BlockDoorBase(Material.wood).setBlockTextureName("deepercaves:rotting_door").setBlockName("rotten_door").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F);
