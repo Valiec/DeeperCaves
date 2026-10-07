@@ -189,8 +189,8 @@ public class DeeperConfig {
         lavaFogColorStr = config.getString("Lava Fog Color", this.CATEGORY_FOG_COLORS, "0x504040", "", hexColor);
         nearVoidFogColorStr = config.getString("Near Void Fog Color", this.CATEGORY_FOG_COLORS, "0x404040", "", hexColor);
 
-        deepWorldFogColorStr = config.getString("Deep World Fog Color", this.CATEGORY_FOG_COLORS, "0x404030", "", hexColor);
-        abandonedCavesFogColorStr = config.getString("Abandoned Caves Fog Color", this.CATEGORY_FOG_COLORS, "0x404030", "", hexColor);
+        deepWorldFogColorStr = config.getString("Deep World Fog Color", this.CATEGORY_FOG_COLORS, "0x33332a", "", hexColor);
+        abandonedCavesFogColorStr = config.getString("Abandoned Caves Fog Color", this.CATEGORY_FOG_COLORS, "0x33332a", "", hexColor);
         darknessFogColorStr = config.getString("Darkness Fog Color", this.CATEGORY_FOG_COLORS, "0x080808", "", hexColor);
         mutationFogColorStr = config.getString("Mutation Fog Color", this.CATEGORY_FOG_COLORS, "0x101010", "", hexColor);
         farVoidFogColorStr = config.getString("Far Void Fog Color", this.CATEGORY_FOG_COLORS, "0x101010", "", hexColor);
