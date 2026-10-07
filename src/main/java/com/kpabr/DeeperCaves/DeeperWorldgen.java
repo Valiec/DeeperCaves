@@ -98,74 +98,84 @@ public class DeeperWorldgen {
 
         this.drop = new DeeperLayer("Drop", DeeperConfig.dropDimID).setLayerBounds(0, 202).setUpperArrivalRange(12)
                 .setChunkProvider(ChunkProviderDrop.class).setWorldProvider(WorldProviderDrop.class)
-                .addBiome(new BiomeGenDrop(DeeperConfig.dropBiomeID), deeperCavesType);
+                .addBiome(new BiomeGenDrop(DeeperConfig.dropBiomeID), deeperCavesType).setSkyAndFog(DeeperConfig.dropFogColor);
 
         this.maze = new DeeperLayer("Maze", DeeperConfig.mazeDimID).setLayerBounds(0, 202).setUpperArrivalRange(12)
                 .setChunkProvider(ChunkProviderMaze.class).setWorldProvider(WorldProviderMaze.class)
-                .addBiome(new BiomeGenMaze(DeeperConfig.mazeBiomeID), deeperCavesType);
+                .addBiome(new BiomeGenMaze(DeeperConfig.mazeBiomeID), deeperCavesType).setSkyAndFog(DeeperConfig.mazeFogColor);;
 
         this.crystal = new DeeperLayer("Crystal", DeeperConfig.crystalDimID).setLayerBounds(0, 152).setUpperArrivalRange(12)
                 .setChunkProvider(ChunkProviderCrystal.class).setWorldProvider(WorldProviderCrystal.class)
-                .addBiome(new BiomeGenCrystal(DeeperConfig.crystalBiomeID), deeperCavesType);
+                .addBiome(new BiomeGenCrystal(DeeperConfig.crystalBiomeID), deeperCavesType).setSkyAndFog(DeeperConfig.crystalFogColor);;
 
         this.compressed = new DeeperLayer("Compressed", DeeperConfig.compressedDimID).setLayerBounds(0, 102).setUpperArrivalRange(12)
                 .setChunkProvider(ChunkProviderCompressed.class).setWorldProvider(WorldProviderCompressed.class)
-                .addBiome(new BiomeGenCompressed(DeeperConfig.compressedBiomeID), deeperCavesType);
+                .addBiome(new BiomeGenCompressed(DeeperConfig.compressedBiomeID), deeperCavesType).setSkyAndFog(DeeperConfig.compressedFogColor);;
 
         this.bedrockPlains = new DeeperLayer("Bedrock Plains", DeeperConfig.bedrockPlainsDimID).setLayerBounds(0, DeeperConfig.bedrockPlainsCeilingHeight+8)
                 .setUpperArrivalBounds(DeeperConfig.bedrockPlainsFloorHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+3)
                 .setLowerArrivalBounds(DeeperConfig.bedrockPlainsFloorHeight-8, DeeperConfig.bedrockPlainsCeilingHeight+3)
                 .setUpperArrivalRange(12).setChunkProvider(ChunkProviderBedrockPlains.class).setWorldProvider(WorldProviderBedrockPlains.class)
-                .addBiome(new BiomeGenBedrockPlains(DeeperConfig.bedrockPlainsBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.fragmentedBedrock);
+                .addBiome(new BiomeGenBedrockPlains(DeeperConfig.bedrockPlainsBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.fragmentedBedrock)
+                .setSkyAndFog(DeeperConfig.bedrockPlainsFogColor);
 
         this.nearNether = new DeeperLayer("Near Nether", DeeperConfig.nearNetherDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderNearNether.class).setWorldProvider(WorldProviderNearNether.class).setStoneBlock(DeeperBlocks.deepStone)
                 .addBiome(new BiomeGenNearNether(DeeperConfig.nearNetherBiomeID), deeperCavesType)
-                .addBiome(new BiomeGenNearNetherBasalt(DeeperConfig.nearNetherBasaltBiomeID), deeperCavesType);
+                .addBiome(new BiomeGenNearNetherBasalt(DeeperConfig.nearNetherBasaltBiomeID), deeperCavesType).setSkyAndFog(DeeperConfig.nearNetherFogColor);;
 
         this.lava = new DeeperLayer("Lava", DeeperConfig.lavaDimID).setLayerBounds(0, 52).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderLava.class).setWorldProvider(WorldProviderLava.class)
-                .addBiome(new BiomeGenLava(DeeperConfig.lavaBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
+                .addBiome(new BiomeGenLava(DeeperConfig.lavaBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone)
+                .setSkyAndFog(DeeperConfig.lavaFogColor);
 
         this.nearVoid = new DeeperLayer("Near Void", DeeperConfig.nearVoidDimID).setLayerBounds(220, 247)
                 .setTPTriggerBounds(120, 245).setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderNearVoid.class).setWorldProvider(WorldProviderNearVoid.class)
-                .addBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone);
+                .addBiome(new BiomeGenNearVoid(DeeperConfig.nearVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.deepStone)
+                .setSkyAndFog(DeeperConfig.nearVoidFogColor);
 
         this.deepWorld = new DeeperLayer("Deep World", DeeperConfig.deepWorldDimID).setLayerBounds(0, 77).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderDeepWorld.class).setWorldProvider(WorldProviderDeepWorld.class)
-                .addBiome(new BiomeGenDeepWorld(DeeperConfig.deepWorldBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.abandonedStone);
+                .addBiome(new BiomeGenDeepWorld(DeeperConfig.deepWorldBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.abandonedStone)
+                .setSkyAndFog(DeeperConfig.deepWorldFogColor);
 
         this.abandonedCaves = new DeeperLayer("Abandoned Caves", DeeperConfig.abandonedCavesDimID).setLayerBounds(0, 207).setUpperArrivalRange(12)
                 .setChunkProvider(ChunkProviderAbandonedCaves.class).setWorldProvider(WorldProviderAbandonedCaves.class)
-                .addBiome(new BiomeGenAbandonedCaves(DeeperConfig.abandonedCavesBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.abandonedStone);
+                .addBiome(new BiomeGenAbandonedCaves(DeeperConfig.abandonedCavesBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.abandonedStone)
+                .setSkyAndFog(DeeperConfig.abandonedCavesFogColor);
 
         this.darkness = new DeeperLayer("Darkness", DeeperConfig.darknessDimID).setLayerBounds(0, 152).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderDarkness.class).setWorldProvider(WorldProviderDarkness.class)
-                .addBiome(new BiomeGenDarkness(DeeperConfig.darknessBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone);
+                .addBiome(new BiomeGenDarkness(DeeperConfig.darknessBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone)
+                .setSkyAndFog(DeeperConfig.darknessFogColor);
 
         this.mutation = new DeeperLayer("Mutation", DeeperConfig.mutationDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderMutation.class).setWorldProvider(WorldProviderMutation.class)
-                .addBiome(new BiomeGenMutation(DeeperConfig.mutationBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone);
+                .addBiome(new BiomeGenMutation(DeeperConfig.mutationBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone)
+                .setSkyAndFog(DeeperConfig.mutationFogColor);
 
         this.farVoid = new DeeperLayer("Far Void", DeeperConfig.farVoidDimID).setLayerBounds(220, 247)
                 .setTPTriggerBounds(120, 245).setUpperArrivalBounds(235, 242).setLowerArrivalBounds(235, 242)
                 .setChunkProvider(ChunkProviderFarVoid.class).setWorldProvider(WorldProviderFarVoid.class)
                 .addBiome(new BiomeGenFarVoid(DeeperConfig.farVoidBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.darkStone)
-                .setExitCheck(DeeperWorldgen::farVoidCheck);
+                .setExitCheck(DeeperWorldgen::farVoidCheck).setSkyAndFog(DeeperConfig.farVoidFogColor);
 
         this.forgotten = new DeeperLayer("Forgotten", DeeperConfig.forgottenDimID).setLayerBounds(0, 232).setUpperArrivalRange(42)
                 .setChunkProvider(ChunkProviderForgotten.class).setWorldProvider(WorldProviderForgotten.class)
-                .addBiome(new BiomeGenForgotten(DeeperConfig.forgottenBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.forgottenStone);
+                .addBiome(new BiomeGenForgotten(DeeperConfig.forgottenBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.forgottenStone)
+                .setSkyAndFog(DeeperConfig.forgottenFogColor);
 
         this.evil = new DeeperLayer("Evil", DeeperConfig.evilDimID).setLayerBounds(0, 102).setUpperArrivalRange(7)
                 .setChunkProvider(ChunkProviderEvil.class).setWorldProvider(WorldProviderEvil.class)
-                .addBiome(new BiomeGenEvil(DeeperConfig.evilBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.forgottenStone);
+                .addBiome(new BiomeGenEvil(DeeperConfig.evilBiomeID), deeperCavesType).setStoneBlock(DeeperBlocks.forgottenStone)
+                .setSkyAndFog(DeeperConfig.evilFogColor);
 
         this.finalLabyrinth = new DeeperLayer("Final Labyrinth", DeeperConfig.finalLabyrinthDimID).setLayerBounds(0, 247).setUpperArrivalRange(57)
                 .setChunkProvider(ChunkProviderFinalLabyrinth.class).setWorldProvider(WorldProviderFinalLabyrinth.class)
                 .setStoneBlock(DeeperBlocks.fragmentedBedrock).addBiome(new BiomeGenFinalLabyrinth(DeeperConfig.finalLabyrinthBiomeID), deeperCavesType)
-                .addBiome(new BiomeGenFinalLabyrinthSculk(DeeperConfig.finalLabyrinthSculkBiomeID), deeperCavesType);
+                .addBiome(new BiomeGenFinalLabyrinthSculk(DeeperConfig.finalLabyrinthSculkBiomeID), deeperCavesType)
+                .setSkyAndFog(DeeperConfig.finalLabyrinthFogColor);
 
         DeeperLayer.registerAllLayers();
 

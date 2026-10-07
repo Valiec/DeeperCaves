@@ -49,6 +49,9 @@ public class DeeperLayer {
 
     public int dimID;
 
+    public int skyColor;
+    public int fogColor;
+
     public Map<String, BiomeGenBase> biomes;
 
     //DeeperBiomeInfo biomeData;
@@ -136,6 +139,23 @@ public class DeeperLayer {
         layerNames.put(layerName, this);
         this.setDimID(dimID);
     }
+
+    public DeeperLayer setSkyAndFog(int color) {
+        this.setSky(color);
+        this.setFog(color);
+        return this;
+    }
+
+    public DeeperLayer setSky(int color) {
+        this.skyColor = color;
+        return this;
+    }
+
+    public DeeperLayer setFog(int color) {
+        this.fogColor = color;
+        return this;
+    }
+
 
     public DeeperLayer setWorldProvider(Class<? extends WorldProviderDeeperCaves> worldProvider) {
         this.worldProvider = worldProvider;

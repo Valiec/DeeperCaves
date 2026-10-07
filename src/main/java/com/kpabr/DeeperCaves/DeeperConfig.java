@@ -3,13 +3,18 @@ package com.kpabr.DeeperCaves;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
+import java.util.regex.Pattern;
+
 public class DeeperConfig {
 
 	public Configuration config;
 	public String CATEGORY_DIM_IDS = "dimension ids";
 	public String CATEGORY_BIOME_IDS = "biome ids";
+    public String CATEGORY_FOG_COLORS = "fog colors";
 	public String CATEGORY_ENTITY_IDS = "entity ids";
 	public String CATEGORY_OTHER = "other";
+
+    public Pattern hexColor = Pattern.compile("^(#|0x)?([A-Fa-f0-9]{6})$");
 
 
     public static int dropDimID;
@@ -56,6 +61,48 @@ public class DeeperConfig {
     public static int finalLabyrinthBiomeID;
     public static int finalLabyrinthSculkBiomeID;
 
+    //-----------------
+
+    public static String dropFogColorStr;
+    public static String mazeFogColorStr;
+    public static String crystalFogColorStr;
+    public static String compressedFogColorStr;
+    public static String bedrockPlainsFogColorStr;
+
+    public static String nearNetherFogColorStr;
+    public static String lavaFogColorStr;
+    public static String nearVoidFogColorStr;
+
+    public static String deepWorldFogColorStr;
+    public static String darknessFogColorStr;
+    public static String abandonedCavesFogColorStr;
+    public static String mutationFogColorStr;
+    public static String farVoidFogColorStr;
+
+    public static String forgottenFogColorStr;
+    public static String evilFogColorStr;
+    public static String finalLabyrinthFogColorStr;
+
+    public static int dropFogColor;
+    public static int mazeFogColor;
+    public static int crystalFogColor;
+    public static int compressedFogColor;
+    public static int bedrockPlainsFogColor;
+
+    public static int nearNetherFogColor;
+    public static int lavaFogColor;
+    public static int nearVoidFogColor;
+
+    public static int deepWorldFogColor;
+    public static int darknessFogColor;
+    public static int abandonedCavesFogColor;
+    public static int mutationFogColor;
+    public static int farVoidFogColor;
+
+    public static int forgottenFogColor;
+    public static int evilFogColor;
+    public static int finalLabyrinthFogColor;
+
     public static int bedrockPlainsFloorHeight;
     public static int bedrockPlainsCeilingHeight;
 
@@ -64,6 +111,16 @@ public class DeeperConfig {
             "Darkness", "Mutation", "Far Void", "Forgotten", "Evil", "Final Labyrinth" };
 
     public static int bedrockRemovalType;
+
+    public int colorFromHex(String colorHex) {
+        if (colorHex.startsWith("#")) {
+            colorHex = colorHex.substring(1);
+        }
+        else if(colorHex.startsWith("0x")) {
+            colorHex = colorHex.substring(2);
+        }
+        return Integer.parseInt(colorHex, 16);
+    }
 
     public void initConfig(FMLPreInitializationEvent event)
     {
@@ -117,7 +174,51 @@ public class DeeperConfig {
         evilBiomeID = config.getInt("Evil Biome ID", this.CATEGORY_BIOME_IDS, 184, 0, 65536, "");
         finalLabyrinthBiomeID = config.getInt("Final Labyrinth Biome ID", this.CATEGORY_BIOME_IDS, 185, 0, 65536, "");
         finalLabyrinthSculkBiomeID = config.getInt("Final Labyrinth Sculk Biome ID", this.CATEGORY_BIOME_IDS, 186, 0, 65536, "");
+
+        //------------------
+
+        config.addCustomCategoryComment("fog colors", "Fog Colors");
+
+        dropFogColorStr = config.getString("Drop Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        mazeFogColorStr = config.getString("Maze Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        crystalFogColorStr = config.getString("Crystal Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        compressedFogColorStr = config.getString("Compressed Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        bedrockPlainsFogColorStr = config.getString("Bedrock Plains Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+
+        nearNetherFogColorStr = config.getString("Near Nether Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        lavaFogColorStr = config.getString("Lava Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        nearVoidFogColorStr = config.getString("Near Void Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+
+        deepWorldFogColorStr = config.getString("Deep World Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        darknessFogColorStr = config.getString("Darkness Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        abandonedCavesFogColorStr = config.getString("Abandoned Caves Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        mutationFogColorStr = config.getString("Mutation Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        farVoidFogColorStr = config.getString("Far Void Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+
+        forgottenFogColorStr = config.getString("Forgotten Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        evilFogColorStr = config.getString("Evil Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        finalLabyrinthFogColorStr = config.getString("Final Labyrinth Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+
+        dropFogColor = colorFromHex(dropFogColorStr);
+        mazeFogColor = colorFromHex(mazeFogColorStr);
+        crystalFogColor = colorFromHex(crystalFogColorStr);
+        compressedFogColor = colorFromHex(compressedFogColorStr);
+        bedrockPlainsFogColor = colorFromHex(bedrockPlainsFogColorStr);
         
+        nearNetherFogColor = colorFromHex(nearNetherFogColorStr);
+        lavaFogColor = colorFromHex(lavaFogColorStr);
+        nearVoidFogColor = colorFromHex(nearVoidFogColorStr);
+
+        deepWorldFogColor = colorFromHex(deepWorldFogColorStr);
+        darknessFogColor = colorFromHex(darknessFogColorStr);
+        abandonedCavesFogColor = colorFromHex(abandonedCavesFogColorStr);
+        mutationFogColor = colorFromHex(mutationFogColorStr);
+        farVoidFogColor = colorFromHex(farVoidFogColorStr);
+
+        forgottenFogColor = colorFromHex(forgottenFogColorStr);
+        evilFogColor = colorFromHex(evilFogColorStr);
+        finalLabyrinthFogColor = colorFromHex(finalLabyrinthFogColorStr);
+
         //------------------
         
         config.addCustomCategoryComment("entity ids", "Entity IDs");
