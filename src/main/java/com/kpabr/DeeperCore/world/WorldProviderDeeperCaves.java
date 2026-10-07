@@ -1,22 +1,16 @@
 package com.kpabr.DeeperCore.world;
 
+import com.kpabr.DeeperCore.NoOpRenderer;
 import com.kpabr.DeeperCore.dimstack.DeeperLayer;
-import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldProvider;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.biome.WorldChunkManager;
-import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
 {
@@ -35,6 +29,11 @@ public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
         this.worldChunkMgr = new WorldChunkManagerDeeper(this.getSeed() + this.layer.seedOffset, this.worldObj.getWorldInfo().getTerrainType(), this.layer, 0.5F);
         this.dimensionId = this.layer.dimID;
         this.hasNoSky = true;
+
+        if(this.worldObj.isRemote) {
+            this.setSkyRenderer(new NoOpRenderer());
+            this.setCloudRenderer(new NoOpRenderer());
+        }
     }
 
     /**
@@ -50,15 +49,6 @@ public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
-    }
-
-
-    /**
-     * Calculates the angle of sun and moon in the sky relative to a specified time (usually worldTime)
-     */
-    public float calculateCelestialAngle(long par1, float par3)
-    {
-        return 0.0F;
     }
 
     @SideOnly(Side.CLIENT)
@@ -82,7 +72,7 @@ public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
      */
     public boolean canRespawnHere()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -90,7 +80,7 @@ public class WorldProviderDeeperCaves extends WorldProviderDeeperBase
      */
     public boolean isSurfaceWorld()
     {
-        return false;
+        return true;
     }
 
     @SideOnly(Side.CLIENT)
