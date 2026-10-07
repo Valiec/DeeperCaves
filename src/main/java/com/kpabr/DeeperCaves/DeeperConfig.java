@@ -140,8 +140,8 @@ public class DeeperConfig {
         nearVoidDimID = config.getInt("Near Void ID", this.CATEGORY_DIM_IDS, -9, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         
         deepWorldDimID = config.getInt("Deep World ID", this.CATEGORY_DIM_IDS, -10, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
-        darknessDimID = config.getInt("Darkness ID", this.CATEGORY_DIM_IDS, -11, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         abandonedCavesDimID = config.getInt("Abandoned Caves ID", this.CATEGORY_DIM_IDS, -12, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
+        darknessDimID = config.getInt("Darkness ID", this.CATEGORY_DIM_IDS, -11, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         mutationDimID = config.getInt("Mutation ID", this.CATEGORY_DIM_IDS, -13, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         farVoidDimID = config.getInt("Far Void ID", this.CATEGORY_DIM_IDS, -14, Integer.MIN_VALUE, Integer.MAX_VALUE, "");
         
@@ -165,8 +165,8 @@ public class DeeperConfig {
         nearVoidBiomeID = config.getInt("Near Void Biome ID", this.CATEGORY_BIOME_IDS, 177, 0, 65536, "");
         
         deepWorldBiomeID = config.getInt("Deep World Biome ID", this.CATEGORY_BIOME_IDS, 178, 0, 65536, "");
-        darknessBiomeID = config.getInt("Darkness Biome ID", this.CATEGORY_BIOME_IDS, 179, 0, 65536, "");
         abandonedCavesBiomeID = config.getInt("Abandoned Caves Biome ID", this.CATEGORY_BIOME_IDS, 180, 0, 65536, "");
+        darknessBiomeID = config.getInt("Darkness Biome ID", this.CATEGORY_BIOME_IDS, 179, 0, 65536, "");
         mutationBiomeID = config.getInt("Mutation Biome ID", this.CATEGORY_BIOME_IDS, 181, 0, 65536, "");
         farVoidBiomeID = config.getInt("Far Void Biome ID", this.CATEGORY_BIOME_IDS, 182, 0, 65536, "");
         
@@ -179,24 +179,24 @@ public class DeeperConfig {
 
         config.addCustomCategoryComment("fog colors", "Fog Colors");
 
-        dropFogColorStr = config.getString("Drop Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        mazeFogColorStr = config.getString("Maze Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        crystalFogColorStr = config.getString("Crystal Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        compressedFogColorStr = config.getString("Compressed Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        bedrockPlainsFogColorStr = config.getString("Bedrock Plains Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        dropFogColorStr = config.getString("Drop Fog Color", this.CATEGORY_FOG_COLORS, "0x404040", "", hexColor);
+        mazeFogColorStr = config.getString("Maze Fog Color", this.CATEGORY_FOG_COLORS, "0x404040", "", hexColor);
+        crystalFogColorStr = config.getString("Crystal Fog Color", this.CATEGORY_FOG_COLORS, "0x404040", "", hexColor);
+        compressedFogColorStr = config.getString("Compressed Fog Color", this.CATEGORY_FOG_COLORS, "0x404040", "", hexColor);
+        bedrockPlainsFogColorStr = config.getString("Bedrock Plains Fog Color", this.CATEGORY_FOG_COLORS, "0x404040", "", hexColor);
 
-        nearNetherFogColorStr = config.getString("Near Nether Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        lavaFogColorStr = config.getString("Lava Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        nearVoidFogColorStr = config.getString("Near Void Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        nearNetherFogColorStr = config.getString("Near Nether Fog Color", this.CATEGORY_FOG_COLORS, "0x604040", "", hexColor);
+        lavaFogColorStr = config.getString("Lava Fog Color", this.CATEGORY_FOG_COLORS, "0x504040", "", hexColor);
+        nearVoidFogColorStr = config.getString("Near Void Fog Color", this.CATEGORY_FOG_COLORS, "0x404040", "", hexColor);
 
-        deepWorldFogColorStr = config.getString("Deep World Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        darknessFogColorStr = config.getString("Darkness Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        abandonedCavesFogColorStr = config.getString("Abandoned Caves Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        mutationFogColorStr = config.getString("Mutation Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        farVoidFogColorStr = config.getString("Far Void Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        deepWorldFogColorStr = config.getString("Deep World Fog Color", this.CATEGORY_FOG_COLORS, "0x404030", "", hexColor);
+        abandonedCavesFogColorStr = config.getString("Abandoned Caves Fog Color", this.CATEGORY_FOG_COLORS, "0x404030", "", hexColor);
+        darknessFogColorStr = config.getString("Darkness Fog Color", this.CATEGORY_FOG_COLORS, "0x080808", "", hexColor);
+        mutationFogColorStr = config.getString("Mutation Fog Color", this.CATEGORY_FOG_COLORS, "0x101010", "", hexColor);
+        farVoidFogColorStr = config.getString("Far Void Fog Color", this.CATEGORY_FOG_COLORS, "0x101010", "", hexColor);
 
-        forgottenFogColorStr = config.getString("Forgotten Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
-        evilFogColorStr = config.getString("Evil Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
+        forgottenFogColorStr = config.getString("Forgotten Fog Color", this.CATEGORY_FOG_COLORS, "0x182020", "", hexColor);
+        evilFogColorStr = config.getString("Evil Fog Color", this.CATEGORY_FOG_COLORS, "0x102020", "", hexColor);
         finalLabyrinthFogColorStr = config.getString("Final Labyrinth Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
 
         dropFogColor = colorFromHex(dropFogColorStr);
@@ -204,7 +204,7 @@ public class DeeperConfig {
         crystalFogColor = colorFromHex(crystalFogColorStr);
         compressedFogColor = colorFromHex(compressedFogColorStr);
         bedrockPlainsFogColor = colorFromHex(bedrockPlainsFogColorStr);
-        
+
         nearNetherFogColor = colorFromHex(nearNetherFogColorStr);
         lavaFogColor = colorFromHex(lavaFogColorStr);
         nearVoidFogColor = colorFromHex(nearVoidFogColorStr);
