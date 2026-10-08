@@ -29,6 +29,7 @@ public class BlockDeeperPortal extends BlockBase
     public BlockDeeperPortal(Material p_i45404_1_, int dimension)
     {
         this(p_i45404_1_, dimension, false, false);
+        this.setStepSound(this.soundTypeGlass);
         
     }
 

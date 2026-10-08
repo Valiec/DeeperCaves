@@ -13,7 +13,9 @@ public class DeeperMaterials {
 	public static MaterialLiquid moltenIron = (new MaterialMoltenIron());
 	public static MaterialLiquid venenium = (new MaterialVenenium());
 
-	public static Material sculk = new Material(MapColor.cyanColor);
+	public static Material sculk = new MaterialSculk(MapColor.cyanColor);
+
+	public static Material sculkBone = new MaterialSculkBone(MapColor.cyanColor);
 
 	public static Block.SoundType sculkSound = new DeeperSoundType("sculk", 1.0F, 1.0F);
 	public static Block.SoundType sculkSensorSound = new DeeperSoundType("sculk_sensor", 1.0F, 1.0F);

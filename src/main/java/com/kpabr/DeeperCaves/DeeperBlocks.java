@@ -747,21 +747,21 @@ public class DeeperBlocks {
         
         DeeperBlocks.fragmentedBedrock = new BlockFragmentedBedrock(Material.rock).setBlockTextureName("deepercaves:fragmented_bedrock").setBlockName("fragmentedBedrock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.silverBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:silver_block").setBlockName("silverBlock").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.silverBlock = new BlockBase(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:silver_block").setBlockName("silverBlock").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.sapphireBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:sapphireBlock").setBlockName("sapphire_block").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.aquamarineBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:aquamarine_block").setBlockName("aquamarine_block").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.ametrineBlock = new BlockAmetrine(Material.rock).setBlockName("ametrineBlock").setHardness(7.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sapphireBlock = new BlockBase(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:sapphireBlock").setBlockName("sapphire_block").setHardness(5.0F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.aquamarineBlock = new BlockBase(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:aquamarine_block").setBlockName("aquamarine_block").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.ametrineBlock = new BlockAmetrine(Material.rock).setStepSound(Block.soundTypeMetal).setBlockName("ametrineBlock").setHardness(7.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
         DeeperBlocks.dtenebriumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dtenebrium_ore").setBlockName("dtenebriumOre").setHardness(8.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.tenebriumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:tenebrium").setBlockName("tenebrium_ore").setHardness(8.5F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
-        DeeperBlocks.tenebriumBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:tenebriumBlock").setBlockName("tenebrium_block").setHardness(10.5F).setResistance(20.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.tenebriumBlock = new BlockBase(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:tenebriumBlock").setBlockName("tenebrium_block").setHardness(10.5F).setResistance(20.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         DeeperBlocks.forgottenGemstoneOre = new BlockFragmentedBedrockOre(Material.rock, DeeperItems.forgottenGemstone, 1, 1, true, 7, 10).setBlockTextureName("deepercaves:forgotten_gemstone_ore").setBlockName("forgottenGemstoneOre").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
         DeeperBlocks.fakeBedrock = new BlockFakeBedrock(Material.rock).setBlockTextureName("minecraft:bedrock").setBlockName("fakeBedrock").setHardness(45.5F).setResistance(1500000.0F).setBlockUnbreakable().setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.forgottenGemstoneBlock = new BlockFakeBedrock(Material.rock).setBlockTextureName("deepercaves:forgotten_gemstone_block").setBlockName("forgottenGemstoneBlock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.forgottenGemstoneBlock = new BlockFakeBedrock(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:forgotten_gemstone_block").setBlockName("forgottenGemstoneBlock").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         DeeperBlocks.barrierLayer = new BlockBarrier(Material.rock).setBlockTextureName("deepercaves:barrier_layer").setBlockName("barrierLayer").setHardness(45.5F).setResistance(1500000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves).setBlockUnbreakable();
 
@@ -784,7 +784,7 @@ public class DeeperBlocks {
         
         DeeperBlocks.heatedObsidian = new BlockBase(Material.rock).setBlockTextureName("deepercaves:heated_obsidian").setBlockName("heatedObsidian").setHardness(30.0F).setResistance(4000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.vesperiteBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:vesperite_block").setBlockName("vesperiteBlock").setHardness(5.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.vesperiteBlock = new BlockBase(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:vesperite_block").setBlockName("vesperiteBlock").setHardness(5.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
 
         DeeperBlocks.fragmentedCobble = new BlockBase(Material.rock).setBlockTextureName("deepercaves:fragmented_cobblestone").setBlockName("fragmentedCobble").setHardness(1.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves); //!!!
@@ -798,13 +798,13 @@ public class DeeperBlocks {
         DeeperBlocks.dprisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:dpriscium_ore").setBlockName("prisciumOre").setHardness(5.0F).setResistance(8.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.prisciumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:priscium_ore").setBlockName("dpprisciumOre").setHardness(8.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
-        DeeperBlocks.prisciumBlock = new BlockPriscium(Material.rock).setBlockTextureName("deepercaves:priscium_block").setBlockName("prisciumBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.prisciumBlock = new BlockPriscium(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:priscium_block").setBlockName("prisciumBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
         DeeperBlocks.ddevanesciteOre = new BlockOreBase(Material.rock, DeeperItems.evanesciteGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:ddevanescite_ore").setBlockName("evanesciteOre").setHardness(9.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
         DeeperBlocks.evanesciteOre = new BlockOreBase(Material.rock, DeeperItems.evanesciteGem, 1, 1, true, 3, 6).setBlockTextureName("deepercaves:evanescite_ore").setBlockName("dpevanesciteOre").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         
-        DeeperBlocks.evanesciteBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:evanescite_block").setBlockName("evanesciteBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.evanesciteBlock = new BlockBase(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:evanescite_block").setBlockName("evanesciteBlock").setHardness(6.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
         DeeperBlocks.dpcoalOre = new BlockVanillaOre(Material.rock, Blocks.coal_ore).setBlockTextureName("deepercaves:dpcoal_ore").setBlockName("dpcoalOre").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
         DeeperBlocks.dpironOre = new BlockVanillaOre(Material.rock, Blocks.iron_ore).setBlockTextureName("deepercaves:dpiron_ore").setBlockName("dpironOre").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
@@ -817,22 +817,22 @@ public class DeeperBlocks {
         
         DeeperBlocks.crystal = new BlockCrystal(Material.glass).setBlockName("crystal").setLightOpacity(0).setHardness(1.0F).setResistance(2.0F).setStepSound(Block.soundTypeGlass).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.rubyBlock = new BlockBase(Material.rock).setBlockTextureName("deepercaves:rubyBlock").setBlockName("ruby_block").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rubyBlock = new BlockBase(Material.rock).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:rubyBlock").setBlockName("ruby_block").setHardness(3.0F).setResistance(15.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
         DeeperBlocks.magmaStone = new BlockMagmaStone(Material.rock).setBlockTextureName("deepercaves:magma_stone").setBlockName("magma_stone").setHardness(2.2F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         
-        DeeperBlocks.rottenPlanks = new BlockBase(Material.wood).setBlockTextureName("deepercaves:rotting_planks").setBlockName("rotten_planks").setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.rottenDoor = new BlockDoorBase(Material.wood).setBlockTextureName("deepercaves:rotting_door").setBlockName("rotten_door").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F);
-        DeeperBlocks.rottenTrapdoor = new BlockTrapdoorBase(Material.wood).setBlockTextureName("deepercaves:rotting_trapdoor").setBlockName("rotten_trapdoor").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.rottenLadder = new BlockLadderBase(Material.wood).setBlockTextureName("deepercaves:rotting_ladder").setBlockName("rotten_ladder").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rottenPlanks = new BlockBase(Material.wood).setStepSound(Block.soundTypeWood).setBlockTextureName("deepercaves:rotting_planks").setBlockName("rotten_planks").setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rottenDoor = new BlockDoorBase(Material.wood).setStepSound(Block.soundTypeWood).setBlockTextureName("deepercaves:rotting_door").setBlockName("rotten_door").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F);
+        DeeperBlocks.rottenTrapdoor = new BlockTrapdoorBase(Material.wood).setStepSound(Block.soundTypeWood).setBlockTextureName("deepercaves:rotting_trapdoor").setBlockName("rotten_trapdoor").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rottenLadder = new BlockLadderBase(Material.wood).setStepSound(Block.soundTypeWood).setBlockTextureName("deepercaves:rotting_ladder").setBlockName("rotten_ladder").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-        DeeperBlocks.rottenFence = new BlockFenceBase("deepercaves:rotting_planks", Material.wood).setBlockName("rotten_fence").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.rottenPressurePlate = new BlockPressurePlateBase("deepercaves:rotting_planks", Material.wood, BlockPressurePlate.Sensitivity.everything).setBlockName("rotten_pressure_plate").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rottenFence = new BlockFenceBase("deepercaves:rotting_planks", Material.wood).setStepSound(Block.soundTypeWood).setBlockName("rotten_fence").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rottenPressurePlate = new BlockPressurePlateBase("deepercaves:rotting_planks", Material.wood, BlockPressurePlate.Sensitivity.everything).setStepSound(Block.soundTypeWood).setBlockName("rotten_pressure_plate").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
-        DeeperBlocks.rustedBars = new BlockRustedBars("deepercaves:rusty_bars", "deepercaves:rusty_bars", Material.iron, true).setBlockTextureName("deepercaves:rusty_bars").setBlockName("rusted_iron_bars").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.rustedBars = new BlockRustedBars("deepercaves:rusty_bars", "deepercaves:rusty_bars", Material.iron, true).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:rusty_bars").setBlockName("rusted_iron_bars").setLightOpacity(0).setHardness(1.2F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-        DeeperBlocks.incenditeOre = new BlockOreBase(Material.rock, DeeperItems.incenditeGem, 1, 0, true, 3, 6).setBlockTextureName("deepercaves:incendite_ore").setBlockName("incendite_ore").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
+        DeeperBlocks.incenditeOre = new BlockOreBase(Material.rock, DeeperItems.incenditeGem, 1, 0, true, 3, 6).setBlockTextureName("deepercaves:incendite_ore").setBlockName("incendite_ore").setHardness(5.0F).setResistance(6.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
         DeeperBlocks.profundiumOre = new BlockBase(Material.rock).setBlockTextureName("deepercaves:profundium_ore").setBlockName("profundium_ore").setHardness(7.0F).setResistance(7.0F).setCreativeTab(DeeperCaves.tabDeeperCavesOres);
 
@@ -868,9 +868,9 @@ public class DeeperBlocks {
         DeeperBlocks.sculkFlesh = new BlockSculkBase(DeeperMaterials.sculk, false).setStepSound(DeeperMaterials.sculkSound).setBlockTextureName("deepercaves:sculk_flesh").setBlockName("sculkFlesh").setHardness(0.5F).setResistance(0.5F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkCatalyst = new BlockSculkCatalyst(DeeperMaterials.sculk).setStepSound(DeeperMaterials.sculkCatalystSound).setBlockTextureName("deepercaves:sculk_catalyst").setHardness(3.0F).setResistance(5.0F).setLightLevel(0.4F).setBlockName("sculkCatalyst").setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.sculkShrieker = new BlockSculkShrieker(DeeperMaterials.sculk).setStepSound(DeeperMaterials.sculkShriekerSound).setBlockName("sculkShrieker").setHardness(3.0F).setResistance(5.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.sculkBone = new BlockSculkBone(DeeperMaterials.sculk, false).setStepSound(DeeperMaterials.sculkSound).setBlockName("sculkBone").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.sculkBigBone = new BlockSculkBigBone(DeeperMaterials.sculk, false).setStepSound(DeeperMaterials.sculkSound).setBlockName("sculkBigBone").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.sculkMarrow = new BlockSculkBase(DeeperMaterials.sculk, false).setStepSound(DeeperMaterials.sculkSound).setBlockTextureName("deepercaves:sculk_marrow").setBlockName("sculkMarrow").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkBone = new BlockSculkBone(DeeperMaterials.sculkBone, false).setStepSound(DeeperMaterials.sculkSound).setBlockName("sculkBone").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkBigBone = new BlockSculkBigBone(DeeperMaterials.sculkBone, false).setStepSound(DeeperMaterials.sculkSound).setBlockName("sculkBigBone").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.sculkMarrow = new BlockSculkBase(DeeperMaterials.sculkBone, false).setStepSound(DeeperMaterials.sculkSound).setBlockTextureName("deepercaves:sculk_marrow").setBlockName("sculkMarrow").setHardness(50.0F).setResistance(1000.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
         DeeperBlocks.sculkGrass = new BlockSculkGrass(Material.plants).setStepSound(DeeperMaterials.sculkVeinSound).setBlockName("sculkGrass").setHardness(0.05F).setResistance(0.1F).setCreativeTab(DeeperCaves.tabDeeperCaves);
@@ -909,11 +909,11 @@ public class DeeperBlocks {
         DeeperBlocks.lirilvenPillarReinforced = new BlockColumn(Material.rock, "reinforced_lirilven_pillar").setBlockName("lirilvenPillarReinforced").setHardness(4.0F).setResistance(10.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
         DeeperBlocks.lirilvenStonePolished = new BlockBase(Material.rock).setBlockTextureName("deepercaves:polished_lirilven_stone").setBlockName("lirilvenStonePolished").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-        DeeperBlocks.prisciumBulb = new BlockPrisciumBulb(Material.iron, false).setBlockName("prisciumBulb").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
-        DeeperBlocks.prisciumBulbLit = new BlockPrisciumBulb(Material.iron, true).setLightLevel(1.0F).setBlockName("prisciumBulbLit").setHardness(2.5F).setResistance(12.0F);
-        DeeperBlocks.prisciumGrate = new BlockTransparentBase(Material.iron).setBlockTextureName("deepercaves:priscium_grate").setBlockName("prisciumGrate").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.prisciumBulb = new BlockPrisciumBulb(Material.iron, false).setStepSound(Block.soundTypeMetal).setBlockName("prisciumBulb").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.prisciumBulbLit = new BlockPrisciumBulb(Material.iron, true).setStepSound(Block.soundTypeMetal).setLightLevel(1.0F).setBlockName("prisciumBulbLit").setHardness(2.5F).setResistance(12.0F);
+        DeeperBlocks.prisciumGrate = new BlockTransparentBase(Material.iron).setStepSound(Block.soundTypeMetal).setBlockTextureName("deepercaves:priscium_grate").setBlockName("prisciumGrate").setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
-        DeeperBlocks.prisciumTrapdoor = new BlockTrapdoorBase(Material.iron).setBlockTextureName("deepercaves:priscium_trapdoor").setBlockName("priscium_trapdoor").setLightOpacity(0).setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
+        DeeperBlocks.prisciumTrapdoor = new BlockTrapdoorBase(Material.iron).setBlockTextureName("deepercaves:priscium_trapdoor").setStepSound(Block.soundTypeMetal).setBlockName("priscium_trapdoor").setLightOpacity(0).setHardness(2.5F).setResistance(12.0F).setCreativeTab(DeeperCaves.tabDeeperCaves);
 
 
     }
