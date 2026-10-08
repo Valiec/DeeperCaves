@@ -1,7 +1,6 @@
 package com.kpabr.DeeperCaves.client;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
-import com.kpabr.DeeperCaves.DeeperWorldgen;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.Minecraft;

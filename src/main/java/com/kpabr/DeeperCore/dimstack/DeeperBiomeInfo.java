@@ -2,7 +2,6 @@ package com.kpabr.DeeperCore.dimstack;
 
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.BiomeManager;
 
 public class DeeperBiomeInfo {
     public String name;

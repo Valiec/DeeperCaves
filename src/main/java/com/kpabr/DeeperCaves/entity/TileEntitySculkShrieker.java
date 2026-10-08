@@ -2,11 +2,8 @@ package com.kpabr.DeeperCaves.entity;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.DeeperCavesExtendedPlayerData;
-import com.kpabr.DeeperCaves.network.PacketSculkActivationS2C;
 import com.kpabr.DeeperCaves.network.PacketSculkShriekS2C;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.nbt.NBTTagCompound;
 
 public class TileEntitySculkShrieker extends TileEntitySculkActivatable {
 

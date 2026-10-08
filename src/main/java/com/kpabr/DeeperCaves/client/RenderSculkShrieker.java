@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCaves.client;
 
-import com.kpabr.DeeperCaves.block.BlockSculkSensor;
 import com.kpabr.DeeperCaves.block.BlockSculkShrieker;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;

@@ -22,19 +22,12 @@ import com.kpabr.DeeperCaves.world.provider.WorldProviderNearNether;
 import com.kpabr.DeeperCaves.world.provider.WorldProviderNearVoid;
 
 import com.kpabr.DeeperCore.world.biome.LayerOregen;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.world.World;
-import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.gen.ChunkProviderGenerate;
-import net.minecraftforge.event.terraingen.ChunkProviderEvent.ReplaceBiomeBlocks;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 
-import java.util.HashMap;
 
 public class DeeperWorldgen {
     /*World Generator Declaration*/

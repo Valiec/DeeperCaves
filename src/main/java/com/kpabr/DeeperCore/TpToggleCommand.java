@@ -1,7 +1,6 @@
 package com.kpabr.DeeperCore;
 
 import com.kpabr.DeeperCore.dimstack.DeeperCoreExtendedPlayerData;
-import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;

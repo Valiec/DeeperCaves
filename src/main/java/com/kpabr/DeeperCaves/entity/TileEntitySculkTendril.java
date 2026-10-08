@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCaves.entity;
 
-import com.kpabr.DeeperCaves.DeeperSculkManager;
 import com.kpabr.DeeperCaves.SculkActivation;
 import com.kpabr.DeeperCaves.block.BlockSculkTendril;
 import net.minecraft.block.Block;

@@ -7,13 +7,9 @@ import com.kpabr.DeeperCore.world.biome.DeeperBaseDecorator;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
-import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenLiquids;
-import net.minecraftforge.event.terraingen.TerrainGen;
 
 import java.util.Random;
 
-import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE;
 
 public class FinalLabyrinthDecorator extends DeeperBaseDecorator {
 

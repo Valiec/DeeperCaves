@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCore.dimstack;
 
-import com.kpabr.DeeperCore.world.WorldProviderDeeperBase;
 import com.kpabr.DeeperCore.world.WorldProviderDeeperCaves;
 import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import net.minecraft.block.Block;

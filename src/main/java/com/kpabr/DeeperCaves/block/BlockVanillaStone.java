@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
 import java.util.List;
-import java.util.Random;
 
 public class BlockVanillaStone extends Block {
 

@@ -3,7 +3,6 @@ package com.kpabr.DeeperCaves.entity;
 import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperSculkManager;
 import com.kpabr.DeeperCaves.SculkActivation;
-import net.minecraft.block.Block;
 
 public class TileEntitySculkSensor extends TileEntitySculkActivatable {
 

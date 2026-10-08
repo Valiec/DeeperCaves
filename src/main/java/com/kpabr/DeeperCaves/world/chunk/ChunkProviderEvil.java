@@ -12,7 +12,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.NoiseGeneratorOctaves;
 
 import java.util.Random;
 

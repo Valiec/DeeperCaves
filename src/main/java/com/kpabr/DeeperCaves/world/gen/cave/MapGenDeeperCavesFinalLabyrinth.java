@@ -2,8 +2,7 @@ package com.kpabr.DeeperCaves.world.gen.cave;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
 
-import com.kpabr.DeeperCaves.DeeperCaves;
-import com.kpabr.DeeperCaves.DeeperWorldgen;
+//import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

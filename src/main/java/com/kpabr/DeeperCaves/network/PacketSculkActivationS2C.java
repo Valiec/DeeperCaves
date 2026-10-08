@@ -1,8 +1,6 @@
 package com.kpabr.DeeperCaves.network;
 
 import com.kpabr.DeeperCaves.DeeperCaves;
-import com.kpabr.DeeperCaves.client.ParticleVibration;
-import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;

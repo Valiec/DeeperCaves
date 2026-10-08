@@ -2,7 +2,6 @@ package com.kpabr.DeeperCaves;
 
 import com.kpabr.DeeperCaves.entity.TileEntitySculkActivatable;
 import com.kpabr.DeeperCaves.network.PacketSculkActivationS2C;
-import com.kpabr.DeeperCaves.network.PacketSculkShriekS2C;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;

@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCaves.block;
 
-import com.kpabr.DeeperCaves.client.RenderSculkSensor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;

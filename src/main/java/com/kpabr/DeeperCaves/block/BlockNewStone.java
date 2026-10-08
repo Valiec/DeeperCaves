@@ -2,7 +2,6 @@ package com.kpabr.DeeperCaves.block;
 
 import java.util.Random;
 
-import com.kpabr.DeeperCaves.DeeperBlocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

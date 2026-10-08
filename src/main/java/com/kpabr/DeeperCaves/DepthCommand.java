@@ -8,7 +8,6 @@ import net.minecraft.network.rcon.RConConsoleSource;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 
-import java.io.IOException;
 
 public class DepthCommand extends CommandBase
 {

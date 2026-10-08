@@ -4,11 +4,8 @@ import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
-import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 
-import net.minecraft.block.Block;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.MapGenBase;
 
 

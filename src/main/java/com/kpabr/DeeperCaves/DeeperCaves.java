@@ -1,14 +1,11 @@
 package com.kpabr.DeeperCaves;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 import com.kpabr.DeeperCaves.network.PacketSculkActivationS2C;
 import com.kpabr.DeeperCaves.network.PacketSculkShriekS2C;
 import com.kpabr.DeeperCaves.version.DeeperVersionChecker;
-import com.kpabr.DeeperCaves.version.VersionCommand;
+//import com.kpabr.DeeperCaves.version.VersionCommand;
 import com.kpabr.DeeperCaves.world.biome.EvilDecorator;
 import com.kpabr.DeeperCaves.world.biome.FinalLabyrinthDecorator;
 import com.kpabr.DeeperCore.dimstack.DeeperTeleporter;

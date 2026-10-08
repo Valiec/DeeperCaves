@@ -2,9 +2,7 @@ package com.kpabr.DeeperCaves.block;
 
 import com.kpabr.DeeperCaves.DeeperSculkManager;
 import com.kpabr.DeeperCaves.SculkActivation;
-import com.kpabr.DeeperCaves.client.RenderSculkSensor;
 import com.kpabr.DeeperCaves.client.RenderSculkShrieker;
-import com.kpabr.DeeperCaves.entity.TileEntitySculkSensor;
 import com.kpabr.DeeperCaves.entity.TileEntitySculkShrieker;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

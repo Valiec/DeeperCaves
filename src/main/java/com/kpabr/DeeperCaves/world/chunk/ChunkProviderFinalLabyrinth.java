@@ -6,9 +6,8 @@ import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperCavesFinalLabyrinth;
 
 import com.kpabr.DeeperCaves.world.gen.cave.MapGenDeeperRavineFinalLabyrinth;
 import com.kpabr.DeeperCore.world.WorldProviderDeeperCaves;
-import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
+//import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;

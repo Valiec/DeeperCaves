@@ -4,7 +4,6 @@ import com.kpabr.DeeperCaves.client.RenderBlockTextureRotation;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import net.minecraft.util.IIcon;
 
 import java.util.Random;
 

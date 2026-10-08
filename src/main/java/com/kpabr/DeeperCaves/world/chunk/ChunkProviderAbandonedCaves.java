@@ -2,10 +2,7 @@ package com.kpabr.DeeperCaves.world.chunk;
 
 import com.kpabr.DeeperCaves.DeeperBlocks;
 import com.kpabr.DeeperCaves.DeeperCaves;
-import com.kpabr.DeeperCaves.DeeperWorldgen;
 import com.kpabr.DeeperCaves.structure.cavevillage.CaveVillage;
-import com.kpabr.DeeperCore.dimstack.DeeperLayer;
-import com.kpabr.DeeperCore.world.chunk.ChunkProviderDeeperBase;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperCavesDefault;
 import com.kpabr.DeeperCore.world.cave.MapGenDeeperRavine;
 

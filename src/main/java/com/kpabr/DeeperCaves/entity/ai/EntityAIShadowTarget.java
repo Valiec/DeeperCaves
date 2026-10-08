@@ -1,6 +1,5 @@
 package com.kpabr.DeeperCaves.entity.ai;
 
-import com.kpabr.DeeperCaves.DeeperCaves;
 import com.kpabr.DeeperCaves.DeeperCavesExtendedPlayerData;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import net.minecraft.command.IEntitySelector;
