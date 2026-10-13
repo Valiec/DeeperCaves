@@ -19,25 +19,26 @@ public class DeeperTeleporter extends Teleporter
     public static List<Block> solidGroundBlacklist = new ArrayList<Block>();
     private final WorldServer worldServerInstance;
     //private final Random random;
-    public int min;
-    public int cap;
+    public int min = 1;
+    public int cap = 255;
+    public boolean surfaceDim;
     public boolean isLower;
-    public boolean isReturnPortal;
+    public boolean isSurfacePortal;
     public Block stone;
 
-    public DeeperTeleporter(WorldServer worldServer, boolean isLower, boolean isReturnPortal)
+    public DeeperTeleporter(WorldServer worldServer, boolean isLower, boolean isSurfacePortal)
     {
         this(worldServer, isLower);
-        this.isReturnPortal = isReturnPortal;
+        this.isSurfacePortal = isSurfacePortal;
     }
 
 	public DeeperTeleporter(WorldServer worldServer, boolean isLower)
     {
         super(worldServer);
         this.isLower = isLower;
-        this.isReturnPortal = false;
+        this.isSurfacePortal = false;
         this.worldServerInstance = worldServer;
-        //this.random = new Random(worldServer.getSeed());
+        this.stone = Blocks.stone;
 
         for(DeeperLayer layer: DeeperLayer.deeperLayers)
         {
@@ -46,6 +47,7 @@ public class DeeperTeleporter extends Teleporter
                 min = this.isLower ? layer.arrivalMinLower : layer.arrivalMinUpper;
                 cap = this.isLower ? layer.arrivalCapLower : layer.arrivalCapUpper;
                 stone = layer.stoneBlock;
+                surfaceDim = layer.surfaceArrival;
         		break;
         	}
         }
@@ -59,9 +61,9 @@ public class DeeperTeleporter extends Teleporter
             int i = MathHelper.floor_double(p_77185_1_.posX);
             int j = this.min;
             int cap = this.cap;
-            if(this.worldServerInstance.provider.dimensionId == 0)
+            if(this.surfaceDim)
             {
-                if(this.isReturnPortal) {
+                if(this.isSurfacePortal) {
                     j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(((int) p_77185_1_.posX), (int) p_77185_1_.posZ));
                     cap = 255;
                 }

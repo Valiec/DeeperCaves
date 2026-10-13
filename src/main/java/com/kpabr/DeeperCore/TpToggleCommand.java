@@ -22,7 +22,7 @@ public class TpToggleCommand extends CommandBase
     // JAVADOC METHOD $$ func_82362_a
     public int getRequiredPermissionLevel()
     {
-        return 0;
+        return 2;
     }
 
     public void processCommand(ICommandSender par1ICommandSender, String[] par2ArrayOfStr)

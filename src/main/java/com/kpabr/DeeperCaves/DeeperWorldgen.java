@@ -87,7 +87,7 @@ public class DeeperWorldgen {
     public void setupWorldgen()
     {
 
-        this.surface = new DeeperLayer("Overworld", 0).setLayerBounds(0, 255);
+        this.surface = new DeeperLayer("Overworld", 0).setLayerBounds(0, 255).setSurfaceArrival(true);
 
         this.drop = new DeeperLayer("Drop", DeeperConfig.dropDimID).setLayerBounds(0, 202).setUpperArrivalRange(12)
                 .setChunkProvider(ChunkProviderDrop.class).setWorldProvider(WorldProviderDrop.class)

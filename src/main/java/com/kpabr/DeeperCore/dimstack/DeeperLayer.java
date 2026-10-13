@@ -23,6 +23,9 @@ public class DeeperLayer {
 
     public int seedOffset;
 
+    public boolean weather = false;
+    public boolean surfaceArrival = false;
+
     public int minY;
     public int maxY;
 
@@ -48,8 +51,8 @@ public class DeeperLayer {
 
     public int dimID;
 
-    public int skyColor;
-    public int fogColor;
+    public int skyColor = 0x808080;
+    public int fogColor = 0x808080;
 
     public Map<String, BiomeGenBase> biomes;
 
@@ -142,6 +145,16 @@ public class DeeperLayer {
     public DeeperLayer setSkyAndFog(int color) {
         this.setSky(color);
         this.setFog(color);
+        return this;
+    }
+
+    public DeeperLayer setWeather(boolean weather) {
+        this.weather = weather;
+        return this;
+    }
+
+    public DeeperLayer setSurfaceArrival(boolean surfaceArrival) {
+        this.surfaceArrival = surfaceArrival;
         return this;
     }
 

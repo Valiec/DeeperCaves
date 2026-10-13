@@ -304,7 +304,11 @@ public class MapGenDeeperCavesDefault extends MapGenBase
     protected void func_151538_a(World p_151538_1_, int p_151538_2_, int p_151538_3_, int p_151538_4_, int p_151538_5_, Block[] p_151538_6_)
     {
         if(this.noiseGen == null && this.smoothCutoffLower) {
-            this.noiseGen = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + DeeperLayer.layersForDimId.get(this.worldObj.provider.dimensionId).seedOffset), 8);
+            int seedOffset = 0;
+            if(DeeperLayer.layersForDimId.containsKey(this.worldObj.provider.dimensionId)) {
+                seedOffset = DeeperLayer.layersForDimId.get(this.worldObj.provider.dimensionId).seedOffset;
+            }
+            this.noiseGen = new NoiseGeneratorOctaves(new Random(this.worldObj.getSeed() + seedOffset), 8);
         }
 
         if(this.smoothCutoffLower && (p_151538_4_ != this.noiseChunkX || p_151538_5_ != this.noiseChunkZ)) {

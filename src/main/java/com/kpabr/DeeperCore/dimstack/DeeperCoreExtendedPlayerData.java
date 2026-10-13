@@ -38,7 +38,12 @@ public class DeeperCoreExtendedPlayerData implements IExtendedEntityProperties {
     @Override
     public void loadNBTData(NBTTagCompound compound) {
         NBTTagCompound deeperCoreData  = compound.getCompoundTag("deeperCoreData");
-        this.tpEnabled = deeperCoreData.getBoolean("tpEnabled");
+        if(deeperCoreData.hasKey("tpEnabled")) {
+            this.tpEnabled = deeperCoreData.getBoolean("tpEnabled");
+        }
+        else {
+            this.tpEnabled = true;
+        }
 
     }
 

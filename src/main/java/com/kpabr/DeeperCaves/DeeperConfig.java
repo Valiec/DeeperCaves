@@ -80,6 +80,7 @@ public class DeeperConfig {
     public static String farVoidFogColorStr;
 
     public static String forgottenFogColorStr;
+    public static String forgottenActiveFogColorStr;
     public static String evilFogColorStr;
     public static String finalLabyrinthFogColorStr;
 
@@ -100,6 +101,7 @@ public class DeeperConfig {
     public static int farVoidFogColor;
 
     public static int forgottenFogColor;
+    public static int forgottenActiveFogColor;
     public static int evilFogColor;
     public static int finalLabyrinthFogColor;
 
@@ -195,6 +197,9 @@ public class DeeperConfig {
         mutationFogColorStr = config.getString("Mutation Fog Color", this.CATEGORY_FOG_COLORS, "0x101010", "", hexColor);
         farVoidFogColorStr = config.getString("Far Void Fog Color", this.CATEGORY_FOG_COLORS, "0x101010", "", hexColor);
 
+
+        forgottenActiveFogColorStr = config.getString("Forgotten Active Fog Color", this.CATEGORY_FOG_COLORS, "0x0a4444", "", hexColor);
+
         forgottenFogColorStr = config.getString("Forgotten Fog Color", this.CATEGORY_FOG_COLORS, "0x182020", "", hexColor);
         evilFogColorStr = config.getString("Evil Fog Color", this.CATEGORY_FOG_COLORS, "0x102020", "", hexColor);
         finalLabyrinthFogColorStr = config.getString("Final Labyrinth Fog Color", this.CATEGORY_FOG_COLORS, "0x202020", "", hexColor);
@@ -216,6 +221,7 @@ public class DeeperConfig {
         farVoidFogColor = colorFromHex(farVoidFogColorStr);
 
         forgottenFogColor = colorFromHex(forgottenFogColorStr);
+        forgottenActiveFogColor = colorFromHex(forgottenActiveFogColorStr);
         evilFogColor = colorFromHex(evilFogColorStr);
         finalLabyrinthFogColor = colorFromHex(finalLabyrinthFogColorStr);
 
