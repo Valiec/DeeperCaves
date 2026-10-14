@@ -65,12 +65,12 @@ public class DeeperTeleporter extends Teleporter
             {
                 if(this.isSurfacePortal) {
                     j = MathHelper.floor_double(this.worldServerInstance.getTopSolidOrLiquidBlock(((int) p_77185_1_.posX), (int) p_77185_1_.posZ));
-                    cap = 255;
                 }
                 else {
                     j = 1;
-                    cap = 255;
                 }
+
+                cap = 255;
             }
             int k = MathHelper.floor_double(p_77185_1_.posZ);
             makePortal(p_77185_1_, cap, i, j, k);
