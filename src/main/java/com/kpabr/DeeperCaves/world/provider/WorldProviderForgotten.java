@@ -38,7 +38,7 @@ public class WorldProviderForgotten extends WorldProviderDeeperCaves
 
         double worldTimePartial = this.worldObj.getWorldTime()+partialTicks;
 
-        double cycleProgress = (worldTimePartial % 32000) / 32000.0;
+        double cycleProgress = (((worldTimePartial % 31000) / 31000.0) + 0.3) % 1.0;
 
         if(cycleProgress <= 0.5) {
             frac = (0.5-cycleProgress)*2;
