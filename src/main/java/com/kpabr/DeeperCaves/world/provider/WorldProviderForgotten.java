@@ -36,12 +36,16 @@ public class WorldProviderForgotten extends WorldProviderDeeperCaves
 
         double frac = 0;
 
-        if(celestialAngle <= 0.5) {
-            frac = (0.5-celestialAngle)*2;
+        double worldTimePartial = this.worldObj.getWorldTime()+partialTicks;
+
+        double cycleProgress = (worldTimePartial % 32000) / 32000.0;
+
+        if(cycleProgress <= 0.5) {
+            frac = (0.5-cycleProgress)*2;
         }
 
-        else if(celestialAngle > 0.5) {
-            frac = (celestialAngle-0.5)*2;
+        else if(cycleProgress > 0.5) {
+            frac = (cycleProgress-0.5)*2;
         }
 
         return interpolate(baseColor, activeColor, frac);
