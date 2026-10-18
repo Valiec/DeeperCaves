@@ -6,6 +6,7 @@ import com.kpabr.DeeperCaves.DeeperConfig;
 import com.kpabr.DeeperCore.world.WorldProviderDeeperCaves;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.Vec3;
 
 public class WorldProviderEvil extends WorldProviderDeeperCaves
@@ -16,6 +17,13 @@ public class WorldProviderEvil extends WorldProviderDeeperCaves
     public WorldProviderEvil() {
         super(DeeperCaves.worldgen.evil);
         this.fogActive = DeeperConfig.forgottenActiveFogColor;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public Vec3 getSkyColor(Entity cameraEntity, float partialTicks)
+    {
+        return this.getBaseFogColor(0.0F, partialTicks);
+        //celestialAngle is not used
     }
 
     @Override
